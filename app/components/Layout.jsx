@@ -378,7 +378,7 @@ function Footer({menu}) {
       </div>
       </div>
       {/* <FooterMenu menu={menu} />
-      <CountrySelector />
+      <CountrySelector /> 
       <div
         className={`self-end pt-8 opacity-50 md:col-span-2 lg:col-span-${itemsCount}`}
       >
