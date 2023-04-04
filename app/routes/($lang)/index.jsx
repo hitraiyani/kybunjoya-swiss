@@ -22,8 +22,16 @@ export async function loader({params, context}) {
     variables: {handle: 'freestyle'},
   });
 
+  const heroSlider = await context.storefront.query(
+    HOMEPAGE_HERO_SLIDER_QUERY,
+    {
+      variables: {metaObjectId: 'gid://shopify/Metaobject/1980825921'},
+    },
+  );
+
   return defer({
     shop,
+    heroSlider,
     primaryHero: hero,
     // These different queries are separated to illustrate how 3rd party content
     // fetching can be optimized for both above and below the fold.
@@ -70,6 +78,7 @@ export async function loader({params, context}) {
 export default function Homepage() {
   const {
     primaryHero,
+    heroSlider,
     secondaryHero,
     tertiaryHero,
     featuredCollections,
@@ -78,6 +87,7 @@ export default function Homepage() {
 
   // TODO: skeletons vs placeholders
   const skeletons = getHeroPlaceholder([{}, {}, {}]);
+
 
   // TODO: analytics
   // useServerAnalytics({
@@ -88,7 +98,7 @@ export default function Homepage() {
 
   return (
     <>
-      <HeroSlider />
+      <HeroSlider sliderImageMetaObject={heroSlider}/>
       {primaryHero && (
         <Hero {...primaryHero} height="full" top loading="eager" />
       )}
@@ -234,6 +244,27 @@ export const FEATURED_COLLECTIONS_QUERY = `#graphql
           width
           height
           url
+        }
+      }
+    }
+  }
+`;
+
+const HOMEPAGE_HERO_SLIDER_QUERY = `#graphql
+${MEDIA_FRAGMENT}
+  query homeStyleGuide($metaObjectId: ID!, $country: CountryCode, $language: LanguageCode)
+  @inContext(country: $country, language: $language) {
+    data : metaobject(id : $metaObjectId) {
+      handle
+      id
+      type
+      image : field(key: "image") {
+        references(first: 15) {
+          edges {
+            node {
+              ...Media
+            }
+          }
         }
       }
     }
