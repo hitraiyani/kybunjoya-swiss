@@ -1,7 +1,7 @@
 import {defer} from '@shopify/remix-oxygen';
 import {Suspense} from 'react';
 import {Await, useLoaderData} from '@remix-run/react';
-import {ProductSwimlane, FeaturedCollections, Hero, HeroSlider} from '~/components';
+import {ProductSwimlane, FeaturedCollections, Hero, HeroSlider, CollectionsGrid} from '~/components';
 import {MEDIA_FRAGMENT, PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
 import {getHeroPlaceholder} from '~/lib/placeholders';
 import {AnalyticsPageType} from '@shopify/hydrogen';
@@ -102,7 +102,7 @@ export default function Homepage() {
       {primaryHero && (
         <Hero {...primaryHero} height="full" top loading="eager" />
       )}
-
+      <CollectionsGrid />
       {featuredProducts && (
         <Suspense>
           <Await resolve={featuredProducts}>

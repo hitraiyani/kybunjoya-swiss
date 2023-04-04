@@ -26,7 +26,6 @@ import {useCartFetchers} from '~/hooks/useCartFetchers';
 export function Layout({children, layout}) {
   return (
     <>
-      <div className="flex flex-col min-h-screen">
         <div className="">
           <a href="#mainContent" className="sr-only">
             Skip to content
@@ -39,7 +38,6 @@ export function Layout({children, layout}) {
         <main role="main" id="mainContent" className="flex-grow">
           {children}
         </main>
-      </div>
       <Footer menu={layout?.footerMenu} />
     </>
   );
@@ -108,7 +106,7 @@ function CartDrawer({isOpen, onClose}) {
 
 export function MenuDrawer({isOpen, onClose, menu}) {
   return (
-    <Drawer open={isOpen} onClose={onClose} openFrom="left" heading="Menu">
+    <Drawer open={isOpen} onClose={onClose} openFrom="right" heading="Menu" className="bg-white mobile-menu-Drawer p-6 overflow-auto">
       <div className="grid">
         <MenuMobileNav menu={menu} onClose={onClose} />
       </div>
@@ -118,7 +116,7 @@ export function MenuDrawer({isOpen, onClose, menu}) {
 
 function MenuMobileNav({menu, onClose}) {
   return (
-    <nav className="grid gap-4 p-6 sm:gap-6 sm:px-12 sm:py-8">
+    <nav className="grid gap-4">
       {/* Top level menu items */}
       {(menu?.items || []).map((item) => (
         <span key={item.id} className="block">
@@ -150,18 +148,25 @@ function MobileHeader({title, isHome, openCart, openMenu}) {
       role="banner"
       className={`${
         isHome
-          ? 'bg-primary/80 dark:bg-contrast/60 text-contrast dark:text-primary shadow-darkHeader'
-          : 'bg-contrast/80 text-primary'
-      } flex lg:hidden items-center h-nav sticky backdrop-blur-lg z-40 top-0 justify-between w-full leading-none gap-4 px-4 md:px-8`}
+          ? ''
+          : ''
+      } site-header`}
     >
-      <div className="flex items-center justify-start w-full gap-4">
+      <div className='container mx-auto py-4'>
+      <div className="flex items-center justify-between w-full gap-4">
+        <Link
+          className="w-40 md:w-60"
+          to="/"
+        >
+          <img className='w-full h-full object-contain' src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/logo.png?v=1680591892" alt="" />
+        </Link>
         <button
           onClick={openMenu}
-          className="relative flex items-center justify-center w-8 h-8"
+          className="relative flex items-center justify-center w-8 h-8 menu-toogle-btn"
         >
-          <IconMenu />
+          <IconMenu className={'menu-toggle-icon'} />
         </button>
-        <Form
+        {/* <Form
           method="get"
           action={params.lang ? `/${params.lang}/search` : '/search'}
           className="items-center gap-2 sm:flex"
@@ -183,19 +188,12 @@ function MobileHeader({title, isHome, openCart, openMenu}) {
             placeholder="Search"
             name="q"
           />
-        </Form>
+        </Form> */}
       </div>
+      </div>
+      
 
-      <Link
-        className="flex items-center self-stretch leading-[3rem] md:leading-[4rem] justify-center flex-grow w-full h-full"
-        to="/"
-      >
-        <Heading className="font-bold text-center" as={isHome ? 'h1' : 'h2'}>
-          {title}
-        </Heading>
-      </Link>
-
-      <div className="flex items-center justify-end w-full gap-4">
+      {/* <div className="flex items-center justify-end w-full gap-4">
         <Link
           to="/account"
           className="relative flex items-center justify-center w-8 h-8"
@@ -203,7 +201,7 @@ function MobileHeader({title, isHome, openCart, openMenu}) {
           <IconAccount />
         </Link>
         <CartCount isHome={isHome} openCart={openCart} />
-      </div>
+      </div> */}
     </header>
   );
 }
@@ -216,11 +214,11 @@ function DesktopHeader({isHome, menu, openCart, title}) {
       role="banner"
       className={`${
         isHome
-          ? 'bg-primary/80 dark:bg-contrast/60 text-contrast dark:text-primary shadow-darkHeader'
-          : 'bg-contrast/80 text-primary'
+          ? ''
+          : ''
       } ${
-        !isHome && y > 50 && ' shadow-lightHeader'
-      } hidden h-nav lg:flex items-center sticky transition duration-300 backdrop-blur-lg z-40 top-0 justify-between w-full leading-none gap-8 px-12 py-8`}
+        !isHome && y > 50 && ''
+      } hidden`}
     >
       <div className="flex gap-12">
         <Link className="font-bold" to="/" prefetch="intent">
@@ -348,17 +346,45 @@ function Footer({menu}) {
       divider={isHome ? 'none' : 'top'}
       as="footer"
       role="contentinfo"
-      className={`grid min-h-[25rem] items-start grid-flow-row w-full gap-6 py-8 px-6 md:px-8 lg:px-12 md:gap-8 lg:gap-12 grid-cols-1 md:grid-cols-2 lg:grid-cols-${itemsCount}
-        bg-primary dark:bg-contrast dark:text-primary text-contrast overflow-hidden`}
+      // className={`grid min-h-[25rem] items-start grid-flow-row w-full gap-6 py-8 px-6 md:px-8 lg:px-12 md:gap-8 lg:gap-12 grid-cols-1 md:grid-cols-2 lg:grid-cols-${itemsCount}
+      //   bg-primary dark:bg-contrast dark:text-primary text-contrast overflow-hidden`}
+      className='site-footer py-5'
     >
-      <FooterMenu menu={menu} />
+      <div className='container'>
+      <div className='flex gap-4 justify-between'>
+        <div className='brand-wrap flex flex-wrap gap-8'>
+          <a className="w-28 opacity-80 hover:opacity-100" href="#" >
+            <img className='w-full h-full object-contain' src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/dummy-logo-5b_1.png?v=1680598604" alt="" />
+          </a>
+          <a className="w-28 opacity-80 hover:opacity-100" href="#" >
+            <img className='w-full h-full object-contain' src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/dummy-logo-5b_1.png?v=1680598604" alt="" />
+          </a>
+          <a className="w-28 opacity-80 hover:opacity-100" href="#" >
+            <img className='w-full h-full object-contain' src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/dummy-logo-5b_1.png?v=1680598604" alt="" />
+          </a>
+          <a className="w-28 opacity-80 hover:opacity-100" href="#" >
+            <img className='w-full h-full object-contain' src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/dummy-logo-5b_1.png?v=1680598604" alt="" />
+          </a>
+          <a className="w-28 opacity-80 hover:opacity-100" href="#" >
+            <img className='w-full h-full object-contain' src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/dummy-logo-5b_1.png?v=1680598604" alt="" />
+          </a>
+          <a className="w-28 opacity-80 hover:opacity-100" href="#" >
+            <img className='w-full h-full object-contain' src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/dummy-logo-5b_1.png?v=1680598604" alt="" />
+          </a>
+        </div>
+        <div className='nav'>
+            <a href="#" className='text-white text-base'>Kontakt</a>
+        </div>
+      </div>
+      </div>
+      {/* <FooterMenu menu={menu} />
       <CountrySelector />
       <div
         className={`self-end pt-8 opacity-50 md:col-span-2 lg:col-span-${itemsCount}`}
       >
         &copy; {new Date().getFullYear()} / Shopify, Inc. Hydrogen is an MIT
         Licensed Open Source project.
-      </div>
+      </div> */}
     </Section>
   );
 }

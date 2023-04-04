@@ -16,7 +16,7 @@ export function HeroSlider({
   
   return (
     <section
-    className={`-mt-nav aspect-[4/5] sm:aspect-square md:aspect-[5/4] lg:aspect-[3/2] xl:aspect-[2/1]`}
+    className={`heroSlider-sec`}
     >
       <Swiper
               modules={[Navigation,Scrollbar, A11y, Autoplay]}
@@ -31,7 +31,7 @@ export function HeroSlider({
           <SwiperSlide key={index}>
             <div className="prodcut-items">
               <div className='prodcut-item' key={index}>
-                <div className="flex flex-co w-full h-96">
+                <div className="flex flex-co w-full h-32 sm:h-48 md:h-60 lg:h-96">
                     <img className='object-cover object-center w-full' src={image}></img>
                 </div>
               </div>

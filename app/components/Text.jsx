@@ -53,7 +53,7 @@ export function Heading({
   className = '',
   format,
   size = 'heading',
-  width = 'default',
+  width = '',
   ...props
 }) {
   const sizes = {
@@ -90,7 +90,7 @@ export function Section({
   divider = 'none',
   display = 'grid',
   heading,
-  padding = 'all',
+  padding = '',
   ...props
 }) {
   const paddings = {
