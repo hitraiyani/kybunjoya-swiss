@@ -29,7 +29,7 @@ import swiper_scrollbar from 'swiper/css/scrollbar';
 
 const seo = ({data, pathname}) => ({
   title: data?.layout?.shop?.name,
-  titleTemplate: '%s | Hydrogen Demo Store',
+  titleTemplate: '%s',
   description: data?.layout?.shop?.description,
   handle: '@shopify',
   url: `https://hydrogen.shop${pathname}`,
