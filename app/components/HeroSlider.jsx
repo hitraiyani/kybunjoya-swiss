@@ -18,30 +18,33 @@ export function HeroSlider({
 
   ];
   return (
-    <div className="container mx-auto overflow-x-hidden">
-            <div className="flex flex-wrap">
-                <div  className={` md:grid-flow-row  md:p-0 md:overflow-x-auto`}>
-                <Swiper
-                        modules={[Navigation,Scrollbar, A11y, Autoplay]}
-                        slidesPerView={1}
-                        navigation
-                        autoplay={{
-                            delay: 2500,
-                            disableOnInteraction: false,
-                        }}
-                    >
-                    {imageSlider.map((product, index) => (
-                    <SwiperSlide key={index}>
-                        <div className='prodcut-item' key={index}>
-                        <img className="object-fill w-full h-96"  src={product}></img>
-                        </div>
-                    </SwiperSlide>
-                    ))}
-                    
-                </Swiper>   
+    <section
+    className={`-mt-nav aspect-[4/5] sm:aspect-square md:aspect-[5/4] lg:aspect-[3/2] xl:aspect-[2/1]`}
+    >
+      <Swiper
+              modules={[Navigation,Scrollbar, A11y, Autoplay]}
+              slidesPerView={1}
+              navigation
+              autoplay={{
+                delay: 2500,
+                disableOnInteraction: false,
+              }}
+        >
+        {imageSlider.map((product, index) => (
+          <SwiperSlide key={index}>
+            <div className="prodcut-items">
+              <div className='prodcut-item' key={index}>
+                <div className="flex flex-co w-full h-96">
+                    <img className='object-cover object-center w-full' src={product}></img>
                 </div>
+              </div>
             </div>
-        </div>
+          </SwiperSlide>
+        ))}
+          
+      </Swiper>
+     
+    </section>
   );
 }
 
