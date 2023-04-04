@@ -372,7 +372,7 @@ function Footer({menu}) {
             <img className='w-full h-full object-contain' src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Screenshot_186.png?v=1680607061" alt="" />
           </a>
         </div>
-        <div className='nav'>
+        <div className='nav pt-2.5'>
             <a href="#" className='text-white text-base'>Kontakt</a>
         </div>
       </div>
