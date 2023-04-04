@@ -706,6 +706,12 @@ video {
 .h-screen {
   height: 100vh;
 }
+.h-72 {
+  height: 18rem;
+}
+.h-96 {
+  height: 24rem;
+}
 .max-h-0 {
   max-height: 0px;
 }
@@ -984,6 +990,9 @@ video {
 .overflow-y-auto {
   overflow-y: auto;
 }
+.overflow-x-hidden {
+  overflow-x: hidden;
+}
 .overflow-y-scroll {
   overflow-y: scroll;
 }
@@ -1104,6 +1113,10 @@ video {
 .object-cover {
   -o-object-fit: cover;
      object-fit: cover;
+}
+.object-fill {
+  -o-object-fit: fill;
+     object-fit: fill;
 }
 .object-center {
   -o-object-position: center;
@@ -1832,6 +1845,10 @@ video {
 
   .lg\:aspect-\[3\/2\] {
     aspect-ratio: 3/2;
+  }
+
+  .lg\:w-2\/4 {
+    width: 50%;
   }
 
   .lg\:scroll-px-12 {

@@ -21,6 +21,11 @@ import {DEFAULT_LOCALE, parseMenu} from './lib/utils';
 import invariant from 'tiny-invariant';
 import {useAnalytics} from './hooks/useAnalytics';
 
+import swiper from 'swiper/css';
+import swiper_navigation from 'swiper/css/navigation';
+import swiper_pagination from 'swiper/css/pagination';
+import swiper_scrollbar from 'swiper/css/scrollbar';
+
 
 const seo = ({data, pathname}) => ({
   title: data?.layout?.shop?.name,
@@ -39,6 +44,10 @@ export const links = () => {
   return [
     {rel: 'stylesheet', href: tailwind},
     {rel: 'stylesheet', href: styles},
+    {rel: 'stylesheet', href: swiper},
+    {rel: 'stylesheet', href: swiper_navigation},
+    {rel: 'stylesheet', href: swiper_pagination},
+    {rel: 'stylesheet', href: swiper_scrollbar},
     {
       rel: 'preconnect',
       href: 'https://cdn.shopify.com',
