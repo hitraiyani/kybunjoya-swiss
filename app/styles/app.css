@@ -7,7 +7,7 @@ a:hover {
   padding-left: 32px;
   padding-right: 32px;
 }
-@media (max-width:767px) {
+@media (max-width: 767px) {
   .container {
     padding-left: 20px;
     padding-right: 20px;
@@ -55,9 +55,50 @@ a:hover {
 }
 /* End HeroSlider section */
 
-
 /* footer css */
-.site-footer{
-  background-color: #3A3E3F;
+.site-footer {
+  background-color: #3a3e3f;
 }
 /* End footer css */
+
+/* CollectionsGrid section  */
+@media (min-width: 1280px) {
+  .collectionsGrid-item:first-child {
+    grid-row: span 2 / span 2;
+  }
+  .collectionsGrid-item:nth-child(2) {
+    grid-row: span 4 / span 4;
+  }
+}
+.collectionsGrid-item:nth-child(2) a,
+.collectionsGrid-item:nth-child(1) a {
+  height: 560px;
+}
+.collectionsGrid-item,
+.collectionsGrid-item a,
+.collectionsGrid-item img {
+  border-radius: 0.5rem;
+}
+.collectionsGrid-item .btn {
+  max-width: 220px;
+  width: 100%;
+}
+.collectionsGrid-item:nth-child(3) img {
+  object-fit: contain;
+  object-position: top left;
+}
+.collectionsGrid-item:nth-child(3) {
+  background: #ebebeb;
+}
+@media (max-width: 1279px) {
+  .collectionsGrid-item a {
+    height: auto !important;
+    padding-bottom: 60%;
+  }
+}
+@media (max-width: 767px) {
+  .collectionsGrid-item {
+    width: 100%;
+  }
+}
+/* End CollectionsGrid section  */

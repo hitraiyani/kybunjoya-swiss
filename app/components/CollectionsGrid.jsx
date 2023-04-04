@@ -3,57 +3,77 @@ import {Heading, Section, Grid, Link, ArrowRightLight} from '~/components';
 
 export function CollectionsGrid({collections, title = '', ...props}) {
   return (
-    <Section {...props} heading={title} className={'my-8'}>
+    <Section {...props} heading={title} className={'my-8 collectionsGrid-sec'}>
       <div className="container">
-        <div className="grid grid-rows-3 grid-flow-col gap-3">
-          {/* <div className="row-span-3">
-          <Link to={`#`}>
-            <div className="card-image bg-primary/5 aspect-[3/2]">
-              <Image
-                data={{
-                  url: 'https://cdn.shopify.com/s/files/1/0739/7172/8705/files/logo.svg?v=1680004853',
-                  width: 82,
-                  height: 36,
-                  altText: '93',
-                }}
-                className="logo-img mx-auto"
-                loaderOptions={{
-                  scale: 2,
-                  crop: 'center',
-                }}
-                alt="93"
-              />
-            </div>
-            <Heading size="copy">asdadsa</Heading>
-          </Link>
-        </div> */}
-          <div className="row-span-4 bg-gray-200">
-            <Link to={`#`}>
-              <div className="relative">
+        <div className="md:grid md:grid-rows-2 xl:grid-rows-2 md:grid-flow-col gap-7 flex flex-col">
+          <div className="collectionsGrid-item relative">
+            <Link to={`#`} className="relative block w-full h-96 overflow-hidden">
+              <div className="img-wrap">
                 <Image
                   data={{
-                    url: 'https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Screenshot_173.png?v=1680600063',
-                    width: 82,
-                    height: 36,
-                    altText: '93',
+                    url: 'https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Screenshot_173.png?v=1680600063'
                   }}
-                  className="logo-img mx-auto"
-                  loaderOptions={{
-                    scale: 2,
-                    crop: 'center',
-                  }}
-                  alt="93"
+                  className="h-full w-full absolute inset-0 hover:scale-110 transition hover:duration-500 object-cover object-center"
+                  alt=""
                 />
               </div>
-              <Heading className="flex gap-2 items-center rounded-lg bg-white hover:bg-gray-50 shadow-lg p-3 max-w-xs font-normal text-base">
+              <Heading className="flex gap-2 items-center rounded-lg bg-white hover:bg-gray-50 shadow-lg p-3 max-w-xs font-normal text-base absolute bottom-5 left-5 btn">
                 <ArrowRightLight className={'w-5 h-5'} />
-                Producte
+                Produkte
               </Heading>
             </Link>
           </div>
-          <div className="row-span-4 bg-gray-200">02</div>
-          <div className="row-span-2 col-span-2 bg-gray-200">03</div>
-          <div className="row-span-2 col-span-2 bg-gray-200">04</div>
+          <div className="collectionsGrid-item relative">
+            <Link to={`#`} className="relative block w-full h-96 overflow-hidden">
+              <div className="img-wrap">
+                <Image
+                  data={{
+                    url: 'https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Screenshot_174.png?v=1680600063'
+                  }}
+                  className="h-full w-full absolute inset-0 hover:scale-110 transition hover:duration-500 object-cover object-center"
+                  alt=""
+                />
+              </div>
+              <Heading className="flex gap-2 items-center rounded-lg bg-white hover:bg-gray-50 shadow-lg p-3 max-w-xs font-normal text-base absolute bottom-5 left-5 btn">
+                <ArrowRightLight className={'w-5 h-5'} />
+                Verkaufsstellen
+              </Heading>
+            </Link>
+          </div>
+          <div className="collectionsGrid-item relative">
+            <Link to={`#`} className="relative block w-full h-full overflow-hidden">
+              <div className="img-wrap"> 
+                <Image
+                  data={{
+                    url: 'https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Screenshot_176.png?v=1680604329'
+                  }}
+                  className="h-full w-full absolute inset-0 hover:scale-110 transition hover:duration-500 object-cover object-center"
+                  alt=""
+                />
+              </div>
+              <Heading className="flex gap-2 items-center rounded-lg bg-white hover:bg-gray-50 shadow-lg p-3 max-w-xs font-normal text-base absolute bottom-5 left-5 btn">
+                <ArrowRightLight className={'w-5 h-5'} />
+                Ihr Ratgeber
+              </Heading>
+            </Link>
+          </div>
+          <div className="collectionsGrid-item relative">
+            <Link to={`#`} className="relative block w-full h-full overflow-hidden">
+              <div className="img-wrap">
+                <Image
+                  data={{
+                    url: 'https://cdn.shopify.com/s/files/1/0742/9688/5569/files/vison_history_section.png?v=1680602992'
+                  }}
+                  className="h-full w-full absolute inset-0 hover:scale-110 transition hover:duration-500 object-cover object-center"
+                  alt=""
+                />
+              </div>
+              <Heading className="flex gap-2 items-center rounded-lg bg-white hover:bg-gray-50 shadow-lg p-3 max-w-xs font-normal text-base absolute bottom-5 left-5 btn">
+                <ArrowRightLight className={'w-5 h-5'} />
+                Vision / History
+              </Heading>
+            </Link>
+          </div>
         </div>
       </div>
     </Section>
