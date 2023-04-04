@@ -352,24 +352,24 @@ function Footer({menu}) {
     >
       <div className='container'>
       <div className='flex gap-4 justify-between'>
-        <div className='brand-wrap flex flex-wrap gap-8'>
-          <a className="w-28 opacity-80 hover:opacity-100" href="#" >
-            <img className='w-full h-full object-contain' src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/dummy-logo-5b_1.png?v=1680598604" alt="" />
+        <div className='brand-wrap flex flex-col sm:flex-row flex-wrap gap-8 items-center'>
+          <a className="brand-logo opacity-80 hover:opacity-100" href="#" >
+            <img className='w-full h-full object-contain' src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Screenshot_177.png?v=1680606608" alt="" />
           </a>
-          <a className="w-28 opacity-80 hover:opacity-100" href="#" >
-            <img className='w-full h-full object-contain' src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/dummy-logo-5b_1.png?v=1680598604" alt="" />
+          <a className="brand-logo opacity-80 hover:opacity-100" href="#" >
+            <img className='w-full h-full object-contain' src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Screenshot_178.png?v=1680606608" alt="" />
           </a>
-          <a className="w-28 opacity-80 hover:opacity-100" href="#" >
-            <img className='w-full h-full object-contain' src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/dummy-logo-5b_1.png?v=1680598604" alt="" />
+          <a className="brand-logo opacity-80 hover:opacity-100" href="#" >
+            <img className='w-full h-full object-contain' src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Screenshot_179.png?v=1680606608" alt="" />
           </a>
-          <a className="w-28 opacity-80 hover:opacity-100" href="#" >
-            <img className='w-full h-full object-contain' src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/dummy-logo-5b_1.png?v=1680598604" alt="" />
+          <a className="brand-logo opacity-80 hover:opacity-100" href="#" >
+            <img className='w-full h-full object-contain' src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Screenshot_180.png?v=1680606608" alt="" />
           </a>
-          <a className="w-28 opacity-80 hover:opacity-100" href="#" >
-            <img className='w-full h-full object-contain' src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/dummy-logo-5b_1.png?v=1680598604" alt="" />
+          <a className="brand-logo opacity-80 hover:opacity-100" href="#" >
+            <img className='w-full h-full object-contain' src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Screenshot_185.png?v=1680607048" alt="" />
           </a>
-          <a className="w-28 opacity-80 hover:opacity-100" href="#" >
-            <img className='w-full h-full object-contain' src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/dummy-logo-5b_1.png?v=1680598604" alt="" />
+          <a className="brand-logo opacity-80 hover:opacity-100" href="#" >
+            <img className='w-full h-full object-contain' src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Screenshot_186.png?v=1680607061" alt="" />
           </a>
         </div>
         <div className='nav'>

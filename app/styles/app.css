@@ -59,6 +59,11 @@ a:hover {
 .site-footer {
   background-color: #3a3e3f;
 }
+.brand-logo{
+  max-width: 100px;
+  max-height: 40px;
+  display: flex;
+}
 /* End footer css */
 
 /* CollectionsGrid section  */
