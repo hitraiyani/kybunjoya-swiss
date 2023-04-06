@@ -1213,6 +1213,9 @@ video {
 .bg-opacity-75 {
   --tw-bg-opacity: 0.75;
 }
+.bg-opacity-0 {
+  --tw-bg-opacity: 0;
+}
 .bg-gradient-to-t {
   background-image: linear-gradient(to top, var(--tw-gradient-stops));
 }
@@ -2212,6 +2215,10 @@ video {
 
   .lg\:w-3\/5 {
     width: 60%;
+  }
+
+  .lg\:w-auto {
+    width: auto;
   }
 
   .lg\:scroll-px-12 {
