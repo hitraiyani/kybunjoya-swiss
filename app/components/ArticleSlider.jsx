@@ -8,7 +8,7 @@ import { toHTML } from '~/lib/utils';
  **/
 export function ArticleSlider({ articles }) {
     return (
-        <section className='article-slide'>
+        <section className='mb-16 article-slide'>
             <div className="container">
                 <h3 className='text-[#00795C] w-full font-bold text-[35px] lg:text-[55px]  mb-3 mt-16'>Neues und Aktuelles</h3>   
                 <Swiper className="article-slider"
@@ -33,7 +33,7 @@ export function ArticleSlider({ articles }) {
                        },
                      }}
                 >
-                    <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
+                    <div className="grid grid-cols-1 gap-4 mb-8 md:grid-cols-2 xl:grid-cols-3">
                         {articles?.edges?.map((article, index) => {
                             return (
                                 <SwiperSlide key={index}>
