@@ -107,8 +107,19 @@ function CartDrawer({isOpen, onClose}) {
 }
 
 export function MenuDrawer({isOpen, onClose, menu}) {
+  const [isScrolled, setisScrolled] = useState(false);
+  
+  useEffect(() => {
+        window.addEventListener('scroll', () => {
+          if(window.scrollY >  50){
+            setisScrolled(true);
+          } else {
+            setisScrolled(false);
+          }
+      });
+  },[]);
   return (
-    <Drawer open={isOpen} onClose={onClose} openFrom="right" heading="Menu" className="p-6 overflow-auto bg-white mobile-menu-Drawer">
+    <Drawer open={isOpen} onClose={onClose} openFrom="right" heading="Menu" className={`p-6 overflow-auto bg-white mobile-menu-Drawer ${isScrolled ? 'header-sticky' : ''}`}>
       <div className="grid">
         <MenuMobileNav menu={menu} onClose={onClose} />
       </div>

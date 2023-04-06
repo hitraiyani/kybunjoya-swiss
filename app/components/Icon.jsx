@@ -8,7 +8,7 @@ function Icon({children, className, fill = 'currentColor', stroke, ...props}) {
       {...props}
       fill={fill}
       stroke={stroke}
-      className={clsx('w-5 h-5', className)}
+      className={clsx('w-10 h-10', className)}
     >
       {children}
     </svg>

@@ -2328,8 +2328,12 @@ video {
     aspect-ratio: 2/1;
   }
 
-  .xl\:h-\[573px\] {
-    height: 573px;
+  .xl\:h-\[400px\] {
+    height: 400px;
+  }
+
+  .xl\:h-\[450px\] {
+    height: 450px;
   }
 
   .xl\:max-h-\[400px\] {
@@ -2370,7 +2374,11 @@ video {
 }
 @media (min-width: 1536px) {
 
-  .\32xl\:max-h-\[573px\] {
-    max-height: 573px;
+  .\32xl\:max-h-\[400px\] {
+    max-height: 400px;
+  }
+
+  .\32xl\:max-h-\[450px\] {
+    max-height: 450px;
   }
 }

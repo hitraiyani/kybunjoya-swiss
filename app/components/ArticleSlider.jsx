@@ -41,7 +41,7 @@ export function ArticleSlider({ articles }) {
                                         <Link to={`#`} className="relative block overflow-hidden">
                                         <div className="img-wrap">
                                         <img
-                                                className="object-cover object-center w-full max-h-[300px] h-[300px] 2xl:max-h-[573px] xl:max-h-[400px] xl:h-[573px] lg:max-h-[300px] lg:h-[300px] md:max-h-[300px] md:h-[300px] rounded-md	drop-shadow-md"
+                                                className="object-cover object-center w-full rounded-md aspect-square drop-shadow-md"
                                                 src={article.node.image.url}
                                             ></img>
                                         </div>
