@@ -395,11 +395,11 @@ function Footer({menu}) {
                   <h3 className='text-[#00795C] w-full font-bold lg:text-5xl text-3xl mb-3'>Updates in deine Inbox</h3>                 
                   <p className="font-normal  text-[#595959] w-full text-[19px]">Bleib auf dem laufenden mit den letzten Ereignissen.</p>
               </div>
-              <form className='mt-8 mb-10' >
+              <form className='mt-12 mb-10' >
                 <input type="email" id="email" class="bg-transparent border-b-[1px] font-normal border-[#999999] text-[#000] text-base placeholder:text-[#999] focus:ring-black-500 focus:border-black-500 block w-full max-w-[576px] max-w-sm-full p-0 focus:bordr-0 focus:outline-none focus:border-b-[1px] focus:border-[#000] dark:placeholder-gray-400  dark:focus:ring-black-500 dark:focus:border-black-500" placeholder="Email" required />
               </form>
           </div>
-          <div className="grid grid-cols-2 gap-8 lg:gap-6 lg:grid-cols-3">
+          <div className="grid grid-cols-2 gap-8 lg:gap-8 lg:grid-cols-3">
               <div>
                   <h2 className="mb-8 lg:text-[26px] text-[22px] font-bold capitalize text-[#00795C]">Shopfinder</h2>
 

@@ -679,6 +679,9 @@ video {
 .mt-\[40px\] {
   margin-top: 40px;
 }
+.mt-12 {
+  margin-top: 3rem;
+}
 .block {
   display: block;
 }
@@ -2174,6 +2177,10 @@ video {
 
   .lg\:gap-9 {
     gap: 2.25rem;
+  }
+
+  .lg\:gap-8 {
+    gap: 2rem;
   }
 
   .lg\:p-12 {
