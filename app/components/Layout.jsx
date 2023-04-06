@@ -360,7 +360,7 @@ function Footer({menu}) {
                   <p className="font-normal  text-[#595959] w-full text-[19px]">Bleib auf dem laufenden mit den letzten Ereignissen.</p>
               </div>
               <form >
-                <input type="email" id="email" class="bg-transparent border border-b-[1] text-[#CCCCCC] text-base  focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Email" required />
+                <input type="email" id="email" class="bg-transparent border border-b-[1] text-[#CCCCCC] text-base  focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Email" required />
               </form>
           </div>
           <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
@@ -436,8 +436,15 @@ function Footer({menu}) {
 
           </span> <a href="#" className="hover:underline hover:text-[#00795C] font-normal text-base text-[#595959]">Contact us </a>  </p> 
       </div>
+
+      <div className='flex mb-6'> 
+         <p className="font-normal text-base text-[#595959] flex gap-4 items-center">
+           <span>
+           
+          </span> <a href="#" className="hover:underline hover:text-[#00795C] font-normal text-base text-[#595959]">Deutsch </a>  </p> 
+      </div>
         <div className='flex mb-12'> 
-          <span className="text-[15.94px]  sm:text-center text-[#595959]">© kybun Joya 2023          </span>
+          <span className="text-[15.94px] font-normal sm:text-center text-[#595959]">© kybun Joya 2023          </span>
       </div>
       
       <div className="sm:flex sm:items-center sm:justify-between">
