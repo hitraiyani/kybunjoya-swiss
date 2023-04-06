@@ -5,6 +5,7 @@ export function CollectionsGrid({collections, title = '', ...props}) {
   return (
     <Section {...props} heading={title} className={'collectionsGrid-sec'}>
       <div className="container">
+        <h1 className='text-[#00795C] text-[35px] lg:text-[40px] xl:text-[55px] tracking-[-0.97152px] mb-6'>Themenwelten</h1>
         <div className="md:grid md:grid-rows-2 xl:grid-rows-2 md:grid-flow-col gap-7 flex flex-col">
           <div className="collectionsGrid-item relative">
             <Link to={`#`} className="relative block w-full overflow-hidden">
