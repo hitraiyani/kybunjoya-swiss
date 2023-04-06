@@ -14,6 +14,7 @@ export function HeroSlider({sliderMetaObject}) {
 
   return (
     <section className={`heroSlider-sec`}>
+
       <Swiper
         modules={[Navigation, Scrollbar, A11y, Autoplay]}
         slidesPerView={1}
@@ -31,7 +32,7 @@ export function HeroSlider({sliderMetaObject}) {
               <div className="prodcut-item" key={index}>
                 <div className="flex flex-co w-full h-screen relative">
                   <img
-                    className="object-cover object-center w-full"
+                    className="object-cover object-center w-full" id="home_slider_image"
                     src={image}
                   ></img>
                   <div className="img-overlay absolute w-full h-2/4 inset-x-0 bottom-0"></div>

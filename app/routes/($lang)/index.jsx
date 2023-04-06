@@ -1,7 +1,15 @@
 import {defer} from '@shopify/remix-oxygen';
 import {Suspense} from 'react';
 import {Await, useLoaderData} from '@remix-run/react';
-import {ProductSwimlane, FeaturedCollections, Hero, HeroSlider, CollectionsGrid, BrandGrid, ArticleSlider} from '~/components';
+import {
+  ProductSwimlane,
+  FeaturedCollections,
+  Hero,
+  HeroSlider,
+  CollectionsGrid,
+  BrandGrid,
+  ArticleSlider,
+} from '~/components';
 import {MEDIA_FRAGMENT, PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
 import {getHeroPlaceholder} from '~/lib/placeholders';
 import {AnalyticsPageType} from '@shopify/hydrogen';
@@ -41,11 +49,11 @@ export async function loader({params, context}) {
     heroSlider,
     fourMainSection,
     articleSliders: context.storefront.query(HOMEPAGE_ARTICLE_SLIDER_QUERY, {
-        variables: {
-          country,
-          language,
-        },
-      }),
+      variables: {
+        country,
+        language,
+      },
+    }),
     // primaryHero: hero,
     // featuredProducts: context.storefront.query(
     //   HOMEPAGE_FEATURED_PRODUCTS_QUERY,
@@ -106,18 +114,35 @@ export default function Homepage() {
 
   return (
     <>
-      <HeroSlider sliderMetaObject={heroSlider}/>
+      <div className="heroSlider-sec">
+        <div className="prodcut-items">
+          <div className="prodcut-item">
+            <div className="flex flex-co w-full h-screen relative image-container">
+              <img
+                className="object-cover object-center w-full active"
+                id="defaultActive"
+                data-image="image2.jpg"
+                src='https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Picture_1_png.jpg?v=1680771114'
+              ></img>
+              <img
+              data-image="image1.jpg"
+                className="object-cover object-center w-full "
+                src='https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Picture_1.png_1.png?v=1680761419'
+              ></img>
+              <div className="img-overlay absolute w-full h-2/4 inset-x-0 bottom-0"></div>
+              <div className="slider-content absolute bottom-12 lg:bottom-28 left-5 md:left-20"><h2 className="title text-white font-extrabold mb-6"><p>Therapieren<br />Statt Operieren </p></h2><h4 className="sub-title text-white font-medium mb-6 "><p>Jetzt mit CloudTec™ </p></h4><a className="btn bg-white text-black font-medium text-lg lg:py-6 lg:px-14 py-4 px-8 hover:bg-black hover:text-white inline-block transition-all" href="/">Show now</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* <HeroSlider sliderMetaObject={heroSlider} /> */}
       <BrandGrid />
       {fourMainSection && (
         <Suspense>
           <Await resolve={fourMainSection}>
             {({data}) => {
               if (!data) return <></>;
-              return (
-                <CollectionsGrid
-                  data={data}
-                />
-              );
+              return <CollectionsGrid data={data} />;
             }}
           </Await>
         </Suspense>
@@ -127,11 +152,7 @@ export default function Homepage() {
           <Await resolve={articleSliders}>
             {({articles}) => {
               if (!articles) return <></>;
-              return (
-                <ArticleSlider
-                articles={articles}
-                />
-              );
+              return <ArticleSlider articles={articles} />;
             }}
           </Await>
         </Suspense>
@@ -262,7 +283,6 @@ export const HOMEPAGE_FEATURED_PRODUCTS_QUERY = `#graphql
     }
   }
 `;
-
 
 export const HOMEPAGE_ARTICLE_SLIDER_QUERY = `#graphql
   query homepageArticleSliderQuery($country: CountryCode, $language: LanguageCode)

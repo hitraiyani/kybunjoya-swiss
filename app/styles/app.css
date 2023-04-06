@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
+
+html{
+    padding-right: 0 !important;
+    overflow: auto !important;
+}
 body {
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
@@ -16,7 +21,7 @@ h6 {
 }
 
 a:hover {
-  color: #63beaa;
+  color: #00795C;
 }
 
 .container {
@@ -38,6 +43,10 @@ a:hover {
 .site-header .menu-toggle-icon {
   width: 40px;
   height: 40px;
+}
+.site-header .container{
+  padding-left: 20px;
+  padding-right: 20px;
 }
 .mobile-menu-Drawer{
   background: rgba(255, 255, 255, 0.9);
@@ -70,12 +79,27 @@ a:hover {
   display: block;
   font-weight: 600;
 }
+@media (max-width:1023px) {
+  .mobile-menu-Drawer{
+    width: calc(100% - 20px);
+    margin: 90px auto 20px;
+  }
+}
+@media (max-width:767px) {
+  .mobile-menu-Drawer{
+    max-height: none;
+    background: #fff;
+  }
+}
 /* End header css */
 
 /* HeroSlider section */
 .heroSlider-sec .swiper-button-prev,
 .heroSlider-sec .swiper-button-next {
   color: #ffffff;
+}
+.heroSlider-sec .h-screen{
+  height: 82vh;
 }
 .heroSlider-sec .swiper-button-next:after,
 .heroSlider-sec .swiper-rtl .swiper-button-prev:after,
@@ -103,6 +127,12 @@ a:hover {
   font-weight: 400;
   font-size: 32.96px;
   line-height: 1.2;
+}
+.heroSlider-sec img{
+  display: none;
+}
+.heroSlider-sec img.active{
+  display: block;
 }
 @media (min-width: 1024px) {
   .heroSlider-sec .swiper-button-prev,
