@@ -139,7 +139,7 @@ export function CollectionsGrid({collections, title = '', ...props}) {
               </Heading>
             </Link>
             <div className='quick-link-wrap px-[20px] py-[30px] lg:px-[49px] lg:py-[30px] w-full lg:w-2/5'>
-              <h2 className='title text-[#595959] text-[25px] md:mb-[40px] xl:mb-[83px] font-medium'>Quick Links</h2>
+              <h2 className='title text-[#595959] text-[25px] mb-5 md:mb-[40px] xl:mb-[83px] font-medium'>Quick Links</h2>
               <div className='quick-link-list'>
                 <ul>
                   <li><a href="" className='text-[30px] md:text-[30px] lg:text-[34px] xl:text-[50px] text-black hover:text[#00795C] block tracking-[-0.97152px] leading-none mb-5'>Careers</a></li>
