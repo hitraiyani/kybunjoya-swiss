@@ -919,6 +919,10 @@ video {
   -moz-columns: 3;
        columns: 3;
 }
+.columns-1 {
+  -moz-columns: 1;
+       columns: 1;
+}
 .auto-cols-auto {
   grid-auto-columns: auto;
 }
@@ -1925,6 +1929,11 @@ video {
   .md\:scroll-px-8 {
     scroll-padding-left: 2rem;
     scroll-padding-right: 2rem;
+  }
+
+  .md\:columns-3 {
+    -moz-columns: 3;
+         columns: 3;
   }
 
   .md\:grid-flow-row {

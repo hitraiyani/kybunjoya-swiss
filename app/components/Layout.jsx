@@ -149,7 +149,7 @@ function MenuMobileNav({menu, onClose}) {
   return (
     <div className='mega-menu-wrap'>
       <div className='nav-list'>
-        <ul className='columns-3'>
+        <ul className='columns-1 md:columns-3'>
           <li>
             <a href="#"  className='fcz-menu-hover title text-[#00795C] text-[26px] mb-[12px]' data-image="image1.jpg">Shopfinder</a>
           </li>
