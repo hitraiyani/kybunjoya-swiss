@@ -116,25 +116,61 @@ export function MenuDrawer({isOpen, onClose, menu}) {
 
 function MenuMobileNav({menu, onClose}) {
   return (
-    <nav className="grid gap-4">
-      {/* Top level menu items */}
-      {(menu?.items || []).map((item) => (
-        <span key={item.id} className="block">
-          <Link
-            to={item.to}
-            target={item.target}
-            onClick={onClose}
-            className={({isActive}) =>
-              isActive ? 'pb-1 border-b -mb-px' : 'pb-1'
-            }
-          >
-            <Text as="span" size="copy">
-              {item.title}
-            </Text>
-          </Link>
-        </span>
-      ))}
-    </nav>
+    <div className='mega-menu-wrap'>
+      <div className='nav-list'>
+        <ul className='columns-3'>
+          <li>
+            <a href="#" className='title text-[#00795C] text-[26px] mb-[12px]'>Shopfinder</a>
+          </li>
+          <li>
+            <a href="#" className='title text-[#00795C] text-[26px] mb-[12px]'>Produkte</a>
+            <ul className='sub-menu'>
+              <li><a href="#" className='text-[16px] text-[#595959] block leading-none'>kybun</a></li>
+              <li><a href="#" className='text-[16px] text-[#595959] block leading-none'>Joya</a></li>
+              <li><a href="#" className='text-[16px] text-[#595959] block leading-none'>Matten</a></li>
+              <li><a href="#" className='text-[16px] text-[#595959] block leading-none'>UTR</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#" className='title text-[#00795C] text-[26px] mb-[12px]'>Ratgeber</a>
+          </li>
+          <li>
+            <a href="#" className='title text-[#00795C] text-[26px] mb-[12px]'>Story</a>
+          </li>
+          <li>
+            <a href="#" className='title text-[#00795C] text-[26px] mb-[12px]'>Gruppe</a>
+            <ul className='sub-menu'>
+              <li><a href="#" className='text-[16px] text-[#595959] block leading-none'>Careers</a></li>
+              <li><a href="#" className='text-[16px] text-[#595959] block leading-none'>Schweizer Schuhproduktion</a></li>
+              <li><a href="#" className='text-[16px] text-[#595959] block leading-none'>Luftkissen Technologie</a></li>
+              <li><a href="#" className='text-[16px] text-[#595959] block leading-none'>Sustainability</a></li>
+              <li><a href="#" className='text-[16px] text-[#595959] block leading-none'>Brands</a></li>
+              <li><a href="#" className='text-[16px] text-[#595959] block leading-none'>Partner Werden</a></li>
+              <li><a href="#" className='text-[16px] text-[#595959] block leading-none'>Kontakt</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+    // <nav className="grid gap-4">
+    //   {/* Top level menu items */}
+    //   {(menu?.items || []).map((item) => (
+    //     <span key={item.id} className="block">
+    //       <Link
+    //         to={item.to}
+    //         target={item.target}
+    //         onClick={onClose}
+    //         className={({isActive}) =>
+    //           isActive ? 'pb-1 border-b -mb-px' : 'pb-1'
+    //         }
+    //       >
+    //         <Text as="span" size="copy">
+    //           {item.title}
+    //         </Text>
+    //       </Link>
+    //     </span>
+    //   ))}
+    // </nav>
   );
 }
 
