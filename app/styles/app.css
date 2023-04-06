@@ -98,6 +98,9 @@ a:hover {
 .heroSlider-sec .swiper-button-next {
   color: #ffffff;
 }
+.heroSlider-sec .h-screen{
+  height: 82vh;
+}
 .heroSlider-sec .swiper-button-next:after,
 .heroSlider-sec .swiper-rtl .swiper-button-prev:after,
 .heroSlider-sec .swiper-button-next:after,
