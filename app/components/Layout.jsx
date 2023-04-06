@@ -186,7 +186,7 @@ function MobileHeader({title, isHome, openCart, openMenu}) {
         isHome
           ? ''
           : ''
-      } site-header fixed top-0 inset-x-0 z-50 bg-white ml-20 mr-20 mt-[50px] shadow-lg`}
+      } site-header fixed top-0 inset-x-0 z-50 bg-white ml-0 mr-0 lg:ml-20 lg:mr-20 lg:mt-[50px] mt-[0px] shadow-lg`}
     >
       <div className='container py-4 mx-auto'>
       <div className="flex items-center justify-between w-full gap-4">
@@ -384,26 +384,26 @@ function Footer({menu}) {
       role="contentinfo"
       // className={`grid min-h-[25rem] items-start grid-flow-row w-full gap-6 py-8 px-6 md:px-8 lg:px-12 md:gap-8 lg:gap-12 grid-cols-1 md:grid-cols-2 lg:grid-cols-${itemsCount}
       //   bg-primary dark:bg-contrast dark:text-primary text-contrast overflow-hidden`}
-      className='pt-[64px] pb-[52px] bg-[#EDEDED] pl-20 pr-20'
+      className='pt-[64px] pb-[52px] bg-[#EDEDED] '
     >
       <div className='container'>
       <div className='flex justify-between gap-4'>
-      <div className="w-full mx-auto ">
-        <div className="md:flex md:justify-between">
-          <div className="mb-6 md:mb-0">
-              <div className="flex flex-wrap items-center">
-                  <h3 className='text-[#00795C] w-full font-bold text-5xl mb-3'>Updates in deine Inbox</h3>                 
+      <div className="w-full mx-auto">
+        <div className="pr-0 xl:pr-16 xl:flex md:justify-between">
+          <div className="pr-0 mb-6 md:mb-0 xl:pr-5">
+              <div className="flex flex-wrap items-center ">
+                  <h3 className='text-[#00795C] w-full font-bold lg:text-5xl text-3xl mb-3'>Updates in deine Inbox</h3>                 
                   <p className="font-normal  text-[#595959] w-full text-[19px]">Bleib auf dem laufenden mit den letzten Ereignissen.</p>
               </div>
-              <form >
-                <input type="email" id="email" class="bg-transparent border border-b-[1] text-[#CCCCCC] text-base  focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Email" required />
+              <form className='mt-8 mb-10' >
+                <input type="email" id="email" class="bg-transparent border-b-[1px] font-normal border-[#999999] text-[#000] text-base placeholder:text-[#999] focus:ring-black-500 focus:border-black-500 block w-full max-w-[576px] max-w-sm-full p-0 focus:bordr-0 focus:outline-none focus:border-b-[1px] focus:border-[#000] dark:placeholder-gray-400  dark:focus:ring-black-500 dark:focus:border-black-500" placeholder="Email" required />
               </form>
           </div>
-          <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+          <div className="grid grid-cols-2 gap-8 lg:gap-6 lg:grid-cols-3">
               <div>
-                  <h2 className="mb-8 text-[26] font-bold capitalize text-[#00795C]">Shopfinder</h2>
+                  <h2 className="mb-8 lg:text-[26px] text-[22px] font-bold capitalize text-[#00795C]">Shopfinder</h2>
 
-                  <h2 className="mb-8 text-[26] font-bold capitalize text-[#00795C]">Produkte</h2>
+                  <h2 className="mb-3 lg:text-[26px] text-[22px] font-bold capitalize text-[#00795C]">Produkte</h2>
                   
                   <ul className="font-normal text-base text-[#595959]">
                       <li className="mb-2">
@@ -421,13 +421,13 @@ function Footer({menu}) {
                   </ul>
               </div>
               <div>
-                  <h2 className="mb-8 text-[26] font-bold capitalize text-[#00795C]">Ratgeber</h2>
-                  <h2 className="mb-8 text-[26] font-bold capitalize text-[#00795C]">Story</h2>
+                  <h2 className="mb-8 lg:text-[26px] text-[22px] font-bold capitalize text-[#00795C]">Ratgeber</h2>
+                  <h2 className="mb-8 lg:text-[26px] text-[22px] font-bold capitalize text-[#00795C]">Story</h2>
 
                   
               </div>
               <div>
-                  <h2 className="mb-3 text-[26] font-bold capitalize text-[#00795C]">Gruppe</h2>
+                  <h2 className="mb-3 lg:text-[26px] text-[22px] font-bold capitalize text-[#00795C]">Gruppe</h2>
                   <ul className="font-normal text-base text-[#595959]">
                       <li className='mb-2'>
                           <a href="#" className="hover:underline hover:text-[#00795C]">Careers</a>
@@ -454,6 +454,7 @@ function Footer({menu}) {
               </div>
           </div>
       </div>
+      <div className='mt-[40px] lg:mt-[-80px]'>
       <div className='flex mb-6'> 
          <p className="font-normal text-base text-[#595959] flex gap-4 items-center">
            <span>
@@ -472,20 +473,17 @@ function Footer({menu}) {
 
           </span> <a href="#" className="hover:underline hover:text-[#00795C] font-normal text-base text-[#595959]">Contact us </a>  </p> 
       </div>
-
-      <div className='flex mb-6'> 
+      <div className='flex mb-10'> 
          <p className="font-normal text-base text-[#595959] flex gap-4 items-center">
            <span>
-           
+            <img className='' src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/lang-icon.svg?v=1680775164" alt="" />
           </span> <a href="#" className="hover:underline hover:text-[#00795C] font-normal text-base text-[#595959]">Deutsch </a>  </p> 
       </div>
         <div className='flex mb-12'> 
           <span className="text-[15.94px] font-normal sm:text-center text-[#595959]">© kybun Joya 2023          </span>
-      </div>
-      
-      <div className="sm:flex sm:items-center sm:justify-between">
-         
-          <ul className="font-normal text-base  text-[#595959] flex gap-9">
+      </div>      
+      <div className="sm:flex sm:items-center sm:justify-between">         
+          <ul className="font-normal text-base  text-[#595959] flex gap-3 lg:gap-9 flex-wrap">
                       <li>
                           <a href="#" className="hover:underline hover:text-[#00795C]">Terms & conditions</a>
                       </li>
@@ -518,6 +516,7 @@ function Footer({menu}) {
               </a>
             
           </div>
+      </div>
       </div>
     </div>
       </div>
