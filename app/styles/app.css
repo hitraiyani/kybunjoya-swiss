@@ -3,6 +3,7 @@
 
 html{
     padding-right: 0 !important;
+    overflow: auto !important;
 }
 body {
   font-family: 'Roboto', sans-serif;
@@ -20,7 +21,7 @@ h6 {
 }
 
 a:hover {
-  color: #63beaa;
+  color: #00795C;
 }
 
 .container {

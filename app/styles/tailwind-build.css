@@ -2146,6 +2146,10 @@ video {
     width: 60%;
   }
 
+  .lg\:w-auto {
+    width: auto;
+  }
+
   .lg\:scroll-px-12 {
     scroll-padding-left: 3rem;
     scroll-padding-right: 3rem;
