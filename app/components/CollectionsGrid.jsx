@@ -142,12 +142,12 @@ export function CollectionsGrid({collections, title = '', ...props}) {
               <h2 className='title text-[#595959] text-[25px] md:mb-[40px] xl:mb-[83px] font-medium'>Quick Links</h2>
               <div className='quick-link-list'>
                 <ul>
-                  <li><a href="" className='text-[30px] md:text-[30px] lg:text-[34px] xl:text-[50px] text-black hover:text[#00795C] block tracking-[-0.97152px]'>Careers</a></li>
-                  <li><a href="" className='text-[30px] md:text-[30px] lg:text-[34px] xl:text-[50px] text-black hover:text[#00795C] block tracking-[-0.97152px]'>Schweizer Schuhproduktion</a></li>
-                  <li><a href="" className='text-[30px] md:text-[30px] lg:text-[34px] xl:text-[50px] text-black hover:text[#00795C] block tracking-[-0.97152px]'>Luftkissen Technologie</a></li>
-                  <li><a href="" className='text-[30px] md:text-[30px] lg:text-[34px] xl:text-[50px] text-black hover:text[#00795C] block tracking-[-0.97152px]'>Sustainability</a></li>
-                  <li><a href="" className='text-[30px] md:text-[30px] lg:text-[34px] xl:text-[50px] text-black hover:text[#00795C] block tracking-[-0.97152px]'>Brands</a></li>
-                  <li><a href="" className='text-[30px] md:text-[30px] lg:text-[34px] xl:text-[50px] text-black hover:text[#00795C] block tracking-[-0.97152px]'>Partner Werden</a></li>
+                  <li><a href="" className='text-[30px] md:text-[30px] lg:text-[34px] xl:text-[50px] text-black hover:text[#00795C] block tracking-[-0.97152px] leading-none mb-5'>Careers</a></li>
+                  <li><a href="" className='text-[30px] md:text-[30px] lg:text-[34px] xl:text-[50px] text-black hover:text[#00795C] block tracking-[-0.97152px] leading-none mb-5'>Schweizer Schuhproduktion</a></li>
+                  <li><a href="" className='text-[30px] md:text-[30px] lg:text-[34px] xl:text-[50px] text-black hover:text[#00795C] block tracking-[-0.97152px] leading-none mb-5'>Luftkissen Technologie</a></li>
+                  <li><a href="" className='text-[30px] md:text-[30px] lg:text-[34px] xl:text-[50px] text-black hover:text[#00795C] block tracking-[-0.97152px] leading-none mb-5'>Sustainability</a></li>
+                  <li><a href="" className='text-[30px] md:text-[30px] lg:text-[34px] xl:text-[50px] text-black hover:text[#00795C] block tracking-[-0.97152px] leading-none mb-5'>Brands</a></li>
+                  <li><a href="" className='text-[30px] md:text-[30px] lg:text-[34px] xl:text-[50px] text-black hover:text[#00795C] block tracking-[-0.97152px] leading-none mb-5'>Partner Werden</a></li>
                 </ul>
               </div>
             </div>
