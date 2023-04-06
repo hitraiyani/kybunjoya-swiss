@@ -130,7 +130,7 @@ export default function Homepage() {
                 src='https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Picture_1.png_1.png?v=1680761419'
               ></img>
               <div className="img-overlay absolute w-full h-2/4 inset-x-0 bottom-0"></div>
-              <div className="slider-content absolute bottom-12 lg:bottom-28 left-5 md:left-20"><h2 className="title text-white font-extrabold mb-6"><p>Therapieren<br />Statt Operieren </p></h2><h4 className="sub-title text-white font-medium mb-6 "><p>Jetzt mit CloudTec™ </p></h4><a className="btn bg-white text-black font-medium text-lg lg:py-6 lg:px-14 py-4 px-8 hover:bg-black hover:text-white inline-block transition-all" href="/">Show now</a></div>
+              <div className="slider-content absolute bottom-12 lg:bottom-28 left-5 md:left-20"><h2 className="title text-white font-extrabold mb-6"><p>Therapieren<br />Statt Operieren </p></h2><h4 className="sub-title text-white font-medium mb-6 "><p>Neuen Modelle entdecken </p></h4><a className="btn bg-white text-black font-medium text-lg lg:py-6 lg:px-14 py-4 px-8 hover:bg-black hover:text-white inline-block transition-all" href="/">Show now</a></div>
             </div>
           </div>
         </div>
