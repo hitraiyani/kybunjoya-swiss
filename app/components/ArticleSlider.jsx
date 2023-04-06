@@ -10,9 +10,7 @@ export function ArticleSlider({ articles }) {
     return (
         <section>
             <div className="container">
-                <Heading as="h1" width="narrow" size="heading" className="inline-block">
-                        Neues und Aktuelles
-                </Heading>
+                <h3 className='text-[#00795C] w-full font-bold text-2xl mb-3'>Neues und Aktuelles</h3>   
                 <Swiper
                     modules={[Navigation, Scrollbar, A11y, Autoplay]}
                     slidesPerView={3}

@@ -267,7 +267,7 @@ export const HOMEPAGE_FEATURED_PRODUCTS_QUERY = `#graphql
 export const HOMEPAGE_ARTICLE_SLIDER_QUERY = `#graphql
   query homepageArticleSliderQuery($country: CountryCode, $language: LanguageCode)
   @inContext(country: $country, language: $language) {
-    articles(first : 10,  sortKey: UPDATED_AT) {
+    articles(first : 10) {
       edges {
         node {
           handle
