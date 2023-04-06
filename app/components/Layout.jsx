@@ -115,15 +115,46 @@ export function MenuDrawer({isOpen, onClose, menu}) {
 }
 
 function MenuMobileNav({menu, onClose}) {
+
+  useEffect(() => {
+      const links = document.querySelectorAll('.fcz-menu-hover');
+      const images = document.querySelectorAll('.image-container img');
+      const defaultActive = document.querySelector("#defaultActive")
+    
+      console.log("sdfds", links);
+      console.log("images", images);
+
+      links.forEach((link) => {
+        link.addEventListener('mouseover', () => {
+          const image = link.dataset.image;
+          images.forEach((img) => {
+            console.log("img.dataset.image", img.dataset.image);
+            if (image === img.dataset.image) {
+              img.classList.add('active')
+            } else {
+              img.classList.remove('active')
+            }
+          });
+        });
+  
+        link.addEventListener('mouseout', () => {
+          images.forEach((img) => {
+            img.classList.remove('active')
+          });
+          defaultActive.classList.add('active');
+        });
+      });
+  }, []);
+
   return (
     <div className='mega-menu-wrap'>
       <div className='nav-list'>
         <ul className='columns-3'>
           <li>
-            <a href="#" className='title text-[#00795C] text-[26px] mb-[12px]'>Shopfinder</a>
+            <a href="#"  className='fcz-menu-hover title text-[#00795C] text-[26px] mb-[12px]' data-image="image1.jpg">Shopfinder</a>
           </li>
           <li>
-            <a href="#" className='title text-[#00795C] text-[26px] mb-[12px]'>Produkte</a>
+            <a href="#" className='fcz-menu-hover title text-[#00795C] text-[26px] mb-[12px]' data-image="image2.jpg">Produkte</a>
             <ul className='sub-menu'>
               <li><a href="#" className='text-[16px] text-[#595959] block leading-none'>kybun</a></li>
               <li><a href="#" className='text-[16px] text-[#595959] block leading-none'>Joya</a></li>

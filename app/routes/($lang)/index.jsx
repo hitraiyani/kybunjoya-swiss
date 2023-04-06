@@ -117,14 +117,17 @@ export default function Homepage() {
       <div className="heroSlider-sec">
         <div className="prodcut-items">
           <div className="prodcut-item">
-            <div className="flex flex-co w-full h-screen relative">
+            <div className="flex flex-co w-full h-screen relative image-container">
               <img
-                className="object-cover object-center w-full"
+                className="object-cover object-center w-full active"
+                id="defaultActive"
+                data-image="image2.jpg"
                 src='https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Picture_1_png.jpg?v=1680771114'
               ></img>
               <img
-                className="object-cover object-center w-full active"
-                src='https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Picture_1_png.jpg?v=1680771114'
+              data-image="image1.jpg"
+                className="object-cover object-center w-full "
+                src='https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Picture_1.png_1.png?v=1680761419'
               ></img>
               <div className="img-overlay absolute w-full h-2/4 inset-x-0 bottom-0"></div>
               <div className="slider-content absolute bottom-12 lg:bottom-28 left-5 md:left-20"><h2 className="title text-white font-extrabold mb-6"><p>Therapieren<br />Statt Operieren </p></h2><h4 className="sub-title text-white font-medium mb-6 "><p>Jetzt mit CloudTec™ </p></h4><a className="btn bg-white text-black font-medium text-lg lg:py-6 lg:px-14 py-4 px-8 hover:bg-black hover:text-white inline-block transition-all" href="/">Show now</a></div>
