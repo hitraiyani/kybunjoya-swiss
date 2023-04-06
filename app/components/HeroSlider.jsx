@@ -1,15 +1,14 @@
-import clsx from 'clsx';
-import {MediaFile} from '@shopify/hydrogen';
-import {Heading, Text, Link, ProductCard, Section} from '~/components';
+import {Link} from '~/components';
 import {Navigation, Pagination, Scrollbar, A11y, Autoplay} from 'swiper';
 import {Swiper, SwiperSlide} from 'swiper/react';
+import {toHTML} from '~/lib/utils';
 
 /**
  * Hero component that renders metafields attached to collection resources
  **/
-export function HeroSlider({sliderImageMetaObject}) {
+export function HeroSlider({sliderMetaObject}) {
   const sliderImages =
-    sliderImageMetaObject?.data?.image?.references?.edges.map(
+    sliderMetaObject?.data?.image?.references?.edges.map(
       (data) => data.node.image.url,
     );
 
@@ -37,19 +36,20 @@ export function HeroSlider({sliderImageMetaObject}) {
                   ></img>
                   <div className="img-overlay absolute w-full h-2/4 inset-x-0 bottom-0"></div>
                   <div className="slider-content absolute bottom-12 lg:bottom-28 left-5 md:left-20">
-                    <h2 className="title text-white font-extrabold mb-6">
-                      Therapieren <br />
-                      Statt Operieren
+                    <h2 className="title text-white font-extrabold mb-6" dangerouslySetInnerHTML={{
+                      __html: toHTML(sliderMetaObject?.data?.title?.value),
+                    }}>
                     </h2>
-                    <h4 className="sub-title text-white font-medium mb-6 ">
-                      Jetzt mit CloudTec™
+                    <h4 className="sub-title text-white font-medium mb-6 " dangerouslySetInnerHTML={{
+                      __html: toHTML(sliderMetaObject?.data?.sub_title?.value),
+                    }}>
                     </h4>
-                    <a
-                      href="#"
+                    <Link
+                      to={`${sliderMetaObject?.data?.cta?.value}`}
                       className="btn bg-white text-black font-medium text-lg lg:py-6 lg:px-14 py-4 px-8 hover:bg-black hover:text-white inline-block transition-all"
                     >
-                      Shop now
-                    </a>
+                     {sliderMetaObject?.data?.cta_label?.value}
+                    </Link>
                   </div>
                 </div>
               </div>

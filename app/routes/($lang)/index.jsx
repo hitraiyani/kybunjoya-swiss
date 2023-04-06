@@ -40,6 +40,12 @@ export async function loader({params, context}) {
     shop,
     heroSlider,
     fourMainSection,
+    articleSliders: await context.storefront.query(HOMEPAGE_ARTICLE_SLIDER_QUERY, {
+        variables: {
+          country,
+          language,
+        },
+      }),
     // primaryHero: hero,
     // featuredProducts: context.storefront.query(
     //   HOMEPAGE_FEATURED_PRODUCTS_QUERY,
@@ -80,6 +86,7 @@ export default function Homepage() {
   const {
     heroSlider,
     fourMainSection,
+    articleSliders,
     // primaryHero,
     // secondaryHero,
     // tertiaryHero,
@@ -90,6 +97,8 @@ export default function Homepage() {
   // TODO: skeletons vs placeholders
   const skeletons = getHeroPlaceholder([{}, {}, {}]);
 
+  console.log("articleSliders", articleSliders);
+
   // TODO: analytics
   // useServerAnalytics({
   //   shopify: {
@@ -99,7 +108,7 @@ export default function Homepage() {
 
   return (
     <>
-      <HeroSlider sliderImageMetaObject={heroSlider}/>
+      <HeroSlider sliderMetaObject={heroSlider}/>
       {fourMainSection && (
         <Suspense>
           <Await resolve={fourMainSection}>
@@ -241,6 +250,30 @@ export const HOMEPAGE_FEATURED_PRODUCTS_QUERY = `#graphql
   }
 `;
 
+
+export const HOMEPAGE_ARTICLE_SLIDER_QUERY = `#graphql
+  query homepageArticleSliderQuery($country: CountryCode, $language: LanguageCode)
+  @inContext(country: $country, language: $language) {
+    articles(first : 10,  sortKey: UPDATED_AT) {
+      edges {
+        node {
+          handle
+          image {
+              id
+              altText
+              url
+              width
+              height
+            }
+          publishedAt
+          title
+          content
+        }
+      }
+    }
+  }
+`;
+
 // @see: https://shopify.dev/api/storefront/latest/queries/collections
 export const FEATURED_COLLECTIONS_QUERY = `#graphql
   query homepageFeaturedCollections($country: CountryCode, $language: LanguageCode)
@@ -272,6 +305,18 @@ ${MEDIA_FRAGMENT}
       handle
       id
       type
+      title : field(key: "title") {
+        value
+      }
+      sub_title : field(key: "sub_title") {
+        value
+      }
+      cta : field(key: "cta") {
+        value
+      }
+      cta_label : field(key: "cta_label") {
+        value
+      }
       image : field(key: "image") {
         references(first: 15) {
           edges {
