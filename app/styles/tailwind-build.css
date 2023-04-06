@@ -725,6 +725,9 @@ video {
 .h-screen {
   height: 100vh;
 }
+.h-14 {
+  height: 3.5rem;
+}
 .max-h-0 {
   max-height: 0px;
 }
@@ -956,6 +959,12 @@ video {
 }
 .gap-8 {
   gap: 2rem;
+}
+.gap-20 {
+  gap: 5rem;
+}
+.gap-5 {
+  gap: 1.25rem;
 }
 .gap-x-6 {
   -moz-column-gap: 1.5rem;
@@ -1206,6 +1215,10 @@ video {
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
+.py-16 {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
 .pb-1 {
   padding-bottom: 0.25rem;
 }
@@ -1373,6 +1386,9 @@ video {
 }
 .opacity-80 {
   opacity: 0.8;
+}
+.opacity-5 {
+  opacity: 0.05;
 }
 .shadow-lg {
   --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
@@ -1945,6 +1961,14 @@ video {
     gap: 1.5rem;
   }
 
+  .lg\:gap-10 {
+    gap: 2.5rem;
+  }
+
+  .lg\:gap-8 {
+    gap: 2rem;
+  }
+
   .lg\:p-12 {
     padding: 3rem;
   }
@@ -1993,5 +2017,17 @@ video {
 
   .xl\:grid-rows-2 {
     grid-template-rows: repeat(2, minmax(0, 1fr));
+  }
+
+  .xl\:gap-20 {
+    gap: 5rem;
+  }
+
+  .xl\:gap-10 {
+    gap: 2.5rem;
+  }
+
+  .xl\:gap-16 {
+    gap: 4rem;
   }
 }
