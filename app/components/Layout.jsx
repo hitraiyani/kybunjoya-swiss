@@ -539,7 +539,7 @@ function Footer({menu}) {
                           <a href="https://customer-service.on-running.com/en-in/company_information" className="hover:underline hover:text-[#00795C]">Imprint</a>
                       </li>
                       <li>
-                          <a href="#https://hackerone.com/on" className="hover:underline hover:text-[#00795C]">Vulnerability reporting</a>
+                          <a href="https://hackerone.com/on" className="hover:underline hover:text-[#00795C]">Vulnerability reporting</a>
                       </li>
                       <li>
                           <a href="https://www.on-running.com/en-ca/" className="hover:underline hover:text-[#00795C]">Consent Settings</a>
