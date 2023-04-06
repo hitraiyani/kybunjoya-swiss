@@ -31,7 +31,7 @@ export function Drawer({heading, open, onClose, openFrom = 'right', children,cla
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <div className="fixed inset-0 bg-black bg-opacity-70" />
+          <div className="fixed inset-0 bg-black bg-opacity-0" />
         </Transition.Child>
 
         <div className="fixed inset-0">

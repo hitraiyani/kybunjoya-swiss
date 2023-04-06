@@ -14,6 +14,7 @@ export function HeroSlider({sliderMetaObject}) {
 
   return (
     <section className={`heroSlider-sec`}>
+
       <Swiper
         modules={[Navigation, Scrollbar, A11y, Autoplay]}
         slidesPerView={1}

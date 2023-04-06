@@ -634,12 +634,6 @@ video {
 .mb-8 {
   margin-bottom: 2rem;
 }
-.mb-\[12px\] {
-  margin-bottom: 12px;
-}
-.ml-0 {
-  margin-left: 0px;
-}
 .ml-2 {
   margin-left: 0.5rem;
 }
@@ -670,17 +664,14 @@ video {
 .mt-8 {
   margin-top: 2rem;
 }
-.mt-\[0px\] {
-  margin-top: 0px;
+.mt-\[50px\] {
+  margin-top: 50px;
+}
+.mb-\[83px\] {
+  margin-bottom: 83px;
 }
 .mt-\[28px\] {
   margin-top: 28px;
-}
-.mt-\[40px\] {
-  margin-top: 40px;
-}
-.mt-12 {
-  margin-top: 3rem;
 }
 .block {
   display: block;
@@ -1198,6 +1189,9 @@ video {
 .bg-opacity-75 {
   --tw-bg-opacity: 0.75;
 }
+.bg-opacity-0 {
+  --tw-bg-opacity: 0;
+}
 .bg-gradient-to-t {
   background-image: linear-gradient(to top, var(--tw-gradient-stops));
 }
@@ -1291,6 +1285,10 @@ video {
 .py-\[30px\] {
   padding-top: 30px;
   padding-bottom: 30px;
+}
+.px-5 {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
 }
 .pb-1 {
   padding-bottom: 0.25rem;
