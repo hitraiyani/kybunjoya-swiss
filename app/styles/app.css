@@ -38,7 +38,7 @@ a:hover {
 
 /* header css */
 .site-header .menu-toogle-btn {
-  color: #63beaa;
+  color: #00795C;
 }
 .site-header .menu-toggle-icon {
   width: 40px;
@@ -78,6 +78,18 @@ a:hover {
   margin-bottom: 20px;
   display: block;
   font-weight: 600;
+}
+.site-header{
+  transition: all 0.5s;
+}
+.site-header.header-sticky {
+  margin-top: 0;
+}
+
+@media (min-width:1023px) {
+  .header-sticky.mobile-menu-Drawer{
+    margin-top: 92px;
+  }
 }
 @media (max-width:1023px) {
   .mobile-menu-Drawer{
@@ -274,6 +286,3 @@ a:hover {
 }
 /* End CollectionsGrid section  */
 
-.site-header.header-sticky {
-  margin-top: 0;
-}
