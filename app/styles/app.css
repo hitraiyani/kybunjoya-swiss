@@ -255,3 +255,34 @@ a:hover {
 .site-header.header-sticky {
   margin-top: 0;
 }
+
+.article-slide .swiper-button-next,
+.article-slide .swiper-button-prev{
+  color: #00795C;
+}
+
+.article-slide .article-slider{
+  /* padding-left: 50px;
+  padding-right: 50px;
+  margin-left: -50px;
+  margin-right: -50px; */
+}
+
+.article-slide .swiper-button-next{
+  /* margin-top: 0px;
+  position: absolute;
+  top: 50%;
+  right: -40px;
+  width: 45px;
+  height: 45px;
+  transform: translateY(-50%); */
+}
+.article-slide .swiper-button-prev{
+  /* position: absolute;
+  top: 50%;
+  left: -40px;
+  width: 45px;
+  height: 45px;
+  transform: translateY(-50%);
+  margin-top: 0px; */
+}

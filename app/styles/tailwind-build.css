@@ -767,15 +767,6 @@ video {
 .h-screen {
   height: 100vh;
 }
-<<<<<<< Updated upstream
-=======
-.h-\[573px\] {
-  height: 573px;
-}
-.h-\[300px\] {
-  height: 300px;
-}
->>>>>>> Stashed changes
 .max-h-0 {
   max-height: 0px;
 }
@@ -791,15 +782,6 @@ video {
 .max-h-full {
   max-height: 100%;
 }
-<<<<<<< Updated upstream
-=======
-.max-h-\[573px\] {
-  max-height: 573px;
-}
-.max-h-\[300px\] {
-  max-height: 300px;
-}
->>>>>>> Stashed changes
 .min-h-\[25rem\] {
   min-height: 25rem;
 }
@@ -2354,10 +2336,6 @@ video {
     max-height: 400px;
   }
 
-  .xl\:max-h-\[400px\] {
-    max-height: 400px;
-  }
-
   .xl\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -2385,13 +2363,10 @@ video {
   .xl\:text-\[50px\] {
     font-size: 50px;
   }
-<<<<<<< Updated upstream
 
   .xl\:text-\[55px\] {
     font-size: 55px;
   }
-=======
->>>>>>> Stashed changes
 }
 @media (min-width: 1536px) {
 
