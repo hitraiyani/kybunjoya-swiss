@@ -45,7 +45,6 @@ a:hover {
 .heroSlider-sec .swiper-button-prev,
 .heroSlider-sec .swiper-button-next {
   color: #ffffff;
-  top: 40%;
 }
 .heroSlider-sec .swiper-button-next:after,
 .heroSlider-sec .swiper-rtl .swiper-button-prev:after,
@@ -111,7 +110,6 @@ a:hover {
 /* barnd section  */
 /* End barnd section  */
 
-
 /* footer css */
 .site-footer {
   background-color: #3a3e3f;
@@ -127,42 +125,68 @@ a:hover {
     grid-row: span 2 / span 2;
   }
 }
-.collectionsGrid-item:nth-child(2) a,
-.collectionsGrid-item:nth-child(1) a {
-  height: 560px;
+.collectionsGrid-item:nth-child(2) > a,
+.collectionsGrid-item:nth-child(1) > a {
+  padding-bottom: 148%;
 }
 .collectionsGrid-item,
-.collectionsGrid-item a,
+.collectionsGrid-item > a,
 .collectionsGrid-item img {
   border-radius: 0.5rem;
 }
-.collectionsGrid-item .btn {
-  max-width: 220px;
-  width: 100%;
+.collectionsGrid-item .img-overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(118, 118, 118, 0) 0%,
+    rgba(0, 0, 0, 0.45) 53.13%,
+    rgba(0, 0, 0, 0.65) 100%
+  );
 }
-.collectionsGrid-item:nth-child(3) img {
-  object-fit: contain;
-  object-position: top left;
+.collectionsGrid-item a:hover svg {
+  color: #00795c;
+  background-color: #fff;
 }
-.collectionsGrid-item:nth-child(3) {
-  background: #ebebeb;
+.collectionsGrid-item {
+  box-shadow: 0px 0px 0.9821px rgba(0, 0, 0, 0.05),
+    0px 3.9284px 7.8568px rgba(0, 0, 0, 0.1);
+}
+.quick-links-sec .collectionsGrid-item > a {
+  padding-bottom: 40% !important;
+}
+.quick-links-sec {
+  border-radius: 0.5rem;
+}
+@media (min-width: 1024px) {
+  .quick-links-sec .collectionsGrid-item,
+  .quick-links-sec .collectionsGrid-item > a,
+  .quick-links-sec .collectionsGrid-item img {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}
+@media (max-width: 1023px) {
+  .quick-links-sec .collectionsGrid-item,
+  .quick-links-sec .collectionsGrid-item > a,
+  .quick-links-sec .collectionsGrid-item img {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
 }
 @media (max-width: 1279px) {
-  .collectionsGrid-item a {
-    height: auto !important;
-    padding-bottom: 60%;
+  .collectionsGrid-item > a {
+    padding-bottom: 80% !important;
   }
 }
 @media (max-width: 767px) {
   .collectionsGrid-item {
     width: 100%;
   }
-  .collectionsGrid-item a {
+  .collectionsGrid-item > a {
     height: auto !important;
-    padding-bottom: 96%;
+    padding-bottom: 76% !important;
   }
-  .collectionsGrid-item:nth-child(3) a {
-    padding-bottom: 59% !important;
+  .quick-links-sec .collectionsGrid-item > a {
+    padding-bottom: 60% !important;
   }
 }
 /* End CollectionsGrid section  */
