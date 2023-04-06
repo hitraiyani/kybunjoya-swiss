@@ -485,25 +485,22 @@ function Footer({menu}) {
       <div className="sm:flex sm:items-center sm:justify-between">         
           <ul className="font-normal text-base  text-[#595959] flex gap-3 lg:gap-9 flex-wrap">
                       <li>
-                          <a href="#" className="hover:underline hover:text-[#00795C]">Terms & conditions</a>
+                          <a href="https://customer-service.on-running.com/en-in/terms_and_conditions" className="hover:underline hover:text-[#00795C]">Terms & conditions</a>
                       </li>
                       <li>
-                          <a href="#" className="hover:underline hover:text-[#00795C]">Privacy policy</a>
+                          <a href="https://customer-service.on-running.com/en-in/privacy_policy" className="hover:underline hover:text-[#00795C]">Privacy policy</a>
                       </li>
                       <li>
-                          <a href="#" className="hover:underline hover:text-[#00795C]">Accessibility</a>
+                          <a href="https://customer-service.on-running.com/en-in/accessibility" className="hover:underline hover:text-[#00795C]">Accessibility</a>
                       </li>
                       <li>
-                          <a href="#" className="hover:underline hover:text-[#00795C]">Imprint</a>
+                          <a href="https://customer-service.on-running.com/en-in/company_information" className="hover:underline hover:text-[#00795C]">Imprint</a>
                       </li>
                       <li>
-                          <a href="#" className="hover:underline hover:text-[#00795C]">Vulnerability reporting</a>
+                          <a href="#https://hackerone.com/on" className="hover:underline hover:text-[#00795C]">Vulnerability reporting</a>
                       </li>
                       <li>
-                          <a href="#" className="hover:underline hover:text-[#00795C]">Partner Werden</a>
-                      </li>
-                      <li>
-                          <a href="#" className="hover:underline hover:text-[#00795C]">Consent Settings</a>
+                          <a href="https://www.on-running.com/en-ca/" className="hover:underline hover:text-[#00795C]">Consent Settings</a>
                       </li>
                   </ul>
           <div className="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
