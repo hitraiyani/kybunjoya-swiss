@@ -9,6 +9,7 @@ import {
   IconSearch,
   Heading,
   IconMenu,
+  IconClose,
   IconCaret,
   Section,
   CountrySelector,
@@ -19,7 +20,7 @@ import {
 import {useParams, Form, Await, useMatches} from '@remix-run/react';
 import {useWindowScroll} from 'react-use';
 import {Disclosure} from '@headlessui/react';
-import {Suspense, useEffect, useMemo} from 'react';
+import {Suspense, useEffect, useMemo, useState} from 'react';
 import {useIsHydrated} from '~/hooks/useIsHydrated';
 import {useCartFetchers} from '~/hooks/useCartFetchers';
 
@@ -83,6 +84,7 @@ function Header({title, menu}) {
         title={title}
         openCart={openCart}
         openMenu={openMenu}
+        isMenuOpen={isMenuOpen}
       />
     </>
   );
@@ -121,14 +123,11 @@ function MenuMobileNav({menu, onClose}) {
       const images = document.querySelectorAll('.image-container img');
       const defaultActive = document.querySelector("#defaultActive")
     
-      console.log("sdfds", links);
-      console.log("images", images);
 
       links.forEach((link) => {
         link.addEventListener('mouseover', () => {
           const image = link.dataset.image;
           images.forEach((img) => {
-            console.log("img.dataset.image", img.dataset.image);
             if (image === img.dataset.image) {
               img.classList.add('active')
             } else {
@@ -205,8 +204,20 @@ function MenuMobileNav({menu, onClose}) {
   );
 }
 
-function MobileHeader({title, isHome, openCart, openMenu}) {
+function MobileHeader({title, isHome, openCart, openMenu, isMenuOpen}) {
   // useHeaderStyleFix(containerStyle, setContainerStyle, isHome);
+  const [isScrolled, setisScrolled] = useState(false);
+  
+  useEffect(() => {
+        window.addEventListener('scroll', () => {
+          if(window.scrollY >  50){
+            setisScrolled(true);
+          } else {
+            setisScrolled(false);
+          }
+      });
+  },[]);
+
 
   const params = useParams();
 
@@ -217,7 +228,7 @@ function MobileHeader({title, isHome, openCart, openMenu}) {
         isHome
           ? ''
           : ''
-      } site-header fixed top-0 inset-x-0 z-50 bg-white ml-0 mr-0 lg:ml-20 lg:mr-20 lg:mt-[50px] mt-[0px] shadow-lg rounded-lg`}
+      } site-header fixed top-0 inset-x-0 z-50 bg-white ml-0 mr-0 lg:ml-20 lg:mr-20 lg:mt-[50px] mt-[0px] shadow-lg rounded-lg ${isScrolled ? 'header-sticky' : ''}`}
     >
       <div className='container py-4 mx-auto'>
       <div className="flex items-center justify-between w-full gap-4">
@@ -231,7 +242,7 @@ function MobileHeader({title, isHome, openCart, openMenu}) {
           onClick={openMenu}
           className="relative flex items-center justify-center w-10 h-10 menu-toogle-btn"
         >
-          <IconMenu className={'menu-toggle-icon'} />
+          {isMenuOpen ? (<IconClose aria-label="Close panel" />) : (<IconMenu className={'menu-toggle-icon'} />)}
         </button>
         {/* <Form
           method="get"

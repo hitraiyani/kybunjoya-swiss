@@ -251,3 +251,7 @@ a:hover {
   }
 }
 /* End CollectionsGrid section  */
+
+.site-header.header-sticky {
+  margin-top: 0;
+}
