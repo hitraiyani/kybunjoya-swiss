@@ -48,6 +48,7 @@ a:hover {
   padding-left: 20px;
   padding-right: 20px;
 }
+
 .mobile-menu-Drawer{
   background: rgba(255, 255, 255, 0.9);
   /* Drop Shadow */
@@ -78,6 +79,11 @@ a:hover {
   margin-bottom: 20px;
   display: block;
   font-weight: 600;
+}
+@media (min-width:1024px) {
+  .header-sticky.mobile-menu-Drawer{
+    margin-top: 92px;
+  }
 }
 @media (max-width:1023px) {
   .mobile-menu-Drawer{
@@ -130,10 +136,32 @@ a:hover {
 }
 .heroSlider-sec img{
   display: none;
+  animation: fadeOut 0.5s linear;
 }
 .heroSlider-sec img.active{
   display: block;
+  animation: fadeIn 0.5s linear;
 }
+@-webkit-keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+@-webkit-keyframes fadeOut {
+  0% {opacity: 1;}
+  100% {opacity: 0;}
+}
+
+@keyframes fadeOut {
+  0% {opacity: 1;}
+  100% {opacity: 0;}
+}
+
 @media (min-width: 1024px) {
   .heroSlider-sec .swiper-button-prev,
   .heroSlider-sec .swiper-rtl .swiper-button-next {
@@ -251,7 +279,9 @@ a:hover {
   }
 }
 /* End CollectionsGrid section  */
-
+.site-header{
+  transition: all 0.5s;
+}
 .site-header.header-sticky {
   margin-top: 0;
 }
