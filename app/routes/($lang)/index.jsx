@@ -117,7 +117,7 @@ export default function Homepage() {
       <div className="heroSlider-sec">
         <div className="prodcut-items">
           <div className="prodcut-item">
-            <div className="flex flex-co w-full h-screen relative image-container">
+            <div className="relative flex w-full h-screen flex-co image-container">
               <img
                 className="object-cover object-center w-full active"
                 id="defaultActive"
@@ -129,8 +129,8 @@ export default function Homepage() {
                 className="object-cover object-center w-full "
                 src='https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Picture_1.png_1.png?v=1680761419'
               ></img>
-              <div className="img-overlay absolute w-full h-2/4 inset-x-0 bottom-0"></div>
-              <div className="slider-content absolute bottom-12 lg:bottom-28 left-5 md:left-20"><h2 className="title text-white font-extrabold mb-6"><p>Therapieren<br />Statt Operieren </p></h2><h4 className="sub-title text-white font-medium mb-6 "><p>Neuen Modelle entdecken </p></h4><a className="btn bg-white text-black font-medium text-lg lg:py-6 lg:px-14 py-4 px-8 hover:bg-black hover:text-white inline-block transition-all" href="/">Show now</a></div>
+              <div className="absolute inset-x-0 bottom-0 w-full img-overlay h-2/4"></div>
+              <div className="absolute slider-content bottom-12 lg:bottom-28 left-5 md:left-20"><h2 className="mb-6 font-extrabold text-white title"><p>Therapieren<br />Statt Operieren </p></h2><h4 className="mb-6 font-medium text-white sub-title "><p>Neuen Modelle entdecken </p></h4><a className="inline-block px-8 py-4 text-lg font-medium text-black transition-all bg-white btn lg:py-6 lg:px-14 hover:bg-black hover:text-white" href="/">Show now</a></div>
             </div>
           </div>
         </div>

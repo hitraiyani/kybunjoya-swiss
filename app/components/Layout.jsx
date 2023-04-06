@@ -134,11 +134,20 @@ function MenuMobileNav({menu, onClose}) {
       const images = document.querySelectorAll('.image-container img');
       const defaultActive = document.querySelector("#defaultActive")
     
+<<<<<<< Updated upstream
+=======
+      console.log("sdfds", links);
+      console.log("images", images);
+>>>>>>> Stashed changes
 
       links.forEach((link) => {
         link.addEventListener('mouseover', () => {
           const image = link.dataset.image;
           images.forEach((img) => {
+<<<<<<< Updated upstream
+=======
+            console.log("img.dataset.image", img.dataset.image);
+>>>>>>> Stashed changes
             if (image === img.dataset.image) {
               img.classList.add('active')
             } else {
