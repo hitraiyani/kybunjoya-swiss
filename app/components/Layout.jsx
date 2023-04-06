@@ -217,7 +217,7 @@ function MobileHeader({title, isHome, openCart, openMenu}) {
         isHome
           ? ''
           : ''
-      } site-header fixed top-0 inset-x-0 z-50 bg-white ml-0 mr-0 lg:ml-20 lg:mr-20 lg:mt-[50px] mt-[0px] shadow-lg`}
+      } site-header fixed top-0 inset-x-0 z-50 bg-white ml-0 mr-0 lg:ml-20 lg:mr-20 lg:mt-[50px] mt-[0px] shadow-lg rounded-lg`}
     >
       <div className='container py-4 mx-auto'>
       <div className="flex items-center justify-between w-full gap-4">
@@ -229,7 +229,7 @@ function MobileHeader({title, isHome, openCart, openMenu}) {
         </Link>
         <button
           onClick={openMenu}
-          className="relative flex items-center justify-center w-8 h-8 menu-toogle-btn"
+          className="relative flex items-center justify-center w-10 h-10 menu-toogle-btn"
         >
           <IconMenu className={'menu-toggle-icon'} />
         </button>
