@@ -26,8 +26,8 @@ export function ArticleSlider({ articles }) {
                         {articles?.edges?.map((article, index) => {
                             return (
                                 <SwiperSlide key={index}>
-                                    <div className="collectionsGrid-item relative">
-                                        <Link to={`#`} className="relative block h-10 overflow-hidden">
+                                    <div >
+                                        <Link to={`#`} className="relative block overflow-hidden">
                                         <div className="img-wrap">
                                         <img
                                                 className="object-cover object-center"
