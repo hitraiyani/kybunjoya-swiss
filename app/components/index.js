@@ -27,5 +27,6 @@ export {Pagination, getPaginationVariables, usePagination} from './Pagination';
 export {AddToCartButton} from './AddToCartButton';
 export {CollectionsGrid} from './CollectionsGrid';
 export {BrandGrid} from './BrandGrid';
+export {ExpandingCard} from './ExpandingCard';
 // Sue me
 export * from './Icon';

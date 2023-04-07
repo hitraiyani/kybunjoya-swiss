@@ -38,7 +38,7 @@ export function ArticleSlider({ articles }) {
                             return (
                                 <SwiperSlide key={index}>
                                     <div >
-                                        <Link to={`#`} className="relative block overflow-hidden">
+                                        <Link to={`#`} className="relative block overflow-hidden mb-5">
                                         <div className="img-wrap">
                                         <img
                                                 className="object-cover object-center w-full rounded-md aspect-square drop-shadow-md"
@@ -48,7 +48,7 @@ export function ArticleSlider({ articles }) {
                                         </Link>
                                     </div>
                                     <div className='max-w-[85%]'>
-                                        <p className=' text-[24px] text-black lg:text-[35px] w-full font-bold'>{article.node.title}</p>
+                                        <p className=' text-[24px] text-black lg:text-[35px] w-full font-bold leading-[1.2] mb-[15px]'>{article.node.title}</p>
                                         <p  className=' text-[14px]  text-black lg:text-[15px] w-full font-normal'>{article.node.content}</p>
                                     </div>
                                    

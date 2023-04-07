@@ -122,15 +122,32 @@ export default function Homepage() {
                 className="object-cover object-center w-full active"
                 id="defaultActive"
                 data-image="image2.jpg"
-                src='https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Picture_1_png.jpg?v=1680771114'
+                src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Picture_1_png.jpg?v=1680771114"
               ></img>
               <img
-              data-image="image1.jpg"
+                data-image="image1.jpg"
                 className="object-cover object-center w-full "
-                src='https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Picture_1.png_1.png?v=1680761419'
+                src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Picture_1.png_1.png?v=1680761419"
               ></img>
               <div className="absolute inset-x-0 bottom-0 w-full img-overlay h-2/4"></div>
-              <div className="absolute slider-content bottom-12 lg:bottom-28 left-5 md:left-20"><h2 className="mb-6 font-extrabold text-white title"><p>Therapieren<br />Statt Operieren </p></h2><h4 className="mb-6 font-medium text-white sub-title "><p>Neuen Modelle entdecken </p></h4><a className="inline-block px-8 py-4 text-lg font-medium text-black transition-all bg-white btn lg:py-6 lg:px-14 hover:bg-black hover:text-white" href="/">Show now</a></div>
+              <div className="absolute slider-content bottom-12 lg:bottom-28 left-5 md:left-20">
+                <h2 className="mb-6 font-extrabold text-white title">
+                  <p>
+                    Therapieren
+                    <br />
+                    Statt Operieren{' '}
+                  </p>
+                </h2>
+                <h4 className="mb-6 font-medium text-white sub-title ">
+                  <p>Neuen Modelle entdecken </p>
+                </h4>
+                <a
+                  className="inline-block px-8 py-4 text-lg font-medium text-black transition-all bg-white btn lg:py-6 lg:px-14 hover:bg-black hover:text-white"
+                  href="/"
+                >
+                  Show now
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -157,6 +174,9 @@ export default function Homepage() {
           </Await>
         </Suspense>
       )}
+
+     
+
       {/* {primaryHero && (
         <Hero {...primaryHero} height="full" top loading="eager" />
       )}
