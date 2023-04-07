@@ -39,7 +39,7 @@ export function Layout({children, layout}) {
         <main role="main" id="mainContent" className="flex-grow">
           {children}
         </main>
-      <Footer menu={layout?.footerMenu} />
+      <Footer menu={layout?.footerMenu} main_menu={layout?.headerMenu} />
     </>
   );
 }
@@ -128,9 +128,8 @@ export function MenuDrawer({isOpen, onClose, menu}) {
 }
 
 function MenuMobileNav({menu, onClose}) {
-
   useEffect(() => {
-      const links = document.querySelectorAll('.fcz-menu-hover');
+      const links = document.querySelectorAll('.kybunjoya-menu-hover');
       const images = document.querySelectorAll('.image-container img');
       const defaultActive = document.querySelector("#defaultActive")
     
@@ -145,6 +144,17 @@ function MenuMobileNav({menu, onClose}) {
               img.classList.remove('active')
             }
           });
+          setTimeout(() => {
+            let hasActive = false;
+            images.forEach((img) => {
+              if (img.classList.contains('active')) {
+                hasActive = true;
+              }
+            })
+            if (!hasActive) {
+              defaultActive.classList.add('active');
+            }
+          },10)
         });
   
         link.addEventListener('mouseout', () => {
@@ -160,59 +170,44 @@ function MenuMobileNav({menu, onClose}) {
     <div className='mega-menu-wrap'>
       <div className='nav-list'>
         <ul className='columns-1 md:columns-3'>
-          <li>
-            <a href="#"  className='fcz-menu-hover title text-[#00795C] text-[26px] mb-[12px]' data-image="image1.jpg">Shopfinder</a>
-          </li>
-          <li>
-            <a href="#" className='fcz-menu-hover title text-[#00795C] text-[26px] mb-[12px]' data-image="image2.jpg">Produkte</a>
-            <ul className='sub-menu'>
-              <li><a href="#" className='text-[16px] text-[#595959] block leading-none'>kybun</a></li>
-              <li><a href="#" className='text-[16px] text-[#595959] block leading-none'>Joya</a></li>
-              <li><a href="#" className='text-[16px] text-[#595959] block leading-none'>Matten</a></li>
-              <li><a href="#" className='text-[16px] text-[#595959] block leading-none'>UTR</a></li>
-            </ul>
-          </li>
-          <li>
-            <a href="#" className='title text-[#00795C] text-[26px] mb-[12px]'>Ratgeber</a>
-          </li>
-          <li>
-            <a href="#" className='title text-[#00795C] text-[26px] mb-[12px]'>Story</a>
-          </li>
-          <li>
-            <a href="#" className='title text-[#00795C] text-[26px] mb-[12px]'>Gruppe</a>
-            <ul className='sub-menu'>
-              <li><a href="#" className='text-[16px] text-[#595959] block leading-none'>Careers</a></li>
-              <li><a href="#" className='text-[16px] text-[#595959] block leading-none'>Schweizer Schuhproduktion</a></li>
-              <li><a href="#" className='text-[16px] text-[#595959] block leading-none'>Luftkissen Technologie</a></li>
-              <li><a href="#" className='text-[16px] text-[#595959] block leading-none'>Sustainability</a></li>
-              <li><a href="#" className='text-[16px] text-[#595959] block leading-none'>Brands</a></li>
-              <li><a href="#" className='text-[16px] text-[#595959] block leading-none'>Partner Werden</a></li>
-              <li><a href="#" className='text-[16px] text-[#595959] block leading-none'>Kontakt</a></li>
-            </ul>
-          </li>
+          {(menu?.items || []).map((item) => {
+            return (
+              <li key={item.id}>
+                <Link
+                  to={item.to}
+                  target={item.target}
+                  className='kybunjoya-menu-hover title text-[#00795C] text-[26px] mb-[12px]'
+                  data-image={item.title}
+                >
+                  {item.title}
+                </Link>
+                {item.items.length > 0 && (
+                  <SubMegaMenu menu_items={item.items} />
+                )}
+              </li>
+            );
+          })}
         </ul>
       </div>
     </div>
-    // <nav className="grid gap-4">
-    //   {/* Top level menu items */}
-    //   {(menu?.items || []).map((item) => (
-    //     <span key={item.id} className="block">
-    //       <Link
-    //         to={item.to}
-    //         target={item.target}
-    //         onClick={onClose}
-    //         className={({isActive}) =>
-    //           isActive ? 'pb-1 border-b -mb-px' : 'pb-1'
-    //         }
-    //       >
-    //         <Text as="span" size="copy">
-    //           {item.title}
-    //         </Text>
-    //       </Link>
-    //     </span>
-    //   ))}
-    // </nav>
   );
+}
+
+function SubMegaMenu({menu_items}) {
+
+  return (
+    <ul className='sub-menu'>
+       {(menu_items || []).map((item, key) => {
+            return(<li key={key}>
+              <Link
+                to={item.to}
+                target={item.target}
+                className='text-[16px] text-[#595959] block leading-none'
+              >{item.title}</Link>
+              </li>)
+       })}
+    </ul>
+  )
 }
 
 function MobileHeader({title, isHome, openCart, openMenu, isMenuOpen}) {
@@ -422,7 +417,29 @@ function Badge({openCart, dark, count}) {
   );
 }
 
-function Footer({menu}) {
+function FooterMainMenuSub({sub_menu_item}) {
+  return (
+    <ul className="font-normal text-base text-[#595959]">
+        {sub_menu_item.map((subItem, index) => (
+          <li className="mb-2" key={index}>
+              <Link
+                  to={subItem.to}
+                  target={subItem.target}
+                  className="hover:underline hover:text-[#00795C]"
+                >{subItem.title}</Link>
+          </li>
+        ))}
+    </ul>
+  )
+}
+
+function Footer({menu, main_menu}) {
+  const chunkSize = 2;
+  const mainMenuChunk = [];
+  for (let i = 0; i < main_menu?.items?.length; i += chunkSize) {
+      mainMenuChunk.push(main_menu?.items.slice(i, i + chunkSize));
+  }
+
   const isHome = useIsHomePath();
   const itemsCount = menu
     ? menu?.items?.length + 1 > 4
@@ -453,58 +470,22 @@ function Footer({menu}) {
               </form>
           </div>
           <div className="grid grid-cols-2 gap-8 lg:gap-8 lg:grid-cols-3">
-              <div>
-                  <h2 className="mb-8 lg:text-[26px] text-[22px] font-bold capitalize text-[#00795C]">Shopfinder</h2>
-
-                  <h2 className="mb-3 lg:text-[26px] text-[22px] font-bold capitalize text-[#00795C]">Produkte</h2>
-                  
-                  <ul className="font-normal text-base text-[#595959]">
-                      <li className="mb-2">
-                          <a href="#" className="hover:underline hover:text-[#00795C]">kybun</a>
-                      </li>
-                        <li className="mb-2">
-                          <a href="#" className="hover:underline hover:text-[#00795C]">Joya</a>
-                      </li>
-                        <li className="mb-2">
-                          <a href="#" className="hover:underline hover:text-[#00795C]">Matten</a>
-                      </li>
-                      <li>
-                          <a href="#" className="hover:underline hover:text-[#00795C]">UTR</a>
-                      </li>
-                  </ul>
-              </div>
-              <div>
-                  <h2 className="mb-8 lg:text-[26px] text-[22px] font-bold capitalize text-[#00795C]">Ratgeber</h2>
-                  <h2 className="mb-8 lg:text-[26px] text-[22px] font-bold capitalize text-[#00795C]">Story</h2>
-
-                  
-              </div>
-              <div>
-                  <h2 className="mb-3 lg:text-[26px] text-[22px] font-bold capitalize text-[#00795C]">Gruppe</h2>
-                  <ul className="font-normal text-base text-[#595959]">
-                      <li className='mb-2'>
-                          <a href="#" className="hover:underline hover:text-[#00795C]">Careers</a>
-                      </li>
-                      <li className='mb-2'>
-                          <a href="#" className="hover:underline hover:text-[#00795C]">Schweizer Schuhproduktion</a>
-                      </li>
-                      <li className='mb-2'>
-                          <a href="#" className="hover:underline hover:text-[#00795C]">Luftkissen Technologie</a>
-                      </li>
-                      <li className='mb-2'>
-                          <a href="#" className="hover:underline hover:text-[#00795C]">Sustainability</a>
-                      </li>
-                      <li className='mb-2'>
-                          <a href="#" className="hover:underline hover:text-[#00795C]">Brands</a>
-                      </li>
-                      <li className='mb-2'>
-                          <a href="#" className="hover:underline hover:text-[#00795C]">Partner Werden</a>
-                      </li>
-                      <li>
-                          <a href="#" className="hover:underline hover:text-[#00795C]">Kontakt</a>
-                      </li>
-                  </ul>
-              </div>
+            {(mainMenuChunk || []).map((menuitem, index) => {
+              return (
+                <div>
+                    {menuitem.map((item, index) => {
+                      return (
+                        <>
+                          <h2 key={index} className="mb-8 lg:text-[26px] text-[22px] font-bold capitalize text-[#00795C]">{item.title}</h2>
+                          {
+                              item.items.length > 0 && ( <FooterMainMenuSub sub_menu_item={item.items} />)
+                          }
+                        </>
+                      )
+                    })}
+                </div>
+              )
+            })}
           </div>
       </div>
       <div className='mt-[40px] lg:mt-[-80px]'>
@@ -533,29 +514,20 @@ function Footer({menu}) {
           </span> <a href="#" className="hover:underline hover:text-[#00795C] font-normal text-base text-[#595959]">Deutsch </a>  </p> 
       </div>
         <div className='flex mb-12'> 
-          <span className="text-[15.94px] font-normal sm:text-center text-[#595959]">© kybun Joya 2023          </span>
+          <span className="text-[15.94px] font-normal sm:text-center text-[#595959]">© kybun Joya {new Date().getFullYear()}          </span>
       </div>      
       <div className="sm:flex sm:items-center sm:justify-between">         
-          <ul className="font-normal text-base  text-[#595959] flex gap-3 lg:gap-9 flex-wrap">
-                      <li>
-                          <a href="https://customer-service.on-running.com/en-in/terms_and_conditions" className="hover:underline hover:text-[#00795C]">Terms & conditions</a>
-                      </li>
-                      <li>
-                          <a href="https://customer-service.on-running.com/en-in/privacy_policy" className="hover:underline hover:text-[#00795C]">Privacy policy</a>
-                      </li>
-                      <li>
-                          <a href="https://customer-service.on-running.com/en-in/accessibility" className="hover:underline hover:text-[#00795C]">Accessibility</a>
-                      </li>
-                      <li>
-                          <a href="https://customer-service.on-running.com/en-in/company_information" className="hover:underline hover:text-[#00795C]">Imprint</a>
-                      </li>
-                      <li>
-                          <a href="https://hackerone.com/on" className="hover:underline hover:text-[#00795C]">Vulnerability reporting</a>
-                      </li>
-                      <li>
-                          <a href="https://www.on-running.com/en-ca/" className="hover:underline hover:text-[#00795C]">Consent Settings</a>
-                      </li>
-                  </ul>
+                <ul className="font-normal text-base  text-[#595959] flex gap-3 lg:gap-9 flex-wrap">
+                  {(menu?.items || []).map((item, index) => (
+                    <li key={index}>
+                      <Link
+                        to={item.to}
+                        className="hover:underline hover:text-[#00795C]"
+                      >{item.title}</Link>
+                    </li>
+                  ))}
+
+                </ul>
           <div className="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
               <a href="#" className="text-gray-500 hover:text-gray-900 dark:hover:text-white">
               <svg width="50" height="50" viewBox="0 0 50 50" fill="none">

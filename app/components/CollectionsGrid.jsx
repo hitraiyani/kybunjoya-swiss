@@ -1,26 +1,29 @@
 import {Image} from '@shopify/hydrogen';
 import {Heading, Section, Grid, Link, ArrowRightLight} from '~/components';
+import { toHTML } from '~/lib/utils';
 
-export function CollectionsGrid({collections, title = '', ...props}) {
+export function CollectionsGrid({data, gruppeMenu}) {
+
+  const quickLinkMenu = gruppeMenu?.items?.slice(0, 6);
   return (
-    <Section {...props} heading={title} className={'collectionsGrid-sec'}>
+    <Section className={'collectionsGrid-sec'}>
       <div className="container">
-        <h1 className='text-[#00795C] text-[35px] lg:text-[40px] xl:text-[55px] tracking-[-0.97152px] mb-6'>Themenwelten</h1>
+        <h1 className='text-[#00795C] text-[35px] lg:text-[40px] xl:text-[55px] tracking-[-0.97152px] mb-6'>{data?.main_title?.value}</h1>
         <div className="md:grid md:grid-rows-2 xl:grid-rows-2 md:grid-flow-col gap-7 flex flex-col">
           <div className="collectionsGrid-item relative">
-            <Link to={`#`} className="relative block w-full overflow-hidden">
+            <Link to={`${data?.section_1_button_redirect?.value}`} className="relative block w-full overflow-hidden">
               <div className="img-wrap w-full h-full absolute inset-0">
                 <Image
-                  data={{
-                    url: 'https://cdn.shopify.com/s/files/1/0742/9688/5569/files/204_01031-weather_jacket-ss23-stratosphere_pearl-w-4x5-c-g4_png.png?v=1680769903',
-                  }}
+                  data={data?.section_1_image?.reference.image}
                   className="h-full w-full absolute inset-0 transition hover:duration-500 object-cover object-center"
                   alt=""
                 />
               </div>
               <div className="img-overlay absolute w-full h-2/4 inset-x-0 bottom-0"></div>
               <Heading className="flex flex-col font-normal text-[30px] lg:text-[34px] xl:text-[45px] text-white absolute bottom-0 left-0 p-5 btn gap-5 leading-none">
-                <span>Produkte</span>
+                <span dangerouslySetInnerHTML={{
+                  __html: toHTML(data?.section_1_text?.value),
+                }}></span>
                 <ArrowRightLight
                   className={
                     'w-12 h-12 border rounded-full p-2 text-white border-white transition-all'
@@ -30,47 +33,19 @@ export function CollectionsGrid({collections, title = '', ...props}) {
             </Link>
           </div>
           <div className="collectionsGrid-item relative">
-            <Link to={`#`} className="relative block w-full overflow-hidden">
+            <Link to={`${data?.section_2_button_redirect?.value}`} className="relative block w-full overflow-hidden">
               <div className="img-wrap w-full h-full absolute inset-0">
                 <Image
-                  data={{
-                    url: 'https://cdn.shopify.com/s/files/1/0742/9688/5569/files/homepage-shop_card-apparel-ss23-1_jpg.png?v=1680769904',
-                  }}
+                  data={data?.section_2_image?.reference.image}
                   className="h-full w-full absolute inset-0 transition hover:duration-500 object-cover object-center"
                   alt=""
                 />
               </div>
               <div className="img-overlay absolute w-full h-2/4 inset-x-0 bottom-0"></div>
               <Heading className="flex flex-col font-normal text-[30px] lg:text-[34px] xl:text-[45px] text-white absolute bottom-0 left-0 p-5 btn gap-5 leading-none">
-                <span>Verkaufstellen</span>
-                <ArrowRightLight
-                  className={
-                    'w-12 h-12 border rounded-full p-2 text-white border-white transition-all'
-                  }
-                />
-              </Heading>
-            </Link>
-          </div>
-          <div className="collectionsGrid-item relative">
-            <Link
-              to={`#`}
-              className="relative block w-full h-full overflow-hidden"
-            >
-              <div className="img-wrap w-full h-full absolute inset-0">
-                <Image
-                  data={{
-                    url: 'https://cdn.shopify.com/s/files/1/0742/9688/5569/files/SS22_Ultralight_Mid_Sock_WhiteBlack_MW_Editorial_03_jpg.png?v=1680769903',
-                  }}
-                  className="h-full w-full absolute inset-0 transition hover:duration-500 object-cover object-center"
-                  alt=""
-                />
-              </div>
-              <div className="img-overlay absolute w-full h-2/4 inset-x-0 bottom-0"></div>
-              <Heading className="flex flex-col font-normal text-[30px] lg:text-[34px] xl:text-[45px] text-white absolute bottom-0 left-0 p-5 btn gap-5 leading-none">
-                <span>
-                  Dr. kybun Joya <br />
-                  Ratgeber
-                </span>
+              <span dangerouslySetInnerHTML={{
+                  __html: toHTML(data?.section_2_text?.value),
+                }}></span>
                 <ArrowRightLight
                   className={
                     'w-12 h-12 border rounded-full p-2 text-white border-white transition-all'
@@ -81,14 +56,37 @@ export function CollectionsGrid({collections, title = '', ...props}) {
           </div>
           <div className="collectionsGrid-item relative">
             <Link
-              to={`#`}
+             to={`${data?.section_3_button_redirect?.value}`}
               className="relative block w-full h-full overflow-hidden"
             >
               <div className="img-wrap w-full h-full absolute inset-0">
                 <Image
-                  data={{
-                    url: 'https://cdn.shopify.com/s/files/1/0742/9688/5569/files/SS22_Ultralight_Mid_Sock_WhiteBlack_MW_Editorial_03.jpg_1.png?v=1680769903',
-                  }}
+                  data={data?.section_3_image?.reference.image}
+                  className="h-full w-full absolute inset-0 transition hover:duration-500 object-cover object-center"
+                  alt=""
+                />
+              </div>
+              <div className="img-overlay absolute w-full h-2/4 inset-x-0 bottom-0"></div>
+              <Heading className="flex flex-col font-normal text-[30px] lg:text-[34px] xl:text-[45px] text-white absolute bottom-0 left-0 p-5 btn gap-5 leading-none">
+               <span dangerouslySetInnerHTML={{
+                  __html: toHTML(data?.section_3_text?.value),
+                }}></span>
+                <ArrowRightLight
+                  className={
+                    'w-12 h-12 border rounded-full p-2 text-white border-white transition-all'
+                  }
+                />
+              </Heading>
+            </Link>
+          </div>
+          <div className="collectionsGrid-item relative">
+            <Link
+              to={`${data?.section_4_button_redirect?.value}`}
+              className="relative block w-full h-full overflow-hidden"
+            >
+              <div className="img-wrap w-full h-full absolute inset-0">
+                <Image
+                  data={data?.section_4_image?.reference.image}
                   className="h-full w-full absolute inset-0 transition hover:duration-500 object-cover object-center"
                   alt=""
                 />
@@ -97,15 +95,15 @@ export function CollectionsGrid({collections, title = '', ...props}) {
               <div className="flex absolute bottom-0 left-0 p-5 w-full items-end h-full">
                 <div className="content-img relative overflow-hidden w-2/4 h-full">
                   <Image
-                    data={{
-                      url: 'https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Mask_group.png?v=1680773998',
-                    }}
+                    data={data?.section_4_mask_image?.reference.image}
                     className="h-full w-full object-cover object-center"
                     alt=""
                   />
                 </div>
                 <Heading className="flex flex-col font-normal text-[30px] lg:text-[34px] xl:text-[45px] text-white leading-none p-5 btn w-2/4 gap-5">
-                  <span>Vision & Story</span>
+                <span dangerouslySetInnerHTML={{
+                  __html: toHTML(data?.section_4_text?.value),
+                }}></span>
                   <ArrowRightLight
                     className={
                       'w-12 h-12 border rounded-full p-2 text-white border-white transition-all'
@@ -130,7 +128,7 @@ export function CollectionsGrid({collections, title = '', ...props}) {
               </div>
               <div className="img-overlay absolute w-full h-2/4 inset-x-0 bottom-0"></div>
               <Heading className="flex flex-col font-normal text-[30px] lg:text-[34px] xl:text-[45px] text-white absolute bottom-0 left-0 p-5 btn gap-5 leading-none">
-                <span>Produkte</span>
+                <span>Gruppe</span>
                 <ArrowRightLight
                   className={
                     'w-12 h-12 border rounded-full p-2 text-white border-white transition-all'
@@ -142,12 +140,13 @@ export function CollectionsGrid({collections, title = '', ...props}) {
               <h2 className='title text-[#595959] text-[25px] mb-5 md:mb-[40px] xl:mb-[83px] font-medium'>Quick Links</h2>
               <div className='quick-link-list'>
                 <ul>
-                  <li><a href="" className='text-[30px] md:text-[30px] lg:text-[34px] xl:text-[50px] text-black hover:text[#00795C] block tracking-[-0.97152px] leading-none mb-5'>Careers</a></li>
-                  <li><a href="" className='text-[30px] md:text-[30px] lg:text-[34px] xl:text-[50px] text-black hover:text[#00795C] block tracking-[-0.97152px] leading-none mb-5'>Schweizer Schuhproduktion</a></li>
-                  <li><a href="" className='text-[30px] md:text-[30px] lg:text-[34px] xl:text-[50px] text-black hover:text[#00795C] block tracking-[-0.97152px] leading-none mb-5'>Luftkissen Technologie</a></li>
-                  <li><a href="" className='text-[30px] md:text-[30px] lg:text-[34px] xl:text-[50px] text-black hover:text[#00795C] block tracking-[-0.97152px] leading-none mb-5'>Sustainability</a></li>
-                  <li><a href="" className='text-[30px] md:text-[30px] lg:text-[34px] xl:text-[50px] text-black hover:text[#00795C] block tracking-[-0.97152px] leading-none mb-5'>Brands</a></li>
-                  <li><a href="" className='text-[30px] md:text-[30px] lg:text-[34px] xl:text-[50px] text-black hover:text[#00795C] block tracking-[-0.97152px] leading-none mb-5'>Partner Werden</a></li>
+                  {quickLinkMenu.map((item, index) => {
+                      return (
+                        <li key={index}>
+                          <Link to={`${item.to}`} className='text-[30px] md:text-[30px] lg:text-[34px] xl:text-[50px] text-black hover:text[#00795C] block tracking-[-0.97152px] leading-none mb-5'>{item.title}</Link>
+                        </li>
+                      )
+                  })}
                 </ul>
               </div>
             </div>

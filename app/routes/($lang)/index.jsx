@@ -1,6 +1,6 @@
 import {defer} from '@shopify/remix-oxygen';
 import {Suspense} from 'react';
-import {Await, useLoaderData} from '@remix-run/react';
+import {Await, useLoaderData, useMatches} from '@remix-run/react';
 import {
   ProductSwimlane,
   FeaturedCollections,
@@ -43,10 +43,17 @@ export async function loader({params, context}) {
       variables: {metaObjectId: 'gid://shopify/Metaobject/2003108161'},
     },
   );
+  const brandIcons = context.storefront.query(
+    HOMEPAGE_BRAND_ICONS_QUERY,
+    {
+      variables: {metaObjectId: 'gid://shopify/Metaobject/2168619329'},
+    },
+  );
 
   return defer({
     shop,
     heroSlider,
+    brandIcons,
     fourMainSection,
     articleSliders: context.storefront.query(HOMEPAGE_ARTICLE_SLIDER_QUERY, {
       variables: {
@@ -93,6 +100,7 @@ export async function loader({params, context}) {
 export default function Homepage() {
   const {
     heroSlider,
+    brandIcons,
     fourMainSection,
     articleSliders,
     // primaryHero,
@@ -101,6 +109,10 @@ export default function Homepage() {
     // featuredCollections,
     // featuredProducts,
   } = useLoaderData();
+  const [root] = useMatches();
+
+  const gruppeMenu = root?.data?.layout?.headerMenu?.items?.find((item) => item.title == 'Gruppe');
+
 
   // TODO: skeletons vs placeholders
   const skeletons = getHeroPlaceholder([{}, {}, {}]);
@@ -114,52 +126,24 @@ export default function Homepage() {
 
   return (
     <>
-      <div className="heroSlider-sec">
-        <div className="prodcut-items">
-          <div className="prodcut-item">
-            <div className="relative flex w-full h-screen flex-co image-container">
-              <img
-                className="object-cover object-center w-full active"
-                id="defaultActive"
-                data-image="image2.jpg"
-                src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Picture_1_png.jpg?v=1680771114"
-              ></img>
-              <img
-                data-image="image1.jpg"
-                className="object-cover object-center w-full "
-                src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Picture_1.png_1.png?v=1680761419"
-              ></img>
-              <div className="absolute inset-x-0 bottom-0 w-full img-overlay h-2/4"></div>
-              <div className="absolute slider-content bottom-12 lg:bottom-28 left-5 md:left-20">
-                <h2 className="mb-6 font-extrabold text-white title">
-                  <p>
-                    Therapieren
-                    <br />
-                    Statt Operieren{' '}
-                  </p>
-                </h2>
-                <h4 className="mb-6 font-medium text-white sub-title ">
-                  <p>Neuen Modelle entdecken </p>
-                </h4>
-                <a
-                  className="inline-block px-8 py-4 text-lg font-medium text-black transition-all bg-white btn lg:py-6 lg:px-14 hover:bg-black hover:text-white"
-                  href="/"
-                >
-                  Show now
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <Hero hereMetaObj={heroSlider}/>
       {/* <HeroSlider sliderMetaObject={heroSlider} /> */}
-      <BrandGrid />
+      {brandIcons && (
+        <Suspense>
+          <Await resolve={brandIcons}>
+            {({data}) => {
+              if (!data) return <></>;
+              return <BrandGrid data={data} />;
+            }}
+          </Await>
+        </Suspense>
+      )}
       {fourMainSection && (
         <Suspense>
           <Await resolve={fourMainSection}>
             {({data}) => {
               if (!data) return <></>;
-              return <CollectionsGrid data={data} />;
+              return <CollectionsGrid data={data} gruppeMenu={gruppeMenu} />;
             }}
           </Await>
         </Suspense>
@@ -174,66 +158,6 @@ export default function Homepage() {
           </Await>
         </Suspense>
       )}
-
-     
-
-      {/* {primaryHero && (
-        <Hero {...primaryHero} height="full" top loading="eager" />
-      )}
-      {featuredProducts && (
-        <Suspense>
-          <Await resolve={featuredProducts}>
-            {({products}) => {
-              if (!products?.nodes) return <></>;
-              return (
-                <ProductSwimlane
-                  products={products.nodes}
-                  title="Featured Products"
-                  count={4}
-                />
-              );
-            }}
-          </Await>
-        </Suspense>
-      )}
-
-      {secondaryHero && (
-        <Suspense fallback={<Hero {...skeletons[1]} />}>
-          <Await resolve={secondaryHero}>
-            {({hero}) => {
-              if (!hero) return <></>;
-              return <Hero {...hero} />;
-            }}
-          </Await>
-        </Suspense>
-      )}
-
-      {featuredCollections && (
-        <Suspense>
-          <Await resolve={featuredCollections}>
-            {({collections}) => {
-              if (!collections?.nodes) return <></>;
-              return (
-                <FeaturedCollections
-                  collections={collections.nodes}
-                  title="Collections"
-                />
-              );
-            }}
-          </Await>
-        </Suspense>
-      )}
-
-      {tertiaryHero && (
-        <Suspense fallback={<Hero {...skeletons[2]} />}>
-          <Await resolve={tertiaryHero}>
-            {({hero}) => {
-              if (!hero) return <></>;
-              return <Hero {...hero} />;
-            }}
-          </Await>
-        </Suspense>
-      )} */}
     </>
   );
 }
@@ -370,7 +294,31 @@ ${MEDIA_FRAGMENT}
       cta_label : field(key: "cta_label") {
         value
       }
+      menu_image_mapping : field(key: "menu_image_mapping") {
+        value
+      }
       image : field(key: "image") {
+        references(first: 15) {
+          edges {
+            node {
+              ...Media
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
+const HOMEPAGE_BRAND_ICONS_QUERY = `#graphql
+${MEDIA_FRAGMENT}
+  query homeStyleGuide($metaObjectId: ID!, $country: CountryCode, $language: LanguageCode)
+  @inContext(country: $country, language: $language) {
+    data : metaobject(id : $metaObjectId) {
+      handle
+      id
+      type
+      images : field(key: "images") {
         references(first: 15) {
           edges {
             node {
@@ -391,13 +339,16 @@ ${MEDIA_FRAGMENT}
       handle
       id
       type
+      main_title : field(key: "main_title") {
+        value
+      }
+      section_1_text : field(key: "section_1_text") {
+        value
+      }
       section_1_image : field(key: "section_1_image") {
         reference {
           ...Media
         }
-      }
-      section_1_button_text : field(key: "section_1_button_text") {
-        value
       }
       section_1_button_redirect : field(key: "section_1_button_redirect") {
         value
@@ -407,7 +358,7 @@ ${MEDIA_FRAGMENT}
           ...Media
         }
       }
-      section_2_button_text : field(key: "section_2_button_text") {
+      section_2_text : field(key: "section_2_text") {
         value
       }
       section_2_button_redirect : field(key: "section_2_button_redirect") {
@@ -418,7 +369,7 @@ ${MEDIA_FRAGMENT}
           ...Media
         }
       }
-      section_3_button_text : field(key: "section_3_button_text") {
+      section_3_text : field(key: "section_3_text") {
         value
       }
       section_3_button_redirect : field(key: "section_3_button_redirect") {
@@ -429,7 +380,12 @@ ${MEDIA_FRAGMENT}
           ...Media
         }
       }
-      section_4_button_text : field(key: "section_4_button_text") {
+      section_4_mask_image : field(key: "section_4_mask_image") {
+        reference {
+          ...Media
+        }
+      }
+      section_4_text : field(key: "section_4_text") {
         value
       }
       section_4_button_redirect : field(key: "section_4_button_redirect") {
