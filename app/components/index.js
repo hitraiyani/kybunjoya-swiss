@@ -28,6 +28,5 @@ export {AddToCartButton} from './AddToCartButton';
 export {CollectionsGrid} from './CollectionsGrid';
 export {BrandGrid} from './BrandGrid';
 export {ExpandingCard} from './ExpandingCard';
-export {NewSlider} from './NewSlider';
 // Sue me
 export * from './Icon';
