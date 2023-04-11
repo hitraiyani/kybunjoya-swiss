@@ -19,7 +19,7 @@ export {Link} from './Link';
 export {FeaturedCollections} from './FeaturedCollections';
 export {Hero} from './Hero';
 export {HeroSlider} from './HeroSlider';
-export {ArticleSlider} from './ArticleSlider';
+export {NewsSlider} from './NewsSlider';
 export {SortFilter} from './SortFilter';
 export {Grid} from './Grid';
 export {FeaturedProducts} from './FeaturedProducts';
@@ -28,5 +28,6 @@ export {AddToCartButton} from './AddToCartButton';
 export {CollectionsGrid} from './CollectionsGrid';
 export {BrandGrid} from './BrandGrid';
 export {ExpandingCard} from './ExpandingCard';
+export {NewSlider} from './NewSlider';
 // Sue me
 export * from './Icon';

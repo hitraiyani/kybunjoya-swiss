@@ -577,6 +577,9 @@ video {
 .z-50 {
   z-index: 50;
 }
+.float-right {
+  float: right;
+}
 .-m-4 {
   margin: -1rem;
 }
@@ -712,6 +715,9 @@ video {
 .mt-\[48px\] {
   margin-top: 48px;
 }
+.mt-\[85px\] {
+  margin-top: 85px;
+}
 .block {
   display: block;
 }
@@ -729,6 +735,9 @@ video {
 }
 .grid {
   display: grid;
+}
+.contents {
+  display: contents;
 }
 .hidden {
   display: none;
@@ -777,6 +786,9 @@ video {
 }
 .h-5 {
   height: 1.25rem;
+}
+.h-60 {
+  height: 15rem;
 }
 .h-8 {
   height: 2rem;
@@ -2267,6 +2279,10 @@ video {
 
   .lg\:mt-\[50px\] {
     margin-top: 50px;
+  }
+
+  .lg\:mt-\[85px\] {
+    margin-top: 85px;
   }
 
   .lg\:flex {

@@ -1,5 +1,5 @@
 import {defer} from '@shopify/remix-oxygen';
-import {Suspense} from 'react';
+import {Suspense, useEffect, useState} from 'react';
 import {Await, useLoaderData, useMatches} from '@remix-run/react';
 import {
   ProductSwimlane,
@@ -8,11 +8,12 @@ import {
   HeroSlider,
   CollectionsGrid,
   BrandGrid,
-  ArticleSlider,
+  NewsSlider,
 } from '~/components';
 import {MEDIA_FRAGMENT, PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
 import {getHeroPlaceholder} from '~/lib/placeholders';
 import {AnalyticsPageType} from '@shopify/hydrogen';
+import {AICO_API_URL, AICO_API_TOKEN} from '~/lib/const';
 
 export async function loader({params, context}) {
   const {language, country} = context.storefront.i18n;
@@ -55,42 +56,6 @@ export async function loader({params, context}) {
     heroSlider,
     brandIcons,
     fourMainSection,
-    articleSliders: context.storefront.query(HOMEPAGE_ARTICLE_SLIDER_QUERY, {
-      variables: {
-        country,
-        language,
-      },
-    }),
-    // primaryHero: hero,
-    // featuredProducts: context.storefront.query(
-    //   HOMEPAGE_FEATURED_PRODUCTS_QUERY,
-    //   {
-    //     variables: {
-    //       country,
-    //       language,
-    //     },
-    //   },
-    // ),
-    // secondaryHero: context.storefront.query(COLLECTION_HERO_QUERY, {
-    //   variables: {
-    //     handle: 'backcountry',
-    //     country,
-    //     language,
-    //   },
-    // }),
-    // featuredCollections: context.storefront.query(FEATURED_COLLECTIONS_QUERY, {
-    //   variables: {
-    //     country,
-    //     language,
-    //   },
-    // }),
-    // tertiaryHero: context.storefront.query(COLLECTION_HERO_QUERY, {
-    //   variables: {
-    //     handle: 'winter-2022',
-    //     country,
-    //     language,
-    //   },
-    // }),
     analytics: {
       pageType: AnalyticsPageType.home,
     },
@@ -101,19 +66,29 @@ export default function Homepage() {
   const {
     heroSlider,
     brandIcons,
-    fourMainSection,
-    articleSliders,
-    // primaryHero,
-    // secondaryHero,
-    // tertiaryHero,
-    // featuredCollections,
-    // featuredProducts,
+    fourMainSection
   } = useLoaderData();
   const [root] = useMatches();
 
+  const [newsSliderData, setNewsSliderData] = useState();
+
   const gruppeMenu = root?.data?.layout?.headerMenu?.items?.find((item) => item.title == 'Gruppe');
 
+  const loadNewSlider = async () => {
+    const newsResponse = await fetch(`${AICO_API_URL}news?page[number]=1&page[size]=10&sort=-publishDate&filter[isActive]=1`, {
+      method: 'GET',
+      headers: {
+        'Authorization': `Bearer ${AICO_API_TOKEN}`,
+      }
+    });
 
+    const newsData = await newsResponse.json();
+    setNewsSliderData(newsData);
+  }
+
+  useEffect(() => {
+      loadNewSlider();
+  },[]);
   // TODO: skeletons vs placeholders
   const skeletons = getHeroPlaceholder([{}, {}, {}]);
 
@@ -148,16 +123,9 @@ export default function Homepage() {
           </Await>
         </Suspense>
       )}
-      {articleSliders && (
-        <Suspense>
-          <Await resolve={articleSliders}>
-            {({articles}) => {
-              if (!articles) return <></>;
-              return <ArticleSlider articles={articles} />;
-            }}
-          </Await>
-        </Suspense>
-      )}
+
+      {newsSliderData?.data && <NewsSlider news={newsSliderData?.data} />}
+      
     </>
   );
 }

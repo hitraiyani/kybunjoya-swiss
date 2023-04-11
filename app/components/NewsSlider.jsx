@@ -1,12 +1,13 @@
 import { Link, Heading } from '~/components';
 import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { toHTML } from '~/lib/utils';
+import { toHTML, truncate } from '~/lib/utils';
+import { STORE_LOCALE} from '~/lib/const';
 
 /**
  * Hero component that renders metafields attached to collection resources
  **/
-export function ArticleSlider({ articles }) {
+export function NewsSlider({ news }) {
     return (
         <section className='mb-16 article-slide'>
             <div className="container">
@@ -34,22 +35,38 @@ export function ArticleSlider({ articles }) {
                      }}
                 >
                     <div className="grid grid-cols-1 gap-4 mb-8 md:grid-cols-2 xl:grid-cols-3">
-                        {articles?.edges?.map((article, index) => {
+                        {news?.map((newItem, index) => {
+                            let imgSrc = newItem?.attributes?.optimizedImage;
+                            if(newItem.attributes.optimizedImage == null){
+                                imgSrc = newItem.attributes.image;
+                            }else if(newItem.attributes.image == null){
+                                imgSrc = '';
+                            }
+                            var catName = '';
+                            if( newItem?.attributes?.newsCategory != null ){
+                                var cat =  newItem?.attributes?.newsCategory;
+                                for(var nc=0; nc<cat.translations.length; nc++){
+                                  if(cat.translations[nc].locale==STORE_LOCALE){
+                                    var catName = cat.translations[nc].webName ? cat.translations[nc].webName : cat.translations[nc].name;
+                                  }
+                                }
+                            }
                             return (
                                 <SwiperSlide key={index}>
-                                    <div >
-                                        <Link to={`#`} className="relative block overflow-hidden mb-5">
+                                    <div>
+                                        <span>Brand { catName ? `/ ${catName}` : ''}</span>
+                                        <Link to={`/pages/news/${newItem.attributes.urlHandle}`} className="relative block overflow-hidden mb-5">
                                         <div className="img-wrap">
                                         <img
                                                 className="object-cover object-center w-full rounded-md aspect-square drop-shadow-md"
-                                                src={article.node.image.url}
+                                                src={imgSrc}
                                             ></img>
                                         </div>
                                         </Link>
                                     </div>
                                     <div className='max-w-[85%]'>
-                                        <p className=' text-[24px] text-black lg:text-[35px] w-full font-bold leading-[1.2] mb-[15px]'>{article.node.title}</p>
-                                        <p  className=' text-[14px]  text-black lg:text-[15px] w-full font-normal'>{article.node.content}</p>
+                                        <p className=' text-[24px] text-black lg:text-[35px] w-full font-bold leading-[1.2] mb-[15px]'>{newItem?.attributes?.name}</p>
+                                        <p  className=' text-[14px]  text-black lg:text-[15px] w-full font-normal'>{truncate(newItem?.attributes?.excerpt)}</p>
                                     </div>
                                    
                                 </SwiperSlide>
