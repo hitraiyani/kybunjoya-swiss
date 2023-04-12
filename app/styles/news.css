@@ -3,7 +3,7 @@ body.news #MainContent {
     position: relative;
 }
 body.news .main-page-title {
-    font-family: "Tusker Grotesk 6500";
+    font-family: 'Roboto', sans-serif;
     font-weight: 500;
     font-size: 40px;
     line-height: 50px;
@@ -23,23 +23,26 @@ body.news #filter-container {
     display: flex;
     flex-wrap: wrap;
 }
+#news-details-container p{
+    margin-bottom: 24px;
+}
 body.news #filter-container .btn {
-    font-family: "Tusker Grotesk 6500";
+    font-family: 'Roboto', sans-serif;
     font-size: 12px;
     line-height: 20px;
     text-transform: uppercase;
     color: #fff;
-    background: #ae9357;
+    background: #00795C;
     padding: 10px 15px 8px;
     letter-spacing: normal;
     cursor: pointer;
     margin: 0 0 0 5px;
-    border: 1px solid #ae9357;
+    border: 1px solid #00795C;
     border-radius: 5px;
 }
 body.news #filter-container .btn.active,
 body.news #filter-container .btn:hover {
-    color: #ae9357;
+    color: #00795C;
     background: #fff;
 }
 .news-content-wrapper .content-row .content {
@@ -77,7 +80,7 @@ body.news #filter-container .btn:hover {
     color: #002855;
     font-size: 16px;
     text-transform: uppercase;
-    font-family: "Tusker Grotesk 6500";
+    font-family: 'Roboto', sans-serif;
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -103,7 +106,7 @@ body.news #filter-container .btn:hover {
     background: #002855;
 }
 #news-container > .grid > .grid__item .news-wrapper .content-wrapper h3.newsblock__title {
-    font-family: "Tusker Grotesk 6700";
+    font-family: 'Roboto', sans-serif;
     font-weight: 700;
     font-size: 22px;
     line-height: 29px;
@@ -113,7 +116,7 @@ body.news #filter-container .btn:hover {
     margin: 10px 0;
 }
 #news-container > .grid > .grid__item .news-wrapper .content-wrapper .newsblock__details {
-    font-family: Arial;
+    font-family: 'Roboto', sans-serif;
     font-size: 14px;
     line-height: 18px;
     text-transform: unset;
@@ -124,7 +127,7 @@ body.news #filter-container .btn:hover {
     font-size: 14px;
     line-height: normal;
     font-weight: 400;
-    font-family: United Sans SmCd Bk;
+    font-family: 'Roboto', sans-serif;
     text-transform: unset;
     letter-spacing: normal;
     color: #000;
@@ -136,7 +139,7 @@ body.news #filter-container .btn:hover {
 .template-page .content-for-layout .page-width .page-wrapper h1 {
     text-align: left;
     letter-spacing: 0.96px;
-    color: #ae9357;
+    color: #00795C;
     text-transform: uppercase;
     font-size: 32px;
     line-height: 36px;
@@ -160,7 +163,7 @@ body.news #filter-container .btn:hover {
     color: #000;
     border-radius: 0 0 0 5px;
     font-size: 14px;
-    font-family: United Sans SmCd Bk;
+    font-family: 'Roboto', sans-serif;
     line-height: normal;
 }
 #news-container > .grid > .grid__item .news-wrapper .link-wrapper {
@@ -213,12 +216,12 @@ body.news #filter-container .btn:hover {
 #news-details-container .news-content-wrapper .title-wrapper,
 #news-details-container .news-content-wrapper .news-media-wrapper,
 #news-details-container .news-content-wrapper .description-wrapper {
-    max-width: 1276px;
+    max-width: 100%;
     margin: 0 auto;
 }
 #news-details-container .news-content-wrapper .description-wrapper p {
     font-size: 16px !important;
-    font-family: Arial !important;
+    font-family: 'Roboto', sans-serif !important;
     color: #000 !important;
     letter-spacing: 0 !important;
     width: 100% !important;
@@ -228,7 +231,7 @@ body.news #filter-container .btn:hover {
 }
 #news-details-container .news-content-wrapper .description-wrapper span {
     font-size: 16px !important;
-    font-family: Arial !important;
+    font-family: 'Roboto', sans-serif !important;
     color: #000 !important;
     letter-spacing: 0 !important;
     width: 100% !important;
@@ -245,7 +248,7 @@ body.news #filter-container .btn:hover {
 #news-details-container .news-content-wrapper .description-wrapper td,
 #news-details-container .news-content-wrapper .description-wrapper {
     color: #000 !important;
-    font-family: Arial !important;
+    font-family: 'Roboto', sans-serif !important;
     line-height: 22px;
 }
 #news-details-container .news-content-wrapper .description-wrapper a:not(.document-button) {
@@ -339,17 +342,17 @@ body.news #filter-container .btn:hover {
     justify-content: start;
 }
 #news-details-container .news-content-wrapper .tag-wrapper .button {
-    background: #ae9357;
+    background: #00795C;
     font-size: 1.8rem;
-    font-family: "Tusker Grotesk 6500";
+    font-family: 'Roboto', sans-serif;
     padding: 0 1.5rem;
     margin-right: 0;
     text-transform: uppercase;
-    border: solid 1px #ae9357;
+    border: solid 1px #00795C;
 }
 #news-details-container .news-content-wrapper .tag-wrapper .button:hover {
     background: #ffffff;
-    color: #ae9357;
+    color: #00795C;
 }
 #news-details-container .news-content-wrapper .tag-wrapper span {
     letter-spacing: 0;
@@ -377,19 +380,26 @@ body.news #filter-container .btn:hover {
 .description-wrapper .content-type-text {
     white-space: pre-wrap;
     font-size: 16px;
-    font-family: Arial;
+    font-family: 'Roboto', sans-serif;
     color: #000;
     letter-spacing: 0;
     width: 100%;
     max-width: 100%;
 }
 #news-details-container .news-content-wrapper h1 {
-    font: 500 30px/35px "Tusker Grotesk 6500";
+    font: 500 30px/35px 'Roboto', sans-serif;
     margin-bottom: 30px;
+}
+#news-details-container * {
+    word-break: break-word;
+    hyphens: auto;
+    -ms-hyphens: auto;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
 }
 #news-details-container .news-content-wrapper .title-wrapper h2 {
     color: #002855;
-    font: 700 24px/35px "Tusker Grotesk 6700";
+    font: 700 24px/35px 'Roboto', sans-serif;
     margin: 20px 0 10px;
 }
 .slider-for .slick-list {
@@ -417,6 +427,8 @@ body.news #filter-container .btn:hover {
     align-items: center;
     justify-content: center;
     z-index: 1;
+    position: absolute;
+    font-size: 0;
 }
 .slider-for .slick-prev {
     left: 0;
@@ -443,16 +455,16 @@ body.news #filter-container .btn:hover {
     width: 50px;
     height: 50px;
     display: block;
-    border: 1px solid #ae9357;
+    border: 1px solid #00795C;
     border-radius: 5px;
 }
 .slider-for .slick-next:before {
-    /* background: #fff url(../assets/Icon-arrow_next-gold.svg) no-repeat 0 0; */
+    background: #fff url(https://cdn.shopify.com/s/files/1/0565/2201/4813/t/22/assets/Icon-arrow_next-gold.svg) no-repeat 0 0;
     background-size: 12px;
     background-position: center;
 }
 .slider-for .slick-prev:before {
-    /* background: #fff url(../assets/Icon-arrow_prev-gold.svg) no-repeat 0 0; */
+    background: #fff url(https://cdn.shopify.com/s/files/1/0565/2201/4813/t/22/assets/Icon-arrow_prev-gold.svg) no-repeat 0 0;
     background-size: 12px;
     background-position: center;
 }
@@ -467,7 +479,7 @@ body.news #filter-container .btn:hover {
     opacity: 1;
 }
 .slider-nav {
-    max-width: 1276px;
+    max-width: 100%;
     margin: 0 auto;
 }
 .slider-nav .slick-list.draggable:before,
@@ -540,10 +552,10 @@ body.news #filter-container .btn:hover {
     padding-bottom: 40px;
 }
 .match-details-wrapper .center a.button {
-    background-color: #ae9357;
+    background-color: #00795C;
     font-weight: 500;
     font-size: 1.8rem;
-    font-family: "Tusker Grotesk 6500";
+    font-family: 'Roboto', sans-serif;
     text-transform: uppercase;
     padding-top: 3px;
 }
@@ -597,14 +609,14 @@ body.news #filter-container .btn:hover {
     font-size: 14px;
     line-height: 35px;
     padding: 0 0.6rem;
-    font-family: United Sans SmCd Bk;
+    font-family: 'Roboto', sans-serif;
 }
 .match-details-wrapper .related-news .content-container .news__info {
     padding: 20px;
 }
 .match-details-wrapper .related-news .content-container .news__info h3 {
     font-weight: 500;
-    font-family: "Tusker Grotesk 6500";
+    font-family: 'Roboto', sans-serif;
     margin: 1rem 0 0;
     font-size: 22px;
     line-height: 29px;
@@ -613,7 +625,7 @@ body.news #filter-container .btn:hover {
     color: #0560a7;
 }
 .match-details-wrapper .related-news .content-container .news__info .rte {
-    font-family: Arial;
+    font-family: 'Roboto', sans-serif;
     font-size: 14px;
     line-height: 18px;
     text-transform: unset;
@@ -717,7 +729,7 @@ body.news #filter-container .btn:hover {
     justify-content: center;
 }
 .news-match-details .current-match-wrapper .match-wrapper-inner .team-score-wrapper .team-score {
-    font-family: "Tusker Grotesk 6700";
+    font-family: 'Roboto', sans-serif;
     font-size: 40px;
     line-height: 48px;
     text-transform: uppercase;
@@ -727,7 +739,7 @@ body.news #filter-container .btn:hover {
     font-weight: 700;
 }
 .news-match-details .current-match-wrapper .match-wrapper-inner .team-score-wrapper .team-time {
-    font-family: Arial;
+    font-family: 'Roboto', sans-serif;
     font-weight: 400;
     font-size: 16px;
     line-height: 19px;
@@ -761,7 +773,7 @@ body.news #filter-container .btn:hover {
     margin: auto;
 }
 .news-match-details .current-match-wrapper .match-wrapper-inner .team-name {
-    font-family: "Tusker Grotesk 6700";
+    font-family: 'Roboto', sans-serif;
     font-size: 28px;
     line-height: 35px;
     text-transform: uppercase;
@@ -774,7 +786,7 @@ body.news #filter-container .btn:hover {
 }
 .news-match-details .live__matchinfo.live__matchinfo--article-display nav a {
     width: 24%;
-    font-family: "Tusker Grotesk 6700";
+    font-family: 'Roboto', sans-serif;
     font-size: 18px;
     line-height: 22px;
     text-transform: uppercase;
@@ -801,7 +813,7 @@ body.news #filter-container .btn:hover {
     margin: 30px auto 70px;
 }
 .news-match-details .live__matchinfo__highlights .live__highlights .team-2 {
-    border-left: 1px solid #ae9357;
+    border-left: 1px solid #00795C;
 }
 .news-match-details .live_matchinfo.live__matchinfo__lineup .row,
 .news-match-details .live__matchinfo__highlights .row {
@@ -900,16 +912,16 @@ body.news #filter-container .btn:hover {
     letter-spacing: normal;
     color: #052140;
     text-align: center;
-    font-family: "Tusker Grotesk 6500";
+    font-family: 'Roboto', sans-serif;
 }
 .news-match-details .live__matchinfo__highlights .highlight .highlight__player strong {
-    font-family: "Tusker Grotesk 6500";
+    font-family: 'Roboto', sans-serif;
     margin-right: 10px;
     font-weight: 500;
 }
 .news-match-details .live__matchinfo__highlights .live__highlights__info span {
     font-weight: 500;
-    font-family: "Tusker Grotesk 6500";
+    font-family: 'Roboto', sans-serif;
     font-size: 18px;
     line-height: 26px;
     letter-spacing: normal;
@@ -917,7 +929,7 @@ body.news #filter-container .btn:hover {
     text-align: center;
 }
 .news-match-details .live__matchinfo__highlights .live__highlights__info span strong {
-    font-family: "Tusker Grotesk 6700";
+    font-family: 'Roboto', sans-serif;
     font-weight: 700;
     color: #052140;
 }
@@ -934,14 +946,14 @@ body.news #filter-container .btn:hover {
     display: inline-block;
 }
 .news-match-details .live__matchinfo__highlights .live__matchinfo__highlights .row.live__highlights__info .columns:nth-child(2) {
-    border-left: 1px solid #ae9357;
+    border-left: 1px solid #00795C;
 }
 .news-match-details .live__matchinfo__highlights .row.live__highlights__info .columns:nth-child(2) {
-    border-left: 1px solid #ae9357;
+    border-left: 1px solid #00795C;
     padding-left: 15px;
 }
 .news-match-details .live__matchinfo__highlights .row.live__highlights__info .columns:last-child {
-    border-left: 1px solid #ae9357;
+    border-left: 1px solid #00795C;
     padding-left: 12px;
 }
 .news-match-details .live__matchinfo__highlights .row.live__highlights__info .columns:first-child {
@@ -957,7 +969,7 @@ body.news #filter-container .btn:hover {
 }
 .news-match-details .live_matchinfo.live__matchinfo__lineup .row .table-styled tr td {
     font-weight: 400;
-    font-family: Arial;
+    font-family: 'Roboto', sans-serif;
     font-size: 14px;
     line-height: 26px;
     letter-spacing: normal;
@@ -996,7 +1008,7 @@ body.news #filter-container .btn:hover {
     margin-bottom: 50px;
 }
 .news-match-details .live_matchinfo.live__matchinfo__lineup .row .table-styled h3 {
-    font-family: "Tusker Grotesk 6700";
+    font-family: 'Roboto', sans-serif;
     font-size: 18px;
     line-height: 32px;
     text-transform: uppercase;
@@ -1018,20 +1030,20 @@ body.news #filter-container .btn:hover {
     font-size: 60px;
     line-height: 88px;
     color: #094379;
-    font-family: "Tusker Grotesk 6500";
+    font-family: 'Roboto', sans-serif;
 }
 .news-match-details .current-match-wrapper .match-wrapper-inner .team-score-wrapper .team-time {
     font-size: 28px;
     line-height: 32px;
     color: #094379;
-    font-family: Arial;
+    font-family: 'Roboto', sans-serif;
     text-transform: unset;
 }
 .news-match-details .current-match-wrapper .match-wrapper-inner h2.team-name {
     font-size: 22px;
     line-height: 34px;
     color: #094379;
-    font-family: "Tusker Grotesk 6500";
+    font-family: 'Roboto', sans-serif;
     margin-bottom: 0;
 }
 .news-match-details .live__matchinfo .live__highlights .highlight {
@@ -1093,7 +1105,7 @@ body.news #filter-container .btn:hover {
     line-height: 21px;
     color: #094379 !important;
     font-weight: 700 !important;
-    font-family: Arial !important;
+    font-family: 'Roboto', sans-serif !important;
     text-transform: uppercase;
 }
 .live-match-score ul.nav-tabs {
@@ -1120,11 +1132,11 @@ body.news #filter-container .btn:hover {
 }
 .live-match-score ul.nav-tabs li.active {
     background-color: #094379;
-    border-bottom: 5px solid #ae9357;
+    border-bottom: 5px solid #00795C;
     border-radius: 10px 10px 0 0;
 }
 .live-match-score ul.nav-tabs li a {
-    font-family: "Tusker Grotesk 6500";
+    font-family: 'Roboto', sans-serif;
     font-size: 20px;
 }
 .live-match-score ul.nav-tabs li a,
@@ -1136,8 +1148,8 @@ body.news #filter-container .btn:hover {
 }
 .live-match-score ul.nav-tabs li.active a,
 .live-match-score ul.nav-tabs li.active svg path {
-    color: #ae9357;
-    fill: #ae9357;
+    color: #00795C;
+    fill: #00795C;
     opacity: 1;
 }
 .live-match-score .nav-tabs > li > a {
@@ -1215,7 +1227,7 @@ body.news #filter-container .btn:hover {
 }
 .live-match-score .container--tabs .tab-content .tab-pane .aufstellung-main .team-name {
     text-align: center;
-    border-bottom: 1px solid #ae9357;
+    border-bottom: 1px solid #00795C;
     margin: 0;
     padding: 10px 0;
 }
@@ -1247,7 +1259,7 @@ body.news #filter-container .btn:hover {
 }
 .aufstellung-left .team-1 .team-name,
 .aufstellung-right .team-2 .team-name {
-    color: #ae9357;
+    color: #00795C;
 }
 .live-match-score .container--tabs .tab-content .tab-pane .tab-pane-content {
     display: flex;
@@ -1271,7 +1283,7 @@ body.news #filter-container .btn:hover {
 .live-match-score .aufstellung-main.aufstellung .aufstellung-center .home-team-name,
 .live-match-score .aufstellung-main.aufstellung .aufstellung-center .guest-team-name {
     margin: 8px auto;
-    color: #ae9357;
+    color: #00795C;
 }
 .live-match-score .aufstellung-main .aufstellung-center .lineup-field-wrapper {
     width: 400px;
@@ -1302,12 +1314,12 @@ body.news #filter-container .btn:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: "Tusker Grotesk 6500";
+    font-family: 'Roboto', sans-serif;
     font-weight: 500;
     margin: auto;
     font-size: 14px;
     border-radius: 50%;
-    background: #ae9357;
+    background: #00795C;
     color: #fff;
     position: absolute;
 }
@@ -1428,8 +1440,8 @@ body.news #filter-container .btn:hover {
     display: none;
 }
 .slick-aufstellung .slick-arrow svg path {
-    color: #ae9357;
-    fill: #ae9357;
+    color: #00795C;
+    fill: #00795C;
 }
 .slick-aufstellung .slick-arrow {
     display: flex;
@@ -1453,8 +1465,8 @@ body.news #filter-container .btn:hover {
     top: 0;
     font-size: 14px;
     line-height: normal;
-    color: #ae9357;
-    font-family: "Tusker Grotesk 6500";
+    color: #00795C;
+    font-family: 'Roboto', sans-serif;
 }
 .slick-aufstellung .slick-next:before,
 .slick-aufstellung .slick-prev:before {
@@ -1545,7 +1557,7 @@ body.news #filter-container .btn:hover {
     #news-details-container .news-content-wrapper .tag-wrapper .tag-inner,
     #news-details-container .news-content-wrapper .title-wrapper,
     #news-details-container .news-content-wrapper .description-wrapper {
-        padding: 0 3rem;
+        /* padding: 0 3rem; */
     }
 }
 @media all and (max-width: 991px) {
@@ -1589,10 +1601,10 @@ body.news #filter-container .btn:hover {
         margin-top: -15px;
     }
     .live-match-score .tab-content .tab-pane .statistik-mobile .statistik-top .statistik-wrap.statistik-wrap-bottom .team-title h4 {
-        color: #ae9357;
+        color: #00795C;
         margin: 0 0 10px;
         font-weight: 400;
-        font-family: arial;
+        font-family: 'Roboto', sans-serif;
         font-size: 14px;
     }
     .live-match-score .tab-content .tab-pane .statistik-mobile .statistik-top .statistik-wrap .team-title h2 {
@@ -1663,7 +1675,7 @@ body.news #filter-container .btn:hover {
     }
     .live-match-score .container--tabs.match-center-main .slick-dots li.slick-active button:before {
         opacity: 1;
-        color: #ae9357;
+        color: #00795C;
         font-size: 12px;
     }
     .live-match-score .container--tabs.match-center-main .statistik-bottom {
@@ -1841,7 +1853,7 @@ body.news #filter-container .btn:hover {
         flex-direction: column;
     }
     #news-details-container .news-content-wrapper {
-        padding-top: 100px;
+        padding-top: 20px;
     }
     .news-match-details .live__matchinfo__highlights .live__highlights {
         margin: 30px auto;
@@ -1876,7 +1888,7 @@ body.news #filter-container .btn:hover {
     }
     .news-match-details .live__matchinfo__highlights .row.live__highlights__info .columns:after {
         content: "";
-        border-bottom: 1px solid #ae9357;
+        border-bottom: 1px solid #00795C;
         width: 140px;
         height: 1px;
         display: block;
@@ -1979,7 +1991,7 @@ body.news #filter-container .btn:hover {
         display: block;
     }
     .live-match-score .container--tabs .tab-content .tab-pane .aufstellung-main .team-name {
-        color: #ae9357;
+        color: #00795C;
     }
     .live-match-score .container--tabs .tab-content .tab-pane .aufstellung-main .aufstellung-head {
         margin-top: 20px;
