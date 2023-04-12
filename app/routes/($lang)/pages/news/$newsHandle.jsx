@@ -56,12 +56,15 @@ export async function loader({params, context}) {
   );
 }
 
-// export const meta = ({data}) => {
-//   return {
-//     title: data?.article?.seo?.title ?? 'Article',
-//     description: data?.article?.seo?.description,
-//   };
-// };
+const seo = ({data}) => {
+  return {
+    titleTemplate: `News - ${data?.newsObj?.pageTitle ? data?.newsObj?.pageTitle : data?.newsObj?.name}`,
+  };
+};
+
+export const handle = {
+  seo,
+};
 
 export const links = () => {
     return [{rel: 'stylesheet', href: styles}, {rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css'}];

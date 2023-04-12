@@ -472,15 +472,15 @@ function Footer({menu, main_menu}) {
           <div className="grid grid-cols-2 gap-8 lg:gap-8 lg:grid-cols-3">
             {(mainMenuChunk || []).map((menuitem, index) => {
               return (
-                <div>
-                    {menuitem.map((item, index) => {
+                <div key={index}>
+                    {menuitem.map((item, subIndex) => {
                       return (
-                        <>
-                          <h2 key={index} className="mb-8 lg:text-[26px] text-[22px] font-bold capitalize text-[#00795C]">{item.title}</h2>
+                        <span key={subIndex}>
+                          <h2  className="mb-8 lg:text-[26px] text-[22px] font-bold capitalize text-[#00795C]">{item.title}</h2>
                           {
                               item.items.length > 0 && ( <FooterMainMenuSub sub_menu_item={item.items} />)
                           }
-                        </>
+                        </span>
                       )
                     })}
                 </div>
