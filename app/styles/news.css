@@ -312,10 +312,10 @@ body.news #filter-container .btn:hover {
 #news-details-container .news-content-wrapper .description-wrapper .image-container .image-container-inner .caption {
     width: 100%;
     display: flex;
-    justify-content: end;
+    justify-content: center;
     color: #000;
     font-size: 12px;
-    margin-top: -5px;
+    margin-top: 5px;
 }
 .news-section-wrapper .description-wrapper .content-type-html video {
     width: 100%;
