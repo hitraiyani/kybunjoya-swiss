@@ -139,29 +139,29 @@ function MenuMobileNav({menu, onClose}) {
           const image = link.dataset.image;
           images.forEach((img) => {
             if (image === img.dataset.image) {
-              img.classList.add('active')
+              img?.classList.add('active')
             } else {
-              img.classList.remove('active')
+              img?.classList.remove('active')
             }
           });
           setTimeout(() => {
             let hasActive = false;
             images.forEach((img) => {
-              if (img.classList.contains('active')) {
+              if (img?.classList.contains('active')) {
                 hasActive = true;
               }
             })
             if (!hasActive) {
-              defaultActive.classList.add('active');
+              defaultActive?.classList.add('active');
             }
           },10)
         });
   
         link.addEventListener('mouseout', () => {
           images.forEach((img) => {
-            img.classList.remove('active')
+            img?.classList.remove('active')
           });
-          defaultActive.classList.add('active');
+          defaultActive?.classList.add('active');
         });
       });
   }, []);

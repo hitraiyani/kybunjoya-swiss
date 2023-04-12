@@ -105,13 +105,13 @@ export default function Article() {
   useEffect(() => {
     // Load jQuery script
     const scriptJquery = document.createElement('script');
+    const scriptSlick = document.createElement('script');
     scriptJquery.src = 'https://code.jquery.com/jquery-3.6.0.min.js';
     scriptJquery.async = true;
     scriptJquery.onload = () => {
       setScriptsLoaded((prevState) => ({...prevState, jqueryLoaded: true}));
 
       // Load Slick script
-      const scriptSlick = document.createElement('script');
       scriptSlick.src =
         'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js';
       scriptSlick.async = true;
