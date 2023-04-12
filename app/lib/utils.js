@@ -4,7 +4,6 @@ import {useLocation, useMatches} from '@remix-run/react';
 import typographicBase from 'typographic-base';
 import {countries} from '~/data/countries';
 import { STORE_LOCALE} from '~/lib/const';
-import { NewSlider} from '~/components';
 
 export function missingClass(string, prefix) {
   if (!string) {

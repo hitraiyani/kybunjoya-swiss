@@ -88,46 +88,19 @@ export default function Article() {
     const scriptJquery = document.createElement('script');
     scriptJquery.src = 'https://code.jquery.com/jquery-3.6.0.min.js';
     scriptJquery.async = true;
-    document.body.appendChild(scriptJquery);
+    scriptJquery.onload = () => {
+      setScriptsLoaded(prevState => ({ ...prevState, jqueryLoaded: true }));
 
-    // Load Slick script
-    const scriptSlick = document.createElement('script');
-    scriptSlick.src = 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js';
-    scriptSlick.async = true;
-    scriptSlick.onload = () => {
-      // Initialize Slick slider
-      $('.slider-for').slick({
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        infinite: false,
-        //arrows: true,
-        asNavFor: '.slider-nav',
-        adaptiveHeight: true
-      });
-      $('.slider-nav').slick({
-        slidesToShow: 7,
-        slidesToScroll: 1,
-        asNavFor: '.slider-for',
-        centerMode: true,
-        focusOnSelect: true,
-        infinite: false,
-        responsive: [
-          {
-              breakpoint: 767,
-              settings: {
-                slidesToShow: 7,
-              }
-          },
-          {
-              breakpoint: 540,
-              settings: {
-                slidesToShow: 5,
-              }
-          }
-        ]
-      });
-    };
-    document.body.appendChild(scriptSlick);
+       // Load Slick script
+      const scriptSlick = document.createElement('script');
+      scriptSlick.src = 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js';
+      scriptSlick.async = true;
+      scriptSlick.onload = () => {
+        setScriptsLoaded(prevState => ({ ...prevState, slickLoaded: true }));
+      };
+      document.body.appendChild(scriptSlick);
+  };
+  document.body.appendChild(scriptJquery);
 
     return () => {
       // Clean up the script tags when the component unmounts
@@ -136,8 +109,43 @@ export default function Article() {
     };
   }, []);
 
-
-  //const {title, image, contentHtml, author} = article;
+  useEffect(() => {
+    if (scriptsLoaded?.jqueryLoaded && scriptsLoaded?.slickLoaded) {
+        // Initialize Slick slider
+        setTimeout(() => {   
+            $('.slider-for').slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                infinite: false,
+                //arrows: true,
+                asNavFor: '.slider-nav',
+                adaptiveHeight: true
+            });
+            $('.slider-nav').slick({
+                slidesToShow: 7,
+                slidesToScroll: 1,
+                asNavFor: '.slider-for',
+                centerMode: true,
+                focusOnSelect: true,
+                infinite: false,
+                responsive: [
+                {
+                    breakpoint: 767,
+                    settings: {
+                        slidesToShow: 7,
+                    }
+                },
+                {
+                    breakpoint: 540,
+                    settings: {
+                        slidesToShow: 5,
+                    }
+                }
+                ]
+            });
+        },300)
+    }
+  },[scriptsLoaded])
 
   return (
     <>

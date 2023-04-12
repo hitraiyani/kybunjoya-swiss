@@ -75,7 +75,7 @@ export default function Homepage() {
   const gruppeMenu = root?.data?.layout?.headerMenu?.items?.find((item) => item.title == 'Gruppe');
 
   const loadNewSlider = async () => {
-    const newsResponse = await fetch(`${AICO_API_URL}news?page[number]=1&page[size]=10&sort=-publishDate&filter[isActive]=1`, {
+    const newsResponse = await fetch(`${AICO_API_URL}news?page[number]=1&page[size]=3&sort=-publishDate&filter[isActive]=1`, {
       method: 'GET',
       headers: {
         'Authorization': `Bearer ${AICO_API_TOKEN}`,
