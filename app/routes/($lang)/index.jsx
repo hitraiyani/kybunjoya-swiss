@@ -2,13 +2,11 @@ import {defer} from '@shopify/remix-oxygen';
 import {Suspense, useEffect, useState} from 'react';
 import {Await, useLoaderData, useMatches} from '@remix-run/react';
 import {
-  ProductSwimlane,
-  FeaturedCollections,
   Hero,
-  HeroSlider,
   CollectionsGrid,
   BrandGrid,
   NewsSlider,
+  GruppeSection
 } from '~/components';
 import {MEDIA_FRAGMENT, PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
 import {getHeroPlaceholder} from '~/lib/placeholders';
@@ -103,6 +101,18 @@ export default function Homepage() {
     <>
       <Hero hereMetaObj={heroSlider}/>
       {/* <HeroSlider sliderMetaObject={heroSlider} /> */}
+      
+      {fourMainSection && (
+        <Suspense>
+          <Await resolve={fourMainSection}>
+            {({data}) => {
+              if (!data) return <></>;
+              return <CollectionsGrid data={data} />;
+            }}
+          </Await>
+        </Suspense>
+      )}
+
       {brandIcons && (
         <Suspense>
           <Await resolve={brandIcons}>
@@ -113,19 +123,10 @@ export default function Homepage() {
           </Await>
         </Suspense>
       )}
-      {fourMainSection && (
-        <Suspense>
-          <Await resolve={fourMainSection}>
-            {({data}) => {
-              if (!data) return <></>;
-              return <CollectionsGrid data={data} gruppeMenu={gruppeMenu} />;
-            }}
-          </Await>
-        </Suspense>
-      )}
 
       {newsSliderData?.data && <NewsSlider news={newsSliderData?.data} />}
       
+      <GruppeSection  gruppeMenu={gruppeMenu} />
     </>
   );
 }

@@ -8,7 +8,7 @@ export function BrandGrid({data}) {
   return (
     <section className={`brand-sec`}>
       <div className="container">
-        <div className="brand-wrap flex flex-row flex-wrap gap-7 lg:gap-10 xl:gap-16 items-center justify-center py-16">
+        <div className="brand-wrap flex flex-row flex-wrap gap-7 lg:gap-10 xl:gap-16 items-center justify-center pt-16">
         {brandImages.map((image, index) => (
             <a className="brand-logo opacity-50 hover:opacity-100 w-40 h-14" href="#" key={index}>
               <img

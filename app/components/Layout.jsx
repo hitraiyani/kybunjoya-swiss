@@ -246,9 +246,9 @@ function MobileHeader({title, isHome, openCart, openMenu, isMenuOpen}) {
         </Link>
         <button
           onClick={openMenu}
-          className="relative flex items-center justify-center w-10 h-10 menu-toogle-btn"
+          className="relative flex items-center justify-center w-20 h-10 menu-toogle-btn"
         >
-          {isMenuOpen ? (<IconClose aria-label="Close panel" />) : (<IconMenu className={'menu-toggle-icon'} />)}
+           Menu  {isMenuOpen ? (<IconClose aria-label="Close panel" />) : (<IconMenu className={'menu-toggle-icon'} />)}
         </button>
         {/* <Form
           method="get"

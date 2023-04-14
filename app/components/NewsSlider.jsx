@@ -9,7 +9,7 @@ import {STORE_LOCALE} from '~/lib/const';
  **/
 export function NewsSlider({news}) {
   return (
-    <section className="mb-16 article-slide">
+    <section className="article-slide">
       <div className="container">
         <h3 className="text-[#00795C] w-full font-bold text-[35px] lg:text-[55px]  mb-3 mt-16">
           Neues und Aktuelles
