@@ -29,5 +29,7 @@ export {CollectionsGrid} from './CollectionsGrid';
 export {BrandGrid} from './BrandGrid';
 export {ExpandingCard} from './ExpandingCard';
 export {GruppeSection} from './GruppeSection';
+export {ProductBrandSection} from './ProductBrandSection';
+export {ProductMiscUpdate} from './ProductMiscUpdate';
 // Sue me
 export * from './Icon';
