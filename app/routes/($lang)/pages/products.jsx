@@ -117,12 +117,12 @@ export default function schweizerSchuhpropktion() {
                 <SwiperSlide key={index}>
                   <div className="imgs-wrap grid grid-rows-2 grid-flow-col gap-[20px] lg:h-[700px]">
                     <img
-                      className="h-full w-full object-cover rounded-[10px] col-span-1 xl:col-span-2 aspect-square"
+                      className="h-full w-full object-cover rounded-[10px] col-span-1 xl:col-span-2 aspect-[3/2]"
                       src={image}
                       alt=""
                     />
                     <img
-                      className="object-cover rounded-[10px] col-span-1 xl:col-span-2 w-full xl:w-[80%] h-full xl:h-[80%] ml-auto block aspect-square"
+                      className="object-cover rounded-[10px] col-span-1 xl:col-span-2 w-full xl:w-[80%] h-full xl:h-[80%] ml-auto block aspect-[3/2]"
                       src={image}
                       alt=""
                     />
