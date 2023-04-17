@@ -1,13 +1,19 @@
 import React from 'react';
-import { json } from '@shopify/remix-oxygen';
-import { useLoaderData } from '@remix-run/react';
-import { toHTML } from '~/lib/utils';
-import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { ExpandingCard, Link, ProductBrandSection, ProductMiscUpdate } from '~/components';
-import { MEDIA_FRAGMENT } from '~/data/fragments';
+import {json} from '@shopify/remix-oxygen';
+import {useLoaderData} from '@remix-run/react';
+import {toHTML} from '~/lib/utils';
+import {Navigation, Pagination, Scrollbar, A11y, Autoplay} from 'swiper';
+import {Swiper, SwiperSlide} from 'swiper/react';
+import {
+  ArrowRight,
+  ExpandingCard,
+  Link,
+  ProductBrandSection,
+  ProductMiscUpdate,
+} from '~/components';
+import {MEDIA_FRAGMENT} from '~/data/fragments';
 
-const seo = ({ data }) => ({
+const seo = ({data}) => ({
   title: data?.page?.seo?.title,
   description: data?.page?.seo?.description,
 });
@@ -16,22 +22,20 @@ export const handle = {
   seo,
 };
 
-export async function loader({ request, params, context }) {
-
-  const { page } = await context.storefront.query(PAGE_QUERY, {
+export async function loader({request, params, context}) {
+  const {page} = await context.storefront.query(PAGE_QUERY, {
     variables: {
       handle: 'products',
       language: context.storefront.i18n.language,
     },
   });
 
-
   if (!page) {
-    throw new Response(null, { status: 404 });
+    throw new Response(null, {status: 404});
   }
 
   return json(
-    { page },
+    {page},
     {
       headers: {
         // TODO cacheLong()
@@ -41,75 +45,93 @@ export async function loader({ request, params, context }) {
 }
 
 export default function schweizerSchuhpropktion() {
-  const { page } = useLoaderData();
+  const {page} = useLoaderData();
 
-  const sliderImages =
-    page?.slider_images?.references?.edges.map(
-      (data) => data.node.image.url,
-    );
+  const sliderImages = page?.slider_images?.references?.edges.map(
+    (data) => data.node.image.url,
+  );
   // const faqArr = page?.faq?.value ? JSON.parse(page.faq.value) : [];
 
   return (
     <>
       <div className="container">
         <div className="title-wrap mt-[120px] lg:mt-[200px]">
-          <h2 className="title text-[#00795C] tracking-[-2.07729px] text-[35px] ">
+          <h2 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[55px] tracking-[-0.97152px] mb-6 ">
             Produkte
           </h2>
         </div>
       </div>
-      <div className="about-sec container">
-        <div className="flex flex-col lg:flex-row gap-y-[20px] gap-x-[30px] xl:gap-x-[63px]">
-          <div className="content-col flex-1 flex flex-col justify-center">
-            <h2 className="text-[35px] lg:text-[40px] xl:text-[55px] text-[#00795C] leading-[1.2] tracking-[-2.07729px] mb-[15px]">
+      <div className="container lg:!pr-0">
+        <div className="flex gap-[20px] flex-col lg:flex-row">
+          <div className="content-col w-full lg:w-[50%] flex flex-col bg-[#EDEDED] rounded-[10px] py-[21px] px-[32px]">
+            <h2 className="text-[24px] lg:text-[30px] xl:text-[35px] text-[#00795C] leading-[1.2] mb-[5px]">
               {page?.main_title?.value}
             </h2>
-            <h3 className="desc text-black text-[16px] lg:text-[18px] leading-[1.3] font-[400]"
+            <div
+              className="desc text-black text-[20x] xl:text-[25px] lg:text-[18px] leading-[1.3] font-[400]"
               dangerouslySetInnerHTML={{
                 __html: toHTML(page?.short_description?.value),
               }}
-            >
-            </h3>
-            <h2 className="text-[35px] lg:text-[40px] xl:text-[55px] text-[#00795C] leading-[1.2] tracking-[-2.07729px] mb-[15px]">
+            ></div>
+            <h2 className="text-[20px] lg:text-[25px] text-[#00795C] leading-[1.2] mb-[5px] mt-[47px]">
               {page?.head_title?.value}
             </h2>
-            <div className="desc text-black text-[16px] lg:text-[18px] leading-[1.3] font-[400]"
+            <div
+              className="desc text-black text-[20x] xl:text-[25px] lg:text-[18px] leading-[1.3] font-[400] mb-[20px]"
               dangerouslySetInnerHTML={{
                 __html: toHTML(page?.long_description?.value),
               }}
-            >
-            </div>
-            <div className="flex">
-              <Link to="" className="inline-block rounded-[100px] bg-black text-white
-                  text-center px-[59px] py-[15px] hover:bg-[#00795c] hover:text-white text-[18px] max-w-[224px]">
-                Jetzt Buchen
+            ></div>
+            <div className="flex mt-auto justify-between items-center flex-wrap gap-[15px]">
+              <Link
+                to=""
+                className="px-[35px] py-[22px] bg-black text-[18px] font-medium text-white rounded-[100px] w-fit hover:bg-[#00795c] hover:!text-white text-center"
+              >
+                Mehr über Technologie
               </Link>
-              <div className="products-swiper-button-prev nline-block rounded-[100px] bg-black text-white
-                  text-center px-[59px] py-[15px]">Pre </div>
-              <div className="products-swiper-button-next nline-block rounded-[100px] bg-black text-white
-                  text-center px-[59px] py-[15px]"> Next</div>
+              <div className="products-swiper-buttons relative flex gap-[10px] xl:gap-[20px]">
+                <div
+                  className="swiper-button-next-product-gallery rounded-full w-[50px] h-[50px] xl:w-[74px] xl:h-[74px] text-black hover:bg-black hover:text-white after:text-[30px] bg-[#DEDEDE] flex items-center justify-center rotate-180"
+                ><ArrowRight className={'relative left-[3px] w-[25px] h-[30px] xl:w-[40px] xl:h-[40px]'} /></div>
+                <div
+                  className="swiper-button-prev-product-gallery rounded-full w-[50px] h-[50px] xl:w-[74px] xl:h-[74px] text-black hover:bg-black hover:text-white after:text-[30px] bg-[#DEDEDE] flex items-center justify-center"
+                ><ArrowRight className={'relative left-[3px] w-[25px] h-[30px] xl:w-[40px] xl:h-[40px]'} /></div>
+              </div>
             </div>
           </div>
-          <div className="img-col flex-1 overflow-hidden lg:w-auto w-full">
+          <div className="img-col w-full lg:w-[50%] overflow-hidden">
             <Swiper
               modules={[Navigation, Scrollbar, A11y, Autoplay, Pagination]}
               slidesPerView={1}
+              spaceBetween={20}
               loop="false"
               autoplay="false"
-              pagination={{ clickable: true }}
+              // pagination={{clickable: false}}
               navigation={{
-                nextEl: '.products-swiper-button-next',
-                prevEl: '.products-swiper-button-prev',
+                nextEl: '.swiper-button-next-product-gallery',
+                prevEl: '.swiper-button-prev-product-gallery',
               }}
               className="h-full overflow-visible rounded-xl flex flex-col"
             >
               {sliderImages.map((image, index) => (
                 <SwiperSlide key={index}>
-                  <img
-                    className="h-full object-cover  rounded-xl block"
-                    src={image}
-                    alt=""
-                  />
+                  <div className="imgs-wrap grid grid-rows-2 grid-flow-col gap-[20px] lg:h-[700px]">
+                    <img
+                      className="h-full w-full object-cover rounded-[10px] col-span-1 xl:col-span-2 aspect-square"
+                      src={image}
+                      alt=""
+                    />
+                    <img
+                      className="object-cover rounded-[10px] col-span-1 xl:col-span-2 w-full xl:w-[80%] h-full xl:h-[80%] ml-auto block aspect-square"
+                      src={image}
+                      alt=""
+                    />
+                    <img
+                      className="h-full w-full object-cover rounded-[10px] row-span-2 aspect-square"
+                      src={image}
+                      alt=""
+                    />
+                  </div>
                 </SwiperSlide>
               ))}
             </Swiper>
@@ -118,11 +140,9 @@ export default function schweizerSchuhpropktion() {
       </div>
       <ProductBrandSection data={page?.products_brand_section?.reference} />
       <ProductMiscUpdate data={page?.product_misc_update?.reference} />
-      
     </>
   );
 }
-
 
 const PAGE_QUERY = `#graphql
 ${MEDIA_FRAGMENT}
