@@ -5,9 +5,9 @@ export function GruppeSection({gruppeMenu}) {
 
   const quickLinkMenu = gruppeMenu?.items?.slice(0, 6);
   return (
-    <Section className={'collectionsGrid-sec mb-16'}>
+    <Section className={'collectionsGrid-sec py-[80px]'}>
       <div className="container">
-      <h3 className="text-[#00795C] w-full font-bold text-[35px] lg:text-[55px]  mb-3 mt-16">
+      <h3 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[55px] tracking-[-0.97152px] mb-6">
           Grupee
         </h3>
         <div className='quick-links-sec bg-[#EDEDED] mt-[28px]'>

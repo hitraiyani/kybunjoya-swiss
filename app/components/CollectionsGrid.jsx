@@ -4,7 +4,7 @@ import { toHTML } from '~/lib/utils';
 
 export function CollectionsGrid({data}) {
   return (
-    <Section className={'collectionsGrid-sec'}>
+    <Section className={'collectionsGrid-sec py-[50px]'}>
       <div className="container">
         <h1 className='text-[#00795C] text-[35px] lg:text-[40px] xl:text-[55px] tracking-[-0.97152px] mb-6'>{data?.main_title?.value}</h1>
         <div className="md:grid md:grid-rows-2 xl:grid-rows-2 md:grid-flow-col gap-7 flex flex-col">

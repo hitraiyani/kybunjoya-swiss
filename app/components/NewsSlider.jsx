@@ -9,9 +9,9 @@ import {STORE_LOCALE} from '~/lib/const';
  **/
 export function NewsSlider({news}) {
   return (
-    <section className="article-slide">
+    <section className="article-slide pt-[50px]">
       <div className="container">
-        <h3 className="text-[#00795C] w-full font-bold text-[35px] lg:text-[55px]  mb-3 mt-16">
+        <h3 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[55px] tracking-[-0.97152px] mb-6">
           Neues und Aktuelles
         </h3>
         <Swiper
