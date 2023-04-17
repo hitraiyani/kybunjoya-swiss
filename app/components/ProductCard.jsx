@@ -48,10 +48,10 @@ export function ProductCard({
         prefetch="intent"
       >
         <div className={clsx('grid gap-4', className)}>
-          <div className="card-image aspect-[4/5] bg-primary/5">
+          <div className="card-image aspect-square relative rounded-xl">
             {image && (
               <Image
-                className="aspect-[4/5] w-full object-cover fadeIn"
+                className="aspect-[4/5] object-cover fadeIn absolute inset-0 w-full h-full rounded-xl"
                 widths={[320]}
                 sizes="320px"
                 loaderOptions={{
@@ -68,14 +68,14 @@ export function ProductCard({
             <Text
               as="label"
               size="fine"
-              className="absolute top-0 right-0 m-4 text-right text-notice"
+              className="absolute top-0 right-0 text-notice text-[18px] text-black py-[15px] px-[35px] leading-none rounded-[100px] bg-[#EDEDED] font-normal m-[20px]"
             >
               {cardLabel}
             </Text>
           </div>
           <div className="grid gap-1">
             <Text
-              className="w-full overflow-hidden whitespace-nowrap text-ellipsis "
+              className="text-[35px] text-black font-bold"
               as="h3"
             >
               {product.title}

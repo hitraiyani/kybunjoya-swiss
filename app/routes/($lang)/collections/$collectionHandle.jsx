@@ -149,7 +149,7 @@ export default function Collection() {
         <section className="info-slider-with-img mt-[100px]">
           <div className="row flex gap-x-[70px] gap-y-[30px]">
             <div className="w-[50%] img-info-col relative">
-              <div className="img-wrap">
+              <div className="img-wrap h-full flex flex-col justify-center">
                 <img
                   src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/svg-kybun-magglingen-3_1.png?v=1681740026"
                   alt=""
@@ -167,7 +167,7 @@ export default function Collection() {
                 </li>
                 <li>
                 <svg className='icon' width={100} height={100} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"> <circle cx={50} cy={50} r={49} fill="#EDEDED" fillOpacity="0.5" stroke="#DEDEDE" strokeWidth={2} /> <line x1="51.4502" y1="27.9277" x2="51.4502" y2="72.9728" stroke="black" strokeWidth={2} /> <line x1="72.9727" y1="51.4502" x2="27.9276" y2="51.4502" stroke="black" strokeWidth={2} /> </svg>
-                  <img
+                  <img className="line"
                     src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Vector_7.png?v=1681740250"
                     alt=""
                   />
@@ -175,7 +175,7 @@ export default function Collection() {
                 </li>
                 <li>
                 <svg className='icon' width={100} height={100} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"> <circle cx={50} cy={50} r={49} fill="#EDEDED" fillOpacity="0.5" stroke="#DEDEDE" strokeWidth={2} /> <line x1="51.4502" y1="27.9277" x2="51.4502" y2="72.9728" stroke="black" strokeWidth={2} /> <line x1="72.9727" y1="51.4502" x2="27.9276" y2="51.4502" stroke="black" strokeWidth={2} /> </svg>
-                  <img
+                  <img className="line"
                     src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Vector_5.png?v=1681740250"
                     alt=""
                   />
@@ -183,7 +183,7 @@ export default function Collection() {
                 </li>
                 <li>
                 <svg className='icon' width={100} height={100} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"> <circle cx={50} cy={50} r={49} fill="#EDEDED" fillOpacity="0.5" stroke="#DEDEDE" strokeWidth={2} /> <line x1="51.4502" y1="27.9277" x2="51.4502" y2="72.9728" stroke="black" strokeWidth={2} /> <line x1="72.9727" y1="51.4502" x2="27.9276" y2="51.4502" stroke="black" strokeWidth={2} /> </svg>
-                  <img
+                  <img className="line"
                     src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Vector_6.png?v=1681740250"
                     alt=""
                   />
@@ -273,7 +273,7 @@ export default function Collection() {
             </div>
           </div>
         </section>
-        <Section>
+        <Section className={'mt-[300px]'}>
           <SortFilter
             filters={collection.products.filters}
             appliedFilters={appliedFilters}
@@ -284,6 +284,7 @@ export default function Collection() {
               collection={collection}
               url={`/collections/${collection.handle}`}
               data-test="product-grid"
+              className="grid grid-cols-3 product-listing gap-x-[20px] gap-y-[20px] mb-[100px]"
             />
           </SortFilter>
         </Section>

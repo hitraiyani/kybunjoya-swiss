@@ -4,9 +4,9 @@ export function Grid({
   as: Component = 'div',
   className,
   flow = 'row',
-  gap = 'default',
-  items = 4,
-  layout = 'default',
+  gap = '',
+  items = {},
+  layout = '',
   ...props
 }) {
   const layouts = {

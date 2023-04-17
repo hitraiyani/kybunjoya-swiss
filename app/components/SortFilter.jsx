@@ -20,7 +20,7 @@ export function SortFilter({
   const [isOpen, setIsOpen] = useState(true);
   return (
     <>
-      <div className="flex items-center justify-between w-full">
+      <div className="items-center justify-between w-full hidden">
         <button
           onClick={() => setIsOpen(!isOpen)}
           className={
@@ -31,11 +31,11 @@ export function SortFilter({
         </button>
         <SortMenu />
       </div>
-      <div className="flex flex-col flex-wrap md:flex-row">
+      <div className="flex flex-col w-full">
         <div
-          className={`transition-all duration-200 ${
+          className={`transition-all duration-200  ${
             isOpen
-              ? 'opacity-100 min-w-full md:min-w-[240px] md:w-[240px] md:pr-8 max-h-full'
+              ? 'opacity-100 w-full'
               : 'opacity-0 md:min-w-[0px] md:w-[0px] pr-0 max-h-0 md:max-h-full'
           }`}
         >
@@ -45,7 +45,7 @@ export function SortFilter({
             appliedFilters={appliedFilters}
           />
         </div>
-        <div className="flex-1">{children}</div>
+        <div className="w-full">{children}</div>
       </div>
     </>
   );
@@ -112,25 +112,25 @@ export function FiltersDrawer({
           </div>
         ) : null}
 
-        <Heading as="h4" size="lead" className="pb-4">
+        <Heading as="h4" size="lead" className="pb-4 hidden">
           Filter By
         </Heading>
-        <div className="divide-y">
+        <div className="flex flex-wrap gap-[30px]">
           {filters.map(
             (filter) =>
               filter.values.length > 1 && (
-                <Disclosure as="div" key={filter.id} className="w-full">
+                <Disclosure as="div" key={filter.id} className="w-auto relative">
                   {({open}) => (
                     <>
-                      <Disclosure.Button className="flex justify-between w-full py-4">
-                        <Text size="lead">{filter.label}</Text>
-                        <IconCaret direction={open ? 'up' : 'down'} />
+                      <Disclosure.Button className="px-[30px] py-[15px] text-black font-normal tracking-[-0.400697px] border border-black text-[25px] rounded-[100px] hover:bg-black hover:text-white">
+                        <Text size="lead" className={'font-normal'}>{filter.label}</Text>
+                        {/* <IconCaret direction={open ? 'up' : 'down'} /> */}
                       </Disclosure.Button>
-                      <Disclosure.Panel key={filter.id}>
-                        <ul key={filter.id} className="py-2">
+                      <Disclosure.Panel key={filter.id} className={'absolute top-[100%] bg-[#dedede] mt-[5px] rounded-[10px] z-[1]'} >
+                        <ul key={filter.id} className="px-[20px] py-[20px] min-w-[200px]">
                           {filter.values?.map((option) => {
                             return (
-                              <li key={option.id} className="pb-4">
+                              <li key={option.id} className="pb-[2px]">
                                 {filterMarkup(filter, option)}
                               </li>
                             );
