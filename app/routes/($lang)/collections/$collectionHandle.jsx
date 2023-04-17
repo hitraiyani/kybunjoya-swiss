@@ -120,33 +120,37 @@ export async function loader({params, request, context}) {
 export default function Collection() {
   const {collection, collections, appliedFilters} = useLoaderData();
 
+  console.log("collection", collection.products.filters);
+
   return (
     <>
-      <PageHeader heading={collection.title}>
-        {collection?.description && (
-          <div className="flex items-baseline justify-between w-full">
-            <div>
-              <Text format width="narrow" as="p" className="inline-block">
-                {collection.description}
-              </Text>
+      <div className="container mt-[120px] lg:mt-[200px]">
+        <PageHeader heading={collection.title}>
+          {collection?.description && (
+            <div className="flex items-baseline justify-between w-full">
+              <div>
+                <Text format width="narrow" as="p" className="inline-block">
+                  {collection.description}
+                </Text>
+              </div>
             </div>
-          </div>
-        )}
-      </PageHeader>
-      <Section>
-        <SortFilter
-          filters={collection.products.filters}
-          appliedFilters={appliedFilters}
-          collections={collections}
-        >
-          <ProductGrid
-            key={collection.id}
-            collection={collection}
-            url={`/collections/${collection.handle}`}
-            data-test="product-grid"
-          />
-        </SortFilter>
-      </Section>
+          )}
+        </PageHeader>
+        <Section>
+          <SortFilter
+            filters={collection.products.filters}
+            appliedFilters={appliedFilters}
+            collections={collections}
+          >
+            <ProductGrid
+              key={collection.id}
+              collection={collection}
+              url={`/collections/${collection.handle}`}
+              data-test="product-grid"
+            />
+          </SortFilter>
+        </Section>
+      </div>
     </>
   );
 }
