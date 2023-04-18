@@ -47,7 +47,7 @@ export default function ratgeberseite() {
       link.addEventListener('click', function(e) {
         e.preventDefault();
 
-        document.querySelectorAll('.my-anchor-link').forEach(function(link) {
+        document.querySelectorAll('.my-achor-link').forEach(function(link) {
           link.classList.remove('active');
         });
     

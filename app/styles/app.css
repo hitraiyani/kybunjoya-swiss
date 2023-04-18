@@ -521,6 +521,10 @@ p:last-child {
   background-repeat: no-repeat;
   background-size: contain;
 }
+.my-achor-link.active{
+  background-color: #00795C;
+  color: #fff;
+}
 /* End ratgeber page css */
 
 .text-\[\#00795c\] {
