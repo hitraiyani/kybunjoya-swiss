@@ -1,4 +1,4 @@
-import {ExpandingCardStyle2} from '~/components';
+import {ExpandingCardStyle2, Link} from '~/components';
 import React, {Fragment, useState, useEffect} from 'react';
 import {json} from '@shopify/remix-oxygen';
 import {useLoaderData} from '@remix-run/react';
@@ -39,6 +39,9 @@ export async function loader({request, params, context}) {
 }
 export default function ratgeberseite() {
   const {page} = useLoaderData();
+
+  const buttonAccordionMapping = page?.ratgeber_detail?.reference?.button_accordion_mapping?.value ? JSON.parse(page.ratgeber_detail.reference.button_accordion_mapping.value) : [];
+  console.log("page",buttonAccordionMapping);
 
   useEffect(() => {
     document.querySelectorAll('.my-achor-link').forEach(function(link) {
@@ -139,205 +142,50 @@ export default function ratgeberseite() {
                   </form>
                 </div>
                 <div className="scroll-links-wrap grid grid-cols-2 gap-x-[40px] gap-y-[45px] mt-[59px]">
-                  <a
-                    href="#link1"
-                    className="px-[20px] py-[26px] flex justify-center items-center text-center bg-white rounded-[10px] text-[25px] leading-[1.4] hover:text-white hover:bg-[#00795C] min-h-[116px] font-bold text-[#00795C] transition-all duration-500 my-achor-link"
-                  >
-                    Neurologische Erkrankungen
-                  </a>
-                  <a
-                    href="#link2"
-                    className="px-[20px] py-[26px] flex justify-center items-center text-center bg-white rounded-[10px] text-[25px] leading-[1.4] hover:text-white hover:bg-[#00795C] min-h-[116px] font-bold text-[#00795C] transition-all duration-500 my-achor-link"
-                  >
-                    Hüftschmerzen
-                  </a>
-                  <a
-                    href="#link3"
-                    className="px-[20px] py-[26px] flex justify-center items-center text-center bg-white rounded-[10px] text-[25px] leading-[1.4] hover:text-white hover:bg-[#00795C] min-h-[116px] font-bold text-[#00795C] transition-all duration-500 my-achor-link"
-                  >
-                    Rückenschmerzen
-                  </a>
-                  <a
-                    href="#link4"
-                    className="px-[20px] py-[26px] flex justify-center items-center text-center bg-white rounded-[10px] text-[25px] leading-[1.4] hover:text-white hover:bg-[#00795C] min-h-[116px] font-bold text-[#00795C] transition-all duration-500 my-achor-link"
-                  >
-                    Kniearthrose
-                  </a>
-                  <a
-                    href="#link5"
-                    className="px-[20px] py-[26px] flex justify-center items-center text-center bg-white rounded-[10px] text-[25px] leading-[1.4] hover:text-white hover:bg-[#00795C] min-h-[116px] font-bold text-[#00795C] transition-all duration-500 my-achor-link"
-                  >
-                    Hüftarthrose
-                  </a>
-                  <a
-                    href="#link6"
-                    className="px-[20px] py-[26px] flex justify-center items-center text-center bg-white rounded-[10px] text-[25px] leading-[1.4] hover:text-white hover:bg-[#00795C] min-h-[116px] font-bold text-[#00795C] transition-all duration-500 my-achor-link"
-                  >
-                    Hallux valgus Hallux rigidus
-                  </a>
-                  <a
-                    href="#link7"
-                    className="px-[20px] py-[26px] flex justify-center items-center text-center bg-white rounded-[10px] text-[25px] leading-[1.4] hover:text-white hover:bg-[#00795C] min-h-[116px] font-bold text-[#00795C] transition-all duration-500 my-achor-link"
-                  >
-                    Achillessehnen-schmerzen
-                  </a>
-                  <a
-                    href="#link8"
-                    className="px-[20px] py-[26px] flex justify-center items-center text-center bg-white rounded-[10px] text-[25px] leading-[1.4] hover:text-white hover:bg-[#00795C] min-h-[116px] font-bold text-[#00795C] transition-all duration-500 my-achor-link"
-                  >
-                    Fersensporn Fasziitis / Plantaris{' '}
-                  </a>
-                  <a
-                    href="#link9"
-                    className="px-[20px] py-[26px] flex justify-center items-center text-center bg-white rounded-[10px] text-[25px] leading-[1.4] hover:text-white hover:bg-[#00795C] min-h-[116px] font-bold text-[#00795C] transition-all duration-500 my-achor-link"
-                  >
-                    Fussfehlstellung
-                  </a>
-                  <a
-                    href="#link10"
-                    className="px-[20px] py-[26px] flex justify-center items-center text-center bg-white rounded-[10px] text-[25px] leading-[1.4] hover:text-white hover:bg-[#00795C] min-h-[116px] font-bold text-[#00795C] transition-all duration-500 my-achor-link"
-                  >
-                    Weitere Indikationen
-                  </a>
+                  {
+                    buttonAccordionMapping?.map((item, index) => {
+                      return (
+                        <a
+                          key={index}
+                          href={`#link${index+1}`}
+                          className="px-[20px] py-[26px] flex justify-center items-center text-center bg-white rounded-[10px] text-[25px] leading-[1.4] hover:text-white hover:bg-[#00795C] min-h-[116px] font-bold text-[#00795C] transition-all duration-500 my-achor-link"
+                        >
+                          {item.button_name}
+                        </a>
+                      );
+                    })
+                  }
                 </div>
               </div>
             </div>
           </div>
         </section>
         <section className="dr-faq-sec mt-[44px] !max-w-[870px] mx-auto mb-[115px] flex flex-col gap-[20px]">
-          <ExpandingCardStyle2
-            id="link1"
-            content="<ul>
-            <li>Fersensporn / Plantar Fasciitis / Fasziitisplantaris</li>
-            <li>Vorfussschmerzen</li>
-            <li>Fussbrennen</li>
-            <li>Grosszehen Arthrose / Hallux valgus</li>
-            <li>Fussfehlstellungen</li>
-            <li>Einschlafende Zehen / Kribbeln / Taubheitsgefühl</li>
-            <li>Hornhaut / Reib- /Druckstellen / Blasen</li>
-            <li>Metatarsalgie</li>
-            <li>Fussgelenks- /Knöchel- /Sprunggelenksprobleme</li>
-            <li>Versteiftes Fuss-/Sprunggelenk</li>
-            <li>Schweissfüsse / Fussgeruch / Kalte Füsse</li>
-            <li>Einlagen im kybun Schuh - Ja, Nein?</li>
-            </ul>"
-            title="Füsse"
-          />
-          <ExpandingCardStyle2
-          id="link2"
-            content="<ul>
-            <li>Fersensporn / Plantar Fasciitis / Fasziitisplantaris</li>
-            <li>Vorfussschmerzen</li>
-            <li>Fussbrennen</li>
-            <li>Grosszehen Arthrose / Hallux valgus</li>
-            <li>Fussfehlstellungen</li>
-            <li>Einschlafende Zehen / Kribbeln / Taubheitsgefühl</li>
-            <li>Hornhaut / Reib- /Druckstellen / Blasen</li>
-            <li>Metatarsalgie</li>
-            <li>Fussgelenks- /Knöchel- /Sprunggelenksprobleme</li>
-            <li>Versteiftes Fuss-/Sprunggelenk</li>
-            <li>Schweissfüsse / Fussgeruch / Kalte Füsse</li>
-            <li>Einlagen im kybun Schuh - Ja, Nein?</li>
-            </ul>"
-            title="Beine"
-          />
-          <ExpandingCardStyle2
-          id="link3"
-            content="<ul>
-            <li>Fersensporn / Plantar Fasciitis / Fasziitisplantaris</li>
-            <li>Vorfussschmerzen</li>
-            <li>Fussbrennen</li>
-            <li>Grosszehen Arthrose / Hallux valgus</li>
-            <li>Fussfehlstellungen</li>
-            <li>Einschlafende Zehen / Kribbeln / Taubheitsgefühl</li>
-            <li>Hornhaut / Reib- /Druckstellen / Blasen</li>
-            <li>Metatarsalgie</li>
-            <li>Fussgelenks- /Knöchel- /Sprunggelenksprobleme</li>
-            <li>Versteiftes Fuss-/Sprunggelenk</li>
-            <li>Schweissfüsse / Fussgeruch / Kalte Füsse</li>
-            <li>Einlagen im kybun Schuh - Ja, Nein?</li>
-            </ul>"
-            title="Rücken / Rumpf / Kopf"
-          />
-          <ExpandingCardStyle2
-          id="link4"
-            content="<ul>
-            <li>Fersensporn / Plantar Fasciitis / Fasziitisplantaris</li>
-            <li>Vorfussschmerzen</li>
-            <li>Fussbrennen</li>
-            <li>Grosszehen Arthrose / Hallux valgus</li>
-            <li>Fussfehlstellungen</li>
-            <li>Einschlafende Zehen / Kribbeln / Taubheitsgefühl</li>
-            <li>Hornhaut / Reib- /Druckstellen / Blasen</li>
-            <li>Metatarsalgie</li>
-            <li>Fussgelenks- /Knöchel- /Sprunggelenksprobleme</li>
-            <li>Versteiftes Fuss-/Sprunggelenk</li>
-            <li>Schweissfüsse / Fussgeruch / Kalte Füsse</li>
-            <li>Einlagen im kybun Schuh - Ja, Nein?</li>
-            </ul>"
-            title="Knie"
-          />
-          <ExpandingCardStyle2
-          id="link5"
-            content="<ul>
-            <li>Fersensporn / Plantar Fasciitis / Fasziitisplantaris</li>
-            <li>Vorfussschmerzen</li>
-            <li>Fussbrennen</li>
-            <li>Grosszehen Arthrose / Hallux valgus</li>
-            <li>Fussfehlstellungen</li>
-            <li>Einschlafende Zehen / Kribbeln / Taubheitsgefühl</li>
-            <li>Hornhaut / Reib- /Druckstellen / Blasen</li>
-            <li>Metatarsalgie</li>
-            <li>Fussgelenks- /Knöchel- /Sprunggelenksprobleme</li>
-            <li>Versteiftes Fuss-/Sprunggelenk</li>
-            <li>Schweissfüsse / Fussgeruch / Kalte Füsse</li>
-            <li>Einlagen im kybun Schuh - Ja, Nein?</li>
-            </ul>"
-            title="Hüfte"
-          />
-          <ExpandingCardStyle2
-          id="link6"
-            content="<ul>
-            <li>Fersensporn / Plantar Fasciitis / Fasziitisplantaris</li>
-            <li>Vorfussschmerzen</li>
-            <li>Fussbrennen</li>
-            <li>Grosszehen Arthrose / Hallux valgus</li>
-            <li>Fussfehlstellungen</li>
-            <li>Einschlafende Zehen / Kribbeln / Taubheitsgefühl</li>
-            <li>Hornhaut / Reib- /Druckstellen / Blasen</li>
-            <li>Metatarsalgie</li>
-            <li>Fussgelenks- /Knöchel- /Sprunggelenksprobleme</li>
-            <li>Versteiftes Fuss-/Sprunggelenk</li>
-            <li>Schweissfüsse / Fussgeruch / Kalte Füsse</li>
-            <li>Einlagen im kybun Schuh - Ja, Nein?</li>
-            </ul>"
-            title="Systemische Erkrankungen"
-          />
-          <ExpandingCardStyle2
-          id="link7"
-            content="<ul>
-            <li>Fersensporn / Plantar Fasciitis / Fasziitisplantaris</li>
-            <li>Vorfussschmerzen</li>
-            <li>Fussbrennen</li>
-            <li>Grosszehen Arthrose / Hallux valgus</li>
-            <li>Fussfehlstellungen</li>
-            <li>Einschlafende Zehen / Kribbeln / Taubheitsgefühl</li>
-            <li>Hornhaut / Reib- /Druckstellen / Blasen</li>
-            <li>Metatarsalgie</li>
-            <li>Fussgelenks- /Knöchel- /Sprunggelenksprobleme</li>
-            <li>Versteiftes Fuss-/Sprunggelenk</li>
-            <li>Schweissfüsse / Fussgeruch / Kalte Füsse</li>
-            <li>Einlagen im kybun Schuh - Ja, Nein?</li>
-            </ul>"
-            title="Sonstige Indikatoren"
-          />
+         {
+            buttonAccordionMapping?.map((item, index) => {
+              if(!item.accordion_title) return(<></>);
+              return (
+                <ExpandingCardStyle2
+                  key={index}
+                  id={`link${index+1}`}
+                  content={item.accordion_content}
+                  title={item.accordion_title}
+                />
+              );
+            })
+          }
           <div className='info-bottom mt-[151px]'>
             <div className='title-wrap'>
-              <h3 className='text-center tracking-[-0.97152px] text-[45px] leading-[1.1] font-medium'>Sie vermissen ein Krankheitsbild oder möchten persönlich beraten werden?</h3>
+              <h3 className='text-center tracking-[-0.97152px] text-[45px] leading-[1.1] font-medium'>{page?.ratgeber_detail?.reference?.cta_text?.value}</h3>
             </div>
             <div className='link-wrap flex justify-center mt-[40px]'>
-              <a href="#" className='block rounded-[100px] bg-black text-white
-                 text-center px-[60px] py-[25px] hover:bg-[#00795c] hover:text-white text-[18px] max-w-fit font-normal leading-none'>Schreiben Sie Uns</a>
+            <Link
+            className='block rounded-[100px] bg-black text-white
+            text-center px-[60px] py-[25px] hover:bg-[#00795c] hover:text-white text-[18px] max-w-fit font-normal leading-none'
+            to={page?.ratgeber_detail?.reference?.cta_button_redirect?.value}
+            >
+              {page?.ratgeber_detail?.reference?.cta_button_text?.value}
+            </Link>
             </div>
           </div>
         </section>
@@ -370,6 +218,18 @@ ${MEDIA_FRAGMENT}
               value
             }
             head_content : field(key: "head_content") {
+              value
+            }
+            cta_text : field(key: "cta_text") {
+              value
+            }
+            cta_button_text : field(key: "cta_button_text") {
+              value
+            }
+            cta_button_redirect : field(key: "cta_button_redirect") {
+              value
+            }
+            button_accordion_mapping : field(key: "button_accordion_mapping") {
               value
             }
           }
