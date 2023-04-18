@@ -40,8 +40,6 @@ export async function loader({request, params, context}) {
 export default function ratgeberseite() {
   const {page} = useLoaderData();
 
-  const [hashValue, sethashValue] = useState(null);
-
   useEffect(() => {
     document.querySelectorAll('.my-achor-link').forEach(function(link) {
       link.addEventListener('click', function(e) {
@@ -53,6 +51,11 @@ export default function ratgeberseite() {
     
         // add active class to clicked element
         this.classList.add('active');
+        
+        const hashId = this.hash.substring(1);
+
+        var myElement = document.querySelector('#'+hashId);
+        myElement?.querySelector('button')?.click();
 
         var target = this.hash;
         var $target = document.querySelector(target);
@@ -64,11 +67,6 @@ export default function ratgeberseite() {
         });
       });
     });
-    // window.addEventListener("hashchange", function () {
-    //   if (window.location.hash) {
-    //       sethashValue(window.location.hash);
-    //   }
-    // });
   },[]);
 
   return (
