@@ -527,3 +527,13 @@ p:last-child {
   --tw-text-opacity: 1;
   color: rgb(0 121 92 / var(--tw-text-opacity));
 }
+
+.accordion {
+  height: 0;
+  overflow: hidden;
+  transition: height 0.3s ease-in-out;
+}
+
+.accordion.open {
+  height: auto;
+}

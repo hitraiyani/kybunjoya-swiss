@@ -1,6 +1,50 @@
 import {ExpandingCardStyle2} from '~/components';
+import React, {Fragment, useState} from 'react';
+import {json} from '@shopify/remix-oxygen';
+import {useLoaderData} from '@remix-run/react';
+import {MEDIA_FRAGMENT} from '~/data/fragments';
+import { toHTML} from '~/lib/utils';
 
+const seo = ({data}) => ({
+  title: data?.page?.seo?.title,
+  description: data?.page?.seo?.description,
+});
+
+export const handle = {
+  seo,
+};
+
+export async function loader({request, params, context}) {
+  
+  const {page} = await context.storefront.query(PAGE_QUERY, {
+    variables: {
+      handle: 'ratgeber-detail-page',
+      language: context.storefront.i18n.language,
+    },
+  });
+
+  if (!page) {
+    throw new Response(null, {status: 404});
+  }
+
+  return json(
+    {page},
+    {
+      headers: {
+        // TODO cacheLong()
+      },
+    },
+  );
+}
 export default function ratgeberseite() {
+  const {page} = useLoaderData();
+
+  const [accordionStates, setAccordionStates] = useState({});
+
+
+
+  console.log("page", page);
+  
   return (
     <>
       <div className="container mt-[200px]">
@@ -9,23 +53,20 @@ export default function ratgeberseite() {
             <div className="flex flex-wrap gap-[46px]">
               <div className="content-info w-[510px]">
                 <div className="title-wrap text-right max-w-[280px] ml-auto">
-                  <h2 className="text-[#00795C] leading-none text-[100px] font-black">
-                    Dr. kybun Joya
-                  </h2>
+                  <h2 className='text-[#00795C] leading-none text-[100px] font-black'>{page?.ratgeber_detail?.reference?.head_title?.value}</h2>
                 </div>
-                <div className="desc mt-[52px] text-[45px] tracking-[-0.97152px] text-right text-black leading-[1.2]">
-                  <p>
-                    Lokalisieren Sie Ihre Schmerzen und lernen Sie die{' '}
-                    <span className="text-[#00795C]">kybun Joya Therapie</span>{' '}
-                    für Ihr Leiden kennen.
-                  </p>
+                
+                <div className="desc mt-[52px] text-[45px] tracking-[-0.97152px] text-right text-black leading-[1.2]"
+                  dangerouslySetInnerHTML={{
+                    __html: toHTML(page?.ratgeber_detail?.reference?.head_content?.value),
+                  }}
+                >
                 </div>
               </div>
               <div className="interactive-img-wrap w-[500px]">
                 <div className="img-wrap w-full text-center">
-                  <img
-                    className="m-auto"
-                    src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/full-length-portrait-serious-old-lady-blue-shirt-white-pants-standing-with-hands-her-waist_1.png?v=1681814517"
+                  <img className='m-auto'
+                    src={page?.ratgeber_detail?.reference?.head_interactive_image?.reference?.image?.url}
                     alt=""
                   />
                 </div>
@@ -280,3 +321,40 @@ export default function ratgeberseite() {
     </>
   );
 }
+
+
+
+
+const PAGE_QUERY = `#graphql
+${MEDIA_FRAGMENT}
+  query PageDetails($language: LanguageCode, $handle: String!)
+  @inContext(language: $language) {
+    page(handle: $handle) {
+      id
+      title
+      body
+      ratgeber_detail : metafield(namespace: "custom", key: "ratgeber_detail") {
+        reference {
+          ... on Metaobject {
+            handle
+            head_interactive_image : field(key: "head_interactive_image") {
+              reference {
+                ...Media
+              }
+            }
+            head_title : field(key: "head_title") {
+              value
+            }
+            head_content : field(key: "head_content") {
+              value
+            }
+          }
+        }
+      }
+      seo {
+        description
+        title
+      }
+    }
+  }
+`;

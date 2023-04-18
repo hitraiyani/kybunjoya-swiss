@@ -40,9 +40,6 @@ export async function loader({request, params, context}) {
 export default function ratgeber() {
   const {page} = useLoaderData();
 
-  console.log("page", (page.ratgeber.reference));
-
-
   return (
     <>
       <div className="container mt-[200px]">
