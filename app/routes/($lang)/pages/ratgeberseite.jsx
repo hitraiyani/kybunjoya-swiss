@@ -1,5 +1,5 @@
 import {ExpandingCardStyle2} from '~/components';
-import React, {Fragment, useState} from 'react';
+import React, {Fragment, useState, useEffect} from 'react';
 import {json} from '@shopify/remix-oxygen';
 import {useLoaderData} from '@remix-run/react';
 import {MEDIA_FRAGMENT} from '~/data/fragments';
@@ -15,6 +15,7 @@ export const handle = {
 };
 
 export async function loader({request, params, context}) {
+
   
   const {page} = await context.storefront.query(PAGE_QUERY, {
     variables: {
@@ -39,12 +40,37 @@ export async function loader({request, params, context}) {
 export default function ratgeberseite() {
   const {page} = useLoaderData();
 
-  const [accordionStates, setAccordionStates] = useState({});
+  const [hashValue, sethashValue] = useState(null);
 
+  useEffect(() => {
+    document.querySelectorAll('.my-achor-link').forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
 
+        document.querySelectorAll('.my-anchor-link').forEach(function(link) {
+          link.classList.remove('active');
+        });
+    
+        // add active class to clicked element
+        this.classList.add('active');
 
-  console.log("page", page);
-  
+        var target = this.hash;
+        var $target = document.querySelector(target);
+        var scrollDistance = $target.offsetTop - 90;
+    
+        window.scrollTo({
+          top: scrollDistance,
+          behavior: 'smooth'
+        });
+      });
+    });
+    // window.addEventListener("hashchange", function () {
+    //   if (window.location.hash) {
+    //       sethashValue(window.location.hash);
+    //   }
+    // });
+  },[]);
+
   return (
     <>
       <div className="container mt-[200px]">
@@ -117,61 +143,61 @@ export default function ratgeberseite() {
                 <div className="scroll-links-wrap grid grid-cols-2 gap-x-[40px] gap-y-[45px] mt-[59px]">
                   <a
                     href="#link1"
-                    className="px-[20px] py-[26px] flex justify-center items-center text-center bg-white rounded-[10px] text-[25px] leading-[1.4] hover:text-white hover:bg-[#00795C] min-h-[116px] font-bold text-[#00795C] transition-all duration-500"
+                    className="px-[20px] py-[26px] flex justify-center items-center text-center bg-white rounded-[10px] text-[25px] leading-[1.4] hover:text-white hover:bg-[#00795C] min-h-[116px] font-bold text-[#00795C] transition-all duration-500 my-achor-link"
                   >
                     Neurologische Erkrankungen
                   </a>
                   <a
                     href="#link2"
-                    className="px-[20px] py-[26px] flex justify-center items-center text-center bg-white rounded-[10px] text-[25px] leading-[1.4] hover:text-white hover:bg-[#00795C] min-h-[116px] font-bold text-[#00795C] transition-all duration-500"
+                    className="px-[20px] py-[26px] flex justify-center items-center text-center bg-white rounded-[10px] text-[25px] leading-[1.4] hover:text-white hover:bg-[#00795C] min-h-[116px] font-bold text-[#00795C] transition-all duration-500 my-achor-link"
                   >
                     Hüftschmerzen
                   </a>
                   <a
                     href="#link3"
-                    className="px-[20px] py-[26px] flex justify-center items-center text-center bg-white rounded-[10px] text-[25px] leading-[1.4] hover:text-white hover:bg-[#00795C] min-h-[116px] font-bold text-[#00795C] transition-all duration-500"
+                    className="px-[20px] py-[26px] flex justify-center items-center text-center bg-white rounded-[10px] text-[25px] leading-[1.4] hover:text-white hover:bg-[#00795C] min-h-[116px] font-bold text-[#00795C] transition-all duration-500 my-achor-link"
                   >
                     Rückenschmerzen
                   </a>
                   <a
                     href="#link4"
-                    className="px-[20px] py-[26px] flex justify-center items-center text-center bg-white rounded-[10px] text-[25px] leading-[1.4] hover:text-white hover:bg-[#00795C] min-h-[116px] font-bold text-[#00795C] transition-all duration-500"
+                    className="px-[20px] py-[26px] flex justify-center items-center text-center bg-white rounded-[10px] text-[25px] leading-[1.4] hover:text-white hover:bg-[#00795C] min-h-[116px] font-bold text-[#00795C] transition-all duration-500 my-achor-link"
                   >
                     Kniearthrose
                   </a>
                   <a
                     href="#link5"
-                    className="px-[20px] py-[26px] flex justify-center items-center text-center bg-white rounded-[10px] text-[25px] leading-[1.4] hover:text-white hover:bg-[#00795C] min-h-[116px] font-bold text-[#00795C] transition-all duration-500"
+                    className="px-[20px] py-[26px] flex justify-center items-center text-center bg-white rounded-[10px] text-[25px] leading-[1.4] hover:text-white hover:bg-[#00795C] min-h-[116px] font-bold text-[#00795C] transition-all duration-500 my-achor-link"
                   >
                     Hüftarthrose
                   </a>
                   <a
                     href="#link6"
-                    className="px-[20px] py-[26px] flex justify-center items-center text-center bg-white rounded-[10px] text-[25px] leading-[1.4] hover:text-white hover:bg-[#00795C] min-h-[116px] font-bold text-[#00795C] transition-all duration-500"
+                    className="px-[20px] py-[26px] flex justify-center items-center text-center bg-white rounded-[10px] text-[25px] leading-[1.4] hover:text-white hover:bg-[#00795C] min-h-[116px] font-bold text-[#00795C] transition-all duration-500 my-achor-link"
                   >
                     Hallux valgus Hallux rigidus
                   </a>
                   <a
                     href="#link7"
-                    className="px-[20px] py-[26px] flex justify-center items-center text-center bg-white rounded-[10px] text-[25px] leading-[1.4] hover:text-white hover:bg-[#00795C] min-h-[116px] font-bold text-[#00795C] transition-all duration-500"
+                    className="px-[20px] py-[26px] flex justify-center items-center text-center bg-white rounded-[10px] text-[25px] leading-[1.4] hover:text-white hover:bg-[#00795C] min-h-[116px] font-bold text-[#00795C] transition-all duration-500 my-achor-link"
                   >
                     Achillessehnen-schmerzen
                   </a>
                   <a
                     href="#link8"
-                    className="px-[20px] py-[26px] flex justify-center items-center text-center bg-white rounded-[10px] text-[25px] leading-[1.4] hover:text-white hover:bg-[#00795C] min-h-[116px] font-bold text-[#00795C] transition-all duration-500"
+                    className="px-[20px] py-[26px] flex justify-center items-center text-center bg-white rounded-[10px] text-[25px] leading-[1.4] hover:text-white hover:bg-[#00795C] min-h-[116px] font-bold text-[#00795C] transition-all duration-500 my-achor-link"
                   >
                     Fersensporn Fasziitis / Plantaris{' '}
                   </a>
                   <a
                     href="#link9"
-                    className="px-[20px] py-[26px] flex justify-center items-center text-center bg-white rounded-[10px] text-[25px] leading-[1.4] hover:text-white hover:bg-[#00795C] min-h-[116px] font-bold text-[#00795C] transition-all duration-500"
+                    className="px-[20px] py-[26px] flex justify-center items-center text-center bg-white rounded-[10px] text-[25px] leading-[1.4] hover:text-white hover:bg-[#00795C] min-h-[116px] font-bold text-[#00795C] transition-all duration-500 my-achor-link"
                   >
                     Fussfehlstellung
                   </a>
                   <a
                     href="#link10"
-                    className="px-[20px] py-[26px] flex justify-center items-center text-center bg-white rounded-[10px] text-[25px] leading-[1.4] hover:text-white hover:bg-[#00795C] min-h-[116px] font-bold text-[#00795C] transition-all duration-500"
+                    className="px-[20px] py-[26px] flex justify-center items-center text-center bg-white rounded-[10px] text-[25px] leading-[1.4] hover:text-white hover:bg-[#00795C] min-h-[116px] font-bold text-[#00795C] transition-all duration-500 my-achor-link"
                   >
                     Weitere Indikationen
                   </a>
