@@ -559,6 +559,9 @@ video {
 .left-5 {
   left: 1.25rem;
 }
+.left-\[28px\] {
+  left: 28px;
+}
 .left-\[3px\] {
   left: 3px;
 }
@@ -785,6 +788,9 @@ video {
 .mt-\[50px\] {
   margin-top: 50px;
 }
+.mt-\[52px\] {
+  margin-top: 52px;
+}
 .mt-\[5px\] {
   margin-top: 5px;
 }
@@ -975,8 +981,14 @@ video {
 .w-\[50\%\] {
   width: 50%;
 }
+.w-\[500px\] {
+  width: 500px;
+}
 .w-\[50px\] {
   width: 50px;
+}
+.w-\[510px\] {
+  width: 510px;
 }
 .w-\[77\%\] {
   width: 77%;
@@ -1021,6 +1033,9 @@ video {
 }
 .max-w-\[224px\] {
   max-width: 224px;
+}
+.max-w-\[280px\] {
+  max-width: 280px;
 }
 .max-w-\[375px\] {
   max-width: 375px;
@@ -1231,6 +1246,9 @@ video {
 }
 .gap-\[30px\] {
   gap: 30px;
+}
+.gap-\[46px\] {
+  gap: 46px;
 }
 .gap-\[50px\] {
   gap: 50px;
@@ -1657,6 +1675,10 @@ video {
   padding-top: 25px;
   padding-bottom: 25px;
 }
+.py-\[28px\] {
+  padding-top: 28px;
+  padding-bottom: 28px;
+}
 .py-\[30px\] {
   padding-top: 30px;
   padding-bottom: 30px;
@@ -1724,6 +1746,9 @@ video {
 .pl-6 {
   padding-left: 1.5rem;
 }
+.pl-\[62px\] {
+  padding-left: 62px;
+}
 .pr-0 {
   padding-right: 0px;
 }
@@ -1732,6 +1757,9 @@ video {
 }
 .pr-4 {
   padding-right: 1rem;
+}
+.pr-\[20px\] {
+  padding-right: 20px;
 }
 .pt-16 {
   padding-top: 4rem;
@@ -1753,6 +1781,9 @@ video {
 }
 .pt-\[12px\] {
   padding-top: 12px;
+}
+.pt-\[150px\] {
+  padding-top: 150px;
 }
 .pt-\[50px\] {
   padding-top: 50px;
@@ -2056,6 +2087,14 @@ video {
 .ease-out {
   transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
 }
+.placeholder\:text-\[\#00795C\]::-moz-placeholder {
+  --tw-text-opacity: 1;
+  color: rgb(0 121 92 / var(--tw-text-opacity));
+}
+.placeholder\:text-\[\#00795C\]::placeholder {
+  --tw-text-opacity: 1;
+  color: rgb(0 121 92 / var(--tw-text-opacity));
+}
 .placeholder\:text-\[\#999\]::-moz-placeholder {
   --tw-text-opacity: 1;
   color: rgb(153 153 153 / var(--tw-text-opacity));
@@ -2153,6 +2192,9 @@ video {
 .focus\:outline-none:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
+}
+.focus\:outline-0:focus {
+  outline-width: 0px;
 }
 .focus\:ring-0:focus {
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
