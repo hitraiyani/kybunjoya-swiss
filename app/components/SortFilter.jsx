@@ -78,7 +78,7 @@ export function FiltersDrawer({
         const to = getFilterLink(filter, option.input, params, location);
         return (
           <Link
-            className="focus:underline hover:underline"
+            className="hover:text-[#00795c]"
             prefetch="intent"
             to={to}
           >
@@ -93,7 +93,7 @@ export function FiltersDrawer({
       <li key={collection.handle} className="pb-4">
         <Link
           to={`/collections/${collection.handle}`}
-          className="focus:underline hover:underline"
+          className="hover:text-[#00795c]"
           key={collection.handle}
           prefetch="intent"
         >
@@ -107,7 +107,7 @@ export function FiltersDrawer({
     <>
       <nav className="py-8">
         {appliedFilters.length > 0 ? (
-          <div className="pb-8">
+          <div className="pb-8 hidden">
             <AppliedFilters filters={appliedFilters} />
           </div>
         ) : null}
@@ -122,15 +122,15 @@ export function FiltersDrawer({
                 <Disclosure as="div" key={filter.id} className="w-auto relative">
                   {({open}) => (
                     <>
-                      <Disclosure.Button className="px-[30px] py-[15px] text-black font-normal tracking-[-0.400697px] border border-black text-[25px] rounded-[100px] hover:bg-black hover:text-white">
+                      <Disclosure.Button className={`px-[30px] py-[15px]  font-normal tracking-[-0.400697px] border border-black text-[25px] rounded-[100px] hover:bg-black hover:text-white ${open ? 'text-white bg-black' : 'text-black bg-white'}`}>
                         <Text size="lead" className={'font-normal'}>{filter.label}</Text>
                         {/* <IconCaret direction={open ? 'up' : 'down'} /> */}
                       </Disclosure.Button>
-                      <Disclosure.Panel key={filter.id} className={'absolute top-[100%] bg-[#dedede] mt-[5px] rounded-[10px] z-[1]'} >
-                        <ul key={filter.id} className="px-[20px] py-[20px] min-w-[200px]">
+                      <Disclosure.Panel key={filter.id} className={'absolute top-[100%] bg-[#ffffff] mt-[5px] rounded-[10px] z-[1]'} >
+                        <ul key={filter.id} className="px-[20px] py-[20px] min-w-max w-[150px] filter-list">
                           {filter.values?.map((option) => {
                             return (
-                              <li key={option.id} className="pb-[2px]">
+                              <li key={option.id} className="pb-[10px] tracking-[-0.400697px] text-[25px] font-normal last:pb-[0]">
                                 {filterMarkup(filter, option)}
                               </li>
                             );
