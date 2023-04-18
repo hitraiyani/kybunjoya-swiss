@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import {flattenConnection, Image, Money, useMoney} from '@shopify/hydrogen';
-import {Text, Link, AddToCartButton} from '~/components';
+import {Text, Link, AddToCartButton,IconCart} from '~/components';
 import {isDiscounted, isNewArrival} from '~/lib/utils';
 import {getProductPlaceholder} from '~/lib/placeholders';
 
@@ -41,7 +41,7 @@ export function ProductCard({
   };
 
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex flex-col gap-2 product-item">
       <Link
         onClick={onClick}
         to={`/products/${product.handle}`}
@@ -72,6 +72,7 @@ export function ProductCard({
             >
               {cardLabel}
             </Text>
+            <button className='pro-btn text-[18px] text-white tracking-[-0.400697px] font-normal flex gap-[10px] px-[30px] py-[15px] bg-black rounded-[100px] absolute bottom-[34px] max-w-fit left-0 right-0 m-auto items-center opacity-0 transition-all duration-700 hover:bg-[#00795c]'><IconCart />Zum Shop</button>
           </div>
           <div className="grid gap-1">
             <Text
@@ -80,7 +81,10 @@ export function ProductCard({
             >
               {product.title}
             </Text>
-            <div className="flex gap-4">
+            <div className='desc text-[15px] font-normal mt-[5px] !text-black max-w-[375px]'>
+              <p>Bequem kann nicht auch elegant sein? Dann haben Sie unser traditionelles und verspieltes Modell kybun Rolle White noch nicht gesehen</p>
+            </div>
+            {/* <div className="flex gap-4">
               <Text className="flex gap-4">
                 <Money withoutTrailingZeros data={price} />
                 {isDiscounted(price, compareAtPrice) && (
@@ -90,7 +94,7 @@ export function ProductCard({
                   />
                 )}
               </Text>
-            </div>
+            </div> */}
           </div>
         </div>
       </Link>

@@ -45,7 +45,7 @@ export function SortFilter({
             appliedFilters={appliedFilters}
           />
         </div>
-        <div className="w-full">{children}</div>
+        <div className="w-full mb-[100px]">{children}</div>
       </div>
     </>
   );

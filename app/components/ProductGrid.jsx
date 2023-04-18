@@ -65,13 +65,14 @@ export function ProductGrid({url, collection, ...props}) {
       </Grid>
 
       {nextPage && (
-        <div className="flex items-center justify-center mt-6">
+        <div className="flex items-center justify-center mt-[70px]">
           <Button
             disabled={fetcher.state !== 'idle'}
             variant="secondary"
             onClick={fetchMoreProducts}
             width="full"
             prefetch="intent"
+            className={"max-w-fit text-[18px] text-white bg-black tracking-[-0.400697px] font-normal px-[30px] py-[15px] rounded-[100px] hover:bg-[#00795c]"}
           >
             {fetcher.state !== 'idle' ? 'Loading...' : 'Load more products'}
           </Button>

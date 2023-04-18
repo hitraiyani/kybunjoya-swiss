@@ -464,6 +464,9 @@ p:last-child {
 .product-listing .card-image {
   box-shadow: 0px 4.76252px 9.52504px rgba(0, 0, 0, 0.1);
 }
+.product-listing .product-item:hover .pro-btn {
+  opacity: 1;
+}
 .filter-list li a:before {
   content: '';
   width: 18px;
