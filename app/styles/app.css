@@ -487,13 +487,39 @@ p:last-child {
 }
 /* Product linsting page css */
 
-
 /* ratgeber page css */
-.ratgeber-banner-section .img-overlay{
-  background: linear-gradient(180deg, rgba(118, 118, 118, 0) 0%, rgba(0, 0, 0, .45) 53.13%, rgba(0, 0, 0, .65) 100%);
+.ratgeber-banner-section .img-overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(118, 118, 118, 0) 0%,
+    rgba(0, 0, 0, 0.45) 53.13%,
+    rgba(0, 0, 0, 0.65) 100%
+  );
 }
-.four-boxes-section .item{
-  box-shadow: 0px 0px 0.9821px rgba(0, 0, 0, 0.05), 0px 3.9284px 7.8568px rgba(0, 0, 0, 0.1);
+.four-boxes-section .item {
+  box-shadow: 0px 0px 0.9821px rgba(0, 0, 0, 0.05),
+    0px 3.9284px 7.8568px rgba(0, 0, 0, 0.1);
+}
+.dr-info-tabs-section .scroll-links-wrap a {
+  box-shadow: 0px 0px 0.9821px 2px rgba(0, 0, 0, 0.05),
+    0px 3.9284px 7.8568px 1px rgba(0, 0, 0, 0.1);
+}
+.dr-faq-sec .editor-content ul li {
+  display: flex;
+  display: flex;
+  gap: 13px 13px;
+  padding-bottom: 10px;
+  align-items: center;
+}
+
+.dr-faq-sec .editor-content ul li::before {
+  content: '';
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256' viewBox='0 0 256 256'%3E%3Cpath fill='%2300795C' d='m220.24 132.24l-72 72a6 6 0 0 1-8.48-8.48L201.51 134H40a6 6 0 0 1 0-12h161.51l-61.75-61.76a6 6 0 0 1 8.48-8.48l72 72a6 6 0 0 1 0 8.48Z'%3E%3C/path%3E%3C/svg%3E");
+  width: 31px;
+  height: 31px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 /* End ratgeber page css */
 
