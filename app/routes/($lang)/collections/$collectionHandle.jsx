@@ -4,9 +4,10 @@ import {flattenConnection, AnalyticsPageType} from '@shopify/hydrogen';
 import invariant from 'tiny-invariant';
 import {PageHeader, Section, Text, SortFilter, ArrowRight,IconCart,IconMapPin} from '~/components';
 import {ProductGrid} from '~/components/ProductGrid';
-import {PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
+import {PRODUCT_CARD_FRAGMENT, MEDIA_FRAGMENT} from '~/data/fragments';
 import {Navigation, Pagination, Scrollbar, A11y, Autoplay} from 'swiper';
 import {Swiper, SwiperSlide} from 'swiper/react';
+import { toHTML } from '~/lib/utils';
 
 const seo = ({data}) => ({
   title: data?.collection?.seo?.title,
@@ -105,12 +106,24 @@ export async function loader({params, request, context}) {
     throw new Response(null, {status: 404});
   }
 
+  let brandHereSection = null;
+  //searchParams.has('productVendor') && searchParams.get('productVendor') == 'Kybunjoya Swiss'
+  if(true) {
+      brandHereSection = await context.storefront.query(
+      BRAND_PAGE_HERO_SECTION_QUERY,
+      {
+        variables: {metaObjectId: 'gid://shopify/Metaobject/2200076609'},
+      },
+    );
+  }
+
   const collectionNodes = flattenConnection(collections);
 
   return json({
     collection,
     appliedFilters,
     collections: collectionNodes,
+    brandHereSection,
     analytics: {
       pageType: AnalyticsPageType.collection,
       collectionHandle,
@@ -120,31 +133,20 @@ export async function loader({params, request, context}) {
 }
 
 export default function Collection() {
-  const {collection, collections, appliedFilters} = useLoaderData();
+  const {collection, collections, appliedFilters, brandHereSection} = useLoaderData();
 
-  console.log('collection', collection.products.filters);
+  console.log('collection', brandHereSection);
 
   return (
     <>
       <div className="container mt-[120px] lg:mt-[200px]">
         <h1 className="title text-[#00795C] text-[35px] lg:text-[40px] xl:text-[65px] tracking-[-1.05984px] mb-[20px] lg:mb-[30px]">
-          kybun Schuhe
+          {brandHereSection?.data?.head_title?.value}
         </h1>
-        {/* <PageHeader heading={collection.title}>
-          {collection?.description && (
-            <div className="flex items-baseline justify-between w-full">
-              <div>
-                <Text format width="narrow" as="p" className="inline-block">
-                  {collection.description}
-                </Text>
-              </div>
-            </div>
-          )}
-        </PageHeader> */}
         <div className="product-list-hero-img relative overflow-hidden rounded-xl pb-[35%] min-h-[400px]">
           <img
             className="absolute rounded-xl inset-0 w-full h-full object-cover"
-            src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Manufaktur_1200x800px_05.jpg_11.png?v=1681738522"
+            src={brandHereSection?.data?.banner_image?.reference?.image?.url}
             alt=""
           />
         </div>
@@ -154,7 +156,7 @@ export default function Collection() {
               <div className="img-info-col relative h-[calc(100%_-_60px)]">
                 <div className="img-wrap h-full flex flex-col justify-center">
                   <img
-                    src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/svg-kybun-magglingen-3_1.png?v=1681740026"
+                    src={brandHereSection?.data?.interective_image?.reference?.image?.url}
                     alt=""
                   />
                 </div>
@@ -346,7 +348,7 @@ export default function Collection() {
                     />
                   </div>
                 </div>
-                <div class="my-custom-pagination-div !w-auto"></div>
+                <div className="my-custom-pagination-div !w-auto"></div>
               </div>
             </div>
             <div className="w-[50%] content-info-col rounded-xl">
@@ -366,183 +368,134 @@ export default function Collection() {
                   }}
                   className="h-full overflow-visible rounded-xl flex flex-col"
                 >
-                  <SwiperSlide className="pb-[60px]">
-                    <div className="item relative">
-                      <div className="bg-img absolute inset-0 rounded-[10px]">
-                        <img
-                          className="w-full h-full object-cover rounded-[10px]"
-                          src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/ss23-tennis-athletes-iga-swiatek-editorials-19-Mar23__2_.jpg_1.png?v=1681740595"
-                          alt=""
-                        />
-                      </div>
-                      <div className="info bg-[#fff] py-[80px] px-[30px] relative z-[1] w-[77%] ml-auto rounded-[10px] top-[48px] mr-[50px]">
-                        <div className="top-btn flex gap-[20px]">
-                          <a
-                            href="#"
-                            className="tracking-[-0.400697px] text-[18px] leading-none flex text-center justify-center items-center gap-[10px] bg-[#000] text-white rounded-[100px] px-[53px] py-[20px] flex-1 font-normal hover:!bg-[#00795c] hover:!text-[#fff]"
-                          >
-                            <IconCart />
-                            kybun Online-Shop
-                          </a>
-                          <a
-                            href="#"
-                            className="tracking-[-0.400697px] text-[18px] leading-none flex text-center justify-center items-center gap-[10px] bg-[#00795C] text-white rounded-[100px] px-[53px] py-[20px] flex-1 font-normal hover:!bg-[#000000] hover:!text-[#ffffff]"
-                          >
-                            <IconMapPin />
-                            Storefinder
-                          </a>
-                        </div>
-                        <div className="desc mt-[68px]">
-                          <h3 className="text-[18px] lg:text-[25px] text-black font-normal tracking-[-0.400697px]">
-                            Im Schweizer Luftkissen-Schuh steht der Fuss direkt
-                            auf einer elastisch-federnden Matte, die dem Fuss
-                            die maximale Bewegungsfreiheit in alle Richtungen
-                            ermöglicht. Durch die Elastizität und Instabilität
-                            in alle Richtungen wird die Muskulatur optimal
-                            trainiert.
-                          </h3>
-                        </div>
-                        <div className="desc mt-[40px] text-black text-[18px] font-normal">
-                          <p>
-                            Die Gelenke werden geschont und die Rückenmuskulatur
-                            entspannt wie in keiner anderen Fussbekleidung. Der
-                            kybun ist ein Alltagsschuh, der den ganzen Tag
-                            getragen werden kann. Er ist besonders geeignet für
-                            Menschen, die im Berufsleben lange stehen und eine
-                            intensive körperliche Arbeit verrichten. Die
-                            elastisch-federnde Sohle (Luftkissen-Sohle)
-                            verhindert schwere Beine, brennende Füsse,
-                            Rückenschmerzen und Venenleiden.
-                          </p>
-                          <p>
-                            Da das elastisch-federnde Material sich immer
-                            dynamisch an die Form der Fusssohle anpasst, ist der
-                            kybun auch ideal für alle Fussprobleme. Für Sportler
-                            eignet er sich zum Warm Up als auch zum Auslaufen
-                            nach Trainingseinheiten oder Wettkämpfen.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </SwiperSlide>
-                  <SwiperSlide className="pb-[60px]">
-                    <div className="item relative">
-                      <div className="bg-img absolute inset-0 rounded-[10px]">
-                        <img
-                          className="w-full h-full object-cover rounded-[10px]"
-                          src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/ss23-tennis-athletes-iga-swiatek-editorials-19-Mar23__2_.jpg_1.png?v=1681740595"
-                          alt=""
-                        />
-                      </div>
-                      <div className="info bg-[#fff] py-[80px] px-[30px] relative z-[1] w-[77%] ml-auto rounded-[10px] top-[48px] mr-[50px]">
-                        <div className="top-btn flex gap-[20px]">
-                          <a
-                            href="#"
-                            className="tracking-[-0.400697px] text-[18px] leading-none flex text-center justify-center items-center gap-[10px] bg-[#000] text-white rounded-[100px] px-[53px] py-[20px] flex-1 font-normal hover:!bg-[#00795c] hover:!text-[#fff]"
-                          >
-                            <IconCart />
-                            kybun Online-Shop
-                          </a>
-                          <a
-                            href="#"
-                            className="tracking-[-0.400697px] text-[18px] leading-none flex text-center justify-center items-center gap-[10px] bg-[#00795C] text-white rounded-[100px] px-[53px] py-[20px] flex-1 font-normal hover:!bg-[#000000] hover:!text-[#ffffff]"
-                          >
-                            <IconCart />
-                            Storefinder
-                          </a>
-                        </div>
-                        <div className="desc mt-[68px]">
-                          <h3 className="text-[18px] lg:text-[25px] text-black font-normal tracking-[-0.400697px]">
-                            Im Schweizer Luftkissen-Schuh steht der Fuss direkt
-                            auf einer elastisch-federnden Matte, die dem Fuss
-                            die maximale Bewegungsfreiheit in alle Richtungen
-                            ermöglicht. Durch die Elastizität und Instabilität
-                            in alle Richtungen wird die Muskulatur optimal
-                            trainiert.
-                          </h3>
-                        </div>
-                        <div className="desc mt-[40px] text-black text-[18px] font-normal">
-                          <p>
-                            Die Gelenke werden geschont und die Rückenmuskulatur
-                            entspannt wie in keiner anderen Fussbekleidung. Der
-                            kybun ist ein Alltagsschuh, der den ganzen Tag
-                            getragen werden kann. Er ist besonders geeignet für
-                            Menschen, die im Berufsleben lange stehen und eine
-                            intensive körperliche Arbeit verrichten. Die
-                            elastisch-federnde Sohle (Luftkissen-Sohle)
-                            verhindert schwere Beine, brennende Füsse,
-                            Rückenschmerzen und Venenleiden.
-                          </p>
-                          <p>
-                            Da das elastisch-federnde Material sich immer
-                            dynamisch an die Form der Fusssohle anpasst, ist der
-                            kybun auch ideal für alle Fussprobleme. Für Sportler
-                            eignet er sich zum Warm Up als auch zum Auslaufen
-                            nach Trainingseinheiten oder Wettkämpfen.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </SwiperSlide>
-                  <SwiperSlide className="pb-[60px]">
-                    <div className="item relative">
-                      <div className="bg-img absolute inset-0 rounded-[10px]">
-                        <img
-                          className="w-full h-full object-cover rounded-[10px]"
-                          src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/ss23-tennis-athletes-iga-swiatek-editorials-19-Mar23__2_.jpg_1.png?v=1681740595"
-                          alt=""
-                        />
-                      </div>
-                      <div className="info bg-[#fff] py-[80px] px-[30px] relative z-[1] w-[77%] ml-auto rounded-[10px] top-[48px] mr-[50px]">
-                        <div className="top-btn flex gap-[20px]">
-                          <a
-                            href="#"
-                            className="tracking-[-0.400697px] text-[18px] leading-none flex text-center justify-center items-center gap-[10px] bg-[#000] text-white rounded-[100px] px-[53px] py-[20px] flex-1 font-normal hover:!bg-[#00795c] hover:!text-[#fff]"
-                          >
-                            <IconCart />
-                            kybun Online-Shop
-                          </a>
-                          <a
-                            href="#"
-                            className="tracking-[-0.400697px] text-[18px] leading-none flex text-center justify-center items-center gap-[10px] bg-[#00795C] text-white rounded-[100px] px-[53px] py-[20px] flex-1 font-normal hover:!bg-[#000000] hover:!text-[#ffffff]"
-                          >
-                            <IconCart />
-                            Storefinder
-                          </a>
-                        </div>
-                        <div className="desc mt-[68px]">
-                          <h3 className="text-[18px] lg:text-[25px] text-black font-normal tracking-[-0.400697px]">
-                            Im Schweizer Luftkissen-Schuh steht der Fuss direkt
-                            auf einer elastisch-federnden Matte, die dem Fuss
-                            die maximale Bewegungsfreiheit in alle Richtungen
-                            ermöglicht. Durch die Elastizität und Instabilität
-                            in alle Richtungen wird die Muskulatur optimal
-                            trainiert.
-                          </h3>
-                        </div>
-                        <div className="desc mt-[40px] text-black text-[18px] font-normal">
-                          <p>
-                            Die Gelenke werden geschont und die Rückenmuskulatur
-                            entspannt wie in keiner anderen Fussbekleidung. Der
-                            kybun ist ein Alltagsschuh, der den ganzen Tag
-                            getragen werden kann. Er ist besonders geeignet für
-                            Menschen, die im Berufsleben lange stehen und eine
-                            intensive körperliche Arbeit verrichten. Die
-                            elastisch-federnde Sohle (Luftkissen-Sohle)
-                            verhindert schwere Beine, brennende Füsse,
-                            Rückenschmerzen und Venenleiden.
-                          </p>
-                          <p>
-                            Da das elastisch-federnde Material sich immer
-                            dynamisch an die Form der Fusssohle anpasst, ist der
-                            kybun auch ideal für alle Fussprobleme. Für Sportler
-                            eignet er sich zum Warm Up als auch zum Auslaufen
-                            nach Trainingseinheiten oder Wettkämpfen.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </SwiperSlide>
+                  {
+                    brandHereSection?.data?.slider_image_1?.reference?.image?.url && (
+                        <SwiperSlide className="pb-[60px]">
+                          <div className="item relative">
+                            <div className="bg-img absolute inset-0 rounded-[10px]">
+                              <img
+                                className="w-full h-full object-cover rounded-[10px]"
+                                src={brandHereSection?.data?.slider_image_1?.reference?.image?.url}
+                                alt=""
+                              />
+                            </div>
+                            <div className="info bg-[#fff] py-[80px] px-[30px] relative z-[1] w-[77%] ml-auto rounded-[10px] top-[48px] mr-[50px]">
+                              <KybunShopAndShopFinder />
+                              <div className="desc mt-[68px]">
+                                <h3 className="text-[18px] lg:text-[25px] text-black font-normal tracking-[-0.400697px]"
+                                  dangerouslySetInnerHTML={{
+                                    __html: toHTML(brandHereSection?.data?.slider_header_content_1?.value),
+                                  }}
+                                >
+                                </h3>
+                              </div>
+                              <div className="desc mt-[40px] text-black text-[18px] font-normal"
+                                dangerouslySetInnerHTML={{
+                                  __html: toHTML(brandHereSection?.data?.slider_desc_content_1?.value),
+                                }}
+                              >
+                              </div>
+                            </div>
+                          </div>
+                        </SwiperSlide>
+                    )
+                  }
+                  {
+                    brandHereSection?.data?.slider_image_2?.reference?.image?.url && (
+                        <SwiperSlide className="pb-[60px]">
+                          <div className="item relative">
+                            <div className="bg-img absolute inset-0 rounded-[10px]">
+                              <img
+                                className="w-full h-full object-cover rounded-[10px]"
+                                src={brandHereSection?.data?.slider_image_2?.reference?.image?.url}
+                                alt=""
+                              />
+                            </div>
+                            <div className="info bg-[#fff] py-[80px] px-[30px] relative z-[1] w-[77%] ml-auto rounded-[10px] top-[48px] mr-[50px]">
+                              <KybunShopAndShopFinder />
+                              <div className="desc mt-[68px]">
+                                <h3 className="text-[18px] lg:text-[25px] text-black font-normal tracking-[-0.400697px]"
+                                  dangerouslySetInnerHTML={{
+                                    __html: toHTML(brandHereSection?.data?.slider_header_content_2?.value),
+                                  }}
+                                >
+                                </h3>
+                              </div>
+                              <div className="desc mt-[40px] text-black text-[18px] font-normal"
+                                dangerouslySetInnerHTML={{
+                                  __html: toHTML(brandHereSection?.data?.slider_desc_content_2?.value),
+                                }}
+                              >
+                              </div>
+                            </div>
+                          </div>
+                        </SwiperSlide>
+                    )
+                  }
+                  {
+                    brandHereSection?.data?.slider_image_3?.reference?.image?.url && (
+                        <SwiperSlide className="pb-[60px]">
+                          <div className="item relative">
+                            <div className="bg-img absolute inset-0 rounded-[10px]">
+                              <img
+                                className="w-full h-full object-cover rounded-[10px]"
+                                src={brandHereSection?.data?.slider_image_3?.reference?.image?.url}
+                                alt=""
+                              />
+                            </div>
+                            <div className="info bg-[#fff] py-[80px] px-[30px] relative z-[1] w-[77%] ml-auto rounded-[10px] top-[48px] mr-[50px]">
+                              <KybunShopAndShopFinder />
+                              <div className="desc mt-[68px]">
+                                <h3 className="text-[18px] lg:text-[25px] text-black font-normal tracking-[-0.400697px]"
+                                  dangerouslySetInnerHTML={{
+                                    __html: toHTML(brandHereSection?.data?.slider_header_content_3?.value),
+                                  }}
+                                >
+                                </h3>
+                              </div>
+                              <div className="desc mt-[40px] text-black text-[18px] font-normal"
+                                dangerouslySetInnerHTML={{
+                                  __html: toHTML(brandHereSection?.data?.slider_desc_content_3?.value),
+                                }}
+                              >
+                              </div>
+                            </div>
+                          </div>
+                        </SwiperSlide>
+                    )
+                  }
+                  {
+                    brandHereSection?.data?.slider_image_4?.reference?.image?.url && (
+                        <SwiperSlide className="pb-[60px]">
+                          <div className="item relative">
+                            <div className="bg-img absolute inset-0 rounded-[10px]">
+                              <img
+                                className="w-full h-full object-cover rounded-[10px]"
+                                src={brandHereSection?.data?.slider_image_4?.reference?.image?.url}
+                                alt=""
+                              />
+                            </div>
+                            <div className="info bg-[#fff] py-[80px] px-[30px] relative z-[1] w-[77%] ml-auto rounded-[10px] top-[48px] mr-[50px]">
+                              <KybunShopAndShopFinder />
+                              <div className="desc mt-[68px]">
+                                <h3 className="text-[18px] lg:text-[25px] text-black font-normal tracking-[-0.400697px]"
+                                  dangerouslySetInnerHTML={{
+                                    __html: toHTML(brandHereSection?.data?.slider_header_content_4?.value),
+                                  }}
+                                >
+                                </h3>
+                              </div>
+                              <div className="desc mt-[40px] text-black text-[18px] font-normal"
+                                dangerouslySetInnerHTML={{
+                                  __html: toHTML(brandHereSection?.data?.slider_desc_content_4?.value),
+                                }}
+                              >
+                              </div>
+                            </div>
+                          </div>
+                        </SwiperSlide>
+                    )
+                  }
                 </Swiper>
               </div>
             </div>
@@ -567,6 +520,29 @@ export default function Collection() {
     </>
   );
 }
+
+
+function KybunShopAndShopFinder() {
+  return (
+    <div className="top-btn flex gap-[20px]">
+      <a
+        href="#"
+        className="tracking-[-0.400697px] text-[18px] leading-none flex text-center justify-center items-center gap-[10px] bg-[#000] text-white rounded-[100px] px-[53px] py-[20px] flex-1 font-normal hover:!bg-[#00795c] hover:!text-[#fff]"
+      >
+        <IconCart />
+        kybun Online-Shop
+      </a>
+      <a
+        href="#"
+        className="tracking-[-0.400697px] text-[18px] leading-none flex text-center justify-center items-center gap-[10px] bg-[#00795C] text-white rounded-[100px] px-[53px] py-[20px] flex-1 font-normal hover:!bg-[#000000] hover:!text-[#ffffff]"
+      >
+        <IconMapPin />
+        Storefinder
+      </a>
+    </div>
+  )
+}
+
 
 const COLLECTION_QUERY = `#graphql
   ${PRODUCT_CARD_FRAGMENT}
@@ -668,3 +644,73 @@ function getSortValuesFromParam(sortParam) {
       };
   }
 }
+
+
+const BRAND_PAGE_HERO_SECTION_QUERY = `#graphql
+${MEDIA_FRAGMENT}
+  query homeStyleGuide($metaObjectId: ID!, $country: CountryCode, $language: LanguageCode)
+  @inContext(country: $country, language: $language) {
+    data : metaobject(id : $metaObjectId) {
+      handle
+      id
+      type
+      head_title : field(key: "head_title") {
+        value
+      }
+      banner_image : field(key: "banner_image") {
+        reference {
+          ...Media
+        }
+      }
+      interective_image : field(key: "interective_image") {
+        reference {
+          ...Media
+        }
+      }
+      slider_image_1 : field(key: "slider_image_1") {
+        reference {
+          ...Media
+        }
+      }
+      slider_header_content_1 : field(key: "slider_header_content_1") {
+        value
+      }
+      slider_desc_content_1 : field(key: "slider_desc_content_1") {
+        value
+      }
+      slider_image_2 : field(key: "slider_image_2") {
+        reference {
+          ...Media
+        }
+      }
+      slider_header_content_2 : field(key: "slider_header_content_2") {
+        value
+      }
+      slider_desc_content_2 : field(key: "slider_desc_content_2") {
+        value
+      }
+      slider_image_3 : field(key: "slider_image_3") {
+        reference {
+          ...Media
+        }
+      }
+      slider_header_content_3 : field(key: "slider_header_content_3") {
+        value
+      }
+      slider_desc_content_3 : field(key: "slider_desc_content_3") {
+        value
+      }
+      slider_image_4 : field(key: "slider_image_4") {
+        reference {
+          ...Media
+        }
+      }
+      slider_header_content_4 : field(key: "slider_header_content_4") {
+        value
+      }
+      slider_desc_content_4 : field(key: "slider_desc_content_4") {
+        value
+      }
+    }
+  }
+`;
