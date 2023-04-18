@@ -91,7 +91,7 @@ export default function ratgeber() {
                     Mehr erfahren
                     <ArrowRightLight
                       className={
-                        'w-[26px] h-[21px]'
+                        'w-[30px] h-[30px]'  
                       }
                     />
                   </a>
@@ -111,7 +111,7 @@ export default function ratgeber() {
                     Mehr erfahren
                     <ArrowRightLight
                       className={
-                        'w-[26px] h-[21px]'
+                        'w-[30px] h-[30px]'
                       }
                     />
                   </a>
@@ -131,7 +131,7 @@ export default function ratgeber() {
                     Mehr erfahren
                     <ArrowRightLight
                       className={
-                        'w-[26px] h-[21px]'
+                        'w-[30px] h-[30px]'
                       }
                     />
                   </a>
@@ -151,7 +151,7 @@ export default function ratgeber() {
                     Mehr erfahren
                     <ArrowRightLight
                       className={
-                        'w-[26px] h-[21px]'
+                        'w-[30px] h-[30px]'
                       }
                     />
                   </a>

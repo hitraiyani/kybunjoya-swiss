@@ -797,9 +797,6 @@ video {
 .mt-\[70px\] {
   margin-top: 70px;
 }
-.mt-\[81px\] {
-  margin-top: 81px;
-}
 .mt-\[85px\] {
   margin-top: 85px;
 }
@@ -903,12 +900,6 @@ video {
 .h-screen {
   height: 100vh;
 }
-.h-\[20px\] {
-  height: 20px;
-}
-.h-\[21px\] {
-  height: 21px;
-}
 .max-h-0 {
   max-height: 0px;
 }
@@ -975,6 +966,9 @@ video {
 .w-\[280px\] {
   width: 280px;
 }
+.w-\[30px\] {
+  width: 30px;
+}
 .w-\[32px\] {
   width: 32px;
 }
@@ -999,12 +993,6 @@ video {
 }
 .w-screen {
   width: 100vw;
-}
-.w-\[20px\] {
-  width: 20px;
-}
-.w-\[26px\] {
-  width: 26px;
 }
 .min-w-\[0\.75rem\] {
   min-width: 0.75rem;
@@ -1156,9 +1144,6 @@ video {
 }
 .grid-rows-2 {
   grid-template-rows: repeat(2, minmax(0, 1fr));
-}
-.grid-rows-4 {
-  grid-template-rows: repeat(4, minmax(0, 1fr));
 }
 .grid-rows-\[1fr_auto\] {
   grid-template-rows: 1fr auto;
@@ -1388,6 +1373,12 @@ video {
   border-top-left-radius: 0.25rem;
   border-top-right-radius: 0.25rem;
 }
+.rounded-bl-\[10px\] {
+  border-bottom-left-radius: 10px;
+}
+.rounded-br-\[10px\] {
+  border-bottom-right-radius: 10px;
+}
 .rounded-tl-\[10px\] {
   border-top-left-radius: 10px;
 }
@@ -1396,12 +1387,6 @@ video {
 }
 .rounded-tr-md {
   border-top-right-radius: 0.375rem;
-}
-.rounded-bl-\[10px\] {
-  border-bottom-left-radius: 10px;
-}
-.rounded-br-\[10px\] {
-  border-bottom-right-radius: 10px;
 }
 .border {
   border-width: 1px;
@@ -1904,6 +1889,9 @@ video {
 .leading-\[1\.3\] {
   line-height: 1.3;
 }
+.leading-\[1\.4\] {
+  line-height: 1.4;
+}
 .leading-\[1\] {
   line-height: 1;
 }
@@ -1912,9 +1900,6 @@ video {
 }
 .leading-tight {
   line-height: 1.25;
-}
-.leading-\[1\.4\] {
-  line-height: 1.4;
 }
 .tracking-\[-0\.400697px\] {
   letter-spacing: -0.400697px;
@@ -2132,6 +2117,10 @@ video {
   --tw-text-opacity: 1 !important;
   color: rgb(255 255 255 / var(--tw-text-opacity)) !important;
 }
+.hover\:\!text-black:hover {
+  --tw-text-opacity: 1 !important;
+  color: rgb(0 0 0 / var(--tw-text-opacity)) !important;
+}
 .hover\:\!text-white:hover {
   --tw-text-opacity: 1 !important;
   color: rgb(255 255 255 / var(--tw-text-opacity)) !important;
@@ -2151,10 +2140,6 @@ video {
 .hover\:text-white:hover {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-.hover\:\!text-black:hover {
-  --tw-text-opacity: 1 !important;
-  color: rgb(0 0 0 / var(--tw-text-opacity)) !important;
 }
 .hover\:underline:hover {
   text-decoration-line: underline;
