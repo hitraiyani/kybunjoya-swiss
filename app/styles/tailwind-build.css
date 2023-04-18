@@ -589,6 +589,12 @@ video {
 .z-50 {
   z-index: 50;
 }
+<<<<<<< Updated upstream
+=======
+.z-\[-1\] {
+  z-index: -1;
+}
+>>>>>>> Stashed changes
 .z-\[1\] {
   z-index: 1;
 }
@@ -742,6 +748,9 @@ video {
 .mt-\[120px\] {
   margin-top: 120px;
 }
+.mt-\[200px\] {
+  margin-top: 200px;
+}
 .mt-\[20px\] {
   margin-top: 20px;
 }
@@ -787,6 +796,15 @@ video {
 .mt-auto {
   margin-top: auto;
 }
+<<<<<<< Updated upstream
+=======
+.mt-\[26px\] {
+  margin-top: 26px;
+}
+.mt-\[105px\] {
+  margin-top: 105px;
+}
+>>>>>>> Stashed changes
 .box-border {
   box-sizing: border-box;
 }
@@ -946,6 +964,9 @@ video {
 }
 .w-\[25px\] {
   width: 25px;
+}
+.w-\[280px\] {
+  width: 280px;
 }
 .w-\[32px\] {
   width: 32px;
@@ -1562,6 +1583,10 @@ video {
   padding-left: 59px;
   padding-right: 59px;
 }
+.px-\[72px\] {
+  padding-left: 72px;
+  padding-right: 72px;
+}
 .py-1 {
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
@@ -1618,6 +1643,13 @@ video {
   padding-top: 50px;
   padding-bottom: 50px;
 }
+<<<<<<< Updated upstream
+=======
+.py-\[57px\] {
+  padding-top: 57px;
+  padding-bottom: 57px;
+}
+>>>>>>> Stashed changes
 .py-\[80px\] {
   padding-top: 80px;
   padding-bottom: 80px;
@@ -1735,6 +1767,9 @@ video {
 .text-\[0\.625rem\] {
   font-size: 0.625rem;
 }
+.text-\[100px\] {
+  font-size: 100px;
+}
 .text-\[14px\] {
   font-size: 14px;
 }
@@ -1790,8 +1825,17 @@ video {
   font-size: 0.75rem;
   line-height: 1rem;
 }
+<<<<<<< Updated upstream
+=======
+.text-\[45px\] {
+  font-size: 45px;
+}
+>>>>>>> Stashed changes
 .font-\[400\] {
   font-weight: 400;
+}
+.font-black {
+  font-weight: 900;
 }
 .font-bold {
   font-weight: 700;
@@ -1817,6 +1861,9 @@ video {
 .italic {
   font-style: italic;
 }
+.leading-\[1\.1\] {
+  line-height: 1.1;
+}
 .leading-\[1\.2\] {
   line-height: 1.2;
 }
@@ -1829,6 +1876,12 @@ video {
 .leading-tight {
   line-height: 1.25;
 }
+<<<<<<< Updated upstream
+=======
+.leading-\[1\] {
+  line-height: 1;
+}
+>>>>>>> Stashed changes
 .tracking-\[-0\.400697px\] {
   letter-spacing: -0.400697px;
 }
@@ -1897,6 +1950,10 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+.text-\[\#00795c\] {
+  --tw-text-opacity: 1;
+  color: rgb(0 121 92 / var(--tw-text-opacity));
 }
 .underline {
   text-decoration-line: underline;
@@ -2894,6 +2951,11 @@ video {
   .xl\:gap-x-\[64px\] {
     -moz-column-gap: 64px;
          column-gap: 64px;
+  }
+
+  .xl\:gap-x-\[50px\] {
+    -moz-column-gap: 50px;
+         column-gap: 50px;
   }
 
   .xl\:pr-16 {
