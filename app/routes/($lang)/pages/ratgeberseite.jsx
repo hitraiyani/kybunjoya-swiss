@@ -139,7 +139,7 @@ export default function ratgeberseite() {
             </div>
           </div>
         </section>
-        <section className="dr-faq-sec container mt-[44px] !max-w-[870px] mx-auto mb-[100px] flex flex-col gap-[20px]">
+        <section className="dr-faq-sec mt-[44px] !max-w-[870px] mx-auto mb-[115px] flex flex-col gap-[20px]">
           <ExpandingCardStyle2
             id="link1"
             content="<ul>
@@ -266,9 +266,13 @@ export default function ratgeberseite() {
             </ul>"
             title="Sonstige Indikatoren"
           />
-          <div className='info-bottom mt-[100px]'>
+          <div className='info-bottom mt-[151px]'>
             <div className='title-wrap'>
-              <h3 className='text-center'>Sie vermissen ein Krankheitsbild oder möchten persönlich beraten werden?</h3>
+              <h3 className='text-center tracking-[-0.97152px] text-[45px] leading-[1.1] font-medium'>Sie vermissen ein Krankheitsbild oder möchten persönlich beraten werden?</h3>
+            </div>
+            <div className='link-wrap flex justify-center mt-[40px]'>
+              <a href="#" className='block rounded-[100px] bg-black text-white
+                 text-center px-[60px] py-[25px] hover:bg-[#00795c] hover:text-white text-[18px] max-w-fit font-normal leading-none'>Schreiben Sie Uns</a>
             </div>
           </div>
         </section>
