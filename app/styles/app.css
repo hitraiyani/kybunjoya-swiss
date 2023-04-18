@@ -496,3 +496,8 @@ p:last-child {
   box-shadow: 0px 0px 0.9821px rgba(0, 0, 0, 0.05), 0px 3.9284px 7.8568px rgba(0, 0, 0, 0.1);
 }
 /* End ratgeber page css */
+
+.text-\[\#00795c\] {
+  --tw-text-opacity: 1;
+  color: rgb(0 121 92 / var(--tw-text-opacity));
+}

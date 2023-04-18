@@ -1892,9 +1892,6 @@ video {
 .leading-\[1\.4\] {
   line-height: 1.4;
 }
-.leading-\[1\] {
-  line-height: 1;
-}
 .leading-none {
   line-height: 1;
 }
@@ -1932,10 +1929,6 @@ video {
   color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 .text-\[\#00795C\] {
-  --tw-text-opacity: 1;
-  color: rgb(0 121 92 / var(--tw-text-opacity));
-}
-.text-\[\#00795c\] {
   --tw-text-opacity: 1;
   color: rgb(0 121 92 / var(--tw-text-opacity));
 }
