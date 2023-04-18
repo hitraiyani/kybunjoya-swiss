@@ -492,4 +492,7 @@ p:last-child {
 .ratgeber-banner-section .img-overlay{
   background: linear-gradient(180deg, rgba(118, 118, 118, 0) 0%, rgba(0, 0, 0, .45) 53.13%, rgba(0, 0, 0, .65) 100%);
 }
+.four-boxes-section .item{
+  box-shadow: 0px 0px 0.9821px rgba(0, 0, 0, 0.05), 0px 3.9284px 7.8568px rgba(0, 0, 0, 0.1);
+}
 /* End ratgeber page css */
