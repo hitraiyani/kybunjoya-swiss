@@ -38,7 +38,7 @@ export default function gorup() {
                   <div className="flex flex-col lg:flex-row">
                     <div className="title-wrap w-[40%]">
                       <h3
-                        className="text-[35px] text-[#00795C] font-bol
+                        className="text-[35px] text-[#00795C] font-bold
                 leading-[1.2]"
                       >
                         Wir wachsen gemeinsam mit unseren Partnern und
@@ -71,7 +71,7 @@ export default function gorup() {
               <div className="col-right w-[50%]">
                 <div className="title-wrap">
                   <h3
-                    className="text-[35px] text-[#00795C] font-bol
+                    className="text-[35px] text-[#00795C] font-bold
                 leading-[1.2] mb-[20px]"
                   >
                     Mit uns Zusammenzuarbeiten soll Freude machen und einfach
@@ -399,7 +399,7 @@ export default function gorup() {
                     </div>
                     <div className="title-wrap w-[40%]">
                       <h3
-                        className="text-[35px] text-[#00795C] font-bol
+                        className="text-[35px] text-[#00795C] font-bold
                 leading-[1.2]"
                       >
                         Um nicht «die Katze im Sack zu kaufen», können kybun

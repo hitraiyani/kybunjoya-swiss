@@ -477,6 +477,14 @@ p:last-child {
   margin-right: 14px;
   vertical-align: middle;
 }
+.filter-list li a.active{
+  color: #00795c;
+}
+.filter-list li a.active:before{
+  border: 1px solid #00795c;
+  background-color: #00795c;
+  box-shadow: 0 0 0.9821px #0000000d, 0 3.9284px 7.8568px #0000001a;
+}
 .info-slider-with-img .swiper-pagination-bullet {
   width: 11px;
   height: 11px;
