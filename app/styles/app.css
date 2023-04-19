@@ -521,11 +521,18 @@ p:last-child {
   background-repeat: no-repeat;
   background-size: contain;
 }
-.my-achor-link.active{
-  background-color: #00795C;
+.my-achor-link.active {
+  background-color: #00795c;
   color: #fff;
 }
 /* End ratgeber page css */
+
+/* start rich-text section  */
+.rich-text-sec .img-wrap img {
+  filter: drop-shadow(0px 0px 1.31737px rgba(0, 0, 0, 0.05))
+    drop-shadow(0px 5.26947px 10.5389px rgba(0, 0, 0, 0.1));
+}
+/* end rich-text section  */
 
 .text-\[\#00795c\] {
   --tw-text-opacity: 1;
