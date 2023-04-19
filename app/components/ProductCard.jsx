@@ -65,13 +65,13 @@ export function ProductCard({
                 loading={loading}
               />
             )}
-            <Text
+            {/* <Text
               as="label"
               size="fine"
               className="absolute top-0 right-0 text-notice text-[18px] text-black py-[15px] px-[35px] leading-none rounded-[100px] bg-[#EDEDED] font-normal m-[20px]"
             >
               {cardLabel}
-            </Text>
+            </Text> */}
             <button className='pro-btn text-[18px] text-white tracking-[-0.400697px] font-normal flex gap-[10px] px-[30px] py-[15px] bg-black rounded-[100px] absolute bottom-[34px] max-w-fit left-0 right-0 m-auto items-center opacity-0 transition-all duration-700 hover:bg-[#00795c]'><IconCart />Zum Shop</button>
           </div>
           <div className="grid gap-1">
