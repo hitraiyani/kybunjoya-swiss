@@ -323,9 +323,17 @@ function filterInputToParams(type, rawInput, params, appliedCustomFilters) {
     case 'LIST':
       Object.entries(input).forEach(([key, value]) => {
         if (typeof value === 'string') {
-          params.set(key, value);
+          if (params.get(key) == value) {
+            params.delete(key);
+          } else {
+            params.set(key, value);
+          }
         } else if (typeof value === 'boolean') {
-          params.set(key, value.toString());
+          if (params.get(key) == value.toString()) {
+            params.delete(key);
+          } else {
+            params.set(key, value.toString());
+          }
         } else {
           const {name, value: val} = value;
           const allVariants = params.getAll(`variantOption`);
