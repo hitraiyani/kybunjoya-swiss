@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import {flattenConnection, Image, Money, useMoney} from '@shopify/hydrogen';
 import {Text, Link, AddToCartButton,IconCart} from '~/components';
-import {isDiscounted, isNewArrival} from '~/lib/utils';
+import {isDiscounted, isNewArrival, truncate} from '~/lib/utils';
 import {getProductPlaceholder} from '~/lib/placeholders';
 
 export function ProductCard({
@@ -81,9 +81,13 @@ export function ProductCard({
             >
               {product.title}
             </Text>
-            <div className='desc text-[15px] font-normal mt-[5px] !text-black max-w-[375px]'>
-              <p>Bequem kann nicht auch elegant sein? Dann haben Sie unser traditionelles und verspieltes Modell kybun Rolle White noch nicht gesehen</p>
-            </div>
+            {
+              product.description && (
+                <div className='desc text-[15px] font-normal mt-[5px] !text-black max-w-[375px]'>
+                  <p> {truncate(product.description,150)}</p>
+                </div>
+              )
+            }
             {/* <div className="flex gap-4">
               <Text className="flex gap-4">
                 <Money withoutTrailingZeros data={price} />
