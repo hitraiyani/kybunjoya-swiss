@@ -74,7 +74,7 @@ export default function ratgeberseite() {
 
   return (
     <>
-      <div className="container mt-[200px]">
+      <div className="container mt-[120px] lg:mt-[200px]">
         <section className="dr-info-tabs-section">
           <div className="dr-info-tabs-inner">
             <div className="flex flex-wrap gap-[46px]">
