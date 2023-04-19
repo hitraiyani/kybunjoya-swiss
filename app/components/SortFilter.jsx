@@ -78,7 +78,6 @@ export function FiltersDrawer({
   const handleFilterClick = (event) => {
     event.preventDefault();
     const queryString = event.currentTarget.search;
-    console.log(queryString);
     navigate(queryString, { scroll: false });
   }
 

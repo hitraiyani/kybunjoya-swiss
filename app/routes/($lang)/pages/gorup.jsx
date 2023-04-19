@@ -1,17 +1,57 @@
 import React from 'react';
+import {json} from '@shopify/remix-oxygen';
+import {useLoaderData} from '@remix-run/react';
+import {MEDIA_FRAGMENT} from '~/data/fragments';
+import { toHTML} from '~/lib/utils';
+import {Link, ArrowRightLight} from '~/components';
+
+const seo = ({data}) => ({
+  title: data?.page?.seo?.title,
+  description: data?.page?.seo?.description,
+});
+
+export const handle = {
+  seo,
+};
+
+export async function loader({request, params, context}) {
+  
+  const {page} = await context.storefront.query(PAGE_QUERY, {
+    variables: {
+      handle: 'gruppe',
+      language: context.storefront.i18n.language,
+    },
+  });
+
+  if (!page) {
+    throw new Response(null, {status: 404});
+  }
+
+  return json(
+    {page},
+    {
+      headers: {
+        // TODO cacheLong()
+      },
+    },
+  );
+}
 
 export default function gorup() {
+
+  const {page} = useLoaderData();
+
   return (
     <>
       <div className="container mt-[120px] lg:mt-[200px]">
         <section className="banner-with-title">
           <h1 className="title text-[#00795C] text-[35px] lg:text-[40px] xl:text-[65px] tracking-[-1.05984px] mb-[20px] lg:mb-[30px]">
-            Gruppe
+            {page?.gruppe_page?.reference?.head_title?.value}
           </h1>
           <div className="product-list-hero-img relative overflow-hidden rounded-xl pb-[35%] min-h-[400px]">
             <img
               className="absolute rounded-xl inset-0 w-full h-full object-cover"
-              src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Manufaktur_1200x800px_05.jpg_122.png?v=1681807071"
+              src={page?.gruppe_page?.reference?.hero_image?.reference?.image?.url}
               alt=""
             />
           </div>
@@ -20,19 +60,16 @@ export default function gorup() {
           <div className="rich-text-inner">
             <div className="title-wrap">
               <h2 className="title text-[#00795C] text-[35px] lg:text-[40px] xl:text-[55px] tracking-[-1.05984px] mb-[20px] lg:mb-[30px] leading-[1.1]">
-                Values
+                {page?.gruppe_page?.reference?.values_section_title?.value}
               </h2>
             </div>
             <div className="flex flex-col lg:flex-row gap-y-[30px] gap-x-[57px]">
               <div className="col-left w-[50%]">
-                <div className="desc text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
-                  <p>
-                    Es geht unserer Firma gut, weil wir die besten
-                    Mitarbeiterinnen und Mitarbeiter haben. Wir erschaffen ein
-                    Fundamente damit Sie Freude an der arbeiten haben. Wir
-                    fördern Sie und unterstützen Sie dabei, Ihre Berufung zu
-                    finden und die gottgegebenen Talente richtig einzusetzen.
-                  </p>
+                <div className="desc text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
+                  dangerouslySetInnerHTML={{
+                    __html: toHTML(page?.gruppe_page?.reference?.values_section_left_short_desc?.value),
+                  }}
+                 >
                 </div>
                 <div className="box bg-[#EDEDED] rounded-[10px] px-[39px] py-[45px] mt-[32px]">
                   <div className="flex flex-col lg:flex-row">
@@ -40,30 +77,20 @@ export default function gorup() {
                       <h3
                         className="text-[35px] text-[#00795C] font-bold
                 leading-[1.2]"
+                        dangerouslySetInnerHTML={{
+                          __html: toHTML(page?.gruppe_page?.reference?.values_section_left_sub_short_desc?.value),
+                        }}
                       >
-                        Wir wachsen gemeinsam mit unseren Partnern und
-                        erschaffen dabei immer Win-Win Situationen
                       </h3>
                     </div>
-                    <div className="desc w-[60%]">
-                      <ul className="list-disc list-outside flex flex-col gap-[15px] text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4] pl-[40px]">
-                        <li>Wir geben immer unser Bestes.</li>
-                        <li>
-                          Foster and embrace a climate that breeds originality.
-                        </li>
-                        <li>
-                          Cultural fit is a must. We employ people who match our
-                          company value and vision.
-                        </li>
-                        <li>
-                          Wir lernen mit Widerstand (Schwierige Zeiten)
-                          umzugehen. Der Weg ist das Ziel.
-                        </li>
-                        <li>
-                          Wir prüfen stets neue Wege. Wir schauen vorwärts, sind
-                          mutig und optimistisch.
-                        </li>
-                      </ul>
+                    <div className="desc w-[60%]"
+                      >
+                        <ul className="list-disc list-outside flex flex-col gap-[15px] text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4] pl-[40px]"
+                          dangerouslySetInnerHTML={{
+                            __html: (page?.gruppe_page?.reference?.values_section_left_desc?.value),
+                          }}
+                        >
+                        </ul>
                     </div>
                   </div>
                 </div>
@@ -73,44 +100,18 @@ export default function gorup() {
                   <h3
                     className="text-[35px] text-[#00795C] font-bold
                 leading-[1.2] mb-[20px]"
+                    dangerouslySetInnerHTML={{
+                      __html: toHTML(page?.gruppe_page?.reference?.values_section_right_short_desc?.value),
+                    }}
                   >
-                    Mit uns Zusammenzuarbeiten soll Freude machen und einfach
-                    sein. Wir sind ein Vorbild für unsere Partner.
                   </h3>
                 </div>
                 <div className="desc">
-                  <ul className="list-disc list-outside flex flex-col gap-[15px] text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4] pl-[40px]">
-                    <li>
-                      Wir achten darauf das unsere Arbeit und unsere Produkte
-                      makellos sind.
-                    </li>
-                    <li>
-                      Beim Kundenversprechen gehen wir kein Kompromiss ein,
-                      Design folgt Funktion. Unsere Kunden erleben dabei einen
-                      ungewohnt guten Service an allen Touchpoints unsere Marke.
-                    </li>
-                    <li>
-                      Jede Person die unsere Geschichte nicht erzähle kann, ist
-                      ein verlorener Botschafter.
-                    </li>
-                    <li>
-                      Nichts ist selbstverständlich. Alles ist eine Gnade
-                      Gottes. Wir dürfen uns nicht zu wichtig nehmen. Kybun Joya
-                      ist «ein Baugerüst» für etwas viel Größeres. (Lebensziel
-                      jedes einzelnen, MA, Partner und Kunden: «Was will ich
-                      einmal hinterlassen?»)
-                    </li>
-                    <li>
-                      Durch unsere Tätigkeit sollen Menschen berührt werden.
-                    </li>
-                    <li>
-                      In den Regionen, in denen wir tätig sind, schaffen wir
-                      positiven Impact.
-                    </li>
-                    <li>
-                      Wir arbeiten mit folgender Mentalität: We are in Business
-                      50 years from now!
-                    </li>
+                  <ul className="list-disc list-outside flex flex-col gap-[15px] text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4] pl-[40px]"
+                     dangerouslySetInnerHTML={{
+                      __html: (page?.gruppe_page?.reference?.values_section_right_desc?.value),
+                    }}
+                  >
                   </ul>
                 </div>
               </div>
@@ -123,44 +124,21 @@ export default function gorup() {
               <div className="col-left w-[520px]">
                 <div className="title-wrap">
                   <h2 className="title text-[#00795C] text-[35px] lg:text-[40px] xl:text-[55px] tracking-[-1.05984px] mb-[20px] lg:mb-[30px] leading-[1.1]">
-                    Work
+                    {page?.gruppe_page?.reference?.work_section_title?.value}
                   </h2>
                 </div>
-                <div className="desc text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
-                  <p>
-                    Die kybun Joya Retail AG/GMBH ist ein zukunftsträchtiges
-                    Schweizer Unternehmen, dass sich seit 1996 auf die
-                    Vermarktung von Gesundheitsschuhen spezialisiert hat, die
-                    Menschen hochwertige Lösungen für Probleme am
-                    Bewegungsapparat bietet.
-                  </p>
-                  <p>
-                    Bei uns arbeiten sie in einem dynamischen Firmenumfeld.
-                    Unsere kleinen Teams können schnellen Entscheidungen
-                    umsetzen, um flexibel auf Veränderungen im Markt reagieren
-                    zu können die das Unternehmensentwicklung mit sich bringt.
-                    Unsere Mitarbeiter*innen haben die Möglichkeit, ihre eigenen
-                    Stärken und Ideen einzubringen und umzusetzen und so in neue
-                    Verantwortungen hineinzuwachsen.
-                  </p>
-                  <p>
-                    Regelmäßige Schulungen und Weiterbildungen helfen dabei, das
-                    eigene Wissen zu erweitern und sich weiterzuentwickeln.
-                  </p>
-                  <p>
-                    Als Unternehmen im Wachstum bieten wir unseren
-                    Mitarbeiterinnen spannende Herausforderungen und
-                    Karrieremöglichkeiten. Wir suchen engagierte und motivierte
-                    Mitarbeiterinnen, die unsere Vision teilen und gemeinsam mit
-                    uns die Zukunft gestalten möchten.
-                  </p>
+                <div className="desc text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
+                   dangerouslySetInnerHTML={{
+                    __html: toHTML(page?.gruppe_page?.reference.work_section_desc.value),
+                  }}
+                >
                 </div>
               </div>
               <div className="col-right flex-1">
                 <div className="img-wrap">
                   <img
+                    src={page?.gruppe_page?.reference?.work_section_image?.reference?.image?.url}
                     className="w-full rounded-[10px]"
-                    src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/ss23-tennis-athletes-iga-swiatek-editorials-19-Mar23__2_.jpg_2.png?v=1681884491"
                     alt=""
                   />
                 </div>
@@ -175,7 +153,7 @@ export default function gorup() {
                 <div className="img-wrap h-full">
                   <img
                     className="w-full rounded-[10px] h-full object-cover"
-                    src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/ss23-tennis-athletes-iga-swiatek-editorials-19-Mar23__2_.jpg_3.png?v=1681885460"
+                    src={page?.gruppe_page?.reference?.culture_employee_section_image?.reference?.image?.url}
                     alt=""
                   />
                 </div>
@@ -185,93 +163,56 @@ export default function gorup() {
                   <div className="w-[60%]">
                     <div className="title-wrap">
                       <h2 className="title text-[#00795C] text-[35px] lg:text-[40px] xl:text-[55px] tracking-[-1.05984px] mb-[20px] lg:mb-[30px] leading-[1.1]">
-                        Culture / Mitarbeiter
+                        {page?.gruppe_page?.reference?.culture_employee_section_title_1?.value}
                       </h2>
                     </div>
                     <div className="desc">
-                      <ul className="list-disc list-outside flex flex-col gap-[15px] text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4] pl-[40px]">
-                        <li>
-                          Wir sind eine globale kybun Joya Familie mit der
-                          gleichen Vision und dem Ziel uns selbst zu verbessern.
-                        </li>
-                        <li>
-                          Unsere Mitarbeiter sind Botschafter der Marke, unsere
-                          Partner sind «Überzeugungstäter».
-                        </li>
-                        <li>
-                          Unsere Teams sind vielfältig, übernehmen Verantwortung
-                          und könnten unser Unternehmen führen.
-                        </li>
-                        <li>
-                          Wir schaffen regelmässig Anlässe, wo unsere
-                          Mitarbeiter zusammenkommen um Erfahrung auszutauschen.
-                        </li>
-                        <li>
-                          Wir wollen eine transparente Informationsleitung zu
-                          unseren Mitarbeitern.
-                        </li>
-                        <li>
-                          Wir fördern flache Hierarchie, setzen auf Teamleiter,
-                          übergeben Verantwortung und Entscheidungskompetenzen.
-                        </li>
-                        <li>
-                          Wir investieren gezielt in Personalentwicklung,
-                          Weiterbildung und Bindung unserer Mitarbeiter.
-                        </li>
-                        <li>
-                          Meilensteine Zelebrieren! Feste Feiern! Grosszügig
-                          sein.
-                        </li>
+                      <ul className="list-disc list-outside flex flex-col gap-[15px] text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4] pl-[40px]"
+                          dangerouslySetInnerHTML={{
+                            __html: (page?.gruppe_page?.reference.culture_employee_section_desc_1?.value),
+                          }}
+                        >
                       </ul>
                     </div>
                   </div>
                   <div className="w-[40%]">
                     <div className="title-wrap">
                       <h2 className="title text-[#00795C] text-[35px] lg:text-[40px] xl:text-[55px] tracking-[-1.05984px] mb-[20px] lg:mb-[24px] leading-[1.1]">
-                        SGS: Social, Sustainability / Transparency
+                        {page?.gruppe_page?.reference?.culture_employee_section_title_2?.value}
                       </h2>
                     </div>
-                    <div className="desc text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
-                      <p>
-                        Nachhaltigkeit bedeutet für uns, qualitative und
-                        hochwertige Produkte zu entwickeln, die über den
-                        normalen Lebenszyklus hinaus eingesetzt werden, um im
-                        Bereich der sozialen Nachhaltigkeit Spuren zu
-                        hinterlassen!
-                      </p>
-                      <ul className="list-disc list-outside flex flex-col gap-[15px] text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4] pl-[40px]">
-                        <li>
-                          Einblick in unsere Wertschöpfungskette = Supply Chain
-                          Transparenz
-                        </li>
-                        <li>Einblick in unser Projekt Second Life</li>
-                        <li>Soziale Engagements</li>
-                      </ul>
+                    <div className="desc text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
+                         dangerouslySetInnerHTML={{
+                          __html: (page?.gruppe_page?.reference.culture_employee_section_desc_2?.value),
+                        }}
+                    >
                     </div>
                   </div>
                 </div>
                 <div className="w-full mt-[64px] ma-w-[770px]">
                   <div className="title-wrap">
-                    <h2 className="title text-[#00795C] text-[35px] lg:text-[40px] xl:text-[55px] tracking-[-1.05984px] mb-[20px] lg:mb-[30px] leading-[1.1]">
-                      Luftkissen Technologie <br />
-                      CloudTec®
+                    <h2 className="title text-[#00795C] text-[35px] lg:text-[40px] xl:text-[55px] tracking-[-1.05984px] mb-[20px] lg:mb-[30px] leading-[1.1]"
+                       dangerouslySetInnerHTML={{
+                        __html: (page?.gruppe_page?.reference.culture_employee_section_title_3.value),
+                      }}
+                    >
                     </h2>
                   </div>
                   <div className="desc text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
-                    <p>
-                      Landing Page Luftkissen Technologie / Video und einen
-                      kurzen Text das alle unsere Schuhe mit der gleichen PU
-                      Mischung arbeiten die wir bei uns SWISS AIR CUSHION
-                      TECHNOLOGY nennen. (Compression Small)
+                    <p
+                      dangerouslySetInnerHTML={{
+                        __html: (page?.gruppe_page?.reference.culture_employee_section_desc_3?.value),
+                      }}
+                    >
                     </p>
                   </div>
-                  <div className="btn-wrap flex justify-start mt-[42px]">
-                    <a
-                      href="#"
-                      className="w-fit px-[30px] py-[15px] bg-black rounded-[100px] transition-all !text-white text-[18px] tracking-[-0.400697px] hover:bg-[#00795c] font-normal"
-                    >
-                      Mehr Lernen
-                    </a>
+                    <div className="btn-wrap flex justify-start mt-[42px]">
+                      <Link
+                        to={page?.gruppe_page?.reference.culture_employee_section_cta?.value}
+                        className="w-fit px-[30px] py-[15px] bg-black rounded-[100px] transition-all !text-white text-[18px] tracking-[-0.400697px] hover:bg-[#00795c] font-normal"
+                      >
+                        Mehr Lernen
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -283,128 +224,85 @@ export default function gorup() {
             <div className="w-full">
               <div className="title-wrap">
                 <h2 className="title text-[#00795C] text-[35px] lg:text-[40px] xl:text-[55px] tracking-[-1.05984px] mb-[20px] lg:mb-[30px] leading-[1.1]">
-                  Kybun Joya Therapie
+                  {page?.gruppe_page?.reference?.kybun_joya_therapie_section_title?.value}
                 </h2>
               </div>
             </div>
             <div className="hero-img relative overflow-hidden rounded-xl pb-[35%] min-h-[400px] mb-[48px]">
               <img
-                src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/jeremy-lapak-CVvFVQ_-oUg-unsplash_1_1.png?v=1681889062"
+                src={page?.gruppe_page?.reference?.kybun_joya_therapie_section_image?.reference?.image?.url}
                 alt=""
                 className="absolute rounded-xl inset-0 w-full h-full object-cover"
               />
             </div>
             <div className="flex flex-col lg:flex-row gap-y-[30px] gap-x-[73px]">
               <div className="col-left w-[50%]">
-                <div className="desc text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
-                  <p>
-                    Die kybun Joya Therapie hat Ihren Ursprung in den
-                    Reisfeldern Koreas. Genau dieses einzigartige Gehgefühl holt
-                    kybun Joya in unseren Alltag. Das bedeutet, dass unsere
-                    harten und flachen Kunstböden in weich-elastisch-federnde
-                    Reisfeldböden verwandelt werden. Mit eben diesem
-                    Geh-Erlebnis wird der ganze Körper ganz von allein trainiert
-                    – ohne Übungen und ohne Zeitaufwand!
-                  </p>
+                <div className="desc text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
+                >
+                  <span
+                     dangerouslySetInnerHTML={{
+                      __html: toHTML(page?.gruppe_page?.reference?.kybun_joya_therapie_section_desc?.value),
+                    }}
+                  >
+                  </span>
                   <div className="title-wrap">
                     <h3 className="title text-[#00795C] text-[35px] tracking-[-1.05984px] my-[20px] leading-[1.1]">
-                      Trampolineffekt
+                      {page?.gruppe_page?.reference?.kybun_joya_therapie_section_trampolineffekt_title?.value}
                     </h3>
                   </div>
-                  <p>
-                    kybun und Joya sind die weltweit einzigen Schuhhersteller,
-                    die auf Sohlen mit Trampolineffekt setzen. Genau diese
-                    Trampolinbewegung ist die Urbewegung des Menschen und regt
-                    die Muskel-Faszien-Ketten an, sich wechselseitig anzuspannen
-                    und zu entspannen. Und wer liebt dieses wunderbare
-                    «Schwebe-Gefühl» nicht! Es zaubert jedem Kleinkind,
-                    Erwachsenen und Senioren ein Lächeln ins Gesicht, da es
-                    Glückshormone (wie beispielsweise Dopamin, Serotonin oder
-                    Noradrenalin) ausscheiden lässt, entspannend wirkt und
-                    gleichzeitig auch die oben beschriebenen positiven Effekte
-                    auf den gesamten Bewegungsapparat hat.
-                  </p>
+                  <span
+                    dangerouslySetInnerHTML={{
+                      __html: toHTML(page?.gruppe_page?.reference?.kybun_joya_therapie_section_trampolineffekt_desc?.value),
+                    }}
+                  >
+                  </span>
                   <div className="title-wrap">
                     <h3 className="title text-[#00795C] text-[35px] tracking-[-1.05984px] my-[20px] leading-[1.1]">
-                      Sensationelle Wirkung
+                      {page?.gruppe_page?.reference?.kybun_joya_therapie_section_sensationelle_wirkung_title?.value}
                     </h3>
                   </div>
-                  <p>
-                    Nicht selten können Menschen mit Gehbeschwerden im Alter,
-                    dank der kybun Joya Therapie, Operationen vermeiden und
-                    wieder schmerzfrei gehen. Unsere Erfahrungen zeigen, dass
-                    unsere Produkte in Verbindung mit der kybun Joya Therapie
-                    bei folgenden Beschwerden geholfen haben:
-                  </p>
-                  <p>
-                    Rücken-, Hüft-, Knie- und Fußbeschwerden, insbesondere bei
-                    Arthrosen, als Alternative zur Operation. Fußgelenks
-                    Versteifung, Achillessehnenentzündung, generelle
-                    Gehschmerzen im Alter, Knorpel Abnutzungen, Osteoporose,
-                    Venen- und Lymphe Aktivität und Diabetes, aber auch bei
-                    neurologischen Erkrankungen wie Parkinson, MS, Schlaganfall
-                    u.v.m.
-                  </p>
+                  <span
+                    dangerouslySetInnerHTML={{
+                      __html: toHTML(page?.gruppe_page?.reference?.kybun_joya_therapie_section_sensationelle_wirkung_desc_1?.value),
+                    }}
+                  >
+                  </span>
                 </div>
               </div>
               <div className="col-right w-[50%]">
                 <div className="desc text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
-                  <p>
-                    Große Dienste leistet das Gehen und Stehen in
-                    weich-elastisch-federnden kybun Joya Schuhen auch bei
-                    versteiften Fußgelenken, Achillessehnen Entzündungen,
-                    Diabetes, Knorpelabnutzungen und Osteoporose. Mehr
-                    evidenzbasierte Informationen zu den einzelnen medizinischen
-                    und biomechanischen Wirkungsprinzipien finden sie unter Dr.
-                    Kybun.
-                  </p>
-                  <p>
-                    Über 2 Millionen begeisterte Kunden weltweit bestätigen die
-                    außergewöhnliche Wirkung, der durch den Schweizer Dipl.
-                    Ingenieur ETH und Bewegungswissenschaftler Karl Müller III
-                    entwickelten Technologie, welche ihren Ursprung in den 90er
-                    Jahren nahm, als er inmitten von Reisfeldern in Südkorea
-                    lebte.
-                  </p>
-                  <p>
-                    Das Gehen und Stehen auf den weich-elastisch-federnden kybun
-                    Joya Sohlen, kommt dem Gehen auf dem natürlichen
-                    Reisfeldboden am nächsten.
-                  </p>
+                  <span
+                    dangerouslySetInnerHTML={{
+                      __html: toHTML(page?.gruppe_page?.reference?.kybun_joya_therapie_section_sensationelle_wirkung_desc_2?.value),
+                    }}
+                  >
+                  </span>
                   <div className="title-wrap">
                     <h3 className="title text-[#00795C] text-[35px] tracking-[-1.05984px] my-[20px] leading-[1.1]">
-                      Ganzheitliche Therapie erleben
+                      {page?.gruppe_page?.reference?.kybun_joya_therapie_section_ganzheitliche_title?.value}
                     </h3>
                   </div>
-                  <p>
-                    Neben den elastisch-federnden Schuhen zum Gehen und
-                    trampolin-ähnlichen Matten zum Stehen, besteht die kybun
-                    Joya Therapie zudem aus einem Fundus von speziellen Übungen
-                    und Methoden zum manuellen Lösen
-                  </p>
-                  <div className="flex flex-col lg:flex-row gap-y-[30px] gap-x-[44px]">
-                    <div className="desc w-[60%]">
-                      <p>
-                        von Faszien-Verklebungen. Diese werden durch
-                        ausgebildete kybun Joya Therapeuten in Off- und Online
-                        Kursen sowie Sprechstunden und Vorträgen vermittelt.
-                      </p>
-                      <p>
-                        Wo würden ihre Füße und ihr ganzer Körper wohl lieber
-                        gehen, barfuß auf weich-elastisch-federndem Moos, oder
-                        eingepackt in flachen Schuhen auf dem harten Asphalt?
-                        Gönnen sie ihren Füßen nur das Allerbeste, denn sie
-                        tragen Sie noch ihr ganzes Leben.
-                      </p>
+                  <span
+                     dangerouslySetInnerHTML={{
+                      __html: toHTML(page?.gruppe_page?.reference?.kybun_joya_therapie_section_ganzheitliche_desc_1?.value),
+                    }}
+                  >
+                  </span>
+                  <div className="flex flex-col lg:flex-row gap-y-[30px] gap-x-[44px] mt-[24px]">
+                    <div className="desc w-[60%]"
+                      dangerouslySetInnerHTML={{
+                        __html: toHTML(page?.gruppe_page?.reference?.kybun_joya_therapie_section_ganzheitliche_desc_2?.value),
+                      }}
+                    >
                     </div>
                     <div className="title-wrap w-[40%]">
                       <h3
                         className="text-[35px] text-[#00795C] font-bold
                 leading-[1.2]"
-                      >
-                        Um nicht «die Katze im Sack zu kaufen», können kybun
-                        Joya Schuhe außerdem bis zu 2 Wochen risikolos gemietet
-                        werden.
+                        dangerouslySetInnerHTML={{
+                          __html: toHTML(page?.gruppe_page?.reference?.kybun_joya_therapie_section_ganzheitliche_desc_3?.value),
+                        }}
+                       >
                       </h3>
                     </div>
                   </div>
@@ -419,56 +317,35 @@ export default function gorup() {
               <div className="col-left w-[520px]">
                 <div className="title-wrap">
                   <h2 className="title text-[#00795C] text-[35px] lg:text-[40px] xl:text-[55px] tracking-[-1.05984px] mb-[20px] lg:mb-[30px] leading-[1.1]">
-                    Group
+                    {page?.gruppe_page?.reference?.footer_group_title?.value}
                   </h2>
                 </div>
-                <div className="desc text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
-                  <p>
-                    Seit 1996 beschäftigt sich die kybun Joya Gruppe damit,
-                    Schuhtechnologien zu entwickeln, die Menschen qualitative
-                    und hochwertige Lösungen für Probleme am Bewegungsapparat
-                    bieten.
-                  </p>
-                  <p>
-                    Wir entwickeln und produzieren Gesundheitsschuhe mit
-                    federnd-elastischen Sohlentechnologien und therapeutische
-                    Lösungen, basieren auf der Erfindung des Schweizer
-                    ETH-Ingenieur und Bewegungswissenschaftler Karl Müller.
-                  </p>
-                  <p>
-                    Beim Barfuß gehen auf dem Reisfeldboden in Südkorea
-                    verschwanden seine Gehschmerzen, worauf er 1996 die
-                    Schuhindustrie mit der Markteinführung der MBT-Schuhe
-                    revolutionierte.
-                  </p>
-                  <p>
-                    Unsere kybun Joya Shops sind eine Beratungsstelle für
-                    Zweitmeinungen vor orthopädischen Operationen und wir geben
-                    unser Wissen über schmerzfreies Gehen weiter. Unsere
-                    Philosophie ist:
-                  </p>
+                <div className="desc text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
+                   dangerouslySetInnerHTML={{
+                    __html: toHTML(page?.gruppe_page?.reference?.footer_group_desc?.value),
+                  }}
+                 >
                 </div>
                 <div className="title-wrap">
-                  <h2 className="title text-[#00795C] text-[35px] tracking-[-1.05984px] my-[20px] leading-[1.1]">
-                    THERAPIEREN <br />
-                    STATT OPERIEREN.
+                  <h2 className="title text-[#00795C] text-[35px] tracking-[-1.05984px] my-[20px] leading-[1.1]"
+                     dangerouslySetInnerHTML={{
+                      __html: (page?.gruppe_page?.reference?.footer_group_sub_title?.value),
+                    }} 
+                  >
                   </h2>
                 </div>
-                <div className="desc text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
-                  <p>
-                    Unsere Herzensangelegenheit ist die Schweizer
-                    Schuhproduktion. Unsere Schuhfabrik in Sennwald/SG ist ein
-                    Aushängeschild für Innovation und Pioniergeist.
-                  </p>
-                  <p>Eine Übersicht unserer Marken:</p>
-                  <p>Übersichtpage der Marken mit Links auf die Markenpage</p>
+                <div className="desc text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
+                   dangerouslySetInnerHTML={{
+                    __html: toHTML(page?.gruppe_page?.reference?.footer_group_sub_desc?.value),
+                  }}
+                >
                 </div>
               </div>
               <div className="col-right flex-1">
                 <div className="img-wrap h-full">
                   <img
                     className="w-full rounded-[10px] h-full"
-                    src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/ss23-tennis-athletes-iga-swiatek-editorials-19-Mar23__2_.jpg_4.png?v=1681888041"
+                    src={page?.gruppe_page?.reference?.footer_group_image?.reference?.image?.url}
                     alt=""
                   />
                 </div>
@@ -480,3 +357,146 @@ export default function gorup() {
     </>
   );
 }
+
+
+
+const PAGE_QUERY = `#graphql
+${MEDIA_FRAGMENT}
+  query PageDetails($language: LanguageCode, $handle: String!)
+  @inContext(language: $language) {
+    page(handle: $handle) {
+      id
+      title
+      body
+      gruppe_page : metafield(namespace: "custom", key: "gruppe_page") {
+        reference {
+          ... on Metaobject {
+            handle
+            hero_image : field(key: "hero_image") {
+              reference {
+                ...Media
+              }
+            }
+            head_title : field(key: "head_title") {
+              value
+            }
+            values_section_title : field(key: "values_section_title") {
+              value
+            }
+            values_section_left_short_desc : field(key: "values_section_left_short_desc") {
+              value
+            }
+            values_section_left_sub_short_desc : field(key: "values_section_left_sub_short_desc") {
+              value
+            }
+            values_section_left_desc : field(key: "values_section_left_desc") {
+              value
+            }
+            values_section_right_short_desc : field(key: "values_section_right_short_desc") {
+              value
+            }
+            values_section_right_desc : field(key: "values_section_right_desc") {
+              value
+            }
+            work_section_title : field(key: "work_section_title") {
+              value
+            }
+            work_section_desc : field(key: "work_section_desc") {
+              value
+            }
+            work_section_image : field(key: "work_section_image") {
+              reference {
+                ...Media
+              }
+            }
+            culture_employee_section_image : field(key: "culture_employee_section_image") {
+              reference {
+                ...Media
+              }
+            }
+            culture_employee_section_title_1 : field(key: "culture_employee_section_title_1") {
+              value
+            }
+            culture_employee_section_desc_1 : field(key: "culture_employee_section_desc_1") {
+              value
+            }
+            culture_employee_section_title_2 : field(key: "culture_employee_section_title_2") {
+              value
+            }
+            culture_employee_section_desc_2 : field(key: "culture_employee_section_desc_2") {
+              value
+            }
+            culture_employee_section_title_3 : field(key: "culture_employee_section_title_3") {
+              value
+            }
+            culture_employee_section_desc_3 : field(key: "culture_employee_section_desc_3") {
+              value
+            }
+            culture_employee_section_cta : field(key: "culture_employee_section_cta") {
+              value
+            }
+            kybun_joya_therapie_section_title : field(key: "kybun_joya_therapie_section_title") {
+              value
+            }
+            kybun_joya_therapie_section_image : field(key: "kybun_joya_therapie_section_image") {
+              reference {
+                ...Media
+              }
+            }
+            kybun_joya_therapie_section_desc : field(key: "kybun_joya_therapie_section_desc") {
+              value
+            }
+            kybun_joya_therapie_section_trampolineffekt_title : field(key: "kybun_joya_therapie_section_trampolineffekt_title") {
+              value
+            }
+            kybun_joya_therapie_section_trampolineffekt_desc : field(key: "kybun_joya_therapie_section_trampolineffekt_desc") {
+              value
+            }
+            kybun_joya_therapie_section_sensationelle_wirkung_title : field(key: "kybun_joya_therapie_section_sensationelle_wirkung_title") {
+              value
+            }
+            kybun_joya_therapie_section_sensationelle_wirkung_desc_1 : field(key: "kybun_joya_therapie_section_sensationelle_wirkung_desc_1") {
+              value
+            }
+            kybun_joya_therapie_section_sensationelle_wirkung_desc_2 : field(key: "kybun_joya_therapie_section_sensationelle_wirkung_desc_2") {
+              value
+            }
+            kybun_joya_therapie_section_ganzheitliche_title : field(key: "kybun_joya_therapie_section_ganzheitliche_title") {
+              value
+            }
+            kybun_joya_therapie_section_ganzheitliche_desc_1 : field(key: "kybun_joya_therapie_section_ganzheitliche_desc_1") {
+              value
+            }
+            kybun_joya_therapie_section_ganzheitliche_desc_2 : field(key: "kybun_joya_therapie_section_ganzheitliche_desc_2") {
+              value
+            }
+            kybun_joya_therapie_section_ganzheitliche_desc_3 : field(key: "kybun_joya_therapie_section_ganzheitliche_desc_3") {
+              value
+            }
+            footer_group_title : field(key: "footer_group_title") {
+              value
+            }
+            footer_group_desc : field(key: "footer_group_desc") {
+              value
+            }
+            footer_group_sub_desc : field(key: "footer_group_sub_desc") {
+              value
+            }
+            footer_group_sub_title : field(key: "footer_group_sub_title") {
+              value
+            }
+            footer_group_image : field(key: "footer_group_image") {
+              reference {
+                ...Media
+              }
+            }
+          }
+        }
+      }
+      seo {
+        description
+        title
+      }
+    }
+  }
+`;
