@@ -477,10 +477,10 @@ p:last-child {
   margin-right: 14px;
   vertical-align: middle;
 }
-.filter-list li a.active{
+.filter-list li a.active {
   color: #00795c;
 }
-.filter-list li a.active:before{
+.filter-list li a.active:before {
   border: 1px solid #00795c;
   background-color: #00795c;
   box-shadow: 0 0 0.9821px #0000000d, 0 3.9284px 7.8568px #0000001a;
@@ -541,6 +541,30 @@ p:last-child {
     drop-shadow(0px 5.26947px 10.5389px rgba(0, 0, 0, 0.1));
 }
 /* end rich-text section  */
+
+/* ratgeber-seite-fersensporn page  */
+.list-style2 li {
+  display: flex;
+  gap: 13px 13px;
+  padding-bottom: 10px;
+  align-items: center;
+  text-decoration: underline;
+  font-weight: 500;
+}
+.list-style2 li:before {
+  content: '';
+  background-image: url("data:image/svg+xml,%3Csvg width='28' height='24' viewBox='0 0 28 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15.5215 1L26.012 11.898L15.1139 22.3885' stroke='black' stroke-width='2'/%3E%3Cline x1='26.2148' y1='11.8398' x2='-0.000213924' y2='11.8398' stroke='black' stroke-width='2'/%3E%3C/svg%3E%0A");
+  width: 25px;
+  height: 25px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.video-wrap {
+  filter: drop-shadow(0px 0px 0.995742px rgba(0, 0, 0, 0.05))
+    drop-shadow(0px 3.98297px 7.96594px rgba(0, 0, 0, 0.1));
+}
+/* end ratgeber-seite-fersensporn page  */
 
 .text-\[\#00795c\] {
   --tw-text-opacity: 1;
