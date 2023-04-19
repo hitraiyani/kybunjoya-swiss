@@ -580,3 +580,7 @@ p:last-child {
 .accordion.open {
   height: auto;
 }
+
+.text-\[28px\] {
+  font-size: 28px;
+}

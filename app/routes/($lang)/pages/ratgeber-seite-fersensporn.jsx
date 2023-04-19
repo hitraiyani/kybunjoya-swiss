@@ -1,15 +1,61 @@
 import React from 'react';
+import {json} from '@shopify/remix-oxygen';
 import {Navigation, Pagination, Scrollbar, A11y, Autoplay} from 'swiper';
 import {Swiper, SwiperSlide} from 'swiper/react';
-import {ArrowRight, ArrowRightLight} from '~/components';
+import {ArrowRight, ArrowRightLight, Link} from '~/components';
+import {useLoaderData} from '@remix-run/react';
+import {MEDIA_FRAGMENT} from '~/data/fragments';
+import { toHTML} from '~/lib/utils';
+
+const seo = ({data}) => ({
+  title: data?.page?.seo?.title,
+  description: data?.page?.seo?.description,
+});
+
+export const handle = {
+  seo,
+};
+
+export async function loader({request, params, context}) {
+  
+  const {page} = await context.storefront.query(PAGE_QUERY, {
+    variables: {
+      handle: 'ratgeber-seite-fersensporn',
+      language: context.storefront.i18n.language,
+    },
+  });
+
+  if (!page) {
+    throw new Response(null, {status: 404});
+  }
+
+  return json(
+    {page},
+    {
+      headers: {
+        // TODO cacheLong()
+      },
+    },
+  );
+}
+
+
+
+
 
 export default function ratgeberSeiteFersensporn() {
+
+  const {page} = useLoaderData();
+
+  const mainVideoSection = page?.ratgeber_seite_fersensporn?.reference?.main_video_section?.value ? JSON.parse(page?.ratgeber_seite_fersensporn?.reference?.main_video_section?.value) : {};
+  const mainVideoSliderSection = page?.ratgeber_seite_fersensporn?.reference?.main_video_slider_section?.value ? JSON.parse(page?.ratgeber_seite_fersensporn?.reference?.main_video_slider_section?.value) : [];
+
   return (
     <>
       <div className="container mt-[120px] lg:mt-[200px]">
         <div className="page-title">
           <h1 className="title text-[#00795C] text-[40px] md:text-[50px] lg:text-[70px] xl:text-[90px] mb-[30px] lg:mb-[43px] leading-none font-black">
-            Dr. kybun Joya
+            {page?.ratgeber_seite_fersensporn?.reference?.head_title?.value}
           </h1>
         </div>
         <section className="rich-text-with-slider">
@@ -17,86 +63,59 @@ export default function ratgeberSeiteFersensporn() {
             <div className="w-full mb-[12px]">
               <div className="title-wrap">
                 <h2 className="title text-[#00795C] text-[35px] lg:text-[40px] xl:text-[65px] tracking-[-1.05984px]">
-                  Fersensporn
+                  {page?.ratgeber_seite_fersensporn?.reference?.head_title_sub?.value}
                 </h2>
                 <h3
                   className="text-[35px] text-[#00795C] font-bold
                 leading-[1.2]"
                 >
-                  Plantarfasziitis (Fasciitis plantaris)
+                  {page?.ratgeber_seite_fersensporn?.reference?.head_title_sub_secondary?.value}
                 </h3>
               </div>
             </div>
             <div className="flex flex-col lg:flex-row gap-y-[30px] gap-x-[93px]">
               <div className="col-left w-[65%]">
-                <div className="desc text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
-                  <p>
-                    Der Fersensporn und die chronische Fasciitis plantaris sind
-                    die häufigsten Folgen dauerhafter Überlastung der Fusssohlen
-                    in den Industrienationen. Harte Böden und unflexibles,
-                    stützendes Schuhwerk, sorgen dafür, dass ein Grossteil der
-                    Last beim Gehen und Stehen von der Ferse getragen werden
-                    muss.Das führt oftmals langfristig zu Schmerzen und
-                    Beschwerden im Fersenbereich.Die Lösungen der Medizin und
-                    der Schuhindustrie sind entweder extrem teuer oder
-                    verschlimmern die Situation langfristig eher, da nicht die
-                    Ursachen bekämpft werden, sondern nur die Symptome.
-                  </p>
+                <div className="desc text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
+                   dangerouslySetInnerHTML={{
+                    __html: toHTML(page?.ratgeber_seite_fersensporn?.reference?.head_desc?.value),
+                  }}
+                >
                 </div>
                 <div className="box bg-[#EDEDED] rounded-[10px] px-[63px] py-[49px] mt-[43px]">
                   <h3 className="text-[35px] xl:text-[45px] text-[#00795C] font-bold leading-[1.2] tracking-[-0.97152px] mb-[33px]">
-                    Übersicht
+                      {page?.ratgeber_seite_fersensporn?.reference?.overview_title?.value}
                   </h3>
-                  <h4 className="text-[28px] text-[#00795C] font-medium leading-[1.1] tracking-[-0.97152px] mb-[10px]">
-                    kybun Joya & Fersensporn
-                  </h4>
-                  <ul className="list-style2 desc text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mb-[32px]">
-                    <li>
-                      Fersensporn / Plantarfasziitis (Fasciitis plantaris)
-                    </li>
-                    <li>Ursachen</li>
-                    <li>Langzeitfolgen</li>
-                    <li>Konventionelle Therapie</li>
-                    <li>kybun Wirkungsprinzip - Proaktiv handeln</li>
-                  </ul>
-                  <h4 className="text-[28px] text-[#00795C] font-medium leading-[1.1] tracking-[-0.97152px] mb-[10px]">
-                    Anwendertipps & Übungen
-                  </h4>
-                  <ul className="list-style2 desc text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mb-[32px]">
-                    <li>Erstreaktionen</li>
-                    <li>kybun-Übungen</li>
-                    <li>Anwendungstipps</li>
-                  </ul>
-                  <h4 className="text-[28px] text-[#00795C] font-medium leading-[1.1] tracking-[-0.97152px] mb-[10px]">
-                    Fach- und Kundenmeinungen
-                  </h4>
-                  <ul className="list-style2 desc text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
-                    <li>Medienberichte / Studien</li>
-                    <li>Meinungen / Kundenaussagen</li>
-                  </ul>
+                  <span 
+                    dangerouslySetInnerHTML={{
+                      __html: (page?.ratgeber_seite_fersensporn?.reference?.overview_desc?.value),
+                    }}
+                  >
+                  </span>
                 </div>
               </div>
               <div className="col-right w-[35%]">
                 <div className="video-info">
-                  <div className="video-wrap w-full aspect-video rounded-[10px] relative overflow-hidden">
-                    <iframe
-                      className="absolute w-full h-full inset-0 object-cover bg-cover"
-                      src="https://www.youtube.com/embed/yAoLSRbwxL8"
-                      title="YouTube video player"
-                      frameBorder={0}
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      allowFullScreen
-                    />
-                  </div>
+                {
+                      mainVideoSection?.video_url && (
+                        <div className="video-wrap w-full aspect-video rounded-[10px] relative overflow-hidden">
+                            <iframe
+                                className="absolute w-full h-full inset-0 object-cover bg-cover"
+                                src={mainVideoSection?.video_url}
+                                title="YouTube video player"
+                                frameBorder={0}
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowFullScreen
+                              />
+                        </div>
+                      )
+                  }
                   <div className="info mt-[12px]">
                     <h4 className="desc text-[25px] text-[#00795C] tracking-[-0.400697px] font-bold leading-[1.4]">
-                      Schmerzfrei trotz Fersensporn
+                      {mainVideoSection?.video_title}
                     </h4>
                     <div className="desc text-[18px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
                       <p>
-                        Ulrike Rausch leidet an Fersensporn. Um die Schmerzen zu
-                        lindern sucht sie vier Fachärzte auf. Diese konnten ihr
-                        nicht helfen.
+                        {mainVideoSection?.video_desc}
                       </p>
                     </div>
                   </div>
@@ -118,84 +137,34 @@ export default function ratgeberSeiteFersensporn() {
                       }}
                       className="h-full overflow-visible rounded-xl flex flex-col"
                     >
-                      <SwiperSlide>
-                        <div className="video-info">
-                          <div className="video-wrap w-full aspect-video rounded-[10px] relative overflow-hidden">
-                            <iframe
-                              className="absolute w-full h-full inset-0 object-cover bg-cover"
-                              src="https://www.youtube.com/embed/yAoLSRbwxL8"
-                              title="YouTube video player"
-                              frameBorder={0}
-                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                              allowFullScreen
-                            />
-                          </div>
-                          <div className="info mt-[12px]">
-                            <h4 className="desc text-[25px] text-[#00795C] tracking-[-0.400697px] font-bold leading-[1.4]">
-                              Schmerzfrei trotz Fersensporn
-                            </h4>
-                            <div className="desc text-[18px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
-                              <p>
-                                Ulrike Rausch leidet an Fersensporn. Um die
-                                Schmerzen zu lindern sucht sie vier Fachärzte
-                                auf. Diese konnten ihr nicht helfen.
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </SwiperSlide>
-                      <SwiperSlide>
-                        <div className="video-info">
-                          <div className="video-wrap w-full aspect-video rounded-[10px] relative overflow-hidden">
-                            <iframe
-                              className="absolute w-full h-full inset-0 object-cover bg-cover"
-                              src="https://www.youtube.com/embed/yAoLSRbwxL8"
-                              title="YouTube video player"
-                              frameBorder={0}
-                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                              allowFullScreen
-                            />
-                          </div>
-                          <div className="info mt-[12px]">
-                            <h4 className="desc text-[25px] text-[#00795C] tracking-[-0.400697px] font-bold leading-[1.4]">
-                              Schmerzfrei trotz Fersensporn
-                            </h4>
-                            <div className="desc text-[18px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
-                              <p>
-                                Ulrike Rausch leidet an Fersensporn. Um die
-                                Schmerzen zu lindern sucht sie vier Fachärzte
-                                auf. Diese konnten ihr nicht helfen.
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </SwiperSlide>
-                      <SwiperSlide>
-                        <div className="video-info">
-                          <div className="video-wrap w-full aspect-video rounded-[10px] relative overflow-hidden">
-                            <iframe
-                              className="absolute w-full h-full inset-0 object-cover bg-cover"
-                              src="https://www.youtube.com/embed/yAoLSRbwxL8"
-                              title="YouTube video player"
-                              frameBorder={0}
-                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                              allowFullScreen
-                            />
-                          </div>
-                          <div className="info mt-[12px]">
-                            <h4 className="desc text-[25px] text-[#00795C] tracking-[-0.400697px] font-bold leading-[1.4]">
-                              Schmerzfrei trotz Fersensporn
-                            </h4>
-                            <div className="desc text-[18px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
-                              <p>
-                                Ulrike Rausch leidet an Fersensporn. Um die
-                                Schmerzen zu lindern sucht sie vier Fachärzte
-                                auf. Diese konnten ihr nicht helfen.
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </SwiperSlide>
+                       {mainVideoSliderSection.length > 0 && mainVideoSliderSection.map((item, index) => {
+                          return (
+                            <SwiperSlide key={index}>
+                              <div className="video-info">
+                                <div className="video-wrap w-full aspect-video rounded-[10px] relative overflow-hidden">
+                                  <iframe
+                                    className="absolute w-full h-full inset-0 object-cover bg-cover"
+                                    src={item?.video_url}
+                                    title="YouTube video player"
+                                    frameBorder={0}
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowFullScreen
+                                  />
+                                </div>
+                                <div className="info mt-[12px]">
+                                  <h4 className="desc text-[25px] text-[#00795C] tracking-[-0.400697px] font-bold leading-[1.4]">
+                                    {item?.video_title}
+                                  </h4>
+                                  <div className="desc text-[18px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
+                                    <p>
+                                    {item?.video_desc}
+                                    </p>
+                                  </div>
+                                </div>
+                              </div>
+                            </SwiperSlide>
+                          );
+                       })}
                     </Swiper>
                     <div className="absolute top-[16%] z-[1] rounded-full swiper-button-next-video border-[5px] border-[rgba(0,_148,_112,_0.3)] left-[-24px]">
                       <div className="rounded-full w-[45px] h-[45px] text-white hover:bg-black hover:text-white after:text-[30px] bg-[#00795c] flex items-center justify-center rotate-180">
@@ -493,3 +462,51 @@ export default function ratgeberSeiteFersensporn() {
     </>
   );
 }
+
+
+
+const PAGE_QUERY = `#graphql
+  query PageDetails($language: LanguageCode, $handle: String!)
+  @inContext(language: $language) {
+    page(handle: $handle) {
+      id
+      title
+      body
+      ratgeber_seite_fersensporn : metafield(namespace: "custom", key: "ratgeber_seite_fersensporn") {
+        reference {
+          ... on Metaobject {
+            handle
+            head_title : field(key: "head_title") {
+              value
+            }
+            head_title_sub : field(key: "head_title_sub") {
+              value
+            }
+            head_title_sub_secondary : field(key: "head_title_sub_secondary") {
+              value
+            }
+            head_desc : field(key: "head_desc") {
+              value
+            }
+            overview_title : field(key: "overview_title") {
+              value
+            }
+            overview_desc : field(key: "overview_desc") {
+              value
+            }
+            main_video_section : field(key: "main_video_section") {
+              value
+            }
+            main_video_slider_section : field(key: "main_video_slider_section") {
+              value
+            }
+          }
+        }
+      }
+      seo {
+        description
+        title
+      }
+    }
+  }
+`;

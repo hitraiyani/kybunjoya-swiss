@@ -476,7 +476,16 @@ function Footer({menu, main_menu}) {
                     {menuitem.map((item, subIndex) => {
                       return (
                         <span key={subIndex}>
-                          <h2  className="mb-8 lg:text-[26px] text-[22px] font-bold capitalize text-[#00795C]">{item.title}</h2>
+                          <h2  className="mb-8 lg:text-[26px] text-[22px] font-bold capitalize text-[#00795C]">
+                           <Link
+                            to={item.to}
+                            target={item.target}
+                            className='kybunjoya-menu-hover title text-[#00795C] text-[26px] mb-[12px]'
+                            data-image={item.title}
+                          >
+                            {item.title}
+                          </Link>
+                          </h2>
                           {
                               item.items.length > 0 && ( <FooterMainMenuSub sub_menu_item={item.items} />)
                           }
