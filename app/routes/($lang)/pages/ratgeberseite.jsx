@@ -41,7 +41,7 @@ export default function ratgeberseite() {
   const {page} = useLoaderData();
 
   const buttonAccordionMapping = page?.ratgeber_detail?.reference?.button_accordion_mapping?.value ? JSON.parse(page.ratgeber_detail.reference.button_accordion_mapping.value) : [];
-  console.log("page",buttonAccordionMapping);
+ 
 
   useEffect(() => {
     document.querySelectorAll('.my-achor-link').forEach(function(link) {

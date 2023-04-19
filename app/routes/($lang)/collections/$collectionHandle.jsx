@@ -34,6 +34,8 @@ export async function loader({params, request, context}) {
   invariant(collectionHandle, 'Missing collectionHandle param');
 
   const searchParams = new URL(request.url).searchParams;
+
+  
   const knownFilters = ['productVendor', 'productType'];
   const available = 'available';
   const variantOption = 'variantOption';
@@ -41,6 +43,7 @@ export async function loader({params, request, context}) {
   const cursor = searchParams.get('cursor');
   const filters = [];
   const appliedFilters = [];
+  const appliedCustomFilters = [];
 
   for (const [key, value] of searchParams.entries()) {
     if (available === key) {
@@ -52,13 +55,16 @@ export async function loader({params, request, context}) {
           value,
         },
       });
+      appliedCustomFilters.push(value === 'true' ? 'In stock' : 'Out of stock');
     } else if (knownFilters.includes(key)) {
       filters.push({[key]: value});
       appliedFilters.push({label: value, urlParam: {key, value}});
+      appliedCustomFilters.push(value);
     } else if (key.includes(variantOption)) {
       const [name, val] = value.split(':');
       filters.push({variantOption: {name, value: val}});
       appliedFilters.push({label: val, urlParam: {key, value}});
+      appliedCustomFilters.push(val);
     }
   }
 
@@ -85,6 +91,7 @@ export async function loader({params, request, context}) {
       price,
     });
   }
+
 
   const {collection, collections} = await context.storefront.query(
     COLLECTION_QUERY,
@@ -122,6 +129,7 @@ export async function loader({params, request, context}) {
   return json({
     collection,
     appliedFilters,
+    appliedCustomFilters,
     collections: collectionNodes,
     brandHereSection,
     analytics: {
@@ -133,9 +141,7 @@ export async function loader({params, request, context}) {
 }
 
 export default function Collection() {
-  const {collection, collections, appliedFilters, brandHereSection} = useLoaderData();
-
-  console.log('collection', brandHereSection);
+  const {collection, collections, appliedFilters, brandHereSection, appliedCustomFilters} = useLoaderData();
 
   return (
     <>
@@ -506,6 +512,7 @@ export default function Collection() {
             filters={collection.products.filters}
             appliedFilters={appliedFilters}
             collections={collections}
+            appliedCustomFilters={appliedCustomFilters}
           >
             <ProductGrid
               key={collection.id}

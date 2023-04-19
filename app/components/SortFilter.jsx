@@ -1,4 +1,4 @@
-import {useMemo, useState} from 'react';
+import React, {useMemo, useState, useEffect} from 'react';
 import {Menu} from '@headlessui/react';
 
 import {Heading, IconFilters, IconCaret, IconXMark, Text} from '~/components';
@@ -14,9 +14,11 @@ import {Disclosure} from '@headlessui/react';
 export function SortFilter({
   filters,
   appliedFilters = [],
+  appliedCustomFilters = [],
   children,
   collections = [],
 }) {
+  
   const [isOpen, setIsOpen] = useState(true);
   return (
     <>
@@ -43,6 +45,7 @@ export function SortFilter({
             collections={collections}
             filters={filters}
             appliedFilters={appliedFilters}
+            appliedCustomFilters={appliedCustomFilters}
           />
         </div>
         <div className="w-full mb-[100px]">{children}</div>
@@ -54,10 +57,30 @@ export function SortFilter({
 export function FiltersDrawer({
   filters = [],
   appliedFilters = [],
+  appliedCustomFilters = [],
   collections = [],
 }) {
   const [params] = useSearchParams();
   const location = useLocation();
+  const navigate = useNavigate();
+
+  const [prevQueryString, setPrevQueryString] = useState('');
+ 
+
+  useEffect(() => {
+    if (location.search !== prevQueryString) {
+      const topOffset = document.querySelector('#filter_by')?.getBoundingClientRect()?.top;
+      window.scrollTo({ top: topOffset - 50, behavior: 'smooth' });
+      setPrevQueryString(location.search);
+    }
+  },[location.search, prevQueryString]);
+
+  const handleFilterClick = (event) => {
+    event.preventDefault();
+    const queryString = event.currentTarget.search;
+    console.log(queryString);
+    navigate(queryString, { scroll: false });
+  }
 
   const filterMarkup = (filter, option) => {
     switch (filter.type) {
@@ -72,13 +95,14 @@ export function FiltersDrawer({
             ? Number(params.get('maxPrice'))
             : undefined;
 
-        return <PriceRangeFilter min={min} max={max} />;
+        return <PriceRangeFilter min={min} max={max} appliedCustomFilters={appliedCustomFilters} />;
 
       default:
-        const to = getFilterLink(filter, option.input, params, location);
+        const to = getFilterLink(filter, option.input, params, location, appliedCustomFilters);
         return (
           <Link
-            className="hover:text-[#00795c]"
+            onClick={handleFilterClick}
+            className={`${appliedCustomFilters.includes(option.label) ? 'active' : ''} hover:text-[#00795c]`}
             prefetch="intent"
             to={to}
           >
@@ -88,41 +112,55 @@ export function FiltersDrawer({
     }
   };
 
-  const collectionsMarkup = collections.map((collection) => {
+  const [isActive, setIsActive] = useState(false);
+  const filterHandleclick = event => {
+    // 👇️ toggle isActive state on click
+    setIsActive(current => !current);
+  };
+
+  const refs = React.useMemo(() => {
     return (
-      <li key={collection.handle} className="pb-4">
-        <Link
-          to={`/collections/${collection.handle}`}
-          className="hover:text-[#00795c]"
-          key={collection.handle}
-          prefetch="intent"
-        >
-          {collection.title}
-        </Link>
-      </li>
+      filters.map(() => {
+        return React.createRef();
+      }) ?? []
     );
-  });
+  }, []);
+
+  function handleClosingOthers(id) {
+    const otherRefs = refs.filter((ref) => {
+      return ref.current?.getAttribute("data-id") !== id;
+    });
+
+    /*otherRefs.forEach((ref) => {
+      const isOpen = ref.current?.getAttribute("data-open") === "true";
+      if (isOpen) {
+        ref.current?.click();
+      }
+    });*/
+  }
 
   return (
     <>
-      <nav className="py-8">
-        {appliedFilters.length > 0 ? (
-          <div className="pb-8 hidden">
-            <AppliedFilters filters={appliedFilters} />
-          </div>
-        ) : null}
-
+      <nav className="py-8" id="filter_by">
         <Heading as="h4" size="lead" className="pb-4 hidden">
           Filter By
         </Heading>
         <div className="flex flex-wrap gap-[30px]">
           {filters.map(
-            (filter) =>
+            (filter, idx) =>
               filter.values.length > 1 && (
                 <Disclosure as="div" key={filter.id} className="w-auto relative">
                   {({open}) => (
                     <>
-                      <Disclosure.Button className={`px-[30px] py-[15px]  font-normal tracking-[-0.400697px] border border-black text-[25px] rounded-[100px] hover:bg-black hover:text-white ${open ? 'text-white bg-black' : 'text-black bg-white'}`}>
+                      <Disclosure.Button 
+                        className={`px-[30px] py-[15px]  font-normal tracking-[-0.400697px] border border-black text-[25px] rounded-[100px] hover:bg-black hover:text-white ${open ? 'text-white bg-black active' : 'text-black bg-white'}`}
+                         ref={refs[idx]}
+                         data-id={filter.id}
+                         data-open={open}
+                         onClick={() => {
+                            handleClosingOthers(filter.id)
+                         }}
+                      >
                         <Text size="lead" className={'font-normal'}>{filter.label}</Text>
                         {/* <IconCaret direction={open ? 'up' : 'down'} /> */}
                       </Disclosure.Button>
@@ -198,9 +236,9 @@ function getSortLink(sort, params, location) {
   return `${location.pathname}?${params.toString()}`;
 }
 
-function getFilterLink(filter, rawInput, params, location) {
+function getFilterLink(filter, rawInput, params, location, appliedCustomFilters) {
   const paramsClone = new URLSearchParams(params);
-  const newParams = filterInputToParams(filter.type, rawInput, paramsClone);
+  const newParams = filterInputToParams(filter.type, rawInput, paramsClone, appliedCustomFilters);
   return `${location.pathname}?${newParams.toString()}`;
 }
 
@@ -229,7 +267,7 @@ function PriceRangeFilter({max, min}) {
       if (minPrice !== '') price.min = minPrice;
       if (maxPrice !== '') price.max = maxPrice;
 
-      const newParams = filterInputToParams('PRICE_RANGE', {price}, params);
+      const newParams = filterInputToParams('PRICE_RANGE', {price}, params, appliedCustomFilters);
       navigate(`${location.pathname}?${newParams.toString()}`);
     },
     PRICE_RANGE_FILTER_DEBOUNCE,
@@ -274,8 +312,9 @@ function PriceRangeFilter({max, min}) {
   );
 }
 
-function filterInputToParams(type, rawInput, params) {
+function filterInputToParams(type, rawInput, params, appliedCustomFilters) {
   const input = typeof rawInput === 'string' ? JSON.parse(rawInput) : rawInput;
+  const appliedCustomFiltersArr = JSON.parse(JSON.stringify(appliedCustomFilters));
   switch (type) {
     case 'PRICE_RANGE':
       if (input.price.min) params.set('minPrice', input.price.min);
@@ -294,6 +333,18 @@ function filterInputToParams(type, rawInput, params) {
           if (!allVariants.includes(newVariant)) {
             params.append('variantOption', newVariant);
           }
+          const allFilteredVariants = params.getAll(`variantOption`);
+          if (appliedCustomFiltersArr.includes(val)) {
+            const index = allFilteredVariants.indexOf(newVariant);
+            if (index > -1) {
+              allFilteredVariants.splice(index,1)
+            }
+          }
+          params.delete('variantOption');
+          allFilteredVariants.forEach((value) => {
+            params.append('variantOption', value);
+          });
+
         }
       });
       break;
