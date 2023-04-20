@@ -358,6 +358,664 @@ export default function ratgeberSeiteFersensporn() {
             </div>
           </div>
         </section>
+        <section className="rich-text-sec mt-[80px]">
+          <div className="rich-text-inner">
+            <div className="title-wrap">
+              <h2 className="title text-[#00795C] text-[35px] lg:text-[40px] xl:text-[55px] tracking-[-1.05984px] mb-[20px] lg:mb-[40px] leading-[1.1]">
+                Anwendertipps & Übungen
+              </h2>
+            </div>
+            <div className="flex lg:flex-row flex-col gap-y-[30px] gap-x-[85px] w-full">
+              <div className="col-left w-[50%]">
+                <div className="title-wrap">
+                  <h4 className="title text-[#00795C] text-[30px] xl:text-[40px] tracking-[-0.97152px] mb-[20px] leading-[1.1] font-medium">
+                    Erstreaktionen
+                  </h4>
+                </div>
+                <div className="desc text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mt-[30px]">
+                  <p>
+                    <strong>Spezifische Erstreaktionen bei Fersensporn:</strong>
+                  </p>
+                  <p>
+                    Aufgrund von vorhandenen Verkürzungen der Wadenmuskulatur
+                    und der Sehnenplatte im Fuss kann es zu einer starken
+                    Dehnung kommen, die anfangs zu Entzündungsreizen führen
+                    kann. Wenn dies bei Ihnen auftritt, sollten Sie unbedingt
+                    Pausen einhalten oder/ und ein "lockeres Traben" im kybun
+                    Schuh im Alltag integrieren. Es ist besser im kybun Schuh zu
+                    gehen anstatt zu stehen, aber UNBEDINGT regelmässig tragen.
+                  </p>
+                  <p>
+                    Wenn der kybun Schuh nur ab und zu getragen wird, ist die
+                    Dehnung nicht nachhaltig und der Entzündungsschmerz wird
+                    immer wieder kommen.
+                  </p>
+                  <p>
+                    Für allgemeine Erstreaktionen bei Neueinsteigern beim Tragen
+                    von kybun Schuhen oder bei der Verwendung von kybun Matten
+                    klicken Sie bitte hier:
+                    <a href="#">Erstreaktionen</a>
+                  </p>
+                </div>
+              </div>
+              <div className="col-right w-[50%]">
+                <div className="title-wrap">
+                  <h4 className="title text-[#00795C] text-[30px] xl:text-[40px] tracking-[-0.97152px] mb-[20px] leading-[1.1] font-medium">
+                    Anwendungstipps
+                  </h4>
+                </div>
+                <div className="desc text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mt-[30px]">
+                  <p>
+                    <strong>Spezifische Erstreaktionen bei Fersensporn:</strong>
+                  </p>
+                  <p>
+                    Das Wichtigste ist, dass Sie möglichst alle Schläge auf die
+                    schmerzhafte Stelle der Ferse vermeiden! Dies gelingt am
+                    besten, wenn Sie im kybun Schuh oder auf der kybun Matte
+                    anfangs kleine Schritte machen und sanft auf die Ferse
+                    aufsetzen.Rollen Sie danach über den ganzen Fuss und stossen
+                    Sie über die Grosszehe ab, so wird die Sehnenplatte an der
+                    Fusssohle alternierend gedehnt und in der Schwungbeinphase
+                    gelockert.Wenn Sie spüren, dass Ihre Fusssohle verkrampft,
+                    rate ich Ihnen, stehend den betroffenen Fuss in der Luft zu
+                    lockern (Fusskreisen, Zehen bewegen, Fuss in alle möglichen
+                    Richtungen bewegen; was Ihnen gut tut).
+                  </p>
+                  <p>
+                    Wir raten, den kybun Schuh ohne Schuheinlagen zu tragen.
+                    Falls Sie orthopädische Schuheinlagen besitzen, können Sie
+                    diese in die "normalen" Schuhe legen und in den
+                    kybun-Pausen, als passive Entlastung für die Füsse, tragen.
+                    Viele kybun Schuh Träger, die früher Schuheinlagen trugen,
+                    berichteten uns, dass sie diese nicht mehr benötigen.
+                    Jedoch, jeder Körper reagiert individuell!
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section className="rich-text-sec mt-[80px]">
+          <div className="rich-text-inner">
+            <div className="flex flex-row mt-[72px] gap-[73px]">
+              <div className="col-left w-[60%]">
+                <div className="video-wrap w-full aspect-video rounded-[10px] relative overflow-hidden">
+                  <iframe
+                    className="absolute w-full h-full inset-0 object-cover bg-cover"
+                    src="https://www.youtube.com/embed/yAoLSRbwxL8"
+                    title="YouTube video player"
+                    frameBorder={0}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                  />
+                </div>
+              </div>
+              <div className="col-right w-[40%]">
+                <h4 className="title text-[#00795C] text-[30px] xl:text-[40px] tracking-[-0.97152px] leading-[1.1] font-medium mb-[25px]">
+                  kybun-Übungen
+                </h4>
+                <div className="desc text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
+                  <p>
+                    Für Informationen zu den Spezialübungen im kybun Schuh und
+                    den Grundübungen auf der kybun Matte klicken Sie bitte hier:
+                    kybun Übungen
+                  </p>
+                  <p>
+                    Folgende Anpassungen der Standarddurchführung des Intervall
+                    Walkings sind bei Fersensporn wichtig:
+                  </p>
+                  <ul className="list-decimal list-outside flex flex-col gap-[15px] pl-[40px]">
+                    <li>
+                      Kurze Schritte machen und nicht zu stark über die Ferse
+                      abrollen, damit keine weitere Reizung auftritt
+                    </li>
+                    <li>
+                      Fokus eher auf langsame Übung - bei starken Schmerzen auch
+                      rückwärts gehen
+                    </li>
+                    <li>
+                      Bei schneller Übung nicht zu stark abrollen (Reizung
+                      verhindern)
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section className="customer-opinions-sec mt-[80px]">
+          <div className="customer-opinions-inner">
+            <div className="title-wrap">
+              <h2 className="title text-[#00795C] text-[35px] lg:text-[40px] xl:text-[55px] tracking-[-1.05984px] mb-[20px] lg:mb-[40px] leading-[1.1]">
+                Fach- und Kundenmeinungen
+              </h2>
+              <h4 className="title text-[#00795C] text-[30px] xl:text-[40px] tracking-[-0.97152px] mb-[20px] leading-[1.1] font-medium">
+                Meinungen / Kundenaussagen
+              </h4>
+            </div>
+            <div className="customer-opinions-box columns-3 gap-[20px]">
+              <div className="item p-[30px] bg-[#EDEDED] box-border break-inside-avoid mb-[20px] rounded-[10px] shadow-[0px_0px_0.9821px_rgba(0,0,0,0.05),0px_3.9284px_7.8568px_rgba(0,0,0,0.1)]">
+                <div className="item-inner">
+                  <div className="desc text-[18px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
+                    <p>
+                      Meine Erfahrungen mit den kybun Schuhen sind durchweg
+                      positiv. Ich habe relativ früh nach meiner Amputation
+                      Jürgen Zeller bei meinem Orthopädietechniker getroffen und
+                      durch ihn den ersten kybun Schuh erhalten. Da mein rechtes
+                      Bein durch den Unfall auch in Mitleidenschaft gezogen war,
+                      war ich von dem kybun Schuh von Anfang an begeistert. Ich
+                      habe alle möglichen teuren Sportschuhe ausprobiert, aber
+                      keiner kommt auch nur annähernd an den kybun Schuh dran!
+                      Der kybun Schuh hat einen weichen Fersenauftritt, er gibt
+                      mir Sicherheit, ich kann lange laufen, ohne, dass mir das
+                      Bein weh tut oder mir die Fußsohle am erhaltenen Fuß
+                      brennt. Ich muss beim kybun Schuh auch keine Angst haben,
+                      dass ich ausrutsche, wenn es feucht oder nass ist. Mit
+                      allen anderen Schuhen tut mir nach kürzester Zeit der
+                      erhaltene Fuß weh und die Fußsohle brennt. Des Weiteren
+                      habe ich mit anderen Schuhen bei weitem nicht so ein
+                      sicheres Gehgefühl. Ich finde den kybun Schuh absolut
+                      nicht instabil. Mir hilft er in jeder Lage und gibt mir
+                      Sicherheit. Am Anfang ist man es vielleicht nicht gewohnt,
+                      dass man etwas ausgleichen muss. Aber ich habe schnell
+                      gemerkt, dass der Schuh mir beim Laufen hilft. Für mich
+                      ist der kybun Schuh der ideale Schuh, für Leute, die
+                      gerade anfangen mit einer Prothese Laufen zu lernen, da
+                      der kybun Schuh ungemein das Laufen unterstützt.
+                    </p>
+                  </div>
+                  <div className="customer-info flex border-t border-[#DEDEDE] pt-[21px] mt-[46px] gap-[27px] items-center">
+                    <div className="customer-img w-[109px] h-[109px] relative overflow-hidden rounded-full">
+                      <img
+                        className="absolute w-full h-full object-cover rounded-full"
+                        src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/csm_Susanne_Michel_89c4ae4c17.png?v=1681993011"
+                        alt=""
+                      />
+                    </div>
+                    <div className="info">
+                      <h4 className="text-[25px] font-bold text-black mb-[15px]">
+                        Susanne Michel
+                      </h4>
+                      <h5 className="text-[18px] tracking-[-0.400697px] text-black font-normal">
+                        aus Deutschland
+                      </h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="item p-[30px] bg-[#EDEDED] box-border break-inside-avoid mb-[20px] rounded-[10px] shadow-[0px_0px_0.9821px_rgba(0,0,0,0.05),0px_3.9284px_7.8568px_rgba(0,0,0,0.1)]">
+                <div className="item-inner">
+                  <div className="desc text-[18px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
+                    <p>
+                      Man wird viel weniger Müde habe ich das Gefühl am Abend
+                      hat man es einfacher und nicht mehr so Fussbrennen. Das
+                      habe ich eigentlich fast nicht mehr.
+                    </p>
+                  </div>
+                  <div className="customer-info flex border-t border-[#DEDEDE] pt-[21px] mt-[46px] gap-[27px] items-center">
+                    <div className="customer-img w-[109px] h-[109px] relative overflow-hidden rounded-full">
+                      <img
+                        className="absolute w-full h-full object-cover rounded-full"
+                        src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/csm_Susanne_Michel_89c4ae4c17.png?v=1681993011"
+                        alt=""
+                      />
+                    </div>
+                    <div className="info">
+                      <h4 className="text-[25px] font-bold text-black mb-[15px]">
+                        Susanne Michel
+                      </h4>
+                      <h5 className="text-[18px] tracking-[-0.400697px] text-black font-normal">
+                        Berggasthaus Staubern, Schweiz
+                      </h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="item p-[30px] bg-[#EDEDED] box-border break-inside-avoid mb-[20px] rounded-[10px] shadow-[0px_0px_0.9821px_rgba(0,0,0,0.05),0px_3.9284px_7.8568px_rgba(0,0,0,0.1)]">
+                <div className="item-inner">
+                  <div className="desc text-[18px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
+                    <p>
+                      Man wird viel weniger Müde habe ich das Gefühl am Abend
+                      hat man es einfacher und nicht mehr so Fussbrennen. Das
+                      habe ich eigentlich fast nicht mehr.
+                    </p>
+                  </div>
+                  <div className="customer-info flex border-t border-[#DEDEDE] pt-[21px] mt-[46px] gap-[27px] items-center">
+                    <div className="customer-img w-[109px] h-[109px] relative overflow-hidden rounded-full">
+                      <img
+                        className="absolute w-full h-full object-cover rounded-full"
+                        src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/csm_Susanne_Michel_89c4ae4c17.png?v=1681993011"
+                        alt=""
+                      />
+                    </div>
+                    <div className="info">
+                      <h4 className="text-[25px] font-bold text-black mb-[15px]">
+                        Judith Lüchinger
+                      </h4>
+                      <h5 className="text-[18px] tracking-[-0.400697px] text-black font-normal">
+                        Berggasthaus Staubern, Schweiz
+                      </h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="item p-[30px] bg-[#EDEDED] box-border break-inside-avoid mb-[20px] rounded-[10px] shadow-[0px_0px_0.9821px_rgba(0,0,0,0.05),0px_3.9284px_7.8568px_rgba(0,0,0,0.1)]">
+                <div className="item-inner">
+                  <div className="desc text-[18px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
+                    <p>
+                      Der kybun Schuh und vorher den MBT kenne ich schon länger,
+                      weil ich Karl Müller schon seit vielen Jahren kenne. Als
+                      ich in den Chor eintrat, mussten wir uns weiss einkleiden.
+                      Darauf hin suchte ich weisse Schuhe und fand ein Paar
+                      Mokassinen aus dem Ärztebedarf. Nach den langen Konzerten
+                      hatte ich aber immer heisse, brennende Füsse und der
+                      Rücken schmerzte mir. Ich erinnerte mich an den kybun
+                      Schuh und kaufte mir ein weisses Paar. Emanuel Sieber
+                      fragte mich, wofür ich den Schuh brauche und ob ich im
+                      Spital arbeite. Ich erklärte ihm dann, dass ich den Schuh
+                      für den Chor benötige und so kam das Gespräch ins Rollen.
+                    </p>
+                  </div>
+                  <div className="customer-info flex border-t border-[#DEDEDE] pt-[21px] mt-[46px] gap-[27px] items-center">
+                    <div className="customer-img w-[109px] h-[109px] relative overflow-hidden rounded-full">
+                      <img
+                        className="absolute w-full h-full object-cover rounded-full"
+                        src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/csm_Susanne_Michel_89c4ae4c17.png?v=1681993011"
+                        alt=""
+                      />
+                    </div>
+                    <div className="info">
+                      <h4 className="text-[25px] font-bold text-black mb-[15px]">
+                        Judith Lüchinger
+                      </h4>
+                      <h5 className="text-[18px] tracking-[-0.400697px] text-black font-normal">
+                        Berggasthaus Staubern, Schweiz
+                      </h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="item p-[30px] bg-[#EDEDED] box-border break-inside-avoid mb-[20px] rounded-[10px] shadow-[0px_0px_0.9821px_rgba(0,0,0,0.05),0px_3.9284px_7.8568px_rgba(0,0,0,0.1)]">
+                <div className="item-inner">
+                  <div className="desc text-[18px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
+                    <p>
+                      Wenn man viel arbeitet, und ich bin natürlich ein Koch und
+                      musste viel stehen, so zwölf Stunden stehen, nicht viel
+                      bewegen. Da bekommt man schon ein bisschen, ja Schmerzen
+                      will ich nicht sagen, aber es brennt am Ende des Tages
+                      unter deinen Füssen. Und mit diesen Schuhen spürt man
+                      nichts.
+                    </p>
+                  </div>
+                  <div className="customer-info flex border-t border-[#DEDEDE] pt-[21px] mt-[46px] gap-[27px] items-center">
+                    <div className="customer-img w-[109px] h-[109px] relative overflow-hidden rounded-full">
+                      <img
+                        className="absolute w-full h-full object-cover rounded-full"
+                        src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/csm_Susanne_Michel_89c4ae4c17.png?v=1681993011"
+                        alt=""
+                      />
+                    </div>
+                    <div className="info">
+                      <h4 className="text-[25px] font-bold text-black mb-[15px]">
+                        Judith Lüchinger
+                      </h4>
+                      <h5 className="text-[18px] tracking-[-0.400697px] text-black font-normal">
+                        Berggasthaus Staubern, Schweiz
+                      </h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="item p-[30px] bg-[#EDEDED] box-border break-inside-avoid mb-[20px] rounded-[10px] shadow-[0px_0px_0.9821px_rgba(0,0,0,0.05),0px_3.9284px_7.8568px_rgba(0,0,0,0.1)]">
+                <div className="item-inner">
+                  <div className="desc text-[18px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
+                    <p>
+                      Schmerzen beim Gehen gehörten für mich zum Alltag. Ganz
+                      abgesehen davon, dass meine Füße bei stundenlangem Stehen
+                      regelmäßig sehr warm wurden, litt ich unter starken
+                      Schmerzen im unteren Rücken und unter wunden Fersen. Bis
+                      ich eine kleine Anzeige sah mit den drei einfachen Worten
+                      „Walk-on-air“, kybun Schuh. Danach änderte sich alles.
+                      Noch in derselben Nacht fand ich im Internet alles, was
+                      ich über kybun wissen musste, und ehe ich mich versah,
+                      hatte ich mein erstes Paar kybun Schuhe bestellt. Wenn ich
+                      nun behaupte, dass das Gehen auf Luft eine wahre Wonne
+                      ist, dann ist das keine Lüge. Die ersten Momente in meinen
+                      kybun Schuhen fühlten sich an, als würde ich noch einmal
+                      Laufen lernen. Dieses Mal schmerzfrei. Es war ein
+                      wunderbar angenehmes und überwältigendes Gefühl, als ich
+                      meine ersten Schritte machte, denn meine Knöchel mussten
+                      sich an die Weichheit des Fußbetts erst anpassen. Als ich
+                      den Dreh herausbekommen hatte, bemerkte ich sofort, dass
+                      die Schmerzen in meinem unteren Rücken nachgelassen
+                      hatten. Mir fiel auch auf, dass ein Großteil des Drucks,
+                      der zuvor von meinem Rücken abgefedert wurde, nun
+                      weggeleitet wurde und dass mein Körper beim normalen
+                      Laufen viel entspannter war. Die Wärme in meinen Fußsohlen
+                      entwickelte sich viel langsamer, und im Allgemeinen habe
+                      ich beim Laufen keinerlei Schmerzen mehr. Vielen Dank an
+                      kybun für dieses angenehme Gefühl beim Laufen. Ein
+                      wunderbares Geschenk! Sie sind ein Unternehmen, das nicht
+                      nur auf seine Schuhe stolz sein darf, sondern auch auf
+                      seine aufrichtigen und herzlichen Mitarbeiter, die
+                      wirklich Erstaunliches leisten. Ich kann Ihnen gar nicht
+                      genug danken!
+                    </p>
+                  </div>
+                  <div className="customer-info flex border-t border-[#DEDEDE] pt-[21px] mt-[46px] gap-[27px] items-center">
+                    <div className="customer-img w-[109px] h-[109px] relative overflow-hidden rounded-full">
+                      <img
+                        className="absolute w-full h-full object-cover rounded-full"
+                        src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/csm_Susanne_Michel_89c4ae4c17.png?v=1681993011"
+                        alt=""
+                      />
+                    </div>
+                    <div className="info">
+                      <h4 className="text-[25px] font-bold text-black mb-[15px]">
+                        Leeroy Lo
+                      </h4>
+                      <h5 className="text-[18px] tracking-[-0.400697px] text-black font-normal">
+                        aus Singapur
+                      </h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="item p-[30px] bg-[#EDEDED] box-border break-inside-avoid mb-[20px] rounded-[10px] shadow-[0px_0px_0.9821px_rgba(0,0,0,0.05),0px_3.9284px_7.8568px_rgba(0,0,0,0.1)]">
+                <div className="item-inner">
+                  <div className="desc text-[18px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
+                    <p>
+                      Wir waren am kantonalen Musikfest wo wir die Schuhe von
+                      morgens bis abends getragen haben. Am nächsten Tag hatte
+                      ich keine brennenden Füsse. Mir war es richtig wohl. Mit
+                      meinen alten Schuhen hatte ich immer ein Fussbrennen. Am
+                      nächsten Tag musste ich jeweils meine Füsse abkühlen. Mit
+                      dem kybun Schuh hatte ich absolut keine Probleme. Das war
+                      für mich sehr positiv.
+                    </p>
+                  </div>
+                  <div className="customer-info flex border-t border-[#DEDEDE] pt-[21px] mt-[46px] gap-[27px] items-center">
+                    <div className="customer-img w-[109px] h-[109px] relative overflow-hidden rounded-full">
+                      <img
+                        className="absolute w-full h-full object-cover rounded-full"
+                        src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/csm_Susanne_Michel_89c4ae4c17.png?v=1681993011"
+                        alt=""
+                      />
+                    </div>
+                    <div className="info">
+                      <h4 className="text-[25px] font-bold text-black mb-[15px]">
+                        Susanne Michel
+                      </h4>
+                      <h5 className="text-[18px] tracking-[-0.400697px] text-black font-normal">
+                        aus Deutschland
+                      </h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="item p-[30px] bg-[#EDEDED] box-border break-inside-avoid mb-[20px] rounded-[10px] shadow-[0px_0px_0.9821px_rgba(0,0,0,0.05),0px_3.9284px_7.8568px_rgba(0,0,0,0.1)]">
+                <div className="item-inner">
+                  <div className="desc text-[18px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
+                    <p>
+                      Meine Erfahrungen mit den kybun Schuhen sind durchweg
+                      positiv. Ich habe relativ früh nach meiner Amputation
+                      Jürgen Zeller bei meinem Orthopädietechniker getroffen und
+                      durch ihn den ersten kybun Schuh erhalten. Da mein rechtes
+                      Bein durch den Unfall auch in Mitleidenschaft gezogen war,
+                      war ich von dem kybun Schuh von Anfang an begeistert. Ich
+                      habe alle möglichen teuren Sportschuhe ausprobiert, aber
+                      keiner kommt auch nur annähernd an den kybun Schuh dran!
+                      Der kybun Schuh hat einen weichen Fersenauftritt, er gibt
+                      mir Sicherheit, ich kann lange laufen, ohne, dass mir das
+                      Bein weh tut oder mir die Fußsohle am erhaltenen Fuß
+                      brennt. Ich muss beim kybun Schuh auch keine Angst haben,
+                      dass ich ausrutsche, wenn es feucht oder nass ist. Mit
+                      allen anderen Schuhen tut mir nach kürzester Zeit der
+                      erhaltene Fuß weh und die Fußsohle brennt. Des Weiteren
+                      habe ich mit anderen Schuhen bei weitem nicht so ein
+                      sicheres Gehgefühl. Ich finde den kybun Schuh absolut
+                      nicht instabil. Mir hilft er in jeder Lage und gibt mir
+                      Sicherheit. Am Anfang ist man es vielleicht nicht gewohnt,
+                      dass man etwas ausgleichen muss. Aber ich habe schnell
+                      gemerkt, dass der Schuh mir beim Laufen hilft. Für mich
+                      ist der kybun Schuh der ideale Schuh, für Leute, die
+                      gerade anfangen mit einer Prothese Laufen zu lernen, da
+                      der kybun Schuh ungemein das Laufen unterstützt.
+                    </p>
+                  </div>
+                  <div className="customer-info flex border-t border-[#DEDEDE] pt-[21px] mt-[46px] gap-[27px] items-center">
+                    <div className="customer-img w-[109px] h-[109px] relative overflow-hidden rounded-full">
+                      <img
+                        className="absolute w-full h-full object-cover rounded-full"
+                        src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/csm_Susanne_Michel_89c4ae4c17.png?v=1681993011"
+                        alt=""
+                      />
+                    </div>
+                    <div className="info">
+                      <h4 className="text-[25px] font-bold text-black mb-[15px]">
+                        Susanne Michel
+                      </h4>
+                      <h5 className="text-[18px] tracking-[-0.400697px] text-black font-normal">
+                        aus Deutschland
+                      </h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="item p-[30px] bg-[#EDEDED] box-border break-inside-avoid mb-[20px] rounded-[10px] shadow-[0px_0px_0.9821px_rgba(0,0,0,0.05),0px_3.9284px_7.8568px_rgba(0,0,0,0.1)]">
+                <div className="item-inner">
+                  <div className="desc text-[18px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
+                    <p>
+                      Man wird viel weniger Müde habe ich das Gefühl am Abend
+                      hat man es einfacher und nicht mehr so Fussbrennen. Das
+                      habe ich eigentlich fast nicht mehr.
+                    </p>
+                  </div>
+                  <div className="customer-info flex border-t border-[#DEDEDE] pt-[21px] mt-[46px] gap-[27px] items-center">
+                    <div className="customer-img w-[109px] h-[109px] relative overflow-hidden rounded-full">
+                      <img
+                        className="absolute w-full h-full object-cover rounded-full"
+                        src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/csm_Susanne_Michel_89c4ae4c17.png?v=1681993011"
+                        alt=""
+                      />
+                    </div>
+                    <div className="info">
+                      <h4 className="text-[25px] font-bold text-black mb-[15px]">
+                        Susanne Michel
+                      </h4>
+                      <h5 className="text-[18px] tracking-[-0.400697px] text-black font-normal">
+                        Berggasthaus Staubern, Schweiz
+                      </h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="item p-[30px] bg-[#EDEDED] box-border break-inside-avoid mb-[20px] rounded-[10px] shadow-[0px_0px_0.9821px_rgba(0,0,0,0.05),0px_3.9284px_7.8568px_rgba(0,0,0,0.1)]">
+                <div className="item-inner">
+                  <div className="desc text-[18px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
+                    <p>
+                      Man wird viel weniger Müde habe ich das Gefühl am Abend
+                      hat man es einfacher und nicht mehr so Fussbrennen. Das
+                      habe ich eigentlich fast nicht mehr.
+                    </p>
+                  </div>
+                  <div className="customer-info flex border-t border-[#DEDEDE] pt-[21px] mt-[46px] gap-[27px] items-center">
+                    <div className="customer-img w-[109px] h-[109px] relative overflow-hidden rounded-full">
+                      <img
+                        className="absolute w-full h-full object-cover rounded-full"
+                        src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/csm_Susanne_Michel_89c4ae4c17.png?v=1681993011"
+                        alt=""
+                      />
+                    </div>
+                    <div className="info">
+                      <h4 className="text-[25px] font-bold text-black mb-[15px]">
+                        Judith Lüchinger
+                      </h4>
+                      <h5 className="text-[18px] tracking-[-0.400697px] text-black font-normal">
+                        Berggasthaus Staubern, Schweiz
+                      </h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="item p-[30px] bg-[#EDEDED] box-border break-inside-avoid mb-[20px] rounded-[10px] shadow-[0px_0px_0.9821px_rgba(0,0,0,0.05),0px_3.9284px_7.8568px_rgba(0,0,0,0.1)]">
+                <div className="item-inner">
+                  <div className="desc text-[18px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
+                    <p>
+                      Der kybun Schuh und vorher den MBT kenne ich schon länger,
+                      weil ich Karl Müller schon seit vielen Jahren kenne. Als
+                      ich in den Chor eintrat, mussten wir uns weiss einkleiden.
+                      Darauf hin suchte ich weisse Schuhe und fand ein Paar
+                      Mokassinen aus dem Ärztebedarf. Nach den langen Konzerten
+                      hatte ich aber immer heisse, brennende Füsse und der
+                      Rücken schmerzte mir. Ich erinnerte mich an den kybun
+                      Schuh und kaufte mir ein weisses Paar. Emanuel Sieber
+                      fragte mich, wofür ich den Schuh brauche und ob ich im
+                      Spital arbeite. Ich erklärte ihm dann, dass ich den Schuh
+                      für den Chor benötige und so kam das Gespräch ins Rollen.
+                    </p>
+                  </div>
+                  <div className="customer-info flex border-t border-[#DEDEDE] pt-[21px] mt-[46px] gap-[27px] items-center">
+                    <div className="customer-img w-[109px] h-[109px] relative overflow-hidden rounded-full">
+                      <img
+                        className="absolute w-full h-full object-cover rounded-full"
+                        src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/csm_Susanne_Michel_89c4ae4c17.png?v=1681993011"
+                        alt=""
+                      />
+                    </div>
+                    <div className="info">
+                      <h4 className="text-[25px] font-bold text-black mb-[15px]">
+                        Judith Lüchinger
+                      </h4>
+                      <h5 className="text-[18px] tracking-[-0.400697px] text-black font-normal">
+                        Berggasthaus Staubern, Schweiz
+                      </h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="item p-[30px] bg-[#EDEDED] box-border break-inside-avoid mb-[20px] rounded-[10px] shadow-[0px_0px_0.9821px_rgba(0,0,0,0.05),0px_3.9284px_7.8568px_rgba(0,0,0,0.1)]">
+                <div className="item-inner">
+                  <div className="desc text-[18px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
+                    <p>
+                      Wenn man viel arbeitet, und ich bin natürlich ein Koch und
+                      musste viel stehen, so zwölf Stunden stehen, nicht viel
+                      bewegen. Da bekommt man schon ein bisschen, ja Schmerzen
+                      will ich nicht sagen, aber es brennt am Ende des Tages
+                      unter deinen Füssen. Und mit diesen Schuhen spürt man
+                      nichts.
+                    </p>
+                  </div>
+                  <div className="customer-info flex border-t border-[#DEDEDE] pt-[21px] mt-[46px] gap-[27px] items-center">
+                    <div className="customer-img w-[109px] h-[109px] relative overflow-hidden rounded-full">
+                      <img
+                        className="absolute w-full h-full object-cover rounded-full"
+                        src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/csm_Susanne_Michel_89c4ae4c17.png?v=1681993011"
+                        alt=""
+                      />
+                    </div>
+                    <div className="info">
+                      <h4 className="text-[25px] font-bold text-black mb-[15px]">
+                        Judith Lüchinger
+                      </h4>
+                      <h5 className="text-[18px] tracking-[-0.400697px] text-black font-normal">
+                        Berggasthaus Staubern, Schweiz
+                      </h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="item p-[30px] bg-[#EDEDED] box-border break-inside-avoid mb-[20px] rounded-[10px] shadow-[0px_0px_0.9821px_rgba(0,0,0,0.05),0px_3.9284px_7.8568px_rgba(0,0,0,0.1)]">
+                <div className="item-inner">
+                  <div className="desc text-[18px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
+                    <p>
+                      Schmerzen beim Gehen gehörten für mich zum Alltag. Ganz
+                      abgesehen davon, dass meine Füße bei stundenlangem Stehen
+                      regelmäßig sehr warm wurden, litt ich unter starken
+                      Schmerzen im unteren Rücken und unter wunden Fersen. Bis
+                      ich eine kleine Anzeige sah mit den drei einfachen Worten
+                      „Walk-on-air“, kybun Schuh. Danach änderte sich alles.
+                      Noch in derselben Nacht fand ich im Internet alles, was
+                      ich über kybun wissen musste, und ehe ich mich versah,
+                      hatte ich mein erstes Paar kybun Schuhe bestellt. Wenn ich
+                      nun behaupte, dass das Gehen auf Luft eine wahre Wonne
+                      ist, dann ist das keine Lüge. Die ersten Momente in meinen
+                      kybun Schuhen fühlten sich an, als würde ich noch einmal
+                      Laufen lernen. Dieses Mal schmerzfrei. Es war ein
+                      wunderbar angenehmes und überwältigendes Gefühl, als ich
+                      meine ersten Schritte machte, denn meine Knöchel mussten
+                      sich an die Weichheit des Fußbetts erst anpassen. Als ich
+                      den Dreh herausbekommen hatte, bemerkte ich sofort, dass
+                      die Schmerzen in meinem unteren Rücken nachgelassen
+                      hatten. Mir fiel auch auf, dass ein Großteil des Drucks,
+                      der zuvor von meinem Rücken abgefedert wurde, nun
+                      weggeleitet wurde und dass mein Körper beim normalen
+                      Laufen viel entspannter war. Die Wärme in meinen Fußsohlen
+                      entwickelte sich viel langsamer, und im Allgemeinen habe
+                      ich beim Laufen keinerlei Schmerzen mehr. Vielen Dank an
+                      kybun für dieses angenehme Gefühl beim Laufen. Ein
+                      wunderbares Geschenk! Sie sind ein Unternehmen, das nicht
+                      nur auf seine Schuhe stolz sein darf, sondern auch auf
+                      seine aufrichtigen und herzlichen Mitarbeiter, die
+                      wirklich Erstaunliches leisten. Ich kann Ihnen gar nicht
+                      genug danken!
+                    </p>
+                  </div>
+                  <div className="customer-info flex border-t border-[#DEDEDE] pt-[21px] mt-[46px] gap-[27px] items-center">
+                    <div className="customer-img w-[109px] h-[109px] relative overflow-hidden rounded-full">
+                      <img
+                        className="absolute w-full h-full object-cover rounded-full"
+                        src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/csm_Susanne_Michel_89c4ae4c17.png?v=1681993011"
+                        alt=""
+                      />
+                    </div>
+                    <div className="info">
+                      <h4 className="text-[25px] font-bold text-black mb-[15px]">
+                        Leeroy Lo
+                      </h4>
+                      <h5 className="text-[18px] tracking-[-0.400697px] text-black font-normal">
+                        aus Singapur
+                      </h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="item p-[30px] bg-[#EDEDED] box-border break-inside-avoid mb-[20px] rounded-[10px] shadow-[0px_0px_0.9821px_rgba(0,0,0,0.05),0px_3.9284px_7.8568px_rgba(0,0,0,0.1)]">
+                <div className="item-inner">
+                  <div className="desc text-[18px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
+                    <p>
+                      Wir waren am kantonalen Musikfest wo wir die Schuhe von
+                      morgens bis abends getragen haben. Am nächsten Tag hatte
+                      ich keine brennenden Füsse. Mir war es richtig wohl. Mit
+                      meinen alten Schuhen hatte ich immer ein Fussbrennen. Am
+                      nächsten Tag musste ich jeweils meine Füsse abkühlen. Mit
+                      dem kybun Schuh hatte ich absolut keine Probleme. Das war
+                      für mich sehr positiv.
+                    </p>
+                  </div>
+                  <div className="customer-info flex border-t border-[#DEDEDE] pt-[21px] mt-[46px] gap-[27px] items-center">
+                    <div className="customer-img w-[109px] h-[109px] relative overflow-hidden rounded-full">
+                      <img
+                        className="absolute w-full h-full object-cover rounded-full"
+                        src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/csm_Susanne_Michel_89c4ae4c17.png?v=1681993011"
+                        alt=""
+                      />
+                    </div>
+                    <div className="info">
+                      <h4 className="text-[25px] font-bold text-black mb-[15px]">
+                        Susanne Michel
+                      </h4>
+                      <h5 className="text-[18px] tracking-[-0.400697px] text-black font-normal">
+                        aus Deutschland
+                      </h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="toggle-btn">Mehr Lesen</div>
+          </div>
+        </section>
       </div>
     </>
   );
