@@ -143,16 +143,6 @@ export default function schweizerSchuhpropktion() {
                     </SwiperSlide>
                   );
               })}
-
-              <SwiperSlide>
-                <div className="imgs-wrap flex flex-col gap-[20px] h-full">
-                  <img
-                    className="h-full w-full object-cover rounded-[10px] "
-                    src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/PD04789_-_XL_partnerships_group_image11_944d2487-d106-40c1-81c2-cddcca336bfe.png?v=1681971908"
-                    alt=""
-                  />
-                </div>
-              </SwiperSlide>
               {/* {sliderImages.map((image, index) => (
                 <SwiperSlide key={index}>
                   <div className="imgs-wrap grid grid-rows-2 grid-flow-col gap-[20px] lg:h-[700px]">
