@@ -398,10 +398,10 @@ p:last-child {
 .product-slider .swiper-button-next:hover:after,
 .product-slider .swiper-rtl .swiper-button-prev:hover:after,
 .product-slider .swiper-button-prev:hover:after,
-.product-slider .swiper-rtl .swiper-button-next:hover:after  {
+.product-slider .swiper-rtl .swiper-button-next:hover:after {
   color: #fff;
 }
-@media(max-width:1023px){
+@media (max-width: 1023px) {
   .product-slider .swiper-slide {
     height: auto;
   }
@@ -617,3 +617,26 @@ p:last-child {
 .text-\[28px\] {
   font-size: 28px;
 }
+
+/* customer-opinions section */
+.customer-opinions-box{
+  height: 960px;
+}
+.customer-opinions-box .customer-items::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 219px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 75.52%);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+.customer-opinions-box.active .customer-items::after {
+  display: none;
+}
+.customer-opinions-box.active{
+  height: auto;
+}
+/* End customer-opinions section */
