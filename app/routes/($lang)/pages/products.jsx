@@ -62,7 +62,7 @@ export default function schweizerSchuhpropktion() {
     <>
       <div className="container">
         <div className="title-wrap mt-[120px] lg:mt-[200px]">
-          <h2 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[55px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold">
+          <h2 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[60px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold">
             Produkte
           </h2>
         </div>

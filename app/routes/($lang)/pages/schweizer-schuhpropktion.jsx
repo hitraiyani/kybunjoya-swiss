@@ -54,7 +54,7 @@ export default function schweizerSchuhpropktion() {
         <>
           <div className="container">
             <div className="title-wrap mt-[120px] lg:mt-[200px]">
-              <h2 className="title text-[#00795C] tracking-[-2.07729px] text-[35px] md:text-[45px] lg:text-[75px] xl:text-[95px] mb-[35px] md:mb-[45px] lg::mb-[65px] xl:mb-[85px]">
+              <h2 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[60px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold">
                 {page?.head_title?.value}
               </h2>
             </div>
@@ -102,10 +102,10 @@ export default function schweizerSchuhpropktion() {
                 >
                 </h3>
                 <Link to={page?.book_now_link?.value} className="inline-block rounded-[100px] bg-black text-white
-                 text-center px-[59px] py-[15px] hover:bg-[#00795c] hover:text-white text-[18px] max-w-[224px]">
+                 text-center px-[35px] py-[15px] hover:bg-[#00795c] hover:text-white text-[18px] max-w-fit">
                     Jetzt Buchen
                 </Link>
-                <div className="desc text-black text-[16px] lg:text-[18px] leading-[1.3] mt-[30px] md:mt-[50px] xl:mt-[135px] font-[400]"
+                <div className="desc text-black text-[16px] lg:text-[18px] leading-[1.3] mt-[30px] md:mt-[40px] xl:mt-[60px] font-[400]"
                     dangerouslySetInnerHTML={{
                         __html: toHTML(page?.long_description?.value),
                       }}
@@ -129,7 +129,7 @@ export default function schweizerSchuhpropktion() {
             )}
           <div className="video-sec container mt-[40px] xl:mt-[87px] mb-[50px] lg:mb-[80px] xl:mb-[134px]">
             <div className="title-wrap">
-              <h2 className="title text-[#00795C] text-[35px] lg:text-[40px] xl:text-[55px] tracking-[-0.97152px] mb-[20px] xl:mb-[44px]">
+              <h2 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[55px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold">
                 {page?.video_section_title?.value}
               </h2>
               <div className="video-wrap">
@@ -144,7 +144,7 @@ export default function schweizerSchuhpropktion() {
               </div>
               <div className="btn-wrap">
                <Link to={page?.book_now_link?.value} className="inline-block rounded-[100px] bg-black text-white
-                 text-center px-[59px] py-[15px] hover:bg-[#00795c] hover:text-white text-[18px] mt-[20px] xl:mt-[48px]">
+                 text-center px-[35px] py-[15px] hover:bg-[#00795c] hover:text-white text-[18px] max-w-fit mt-[20px] xl:mt-[48px]">
                     Jetzt Buchen
                </Link>
               </div>

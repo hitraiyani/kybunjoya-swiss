@@ -76,7 +76,7 @@ export function ProductCard({
           </div>
           <div className="grid gap-1">
             <Text
-              className="text-[35px] text-black font-bold"
+              className="text-[30px] text-black font-bold"
               as="h3"
             >
               {product.title}

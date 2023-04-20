@@ -66,8 +66,7 @@ export default function ratgeberSeiteFersensporn() {
                   {page?.ratgeber_seite_fersensporn?.reference?.head_title_sub?.value}
                 </h2>
                 <h3
-                  className="text-[35px] text-[#00795C] font-bold
-                leading-[1.2]"
+                  className="text-[30px] text-[#00795C] font-bold leading-[1.2] mb-[20px]"
                 >
                   {page?.ratgeber_seite_fersensporn?.reference?.head_title_sub_secondary?.value}
                 </h3>
@@ -82,7 +81,7 @@ export default function ratgeberSeiteFersensporn() {
                 >
                 </div>
                 <div className="box bg-[#EDEDED] rounded-[10px] px-[63px] py-[49px] mt-[43px]">
-                  <h3 className="text-[35px] xl:text-[45px] text-[#00795C] font-bold leading-[1.2] tracking-[-0.97152px] mb-[33px]">
+                  <h3 className="text-[35px] xl:text-[40px] text-[#00795C] font-bold leading-[1.2] tracking-[-0.97152px] mb-[33px]">
                       {page?.ratgeber_seite_fersensporn?.reference?.overview_title?.value}
                   </h3>
                   <span 
@@ -110,7 +109,7 @@ export default function ratgeberSeiteFersensporn() {
                       )
                   }
                   <div className="info mt-[12px]">
-                    <h4 className="desc text-[25px] text-[#00795C] tracking-[-0.400697px] font-bold leading-[1.4]">
+                    <h4 className="desc text-[25px] text-[#00795C] tracking-[-0.400697px] font-bold leading-[1.2] mb-[5px]">
                       {mainVideoSection?.video_title}
                     </h4>
                     <div className="desc text-[18px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
@@ -152,7 +151,7 @@ export default function ratgeberSeiteFersensporn() {
                                   />
                                 </div>
                                 <div className="info mt-[12px]">
-                                  <h4 className="desc text-[25px] text-[#00795C] tracking-[-0.400697px] font-bold leading-[1.4]">
+                                  <h4 className="desc text-[25px] text-[#00795C] tracking-[-0.400697px] font-bold leading-[1.2] mb-[5px]">
                                     {item?.video_title}
                                   </h4>
                                   <div className="desc text-[18px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
@@ -188,7 +187,7 @@ export default function ratgeberSeiteFersensporn() {
         </section>
         <section className="relevante-links-sec mt-[140px]">
           <div className="title-wrap">
-            <h2 className="title text-[#00795C] text-[35px] lg:text-[40px] xl:text-[55px] tracking-[-1.05984px] mb-[20px] lg:mb-[30px] leading-[1.1]">
+            <h2 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[55px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold">
               Relevante Links
             </h2>
           </div>

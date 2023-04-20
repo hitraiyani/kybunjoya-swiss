@@ -1,9 +1,9 @@
-import {ExpandingCardStyle2, Link} from '~/components';
+import {ExpandingCardStyle2, Link, IconClose} from '~/components';
 import React, {Fragment, useState, useEffect} from 'react';
 import {json} from '@shopify/remix-oxygen';
 import {useLoaderData} from '@remix-run/react';
 import {MEDIA_FRAGMENT} from '~/data/fragments';
-import { toHTML} from '~/lib/utils';
+import {toHTML} from '~/lib/utils';
 
 const seo = ({data}) => ({
   title: data?.page?.seo?.title,
@@ -15,8 +15,6 @@ export const handle = {
 };
 
 export async function loader({request, params, context}) {
-
-  
   const {page} = await context.storefront.query(PAGE_QUERY, {
     variables: {
       handle: 'ratgeber-detail-page',
@@ -40,37 +38,39 @@ export async function loader({request, params, context}) {
 export default function ratgeberseite() {
   const {page} = useLoaderData();
 
-  const buttonAccordionMapping = page?.ratgeber_detail?.reference?.button_accordion_mapping?.value ? JSON.parse(page.ratgeber_detail.reference.button_accordion_mapping.value) : [];
- 
+  const buttonAccordionMapping = page?.ratgeber_detail?.reference
+    ?.button_accordion_mapping?.value
+    ? JSON.parse(page.ratgeber_detail.reference.button_accordion_mapping.value)
+    : [];
 
   useEffect(() => {
-    document.querySelectorAll('.my-achor-link').forEach(function(link) {
-      link.addEventListener('click', function(e) {
+    document.querySelectorAll('.my-achor-link').forEach(function (link) {
+      link.addEventListener('click', function (e) {
         e.preventDefault();
 
-        document.querySelectorAll('.my-achor-link').forEach(function(link) {
+        document.querySelectorAll('.my-achor-link').forEach(function (link) {
           link.classList.remove('active');
         });
-    
+
         // add active class to clicked element
         this.classList.add('active');
-        
+
         const hashId = this.hash.substring(1);
 
-        var myElement = document.querySelector('#'+hashId);
+        var myElement = document.querySelector('#' + hashId);
         myElement?.querySelector('button')?.click();
 
         var target = this.hash;
         var $target = document.querySelector(target);
         var scrollDistance = $target.offsetTop - 90;
-    
+
         window.scrollTo({
           top: scrollDistance,
-          behavior: 'smooth'
+          behavior: 'smooth',
         });
       });
     });
-  },[]);
+  }, []);
 
   return (
     <>
@@ -80,25 +80,54 @@ export default function ratgeberseite() {
             <div className="flex flex-wrap gap-[46px]">
               <div className="content-info w-[510px]">
                 <div className="title-wrap text-right max-w-[280px] ml-auto">
-                  <h2 className='text-[#00795C] leading-none text-[100px] font-black'>{page?.ratgeber_detail?.reference?.head_title?.value}</h2>
+                  <h2 className="text-[#00795C] leading-none text-[100px] font-black">
+                    {page?.ratgeber_detail?.reference?.head_title?.value}
+                  </h2>
                 </div>
-                
-                <div className="desc mt-[52px] text-[45px] tracking-[-0.97152px] text-right text-black leading-[1.2]"
+
+                <div
+                  className="desc mt-[52px] text-[40px] tracking-[-0.97152px] text-right text-black leading-[1.2]"
                   dangerouslySetInnerHTML={{
-                    __html: toHTML(page?.ratgeber_detail?.reference?.head_content?.value),
+                    __html: toHTML(
+                      page?.ratgeber_detail?.reference?.head_content?.value,
+                    ),
                   }}
-                >
-                </div>
+                ></div>
               </div>
               <div className="interactive-img-wrap w-[500px]">
-                <div className="img-wrap w-full text-center">
-                  <img className='m-auto'
-                    src={page?.ratgeber_detail?.reference?.head_interactive_image?.reference?.image?.url}
+                <div className="img-wrap w-full text-center relative">
+                  <img
+                    className="m-auto"
+                    src={
+                      page?.ratgeber_detail?.reference?.head_interactive_image
+                        ?.reference?.image?.url
+                    }
                     alt=""
                   />
+                  <div className='absolute top-0 left-[240px]'>
+                    <IconClose className="transition-transform transform-gpu duration-200 w-[65px] h-[65px] text-black p-[10px] border border-[#DEDEDE] rounded-full bg-white bg-opacity-50 rotate-45 stroke-[1] hover:bg-[#009470] hover:border-[#009470]" />
+                  </div>
+                  <div className='absolute top-[300px] left-[220px]'>
+                    <IconClose className="transition-transform transform-gpu duration-200 w-[65px] h-[65px] text-black p-[10px] border border-[#DEDEDE] rounded-full bg-white bg-opacity-50 rotate-45 stroke-[1] hover:bg-[#009470] hover:border-[#009470]" />
+                  </div>
+                  <div className='absolute top-[330px] left-[130px]'>
+                    <IconClose className="transition-transform transform-gpu duration-200 w-[65px] h-[65px] text-black p-[10px] border border-[#DEDEDE] rounded-full bg-white bg-opacity-50 rotate-45 stroke-[1] hover:bg-[#009470] hover:border-[#009470]" />
+                  </div>
+                  <div className='absolute top-[330px] left-[281px]'>
+                    <IconClose className="transition-transform transform-gpu duration-200 w-[65px] h-[65px] text-black p-[10px] border border-[#DEDEDE] rounded-full bg-white bg-opacity-50 rotate-45 stroke-[1] hover:bg-[#009470] hover:border-[#009470]" />
+                  </div>
+                  <div className='absolute top-[510px] left-[261px]'>
+                    <IconClose className="transition-transform transform-gpu duration-200 w-[65px] h-[65px] text-black p-[10px] border border-[#DEDEDE] rounded-full bg-white bg-opacity-50 rotate-45 stroke-[1] hover:bg-[#009470] hover:border-[#009470]" />
+                  </div>
+                  <div className='absolute bottom-[110px] left-[180px]'>
+                    <IconClose className="transition-transform transform-gpu duration-200 w-[65px] h-[65px] text-black p-[10px] border border-[#DEDEDE] rounded-full bg-white bg-opacity-50 rotate-45 stroke-[1] hover:bg-[#009470] hover:border-[#009470]" />
+                  </div>
+                  <div className='absolute bottom-[80px] left-[250px]'>
+                    <IconClose className="transition-transform transform-gpu duration-200 w-[65px] h-[65px] text-black p-[10px] border border-[#DEDEDE] rounded-full bg-white bg-opacity-50 rotate-45 stroke-[1] hover:bg-[#009470] hover:border-[#009470]" />
+                  </div>
                 </div>
               </div>
-              <div className="right-col tabs-wrap flex-1 pt-[150px]">
+              <div className="right-col tabs-wrap flex-1">
                 <div className="search-bar">
                   <form action="">
                     <div className="relative">
@@ -142,50 +171,50 @@ export default function ratgeberseite() {
                   </form>
                 </div>
                 <div className="scroll-links-wrap grid grid-cols-2 gap-x-[40px] gap-y-[45px] mt-[59px]">
-                  {
-                    buttonAccordionMapping?.map((item, index) => {
-                      return (
-                        <a
-                          key={index}
-                          href={`#link${index+1}`}
-                          className="px-[20px] py-[26px] flex justify-center items-center text-center bg-white rounded-[10px] text-[25px] leading-[1.4] hover:text-white hover:bg-[#00795C] min-h-[116px] font-bold text-[#00795C] transition-all duration-500 my-achor-link"
-                        >
-                          {item.button_name}
-                        </a>
-                      );
-                    })
-                  }
+                  {buttonAccordionMapping?.map((item, index) => {
+                    return (
+                      <a
+                        key={index}
+                        href={`#link${index + 1}`}
+                        className="px-[20px] py-[26px] flex justify-center items-center text-center bg-white rounded-[10px] text-[25px] leading-[1.4] hover:text-white hover:bg-[#00795C] min-h-[116px] font-bold text-[#00795C] transition-all duration-500 my-achor-link"
+                      >
+                        {item.button_name}
+                      </a>
+                    );
+                  })}
                 </div>
               </div>
             </div>
           </div>
         </section>
-        <section className="dr-faq-sec mt-[44px] !max-w-[870px] mx-auto mb-[115px] flex flex-col gap-[20px]">
-         {
-            buttonAccordionMapping?.map((item, index) => {
-              if(!item.accordion_title) return(<></>);
-              return (
-                <ExpandingCardStyle2
-                  key={index}
-                  id={`link${index+1}`}
-                  content={item.accordion_content}
-                  title={item.accordion_title}
-                />
-              );
-            })
-          }
-          <div className='info-bottom mt-[151px]'>
-            <div className='title-wrap'>
-              <h3 className='text-center tracking-[-0.97152px] text-[45px] leading-[1.1] font-medium'>{page?.ratgeber_detail?.reference?.cta_text?.value}</h3>
+        <section className="dr-faq-sec mt-[126px] !max-w-[870px] mx-auto mb-[115px] flex flex-col gap-[20px]">
+          {buttonAccordionMapping?.map((item, index) => {
+            if (!item.accordion_title) return <></>;
+            return (
+              <ExpandingCardStyle2
+                key={index}
+                id={`link${index + 1}`}
+                content={item.accordion_content}
+                title={item.accordion_title}
+              />
+            );
+          })}
+          <div className="info-bottom mt-[151px]">
+            <div className="title-wrap">
+              <h3 className="text-center tracking-[-0.97152px] text-[40px] leading-[1.1] font-medium">
+                {page?.ratgeber_detail?.reference?.cta_text?.value}
+              </h3>
             </div>
-            <div className='link-wrap flex justify-center mt-[40px]'>
-            <Link
-            className='block rounded-[100px] bg-black text-white
-            text-center px-[60px] py-[25px] hover:bg-[#00795c] hover:text-white text-[18px] max-w-fit font-normal leading-none'
-            to={page?.ratgeber_detail?.reference?.cta_button_redirect?.value}
-            >
-              {page?.ratgeber_detail?.reference?.cta_button_text?.value}
-            </Link>
+            <div className="link-wrap flex justify-center mt-[40px]">
+              <Link
+                className="block rounded-[100px] bg-black text-white
+            text-center px-[60px] py-[25px] hover:bg-[#00795c] hover:text-white text-[18px] max-w-fit font-normal leading-none"
+                to={
+                  page?.ratgeber_detail?.reference?.cta_button_redirect?.value
+                }
+              >
+                {page?.ratgeber_detail?.reference?.cta_button_text?.value}
+              </Link>
             </div>
           </div>
         </section>
@@ -193,9 +222,6 @@ export default function ratgeberseite() {
     </>
   );
 }
-
-
-
 
 const PAGE_QUERY = `#graphql
 ${MEDIA_FRAGMENT}

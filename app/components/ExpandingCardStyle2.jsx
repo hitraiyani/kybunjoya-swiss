@@ -14,7 +14,7 @@ export function ExpandingCardStyle2({title, content,id}) {
             <div className="flex items-center gap-x-3 justify-between">
               <Text
                 as="h5"
-                className="text-white text-left text-[30px] xl:text-[35px] font-bold flex-1 leading-none"
+                className="text-white text-left text-[30px] font-bold flex-1 leading-none"
                 dangerouslySetInnerHTML={{__html: title}}
               ></Text>
               <IconClose

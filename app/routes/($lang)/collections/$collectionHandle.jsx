@@ -146,7 +146,7 @@ export default function Collection() {
   return (
     <>
       <div className="container mt-[120px] lg:mt-[200px]">
-        <h1 className="title text-[#00795C] text-[35px] lg:text-[40px] xl:text-[65px] tracking-[-1.05984px] mb-[20px] lg:mb-[30px]">
+        <h1 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[60px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold">
           {brandHereSection?.data?.head_title?.value}
         </h1>
         <div className="product-list-hero-img relative overflow-hidden rounded-xl pb-[35%] min-h-[400px]">
@@ -395,7 +395,7 @@ export default function Collection() {
                                 >
                                 </h3>
                               </div>
-                              <div className="desc mt-[40px] text-black text-[18px] font-normal"
+                              <div className="desc mt-[40px] text-black text-[18px] font-normal leading-[1.4]"
                                 dangerouslySetInnerHTML={{
                                   __html: toHTML(brandHereSection?.data?.slider_desc_content_1?.value),
                                 }}
@@ -427,7 +427,7 @@ export default function Collection() {
                                 >
                                 </h3>
                               </div>
-                              <div className="desc mt-[40px] text-black text-[18px] font-normal"
+                              <div className="desc mt-[40px] text-black text-[18px] font-normal leading-[1.4]"
                                 dangerouslySetInnerHTML={{
                                   __html: toHTML(brandHereSection?.data?.slider_desc_content_2?.value),
                                 }}
@@ -459,7 +459,7 @@ export default function Collection() {
                                 >
                                 </h3>
                               </div>
-                              <div className="desc mt-[40px] text-black text-[18px] font-normal"
+                              <div className="desc mt-[40px] text-black text-[18px] font-normal leading-[1.4]"
                                 dangerouslySetInnerHTML={{
                                   __html: toHTML(brandHereSection?.data?.slider_desc_content_3?.value),
                                 }}
@@ -491,7 +491,7 @@ export default function Collection() {
                                 >
                                 </h3>
                               </div>
-                              <div className="desc mt-[40px] text-black text-[18px] font-normal"
+                              <div className="desc mt-[40px] text-black text-[18px] font-normal leading-[1.4]"
                                 dangerouslySetInnerHTML={{
                                   __html: toHTML(brandHereSection?.data?.slider_desc_content_4?.value),
                                 }}

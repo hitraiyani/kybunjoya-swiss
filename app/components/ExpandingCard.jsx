@@ -9,7 +9,7 @@ export function ExpandingCard({title, content}) {
           <Disclosure.Button
             className={`${
               open ? 'active' : ''
-            }  py-[25px] px-[25px] px-5outline-none focus:outline-none`}
+            }  py-[25px] px-[20px] px-5outline-none focus:outline-none`}
           >
             <div className="flex items-center gap-x-3 justify-between">
               <Text

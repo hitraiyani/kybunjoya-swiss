@@ -53,7 +53,7 @@ export default function ratgeber() {
             <div className='banner-info'>
               <div className='flex flex-wrap items-end px-[72px] py-[57px] justify-between'>
                 <div className='title-wrap'>
-                  <h2 className='text-white text-[35px] lg:text-[40px] xl:text-[55px] tracking-[-0.97152px] leading-[1.1]'
+                  <h2 className='text-white text-[35px] lg:text-[40px] xl:text-[55px] tracking-[-1.05984px] font-bold leading-[1.1]'
                   dangerouslySetInnerHTML={{
                     __html: toHTML(page?.ratgeber?.reference?.hero_banner_title?.value),
                   }}
@@ -85,7 +85,7 @@ export default function ratgeber() {
               <img className='w-full rounded-xl' src={page?.ratgeber?.reference?.start_consultation_image?.reference?.image?.url} alt="" />
             </div>
             <div className='content-info w-[50%]'>
-              <h4 className='text-[45px] tracking-[-0.97152px] font-medium leading-[1.1]'
+              <h4 className='text-[40px] tracking-[-0.97152px] font-medium leading-[1.1]'
                   dangerouslySetInnerHTML={{
                     __html: toHTML(page?.ratgeber?.reference?.start_consultation_text?.value),
                   }}
@@ -105,7 +105,7 @@ export default function ratgeber() {
             <div className="grid grid-cols-4 gap-[20px]">
               <div className="item flex flex-col rounded-[10px]">
                 <div className="title-wrap bg-[#00795C] rounded-tl-[10px] rounded-tr-[10px]">
-                  <h4 className="text-white text-[35px] font-bold leading-none p-[20px]">
+                  <h4 className="text-white text-[30px] font-bold leading-none p-[20px]">
                     {page?.ratgeber?.reference?.footer_section_title_1?.value}
                   </h4>
                 </div>
@@ -130,7 +130,7 @@ export default function ratgeber() {
               </div>
               <div className="item flex flex-col rounded-[10px]">
                 <div className="title-wrap bg-[#00795C] rounded-tl-[10px] rounded-tr-[10px]">
-                  <h4 className="text-white text-[35px] font-bold leading-none p-[20px]">
+                  <h4 className="text-white text-[30px] font-bold leading-none p-[20px]">
                     {page?.ratgeber?.reference?.footer_section_title_2?.value}
                   </h4>
                 </div>
@@ -155,7 +155,7 @@ export default function ratgeber() {
               </div>
               <div className="item flex flex-col rounded-[10px]">
                 <div className="title-wrap bg-[#00795C] rounded-tl-[10px] rounded-tr-[10px]">
-                  <h4 className="text-white text-[35px] font-bold leading-none p-[20px]">
+                  <h4 className="text-white text-[30px] font-bold leading-none p-[20px]">
                   {page?.ratgeber?.reference?.footer_section_title_3?.value}
                   </h4>
                 </div>
@@ -180,7 +180,7 @@ export default function ratgeber() {
               </div>
               <div className="item flex flex-col rounded-[10px]">
                 <div className="title-wrap bg-[#00795C] rounded-tl-[10px] rounded-tr-[10px]">
-                  <h4 className="text-white text-[35px] font-bold leading-none p-[20px]">
+                  <h4 className="text-white text-[30px] font-bold leading-none p-[20px]">
                     {page?.ratgeber?.reference?.footer_section_title_4?.value}
                   </h4>
                 </div>
