@@ -8,11 +8,11 @@ export function GruppeSection({gruppeMenu}) {
     <Section className={'collectionsGrid-sec py-[80px]'}>
       <div className="container">
       <h3 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[55px] tracking-[-0.97152px] mb-6">
-          Grupee
+           Gruppe
         </h3>
         <div className='quick-links-sec bg-[#EDEDED] mt-[28px]'>
         <div className="collectionsGrid-item flex flex-wrap">
-            <Link to={`#`} className="relative block overflow-hidden w-full lg:w-3/5">
+            <Link to={gruppeMenu?.to} className="relative block overflow-hidden w-full lg:w-3/5">
               <div className="img-wrap w-full h-full absolute inset-0">
                 <Image
                   data={{
