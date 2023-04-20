@@ -50,7 +50,13 @@ export default function schweizerSchuhpropktion() {
   const sliderImages = page?.slider_images?.references?.edges.map(
     (data) => data.node.image.url,
   );
-  // const faqArr = page?.faq?.value ? JSON.parse(page.faq.value) : [];
+
+  let firstSlideImages = [];
+  let restSlideImages = [];
+  if (sliderImages.length > 0) {
+    firstSlideImages = sliderImages.slice(0,2);
+    restSlideImages = sliderImages.slice(2);
+  }
 
   return (
     <>
@@ -111,19 +117,33 @@ export default function schweizerSchuhpropktion() {
                 <div className="imgs-wrap flex flex-col gap-[20px]">
                   <img
                     className="w-full object-cover rounded-[10px] h-auto lg:h-[310px]"
-                    src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Mask_group_2.png?v=1681551601"
+                    src={firstSlideImages[0]}
                     alt=""
                   />
                   <div className='img-2 rounded-[10px] h-full xl:w-[60%] w-full xl:h-[40%] ml-auto block'>
 
                   <img
                     className="object-cover rounded-[10px] w-full h-full ml-auto block"
-                    src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Mask_group_2.png?v=1681551601"
+                    src={firstSlideImages[1]}
                     alt=""
                   />
                   </div>
                 </div>
               </SwiperSlide>
+              {restSlideImages.map((image,index) => {
+                  return (
+                    <SwiperSlide key={index}>
+                      <div className="imgs-wrap flex flex-col gap-[20px] h-full">
+                        <img
+                          className="h-full w-full object-cover rounded-[10px] "
+                          src={image}
+                          alt=""
+                        />
+                      </div>
+                    </SwiperSlide>
+                  );
+              })}
+
               <SwiperSlide>
                 <div className="imgs-wrap flex flex-col gap-[20px] h-full">
                   <img
