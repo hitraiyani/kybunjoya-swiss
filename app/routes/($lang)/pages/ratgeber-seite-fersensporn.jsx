@@ -47,8 +47,10 @@ export default function ratgeberSeiteFersensporn() {
 
   const {page} = useLoaderData();
 
-  const mainVideoSection = page?.ratgeber_seite_fersensporn?.reference?.main_video_section?.value ? JSON.parse(page?.ratgeber_seite_fersensporn?.reference?.main_video_section?.value) : {};
-  const mainVideoSliderSection = page?.ratgeber_seite_fersensporn?.reference?.main_video_slider_section?.value ? JSON.parse(page?.ratgeber_seite_fersensporn?.reference?.main_video_slider_section?.value) : [];
+  const mainVideoSection = page?.ratgeber_seite_fersensporn?.reference?.main_video_section?.value ? JSON.parse(page.ratgeber_seite_fersensporn.reference.main_video_section.value) : {};
+  const mainVideoSliderSection = page?.ratgeber_seite_fersensporn?.reference?.main_video_slider_section?.value ? JSON.parse(page.ratgeber_seite_fersensporn.reference.main_video_slider_section.value) : [];
+  const relevanteLinksSectionLeftPart = page?.ratgeber_seite_fersensporn?.reference?.relevante_links_section_left_part?.value ? JSON.parse(page?.ratgeber_seite_fersensporn.reference.relevante_links_section_left_part.value) : [];
+  const relevanteLinksSectionRightPart = page?.ratgeber_seite_fersensporn?.reference?.relevante_links_section_right_part?.value ? JSON.parse(page?.ratgeber_seite_fersensporn.reference.relevante_links_section_right_part.value) : [];
 
   return (
     <>
@@ -188,109 +190,73 @@ export default function ratgeberSeiteFersensporn() {
         <section className="relevante-links-sec mt-[140px]">
           <div className="title-wrap">
             <h2 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[55px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold">
-              Relevante Links
+              {page?.ratgeber_seite_fersensporn?.reference?.relevante_links_section_title?.value}
             </h2>
           </div>
           <div className="flex flex-row gap-[20px]">
             <div className="col-left w-[50%]">
               <div className="flex gap-[20px] h-full">
-                <div className="item w-[50%] shadow-[0px_0px_0.9821px_2px_rgba(0,0,0,0.05),0px_3.9284px_7.8568px_1px_rgba(0,0,0,0.1)] rounded-[10px] h-full">
-                  <div className="box h-full flex flex-col items-center px-[20px] py-[15px]">
-                    <div className="img-title-wrap flex flex-col mb-[10px] h-full justify-center">
-                      <img
-                        className="max-w-full h-[50px] object-contain"
-                        src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Logo_kybun_Wordmark_1c_black_rgb_2.png?v=1681905588"
-                        alt=""
-                      />
-                      <h4 className="text-[35px] text-[#00795C] font-bold leading-[1.2] text-center mt-[5px]">
-                        Online shop
-                      </h4>
-                    </div>
-                    <div className="link-wrap mt-auto w-full">
-                      <a
-                        className="text-[#00795C] flex justify-end items-center gap-[8px] text-[25px] tracking-[-0.400697px] font-normal  mt-auto hover:!text-black"
-                        href="#"
-                      >
-                        Jetzt Entdecken
-                        <ArrowRightLight className={'w-[30px] h-[30px]'} />
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div className="item w-[50%] shadow-[0px_0px_0.9821px_2px_rgba(0,0,0,0.05),0px_3.9284px_7.8568px_1px_rgba(0,0,0,0.1)] rounded-[10px] h-full">
-                  <div className="box h-full flex flex-col items-center px-[20px] py-[15px]">
-                    <div className="img-title-wrap flex flex-col mb-[10px] h-full justify-center">
-                      <img
-                        className="max-w-full h-[50px] object-contain"
-                        src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Joya-Logo-PNG_1.png?v=1681905588"
-                        alt=""
-                      />
-                      <h4 className="text-[35px] text-[#00795C] font-bold leading-[1.2] text-center mt-[5px]">
-                        Online shop
-                      </h4>
-                    </div>
-                    <div className="link-wrap mt-auto w-full">
-                      <a
-                        className="text-[#00795C] flex justify-end items-center gap-[8px] text-[25px] tracking-[-0.400697px] font-normal  mt-auto hover:!text-black"
-                        href="#"
-                      >
-                        Jetzt Entdecken
-                        <ArrowRightLight className={'w-[30px] h-[30px]'} />
-                      </a>
-                    </div>
-                  </div>
-                </div>
+                {relevanteLinksSectionLeftPart.map((item, index) => {
+                    return (
+                      <div key={index} className="item w-[50%] shadow-[0px_0px_0.9821px_2px_rgba(0,0,0,0.05),0px_3.9284px_7.8568px_1px_rgba(0,0,0,0.1)] rounded-[10px] h-full">
+                        <div className="box h-full flex flex-col items-center px-[20px] py-[15px]">
+                          <div className="img-title-wrap flex flex-col mb-[10px] h-full justify-center">
+                            <img
+                              className="max-w-full h-[50px] object-contain"
+                              src={item?.brand_logo}
+                              alt=""
+                            />
+                            <h4 className="text-[35px] text-[#00795C] font-bold leading-[1.2] text-center mt-[5px]">
+                              {item?.sub_title}
+                            </h4>
+                          </div>
+                          <div className="link-wrap mt-auto w-full">
+                            <Link
+                              to={item?.redirect_link_url}
+                              className="text-[#00795C] flex justify-end items-center gap-[8px] text-[25px] tracking-[-0.400697px] font-normal  mt-auto hover:!text-black"
+                            >
+                              {item?.redirect_link_text}
+                              <ArrowRightLight className={'w-[30px] h-[30px]'} />
+                            </Link>
+                          </div>
+                        </div>
+                      </div>
+                    );
+                })}
               </div>
             </div>
             <div className="col-right w-[50%]">
               <div className="title-wrap bg-[#00795C] rounded-tl-[10px] rounded-tr-[10px]">
                 <h4 className="text-[35px] text-white font-bold leading-[1.2] text-left px-[20px] py-[17px]">
-                  kybun Joya Produkte erleben?
+                  {page?.ratgeber_seite_fersensporn?.reference?.relevante_links_section_right_part_title?.value}
                 </h4>
               </div>
               <div className="flex gap-[20px] px-[20px] py-[15px] shadow-[0px_0px_0.9821px_2px_rgba(0,0,0,0.05),0px_3.9284px_7.8568px_1px_rgba(0,0,0,0.1)] rounded-bl-[10px] rounded-br-[10px]">
-                <div className="item w-[50%]">
-                  <h4 className="desc text-[25px] text-[#00795C] font-bold leading-none mb-[10px]">
-                    Shopfinder
-                  </h4>
-                  <div className="img-wrap relative overflow-hidden rounded-[10px] h-[186px]">
-                    <img
-                      className="absolute w-full h-full inset-0 object-cover"
-                      src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/stgallen_shopfront_eaac67e4-f12f-41cd-aef6-4c4fa529140d.png?v=1681906268"
-                      alt=""
-                    />
-                  </div>
-                  <div className="link-wrap mt-[10px]">
-                    <a
-                      className="text-[#00795C] flex justify-end items-center gap-[8px] text-[25px] tracking-[-0.400697px] font-normal  mt-auto hover:!text-black"
-                      href="#"
-                    >
-                      Jetzt finden
-                      <ArrowRightLight className={'w-[30px] h-[30px]'} />
-                    </a>
-                  </div>
-                </div>
-                <div className="item w-[50%]">
-                  <h4 className="desc text-[25px] text-[#00795C] font-bold leading-none mb-[10px]">
-                    kybun Schuhe 2 Wochen testen
-                  </h4>
-                  <div className="img-wrap relative overflow-hidden rounded-[10px] h-[186px]">
-                    <img
-                      className="absolute w-full h-full inset-0 object-cover"
-                      src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/PD04789_-_XL_partnerships_group_image.png_1.png?v=1681906268"
-                      alt=""
-                    />
-                  </div>
-                  <div className="link-wrap mt-[10px]">
-                    <a
-                      className="text-[#00795C] flex justify-end items-center gap-[8px] text-[25px] tracking-[-0.400697px] font-normal  mt-auto hover:!text-black"
-                      href="#"
-                    >
-                      Schuhe testen
-                      <ArrowRightLight className={'w-[30px] h-[30px]'} />
-                    </a>
-                  </div>
-                </div>
+                {relevanteLinksSectionRightPart.map((item, index) => {
+                    return(
+                      <div className="item w-[50%]" key={index}>
+                        <h4 className="desc text-[25px] text-[#00795C] font-bold leading-none mb-[10px]">
+                          {item?.title}
+                        </h4>
+                        <div className="img-wrap relative overflow-hidden rounded-[10px] h-[186px]">
+                          <img
+                            className="absolute w-full h-full inset-0 object-cover"
+                            src={item?.image}
+                            alt=""
+                          />
+                        </div>
+                        <div className="link-wrap mt-[10px]">
+                          <Link 
+                            to={item?.redirect_link_url}
+                            className="text-[#00795C] flex justify-end items-center gap-[8px] text-[25px] tracking-[-0.400697px] font-normal  mt-auto hover:!text-black"
+                          >
+                            {item?.redirect_link_text}
+                            <ArrowRightLight className={'w-[30px] h-[30px]'} />
+                          </Link>
+                        </div>
+                      </div>
+                    );
+                })}
               </div>
             </div>
           </div>
@@ -299,32 +265,17 @@ export default function ratgeberSeiteFersensporn() {
           <div className="rich-text -inner max-w-[1077px]">
             <div className="title-wrap">
               <h2 className="title text-[#00795C] text-[35px] lg:text-[40px] xl:text-[55px] tracking-[-1.05984px] mb-[20px] lg:mb-[40px] leading-[1.1]">
-                kybun Joya & Fersensporn
+                {page?.ratgeber_seite_fersensporn?.reference?.kybun_joya_fersensporn_section_title?.value}
               </h2>
               <h4 className="title text-[#00795C] text-[35px] lg:text-[40px] xl:text-[45px] tracking-[-0.97152px] mb-[20px] leading-[1.1] font-medium">
-                Definition
+                {page?.ratgeber_seite_fersensporn?.reference?.kybun_joya_fersensporn_section_sub_title?.value}
               </h4>
             </div>
-            <div className="desc text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
-              <p>
-                <strong>Fasciitis</strong> <br />
-                PlantarisEine Entzündung an der Fusssohle, genauer, am
-                Ansatzpunkt der Plantarsehne zum Fersenbein. Als Folge einer
-                längerfristigen Entzündung kann sich ein knöchernes Überbein
-                (Sporn) bilden, dann reden wir vom Fersensporn.
-              </p>
-              <p>
-                <strong>Haglund-ExostoseEine</strong> <br />
-                verstärkte Verknöcherung des hinteren oberen Sehnenansatzes der
-                Ferse mit Beschwerden durch Druck des Schuhrandes.
-              </p>
-              <p>
-                Es spielt keine Rolle, wo sich der Sporn / die Verknöcherung
-                befindet. Die Therapie ist für beide Krankheitsbilder die
-                gleiche: Wichtig ist, dass der Fuss abrollt und die
-                verkürzte/verklebte Muskulatur/Sehnen mobilisiert werden. Für
-                das eignen sich die kybun Schuhe und Matten bestens.
-              </p>
+            <div className="desc text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
+              dangerouslySetInnerHTML={{
+                __html: toHTML(page?.ratgeber_seite_fersensporn?.reference?.kybun_joya_fersensporn_section_desc?.value),
+              }}
+            >
             </div>
           </div>
         </section>
@@ -332,86 +283,48 @@ export default function ratgeberSeiteFersensporn() {
           <div className="rich-text-inner">
             <div className="title-wrap">
               <h4 className="title text-[#00795C] text-[35px] lg:text-[40px] xl:text-[45px] tracking-[-0.97152px] mb-[20px] leading-[1.1] font-medium">
-                Ursachen
+                {page?.ratgeber_seite_fersensporn?.reference?.ursachen_title?.value}
               </h4>
             </div>
             <div className="flex lg:flex-row flex-col gap-y-[30px] gap-x-[77px] w-full">
               <div className="col-left w-[50%]">
                 <div className="desc text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mb-[15px]">
                   <p>
-                    <strong>Klassische Sicht</strong>
+                    <strong>{page?.ratgeber_seite_fersensporn?.reference?.ursachen_left_section_title?.value}</strong>
                   </p>
                 </div>
                 <div className="desc text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
                   <img
                     className="max-w-full rounded-[10px] float-right ml-[15px] mb-[15px] w-[320px] h-[320px] object-cover"
-                    src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/csm_Fersensporn-xray_8cada7347f_1.png?v=1681909312"
+                    src={page?.ratgeber_seite_fersensporn?.reference?.ursachen_left_section_image?.reference?.image?.url}
                     alt=""
                   />
-                  <p>
-                    Die Entzündung der Plantarfaszie ist eine Reaktion des
-                    Körpers auf eine Überlastung in diesem Bereich. Die Ursache
-                    bei Fasciitis Plantaris liegt meistens bei einer zu grossen
-                    Belastung auf den schmerzhaften Punkt. Folglich verkürzt und
-                    verklebt die Plantarfaszie (der Körper möchte sie verstärken
-                    um der Überbelastung entgegenzuwirken) und folglich kommt
-                    noch mehr Druck auf die schmerzhafte Stelle.
-                  </p>
-
-                  <p>
-                    Eine Hauptursache für ein Verkürzen der Plantarsehne ist die
-                    Bewegungseinschränkung der Füsse im Alltag. Da wir uns
-                    meistens auf hartem Untergrund wie Beton fortbewegen und
-                    dazu noch unbewegliches Schuhwerk tragen (z.B Businessschuhe
-                    mit steifen Sohlen oder Absatzschuhe), werden die Füsse in
-                    ihrer Bewegungsfreiheit stark eingeschränkt. Da dadurch die
-                    meisten Fussgelenke nie richtig gebraucht werden, erscheinen
-                    diese dem Körper überflüssig und er beginnt, die von Natur
-                    aus sehr beweglich konstruierten Füsse, dem zivilisieren
-                    Alltag anzupassen indem er sie stabilisiert bzw.
-                    "versteift".
-                  </p>
+                  <span 
+                    dangerouslySetInnerHTML={{
+                      __html: toHTML(page?.ratgeber_seite_fersensporn?.reference?.ursachen_left_section_desc?.value),
+                    }}
+                  >
+                  </span>
                 </div>
               </div>
               <div className="col-right w-[50%]">
                 <div className="desc text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mb-[15px]">
                   <p>
-                    <strong>Aus Sicht der Faszien</strong>
+                    <strong>{page?.ratgeber_seite_fersensporn?.reference?.ursachen_right_section_title?.value}</strong>
                   </p>
                 </div>
                 <div className="desc text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
                   <img
                     className="max-w-full rounded-[10px] float-right ml-[15px] mb-[15px] border-[2px] border-[#EDEDED] w-[320px] h-[320px] object-contain p-[20px]"
-                    src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/csm_fersensporn-causes-faszien_9c1751ebd6_1.png?v=1681909764"
+                    src={page?.ratgeber_seite_fersensporn?.reference?.ursachen_right_section_image?.reference?.image?.url}
                     alt=""
                   />
-                  <p>
-                    Der ganze Körper ist umhüllt von Faszien, welche miteinander
-                    verbunden sind. So ist auch der schmerzende Bereich des
-                    Fersensporns über die ganze hintere Myo-Fasziale Kette
-                    miteinander verbunden. Sind in einem oder mehreren Bereichen
-                    dieser Kette Verklebungen und/oder Verkürzungen vorhanden,
-                    so herrscht unnatürlich viel Zug in die ganze Linie. Diese
-                    Verklebungen und Verkürzungen entstehen durch das
-                    unnatürliche Gehen und Stehen auf den harten, flachen
-                    Alltagsböden, sowie langes Sitzen. Haben wir durch die
-                    Zugverhältnisse langfristig eine starke Belastung auf die
-                    Fusssohle (Plantarfaszie) wird die Knochenhaut (Periost
-                    bestehend aus Faszien), welche die Ferse umgibt vom Knochen
-                    weggezogen.{' '}
-                  </p>
-                  <p>
-                    Die Reaktion des Körpers ist nun, dass er den entstehenden
-                    Hohlraum mit zusätzlichem Knochenmaterial auffüllen möchte.
-                    Das macht er mit sogenannten Osteoblasten (knochenbildende
-                    Zellen). Der Knochen wächst also in die Richtung, wo ihm
-                    seine Hülle «weggezogen» wird. Ein Fersensporn
-                    (Verknöcherung) entsteht. Die Schmerzen an sich werden nicht
-                    vom Fersensporn (bzw. von der Verknöcherung) direkt
-                    ausgelöst (da dies eigentlich ein natürlicher Vorgang ist),
-                    sondern die Schmerzen entstehen, wenn der Sporn einem
-                    sensiblen Nerv in die Quere kommt.
-                  </p>
+                   <span 
+                    dangerouslySetInnerHTML={{
+                      __html: toHTML(page?.ratgeber_seite_fersensporn?.reference?.ursachen_right_section_desc?.value),
+                    }}
+                  >
+                  </span>
                 </div>
               </div>
             </div>
@@ -419,39 +332,27 @@ export default function ratgeberSeiteFersensporn() {
               <div className="col-left w-[50%]">
                 <div className="title-wrap">
                   <h4 className="title text-[#00795C] text-[35px] lg:text-[40px] xl:text-[45px] tracking-[-0.97152px] mb-[20px] leading-[1.1] font-medium">
-                    Langzeitfolgen
+                    {page?.ratgeber_seite_fersensporn?.reference?.langzeitfolgen_section_title?.value}
                   </h4>
                 </div>
-                <div className="desc text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
-                  <p>
-                    Durch monatelange Schmerzen, ohne Therapie des Ursprungs,
-                    entwickelt der Körper Ausweichmechanismen um die
-                    schmerzhafte Stelle am Fuss zu entlasten. Der gesunde Fuss
-                    wird vermehrt belastet, der Betroffene beginnt zu hinken und
-                    dies führt zu Fehlbelastungen in anderen Gelenken (Knie,
-                    Hüft, Rücken...). Jeder Mensch reagiert anders, es gibt
-                    somit viele verschiedene Ausweichmechanismen, die ein
-                    Betroffener entwickeln kann; das heisst, es können
-                    verschiedene Gelenke überlastet werden.
-                  </p>
+                <div className="desc text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
+                   dangerouslySetInnerHTML={{
+                    __html: toHTML(page?.ratgeber_seite_fersensporn?.reference?.langzeitfolgen_section_desc?.value),
+                  }}
+                >
                 </div>
               </div>
               <div className="col-right w-[50%]">
                 <div className="title-wrap">
                   <h4 className="title text-[#00795C] text-[35px] lg:text-[40px] xl:text-[45px] tracking-[-0.97152px] mb-[20px] leading-[1.1] font-medium">
-                    Konventionelle Therapie
+                    {page?.ratgeber_seite_fersensporn?.reference?.konventionelle_therapie_section_title?.value}
                   </h4>
                 </div>
-                <div className="desc text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
-                  <p>
-                    Die meisten Ärzte verordnen ein Polsterkissen, das unter die
-                    Ferse gelegt wird.Manchmal werden auch orthopädische
-                    Schuh-Einlagen verordnet.In der Physiotherapie wird
-                    Fersensporn u.a. mit Ultraschall und/oder Elekrotherapie,
-                    Triggerpunkt-Therapie oder Massage behandelt. Die Fuss- und
-                    Unterschenkelmuskulatur wird aktiv mit Übungen gedehnt und
-                    gekräftigt.
-                  </p>
+                <div className="desc text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
+                  dangerouslySetInnerHTML={{
+                    __html: toHTML(page?.ratgeber_seite_fersensporn?.reference?.konventionelle_therapie_section_desc?.value),
+                  }}
+                 >
                 </div>
               </div>
             </div>
@@ -465,6 +366,7 @@ export default function ratgeberSeiteFersensporn() {
 
 
 const PAGE_QUERY = `#graphql
+${MEDIA_FRAGMENT}
   query PageDetails($language: LanguageCode, $handle: String!)
   @inContext(language: $language) {
     page(handle: $handle) {
@@ -497,6 +399,64 @@ const PAGE_QUERY = `#graphql
               value
             }
             main_video_slider_section : field(key: "main_video_slider_section") {
+              value
+            }
+            kybun_joya_fersensporn_section_title : field(key: "kybun_joya_fersensporn_section_title") {
+              value
+            }
+            kybun_joya_fersensporn_section_sub_title : field(key: "kybun_joya_fersensporn_section_sub_title") {
+              value
+            }
+            kybun_joya_fersensporn_section_desc : field(key: "kybun_joya_fersensporn_section_desc") {
+              value
+            }
+            ursachen_title : field(key: "ursachen_title") {
+              value
+            }
+            ursachen_left_section_title : field(key: "ursachen_left_section_title") {
+              value
+            }
+            ursachen_left_section_desc : field(key: "ursachen_left_section_desc") {
+              value
+            }
+            ursachen_left_section_image : field(key: "ursachen_left_section_image") {
+              reference {
+                ...Media
+              }
+            }
+            ursachen_right_section_title : field(key: "ursachen_right_section_title") {
+              value
+            }
+            ursachen_right_section_desc : field(key: "ursachen_right_section_desc") {
+              value
+            }
+            ursachen_right_section_image : field(key: "ursachen_right_section_image") {
+              reference {
+                ...Media
+              }
+            }
+            langzeitfolgen_section_title : field(key: "langzeitfolgen_section_title") {
+              value
+            }
+            langzeitfolgen_section_desc : field(key: "langzeitfolgen_section_desc") {
+              value
+            }
+            konventionelle_therapie_section_title : field(key: "konventionelle_therapie_section_title") {
+              value
+            }
+            konventionelle_therapie_section_desc : field(key: "konventionelle_therapie_section_desc") {
+              value
+            }
+            relevante_links_section_title : field(key: "relevante_links_section_title") {
+              value
+            }
+            relevante_links_section_left_part : field(key: "relevante_links_section_left_part") {
+              value
+            }
+            relevante_links_section_right_part_title : field(key: "relevante_links_section_right_part_title") {
+              value
+            }
+            relevante_links_section_right_part : field(key: "relevante_links_section_right_part") {
               value
             }
           }
