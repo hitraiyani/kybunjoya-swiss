@@ -363,8 +363,8 @@ export default function Collection() {
                   modules={[Navigation, Scrollbar, A11y, Autoplay, Pagination]}
                   slidesPerView={1}
                   navigation={{
-                    nextEl: '.swiper-button-next-product-info',
-                    prevEl: '.swiper-button-prev-product-info',
+                    prevEl: '.swiper-button-next-product-info',
+                    nextEl: '.swiper-button-prev-product-info',
                   }}
                   loop="false"
                   autoplay="false"
