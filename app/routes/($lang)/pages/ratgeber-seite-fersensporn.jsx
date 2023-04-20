@@ -443,74 +443,44 @@ export default function ratgeberSeiteFersensporn() {
           <div className="rich-text-inner">
             <div className="title-wrap">
               <h2 className="title text-[#00795C] text-[35px] lg:text-[40px] xl:text-[55px] tracking-[-1.05984px] mb-[20px] lg:mb-[40px] leading-[1.1]">
-                Anwendertipps & Übungen
+                {page?.ratgeber_seite_fersensporn?.reference?.anwendertipps_title?.value}
               </h2>
             </div>
             <div className="flex lg:flex-row flex-col gap-y-[30px] gap-x-[85px] w-full">
               <div className="col-left w-[50%]">
                 <div className="title-wrap">
                   <h4 className="title text-[#00795C] text-[30px] xl:text-[40px] tracking-[-0.97152px] mb-[20px] leading-[1.1] font-medium">
-                    Erstreaktionen
+                    {page?.ratgeber_seite_fersensporn?.reference?.erstreaktionen_section_title?.value}
                   </h4>
                 </div>
                 <div className="desc text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mt-[30px]">
                   <p>
-                    <strong>Spezifische Erstreaktionen bei Fersensporn:</strong>
+                    <strong>{page?.ratgeber_seite_fersensporn?.reference?.erstreaktionen_section_sub_title?.value}</strong>
                   </p>
-                  <p>
-                    Aufgrund von vorhandenen Verkürzungen der Wadenmuskulatur
-                    und der Sehnenplatte im Fuss kann es zu einer starken
-                    Dehnung kommen, die anfangs zu Entzündungsreizen führen
-                    kann. Wenn dies bei Ihnen auftritt, sollten Sie unbedingt
-                    Pausen einhalten oder/ und ein "lockeres Traben" im kybun
-                    Schuh im Alltag integrieren. Es ist besser im kybun Schuh zu
-                    gehen anstatt zu stehen, aber UNBEDINGT regelmässig tragen.
-                  </p>
-                  <p>
-                    Wenn der kybun Schuh nur ab und zu getragen wird, ist die
-                    Dehnung nicht nachhaltig und der Entzündungsschmerz wird
-                    immer wieder kommen.
-                  </p>
-                  <p>
-                    Für allgemeine Erstreaktionen bei Neueinsteigern beim Tragen
-                    von kybun Schuhen oder bei der Verwendung von kybun Matten
-                    klicken Sie bitte hier:
-                    <a href="#">Erstreaktionen</a>
-                  </p>
+                  <span
+                    dangerouslySetInnerHTML={{
+                      __html: toHTML(page?.ratgeber_seite_fersensporn?.reference?.erstreaktionen_section_desc?.value),
+                    }}
+                  >
+                  </span>
                 </div>
               </div>
               <div className="col-right w-[50%]">
                 <div className="title-wrap">
                   <h4 className="title text-[#00795C] text-[30px] xl:text-[40px] tracking-[-0.97152px] mb-[20px] leading-[1.1] font-medium">
-                    Anwendungstipps
+                    {page?.ratgeber_seite_fersensporn?.reference?.anwendungstipps_section_title?.value}
                   </h4>
                 </div>
                 <div className="desc text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mt-[30px]">
                   <p>
-                    <strong>Spezifische Erstreaktionen bei Fersensporn:</strong>
+                    <strong>{page?.ratgeber_seite_fersensporn?.reference?.anwendungstipps_section_sub_title?.value}</strong>
                   </p>
-                  <p>
-                    Das Wichtigste ist, dass Sie möglichst alle Schläge auf die
-                    schmerzhafte Stelle der Ferse vermeiden! Dies gelingt am
-                    besten, wenn Sie im kybun Schuh oder auf der kybun Matte
-                    anfangs kleine Schritte machen und sanft auf die Ferse
-                    aufsetzen.Rollen Sie danach über den ganzen Fuss und stossen
-                    Sie über die Grosszehe ab, so wird die Sehnenplatte an der
-                    Fusssohle alternierend gedehnt und in der Schwungbeinphase
-                    gelockert.Wenn Sie spüren, dass Ihre Fusssohle verkrampft,
-                    rate ich Ihnen, stehend den betroffenen Fuss in der Luft zu
-                    lockern (Fusskreisen, Zehen bewegen, Fuss in alle möglichen
-                    Richtungen bewegen; was Ihnen gut tut).
-                  </p>
-                  <p>
-                    Wir raten, den kybun Schuh ohne Schuheinlagen zu tragen.
-                    Falls Sie orthopädische Schuheinlagen besitzen, können Sie
-                    diese in die "normalen" Schuhe legen und in den
-                    kybun-Pausen, als passive Entlastung für die Füsse, tragen.
-                    Viele kybun Schuh Träger, die früher Schuheinlagen trugen,
-                    berichteten uns, dass sie diese nicht mehr benötigen.
-                    Jedoch, jeder Körper reagiert individuell!
-                  </p>
+                  <span
+                    dangerouslySetInnerHTML={{
+                      __html: toHTML(page?.ratgeber_seite_fersensporn?.reference?.anwendungstipps_section_desc?.value),
+                    }}
+                  >
+                  </span>
                 </div>
               </div>
             </div>
@@ -523,7 +493,7 @@ export default function ratgeberSeiteFersensporn() {
                 <div className="video-wrap w-full aspect-video rounded-[10px] relative overflow-hidden">
                   <iframe
                     className="absolute w-full h-full inset-0 object-cover bg-cover"
-                    src="https://www.youtube.com/embed/yAoLSRbwxL8"
+                    src={page?.ratgeber_seite_fersensporn?.reference?.kybun_ubungen_section_video_url?.value}
                     title="YouTube video player"
                     frameBorder={0}
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -533,32 +503,13 @@ export default function ratgeberSeiteFersensporn() {
               </div>
               <div className="col-right w-[40%]">
                 <h4 className="title text-[#00795C] text-[30px] xl:text-[40px] tracking-[-0.97152px] leading-[1.1] font-medium mb-[25px]">
-                  kybun-Übungen
+                  {page?.ratgeber_seite_fersensporn?.reference?.kybun_ubungen_section_title?.value}
                 </h4>
-                <div className="desc text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
-                  <p>
-                    Für Informationen zu den Spezialübungen im kybun Schuh und
-                    den Grundübungen auf der kybun Matte klicken Sie bitte hier:
-                    kybun Übungen
-                  </p>
-                  <p>
-                    Folgende Anpassungen der Standarddurchführung des Intervall
-                    Walkings sind bei Fersensporn wichtig:
-                  </p>
-                  <ul className="list-decimal list-outside flex flex-col gap-[15px] pl-[40px]">
-                    <li>
-                      Kurze Schritte machen und nicht zu stark über die Ferse
-                      abrollen, damit keine weitere Reizung auftritt
-                    </li>
-                    <li>
-                      Fokus eher auf langsame Übung - bei starken Schmerzen auch
-                      rückwärts gehen
-                    </li>
-                    <li>
-                      Bei schneller Übung nicht zu stark abrollen (Reizung
-                      verhindern)
-                    </li>
-                  </ul>
+                <div className="desc text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
+                   dangerouslySetInnerHTML={{
+                    __html: (page?.ratgeber_seite_fersensporn?.reference?.kybun_ubungen_section_desc?.value),
+                  }}
+                >
                 </div>
               </div>
             </div>
@@ -1223,6 +1174,36 @@ ${MEDIA_FRAGMENT}
               value
             }
             relevante_links_section_right_part : field(key: "relevante_links_section_right_part") {
+              value
+            }
+            anwendertipps_title : field(key: "anwendertipps_title") {
+              value
+            }
+            anwendungstipps_section_desc : field(key: "anwendungstipps_section_desc") {
+              value
+            }
+            anwendungstipps_section_sub_title : field(key: "anwendungstipps_section_sub_title") {
+              value
+            }
+            anwendungstipps_section_title : field(key: "anwendungstipps_section_title") {
+              value
+            }
+            erstreaktionen_section_desc : field(key: "erstreaktionen_section_desc") {
+              value
+            }
+            erstreaktionen_section_sub_title : field(key: "erstreaktionen_section_sub_title") {
+              value
+            }
+            erstreaktionen_section_title : field(key: "erstreaktionen_section_title") {
+              value
+            }
+            kybun_ubungen_section_title : field(key: "kybun_ubungen_section_title") {
+              value
+            }
+            kybun_ubungen_section_video_url : field(key: "kybun_ubungen_section_video_url") {
+              value
+            }
+            kybun_ubungen_section_desc : field(key: "kybun_ubungen_section_desc") {
               value
             }
           }

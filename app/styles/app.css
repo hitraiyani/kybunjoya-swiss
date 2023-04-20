@@ -640,3 +640,6 @@ p:last-child {
   height: auto;
 }
 /* End customer-opinions section */
+.list-decimal {
+  list-style-type: decimal;
+}
