@@ -5,9 +5,9 @@ export function GruppeSection({gruppeMenu}) {
 
   const quickLinkMenu = gruppeMenu?.items?.slice(0, 6);
   return (
-    <Section className={'collectionsGrid-sec py-[80px]'}>
+    <Section className={'collectionsGrid-sec pb-[40px] md:pb-[60px] lg:pb-[80px] xl:pb-[100px]'}>
       <div className="container">
-      <h3 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[55px] tracking-[-0.97152px] mb-6">
+      <h3 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[55px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold">
            Gruppe
         </h3>
         <div className='quick-links-sec bg-[#EDEDED] mt-[28px]'>
@@ -39,7 +39,7 @@ export function GruppeSection({gruppeMenu}) {
                   {quickLinkMenu.map((item, index) => {
                       return (
                         <li key={index}>
-                          <Link to={`${item.to}`} className='text-[30px] md:text-[30px] lg:text-[34px] xl:text-[50px] text-black hover:text[#00795C] block tracking-[-0.97152px] leading-none mb-5'>{item.title}</Link>
+                          <Link to={`${item.to}`} className='text-[30px] md:text-[30px] lg:text-[34px] xl:text-[40px] text-black hover:text[#00795C] block tracking-[-0.97152px] leading-none mb-5'>{item.title}</Link>
                         </li>
                       )
                   })}

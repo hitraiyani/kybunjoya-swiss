@@ -32,16 +32,16 @@ export function Hero({
             }
             
             <div className="absolute inset-x-0 bottom-0 w-full img-overlay h-2/4"></div>
-            <div className="absolute slider-content bottom-12 lg:bottom-28 left-5 md:left-20">
-                <h2 className="mb-6 font-extrabold text-white title"  dangerouslySetInnerHTML={{
+            <div className="absolute slider-content bottom-12 lg:bottom-28 left-0 right-0 w-full container">
+                <h2 className="mb-[15px] text-white title text-[40px] md:text-[50px] xl:text-[60px] leading-[-1.05984px] font-bold"  dangerouslySetInnerHTML={{
                       __html: toHTML(hereMetaObj?.data?.title?.value),
                     }}></h2>
-                <h4 className="mb-6 font-medium text-white sub-title" dangerouslySetInnerHTML={{
+                <h4 className="mb-[20px] text-white sub-title text-[24px] md:text-[32.96px] font-normal" dangerouslySetInnerHTML={{
                       __html: toHTML(hereMetaObj?.data?.sub_title?.value),
                     }}></h4>
                 <Link
                   to={`${hereMetaObj?.data?.cta?.value}`}
-                  className="inline-block px-8 py-4 text-lg font-medium text-black transition-all bg-white btn lg:py-6 lg:px-14 hover:bg-black hover:text-white"
+                  className="inline-block px-[60px] py-[25px] text-[18px] font-medium text-black transition-all bg-white btn hover:bg-black hover:text-white leading-none"
                 >{hereMetaObj?.data?.cta_label?.value}</Link>
             </div>
           </div>

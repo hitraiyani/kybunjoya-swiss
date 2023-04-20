@@ -234,9 +234,9 @@ function MobileHeader({title, isHome, openCart, openMenu, isMenuOpen}) {
         isHome
           ? ''
           : ''
-      } site-header fixed top-0 inset-x-0 z-50 bg-white ml-0 mr-0 lg:ml-20 lg:mr-20 lg:mt-[50px] mt-[0px] shadow-lg rounded-lg ${isScrolled ? 'header-sticky' : ''}`}
+      } site-header fixed top-0 inset-x-0 z-50  ml-0 mr-0 lg:ml-20 lg:mr-20 lg:mt-[50px] mt-[0px] ${isScrolled ? 'header-sticky' : ''}`}
     >
-      <div className='container py-4 mx-auto'>
+      <div className='container py-4 mx-auto bg-white shadow-lg rounded-lg'>
       <div className="flex items-center justify-between w-full gap-4">
         <Link
           className="w-40 md:w-60"
@@ -462,7 +462,7 @@ function Footer({menu, main_menu}) {
         <div className="pr-0 xl:pr-16 xl:flex md:justify-between">
           <div className="pr-0 mb-6 md:mb-0 xl:pr-5">
               <div className="flex flex-wrap items-center ">
-                  <h3 className='text-[#00795C] w-full font-bold lg:text-5xl text-3xl mb-3'>Updates in deine Inbox</h3>                 
+                  <h3 className='text-[#00795C] w-full font-bold lg:text-[42px] text-[30px] mb-3'>Updates in deine Inbox</h3>                 
                   <p className="font-normal  text-[#595959] w-full text-[19px]">Bleib auf dem laufenden mit den letzten Ereignissen.</p>
               </div>
               <form className='mt-12 mb-10' >
@@ -505,7 +505,7 @@ function Footer({menu, main_menu}) {
               <path d="M0.732 1.12262C0.964193 0.890493 1.23984 0.706371 1.54319 0.580774C1.84655 0.455177 2.17167 0.390564 2.5 0.390625H15.5C16.163 0.390625 16.7989 0.654017 17.2678 1.12286C17.7366 1.5917 18 2.22758 18 2.89062V10.3906C18 11.0537 17.7366 11.6896 17.2678 12.1584C16.7989 12.6272 16.163 12.8906 15.5 12.8906H8.207L3.5 17.5976V12.8906H2.5C1.83696 12.8906 1.20107 12.6272 0.732233 12.1584C0.263392 11.6896 4.34504e-08 11.0537 4.34504e-08 10.3906V2.89062C-6.11675e-05 2.5623 0.0645516 2.23717 0.190149 1.93382C0.315746 1.63046 0.499868 1.35482 0.732 1.12262ZM2.5 1.39062C2.10218 1.39062 1.72064 1.54866 1.43934 1.82996C1.15804 2.11127 1 2.4928 1 2.89062V10.3906C1 10.7884 1.15804 11.17 1.43934 11.4513C1.72064 11.7326 2.10218 11.8906 2.5 11.8906H4.5V15.1836L7.793 11.8906H15.5C15.8978 11.8906 16.2794 11.7326 16.5607 11.4513C16.842 11.17 17 10.7884 17 10.3906V2.89062C17 2.4928 16.842 2.11127 16.5607 1.82996C16.2794 1.54866 15.8978 1.39062 15.5 1.39062H2.5ZM5 7.39062V5.89062H6V7.39062H5ZM8.5 7.39062V5.89062H9.5V7.39062H8.5ZM12 7.39062V5.89062H13V7.39062H12Z" fill="#595959"/>
               </svg>
 
-          </span> <a href="#" className="hover:underline hover:text-[#00795C] font-normal text-base text-[#595959]">Chat </a>  </p> 
+          </span> <a href="#" className="hover:underline hover:text-[#00795C] font-normal text-[15px] text-[#595959]">Chat </a>  </p> 
       </div>
       <div className='flex mb-11'> 
          <p className="font-normal text-base text-[#595959] flex gap-4 items-center">

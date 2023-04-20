@@ -9,18 +9,18 @@ import {STORE_LOCALE} from '~/lib/const';
  **/
 export function NewsSlider({news}) {
   return (
-    <section className="article-slide pt-[50px]">
+    <section className="article-slide py-[40px] md:py-[60px] lg:py-[80px] xl:py-[100px]">
       <div className="container">
-        <h3 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[55px] tracking-[-0.97152px] mb-6">
+        <h3 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[55px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold">
           Neues und Aktuelles
         </h3>
         <Swiper
           className="article-slider"
           modules={[Navigation, Scrollbar, A11y, Autoplay]}
-          slidesPerView={3}
+          slidesPerView={4}
           navigation
           loop="true"
-          spaceBetween="16"
+          spaceBetween="20"
           // autoplay={{
           //   delay: 2500,
           //   disableOnInteraction: false,
@@ -32,7 +32,15 @@ export function NewsSlider({news}) {
               spaceBetween: 10,
             },
             768: {
+              slidesPerView: 2.5,
+              spaceBetween: 20,
+            },
+            1024: {
               slidesPerView: 3,
+              spaceBetween: 20,
+            },
+            1280: {
+              slidesPerView: 4,
               spaceBetween: 20,
             },
           }}
@@ -75,10 +83,10 @@ export function NewsSlider({news}) {
                     </Link>
                   </div>
                   <div className="max-w-[85%]">
-                    <p className=" text-[24px] text-black lg:text-[35px] w-full font-bold leading-[1.2] mb-[15px]">
+                    <p className=" text-black lg:text-[25px] w-full font-bold leading-[1.2] mb-[15px]">
                       {newItem?.attributes?.name}
                     </p>
-                    <p className=" text-[14px]  text-black lg:text-[15px] w-full font-normal">
+                    <p className="text-[16px] md:text-[18px] text-black  w-full font-normal leading-[-0.400697px]">
                       {truncate(newItem?.attributes?.excerpt)}
                     </p>
                   </div>
