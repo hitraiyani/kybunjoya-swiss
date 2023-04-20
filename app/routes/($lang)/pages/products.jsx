@@ -56,15 +56,15 @@ export default function schweizerSchuhpropktion() {
     <>
       <div className="container">
         <div className="title-wrap mt-[120px] lg:mt-[200px]">
-          <h2 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[55px] tracking-[-0.97152px] mb-6 ">
+          <h2 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[55px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold">
             Produkte
           </h2>
         </div>
       </div>
       <div className="container lg:!pr-0">
-        <div className="flex gap-[20px] flex-col lg:flex-row">
-          <div className="content-col w-full lg:w-[50%] flex flex-col bg-[#EDEDED] rounded-[10px] py-[21px] px-[32px]">
-            <h2 className="text-[24px] lg:text-[30px] xl:text-[35px] text-[#00795C] leading-[1.2] mb-[5px]">
+        <div className="flex gap-[22px] flex-col lg:flex-row">
+          <div className="content-col w-full lg:w-[40%] flex flex-col bg-[#EDEDED] rounded-[10px] py-[27px] px-[32px]">
+            <h2 className="text-[24px] lg:text-[30px] text-[#00795C] leading-[1.2] mb-[10px]">
               {page?.main_title?.value}
             </h2>
             <div
@@ -73,7 +73,7 @@ export default function schweizerSchuhpropktion() {
                 __html: toHTML(page?.short_description?.value),
               }}
             ></div>
-            <h2 className="text-[20px] lg:text-[25px] text-[#00795C] leading-[1.2] mb-[5px] mt-[47px]">
+            <h2 className="text-[20px] lg:text-[25px] text-[#00795C] leading-[1.2] mb-[10px] mt-[47px]">
               {page?.head_title?.value}
             </h2>
             <div
@@ -89,31 +89,51 @@ export default function schweizerSchuhpropktion() {
               >
                 Mehr über Technologie
               </Link>
-              <div className="products-swiper-buttons relative flex gap-[10px] xl:gap-[20px]">
+              {/* <div className="products-swiper-buttons relative flex gap-[10px] xl:gap-[20px]">
                 <div
                   className="swiper-button-next-product-gallery rounded-full w-[50px] h-[50px] xl:w-[74px] xl:h-[74px] text-black hover:bg-black hover:text-white after:text-[30px] bg-[#DEDEDE] flex items-center justify-center rotate-180"
                 ><ArrowRight className={'relative left-[3px] w-[25px] h-[30px] xl:w-[40px] xl:h-[40px]'} /></div>
                 <div
                   className="swiper-button-prev-product-gallery rounded-full w-[50px] h-[50px] xl:w-[74px] xl:h-[74px] text-black hover:bg-black hover:text-white after:text-[30px] bg-[#DEDEDE] flex items-center justify-center"
                 ><ArrowRight className={'relative left-[3px] w-[25px] h-[30px] xl:w-[40px] xl:h-[40px]'} /></div>
-              </div>
+              </div> */}
             </div>
           </div>
-          <div className="img-col w-full lg:w-[50%] overflow-hidden">
+          <div className="img-col w-full lg:w-[60%] overflow-hidden product-slider">
             <Swiper
               modules={[Navigation, Scrollbar, A11y, Autoplay, Pagination]}
-              slidesPerView={1}
+              slidesPerView={1.6}
               spaceBetween={20}
-              loop="false"
-              autoplay="false"
-              // pagination={{clickable: false}}
-              navigation={{
-                nextEl: '.swiper-button-next-product-gallery',
-                prevEl: '.swiper-button-prev-product-gallery',
-              }}
-              className="h-full overflow-visible rounded-xl flex flex-col"
+              navigation
+              className="h-full overflow-visible flex flex-col"
             >
-              {sliderImages.map((image, index) => (
+              <SwiperSlide>
+                <div className="imgs-wrap flex flex-col gap-[20px]">
+                  <img
+                    className="w-full object-cover rounded-[10px] h-auto lg:h-[310px]"
+                    src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Mask_group_2.png?v=1681551601"
+                    alt=""
+                  />
+                  <div className='img-2 rounded-[10px] h-full xl:w-[60%] w-full xl:h-[40%] ml-auto block'>
+
+                  <img
+                    className="object-cover rounded-[10px] w-full h-full ml-auto block"
+                    src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Mask_group_2.png?v=1681551601"
+                    alt=""
+                  />
+                  </div>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div className="imgs-wrap flex flex-col gap-[20px] h-full">
+                  <img
+                    className="h-full w-full object-cover rounded-[10px] "
+                    src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/PD04789_-_XL_partnerships_group_image11_944d2487-d106-40c1-81c2-cddcca336bfe.png?v=1681971908"
+                    alt=""
+                  />
+                </div>
+              </SwiperSlide>
+              {/* {sliderImages.map((image, index) => (
                 <SwiperSlide key={index}>
                   <div className="imgs-wrap grid grid-rows-2 grid-flow-col gap-[20px] lg:h-[700px]">
                     <img
@@ -133,7 +153,7 @@ export default function schweizerSchuhpropktion() {
                     />
                   </div>
                 </SwiperSlide>
-              ))}
+              ))} */}
             </Swiper>
           </div>
         </div>

@@ -6,11 +6,11 @@ import { toHTML } from '~/lib/utils';
 export function ProductBrandSection({data}) {
 
   return (
-    <Section className={'collectionsGrid-sec mt-[50px] md:mt-[80px] lg:mt-[100px] xl:mt-[180px]'}>
+    <Section className={'collectionsGrid-sec mt-[40px] md:mt-[60px] lg:mt-[80px] xl:mt-[100px]'}>
       <div className="container">
-        <h1 className='text-[#000000] text-[24px] lg:text-[35px] mb-[33px] leading-[1.2] max-w-[1015px]'>{data?.head_title?.value}</h1>
+        <h1 className='text-[#000000] text-[24px] lg:text-[30px] mb-[33px] leading-[1.2] max-w-[676px] font-bold'>{data?.head_title?.value}</h1>
         <div className="md:grid md:grid-rows-2 xl:grid-rows-2 md:grid-flow-col gap-7 flex flex-col">
-          <div className="collectionsGrid-item relative">
+          <div className="collectionsGrid-item relative collectionsGrid-item-prodcut">
             <Link to={`${data?.brand_1_redirect?.value}`} className="relative block w-full overflow-hidden">
               <div className="img-wrap w-full h-full absolute inset-0">
                 <Image
@@ -20,7 +20,7 @@ export function ProductBrandSection({data}) {
                 />
               </div>
               <div className="img-overlay absolute w-full h-2/4 inset-x-0 bottom-0"></div>
-              <Heading className="flex flex-col font-normal text-[30px] lg:text-[34px] xl:text-[45px] text-white absolute bottom-0 left-0 p-5 btn gap-5 leading-none">
+              <Heading className="whitespace-pre-wrap flex flex-col font-normal text-[30px]  xl:text-[40px] text-white absolute bottom-0 left-0 p-5 btn gap-5 ">
                 <span dangerouslySetInnerHTML={{
                   __html: data?.brand_1_text?.value,
                 }}></span>
@@ -42,7 +42,7 @@ export function ProductBrandSection({data}) {
                 />
               </div>
               <div className="img-overlay absolute w-full h-2/4 inset-x-0 bottom-0"></div>
-              <Heading className="flex flex-col font-normal text-[30px] lg:text-[34px] xl:text-[45px] text-white absolute bottom-0 left-0 p-5 btn gap-5 leading-none">
+              <Heading className="whitespace-pre-wrap flex flex-col font-normal text-[30px]  xl:text-[40px] text-white absolute bottom-0 left-0 p-5 btn gap-5 ">
               <span dangerouslySetInnerHTML={{
                   __html: (data?.brand_2_text?.value),
                 }}></span>
@@ -67,7 +67,7 @@ export function ProductBrandSection({data}) {
                 />
               </div>
               <div className="img-overlay absolute w-full h-2/4 inset-x-0 bottom-0"></div>
-              <Heading className="flex flex-col font-normal text-[30px] lg:text-[34px] xl:text-[45px] text-white absolute bottom-0 left-0 p-5 btn gap-5 leading-none">
+              <Heading className="whitespace-pre-wrap flex flex-col font-normal text-[30px]  xl:text-[40px] text-white absolute bottom-0 left-0 p-5 btn gap-5 ">
                <span dangerouslySetInnerHTML={{
                   __html: (data?.brand_3_text?.value),
                 }}></span>
@@ -93,7 +93,7 @@ export function ProductBrandSection({data}) {
               </div>
               <div className="img-overlay absolute w-full h-2/4 inset-x-0 bottom-0"></div>
               <div className="flex absolute bottom-0 left-0 p-5 w-full items-end h-full">
-                <Heading className="flex flex-col font-normal text-[30px] lg:text-[34px] xl:text-[45px] text-white leading-none p-5 btn w-2/4 gap-5">
+                <Heading className="whitespace-pre-wrap flex flex-col font-normal text-[30px] xl:text-[40px] text-white btn w-2/4 gap-5">
                 <span dangerouslySetInnerHTML={{
                   __html: (data?.brand_4_text?.value),
                 }}></span>

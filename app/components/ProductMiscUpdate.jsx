@@ -5,8 +5,8 @@ import {Link} from '~/components';
 export function ProductMiscUpdate({data}) {
   return (
     <>
-      <div className="about-sec container mt-[50px] md:mt-[80px] lg:mt-[100px] xl:mt-[123px]">
-        <h1 className="text-[#000000] text-[18px] mb-[30px] xl:mb-[60px] pb-[20px] uppercase border-b border-black font-normal">
+      <div className="about-sec container mt-[40px] md:mt-[60px] lg:mt-[80px] xl:mt-[100px]">
+        <h1 className="text-[#000000] text-[18px] mb-[30px] xl:mb-[44px] pb-[20px] uppercase border-b border-black font-normal">
           {data?.head_title?.value}
         </h1>
         <div className="flex flex-col lg:flex-row gap-y-[20px] gap-x-[30px] xl:gap-x-[64px]">
@@ -17,12 +17,12 @@ export function ProductMiscUpdate({data}) {
               alt=""
             />
           </div>
-          <div className="content-col flex-1 flex flex-col justify-center">
-            <h2 className="text-[35px] lg:text-[45px] text-[#000000] leading-[1.2] tracking-[-0.971px] mb-[17px]">
+          <div className="content-col flex-1 flex flex-col">
+            <h2 className="text-[35px] lg:text-[40px] text-[#000000] leading-[1.2] tracking-[-0.971px] mb-[17px] font-medium">
               {data.sub_section_1_title.value}
             </h2>
             <div
-              className="desc text-black text-[16px] lg:text-[25px] leading-[1.3] font-[400] mb-[30px] lg:mb-[50px]"
+              className="desc text-black text-[16px] lg:text-[25px] leading-[1.3] font-[400] mb-[30px]"
               dangerouslySetInnerHTML={{
                 __html: toHTML(data?.main_section_text?.value),
               }}
@@ -40,7 +40,7 @@ export function ProductMiscUpdate({data}) {
       </div>
 
       <div className="about-sec container mt-[30px] lg:mt-[60px] mb-[50px] md:mb-[80px] lg:mb-[100px] xl:mb-[170px]">
-        <h1 className="text-[#000000] text-[18px] mb-[30px] xl:mb-[60px] pb-[20px] uppercase border-b border-black font-normal">
+        <h1 className="text-[#000000] text-[18px] mb-[30px] xl:mb-[44px] pb-[20px] uppercase border-b border-black font-normal">
           {data?.sub_title?.value}
         </h1>
         <div className="flex flex-col xl:flex-row gap-[50px] items-start">

@@ -372,6 +372,42 @@ p:last-child {
 }
 /* End about section  */
 
+/* Product page css */
+.product-slider .swiper-button-disabled {
+  display: none;
+}
+.product-slider .swiper-button-next,
+.product-slider .swiper-button-prev {
+  width: 73.68px;
+  height: 73.68px;
+  background: #fff;
+  border-radius: 100px;
+  outline: 5px solid rgba(237, 237, 237, 0.6);
+}
+.product-slider .swiper-button-next:hover,
+.product-slider .swiper-button-prev:hover {
+  background: #00795c;
+}
+.product-slider .swiper-button-next:after,
+.product-slider .swiper-rtl .swiper-button-prev:after,
+.product-slider .swiper-button-prev:after,
+.product-slider .swiper-rtl .swiper-button-next:after {
+  color: #000;
+  font-size: 30px;
+}
+.product-slider .swiper-button-next:hover:after,
+.product-slider .swiper-rtl .swiper-button-prev:hover:after,
+.product-slider .swiper-button-prev:hover:after,
+.product-slider .swiper-rtl .swiper-button-next:hover:after  {
+  color: #fff;
+}
+@media(max-width:1023px){
+  .product-slider .swiper-slide {
+    height: auto;
+  }
+}
+/* End Product page css */
+
 /* Product linsting page css */
 .product-list-hero-img {
   box-shadow: 0px 0px 0.9821px rgba(0, 0, 0, 0.05),
