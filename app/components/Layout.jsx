@@ -178,11 +178,12 @@ function MenuMobileNav({menu, onClose}) {
                   target={item.target}
                   className='kybunjoya-menu-hover title text-[#00795C] text-[26px] mb-[12px]'
                   data-image={item.title}
+                  onClick={onClose}
                 >
                   {item.title}
                 </Link>
                 {item.items.length > 0 && (
-                  <SubMegaMenu menu_items={item.items} />
+                  <SubMegaMenu menu_items={item.items}  onClose={onClose} />
                 )}
               </li>
             );
@@ -193,7 +194,7 @@ function MenuMobileNav({menu, onClose}) {
   );
 }
 
-function SubMegaMenu({menu_items}) {
+function SubMegaMenu({menu_items,onClose}) {
 
   return (
     <ul className='sub-menu'>
@@ -203,6 +204,7 @@ function SubMegaMenu({menu_items}) {
                 to={item.to}
                 target={item.target}
                 className='text-[16px] text-[#595959] block leading-none'
+                onClick={onClose}
               >{item.title}</Link>
               </li>)
        })}
