@@ -53,7 +53,21 @@ export function NewsSlider({news}) {
               } else if (newItem.attributes.image == null) {
                 imgSrc = '';
               }
+              var badgeLabel = '';
+              var brandName = '';
+              if (newItem?.attributes?.brands.length > 0) {
+                var brand = newItem?.attributes?.brands[0];
+                for (var nc = 0; nc < brand.translations.length; nc++) {
+                  if (brand.translations[nc].locale == STORE_LOCALE) {
+                    var brandName = brand.translations[nc].webName
+                      ? brand.translations[nc].webName
+                      : brand.translations[nc].name;
+                      badgeLabel = brandName;
+                  }
+                }
+              }
               var catName = '';
+              
               if (newItem?.attributes?.newsCategory != null) {
                 var cat = newItem?.attributes?.newsCategory;
                 for (var nc = 0; nc < cat.translations.length; nc++) {
@@ -61,6 +75,9 @@ export function NewsSlider({news}) {
                     var catName = cat.translations[nc].webName
                       ? cat.translations[nc].webName
                       : cat.translations[nc].name;
+                      if (badgeLabel != '') {
+                        badgeLabel+= "/"+catName;
+                      }
                   }
                 }
               }
@@ -78,7 +95,7 @@ export function NewsSlider({news}) {
                         ></img>
                       </div>
                       <p className="text-[16px] text-white font-normal mb-[5px] bg-[#00795C] leading-none top-0 right-0 w-fit py-[10px] px-[16px] rounded-tr-md absolute shadow-md">
-                        Brand {catName ? `/ ${catName}` : ''}
+                      {badgeLabel}
                       </p>
                     </Link>
                   </div>
