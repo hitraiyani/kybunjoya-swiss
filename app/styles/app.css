@@ -463,6 +463,11 @@ p:last-child {
   top: 63%;
   transform: translateY(-50%);
 }
+@media (max-width:1024px) {
+  .img-info-list{
+    display: none;
+  }
+}
 .img-info-list span {
   display: block;
   text-align: right;
