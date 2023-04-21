@@ -102,7 +102,7 @@ export default function schweizerSchuhpropktion() {
             <div className="flex mt-auto justify-between items-center flex-wrap gap-[15px]">
               <Link
                 to=""
-                className="px-[35px] py-[22px] bg-black text-[18px] font-medium text-white rounded-[100px] w-fit hover:bg-[#00795c] hover:!text-white text-center"
+                className="md:px-[35px] px-[30px] md:py-[22px] py-[20px] bg-black text-[16px] md:text-[18px] font-medium text-white rounded-[100px] w-fit hover:bg-[#00795c] hover:!text-white text-center"
               >
                 Mehr über Technologie
               </Link>

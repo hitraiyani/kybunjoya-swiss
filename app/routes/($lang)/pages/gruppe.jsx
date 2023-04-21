@@ -56,35 +56,35 @@ export default function gorup() {
             />
           </div>
         </section>
-        <section className="rich-text-sec mt-[66px]">
+        <section className="rich-text-sec py-[20px] md:py-[30px] lg:py-[40px] xl:py-[50px] pt-[40px] md:pt-[60px] lg:pt-[80px] xl:pt-[100px]">
           <div className="rich-text-inner">
             <div className="title-wrap">
-              <h2 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[55px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold">
+              <h2 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[55px] tracking-[-1.05984px] mb-[20px] md:mb-[30px] xl:mb-[42px] font-bold">
                 {page?.gruppe_page?.reference?.values_section_title?.value}
               </h2>
             </div>
             <div className="flex flex-col lg:flex-row gap-y-[30px] gap-x-[57px]">
-              <div className="col-left w-[50%]">
-                <div className="desc text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
+              <div className="col-left w-full lg:w-[50%]">
+                <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
                   dangerouslySetInnerHTML={{
                     __html: toHTML(page?.gruppe_page?.reference?.values_section_left_short_desc?.value),
                   }}
                  >
                 </div>
-                <div className="box bg-[#EDEDED] rounded-[10px] px-[39px] py-[45px] mt-[32px]">
+                <div className="box bg-[#EDEDED] rounded-[10px] p-[30px] lg:px-[39px] lg:py-[45px] mt-[32px]">
                   <div className="flex flex-col lg:flex-row">
-                    <div className="title-wrap w-[40%]">
+                    <div className="title-wrap w-full lg:w-[40%]">
                       <h3
-                        className="text-[30px] text-[#00795C] font-bold leading-[1.2] mb-[20px]"
+                        className="text-[24px] md:text-[28px] xl:text-[30px] text-[#00795C] font-bold leading-[1.2] mb-[20px]"
                         dangerouslySetInnerHTML={{
                           __html: toHTML(page?.gruppe_page?.reference?.values_section_left_sub_short_desc?.value),
                         }}
                       >
                       </h3>
                     </div>
-                    <div className="desc w-[60%]"
+                    <div className="desc w-full lg:w-[60%]"
                       >
-                        <ul className="list-disc list-outside flex flex-col gap-[15px] text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4] pl-[40px]"
+                        <ul className="list-disc list-outside flex flex-col gap-[15px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4] pl-[20px] lg:pl-[40px]"
                           dangerouslySetInnerHTML={{
                             __html: (page?.gruppe_page?.reference?.values_section_left_desc?.value),
                           }}
@@ -94,10 +94,10 @@ export default function gorup() {
                   </div>
                 </div>
               </div>
-              <div className="col-right w-[50%]">
+              <div className="col-right w-full lg:w-[50%]">
                 <div className="title-wrap">
                   <h3
-                    className="text-[30px] text-[#00795C] font-bold leading-[1.2] mb-[20px]"
+                    className="text-[24px] md:text-[28px] xl:text-[30px] text-[#00795C] font-bold leading-[1.2] mb-[20px]"
                     dangerouslySetInnerHTML={{
                       __html: toHTML(page?.gruppe_page?.reference?.values_section_right_short_desc?.value),
                     }}
@@ -105,7 +105,7 @@ export default function gorup() {
                   </h3>
                 </div>
                 <div className="desc">
-                  <ul className="list-disc list-outside flex flex-col gap-[15px] text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4] pl-[40px]"
+                  <ul className="list-disc list-outside flex flex-col gap-[15px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4] pl-[20px] lg:pl-[40px]"
                      dangerouslySetInnerHTML={{
                       __html: (page?.gruppe_page?.reference?.values_section_right_desc?.value),
                     }}
@@ -116,23 +116,23 @@ export default function gorup() {
             </div>
           </div>
         </section>
-        <section className="rich-text-sec mt-[100px]">
+        <section className="rich-text-sec py-[20px] md:py-[30px] lg:py-[40px] xl:py-[50px]">
           <div className="rich-text-inner">
             <div className="flex flex-col lg:flex-row gap-y-[30px] gap-x-[73px]">
-              <div className="col-left w-[40%]">
+              <div className="col-left w-full lg:w-[40%]">
                 <div className="title-wrap">
-                  <h2 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[55px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold">
+                  <h2 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[55px] tracking-[-1.05984px] mb-[20px] md:mb-[30px] xl:mb-[42px] font-bold">
                     {page?.gruppe_page?.reference?.work_section_title?.value}
                   </h2>
                 </div>
-                <div className="desc text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
+                <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
                    dangerouslySetInnerHTML={{
                     __html: toHTML(page?.gruppe_page?.reference.work_section_desc.value),
                   }}
                 >
                 </div>
               </div>
-              <div className="col-right flex-1">
+              <div className="col-right w-full lg:flex-1">
                 <div className="img-wrap">
                   <img
                     src={page?.gruppe_page?.reference?.work_section_image?.reference?.image?.url}
@@ -144,10 +144,10 @@ export default function gorup() {
             </div>
           </div>
         </section>
-        <section className="rich-text-sec mt-[100px]">
+        <section className="rich-text-sec py-[20px] md:py-[30px] lg:py-[40px] xl:py-[50px]">
           <div className="rich-text-inner">
             <div className="flex flex-col lg:flex-row gap-y-[30px] gap-x-[20px]">
-              <div className="col-left w-[573px]">
+              <div className="col-left w-full lg:w-[573px]">
                 <div className="img-wrap h-full">
                   <img
                     className="w-full rounded-[10px] h-full object-cover"
@@ -156,16 +156,16 @@ export default function gorup() {
                   />
                 </div>
               </div>
-              <div className="col-right flex-1">
-                <div className="flex flex-col lg:flex-row gap-x-[100px]">
-                  <div className="w-[60%]">
+              <div className="col-right w-full lg:flex-1">
+                <div className="flex flex-col lg:flex-row gap-y-[30px] gap-x-[100px]">
+                  <div className="w-full lg:w-[60%]">
                     <div className="title-wrap">
-                      <h2 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[55px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold">
+                      <h2 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[55px] tracking-[-1.05984px] mb-[20px] md:mb-[30px] xl:mb-[42px] font-bold">
                         {page?.gruppe_page?.reference?.culture_employee_section_title_1?.value}
                       </h2>
                     </div>
                     <div className="desc">
-                      <ul className="list-disc list-outside flex flex-col gap-[15px] text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4] pl-[40px]"
+                      <ul className="list-disc list-outside flex flex-col gap-[15px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4] pl-[20px] lg:pl-[40px]"
                           dangerouslySetInnerHTML={{
                             __html: (page?.gruppe_page?.reference.culture_employee_section_desc_1?.value),
                           }}
@@ -173,13 +173,13 @@ export default function gorup() {
                       </ul>
                     </div>
                   </div>
-                  <div className="w-[40%]">
+                  <div className="w-full lg:w-[40%]">
                     <div className="title-wrap">
                       <h2 className="title text-[#00795C] text-[35px] lg:text-[40px] xl:text-[55px] tracking-[-1.05984px] mb-[20px] lg:mb-[24px] leading-[1.1]">
                         {page?.gruppe_page?.reference?.culture_employee_section_title_2?.value}
                       </h2>
                     </div>
-                    <div className="desc text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
+                    <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
                          dangerouslySetInnerHTML={{
                           __html: (page?.gruppe_page?.reference.culture_employee_section_desc_2?.value),
                         }}
@@ -187,16 +187,16 @@ export default function gorup() {
                     </div>
                   </div>
                 </div>
-                <div className="w-full mt-[64px] max-w-[770px]">
+                <div className="w-full mt-[20px] md:mt[30px] xl:mt-[64px] max-w-[770px]">
                   <div className="title-wrap">
-                    <h2 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[55px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold"
+                    <h2 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[55px] tracking-[-1.05984px] mb-[20px] md:mb-[30px] xl:mb-[42px] font-bold"
                        dangerouslySetInnerHTML={{
                         __html: (page?.gruppe_page?.reference.culture_employee_section_title_3.value),
                       }}
                     >
                     </h2>
                   </div>
-                  <div className="desc text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
+                  <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
                     <p
                       dangerouslySetInnerHTML={{
                         __html: (page?.gruppe_page?.reference.culture_employee_section_desc_3?.value),
@@ -204,7 +204,7 @@ export default function gorup() {
                     >
                     </p>
                   </div>
-                    <div className="btn-wrap flex justify-start mt-[42px]">
+                    <div className="btn-wrap flex justify-start mt-[20px] md:mt-[30px] xl:mt-[42px]">
                       <Link
                         to={page?.gruppe_page?.reference.culture_employee_section_cta?.value}
                         className="w-fit px-[30px] py-[15px] bg-black rounded-[100px] transition-all !text-white text-[18px] tracking-[-0.400697px] hover:bg-[#00795c] font-normal"
@@ -217,11 +217,11 @@ export default function gorup() {
             </div>
           </div>
         </section>
-        <section className="rich-text-sec mt-[100px]">
+        <section className="rich-text-sec py-[20px] md:py-[30px] lg:py-[40px] xl:py-[50px]">
           <div className="rich-text-inner">
             <div className="w-full">
               <div className="title-wrap">
-                <h2 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[55px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold">
+                <h2 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[55px] tracking-[-1.05984px] mb-[20px] md:mb-[30px] xl:mb-[42px] font-bold">
                   {page?.gruppe_page?.reference?.kybun_joya_therapie_section_title?.value}
                 </h2>
               </div>
@@ -234,8 +234,8 @@ export default function gorup() {
               />
             </div>
             <div className="flex flex-col lg:flex-row gap-y-[30px] gap-x-[73px]">
-              <div className="col-left w-[50%]">
-                <div className="desc text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
+              <div className="col-left w-full lg:w-[50%]">
+                <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
                 >
                   <span
                      dangerouslySetInnerHTML={{
@@ -243,8 +243,8 @@ export default function gorup() {
                     }}
                   >
                   </span>
-                  <div className="title-wrap">
-                    <h3 className="text-[30px] text-[#00795C] font-bold leading-[1.2] mb-[20px]">
+                  <div className="title-wrap mt-[30px]">
+                    <h3 className="text-[24px] md:text-[28px] xl:text-[30px] text-[#00795C] font-bold leading-[1.2] mb-[20px]">
                       {page?.gruppe_page?.reference?.kybun_joya_therapie_section_trampolineffekt_title?.value}
                     </h3>
                   </div>
@@ -254,8 +254,8 @@ export default function gorup() {
                     }}
                   >
                   </span>
-                  <div className="title-wrap">
-                    <h3 className="text-[30px] text-[#00795C] font-bold leading-[1.2] mb-[20px]">
+                  <div className="title-wrap mt-[30px]">
+                    <h3 className="text-[24px] md:text-[28px] xl:text-[30px] text-[#00795C] font-bold leading-[1.2] mb-[20px]">
                       {page?.gruppe_page?.reference?.kybun_joya_therapie_section_sensationelle_wirkung_title?.value}
                     </h3>
                   </div>
@@ -267,16 +267,16 @@ export default function gorup() {
                   </span>
                 </div>
               </div>
-              <div className="col-right w-[50%]">
-                <div className="desc text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
+              <div className="col-right w-full lg:w-[50%]">
+                <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
                   <span
                     dangerouslySetInnerHTML={{
                       __html: toHTML(page?.gruppe_page?.reference?.kybun_joya_therapie_section_sensationelle_wirkung_desc_2?.value),
                     }}
                   >
                   </span>
-                  <div className="title-wrap">
-                    <h3 className="text-[30px] text-[#00795C] font-bold leading-[1.2] mb-[20px]">
+                  <div className="title-wrap mt-[30px]">
+                    <h3 className="text-[24px] md:text-[28px] xl:text-[30px] text-[#00795C] font-bold leading-[1.2] mb-[20px]">
                       {page?.gruppe_page?.reference?.kybun_joya_therapie_section_ganzheitliche_title?.value}
                     </h3>
                   </div>
@@ -287,15 +287,15 @@ export default function gorup() {
                   >
                   </span>
                   <div className="flex flex-col lg:flex-row gap-y-[30px] gap-x-[44px] mt-[24px]">
-                    <div className="desc w-[60%]"
+                    <div className="desc w-full lg:w-[60%]"
                       dangerouslySetInnerHTML={{
                         __html: toHTML(page?.gruppe_page?.reference?.kybun_joya_therapie_section_ganzheitliche_desc_2?.value),
                       }}
                     >
                     </div>
-                    <div className="title-wrap w-[40%]">
+                    <div className="title-wrap w-full lg:w-[40%]">
                       <h3
-                        className="text-[30px] text-[#00795C] font-bold leading-[1.2] mb-[20px]"
+                        className="text-[24px] md:text-[28px] xl:text-[30px] text-[#00795C] font-bold leading-[1.2] mb-[20px]"
                         dangerouslySetInnerHTML={{
                           __html: toHTML(page?.gruppe_page?.reference?.kybun_joya_therapie_section_ganzheitliche_desc_3?.value),
                         }}
@@ -308,37 +308,37 @@ export default function gorup() {
             </div>
           </div>
         </section>
-        <section className="rich-text-sec mt-[100px] mb-[100px]">
+        <section className="rich-text-sec py-[20px] md:py-[30px] lg:py-[40px] xl:py-[50px] mb-[40px] md:mb-[60px] lg:mb-[80px] xl:mb-[100px]">
           <div className="rich-text-inner">
             <div className="flex flex-col lg:flex-row-reverse gap-y-[30px] gap-x-[50px]">
-              <div className="col-left w-[40%]">
+              <div className="col-left w-full lg:w-[40%]">
                 <div className="title-wrap">
-                  <h2 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[55px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold">
+                  <h2 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[55px] tracking-[-1.05984px] mb-[20px] md:mb-[30px] xl:mb-[42px] font-bold">
                     {page?.gruppe_page?.reference?.footer_group_title?.value}
                   </h2>
                 </div>
-                <div className="desc text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
+                <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
                    dangerouslySetInnerHTML={{
                     __html: toHTML(page?.gruppe_page?.reference?.footer_group_desc?.value),
                   }}
                  >
                 </div>
                 <div className="title-wrap">
-                  <h2 className="text-[30px] text-[#00795C] font-bold leading-[1.2] mb-[20px]"
+                  <h2 className="text-[24px] md:text-[28px] xl:text-[30px] text-[#00795C] font-bold leading-[1.2] mb-[20px] mt-[30px]"
                      dangerouslySetInnerHTML={{
                       __html: (page?.gruppe_page?.reference?.footer_group_sub_title?.value),
                     }} 
                   >
                   </h2>
                 </div>
-                <div className="desc text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
+                <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
                    dangerouslySetInnerHTML={{
                     __html: toHTML(page?.gruppe_page?.reference?.footer_group_sub_desc?.value),
                   }}
                 >
                 </div>
               </div>
-              <div className="col-right flex-1">
+              <div className="col-right w-full lg:flex-1">
                 <div className="img-wrap h-full">
                   <img
                     className="w-full rounded-[10px] h-full"

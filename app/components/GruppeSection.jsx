@@ -39,7 +39,7 @@ export function GruppeSection({gruppeMenu}) {
                   {quickLinkMenu.map((item, index) => {
                       return (
                         <li key={index}>
-                          <Link to={`${item.to}`} className='text-[30px] md:text-[30px] lg:text-[34px] xl:text-[40px] text-black hover:text[#00795C] block tracking-[-0.97152px] leading-none mb-5'>{item.title}</Link>
+                          <Link to={`${item.to}`} className='text-[24px] md:text-[30px] lg:text-[34px] xl:text-[40px] text-black hover:text[#00795C] block tracking-[-0.97152px] leading-none mb-5'>{item.title}</Link>
                         </li>
                       )
                   })}

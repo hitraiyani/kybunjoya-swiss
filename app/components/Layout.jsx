@@ -238,7 +238,7 @@ function MobileHeader({title, isHome, openCart, openMenu, isMenuOpen}) {
           : ''
       } site-header fixed top-0 inset-x-0 z-50  ml-0 mr-0 lg:ml-20 lg:mr-20 lg:mt-[50px] mt-[0px] ${isScrolled ? 'header-sticky' : ''}`}
     >
-      <div className='container py-4 mx-auto bg-white shadow-lg rounded-lg'>
+      <div className='container py-4 mx-auto bg-white shadow-lg lg:rounded-lg'>
       <div className="flex items-center justify-between w-full gap-4">
         <Link
           className="w-40 md:w-60"

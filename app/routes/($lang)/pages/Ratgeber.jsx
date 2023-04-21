@@ -44,24 +44,24 @@ export default function ratgeber() {
     <>
       <div className="container mt-[120px] lg:mt-[200px]">
         <section className="page-title">
-          <h1 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[65px] tracking-[-0.97152px] mb-6">
+          <h1 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[60px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold">
             {page?.title}
           </h1>
         </section>
         <section className="hero-banner-section ratgeber-banner-section rounded-xl overflow-hidden">
           <div className="hero-banner-inner relative">
             <div className='banner-info'>
-              <div className='flex flex-wrap items-end px-[72px] py-[57px] justify-between'>
-                <div className='title-wrap'>
-                  <h2 className='text-white text-[35px] lg:text-[40px] xl:text-[55px] tracking-[-1.05984px] font-bold leading-[1.1]'
+              <div className='flex flex-col md:flex-row md:items-end px-[40px] py-[40px] xl:px-[72px] xl:py-[57px] justify-between'>
+                <div className='title-wrap w-[300px]'>
+                  <h2 className='text-white text-[30px] lg:text-[40px] xl:text-[55px] tracking-[-1.05984px] font-bold leading-[1.1]'
                   dangerouslySetInnerHTML={{
                     __html: toHTML(page?.ratgeber?.reference?.hero_banner_title?.value),
                   }}
                   ></h2>
                 </div>
-                <div className='dr-info flex gap-[20px] items-start'>
-                  <div className='name w-[280px] text-right'>
-                    <h4 className='font-black text-white text-[100px] leading-[1.1]'>{page?.ratgeber?.reference?.hero_inner_banner_title?.value}</h4>
+                <div className='dr-info flex md:flex-row flex-col gap-[20px] items-start'>
+                  <div className='name md:w-[280px] md:text-right mt-[20px] md:mt-[0]'>
+                    <h4 className='font-black text-white text-[40px] md:text-[50px] lg:text-[70px] xl:text-[100px] leading-[1.1]'>{page?.ratgeber?.reference?.hero_inner_banner_title?.value}</h4>
                   </div>
                   <div className='dr-img'>
                     <img className='rounded-xl' src={page?.ratgeber?.reference?.hero_inner_banner?.reference?.image?.url} alt="" />
@@ -79,20 +79,20 @@ export default function ratgeber() {
             </div>
           </div>
         </section>
-        <section className='about-sec mt-[105px]'>
+        <section className='about-sec mt-[40px] md:mt-[60px] lg:mt-[80px] xl:mt-[100px]'>
           <div className='about-sec-inner flex flex-col lg:flex-row gap-y-[20px] gap-x-[30px] xl:gap-x-[50px]'>
-            <div className='img-col w-[50%]'>
+            <div className='img-col w-full lg:w-[50%]'>
               <img className='w-full rounded-xl' src={page?.ratgeber?.reference?.start_consultation_image?.reference?.image?.url} alt="" />
             </div>
-            <div className='content-info w-[50%]'>
-              <h4 className='text-[40px] tracking-[-0.97152px] font-medium leading-[1.1]'
+            <div className='content-info w-full lg:w-[50%]'>
+              <h4 className='text-[28px] md:text-[30px] lg:text-[40px] tracking-[-0.97152px] font-medium leading-[1.1]'
                   dangerouslySetInnerHTML={{
                     __html: toHTML(page?.ratgeber?.reference?.start_consultation_text?.value),
                   }}
               ></h4>
               <Link
                 className='inline-block rounded-[100px] bg-black text-white
-              text-center px-[59px] py-[25px] hover:bg-[#00795c] hover:text-white text-[18px] max-w-fit mt-[26px] leading-none'
+              text-center px-[40px] lg:px-[59px] py-[20px] lg:py-[25px] hover:bg-[#00795c] hover:text-white text-[16px] lg:text-[18px] max-w-fit mt-[26px] leading-none'
                 to={page?.ratgeber?.reference?.start_consultation_button_redirect?.value}
               >
                 {page?.ratgeber?.reference?.start_consultation_button_text?.value}
@@ -100,17 +100,17 @@ export default function ratgeber() {
             </div>
           </div>
         </section>
-        <section className="four-boxes-section my-[81px]">
+        <section className="four-boxes-section my-[40px] md:my-[60px] lg:my-[80px] xl:my-[100px]">
           <div className="four-boxes-inner">
-            <div className="grid grid-cols-4 gap-[20px]">
+            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-[20px]">
               <div className="item flex flex-col rounded-[10px]">
                 <div className="title-wrap bg-[#00795C] rounded-tl-[10px] rounded-tr-[10px]">
-                  <h4 className="text-white text-[30px] font-bold leading-none p-[20px]">
+                  <h4 className="text-white text-[24px] md:text-[28px] xl:text-[30px] font-bold leading-none p-[20px]">
                     {page?.ratgeber?.reference?.footer_section_title_1?.value}
                   </h4>
                 </div>
                 <div className="content-info px-[20px] pt-[12px] pb-[20px] bg-[#EDEDED] rounded-bl-[10px] rounded-br-[10px] flex flex-col gap-[8px] h-full">
-                  <div className="desc text-[25px] tracking-[-0.400697px] font-normal leading-[1.4]"
+                  <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] tracking-[-0.400697px] font-normal leading-[1.4]"
                     dangerouslySetInnerHTML={{
                       __html: toHTML(page?.ratgeber?.reference?.footer_section_content_1?.value),
                     }}
@@ -118,7 +118,7 @@ export default function ratgeber() {
                   </div>
                   <Link
                     to={page?.ratgeber?.reference?.footer_section_redirect_1?.value}
-                    className='text-[#00795C] flex justify-end items-center gap-[8px] text-[25px] tracking-[-0.400697px] font-normal  mt-auto hover:!text-black'>
+                    className='text-[#00795C] flex justify-end items-center gap-[8px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] tracking-[-0.400697px] font-normal  mt-auto hover:!text-black'>
                     Mehr erfahren
                     <ArrowRightLight
                       className={
@@ -130,12 +130,12 @@ export default function ratgeber() {
               </div>
               <div className="item flex flex-col rounded-[10px]">
                 <div className="title-wrap bg-[#00795C] rounded-tl-[10px] rounded-tr-[10px]">
-                  <h4 className="text-white text-[30px] font-bold leading-none p-[20px]">
+                  <h4 className="text-white text-[24px] md:text-[28px] xl:text-[30px] font-bold leading-none p-[20px]">
                     {page?.ratgeber?.reference?.footer_section_title_2?.value}
                   </h4>
                 </div>
                 <div className="content-info px-[20px] pt-[12px] pb-[20px] bg-[#EDEDED] rounded-bl-[10px] rounded-br-[10px] flex flex-col gap-[8px] h-full">
-                  <div className="desc text-[25px] tracking-[-0.400697px] font-normal leading-[1.4]"
+                  <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] tracking-[-0.400697px] font-normal leading-[1.4]"
                     dangerouslySetInnerHTML={{
                       __html: toHTML(page?.ratgeber?.reference?.footer_section_content_2?.value),
                     }}
@@ -143,7 +143,7 @@ export default function ratgeber() {
                   </div>
                   <Link
                     to={page?.ratgeber?.reference?.footer_section_redirect_2?.value}
-                    className='text-[#00795C] flex justify-end items-center gap-[8px] text-[25px] tracking-[-0.400697px] font-normal  mt-auto hover:!text-black'>
+                    className='text-[#00795C] flex justify-end items-center gap-[8px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] tracking-[-0.400697px] font-normal  mt-auto hover:!text-black'>
                     Mehr erfahren
                     <ArrowRightLight
                       className={
@@ -155,12 +155,12 @@ export default function ratgeber() {
               </div>
               <div className="item flex flex-col rounded-[10px]">
                 <div className="title-wrap bg-[#00795C] rounded-tl-[10px] rounded-tr-[10px]">
-                  <h4 className="text-white text-[30px] font-bold leading-none p-[20px]">
+                  <h4 className="text-white text-[24px] md:text-[28px] xl:text-[30px] font-bold leading-none p-[20px]">
                   {page?.ratgeber?.reference?.footer_section_title_3?.value}
                   </h4>
                 </div>
                 <div className="content-info px-[20px] pt-[12px] pb-[20px] bg-[#EDEDED] rounded-bl-[10px] rounded-br-[10px] flex flex-col gap-[8px] h-full">
-                  <div className="desc text-[25px] tracking-[-0.400697px] font-normal leading-[1.4]"
+                  <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] tracking-[-0.400697px] font-normal leading-[1.4]"
                     dangerouslySetInnerHTML={{
                       __html: toHTML(page?.ratgeber?.reference?.footer_section_content_3?.value),
                     }}
@@ -168,7 +168,7 @@ export default function ratgeber() {
                   </div>
                   <Link
                     to={page?.ratgeber?.reference?.footer_section_redirect_3?.value}
-                    className='text-[#00795C] flex justify-end items-center gap-[8px] text-[25px] tracking-[-0.400697px] font-normal  mt-auto hover:!text-black'>
+                    className='text-[#00795C] flex justify-end items-center gap-[8px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] tracking-[-0.400697px] font-normal  mt-auto hover:!text-black'>
                     Mehr erfahren
                     <ArrowRightLight
                       className={
@@ -180,12 +180,12 @@ export default function ratgeber() {
               </div>
               <div className="item flex flex-col rounded-[10px]">
                 <div className="title-wrap bg-[#00795C] rounded-tl-[10px] rounded-tr-[10px]">
-                  <h4 className="text-white text-[30px] font-bold leading-none p-[20px]">
+                  <h4 className="text-white text-[24px] md:text-[28px] xl:text-[30px] font-bold leading-none p-[20px]">
                     {page?.ratgeber?.reference?.footer_section_title_4?.value}
                   </h4>
                 </div>
                 <div className="content-info px-[20px] pt-[12px] pb-[20px] bg-[#EDEDED] rounded-bl-[10px] rounded-br-[10px] flex flex-col gap-[8px] h-full">
-                  <div className="desc text-[25px] tracking-[-0.400697px] font-normal leading-[1.4]"
+                  <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] tracking-[-0.400697px] font-normal leading-[1.4]"
                     dangerouslySetInnerHTML={{
                       __html: toHTML(page?.ratgeber?.reference?.footer_section_content_4?.value),
                     }}
@@ -193,7 +193,7 @@ export default function ratgeber() {
                   </div>
                   <Link
                     to={page?.ratgeber?.reference?.footer_section_redirect_4?.value}
-                    className='text-[#00795C] flex justify-end items-center gap-[8px] text-[25px] tracking-[-0.400697px] font-normal  mt-auto hover:!text-black'>
+                    className='text-[#00795C] flex justify-end items-center gap-[8px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] tracking-[-0.400697px] font-normal  mt-auto hover:!text-black'>
                     Mehr erfahren
                     <ArrowRightLight
                       className={
