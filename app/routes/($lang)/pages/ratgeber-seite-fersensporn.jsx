@@ -78,7 +78,7 @@ export default function ratgeberSeiteFersensporn() {
       link.addEventListener('click', (event) => {
         event.preventDefault();
         const targetId = link.dataset.target;
-        const headerHeight = 70;
+        const headerHeight = 90;
         scrollToSection(targetId,headerHeight);
       });
     });
