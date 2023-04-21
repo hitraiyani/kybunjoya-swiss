@@ -387,7 +387,7 @@ export default function Collection() {
                                 alt=""
                               />
                             </div>
-                            <div className="info bg-[#fff] p-[40px] xl:py-[80px] xl:px-[30px] relative z-[1] w-[90%] xl:w-[77%] ml-auto rounded-[10px] top-[48px] mr-auto xl:mr-[50px]">
+                            <div className="info bg-[#fff] p-[20px] xl:py-[80px] xl:px-[30px] relative z-[1] w-[90%] xl:w-[77%] ml-auto rounded-[10px] top-[48px] mr-auto xl:mr-[50px]">
                               <KybunShopAndShopFinder />
                               <div className="desc mt-[30px] md:mt-[40px] xl:mt-[68px]">
                                 <h3 className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
@@ -419,7 +419,7 @@ export default function Collection() {
                                 alt=""
                               />
                             </div>
-                            <div className="info bg-[#fff] p-[40px] xl:py-[80px] xl:px-[30px] relative z-[1] w-[90%] xl:w-[77%] ml-auto rounded-[10px] top-[48px] mr-auto xl:mr-[50px]">
+                            <div className="info bg-[#fff] p-[20px] xl:py-[80px] xl:px-[30px] relative z-[1] w-[90%] xl:w-[77%] ml-auto rounded-[10px] top-[48px] mr-auto xl:mr-[50px]">
                               <KybunShopAndShopFinder />
                               <div className="desc mt-[68px]">
                                 <h3 className="text-[18px] lg:text-[25px] text-black font-normal tracking-[-0.400697px]"
@@ -451,7 +451,7 @@ export default function Collection() {
                                 alt=""
                               />
                             </div>
-                            <div className="info bg-[#fff] p-[40px] xl:py-[80px] xl:px-[30px] relative z-[1] w-[90%] xl:w-[77%] ml-auto rounded-[10px] top-[48px] mr-auto xl:mr-[50px]">
+                            <div className="info bg-[#fff] p-[20px] xl:py-[80px] xl:px-[30px] relative z-[1] w-[90%] xl:w-[77%] ml-auto rounded-[10px] top-[48px] mr-auto xl:mr-[50px]">
                               <KybunShopAndShopFinder />
                               <div className="desc mt-[68px]">
                                 <h3 className="text-[18px] lg:text-[25px] text-black font-normal tracking-[-0.400697px]"
@@ -483,7 +483,7 @@ export default function Collection() {
                                 alt=""
                               />
                             </div>
-                            <div className="info bg-[#fff] p-[40px] xl:py-[80px] xl:px-[30px] relative z-[1] w-[90%] xl:w-[77%] ml-auto rounded-[10px] top-[48px] mr-auto xl:mr-[50px]">
+                            <div className="info bg-[#fff] p-[20px] xl:py-[80px] xl:px-[30px] relative z-[1] w-[90%] xl:w-[77%] ml-auto rounded-[10px] top-[48px] mr-auto xl:mr-[50px]">
                               <KybunShopAndShopFinder />
                               <div className="desc mt-[68px]">
                                 <h3 className="text-[18px] lg:text-[25px] text-black font-normal tracking-[-0.400697px]"
@@ -536,14 +536,14 @@ function KybunShopAndShopFinder() {
     <div className="top-btn flex flex-wrap justify-between gap-[20px]">
       <a
         href="#"
-        className="tracking-[-0.400697px] text-[18px] leading-none flex text-center justify-center items-center gap-[10px] bg-[#000] text-white rounded-[100px] px-[53px] py-[20px] min-w-[calc(50%_-_10px)] font-normal hover:!bg-[#00795c] hover:!text-[#fff]"
+        className="tracking-[-0.400697px] text-[18px] leading-none flex text-center justify-center items-center gap-[10px] bg-[#000] text-white rounded-[100px] px-[30px] xl:px-[53px] py-[20px] min-w-[calc(50%_-_10px)] font-normal hover:!bg-[#00795c] hover:!text-[#fff]"
       >
         <IconCart />
         kybun Online-Shop
       </a>
       <a
         href="#"
-        className="tracking-[-0.400697px] text-[18px] leading-none flex text-center justify-center items-center gap-[10px] bg-[#00795C] text-white rounded-[100px] px-[53px] py-[20px] w-fit min-w-[calc(50%_-_10px)] font-normal hover:!bg-[#000000] hover:!text-[#ffffff]"
+        className="tracking-[-0.400697px] text-[18px] leading-none flex text-center justify-center items-center gap-[10px] bg-[#00795C] text-white rounded-[100px] px-[30px] xl:px-[53px] py-[20px] w-fit min-w-[calc(50%_-_10px)] font-normal hover:!bg-[#000000] hover:!text-[#ffffff]"
       >
         <IconMapPin />
         Storefinder

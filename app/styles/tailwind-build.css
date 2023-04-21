@@ -3697,6 +3697,11 @@ video {
     padding-right: 30px;
   }
 
+  .xl\:px-\[53px\] {
+    padding-left: 53px;
+    padding-right: 53px;
+  }
+
   .xl\:px-\[63px\] {
     padding-left: 63px;
     padding-right: 63px;
