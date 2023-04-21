@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {json} from '@shopify/remix-oxygen';
 import {useLoaderData} from '@remix-run/react';
 import {toHTML} from '~/lib/utils';
@@ -57,6 +57,17 @@ export default function schweizerSchuhpropktion() {
     firstSlideImages = sliderImages.slice(0,2);
     restSlideImages = sliderImages.slice(2);
   }
+  const [slidesPerView, setSlidesPerView] = useState(1.6);
+
+  const handleTransitionEnd = (swiper) => {
+    console.log(swiper.activeIndex);
+    if (swiper.activeIndex === 0) {
+      setSlidesPerView(1.6);
+    } else {
+      setSlidesPerView(1);
+    }
+
+  };
 
   return (
     <>
@@ -108,9 +119,10 @@ export default function schweizerSchuhpropktion() {
           <div className="img-col w-full lg:w-[60%] overflow-hidden product-slider">
             <Swiper
               modules={[Navigation, Scrollbar, A11y, Autoplay, Pagination]}
-              slidesPerView={1.6}
+              slidesPerView={slidesPerView}
               spaceBetween={20}
               navigation
+              onSlideChange={handleTransitionEnd}
               className="h-full overflow-visible flex flex-col"
             >
               <SwiperSlide>
