@@ -123,7 +123,7 @@ export default function schweizerSchuhpropktion() {
               spaceBetween={20}
               navigation
               onSlideChange={handleTransitionEnd}
-              className="h-full overflow-visible flex flex-col"
+              className="h-full overflow-visible flex flex-col lg:h-[660px]"
             >
               <SwiperSlide>
                 <div className="imgs-wrap flex flex-col gap-[20px]">
@@ -147,7 +147,7 @@ export default function schweizerSchuhpropktion() {
                     <SwiperSlide key={index}>
                       <div className="imgs-wrap flex flex-col gap-[20px] h-full">
                         <img
-                          className="h-full w-full object-cover rounded-[10px] "
+                          className="h-full w-full object-cover rounded-[10px]"
                           src={image}
                           alt=""
                         />
