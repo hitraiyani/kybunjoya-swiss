@@ -165,7 +165,7 @@ export default function ratgeberSeiteFersensporn() {
                       ?.value
                   }
                 </h2>
-                <h3 className="text-[30px] text-[#00795C] font-bold leading-[1.2] mb-[20px]">
+                <h3 className="text-[24px] md:text-[28px] xl:text-[30px] text-[#00795C] font-bold leading-[1.2] mb-[20px]">
                   {
                     page?.ratgeber_seite_fersensporn?.reference
                       ?.head_title_sub_secondary?.value
@@ -173,10 +173,10 @@ export default function ratgeberSeiteFersensporn() {
                 </h3>
               </div>
             </div>
-            <div className="flex flex-col lg:flex-row gap-y-[30px] gap-x-[93px]">
-              <div className="col-left w-[65%]">
+            <div className="flex flex-col lg:flex-row gap-y-[30px] lg:gap-x-[50px] xl:gap-x-[93px]">
+              <div className="col-left w-full lg:w-[65%]">
                 <div
-                  className="desc text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
+                  className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
                   dangerouslySetInnerHTML={{
                     __html: toHTML(
                       page?.ratgeber_seite_fersensporn?.reference?.head_desc
@@ -184,7 +184,7 @@ export default function ratgeberSeiteFersensporn() {
                     ),
                   }}
                 ></div>
-                <div className="box bg-[#EDEDED] rounded-[10px] px-[63px] py-[49px] mt-[43px]">
+                <div className="box bg-[#EDEDED] rounded-[10px] p-[30px] xl:px-[63px] xl:py-[49px] mt-[43px]">
                   <h3 className="text-[35px] xl:text-[40px] text-[#00795C] font-bold leading-[1.2] tracking-[-0.97152px] mb-[33px]">
                     {
                       page?.ratgeber_seite_fersensporn?.reference
@@ -200,7 +200,7 @@ export default function ratgeberSeiteFersensporn() {
                   ></span>
                 </div>
               </div>
-              <div className="col-right w-[35%]">
+              <div className="col-right w-full lg:w-[35%]">
                 <div className="video-info">
                   {mainVideoSection?.video_url && (
                     <div className="video-wrap w-full aspect-video rounded-[10px] relative overflow-hidden">
@@ -215,7 +215,7 @@ export default function ratgeberSeiteFersensporn() {
                     </div>
                   )}
                   <div className="info mt-[12px]">
-                    <h4 className="desc text-[25px] text-[#00795C] tracking-[-0.400697px] font-bold leading-[1.2] mb-[5px]">
+                    <h4 className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-[#00795C] tracking-[-0.400697px] font-bold leading-[1.2] mb-[5px]">
                       {mainVideoSection?.video_title}
                     </h4>
                     <div className="desc text-[18px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
@@ -232,6 +232,20 @@ export default function ratgeberSeiteFersensporn() {
                       navigation={{
                         prevEl: '.swiper-button-next-video',
                         nextEl: '.swiper-button-prev-video',
+                      }}
+                      breakpoints={{
+                        0: {
+                          slidesPerView:1,
+                        },
+                        768: {
+                          slidesPerView:2,
+                        },
+                        1024: {
+                          slidesPerView:1,
+                        },
+                        1800: {
+                          slidesPerView:2,
+                        }
                       }}
                       className="h-full overflow-visible rounded-xl flex flex-col"
                     >
@@ -251,7 +265,7 @@ export default function ratgeberSeiteFersensporn() {
                                   />
                                 </div>
                                 <div className="info mt-[12px]">
-                                  <h4 className="desc text-[25px] text-[#00795C] tracking-[-0.400697px] font-bold leading-[1.2] mb-[5px]">
+                                  <h4 className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] tracking-[-0.400697px] font-bold leading-[1.2] mb-[5px] text-[#00795C]">
                                     {item?.video_title}
                                   </h4>
                                   <div className="desc text-[18px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
@@ -263,14 +277,14 @@ export default function ratgeberSeiteFersensporn() {
                           );
                         })}
                     </Swiper>
-                    <div className="absolute top-[16%] z-[1] rounded-full swiper-button-next-video border-[5px] border-[rgba(0,_148,_112,_0.3)] left-[-24px]">
+                    <div className="absolute top-[26%] min-[1800px]:top-[16%] z-[1] rounded-full swiper-button-next-video border-[5px] border-[rgba(0,_148,_112,_0.3)] left-[-24px]">
                       <div className="rounded-full w-[45px] h-[45px] text-white hover:bg-black hover:text-white after:text-[30px] bg-[#00795c] flex items-center justify-center rotate-180">
                         <ArrowRight
                           className={'relative left-[1px] w-[20px] h-[20px]'}
                         />
                       </div>
                     </div>
-                    <div className="absolute top-[16%] z-[1] rounded-full swiper-button-prev-video border-[5px] border-[rgba(0,_148,_112,_0.3)] right-[-24px]">
+                    <div className="absolute top-[26%] min-[1800px]:top-[16%] z-[1] rounded-full swiper-button-prev-video border-[5px] border-[rgba(0,_148,_112,_0.3)] right-[-24px]">
                       <div className="rounded-full w-[45px] h-[45px] text-white hover:bg-black hover:text-white after:text-[30px] bg-[#00795c] flex items-center justify-center">
                         <ArrowRight
                           className={'relative left-[2px] w-[20px] h-[20px]'}
@@ -283,7 +297,7 @@ export default function ratgeberSeiteFersensporn() {
             </div>
           </div>
         </section>
-        <section className="relevante-links-sec mt-[140px]">
+        <section className="relevante-links-sec mt-[40px] md:mt-[60px] lg:mt-[80px] xl:mt-[100px]">
           <div className="title-wrap">
             <h2 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[55px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold">
               {
@@ -292,17 +306,17 @@ export default function ratgeberSeiteFersensporn() {
               }
             </h2>
           </div>
-          <div className="flex flex-row gap-[20px]">
-            <div className="col-left w-[50%]">
-              <div className="flex gap-[20px] h-full">
+          <div className="flex flex-col xl:flex-row gap-[20px]">
+            <div className="col-left w-full xl:w-[50%]">
+              <div className="flex flex-col  md:flex-row gap-[20px] h-full">
                 {relevanteLinksSectionLeftPart.map((item, index) => {
                   return (
                     <div
                       key={index}
-                      className="item w-[50%] shadow-[0px_0px_0.9821px_2px_rgba(0,0,0,0.05),0px_3.9284px_7.8568px_1px_rgba(0,0,0,0.1)] rounded-[10px] h-full"
+                      className="item w-full md:w-[50%] shadow-[0px_0px_0.9821px_2px_rgba(0,0,0,0.05),0px_3.9284px_7.8568px_1px_rgba(0,0,0,0.1)] rounded-[10px] h-full"
                     >
                       <div className="box h-full flex flex-col items-center px-[20px] py-[15px]">
-                        <div className="img-title-wrap flex flex-col mb-[10px] h-full justify-center">
+                        <div className="img-title-wrap flex flex-col my-[30px] xl:mb-[10px] h-full justify-center">
                           <img
                             className="max-w-full h-[50px] object-contain"
                             src={item?.brand_logo}
@@ -315,7 +329,7 @@ export default function ratgeberSeiteFersensporn() {
                         <div className="link-wrap mt-auto w-full">
                           <Link
                             to={item?.redirect_link_url}
-                            className="text-[#00795C] flex justify-end items-center gap-[8px] text-[25px] tracking-[-0.400697px] font-normal  mt-auto hover:!text-black"
+                            className="text-[#00795C] flex justify-end items-center gap-[8px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] tracking-[-0.400697px] font-normal  mt-auto hover:!text-black"
                           >
                             {item?.redirect_link_text}
                             <ArrowRightLight className={'w-[30px] h-[30px]'} />
@@ -327,23 +341,23 @@ export default function ratgeberSeiteFersensporn() {
                 })}
               </div>
             </div>
-            <div className="col-right w-[50%]">
+            <div className="col-right w-full xl:w-[50%]">
               <div className="title-wrap bg-[#00795C] rounded-tl-[10px] rounded-tr-[10px]">
-                <h4 className="text-[35px] text-white font-bold leading-[1.2] text-left px-[20px] py-[17px]">
+                <h4 className="text-[24px] md:text-[28px] xl:text-[35px] text-white font-bold leading-[1.2] text-left px-[20px] py-[17px]">
                   {
                     page?.ratgeber_seite_fersensporn?.reference
                       ?.relevante_links_section_right_part_title?.value
                   }
                 </h4>
               </div>
-              <div className="flex gap-[20px] px-[20px] py-[15px] shadow-[0px_0px_0.9821px_2px_rgba(0,0,0,0.05),0px_3.9284px_7.8568px_1px_rgba(0,0,0,0.1)] rounded-bl-[10px] rounded-br-[10px]">
+              <div className="flex flex-col  md:flex-row gap-[20px] px-[20px] py-[15px] shadow-[0px_0px_0.9821px_2px_rgba(0,0,0,0.05),0px_3.9284px_7.8568px_1px_rgba(0,0,0,0.1)] rounded-bl-[10px] rounded-br-[10px]">
                 {relevanteLinksSectionRightPart.map((item, index) => {
                   return (
-                    <div className="item w-[50%]" key={index}>
-                      <h4 className="desc text-[25px] text-[#00795C] font-bold leading-none mb-[10px]">
+                    <div className="item w-full flex flex-col md:w-[50%]" key={index}>
+                      <h4 className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-[#00795C] font-bold leading-none mb-[10px]">
                         {item?.title}
                       </h4>
-                      <div className="img-wrap relative overflow-hidden rounded-[10px] h-[186px]">
+                      <div className="img-wrap relative overflow-hidden rounded-[10px] h-[186px] mt-auto">
                         <img
                           className="absolute w-full h-full inset-0 object-cover"
                           src={item?.image}
@@ -353,7 +367,7 @@ export default function ratgeberSeiteFersensporn() {
                       <div className="link-wrap mt-[10px]">
                         <Link
                           to={item?.redirect_link_url}
-                          className="text-[#00795C] flex justify-end items-center gap-[8px] text-[25px] tracking-[-0.400697px] font-normal  mt-auto hover:!text-black"
+                          className="text-[#00795C] flex justify-end items-center gap-[8px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] tracking-[-0.400697px] font-normal  mt-auto hover:!text-black"
                         >
                           {item?.redirect_link_text}
                           <ArrowRightLight className={'w-[30px] h-[30px]'} />
@@ -366,7 +380,7 @@ export default function ratgeberSeiteFersensporn() {
             </div>
           </div>
         </section>
-        <section className="rich-text-sec mt-[80px]">
+        <section className="rich-text-sec mt-[40px] md:mt-[60px] lg:mt-[80px] xl:mt-[100px]">
           <div className="rich-text -inner max-w-[1077px]">
             <div className="title-wrap">
               <h2 className="title text-[#00795C] text-[35px] lg:text-[40px] xl:text-[55px] tracking-[-1.05984px] mb-[20px] lg:mb-[40px] leading-[1.1]">
@@ -383,7 +397,7 @@ export default function ratgeberSeiteFersensporn() {
               </h4>
             </div>
             <div
-              className="desc text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
+              className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
               dangerouslySetInnerHTML={{
                 __html: toHTML(
                   page?.ratgeber_seite_fersensporn?.reference
@@ -393,7 +407,7 @@ export default function ratgeberSeiteFersensporn() {
             ></div>
           </div>
         </section>
-        <section className="rich-text-sec mt-[80px]" id="section_2">
+        <section className="rich-text-sec mt-[40px] md:mt-[60px] lg:mt-[80px] xl:mt-[100px]" id="section_2">
           <div className="rich-text-inner">
             <div className="title-wrap">
               <h4 className="title text-[#00795C] text-[35px] lg:text-[40px] xl:text-[45px] tracking-[-0.97152px] mb-[20px] leading-[1.1] font-medium">
@@ -403,9 +417,9 @@ export default function ratgeberSeiteFersensporn() {
                 }
               </h4>
             </div>
-            <div className="flex lg:flex-row flex-col gap-y-[30px] gap-x-[77px] w-full">
-              <div className="col-left w-[50%]">
-                <div className="desc text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mb-[15px]">
+            <div className="flex lg:flex-row flex-col gap-[30px] xl:gap-x-[77px] w-full">
+              <div className="col-left w-full lg:w-[50%]">
+                <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mb-[15px]">
                   <p>
                     <strong>
                       {
@@ -415,7 +429,7 @@ export default function ratgeberSeiteFersensporn() {
                     </strong>
                   </p>
                 </div>
-                <div className="desc text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
+                <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
                   <img
                     className="max-w-full rounded-[10px] float-right ml-[15px] mb-[15px] w-[320px] h-[320px] object-cover"
                     src={
@@ -434,8 +448,8 @@ export default function ratgeberSeiteFersensporn() {
                   ></span>
                 </div>
               </div>
-              <div className="col-right w-[50%]">
-                <div className="desc text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mb-[15px]">
+              <div className="col-right w-full lg:w-[50%]">
+                <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mb-[15px]">
                   <p>
                     <strong>
                       {
@@ -445,7 +459,7 @@ export default function ratgeberSeiteFersensporn() {
                     </strong>
                   </p>
                 </div>
-                <div className="desc text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
+                <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
                   <img
                     className="max-w-full rounded-[10px] float-right ml-[15px] mb-[15px] border-[2px] border-[#EDEDED] w-[320px] h-[320px] object-contain p-[20px]"
                     src={
@@ -465,8 +479,8 @@ export default function ratgeberSeiteFersensporn() {
                 </div>
               </div>
             </div>
-            <div className="flex lg:flex-row flex-col gap-y-[30px] gap-x-[77px] w-full mt-[72px]" id="section_3">
-              <div className="col-left w-[50%]">
+            <div className="flex lg:flex-row flex-col gap-[30px] xl:gap-x-[77px] w-full mt-[30px]" id="section_3">
+              <div className="col-left w-full lg:w-[50%]">
                 <div className="title-wrap">
                   <h4 className="title text-[#00795C] text-[35px] lg:text-[40px] xl:text-[45px] tracking-[-0.97152px] mb-[20px] leading-[1.1] font-medium">
                     {
@@ -476,7 +490,7 @@ export default function ratgeberSeiteFersensporn() {
                   </h4>
                 </div>
                 <div
-                  className="desc text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
+                  className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
                   dangerouslySetInnerHTML={{
                     __html: toHTML(
                       page?.ratgeber_seite_fersensporn?.reference
@@ -485,7 +499,7 @@ export default function ratgeberSeiteFersensporn() {
                   }}
                 ></div>
               </div>
-              <div className="col-right w-[50%]">
+              <div className="col-right w-full lg:w-[50%]w-[50%]">
                 <div className="title-wrap">
                   <h4 className="title text-[#00795C] text-[35px] lg:text-[40px] xl:text-[45px] tracking-[-0.97152px] mb-[20px] leading-[1.1] font-medium">
                     {
@@ -495,7 +509,7 @@ export default function ratgeberSeiteFersensporn() {
                   </h4>
                 </div>
                 <div
-                  className="desc text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
+                  className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
                   dangerouslySetInnerHTML={{
                     __html: toHTML(
                       page?.ratgeber_seite_fersensporn?.reference
@@ -505,9 +519,9 @@ export default function ratgeberSeiteFersensporn() {
                 ></div>
               </div>
             </div>
-            <div className="flex flex-row mt-[72px] gap-[20px]" id="section_4">
-              <div className="col-left w-[40%]">
-                <h4 className="title text-[#00795C] text-[30px] xl:text-[40px] tracking-[-0.97152px] leading-[1.1] font-medium">
+            <div className="flex lg:flex-row flex-col gap-y-[30px] gap-x-[77px] w-full mt-[72px]" id="section_4">
+              <div className="col-left w-full lg:w-[40%]">
+                <h4 className="title text-[#00795C] text-[24px] md:text-[28px] lg:text-[30px] xl:text-[40px] tracking-[-0.97152px] leading-[1.1] font-medium">
                     {
                       page?.ratgeber_seite_fersensporn_second_part?.reference
                         ?.kybun_wirkungsprinzip_section_title?.value
@@ -519,7 +533,7 @@ export default function ratgeberSeiteFersensporn() {
                         ?.kybun_wirkungsprinzip_section_sub_title?.value
                     }
                 </h5>
-                <div className="desc desc text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mt-[30px]"
+                <div className="desc desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mt-[30px]"
                     dangerouslySetInnerHTML={{
                       __html: toHTML(
                         page?.ratgeber_seite_fersensporn_second_part?.reference
@@ -529,7 +543,7 @@ export default function ratgeberSeiteFersensporn() {
                 >
                 </div>
               </div>
-              <div className="col-right w-[60%]">
+              <div className="col-right w-full lg:w-[60%]">
                 <div className="img-wrap rounded-[10px] border border-[#D9D9D9]">
                   <img
                     className="w-full rounded-[10px]"
@@ -544,7 +558,7 @@ export default function ratgeberSeiteFersensporn() {
             </div>
           </div>
         </section>
-        <section className="rich-text-sec mt-[80px]">
+        <section className="rich-text-sec mt-[40px] md:mt-[60px] lg:mt-[80px] xl:mt-[100px]">
           <div className="rich-text-inner">
             <div className="title-wrap">
               <h2 className="title text-[#00795C] text-[35px] lg:text-[40px] xl:text-[55px] tracking-[-1.05984px] mb-[20px] lg:mb-[40px] leading-[1.1]">
@@ -554,17 +568,17 @@ export default function ratgeberSeiteFersensporn() {
                 }
               </h2>
             </div>
-            <div className="flex lg:flex-row flex-col gap-y-[30px] gap-x-[85px] w-full" id="section_5">
-              <div className="col-left w-[50%]">
+            <div className="flex lg:flex-row flex-col gap-[30px] xl:gap-x-[85px] w-full" id="section_5">
+              <div className="col-left w-full lg:w-[50%]">
                 <div className="title-wrap">
-                  <h4 className="title text-[#00795C] text-[30px] xl:text-[40px] tracking-[-0.97152px] mb-[20px] leading-[1.1] font-medium">
+                  <h4 className="title text-[#00795C] text-[24px] md:text-[28px] lg:text-[30px] xl:text-[40px] tracking-[-0.97152px] mb-[20px] leading-[1.1] font-medium">
                     {
                       page?.ratgeber_seite_fersensporn?.reference
                         ?.erstreaktionen_section_title?.value
                     }
                   </h4>
                 </div>
-                <div className="desc text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mt-[30px]">
+                <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mt-[30px]">
                   <p>
                     <strong>
                       {
@@ -583,16 +597,16 @@ export default function ratgeberSeiteFersensporn() {
                   ></span>
                 </div>
               </div>
-              <div className="col-right w-[50%]">
+              <div className="col-right w-full lg:w-[50%]">
                 <div className="title-wrap">
-                  <h4 className="title text-[#00795C] text-[30px] xl:text-[40px] tracking-[-0.97152px] mb-[20px] leading-[1.1] font-medium">
+                  <h4 className="title text-[#00795C] text-[24px] md:text-[28px] lg:text-[30px] xl:text-[40px] tracking-[-0.97152px] mb-[20px] leading-[1.1] font-medium">
                     {
                       page?.ratgeber_seite_fersensporn?.reference
                         ?.anwendungstipps_section_title?.value
                     }
                   </h4>
                 </div>
-                <div className="desc text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mt-[30px]">
+                <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mt-[30px]">
                   <p>
                     <strong>
                       {
@@ -614,10 +628,10 @@ export default function ratgeberSeiteFersensporn() {
             </div>
           </div>
         </section>
-        <section className="rich-text-sec mt-[80px]" id="section_6">
+        <section className="rich-text-sec mt-[40px] md:mt-[60px] lg:mt-[80px] xl:mt-[100px]" id="section_6">
           <div className="rich-text-inner">
-            <div className="flex flex-row mt-[72px] gap-[73px]">
-              <div className="col-left w-[65%]">
+            <div className="flex flex-col lg:flex-row mt-[72px] gap-[30px] xl:gap-[73px]">
+              <div className="col-left w-full lg:w-[65%]">
                 <div className="video-wrap w-full aspect-video rounded-[10px] relative overflow-hidden">
                   <iframe
                     className="absolute w-full h-full inset-0 object-cover bg-cover"
@@ -632,15 +646,15 @@ export default function ratgeberSeiteFersensporn() {
                   />
                 </div>
               </div>
-              <div className="col-right w-[35%]">
-                <h4 className="title text-[#00795C] text-[30px] xl:text-[40px] tracking-[-0.97152px] leading-[1.1] font-medium mb-[25px]">
+              <div className="col-right w-full lg:w-[35%]">
+                <h4 className="title text-[#00795C] text-[24px] md:text-[28px] lg:text-[30px] xl:text-[40px] tracking-[-0.97152px] leading-[1.1] font-medium mb-[25px]">
                   {
                     page?.ratgeber_seite_fersensporn?.reference
                       ?.kybun_ubungen_section_title?.value
                   }
                 </h4>
                 <div
-                  className="desc text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
+                  className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
                   dangerouslySetInnerHTML={{
                     __html:
                       page?.ratgeber_seite_fersensporn?.reference
@@ -651,7 +665,7 @@ export default function ratgeberSeiteFersensporn() {
             </div>
           </div>
         </section>
-        <section className="customer-opinions-sec mt-[80px]">
+        <section className="customer-opinions-sec mt-[40px] md:mt-[60px] lg:mt-[80px] xl:mt-[100px]">
           <div className="customer-opinions-inner">
             <div className="title-wrap">
               <h2 className="title text-[#00795C] text-[35px] lg:text-[40px] xl:text-[55px] tracking-[-1.05984px] mb-[20px] lg:mb-[40px] leading-[1.1]">
@@ -660,7 +674,7 @@ export default function ratgeberSeiteFersensporn() {
                       ?.kundenmeinungen_section_title?.value
                   }
               </h2>
-              <h4 className="title text-[#00795C] text-[30px] xl:text-[40px] tracking-[-0.97152px] mb-[20px] leading-[1.1] font-medium" id="section_7">
+              <h4 className="title text-[#00795C] text-[24px] md:text-[28px] lg:text-[30px] xl:text-[40px] tracking-[-0.97152px] mb-[20px] leading-[1.1] font-medium" id="section_7">
                 {
                     page?.ratgeber_seite_fersensporn_second_part?.reference
                       ?.kundenmeinungen_section_sub_title?.value
@@ -673,7 +687,7 @@ export default function ratgeberSeiteFersensporn() {
                 isActive ? '' : 'active'
               } customer-opinions-box relative overflow-hidden`}
             >
-              <div className="columns-3 gap-[20px] customer-items">
+              <div className="columns-1 md:columns-2 xl:columns-3 gap-[20px] customer-items">
                 {kundenmeinungenSectionDesc.map((item, index) => {
                     return (
                       <div key={index} className="item p-[30px] bg-[#EDEDED] box-border break-inside-avoid mb-[20px] rounded-[10px] shadow-[0px_0px_0.9821px_rgba(0,0,0,0.05),0px_3.9284px_7.8568px_rgba(0,0,0,0.1)]">
@@ -691,7 +705,7 @@ export default function ratgeberSeiteFersensporn() {
                               alt=""
                             />
                           </div>
-                          <div className="info">
+                          <div className="info flex-1">
                             <h4 className="text-[25px] font-bold text-black mb-[15px]">
                               {item.user_name}
                             </h4>
@@ -708,7 +722,7 @@ export default function ratgeberSeiteFersensporn() {
             </div>
             <button
               onClick={ToggleClass}
-              className="toggle-btn desc text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4] flex items-center gap-[23px] justify-center m-auto hover:text-[#00795c] mt-[10px]"
+              className="toggle-btn desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4] flex items-center gap-[23px] justify-center m-auto hover:text-[#00795c] mt-[10px]"
             >
               {isActive ? (
                 <>
@@ -724,7 +738,7 @@ export default function ratgeberSeiteFersensporn() {
             </button>
           </div>
         </section>
-        <section className="review-slider-sec mt-[80px]">
+        <section className="review-slider-sec mt-[40px] md:mt-[60px] lg:mt-[80px] xl:mt-[100px]">
           <div className="slider-inner relative">
             <Swiper
               modules={[Navigation, Scrollbar, A11y, Autoplay]}
@@ -741,23 +755,23 @@ export default function ratgeberSeiteFersensporn() {
                     <SwiperSlide key={index}>
                       <div className="slider-items">
                         <div className="item rounded-[10px] my-[10px]">
-                          <div className="item-inner flex flex-wrap items-center gap-[40px] max-w-[99%] rounded-[10px] py-[100px] px-[50px] mx-auto  shadow-[0px_0px_0.9821px_rgba(0,0,0,0.05),0px_-0.0716px_7.8568px_rgba(0,0,0,0.1)]">
-                            <div className="dr-img w-[245px] h-[245px] rounded-full relative overflow-hidden">
+                          <div className="item-inner flex flex-wrap items-center gap-[40px] max-w-[99%] rounded-[10px] p-[30px] [md:py-[50px] xl:py-[100px] md:px-[50px] mx-auto  shadow-[0px_0px_0.9821px_rgba(0,0,0,0.05),0px_-0.0716px_7.8568px_rgba(0,0,0,0.1)]">
+                            <div className="dr-img w-[100px] h-[100px] md:w-[245px] md:h-[245px] rounded-full relative overflow-hidden">
                               <img
                                 className="absolute w-full h-full inset-0"
                                 src={item.dr_image}
                                 alt=""
                               />
                             </div>
-                            <div className="dr-info w-[321px] pr-[60px]">
-                              <h4 className="name text-[33px] text-black font-bold">
+                            <div className="dr-info w-[calc(100%_-_140px)]  md:w-[calc(100%_-_300px)] xl:w-[321px] xl:pr-[60px]">
+                              <h4 className="name text-[24px] md:text-[28px] xl:text-[33px] text-black font-bold">
                                 {item.dr_name}
                               </h4>
-                              <h5 className="text-[24px] tracking-[-0.544698px] font-normal">
+                              <h5 className="text-[20px] md:text-[24px] tracking-[-0.544698px] font-normal">
                                 {item.dr_location}
                               </h5>
                             </div>
-                            <div className="desc text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4] flex-1">
+                            <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4] flex-1">
                               <p>
                               {item.dr_comment}
                               </p>
@@ -785,16 +799,16 @@ export default function ratgeberSeiteFersensporn() {
             </div>
           </div>
         </section>
-        <section className="rich-text-sec mt-[80px] mb-[40px]" id="section_8">
+        <section className="rich-text mt-[40px] md:mt-[60px] lg:mt-[80px] xl:mt-[100px] mb-[40px]" id="section_8">
           <div className="rich-text-inner">
             <div className="title-wrap">
-              <h4 className="title text-[#00795C] text-[30px] xl:text-[40px] tracking-[-0.97152px] leading-[1.1] font-medium mb-[25px]">
+              <h4 className="title text-[#00795C] text-[24px] md:text-[28px] lg:text-[30px] xl:text-[40px] tracking-[-0.97152px] leading-[1.1] font-medium mb-[25px]">
                 {
                     page?.ratgeber_seite_fersensporn_second_part?.reference
                       ?.medienberichte_section_title?.value
                   }
               </h4>
-              <div className="desc text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4] max-w-[605px]">
+              <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4] max-w-[605px]">
                 <ul className="list-disc list-outside flex flex-col gap-[15px] pl-[40px] text-[#00795C]">
                   <li className="underline">
                     {
