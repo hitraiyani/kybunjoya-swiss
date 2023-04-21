@@ -157,13 +157,8 @@ export default function ratgeberSeiteFersensporn() {
                       slidesPerView={2}
                       spaceBetween={20}
                       navigation={{
-                        nextEl: '.swiper-button-next-video',
-                        prevEl: '.swiper-button-prev-video',
-                      }}
-                      loop="true"
-                      autoplay={{
-                        delay: 2500,
-                        disableOnInteraction: false,
+                        prevEl: '.swiper-button-next-video',
+                        nextEl: '.swiper-button-prev-video',
                       }}
                       className="h-full overflow-visible rounded-xl flex flex-col"
                     >
@@ -437,50 +432,114 @@ export default function ratgeberSeiteFersensporn() {
                 ></div>
               </div>
             </div>
+            <div className="flex flex-row mt-[72px] gap-[20px]">
+              <div className="col-left w-[40%]">
+                <h4 className="title text-[#00795C] text-[30px] xl:text-[40px] tracking-[-0.97152px] leading-[1.1] font-medium">
+                  kybun Wirkungsprinzip
+                </h4>
+                <h5 className="text-[30px] text-[#00795C] font-medium leading-[1.2] text-left">
+                  Proaktiv handeln
+                </h5>
+                <div className="desc desc text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mt-[30px]">
+                  <p>
+                    Bei einer entzündeten Plantarsehne mit/ohne Riss in der
+                    Sehnenplatte oder Fersensporn ist es wichtig, dass die
+                    betroffene Stelle schonend belastet wird, damit sie heilen
+                    kann. Im kybun Schuh kann der Fuss auf der
+                    elastisch-federnden Sohle natürlich abrollen, somit wird die
+                    Plantarsehne schonend mobilisiert und gedehnt. Dies ist
+                    wichtig für die Heilung, da durch das Abrollen die
+                    Plantarsehne gut durchblutet wird. Dies wiederum fördert den
+                    Abtransport der entzündlichen Stoffe im Gewebe und durch die
+                    gute Versorgung mit Sauerstoff, die Heilung. So können Sie
+                    die Plantarsehne bei der Ursache behandeln. Ausserdem wird
+                    das Gewicht des Fusses im kybun Schuh und auf der kybun
+                    Matte auf der gesamten Fusssohle verteilt und dadurch der
+                    punktuelle Druck reduziert und die Ferse entlastet.Erst
+                    durch die Therapie der Plantarsehne durch Dehnung und
+                    Mobilisation, wird die schmerzhafte Stelle (Fersensporn am
+                    Ansatz der Sehne) entlastet und die Entzündung kann
+                    abklingen.
+                  </p>
+                </div>
+              </div>
+              <div className="col-right w-[60%]">
+                <div className="img-wrap rounded-[10px] border border-[#D9D9D9]">
+                  <img
+                    className="w-full rounded-[10px]"
+                    src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Manufaktur_1200x800px_05.jpg_1_1.png?v=1681989234"
+                    alt=""
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </section>
         <section className="rich-text-sec mt-[80px]">
           <div className="rich-text-inner">
             <div className="title-wrap">
               <h2 className="title text-[#00795C] text-[35px] lg:text-[40px] xl:text-[55px] tracking-[-1.05984px] mb-[20px] lg:mb-[40px] leading-[1.1]">
-                {page?.ratgeber_seite_fersensporn?.reference?.anwendertipps_title?.value}
+                {
+                  page?.ratgeber_seite_fersensporn?.reference
+                    ?.anwendertipps_title?.value
+                }
               </h2>
             </div>
             <div className="flex lg:flex-row flex-col gap-y-[30px] gap-x-[85px] w-full">
               <div className="col-left w-[50%]">
                 <div className="title-wrap">
                   <h4 className="title text-[#00795C] text-[30px] xl:text-[40px] tracking-[-0.97152px] mb-[20px] leading-[1.1] font-medium">
-                    {page?.ratgeber_seite_fersensporn?.reference?.erstreaktionen_section_title?.value}
+                    {
+                      page?.ratgeber_seite_fersensporn?.reference
+                        ?.erstreaktionen_section_title?.value
+                    }
                   </h4>
                 </div>
                 <div className="desc text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mt-[30px]">
                   <p>
-                    <strong>{page?.ratgeber_seite_fersensporn?.reference?.erstreaktionen_section_sub_title?.value}</strong>
+                    <strong>
+                      {
+                        page?.ratgeber_seite_fersensporn?.reference
+                          ?.erstreaktionen_section_sub_title?.value
+                      }
+                    </strong>
                   </p>
                   <span
                     dangerouslySetInnerHTML={{
-                      __html: toHTML(page?.ratgeber_seite_fersensporn?.reference?.erstreaktionen_section_desc?.value),
+                      __html: toHTML(
+                        page?.ratgeber_seite_fersensporn?.reference
+                          ?.erstreaktionen_section_desc?.value,
+                      ),
                     }}
-                  >
-                  </span>
+                  ></span>
                 </div>
               </div>
               <div className="col-right w-[50%]">
                 <div className="title-wrap">
                   <h4 className="title text-[#00795C] text-[30px] xl:text-[40px] tracking-[-0.97152px] mb-[20px] leading-[1.1] font-medium">
-                    {page?.ratgeber_seite_fersensporn?.reference?.anwendungstipps_section_title?.value}
+                    {
+                      page?.ratgeber_seite_fersensporn?.reference
+                        ?.anwendungstipps_section_title?.value
+                    }
                   </h4>
                 </div>
                 <div className="desc text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mt-[30px]">
                   <p>
-                    <strong>{page?.ratgeber_seite_fersensporn?.reference?.anwendungstipps_section_sub_title?.value}</strong>
+                    <strong>
+                      {
+                        page?.ratgeber_seite_fersensporn?.reference
+                          ?.anwendungstipps_section_sub_title?.value
+                      }
+                    </strong>
                   </p>
                   <span
                     dangerouslySetInnerHTML={{
-                      __html: toHTML(page?.ratgeber_seite_fersensporn?.reference?.anwendungstipps_section_desc?.value),
+                      __html: toHTML(
+                        page?.ratgeber_seite_fersensporn?.reference
+                          ?.anwendungstipps_section_desc?.value,
+                      ),
                     }}
-                  >
-                  </span>
+                  ></span>
                 </div>
               </div>
             </div>
@@ -489,11 +548,14 @@ export default function ratgeberSeiteFersensporn() {
         <section className="rich-text-sec mt-[80px]">
           <div className="rich-text-inner">
             <div className="flex flex-row mt-[72px] gap-[73px]">
-              <div className="col-left w-[60%]">
+              <div className="col-left w-[65%]">
                 <div className="video-wrap w-full aspect-video rounded-[10px] relative overflow-hidden">
                   <iframe
                     className="absolute w-full h-full inset-0 object-cover bg-cover"
-                    src={page?.ratgeber_seite_fersensporn?.reference?.kybun_ubungen_section_video_url?.value}
+                    src={
+                      page?.ratgeber_seite_fersensporn?.reference
+                        ?.kybun_ubungen_section_video_url?.value
+                    }
                     title="YouTube video player"
                     frameBorder={0}
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -501,16 +563,21 @@ export default function ratgeberSeiteFersensporn() {
                   />
                 </div>
               </div>
-              <div className="col-right w-[40%]">
+              <div className="col-right w-[35%]">
                 <h4 className="title text-[#00795C] text-[30px] xl:text-[40px] tracking-[-0.97152px] leading-[1.1] font-medium mb-[25px]">
-                  {page?.ratgeber_seite_fersensporn?.reference?.kybun_ubungen_section_title?.value}
+                  {
+                    page?.ratgeber_seite_fersensporn?.reference
+                      ?.kybun_ubungen_section_title?.value
+                  }
                 </h4>
-                <div className="desc text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
-                   dangerouslySetInnerHTML={{
-                    __html: (page?.ratgeber_seite_fersensporn?.reference?.kybun_ubungen_section_desc?.value),
+                <div
+                  className="desc text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
+                  dangerouslySetInnerHTML={{
+                    __html:
+                      page?.ratgeber_seite_fersensporn?.reference
+                        ?.kybun_ubungen_section_desc?.value,
                   }}
-                >
-                </div>
+                ></div>
               </div>
             </div>
           </div>
@@ -1076,7 +1143,52 @@ export default function ratgeberSeiteFersensporn() {
             </button>
           </div>
         </section>
-        <section className="review-slider-sec mt-[80px]"></section>
+        <section className="review-slider-sec mt-[80px]">
+          <div className="slider-inner">
+            <div className="slider-items">
+              <div className="item shadow-[0px_0px_0.9821px_rgba(0,0,0,0.05),0px_-0.0716px_7.8568px_rgba(0,0,0,0.1)] rounded-[10px]">
+                <div className="item-inner flex flex-wrap items-center gap-[40px] max-w-[1562px] p-[100px] mx-auto">
+                  <div className="dr-img w-[245px] h-[245px] rounded-full relative overflow-hidden">
+                    <img className='absolute w-full h-full inset-0'
+                      src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/csm_Susanne_Michel_89c4ae4c172.png?v=1682054112"
+                      alt=""
+                    />
+                  </div>
+                  <div className="dr-info w-[321px] pr-[60px]">
+                    <h4 className="name text-[33px] text-black font-bold">Dr. med. Mitra Modaressi</h4>
+                    <h5 className="text-[24px] tracking-[-0.544698px] font-normal">Swissestetix, Basel & Wien</h5>
+                  </div>
+                  <div className="desc text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4] flex-1">
+                    <p>
+                      Wir empfehlen Ihnen, im kyBoot eine dünne Baumwollsocke zu
+                      tragen (z.B. die kybun Socke) und den Schuh nicht zu fest
+                      zu schnüren. Schauen Sie, dass die Schnürung regelmässig
+                      von unten bis oben ist, damit die feinen Butgefässe am
+                      Fussrücken nicht abgedrückt werden und es keine sonstigen
+                      Druckstellen gibt.Rollen Sie beim Gehen über den ganzen
+                      Fuss und stossen Sie über die Grosszehe ab, so wird die
+                      Sehnenplatte an der Fusssohle alternierend gedehnt und in
+                      der Schwungbeinphase gelockert.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section className='rich-text-sec mt-[80px] mb-[40px]'>
+          <div className='rich-text-inner'>
+            <div className='title-wrap'>
+              <h4 className='title text-[#00795C] text-[30px] xl:text-[40px] tracking-[-0.97152px] leading-[1.1] font-medium mb-[25px]'>Medienberichte / Studien</h4>
+              <div className='desc text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4] max-w-[605px]'>
+                <ul className='list-disc list-outside flex flex-col gap-[15px] pl-[40px] text-[#00795C]'>
+                  <li className='underline'>Ktipp: Bei Fersensporn Muskel dehnen</li>
+                </ul>
+                <p>Bei Fragen schicken Sie bitte ein Mail an beratung@kybun.ch</p>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
     </>
   );

@@ -597,6 +597,15 @@ p:last-child {
   filter: drop-shadow(0px 0px 0.995742px rgba(0, 0, 0, 0.05))
     drop-shadow(0px 3.98297px 7.96594px rgba(0, 0, 0, 0.1));
 }
+.rich-text-with-slider .swiper-button-disabled{
+  display: none;
+}
+.list-style2 {
+  margin-bottom: 32px;
+}
+.list-style2:last-child{
+  margin-bottom: 0;
+}
 /* end ratgeber-seite-fersensporn page  */
 
 .text-\[\#00795c\] {
