@@ -606,6 +606,9 @@ p:last-child {
 .list-style2:last-child{
   margin-bottom: 0;
 }
+.review-slider-sec .swiper-button-disabled{
+  display: none;
+}
 /* end ratgeber-seite-fersensporn page  */
 
 .text-\[\#00795c\] {

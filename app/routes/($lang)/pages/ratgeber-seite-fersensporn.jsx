@@ -1127,7 +1127,7 @@ export default function ratgeberSeiteFersensporn() {
             </div>
             <button
               onClick={ToggleClass}
-              className="toggle-btn desc text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4] flex items-center gap-[23px] justify-center m-auto hover:text-[#00795c] mt-[40px]"
+              className="toggle-btn desc text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4] flex items-center gap-[23px] justify-center m-auto hover:text-[#00795c] mt-[10px]"
             >
               {isActive ? (
                 <>
@@ -1144,47 +1144,123 @@ export default function ratgeberSeiteFersensporn() {
           </div>
         </section>
         <section className="review-slider-sec mt-[80px]">
-          <div className="slider-inner">
-            <div className="slider-items">
-              <div className="item shadow-[0px_0px_0.9821px_rgba(0,0,0,0.05),0px_-0.0716px_7.8568px_rgba(0,0,0,0.1)] rounded-[10px]">
-                <div className="item-inner flex flex-wrap items-center gap-[40px] max-w-[1562px] p-[100px] mx-auto">
-                  <div className="dr-img w-[245px] h-[245px] rounded-full relative overflow-hidden">
-                    <img className='absolute w-full h-full inset-0'
-                      src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/csm_Susanne_Michel_89c4ae4c172.png?v=1682054112"
-                      alt=""
-                    />
-                  </div>
-                  <div className="dr-info w-[321px] pr-[60px]">
-                    <h4 className="name text-[33px] text-black font-bold">Dr. med. Mitra Modaressi</h4>
-                    <h5 className="text-[24px] tracking-[-0.544698px] font-normal">Swissestetix, Basel & Wien</h5>
-                  </div>
-                  <div className="desc text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4] flex-1">
-                    <p>
-                      Wir empfehlen Ihnen, im kyBoot eine dünne Baumwollsocke zu
-                      tragen (z.B. die kybun Socke) und den Schuh nicht zu fest
-                      zu schnüren. Schauen Sie, dass die Schnürung regelmässig
-                      von unten bis oben ist, damit die feinen Butgefässe am
-                      Fussrücken nicht abgedrückt werden und es keine sonstigen
-                      Druckstellen gibt.Rollen Sie beim Gehen über den ganzen
-                      Fuss und stossen Sie über die Grosszehe ab, so wird die
-                      Sehnenplatte an der Fusssohle alternierend gedehnt und in
-                      der Schwungbeinphase gelockert.
-                    </p>
+          <div className="slider-inner relative">
+            <Swiper
+              modules={[Navigation, Scrollbar, A11y, Autoplay]}
+              slidesPerView={1}
+              spaceBetween={20}
+              navigation={{
+                prevEl: '.swiper-button-next-review',
+                nextEl: '.swiper-button-prev-review',
+              }}
+              className="h-full overflow-visible rounded-xl flex flex-col"
+            >
+              <SwiperSlide>
+                <div className="slider-items">
+                  <div className="item rounded-[10px] my-[10px]">
+                    <div className="item-inner flex flex-wrap items-center gap-[40px] max-w-[99%] rounded-[10px] py-[100px] px-[50px] mx-auto  shadow-[0px_0px_0.9821px_rgba(0,0,0,0.05),0px_-0.0716px_7.8568px_rgba(0,0,0,0.1)]">
+                      <div className="dr-img w-[245px] h-[245px] rounded-full relative overflow-hidden">
+                        <img
+                          className="absolute w-full h-full inset-0"
+                          src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/csm_Susanne_Michel_89c4ae4c172.png?v=1682054112"
+                          alt=""
+                        />
+                      </div>
+                      <div className="dr-info w-[321px] pr-[60px]">
+                        <h4 className="name text-[33px] text-black font-bold">
+                          Dr. med. Mitra Modaressi
+                        </h4>
+                        <h5 className="text-[24px] tracking-[-0.544698px] font-normal">
+                          Swissestetix, Basel & Wien
+                        </h5>
+                      </div>
+                      <div className="desc text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4] flex-1">
+                        <p>
+                          Wir empfehlen Ihnen, im kyBoot eine dünne
+                          Baumwollsocke zu tragen (z.B. die kybun Socke) und den
+                          Schuh nicht zu fest zu schnüren. Schauen Sie, dass die
+                          Schnürung regelmässig von unten bis oben ist, damit
+                          die feinen Butgefässe am Fussrücken nicht abgedrückt
+                          werden und es keine sonstigen Druckstellen gibt.Rollen
+                          Sie beim Gehen über den ganzen Fuss und stossen Sie
+                          über die Grosszehe ab, so wird die Sehnenplatte an der
+                          Fusssohle alternierend gedehnt und in der
+                          Schwungbeinphase gelockert.
+                        </p>
+                      </div>
+                    </div>
                   </div>
                 </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div className="slider-items">
+                  <div className="item rounded-[10px] my-[10px]">
+                    <div className="item-inner flex flex-wrap items-center gap-[40px] max-w-[99%] rounded-[10px] py-[100px] px-[50px] mx-auto  shadow-[0px_0px_0.9821px_rgba(0,0,0,0.05),0px_-0.0716px_7.8568px_rgba(0,0,0,0.1)]">
+                      <div className="dr-img w-[245px] h-[245px] rounded-full relative overflow-hidden">
+                        <img
+                          className="absolute w-full h-full inset-0"
+                          src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/csm_Susanne_Michel_89c4ae4c172.png?v=1682054112"
+                          alt=""
+                        />
+                      </div>
+                      <div className="dr-info w-[321px] pr-[60px]">
+                        <h4 className="name text-[33px] text-black font-bold">
+                          Dr. med. Mitra Modaressi
+                        </h4>
+                        <h5 className="text-[24px] tracking-[-0.544698px] font-normal">
+                          Swissestetix, Basel & Wien
+                        </h5>
+                      </div>
+                      <div className="desc text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4] flex-1">
+                        <p>
+                          Wir empfehlen Ihnen, im kyBoot eine dünne
+                          Baumwollsocke zu tragen (z.B. die kybun Socke) und den
+                          Schuh nicht zu fest zu schnüren. Schauen Sie, dass die
+                          Schnürung regelmässig von unten bis oben ist, damit
+                          die feinen Butgefässe am Fussrücken nicht abgedrückt
+                          werden und es keine sonstigen Druckstellen gibt.Rollen
+                          Sie beim Gehen über den ganzen Fuss und stossen Sie
+                          über die Grosszehe ab, so wird die Sehnenplatte an der
+                          Fusssohle alternierend gedehnt und in der
+                          Schwungbeinphase gelockert.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </SwiperSlide>
+            </Swiper>
+            <div className="absolute top-[50%] z-[1] rounded-full swiper-button-next-review border-[5px] border-[rgba(0,_148,_112,_0.3)] left-[-24px]">
+              <div className="rounded-full w-[45px] h-[45px] text-white hover:bg-black hover:text-white after:text-[30px] bg-[#00795c] flex items-center justify-center rotate-180">
+                <ArrowRight
+                  className={'relative left-[1px] w-[20px] h-[20px]'}
+                />
+              </div>
+            </div>
+            <div className="absolute top-[50%] z-[1] rounded-full swiper-button-prev-review border-[5px] border-[rgba(0,_148,_112,_0.3)] right-[-24px]">
+              <div className="rounded-full w-[45px] h-[45px] text-white hover:bg-black hover:text-white after:text-[30px] bg-[#00795c] flex items-center justify-center">
+                <ArrowRight
+                  className={'relative left-[2px] w-[20px] h-[20px]'}
+                />
               </div>
             </div>
           </div>
         </section>
-        <section className='rich-text-sec mt-[80px] mb-[40px]'>
-          <div className='rich-text-inner'>
-            <div className='title-wrap'>
-              <h4 className='title text-[#00795C] text-[30px] xl:text-[40px] tracking-[-0.97152px] leading-[1.1] font-medium mb-[25px]'>Medienberichte / Studien</h4>
-              <div className='desc text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4] max-w-[605px]'>
-                <ul className='list-disc list-outside flex flex-col gap-[15px] pl-[40px] text-[#00795C]'>
-                  <li className='underline'>Ktipp: Bei Fersensporn Muskel dehnen</li>
+        <section className="rich-text-sec mt-[80px] mb-[40px]">
+          <div className="rich-text-inner">
+            <div className="title-wrap">
+              <h4 className="title text-[#00795C] text-[30px] xl:text-[40px] tracking-[-0.97152px] leading-[1.1] font-medium mb-[25px]">
+                Medienberichte / Studien
+              </h4>
+              <div className="desc text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4] max-w-[605px]">
+                <ul className="list-disc list-outside flex flex-col gap-[15px] pl-[40px] text-[#00795C]">
+                  <li className="underline">
+                    Ktipp: Bei Fersensporn Muskel dehnen
+                  </li>
                 </ul>
-                <p>Bei Fragen schicken Sie bitte ein Mail an beratung@kybun.ch</p>
+                <p>
+                  Bei Fragen schicken Sie bitte ein Mail an beratung@kybun.ch
+                </p>
               </div>
             </div>
           </div>

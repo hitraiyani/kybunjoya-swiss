@@ -634,6 +634,9 @@ video {
 .top-\[510px\] {
   top: 510px;
 }
+.top-\[50\%\] {
+  top: 50%;
+}
 .z-30 {
   z-index: 30;
 }
@@ -685,6 +688,10 @@ video {
 .my-\[81px\] {
   margin-top: 81px;
   margin-bottom: 81px;
+}
+.my-\[10px\] {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 .-mb-px {
   margin-bottom: -1px;
@@ -1277,6 +1284,9 @@ video {
 }
 .max-w-\[605px\] {
   max-width: 605px;
+}
+.max-w-\[99\%\] {
+  max-width: 99%;
 }
 .flex-1 {
   flex: 1 1 0%;
@@ -2061,6 +2071,14 @@ video {
 .py-\[80px\] {
   padding-top: 80px;
   padding-bottom: 80px;
+}
+.px-\[50px\] {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+.py-\[100px\] {
+  padding-top: 100px;
+  padding-bottom: 100px;
 }
 .pb-1 {
   padding-bottom: 0.25rem;
