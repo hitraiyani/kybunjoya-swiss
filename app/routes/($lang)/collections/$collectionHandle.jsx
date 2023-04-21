@@ -156,9 +156,9 @@ export default function Collection() {
             alt=""
           />
         </div>
-        <section className="info-slider-with-img mt-[100px]">
-          <div className="row flex gap-x-[70px] gap-y-[30px]">
-            <div className='"w-[50%]'>
+        <section className="info-slider-with-img py-[40px] md:py-[60px] lg:py-[80px] xl:py-[100px]">
+          <div className="row flex flex-col lg:flex-row gap-x-[70px] gap-y-[30px]">
+            <div className='w-full lg:w-[50%]'>
               <div className="img-info-col relative h-[calc(100%_-_60px)]">
                 <div className="img-wrap h-full flex flex-col justify-center">
                   <img
@@ -357,7 +357,7 @@ export default function Collection() {
                 <div className="my-custom-pagination-div !w-auto"></div>
               </div>
             </div>
-            <div className="w-[50%] content-info-col rounded-xl">
+            <div className="w-full lg:w-[50%] content-info-col rounded-xl">
               <div className="content-info-col-inner">
                 <Swiper
                   modules={[Navigation, Scrollbar, A11y, Autoplay, Pagination]}
@@ -366,8 +366,10 @@ export default function Collection() {
                     prevEl: '.swiper-button-next-product-info',
                     nextEl: '.swiper-button-prev-product-info',
                   }}
+                  spaceBetween={20}
                   loop="false"
                   autoplay="false"
+                  autoHeight="true"
                   pagination={{
                     el: '.my-custom-pagination-div',
                     clickable: true,
@@ -385,10 +387,10 @@ export default function Collection() {
                                 alt=""
                               />
                             </div>
-                            <div className="info bg-[#fff] py-[80px] px-[30px] relative z-[1] w-[77%] ml-auto rounded-[10px] top-[48px] mr-[50px]">
+                            <div className="info bg-[#fff] p-[40px] xl:py-[80px] xl:px-[30px] relative z-[1] w-[90%] xl:w-[77%] ml-auto rounded-[10px] top-[48px] mr-auto xl:mr-[50px]">
                               <KybunShopAndShopFinder />
-                              <div className="desc mt-[68px]">
-                                <h3 className="text-[18px] lg:text-[25px] text-black font-normal tracking-[-0.400697px]"
+                              <div className="desc mt-[30px] md:mt-[40px] xl:mt-[68px]">
+                                <h3 className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
                                   dangerouslySetInnerHTML={{
                                     __html: toHTML(brandHereSection?.data?.slider_header_content_1?.value),
                                   }}
@@ -417,7 +419,7 @@ export default function Collection() {
                                 alt=""
                               />
                             </div>
-                            <div className="info bg-[#fff] py-[80px] px-[30px] relative z-[1] w-[77%] ml-auto rounded-[10px] top-[48px] mr-[50px]">
+                            <div className="info bg-[#fff] p-[40px] xl:py-[80px] xl:px-[30px] relative z-[1] w-[90%] xl:w-[77%] ml-auto rounded-[10px] top-[48px] mr-auto xl:mr-[50px]">
                               <KybunShopAndShopFinder />
                               <div className="desc mt-[68px]">
                                 <h3 className="text-[18px] lg:text-[25px] text-black font-normal tracking-[-0.400697px]"
@@ -449,7 +451,7 @@ export default function Collection() {
                                 alt=""
                               />
                             </div>
-                            <div className="info bg-[#fff] py-[80px] px-[30px] relative z-[1] w-[77%] ml-auto rounded-[10px] top-[48px] mr-[50px]">
+                            <div className="info bg-[#fff] p-[40px] xl:py-[80px] xl:px-[30px] relative z-[1] w-[90%] xl:w-[77%] ml-auto rounded-[10px] top-[48px] mr-auto xl:mr-[50px]">
                               <KybunShopAndShopFinder />
                               <div className="desc mt-[68px]">
                                 <h3 className="text-[18px] lg:text-[25px] text-black font-normal tracking-[-0.400697px]"
@@ -481,7 +483,7 @@ export default function Collection() {
                                 alt=""
                               />
                             </div>
-                            <div className="info bg-[#fff] py-[80px] px-[30px] relative z-[1] w-[77%] ml-auto rounded-[10px] top-[48px] mr-[50px]">
+                            <div className="info bg-[#fff] p-[40px] xl:py-[80px] xl:px-[30px] relative z-[1] w-[90%] xl:w-[77%] ml-auto rounded-[10px] top-[48px] mr-auto xl:mr-[50px]">
                               <KybunShopAndShopFinder />
                               <div className="desc mt-[68px]">
                                 <h3 className="text-[18px] lg:text-[25px] text-black font-normal tracking-[-0.400697px]"
@@ -507,7 +509,7 @@ export default function Collection() {
             </div>
           </div>
         </section>
-        <Section className={'mt-[300px]'}>
+        <Section className={'mt-[40px] md:mt-[60px] lg:mt-[80px] xl:mt-[100px]'}>
           <SortFilter
             filters={collection.products.filters}
             appliedFilters={appliedFilters}
@@ -519,7 +521,7 @@ export default function Collection() {
               collection={collection}
               url={`/collections/${collection.handle}`}
               data-test="product-grid"
-              className="grid grid-cols-3 product-listing gap-x-[20px] gap-y-[70px]"
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 product-listing gap-x-[20px] gap-y-[70px]"
             />
           </SortFilter>
         </Section>
@@ -531,17 +533,17 @@ export default function Collection() {
 
 function KybunShopAndShopFinder() {
   return (
-    <div className="top-btn flex gap-[20px]">
+    <div className="top-btn flex flex-wrap justify-between gap-[20px]">
       <a
         href="#"
-        className="tracking-[-0.400697px] text-[18px] leading-none flex text-center justify-center items-center gap-[10px] bg-[#000] text-white rounded-[100px] px-[53px] py-[20px] flex-1 font-normal hover:!bg-[#00795c] hover:!text-[#fff]"
+        className="tracking-[-0.400697px] text-[18px] leading-none flex text-center justify-center items-center gap-[10px] bg-[#000] text-white rounded-[100px] px-[53px] py-[20px] min-w-[calc(50%_-_10px)] font-normal hover:!bg-[#00795c] hover:!text-[#fff]"
       >
         <IconCart />
         kybun Online-Shop
       </a>
       <a
         href="#"
-        className="tracking-[-0.400697px] text-[18px] leading-none flex text-center justify-center items-center gap-[10px] bg-[#00795C] text-white rounded-[100px] px-[53px] py-[20px] flex-1 font-normal hover:!bg-[#000000] hover:!text-[#ffffff]"
+        className="tracking-[-0.400697px] text-[18px] leading-none flex text-center justify-center items-center gap-[10px] bg-[#00795C] text-white rounded-[100px] px-[53px] py-[20px] w-fit min-w-[calc(50%_-_10px)] font-normal hover:!bg-[#000000] hover:!text-[#ffffff]"
       >
         <IconMapPin />
         Storefinder

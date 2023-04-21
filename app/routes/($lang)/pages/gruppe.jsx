@@ -150,7 +150,7 @@ export default function gorup() {
               <div className="col-left w-full lg:w-[573px]">
                 <div className="img-wrap h-full">
                   <img
-                    className="w-full rounded-[10px] h-full object-cover"
+                    className="w-full rounded-[10px] h-full object-cover object-cover"
                     src={page?.gruppe_page?.reference?.culture_employee_section_image?.reference?.image?.url}
                     alt=""
                   />
@@ -341,7 +341,7 @@ export default function gorup() {
               <div className="col-right w-full lg:flex-1">
                 <div className="img-wrap h-full">
                   <img
-                    className="w-full rounded-[10px] h-full"
+                    className="w-full rounded-[10px] h-full object-cover"
                     src={page?.gruppe_page?.reference?.footer_group_image?.reference?.image?.url}
                     alt=""
                   />

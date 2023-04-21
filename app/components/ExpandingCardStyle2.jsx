@@ -14,7 +14,7 @@ export function ExpandingCardStyle2({title, content,id}) {
             <div className="flex items-center gap-x-3 justify-between">
               <Text
                 as="h5"
-                className="text-white text-left text-[30px] font-bold flex-1 leading-none"
+                className="text-white text-left text-[24px] md:text-[28px] xl:text-[30px] font-bold flex-1 leading-none"
                 dangerouslySetInnerHTML={{__html: title}}
               ></Text>
               <IconClose
@@ -35,7 +35,7 @@ export function ExpandingCardStyle2({title, content,id}) {
             leaveTo="max-h-0"
           >
             <Disclosure.Panel
-              className="editor-content p-[20px] tracking-[-0.400697px] text-[25px] font-normal leading-[1.4]"
+              className="editor-content p-[20px] tracking-[-0.400697px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] font-normal leading-[1.4]"
               static
             >
               <p dangerouslySetInnerHTML={{__html: content}}></p>

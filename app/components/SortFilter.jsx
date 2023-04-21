@@ -22,14 +22,14 @@ export function SortFilter({
   const [isOpen, setIsOpen] = useState(true);
   return (
     <>
-      <div className="items-center justify-between w-full hidden">
+      <div className="items-center justify-between w-full flex md:hidden">
         <button
           onClick={() => setIsOpen(!isOpen)}
           className={
-            'relative flex items-center justify-center w-8 h-8 focus:ring-primary/5'
+            'relative flex items-center justify-center text-[24px] md:text-[28px] xl:text-[30px] text-[#00795C] font-bold leading-[1.2] gap-[20px]'
           }
         >
-          <IconFilters />
+          <IconFilters className={'w-[25px] h-[25px]'} />Filters
         </button>
         <SortMenu />
       </div>
@@ -37,8 +37,8 @@ export function SortFilter({
         <div
           className={`transition-all duration-200  ${
             isOpen
-              ? 'opacity-100 w-full'
-              : 'opacity-0 md:min-w-[0px] md:w-[0px] pr-0 max-h-0 md:max-h-full'
+              ? 'opacity-0 md:opacity-100 w-full max-h-0 md:max-h-full'
+              : 'max-h-full opacity-100 md:opacity-0 md:min-w-[0px] md:w-[0px] pr-0 md:max-h-full'
           }`}
         >
           <FiltersDrawer
@@ -144,7 +144,7 @@ export function FiltersDrawer({
         <Heading as="h4" size="lead" className="pb-4 hidden">
           Filter By
         </Heading>
-        <div className="flex flex-wrap gap-[30px]">
+        <div className="flex flex-wrap gap-[15px] md:gap-[20] xl:gap-[30px]">
           {filters.map(
             (filter, idx) =>
               filter.values.length > 1 && (
@@ -152,7 +152,7 @@ export function FiltersDrawer({
                   {({open}) => (
                     <>
                       <Disclosure.Button 
-                        className={`px-[30px] py-[15px]  font-normal tracking-[-0.400697px] border border-black text-[25px] rounded-[100px] hover:bg-black hover:text-white ${open ? 'text-white bg-black active' : 'text-black bg-white'}`}
+                        className={`px-[30px] py-[15px]  font-normal tracking-[-0.400697px] border border-black text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] rounded-[100px] hover:bg-black hover:text-white ${open ? 'text-white bg-black active' : 'text-black bg-white'}`}
                          ref={refs[idx]}
                          data-id={filter.id}
                          data-open={open}
@@ -167,7 +167,7 @@ export function FiltersDrawer({
                         <ul key={filter.id} className="px-[20px] py-[20px] min-w-max w-[150px] filter-list">
                           {filter.values?.map((option) => {
                             return (
-                              <li key={option.id} className="pb-[10px] tracking-[-0.400697px] text-[25px] font-normal last:pb-[0]">
+                              <li key={option.id} className="pb-[10px] tracking-[-0.400697px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] font-normal last:pb-[0]">
                                 {filterMarkup(filter, option)}
                               </li>
                             );
@@ -385,7 +385,7 @@ export default function SortMenu() {
   const activeItem = items.find((item) => item.key === params.get('sort'));
 
   return (
-    <Menu as="div" className="relative z-40">
+    <Menu as="div" className="relative z-40 hidden">
       <Menu.Button className="flex items-center">
         <span className="px-2">
           <span className="px-2 font-medium">Sort by:</span>
