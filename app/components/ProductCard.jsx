@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import {flattenConnection, Image, Money, useMoney} from '@shopify/hydrogen';
-import {Text, Link, AddToCartButton,IconCart} from '~/components';
+import {Text, Link, AddToCartButton, IconCart} from '~/components';
 import {isDiscounted, isNewArrival, truncate} from '~/lib/utils';
 import {getProductPlaceholder} from '~/lib/placeholders';
 
@@ -72,7 +72,10 @@ export function ProductCard({
             >
               {cardLabel}
             </Text> */}
-            <button className='pro-btn text-[18px] text-white tracking-[-0.400697px] font-normal md:flex gap-[10px] px-[30px] py-[15px] bg-black rounded-[100px] absolute bottom-[34px] max-w-fit left-0 right-0 m-auto items-center opacity-0 transition-all duration-700 hover:bg-[#00795c] hidden'><IconCart />Zum Shop</button>
+            <button className="pro-btn text-[18px] text-white tracking-[-0.400697px] font-normal gap-[10px] px-[30px] py-[15px] bg-black rounded-[100px] absolute bottom-[34px] max-w-fit left-0 right-0 m-auto items-center opacity-0 transition-all duration-700 hover:bg-[#00795c] hidden">
+              <IconCart />
+              Zum Shop
+            </button>
           </div>
           <div className="grid gap-1">
             <Text
@@ -81,25 +84,26 @@ export function ProductCard({
             >
               {product.title}
             </Text>
-            {
-              product.description && (
-                <div className='desc text-[15px] font-normal mt-[5px] !text-black max-w-[375px]'>
-                  <p> {truncate(product.description,150)}</p>
-                </div>
-              )
-            }
-            <button className='pro-btn text-[16px] text-white tracking-[-0.400697px] font-normal flex gap-[10px] px-[20px] py-[12px] bg-black rounded-[100px] max-w-fit mt-[20px] items-center md:hidden transition-all duration-700 hover:bg-[#00795c]'><IconCart />Zum Shop</button>
-            {/* <div className="flex gap-4">
-              <Text className="flex gap-4">
+            <div className="flex gap-4">
+              <Text className="flex gap-4 !text-black text-[16px] font-medium">
                 <Money withoutTrailingZeros data={price} />
                 {isDiscounted(price, compareAtPrice) && (
                   <CompareAtPrice
-                    className={'opacity-50'}
+                    className={'opacity-50 line-through'}
                     data={compareAtPrice}
                   />
                 )}
               </Text>
-            </div> */}
+            </div>
+            {product.description && (
+              <div className="desc text-[15px] font-normal mt-[5px] !text-black max-w-[375px]">
+                <p> {truncate(product.description, 100)}</p>
+              </div>
+            )}
+            <button className="pro-btn text-[16px] text-white tracking-[-0.400697px] font-normal flex gap-[10px] px-[20px] py-[12px] bg-black rounded-[100px] max-w-fit mt-[10px] items-center transition-all duration-700 hover:bg-[#00795c]">
+              <IconCart />
+              Zum Shop
+            </button>
           </div>
         </div>
       </Link>
