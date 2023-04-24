@@ -521,10 +521,10 @@ export default function Collection() {
               collection={collection}
               url={`/collections/${collection.handle}`}
               data-test="product-grid"
-              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 product-listing gap-x-[20px] gap-y-[70px]"
+              className="grid grid-cols-2 lg:grid-cols-3 product-listing gap-x-[20px] gap-y-[70px]" 
             />
           </SortFilter>
-        </Section>
+        </Section> 
       </div>
     </>
   );
