@@ -1951,6 +1951,10 @@ video {
   padding-top: 40px;
   padding-bottom: 40px;
 }
+.py-\[12px\] {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
 .pb-1 {
   padding-bottom: 0.25rem;
 }
@@ -2733,6 +2737,10 @@ video {
 
   .md\:inline-block {
     display: inline-block;
+  }
+
+  .md\:flex {
+    display: flex;
   }
 
   .md\:table-cell {

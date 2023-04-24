@@ -72,7 +72,7 @@ export function ProductCard({
             >
               {cardLabel}
             </Text> */}
-            <button className='pro-btn text-[18px] text-white tracking-[-0.400697px] font-normal flex gap-[10px] px-[30px] py-[15px] bg-black rounded-[100px] absolute bottom-[34px] max-w-fit left-0 right-0 m-auto items-center opacity-0 transition-all duration-700 hover:bg-[#00795c]'><IconCart />Zum Shop</button>
+            <button className='pro-btn text-[18px] text-white tracking-[-0.400697px] font-normal md:flex gap-[10px] px-[30px] py-[15px] bg-black rounded-[100px] absolute bottom-[34px] max-w-fit left-0 right-0 m-auto items-center opacity-0 transition-all duration-700 hover:bg-[#00795c] hidden'><IconCart />Zum Shop</button>
           </div>
           <div className="grid gap-1">
             <Text
@@ -88,6 +88,7 @@ export function ProductCard({
                 </div>
               )
             }
+            <button className='pro-btn text-[16px] text-white tracking-[-0.400697px] font-normal flex gap-[10px] px-[20px] py-[12px] bg-black rounded-[100px] max-w-fit mt-[20px] items-center md:hidden transition-all duration-700 hover:bg-[#00795c]'><IconCart />Zum Shop</button>
             {/* <div className="flex gap-4">
               <Text className="flex gap-4">
                 <Money withoutTrailingZeros data={price} />
