@@ -202,7 +202,7 @@ export default function aboutUs() {
             <div className="img-col flex-1 overflow-hidden lg:w-auto w-full">
               <img
                 className="h-full object-cover  rounded-xl block"
-                src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/204_01031-weather_jacket-ss23-stratosphere_pearl-w-4x5-c-g4_png_f65647fd-0d87-4a79-8cfb-afd3cfaeec3f.png?v=1681477503"
+                src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/ss23-tennis-athletes-iga-swiatek-editorials-19-Mar23__2_.jpg_7.png?v=1682343242"
                 alt=""
               />
             </div>
