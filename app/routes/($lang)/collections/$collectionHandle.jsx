@@ -252,48 +252,12 @@ export default function Collection() {
                     <span>elastisch-federnd</span>
                   </li>
                   <li>
-                    <svg
-                      className="icon"
-                      width={100}
-                      height={100}
-                      viewBox="0 0 100 100"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <circle
-                        cx={50}
-                        cy={50}
-                        r={49}
-                        fill="#EDEDED"
-                        fillOpacity="0.5"
-                        stroke="#DEDEDE"
-                        strokeWidth={2}
-                      />
-                      <line
-                        x1="51.4502"
-                        y1="27.9277"
-                        x2="51.4502"
-                        y2="72.9728"
-                        stroke="black"
-                        strokeWidth={2}
-                      />
-                      <line
-                        x1="72.9727"
-                        y1="51.4502"
-                        x2="27.9276"
-                        y2="51.4502"
-                        stroke="black"
-                        strokeWidth={2}
-                      />
-                    </svg>
-                    <img
+                  <span>Swiss made</span>
+                  <img
                       className="line"
                       src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Vector_5.png?v=1681740250"
                       alt=""
                     />
-                    <span>Swiss made</span>
-                  </li>
-                  <li>
                     <svg
                       className="icon"
                       width={100}
@@ -328,12 +292,49 @@ export default function Collection() {
                         strokeWidth={2}
                       />
                     </svg>
-                    <img
+                  </li>
+                  <li>
+                  <span>Swiss made</span>
+                  <img
                       className="line"
                       src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Vector_6.png?v=1681740250"
                       alt=""
                     />
-                    <span>Swiss made</span>
+                    
+                    <svg
+                      className="icon"
+                      width={100}
+                      height={100}
+                      viewBox="0 0 100 100"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <circle
+                        cx={50}
+                        cy={50}
+                        r={49}
+                        fill="#EDEDED"
+                        fillOpacity="0.5"
+                        stroke="#DEDEDE"
+                        strokeWidth={2}
+                      />
+                      <line
+                        x1="51.4502"
+                        y1="27.9277"
+                        x2="51.4502"
+                        y2="72.9728"
+                        stroke="black"
+                        strokeWidth={2}
+                      />
+                      <line
+                        x1="72.9727"
+                        y1="51.4502"
+                        x2="27.9276"
+                        y2="51.4502"
+                        stroke="black"
+                        strokeWidth={2}
+                      />
+                    </svg>
                   </li>
                 </ul>
               </div>

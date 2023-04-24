@@ -456,7 +456,7 @@ p:last-child {
   box-shadow: 0px 0px 0.9821px rgba(0, 0, 0, 0.05),
     0px 3.9284px 7.8568px rgba(0, 0, 0, 0.1);
 }
-.img-info-list {
+/* .img-info-list {
   position: absolute;
   display: flex;
   width: 100%;
@@ -532,7 +532,100 @@ p:last-child {
 }
 .img-info-list li:nth-child(4) span {
   top: -250px;
+} */
+.img-info-list {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
 }
+.img-info-list span {
+  display: block;
+  text-align: right;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 4vw;
+  line-height: 120%;
+  letter-spacing: -0.400697px;
+  color: #00795c;
+  white-space: nowrap;
+}
+@media (min-width:1024px){
+  .img-info-list span {
+    font-size: 1.3vw;
+  }
+}
+.img-info-list li {
+  position: absolute;
+}
+.img-info-list li svg{
+  width: 60%;
+  height: 35%;
+}
+.img-info-list li:nth-child(1) {
+  width: 21%;
+  left: 10%;
+  top: 50%;
+  transform: translateY(22%);
+}
+.img-info-list li:nth-child(1) .line,
+.img-info-list li:nth-child(1) span {
+  position: relative;
+  left: 30%;
+  width: auto;
+  max-width: none;
+  top: 0;
+  width: 175%;
+}
+.img-info-list li:nth-child(2) {
+    width: 21%;
+    left: 30%;
+    top: 50%;
+    transform: translateY(20%);
+}
+.img-info-list li:nth-child(2) .line,
+.img-info-list li:nth-child(2) span {
+  position: relative;
+  left: 37%;
+  top: 0;
+  width: 105%;
+  margin-top: -2px;
+  max-width: none;
+}
+.img-info-list li:nth-child(3) {
+    width: 21%;
+    left: 43%;
+    top: 50%;
+    transform: translateY(-80%);
+}
+.img-info-list li:nth-child(3) .line,
+.img-info-list li:nth-child(3) span {
+  left: -165%;
+  top: 0;
+  position: relative;
+  max-width: none;
+  width: 194%;
+  text-align: left;
+}
+.img-info-list li:nth-child(3) span {
+}
+.img-info-list li:nth-child(4) {
+    width: 21%;
+    left: 65%;
+    top: 50%;
+    transform: translateY(-57%);
+}
+.img-info-list li:nth-child(4) .line,
+.img-info-list li:nth-child(4) span {
+  position: relative;
+  left: 30%;
+  max-width: none;
+  width: 100%;
+}
+
 .info-slider-with-img .img-info-col {
   box-shadow: 0px 0px 0.9821px rgba(0, 0, 0, 0.05),
     0px 3.9284px 7.8568px rgba(0, 0, 0, 0.1);
