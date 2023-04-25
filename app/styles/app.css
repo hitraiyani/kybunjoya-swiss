@@ -910,3 +910,8 @@ p:last-child {
   }
 }
 /* End timeline section css */
+
+.swiper-button-next.swiper-button-disabled,
+.swiper-button-prev.swiper-button-disabled {
+  opacity: 0 !important;
+}

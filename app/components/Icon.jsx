@@ -271,3 +271,10 @@ export function IconMapPin(props) {
   </svg>
   );
 }
+export function FaAngleUp(props) {
+  return (
+    <svg {...props} width={28} height={46} viewBox="0 0 28 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12.8219 4.88124L2.46909 15.2366L0.70117 13.4686L14.0705 0.101849L27.4397 13.4686L25.6743 15.2366L15.319 4.88124L15.319 45.5659L12.8219 45.5659L12.8219 4.88124Z" fill="white" />
+      </svg>
+  );
+}

@@ -16,6 +16,7 @@ import {
   Cart,
   CartLoading,
   Link,
+  ScrollToTop,
 } from '~/components';
 import {useParams, Form, Await, useMatches, useLocation} from '@remix-run/react';
 import {useWindowScroll} from 'react-use';
@@ -27,18 +28,18 @@ import {useCartFetchers} from '~/hooks/useCartFetchers';
 export function Layout({children, layout}) {
   return (
     <>
-        <div className="">
-          <a href="#mainContent" className="sr-only">
-            Skip to content
-          </a>
-        </div>
-        <Header
-          title={layout?.shop.name ?? 'Hydrogen'}
-          menu={layout?.headerMenu}
-        />
-        <main role="main" id="mainContent" className="flex-grow">
-          {children}
-        </main>
+      <div className="">
+        <a href="#mainContent" className="sr-only">
+          Skip to content
+        </a>
+      </div>
+      <Header
+        title={layout?.shop.name ?? 'Hydrogen'}
+        menu={layout?.headerMenu}
+      />
+      <main role="main" id="mainContent" className="flex-grow">
+        {children}
+      </main>
       <Footer menu={layout?.footerMenu} main_menu={layout?.headerMenu} />
     </>
   );
@@ -108,18 +109,26 @@ function CartDrawer({isOpen, onClose}) {
 
 export function MenuDrawer({isOpen, onClose, menu}) {
   const [isScrolled, setisScrolled] = useState(false);
-  
+
   useEffect(() => {
-        window.addEventListener('scroll', () => {
-          if(window.scrollY >  50){
-            setisScrolled(true);
-          } else {
-            setisScrolled(false);
-          }
-      });
-  },[]);
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        setisScrolled(true);
+      } else {
+        setisScrolled(false);
+      }
+    });
+  }, []);
   return (
-    <Drawer open={isOpen} onClose={onClose} openFrom="right" heading="Menu" className={`p-6 overflow-auto bg-white mobile-menu-Drawer ${isScrolled ? 'header-sticky' : ''}`}>
+    <Drawer
+      open={isOpen}
+      onClose={onClose}
+      openFrom="right"
+      heading="Menu"
+      className={`p-6 overflow-auto bg-white mobile-menu-Drawer ${
+        isScrolled ? 'header-sticky' : ''
+      }`}
+    >
       <div className="grid">
         <MenuMobileNav menu={menu} onClose={onClose} />
       </div>
@@ -128,52 +137,48 @@ export function MenuDrawer({isOpen, onClose, menu}) {
 }
 
 function MenuMobileNav({menu, onClose}) {
-
   const {pathname, search} = useLocation();
-
-
   useEffect(() => {
-      const links = document.querySelectorAll('.kybunjoya-menu-hover');
-      const images = document.querySelectorAll('.image-container img');
-      const defaultActive = document.querySelector("#defaultActive")
-    
-
-      links.forEach((link) => {
-        link.addEventListener('mouseover', () => {
-          const image = link.dataset.image;
+    const links = document.querySelectorAll('.kybunjoya-menu-hover');
+    const images = document.querySelectorAll('.image-container img');
+    const defaultActive = document.querySelector('#defaultActive');
+   
+    links.forEach((link) => {
+      link.addEventListener('mouseover', () => {
+        const image = link.dataset.image;
+        images.forEach((img) => {
+          if (image === img.dataset.image) {
+            img?.classList.add('active');
+          } else {
+            img?.classList.remove('active');
+          }
+        });
+        setTimeout(() => {
+          let hasActive = false;
           images.forEach((img) => {
-            if (image === img.dataset.image) {
-              img?.classList.add('active')
-            } else {
-              img?.classList.remove('active')
+            if (img?.classList.contains('active')) {
+              hasActive = true;
             }
           });
-          setTimeout(() => {
-            let hasActive = false;
-            images.forEach((img) => {
-              if (img?.classList.contains('active')) {
-                hasActive = true;
-              }
-            })
-            if (!hasActive) {
-              defaultActive?.classList.add('active');
-            }
-          },10)
-        });
-  
-        link.addEventListener('mouseout', () => {
-          images.forEach((img) => {
-            img?.classList.remove('active')
-          });
-          defaultActive?.classList.add('active');
-        });
+          if (!hasActive) {
+            defaultActive?.classList.add('active');
+          }
+        }, 10);
       });
+
+      link.addEventListener('mouseout', () => {
+        images.forEach((img) => {
+          img?.classList.remove('active');
+        });
+        defaultActive?.classList.add('active');
+      });
+    });
   }, []);
 
   return (
-    <div className='mega-menu-wrap'>
-      <div className='nav-list'>
-        <ul className='columns-1 md:columns-3'>
+    <div className="mega-menu-wrap">
+      <div className="nav-list">
+        <ul className="columns-1 md:columns-3">
           {(menu?.items || []).map((item) => {
             return (
               <li key={item.id}>
@@ -187,7 +192,7 @@ function MenuMobileNav({menu, onClose}) {
                   {item.title}
                 </Link>
                 {item.items.length > 0 && (
-                  <SubMegaMenu menu_items={item.items}  onClose={onClose} />
+                  <SubMegaMenu menu_items={item.items} onClose={onClose} />
                 )}
               </li>
             );
@@ -198,40 +203,41 @@ function MenuMobileNav({menu, onClose}) {
   );
 }
 
-function SubMegaMenu({menu_items,onClose}) {
-
+function SubMegaMenu({menu_items, onClose}) {
   const {pathname, search} = useLocation();
-
   return (
-    <ul className='sub-menu'>
-       {(menu_items || []).map((item, key) => {
-            return(<li key={key}>
-              <Link
-                to={item.to}
-                target={item.target}
-                className={`text-[16px] text-[#595959] block leading-none ${item.to == pathname ? 'is-active' : ''} `}
-                onClick={onClose}
-              >{item.title}</Link>
-              </li>)
-       })}
+    <ul className="sub-menu">
+      {(menu_items || []).map((item, key) => {
+        return (
+          <li key={key}>
+            <Link
+              to={item.to}
+              target={item.target}
+              className={`text-[16px] text-[#595959] block leading-none ${item.to == pathname ? 'is-active' : ''} `}
+              onClick={onClose}
+            >
+              {item.title}
+            </Link>
+          </li>
+        );
+      })}
     </ul>
-  )
+  );
 }
 
 function MobileHeader({title, isHome, openCart, openMenu, isMenuOpen}) {
   // useHeaderStyleFix(containerStyle, setContainerStyle, isHome);
   const [isScrolled, setisScrolled] = useState(false);
-  
-  useEffect(() => {
-        window.addEventListener('scroll', () => {
-          if(window.scrollY >  50){
-            setisScrolled(true);
-          } else {
-            setisScrolled(false);
-          }
-      });
-  },[]);
 
+  useEffect(() => {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        setisScrolled(true);
+      } else {
+        setisScrolled(false);
+      }
+    });
+  }, []);
 
   const params = useParams();
 
@@ -239,26 +245,32 @@ function MobileHeader({title, isHome, openCart, openMenu, isMenuOpen}) {
     <header
       role="banner"
       className={`${
-        isHome
-          ? ''
-          : ''
-      } site-header fixed top-0 inset-x-0 z-50  ml-0 mr-0 lg:ml-[60px] lg:mr-[60px] lg:mt-[50px] mt-[0px] ${isScrolled ? 'header-sticky' : ''}`}
+        isHome ? '' : ''
+      } site-header fixed top-0 inset-x-0 z-50  ml-0 mr-0 lg:ml-[60px] lg:mr-[60px] lg:mt-[50px] mt-[0px] ${
+        isScrolled ? 'header-sticky' : ''
+      }`}
     >
-      <div className='container py-4 mx-auto bg-white shadow-lg lg:rounded-lg'>
-      <div className="flex items-center justify-between w-full gap-4">
-        <Link
-          className="w-40 md:w-60"
-          to="/"
-        >
-          <img className='object-contain w-full h-full max-w-[218px]' src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/logo.png?v=1680591892" alt="" />
-        </Link>
-        <button
-          onClick={openMenu}
-          className="relative flex items-center justify-center menu-toogle-btn gap-[10px] text-[20px] lg:text-[24px] xl:text-[32.96px] text-[#00795C] font-normal"
-        >
-           Menu  {isMenuOpen ? (<IconClose aria-label="Close panel" />) : (<IconMenu className={'menu-toggle-icon'} />)}
-        </button>
-        {/* <Form
+      <div className="container py-4 mx-auto bg-white shadow-lg lg:rounded-lg">
+        <div className="flex items-center justify-between w-full gap-4">
+          <Link className="w-40 md:w-60" to="/">
+            <img
+              className="object-contain w-full h-full max-w-[218px]"
+              src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/logo.png?v=1680591892"
+              alt=""
+            />
+          </Link>
+          <button
+            onClick={openMenu}
+            className="relative flex items-center justify-center menu-toogle-btn gap-[10px] text-[20px] lg:text-[24px] xl:text-[32.96px] text-[#00795C] font-normal"
+          >
+            Menu{' '}
+            {isMenuOpen ? (
+              <IconClose aria-label="Close panel" />
+            ) : (
+              <IconMenu className={'menu-toggle-icon'} />
+            )}
+          </button>
+          {/* <Form
           method="get"
           action={params.lang ? `/${params.lang}/search` : '/search'}
           className="items-center gap-2 sm:flex"
@@ -281,9 +293,8 @@ function MobileHeader({title, isHome, openCart, openMenu, isMenuOpen}) {
             name="q"
           />
         </Form> */}
+        </div>
       </div>
-      </div>
-      
 
       {/* <div className="flex items-center justify-end w-full gap-4">
         <Link
@@ -304,13 +315,7 @@ function DesktopHeader({isHome, menu, openCart, title}) {
   return (
     <header
       role="banner"
-      className={`${
-        isHome
-          ? ''
-          : ''
-      } ${
-        !isHome && y > 50 && ''
-      } hidden`}
+      className={`${isHome ? '' : ''} ${!isHome && y > 50 && ''} hidden`}
     >
       <div className="flex gap-12">
         <Link className="font-bold" to="/" prefetch="intent">
@@ -428,24 +433,26 @@ function Badge({openCart, dark, count}) {
 function FooterMainMenuSub({sub_menu_item}) {
   return (
     <ul className="font-normal text-base text-[#595959]">
-        {sub_menu_item.map((subItem, index) => (
-          <li className="mb-2" key={index}>
-              <Link
-                  to={subItem.to}
-                  target={subItem.target}
-                  className="hover:underline hover:text-[#00795C]"
-                >{subItem.title}</Link>
-          </li>
-        ))}
+      {sub_menu_item.map((subItem, index) => (
+        <li className="mb-2" key={index}>
+          <Link
+            to={subItem.to}
+            target={subItem.target}
+            className="hover:underline hover:text-[#00795C]"
+          >
+            {subItem.title}
+          </Link>
+        </li>
+      ))}
     </ul>
-  )
+  );
 }
 
 function Footer({menu, main_menu}) {
   const chunkSize = 2;
   const mainMenuChunk = [];
   for (let i = 0; i < main_menu?.items?.length; i += chunkSize) {
-      mainMenuChunk.push(main_menu?.items.slice(i, i + chunkSize));
+    mainMenuChunk.push(main_menu?.items.slice(i, i + chunkSize));
   }
 
   const isHome = useIsHomePath();
@@ -456,111 +463,174 @@ function Footer({menu, main_menu}) {
     : [];
 
   return (
-    <Section
-      divider={isHome ? 'none' : 'top'}
-      as="footer"
-      role="contentinfo"
-      // className={`grid min-h-[25rem] items-start grid-flow-row w-full gap-6 py-8 px-6 md:px-8 lg:px-12 md:gap-8 lg:gap-12 grid-cols-1 md:grid-cols-2 lg:grid-cols-${itemsCount}
-      //   bg-primary dark:bg-contrast dark:text-primary text-contrast overflow-hidden`}
-      className='pt-[64px] pb-[52px] bg-[#EDEDED] '
-    >
-      <div className='container'>
-      <div className='flex justify-between gap-4'>
-      <div className="w-full mx-auto">
-        <div className="pr-0 xl:pr-16 xl:flex md:justify-between">
-          <div className="pr-0 mb-6 md:mb-0 xl:pr-5">
-              <div className="flex flex-wrap items-center ">
-                  <h3 className='text-[#00795C] w-full font-bold lg:text-[42px] text-[30px] mb-3'>Updates in deine Inbox</h3>                 
-                  <p className="font-normal  text-[#595959] w-full text-[19px]">Bleib auf dem laufenden mit den letzten Ereignissen.</p>
-              </div>
-              <form className='mt-12 mb-10' >
-                <input type="email" id="email" className="bg-transparent border-b-[1px] font-normal border-[#999999] text-[#000] text-base placeholder:text-[#999] focus:ring-black-500 focus:border-black-500 block w-full max-w-[576px] max-w-sm-full p-0 focus:bordr-0 focus:outline-none focus:border-b-[1px] focus:border-[#000] dark:placeholder-gray-400  dark:focus:ring-black-500 dark:focus:border-black-500" placeholder="Email" required />
-              </form>
-          </div>
-          <div className="grid grid-cols-2 gap-8 lg:gap-8 lg:grid-cols-3">
-            {(mainMenuChunk || []).map((menuitem, index) => {
-              return (
-                <div key={index}>
-                    {menuitem.map((item, subIndex) => {
-                      return (
-                        <span key={subIndex}>
-                          <h2  className="mb-8 lg:text-[26px] text-[22px] font-bold capitalize text-[#00795C]">
-                           <Link
-                            to={item.to}
-                            target={item.target}
-                            className='kybunjoya-menu-hover title text-[#00795C] text-[26px] mb-[12px]'
-                            data-image={item.title}
-                          >
-                            {item.title}
-                          </Link>
-                          </h2>
-                          {
-                              item.items.length > 0 && ( <FooterMainMenuSub sub_menu_item={item.items} />)
-                          }
-                        </span>
-                      )
-                    })}
+    <>
+      <Section
+        divider={isHome ? 'none' : 'top'}
+        as="footer"
+        role="contentinfo"
+        // className={`grid min-h-[25rem] items-start grid-flow-row w-full gap-6 py-8 px-6 md:px-8 lg:px-12 md:gap-8 lg:gap-12 grid-cols-1 md:grid-cols-2 lg:grid-cols-${itemsCount}
+        //   bg-primary dark:bg-contrast dark:text-primary text-contrast overflow-hidden`}
+        className="pt-[64px] pb-[52px] bg-[#EDEDED] "
+      >
+        <div className="container relative">
+          <ScrollToTop />
+          <div className="flex justify-between gap-4">
+            <div className="w-full mx-auto">
+              <div className="pr-0 xl:pr-16 xl:flex md:justify-between">
+                <div className="pr-0 mb-6 md:mb-0 xl:pr-5">
+                  <div className="flex flex-wrap items-center ">
+                    <h3 className="text-[#00795C] w-full font-bold lg:text-[42px] text-[30px] mb-3">
+                      Updates in deine Inbox
+                    </h3>
+                    <p className="font-normal  text-[#595959] w-full text-[19px]">
+                      Bleib auf dem laufenden mit den letzten Ereignissen.
+                    </p>
+                  </div>
+                  <form className="mt-12 mb-10">
+                    <input
+                      type="email"
+                      id="email"
+                      className="bg-transparent border-b-[1px] font-normal border-[#999999] text-[#000] text-base placeholder:text-[#999] focus:ring-black-500 focus:border-black-500 block w-full max-w-[576px] max-w-sm-full p-0 focus:bordr-0 focus:outline-none focus:border-b-[1px] focus:border-[#000] dark:placeholder-gray-400  dark:focus:ring-black-500 dark:focus:border-black-500"
+                      placeholder="Email"
+                      required
+                    />
+                  </form>
                 </div>
-              )
-            })}
+                <div className="grid grid-cols-2 gap-8 lg:gap-8 lg:grid-cols-3">
+                  {(mainMenuChunk || []).map((menuitem, index) => {
+                    return (
+                      <div key={index}>
+                        {menuitem.map((item, subIndex) => {
+                          return (
+                            <span key={subIndex}>
+                              <h2 className="mb-8 lg:text-[26px] text-[22px] font-bold capitalize text-[#00795C]">
+                                <Link
+                                  to={item.to}
+                                  target={item.target}
+                                  className="kybunjoya-menu-hover title text-[#00795C] text-[26px] mb-[12px]"
+                                  data-image={item.title}
+                                >
+                                  {item.title}
+                                </Link>
+                              </h2>
+                              {item.items.length > 0 && (
+                                <FooterMainMenuSub sub_menu_item={item.items} />
+                              )}
+                            </span>
+                          );
+                        })}
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+              <div className="mt-[40px] lg:mt-[-80px]">
+                <div className="flex mb-6">
+                  <p className="font-normal text-base text-[#595959] flex gap-4 items-center">
+                    <span>
+                      <svg
+                        width="18"
+                        height="18"
+                        viewBox="0 0 18 18"
+                        fill="none"
+                      >
+                        <path
+                          d="M0.732 1.12262C0.964193 0.890493 1.23984 0.706371 1.54319 0.580774C1.84655 0.455177 2.17167 0.390564 2.5 0.390625H15.5C16.163 0.390625 16.7989 0.654017 17.2678 1.12286C17.7366 1.5917 18 2.22758 18 2.89062V10.3906C18 11.0537 17.7366 11.6896 17.2678 12.1584C16.7989 12.6272 16.163 12.8906 15.5 12.8906H8.207L3.5 17.5976V12.8906H2.5C1.83696 12.8906 1.20107 12.6272 0.732233 12.1584C0.263392 11.6896 4.34504e-08 11.0537 4.34504e-08 10.3906V2.89062C-6.11675e-05 2.5623 0.0645516 2.23717 0.190149 1.93382C0.315746 1.63046 0.499868 1.35482 0.732 1.12262ZM2.5 1.39062C2.10218 1.39062 1.72064 1.54866 1.43934 1.82996C1.15804 2.11127 1 2.4928 1 2.89062V10.3906C1 10.7884 1.15804 11.17 1.43934 11.4513C1.72064 11.7326 2.10218 11.8906 2.5 11.8906H4.5V15.1836L7.793 11.8906H15.5C15.8978 11.8906 16.2794 11.7326 16.5607 11.4513C16.842 11.17 17 10.7884 17 10.3906V2.89062C17 2.4928 16.842 2.11127 16.5607 1.82996C16.2794 1.54866 15.8978 1.39062 15.5 1.39062H2.5ZM5 7.39062V5.89062H6V7.39062H5ZM8.5 7.39062V5.89062H9.5V7.39062H8.5ZM12 7.39062V5.89062H13V7.39062H12Z"
+                          fill="#595959"
+                        />
+                      </svg>
+                    </span>{' '}
+                    <a
+                      href="#"
+                      className="hover:underline hover:text-[#00795C] font-normal text-[15px] text-[#595959]"
+                    >
+                      Chat{' '}
+                    </a>{' '}
+                  </p>
+                </div>
+                <div className="flex mb-11">
+                  <p className="font-normal text-base text-[#595959] flex gap-4 items-center">
+                    <span>
+                      <svg
+                        width="18"
+                        height="13"
+                        viewBox="0 0 18 13"
+                        fill="none"
+                      >
+                        <path
+                          d="M0 0.390625H18V12.3906H0V0.390625ZM1 2.40263V11.3906H17V2.40263L9 8.51962L1 2.40263ZM16.677 1.39062H1.323L9 7.26062L16.677 1.39062Z"
+                          fill="#595959"
+                        />
+                      </svg>
+                    </span>{' '}
+                    <a
+                      href="#"
+                      className="hover:underline hover:text-[#00795C] font-normal text-base text-[#595959]"
+                    >
+                      Contact us{' '}
+                    </a>{' '}
+                  </p>
+                </div>
+                <div className="flex mb-10">
+                  <p className="font-normal text-base text-[#595959] flex gap-4 items-center">
+                    <span>
+                      <img
+                        className=""
+                        src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Clip_path_group.png?v=1682401790"
+                        alt=""
+                      />
+                    </span>{' '}
+                    <a
+                      href="#"
+                      className="hover:underline hover:text-[#00795C] font-normal text-base text-[#595959]"
+                    >
+                      Deutsch{' '}
+                    </a>{' '}
+                  </p>
+                </div>
+                <div className="flex mb-12">
+                  <span className="text-[15.94px] font-normal sm:text-center text-[#595959]">
+                    © kybun Joya {new Date().getFullYear()}{' '}
+                  </span>
+                </div>
+                <div className="sm:flex sm:items-center sm:justify-between">
+                  <ul className="font-normal text-base  text-[#595959] flex gap-3 lg:gap-9 flex-wrap">
+                    {(menu?.items || []).map((item, index) => (
+                      <li key={index}>
+                        <Link
+                          to={item.to}
+                          className="hover:underline hover:text-[#00795C]"
+                        >
+                          {item.title}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
+                    <a
+                      href="#"
+                      className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+                    >
+                      <svg
+                        width="50"
+                        height="50"
+                        viewBox="0 0 50 50"
+                        fill="none"
+                      >
+                        <rect width="50" height="50" rx="8" fill="#595959" />
+                        <path
+                          d="M17.7785 14.8876C17.7785 16.4216 16.7515 17.7427 14.886 17.7427C13.1326 17.7427 12 16.498 12 14.964C12 13.3894 13.0985 12 14.8892 12C16.68 12 17.7428 13.313 17.7785 14.8876ZM12 38V19.2215H17.7785V37.9984L12 38ZM20.6661 25.6419C20.6661 23.4108 20.593 21.5453 20.5199 19.9349H25.7101L25.9685 22.4227H26.0774C26.8086 21.2527 28.601 19.5351 31.5991 19.5351C35.2554 19.5351 38 21.9824 38 27.2506V38H32.2215V28.0875C32.2215 25.7849 31.3456 24.0283 29.3339 24.0283C27.7999 24.0283 27.0312 25.2714 26.6283 26.2951C26.482 26.6607 26.4446 27.1726 26.4446 27.6861V37.9967H20.6661V25.6386V25.6419Z"
+                          fill="#F5F5F5"
+                        />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-      </div>
-      <div className='mt-[40px] lg:mt-[-80px]'>
-      <div className='flex mb-6'> 
-         <p className="font-normal text-base text-[#595959] flex gap-4 items-center">
-           <span>
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" >
-              <path d="M0.732 1.12262C0.964193 0.890493 1.23984 0.706371 1.54319 0.580774C1.84655 0.455177 2.17167 0.390564 2.5 0.390625H15.5C16.163 0.390625 16.7989 0.654017 17.2678 1.12286C17.7366 1.5917 18 2.22758 18 2.89062V10.3906C18 11.0537 17.7366 11.6896 17.2678 12.1584C16.7989 12.6272 16.163 12.8906 15.5 12.8906H8.207L3.5 17.5976V12.8906H2.5C1.83696 12.8906 1.20107 12.6272 0.732233 12.1584C0.263392 11.6896 4.34504e-08 11.0537 4.34504e-08 10.3906V2.89062C-6.11675e-05 2.5623 0.0645516 2.23717 0.190149 1.93382C0.315746 1.63046 0.499868 1.35482 0.732 1.12262ZM2.5 1.39062C2.10218 1.39062 1.72064 1.54866 1.43934 1.82996C1.15804 2.11127 1 2.4928 1 2.89062V10.3906C1 10.7884 1.15804 11.17 1.43934 11.4513C1.72064 11.7326 2.10218 11.8906 2.5 11.8906H4.5V15.1836L7.793 11.8906H15.5C15.8978 11.8906 16.2794 11.7326 16.5607 11.4513C16.842 11.17 17 10.7884 17 10.3906V2.89062C17 2.4928 16.842 2.11127 16.5607 1.82996C16.2794 1.54866 15.8978 1.39062 15.5 1.39062H2.5ZM5 7.39062V5.89062H6V7.39062H5ZM8.5 7.39062V5.89062H9.5V7.39062H8.5ZM12 7.39062V5.89062H13V7.39062H12Z" fill="#595959"/>
-              </svg>
-
-          </span> <a href="#" className="hover:underline hover:text-[#00795C] font-normal text-[15px] text-[#595959]">Chat </a>  </p> 
-      </div>
-      <div className='flex mb-11'> 
-         <p className="font-normal text-base text-[#595959] flex gap-4 items-center">
-           <span>
-           <svg width="18" height="13" viewBox="0 0 18 13" fill="none">
-            <path d="M0 0.390625H18V12.3906H0V0.390625ZM1 2.40263V11.3906H17V2.40263L9 8.51962L1 2.40263ZM16.677 1.39062H1.323L9 7.26062L16.677 1.39062Z" fill="#595959"/>
-          </svg>
-
-          </span> <a href="#" className="hover:underline hover:text-[#00795C] font-normal text-base text-[#595959]">Contact us </a>  </p> 
-      </div>
-      <div className='flex mb-10'> 
-         <p className="font-normal text-base text-[#595959] flex gap-4 items-center">
-           <span>
-            <img className='' src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/lang-icon.svg?v=1680775164" alt="" />
-          </span> <a href="#" className="hover:underline hover:text-[#00795C] font-normal text-base text-[#595959]">Deutsch </a>  </p> 
-      </div>
-        <div className='flex mb-12'> 
-          <span className="text-[15.94px] font-normal sm:text-center text-[#595959]">© kybun Joya {new Date().getFullYear()}          </span>
-      </div>      
-      <div className="sm:flex sm:items-center sm:justify-between">         
-                <ul className="font-normal text-base  text-[#595959] flex gap-3 lg:gap-9 flex-wrap">
-                  {(menu?.items || []).map((item, index) => (
-                    <li key={index}>
-                      <Link
-                        to={item.to}
-                        className="hover:underline hover:text-[#00795C]"
-                      >{item.title}</Link>
-                    </li>
-                  ))}
-
-                </ul>
-          <div className="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
-              <a href="#" className="text-gray-500 hover:text-gray-900 dark:hover:text-white">
-              <svg width="50" height="50" viewBox="0 0 50 50" fill="none">
-                <rect width="50" height="50" rx="8" fill="#595959"/>
-                <path d="M17.7785 14.8876C17.7785 16.4216 16.7515 17.7427 14.886 17.7427C13.1326 17.7427 12 16.498 12 14.964C12 13.3894 13.0985 12 14.8892 12C16.68 12 17.7428 13.313 17.7785 14.8876ZM12 38V19.2215H17.7785V37.9984L12 38ZM20.6661 25.6419C20.6661 23.4108 20.593 21.5453 20.5199 19.9349H25.7101L25.9685 22.4227H26.0774C26.8086 21.2527 28.601 19.5351 31.5991 19.5351C35.2554 19.5351 38 21.9824 38 27.2506V38H32.2215V28.0875C32.2215 25.7849 31.3456 24.0283 29.3339 24.0283C27.7999 24.0283 27.0312 25.2714 26.6283 26.2951C26.482 26.6607 26.4446 27.1726 26.4446 27.6861V37.9967H20.6661V25.6386V25.6419Z" fill="#F5F5F5"/>
-                </svg>
-                
-              </a>
-            
-          </div>
-      </div>
-      </div>
-    </div>
-      </div>
-      </div>
-      {/* <FooterMenu menu={menu} />
+        </div>
+        {/* <FooterMenu menu={menu} />
       <CountrySelector /> 
       <div
         className={`self-end pt-8 opacity-50 md:col-span-2 lg:col-span-${itemsCount}`}
@@ -568,7 +638,8 @@ function Footer({menu, main_menu}) {
         &copy; {new Date().getFullYear()} / Shopify, Inc. Hydrogen is an MIT
         Licensed Open Source project.
       </div> */}
-    </Section>
+      </Section>
+    </>
   );
 }
 
