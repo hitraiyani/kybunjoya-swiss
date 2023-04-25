@@ -334,7 +334,12 @@ p:last-child {
     padding-bottom: 60% !important;
   }
   .collectionsGrid-product-sec .collectionsGrid-item > a {
-    padding-bottom: 120% !important;
+    padding-bottom: 80% !important;
+  }
+}
+@media (max-width: 1023px) {
+  .collectionsGrid-product-sec .collectionsGrid-item > a {
+    padding-bottom: 100% !important;
   }
 }
 @media (max-width: 767px) {
