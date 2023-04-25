@@ -3896,6 +3896,10 @@ video {
     font-size: 45px;
   }
 
+  .xl\:text-\[50px\] {
+    font-size: 50px;
+  }
+
   .xl\:text-\[55px\] {
     font-size: 55px;
   }

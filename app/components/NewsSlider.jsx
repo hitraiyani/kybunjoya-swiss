@@ -11,9 +11,9 @@ export function NewsSlider({news}) {
   return (
     <section className="article-slide py-[40px] md:py-[60px] lg:py-[80px] xl:py-[100px]">
       <div className="container">
-        <h3 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[55px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold">
+        <h2 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold">
           Neues und Aktuelles
-        </h3>
+        </h2>
         <Swiper
           className="article-slider"
           modules={[Navigation, Scrollbar, A11y, Autoplay]}

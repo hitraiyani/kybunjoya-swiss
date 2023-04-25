@@ -21,7 +21,7 @@ export default function aboutUs() {
         </section>
         <section className="timeline-sec py-[20px] md:py-[30px] lg:py-[40px] xl:py-[50px]">
           <div className="title-wrap">
-            <h2 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[55px] tracking-[-1.05984px] mb-[20px] md:mb-[30px] xl:mb-[42px] font-bold text-center">
+            <h2 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] mb-[20px] md:mb-[30px] xl:mb-[42px] font-bold text-center">
               Story
             </h2>
           </div>
@@ -43,7 +43,7 @@ export default function aboutUs() {
                       </div>
                     </div>
                     <div className="content-wrap w-full md:w-[50%]">
-                      <h3 className="text-[#000000] text-[35px] lg:text-[40px] xl:text-[55px] tracking-[-1.05984px] mb-[5px] font-bold leading-[1.1]">
+                      <h3 className="text-[#000000] text-[35px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] mb-[5px] font-bold leading-[1.1]">
                         Titel
                       </h3>
                       <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
@@ -70,7 +70,7 @@ export default function aboutUs() {
                       </div>
                     </div>
                     <div className="content-wrap w-full md:w-[50%]">
-                      <h3 className="text-[#000000] text-[35px] lg:text-[40px] xl:text-[55px] tracking-[-1.05984px] mb-[5px] font-bold leading-[1.1]">
+                      <h3 className="text-[#000000] text-[35px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] mb-[5px] font-bold leading-[1.1]">
                         Titel
                       </h3>
                       <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
@@ -99,7 +99,7 @@ export default function aboutUs() {
                       </div>
                     </div>
                     <div className="content-wrap w-full md:w-[50%]">
-                      <h3 className="text-[#000000] text-[35px] lg:text-[40px] xl:text-[55px] tracking-[-1.05984px] mb-[5px] font-bold leading-[1.1]">
+                      <h3 className="text-[#000000] text-[35px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] mb-[5px] font-bold leading-[1.1]">
                         Titel
                       </h3>
                       <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
@@ -129,9 +129,9 @@ export default function aboutUs() {
           </h2>
           <div className="flex flex-col-reverse lg:flex-row gap-y-[20px] gap-x-[30px] xl:gap-x-[64px]">
             <div className="content-col flex-1 flex flex-col">
-              <h4 className="text-[35px] lg:text-[40px] xl:text-[55px] text-[#00795C] leading-[1.2] tracking-[-1.05984px] mb-[17px] font-medium">
+              <h2 className="text-[35px] lg:text-[40px] xl:text-[50px] text-[#00795C] leading-[1.2] tracking-[-1.05984px] mb-[17px] font-medium">
                 Unser Produkt
-              </h4>
+              </h2>
             </div>
             <div className="img-col flex-1 overflow-hidden lg:w-auto w-full">
               <img
@@ -155,9 +155,9 @@ export default function aboutUs() {
               />
             </div>
             <div className="content-col flex-1 flex flex-col">
-              <h4 className="text-[35px] lg:text-[40px] xl:text-[55px] text-[#00795C] leading-[1.2] tracking-[-1.05984px] mb-[17px] font-medium">
+              <h2 className="text-[35px] lg:text-[40px] xl:text-[50px] text-[#00795C] leading-[1.2] tracking-[-1.05984px] mb-[17px] font-medium">
                 Unsere Mission
-              </h4>
+              </h2>
               <div className="desc text-black text-[16px] lg:text-[25px] leading-[1.3] font-[400]">
                 <p>
                   Mit dem kybun Schuh erleben Sie gleich von Beginn an das
@@ -177,9 +177,9 @@ export default function aboutUs() {
           </h2>
           <div className="flex flex-col-reverse lg:flex-row gap-y-[20px] gap-x-[30px] xl:gap-x-[64px]">
             <div className="content-col flex-1 flex flex-col">
-              <h4 className="text-[35px] lg:text-[40px] xl:text-[55px] text-[#00795C] leading-[1.2] tracking-[-1.05984px] mb-[17px] font-medium">
+              <h2 className="text-[35px] lg:text-[40px] xl:text-[50px] text-[#00795C] leading-[1.2] tracking-[-1.05984px] mb-[17px] font-medium">
                 CloudTech
-              </h4>
+              </h2>
               <div className="desc text-black text-[16px] lg:text-[25px] leading-[1.3] font-[400]">
                 <p>
                   Mit dem kybun Schuh erleben Sie gleich von Beginn an das

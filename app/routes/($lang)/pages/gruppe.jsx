@@ -59,7 +59,7 @@ export default function gorup() {
         <section className="rich-text-sec py-[20px] md:py-[30px] lg:py-[40px] xl:py-[50px] pt-[40px] md:pt-[60px] lg:pt-[80px] xl:pt-[100px]">
           <div className="rich-text-inner">
             <div className="title-wrap">
-              <h2 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[55px] tracking-[-1.05984px] mb-[20px] md:mb-[30px] xl:mb-[42px] font-bold">
+              <h2 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] mb-[20px] md:mb-[30px] xl:mb-[42px] font-bold">
                 {page?.gruppe_page?.reference?.values_section_title?.value}
               </h2>
             </div>
@@ -121,7 +121,7 @@ export default function gorup() {
             <div className="flex flex-col lg:flex-row gap-y-[30px] gap-x-[73px]">
               <div className="col-left w-full lg:w-[40%]">
                 <div className="title-wrap">
-                  <h2 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[55px] tracking-[-1.05984px] mb-[20px] md:mb-[30px] xl:mb-[42px] font-bold">
+                  <h2 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] mb-[20px] md:mb-[30px] xl:mb-[42px] font-bold">
                     {page?.gruppe_page?.reference?.work_section_title?.value}
                   </h2>
                 </div>
@@ -160,7 +160,7 @@ export default function gorup() {
                 <div className="flex flex-col lg:flex-row gap-y-[30px] gap-x-[100px]">
                   <div className="w-full lg:w-[60%]">
                     <div className="title-wrap">
-                      <h2 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[55px] tracking-[-1.05984px] mb-[20px] md:mb-[30px] xl:mb-[42px] font-bold">
+                      <h2 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[50px] 0racking-[-1.05984px] mb-[20px] md:mb-[30px] xl:mb-[42px] font-bold">
                         {page?.gruppe_page?.reference?.culture_employee_section_title_1?.value}
                       </h2>
                     </div>
@@ -175,7 +175,7 @@ export default function gorup() {
                   </div>
                   <div className="w-full lg:w-[40%]">
                     <div className="title-wrap">
-                      <h2 className="title text-[#00795C] text-[35px] lg:text-[40px] xl:text-[55px] tracking-[-1.05984px] mb-[20px] lg:mb-[24px] leading-[1.1]">
+                      <h2 className="title text-[#00795C] text-[35px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] mb-[20px] lg:mb-[24px] leading-[1.1]">
                         {page?.gruppe_page?.reference?.culture_employee_section_title_2?.value}
                       </h2>
                     </div>
@@ -189,7 +189,7 @@ export default function gorup() {
                 </div>
                 <div className="w-full mt-[20px] md:mt[30px] xl:mt-[64px] max-w-[770px]">
                   <div className="title-wrap">
-                    <h2 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[55px] tracking-[-1.05984px] mb-[20px] md:mb-[30px] xl:mb-[42px] font-bold"
+                    <h2 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[50px] tracking-0-1.05984px] mb-[20px] md:mb-[30px] xl:mb-[42px] font-bold"
                        dangerouslySetInnerHTML={{
                         __html: (page?.gruppe_page?.reference.culture_employee_section_title_3.value),
                       }}
@@ -221,7 +221,7 @@ export default function gorup() {
           <div className="rich-text-inner">
             <div className="w-full">
               <div className="title-wrap">
-                <h2 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[55px] tracking-[-1.05984px] mb-[20px] md:mb-[30px] xl:mb-[42px] font-bold">
+                <h2 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] mb-[20px] md:mb-[30px] xl:mb-[42px] font-bold">
                   {page?.gruppe_page?.reference?.kybun_joya_therapie_section_title?.value}
                 </h2>
               </div>
@@ -313,7 +313,7 @@ export default function gorup() {
             <div className="flex flex-col lg:flex-row-reverse gap-y-[30px] gap-x-[50px]">
               <div className="col-left w-full lg:w-[40%]">
                 <div className="title-wrap">
-                  <h2 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[55px] tracking-[-1.05984px] mb-[20px] md:mb-[30px] xl:mb-[42px] font-bold">
+                  <h2 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] mb-[20px] md:mb-[30px] xl:mb-[42px] font-bold">
                     {page?.gruppe_page?.reference?.footer_group_title?.value}
                   </h2>
                 </div>

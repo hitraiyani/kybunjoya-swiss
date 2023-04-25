@@ -92,7 +92,7 @@ export default function schweizerSchuhpropktion() {
                 </Swiper>
               </div>
               <div className="content-col flex-1 flex flex-col justify-center">
-                <h2 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[55px] tracking-[-1.05984px] mb-[20px] md:mb-[30px] xl:mb-[42px] font-bold">
+                <h2 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] mb-[20px] md:mb-[30px] xl:mb-[42px] font-bold">
                   {page?.main_title?.value}
                 </h2>
                 <h3 className="subtitle text-[18px] lg:text-[23px] text-balck leading-[1.3] mb-[20px] font-[400]"
@@ -129,7 +129,7 @@ export default function schweizerSchuhpropktion() {
             )}
           <div className="video-sec container mt-[40px] xl:mt-[87px] mb-[50px] lg:mb-[80px] xl:mb-[134px]">
             <div className="title-wrap">
-              <h2 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[55px] tracking-[-1.05984px] mb-[20px] md:mb-[30px] xl:mb-[42px] font-bold">
+              <h2 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] mb-[20px] md:mb-[30px] xl:mb-[42px] font-bold">
                 {page?.video_section_title?.value}
               </h2>
               <div className="video-wrap">

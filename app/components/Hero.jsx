@@ -33,9 +33,9 @@ export function Hero({
             
             <div className="absolute inset-x-0 bottom-0 w-full img-overlay h-2/4"></div>
             <div className="absolute slider-content bottom-12 lg:bottom-28 left-0 right-0 w-full container">
-                <h2 className="mb-[15px] text-white title text-[40px] md:text-[50px] xl:text-[60px] leading-[-1.05984px] font-bold"  dangerouslySetInnerHTML={{
+                <h1 className="mb-[15px] text-white title text-[40px] md:text-[50px] xl:text-[60px] leading-[-1.05984px] font-bold"  dangerouslySetInnerHTML={{
                       __html: toHTML(hereMetaObj?.data?.title?.value),
-                    }}></h2>
+                    }}></h1>
                 <h4 className="mb-[20px] text-white sub-title text-[24px] md:text-[32.96px] font-normal" dangerouslySetInnerHTML={{
                       __html: toHTML(hereMetaObj?.data?.sub_title?.value),
                     }}></h4>

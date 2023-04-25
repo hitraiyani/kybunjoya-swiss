@@ -76,8 +76,9 @@ p:last-child {
   border-radius: 10px;
   max-width: 950px;
   margin-top: 142px;
-  margin-right: 80px;
+  margin-right: 60px;
   max-height: 310px;
+  padding: 20px 50px;
 }
 .mobile-menu-Drawer .nav-list > ul > li {
   padding: 0;
@@ -99,6 +100,28 @@ p:last-child {
   margin-bottom: 20px;
   display: block;
   font-weight: 600;
+  position: relative;
+  transition: all 0.5s;
+}
+.mobile-menu-Drawer li a.title:before {
+  content: '';
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256' viewBox='0 0 256 256'%3E%3Cpath fill='%2300795C' d='m220.24 132.24l-72 72a6 6 0 0 1-8.48-8.48L201.51 134H40a6 6 0 0 1 0-12h161.51l-61.75-61.76a6 6 0 0 1 8.48-8.48l72 72a6 6 0 0 1 0 8.48Z'%3E%3C/path%3E%3C/svg%3E");
+  width: 31px;
+  height: 31px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  top: -1px;
+  left: -36px;
+  opacity: 0;
+}
+.mobile-menu-Drawer li a.title:hover {
+  text-decoration: underline;
+}
+.mobile-menu-Drawer li a.title:hover::before,
+.mobile-menu-Drawer li a.title.active::before {
+  opacity: 1;
 }
 .mobile-menu-Drawer .nav-list > ul > li:last-child a.title {
   color: #595959;
@@ -848,7 +871,8 @@ p:last-child {
 
 /* timeline section css */
 .timeline-items .timeline-item .img-wrap {
-  filter: drop-shadow(0px 0px 1.31737px rgba(0, 0, 0, .05)) drop-shadow(0px 5.26947px 10.5389px rgba(0, 0, 0, .1));
+  filter: drop-shadow(0px 0px 1.31737px rgba(0, 0, 0, 0.05))
+    drop-shadow(0px 5.26947px 10.5389px rgba(0, 0, 0, 0.1));
 }
 @media (min-width: 1280px) {
   .timeline-items .timeline-item:nth-child(even) .img-wrap {

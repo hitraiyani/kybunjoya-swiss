@@ -7,9 +7,9 @@ export function GruppeSection({gruppeMenu}) {
   return (
     <Section className={'collectionsGrid-sec pb-[40px] md:pb-[60px] lg:pb-[80px] xl:pb-[100px]'}>
       <div className="container">
-      <h3 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[55px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold">
+      <h2 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold">
            Gruppe
-        </h3>
+        </h2>
         <div className='quick-links-sec bg-[#EDEDED] mt-[28px]'>
         <div className="collectionsGrid-item flex flex-wrap">
             <Link to={gruppeMenu?.to} className="relative block overflow-hidden w-full lg:w-3/5">
