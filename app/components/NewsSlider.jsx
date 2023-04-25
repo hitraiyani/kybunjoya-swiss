@@ -55,31 +55,32 @@ export function NewsSlider({news}) {
               var badgeLabel = '';
               var brandName = '';
               if (newItem?.attributes?.brands.length > 0) {
+                console.log(newItem?.attributes?.brands);
                 var brand = newItem?.attributes?.brands[0];
                 for (var nc = 0; nc < brand.translations.length; nc++) {
                   if (brand.translations[nc].locale == STORE_LOCALE) {
                     var brandName = brand.translations[nc].webName
                       ? brand.translations[nc].webName
                       : brand.translations[nc].name;
-                      badgeLabel = brandName;
+                      badgeLabel = brandName.charAt(0).toUpperCase() + brandName.slice(1);
                   }
                 }
               }
               var catName = '';
               
-              if (newItem?.attributes?.newsCategory != null) {
-                var cat = newItem?.attributes?.newsCategory;
-                for (var nc = 0; nc < cat.translations.length; nc++) {
-                  if (cat.translations[nc].locale == STORE_LOCALE) {
-                    var catName = cat.translations[nc].webName
-                      ? cat.translations[nc].webName
-                      : cat.translations[nc].name;
-                      if (badgeLabel != '') {
-                        badgeLabel+= "/"+catName;
-                      }
-                  }
-                }
-              }
+              // if (newItem?.attributes?.newsCategory != null) {
+              //   var cat = newItem?.attributes?.newsCategory;
+              //   for (var nc = 0; nc < cat.translations.length; nc++) {
+              //     if (cat.translations[nc].locale == STORE_LOCALE) {
+              //       var catName = cat.translations[nc].webName
+              //         ? cat.translations[nc].webName
+              //         : cat.translations[nc].name;
+              //         if (badgeLabel != '') {
+              //           badgeLabel+= "/"+catName;
+              //         }
+              //     }
+              //   }
+              // }
               return (
                 <SwiperSlide key={index}>
                   <div>
@@ -93,8 +94,9 @@ export function NewsSlider({news}) {
                           src={imgSrc}
                         ></img>
                       </div>
-                      <p className="text-[16px] text-white font-normal mb-[5px] bg-[#00795C] leading-none top-[15px] right-[15px] w-fit py-[10px] px-[16px] rounded-[10px] absolute shadow-md capitalize">
-                      {badgeLabel}
+                      <p className="text-[16px] text-white font-normal mb-[5px] bg-[#00795C] leading-none top-[15px] right-[15px] w-fit py-[10px] px-[16px] rounded-[10px] absolute shadow-md capitalize"
+                      >
+                      <span style={ badgeLabel == 'Kybun' ? { color : "#980A2B"} : {}}>{badgeLabel}</span>
                       </p>
                     </Link>
                   </div>
