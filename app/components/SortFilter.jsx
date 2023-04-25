@@ -63,20 +63,23 @@ export function FiltersDrawer({
   const [params] = useSearchParams();
   const location = useLocation();
   const navigate = useNavigate();
+  const [loaded, setLoaded] = useState(false);
 
   const [prevQueryString, setPrevQueryString] = useState('');
  
 
   useEffect(() => {
-    if (location.search !== prevQueryString) {
+    if (location.search !== prevQueryString && loaded) {
       const topOffset = document.querySelector('#filter_by')?.getBoundingClientRect()?.top;
       window.scrollTo({ top: topOffset - 50, behavior: 'smooth' });
       setPrevQueryString(location.search);
     }
-  },[location.search, prevQueryString]);
+  },[location.search, prevQueryString, loaded]);
+
 
   const handleFilterClick = (event) => {
     event.preventDefault();
+    setLoaded(true);
     const queryString = event.currentTarget.search;
     navigate(queryString, { scroll: false });
   }
@@ -138,6 +141,13 @@ export function FiltersDrawer({
     });*/
   }
 
+  const checkIfDefaultOpen = (item) => {
+      if (item.label == 'Brand' &&  params.get('productVendor') != null) {
+        return true;
+      }
+      return false;
+  };
+
   return (
     <>
       <nav className="py-8" id="filter_by">
@@ -148,7 +158,7 @@ export function FiltersDrawer({
           {filters.map(
             (filter, idx) =>
               filter.values.length > 1 && (
-                <Disclosure as="div" key={filter.id} className="w-auto relative">
+                <Disclosure as="div" defaultOpen={checkIfDefaultOpen(filter)}  key={filter.id} className="w-auto relative">
                   {({open}) => (
                     <>
                       <Disclosure.Button 

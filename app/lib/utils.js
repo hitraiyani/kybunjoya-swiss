@@ -120,9 +120,9 @@ function parseItem(customPrefixes = {}) {
       // @ts-ignore
       return;
     }
-
+    
     // extract path from url because we don't need the origin on internal to attributes
-    const {pathname} = new URL(item.url);
+    const {pathname, search} = new URL(item.url);
 
     /*
               Currently the MenuAPI only returns online store urls e.g — xyz.myshopify.com/..
@@ -136,7 +136,7 @@ function parseItem(customPrefixes = {}) {
           ...item,
           isExternal: false,
           target: '_self',
-          to: resolveToFromType({type: item.type, customPrefixes, pathname}),
+          to: (item.type == 'HTTP' && search) ? pathname+search : resolveToFromType({type: item.type, customPrefixes, pathname}),
         }
       : // external links
         {
