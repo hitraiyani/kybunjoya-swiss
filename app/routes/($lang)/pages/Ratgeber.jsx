@@ -51,8 +51,9 @@ export default function ratgeber() {
         <section className="hero-banner-section ratgeber-banner-section rounded-xl overflow-hidden">
           <div className="hero-banner-inner relative">
             <div className='banner-info'>
-              <div className='flex flex-col md:flex-row md:items-end px-[40px] py-[40px] xl:px-[72px] xl:py-[57px] justify-between'>
-                <div className='title-wrap w-[300px]'>
+              <div className='flex flex-col md:flex-row md:items-end p-[20px] md:px-[40px] md:py-[40px] xl:px-[72px] xl:py-[57px] justify-between'>
+                <div className='title-wrap w-[300px] mb-[20px] md:mb-[0]'>
+                <h4 className='font-black text-white text-[35px] md:text-[50px] lg:text-[70px] xl:text-[100px] leading-[1.1] md:hidden mb-[10px]'>{page?.ratgeber?.reference?.hero_inner_banner_title?.value}</h4>
                   <h2 className='text-white text-[30px] lg:text-[40px] xl:text-[55px] tracking-[-1.05984px] font-bold leading-[1.1]'
                   dangerouslySetInnerHTML={{
                     __html: toHTML(page?.ratgeber?.reference?.hero_banner_title?.value),
@@ -60,17 +61,17 @@ export default function ratgeber() {
                   ></h2>
                 </div>
                 <div className='dr-info flex md:flex-row flex-col gap-[20px] items-start'>
-                  <div className='name md:w-[280px] md:text-right mt-[20px] md:mt-[0]'>
+                  <div className='name md:w-[280px] md:text-right mt-[20px] md:mt-[0] md:block hidden'>
                     <h4 className='font-black text-white text-[40px] md:text-[50px] lg:text-[70px] xl:text-[100px] leading-[1.1]'>{page?.ratgeber?.reference?.hero_inner_banner_title?.value}</h4>
                   </div>
                   <div className='dr-img'>
-                    <img className='rounded-xl' src={page?.ratgeber?.reference?.hero_inner_banner?.reference?.image?.url} alt="" />
+                    <img className='rounded-xl w-[150px] md:w-full' src={page?.ratgeber?.reference?.hero_inner_banner?.reference?.image?.url} alt="" />
                   </div>
                 </div>
               </div>
             </div>
             <div className="bg-img w-full h-full absolute inset-0 z-[-1] rounded-xl overflow-hidden">
-              <div className="absolute inset-x-0 bottom-0 w-full img-overlay h-2/4"></div>
+              <div className="absolute inset-x-0 bottom-0 w-full img-overlay h-full md:h-2/4"></div>
               <img
                 className="w-full h-full object-cover rounded-xl"
                 src={page?.ratgeber?.reference?.hero_banner?.reference?.image?.url}
@@ -85,7 +86,7 @@ export default function ratgeber() {
               <img className='w-full rounded-xl' src={page?.ratgeber?.reference?.start_consultation_image?.reference?.image?.url} alt="" />
             </div>
             <div className='content-info w-full lg:w-[50%]'>
-              <h4 className='text-[28px] md:text-[30px] lg:text-[40px] tracking-[-0.97152px] font-medium leading-[1.1]'
+              <h4 className='text-[24px] md:text-[30px] lg:text-[40px] tracking-[-0.97152px] font-medium leading-[1.3]'
                   dangerouslySetInnerHTML={{
                     __html: toHTML(page?.ratgeber?.reference?.start_consultation_text?.value),
                   }}

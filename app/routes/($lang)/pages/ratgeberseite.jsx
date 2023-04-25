@@ -77,8 +77,8 @@ export default function ratgeberseite() {
       <div className="container mt-[120px] lg:mt-[200px]">
         <section className="dr-info-tabs-section">
           <div className="dr-info-tabs-inner">
-            <div className="flex flex-wrap flex-col md:flex-row gap-y-[20px] gap-x-[46px] justify-center md:justify-start">
-              <div className="content-info w-full xl:w-[510px]">
+            <div className="flex flex-wrap flex-col md:flex-row gap-y-[30px] gap-x-[46px] justify-center md:justify-start">
+              <div className="content-info w-full xl:flex-[1]">
                 <div className="title-wrap text-left xl:text-right xl:max-w-[280px] ml-auto">
                   <h2 className="text-[#00795C] leading-none text-[40px] md:text-[50px] lg:text-[70px] xl:text-[100px] font-black">
                     {page?.ratgeber_detail?.reference?.head_title?.value}
@@ -94,7 +94,7 @@ export default function ratgeberseite() {
                   }}
                 ></div>
               </div>
-              <div className="interactive-img-wrap mx-auto block w-[320px] xl:w-[500px]">
+              <div className="interactive-img-wrap mx-auto block w-[320px]">
                 <div className="img-wrap w-full text-center relative">
                   <img
                     className="m-auto"
@@ -104,7 +104,7 @@ export default function ratgeberseite() {
                     }
                     alt=""
                   />
-                  <div className="interactive-list w-full left-[-90px] top-0 xl:inset-0 h-full absolute">
+                  <div className="interactive-list w-full left-[-90px] top-0 h-full absolute">
                     <div className="absolute top-0 left-[240px]">
                       <IconClose className="transition-transform transform-gpu duration-200 w-[65px] h-[65px] text-black p-[10px] border border-[#DEDEDE] rounded-full bg-white bg-opacity-50 rotate-45 stroke-[1] hover:bg-[#009470] hover:border-[#009470]" />
                     </div>
@@ -129,7 +129,7 @@ export default function ratgeberseite() {
                   </div>
                 </div>
               </div>
-              <div className="right-col tabs-wrap">
+              <div className="right-col tabs-wrap xl:flex-[1]">
                 <div className="search-bar">
                   <form action="">
                     <div className="relative">
@@ -172,13 +172,13 @@ export default function ratgeberseite() {
                     </div>
                   </form>
                 </div>
-                <div className="scroll-links-wrap grid grid-cols-2 xl:gap-x-[40px] xl:gap-y-[45px] gap-[20px] mt-[30px] xl:mt-[59px]">
+                <div className="scroll-links-wrap grid grid-cols-2 min-[1701px]:gap-x-[40px] max-[1700px]:gap-[20px] min-[1701px]:gap-y-[45px] gap-[20px] mt-[30px] xl:mt-[59px]">
                   {buttonAccordionMapping?.map((item, index) => {
                     return (
                       <a
                         key={index}
                         href={`#link${index + 1}`}
-                        className="p-[15px] xl:px-[20px] xl:py-[26px] flex justify-center items-center text-center bg-white rounded-[10px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] leading-[1.4] hover:text-white hover:bg-[#00795C] xl:min-h-[116px] font-bold text-[#00795C] transition-all duration-500 my-achor-link"
+                        className="p-[15px] xl:px-[20px] xl:py-[26px] flex justify-center items-center text-center bg-white rounded-[10px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[20px] 2xl:text-[25px] leading-[1.4] hover:text-white hover:bg-[#00795C] xl:min-h-[116px] font-bold text-[#00795C] transition-all duration-500 my-achor-link"
                       >
                         {item.button_name}
                       </a>
@@ -201,16 +201,16 @@ export default function ratgeberseite() {
               />
             );
           })}
-          <div className="info-bottom md:mb-[60px] lg:mb-[80px] xl:mb-[100px]">
+          <div className="info-bottom mt-[20px] md:mt-[40px] lg:mt-[60px] xl:mt-[80px]">
             <div className="title-wrap">
-              <h3 className="text-center tracking-[-0.97152px] text-[28px] md:text-[30px] lg:text-[40px] leading-[1.1] font-medium">
+              <h3 className="text-center tracking-[-0.97152px] text-[28px] md:text-[30px] lg:text-[2 leading-[1.1] font-medium">
                 {page?.ratgeber_detail?.reference?.cta_text?.value}
               </h3>
             </div>
-            <div className="link-wrap flex justify-center mt-[40px]">
+            <div className="link-wrap flex justify-center mt-[20px] lg:mt-[40px]">
               <Link
                 className="block rounded-[100px] bg-black text-white
-            text-center px-[60px] py-[25px] hover:bg-[#00795c] hover:text-white text-[18px] max-w-fit font-normal leading-none"
+            text-center px-[60px] py-[20px] md:py-[25px] hover:bg-[#00795c] hover:text-white text-[16px] md:text-[18px] max-w-fit font-normal leading-none"
                 to={
                   page?.ratgeber_detail?.reference?.cta_button_redirect?.value
                 }
