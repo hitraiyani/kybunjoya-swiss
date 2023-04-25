@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {json} from '@shopify/remix-oxygen';
 import {Navigation, Pagination, Scrollbar, A11y, Autoplay} from 'swiper';
 import {Swiper, SwiperSlide} from 'swiper/react';
-import {ArrowRight, ArrowRightLight, Link, IconClose} from '~/components';
+import {ArrowRight, ArrowRightLight, Link, IconClose,IconDownload} from '~/components';
 import {useLoaderData} from '@remix-run/react';
 import {MEDIA_FRAGMENT} from '~/data/fragments';
 import {toHTML} from '~/lib/utils';
@@ -55,45 +55,47 @@ export default function ratgeberSeiteFersensporn() {
     const distance = targetPosition - currentPosition;
     const duration = 500; // adjust this value to change the duration of the animation
     let start = null;
-  
+
     function step(timestamp) {
       if (!start) start = timestamp;
       const progress = timestamp - start;
-      window.scrollTo(0, easeInOutQuad(progress, currentPosition, distance, duration));
+      window.scrollTo(
+        0,
+        easeInOutQuad(progress, currentPosition, distance, duration),
+      );
       if (progress < duration) window.requestAnimationFrame(step);
     }
-  
+
     function easeInOutQuad(t, b, c, d) {
       t /= d / 2;
-      if (t < 1) return c / 2 * t * t + b;
+      if (t < 1) return (c / 2) * t * t + b;
       t--;
-      return -c / 2 * (t * (t - 2) - 1) + b;
+      return (-c / 2) * (t * (t - 2) - 1) + b;
     }
-  
+
     window.requestAnimationFrame(step);
-  }
+  };
 
   useEffect(() => {
-    menuLinks.forEach(link => {
+    menuLinks.forEach((link) => {
       link.addEventListener('click', (event) => {
         event.preventDefault();
         const targetId = link.dataset.target;
         const headerHeight = 90;
-        scrollToSection(targetId,headerHeight);
+        scrollToSection(targetId, headerHeight);
       });
     });
 
     return () => {
-      menuLinks.forEach(link => {
+      menuLinks.forEach((link) => {
         link.removeEventListener('click', (event) => {
           event.preventDefault();
           const targetId = link.dataset.target;
           scrollToSection(targetId);
         });
       });
-    }
+    };
   }, [menuLinks]);
-
 
   const mainVideoSection = page?.ratgeber_seite_fersensporn?.reference
     ?.main_video_section?.value
@@ -123,20 +125,20 @@ export default function ratgeberSeiteFersensporn() {
       )
     : [];
 
-
-  const kundenmeinungenSectionDesc = page?.ratgeber_seite_fersensporn_second_part
-    ?.reference?.kundenmeinungen_section_desc?.value
+  const kundenmeinungenSectionDesc = page
+    ?.ratgeber_seite_fersensporn_second_part?.reference
+    ?.kundenmeinungen_section_desc?.value
     ? JSON.parse(
         page?.ratgeber_seite_fersensporn_second_part.reference
           .kundenmeinungen_section_desc.value,
       )
     : [];
 
-  const drInfoSlider = page?.ratgeber_seite_fersensporn_second_part
-    ?.reference?.dr_info_slider?.value
+  const drInfoSlider = page?.ratgeber_seite_fersensporn_second_part?.reference
+    ?.dr_info_slider?.value
     ? JSON.parse(
-        page?.ratgeber_seite_fersensporn_second_part.reference
-          .dr_info_slider.value,
+        page?.ratgeber_seite_fersensporn_second_part.reference.dr_info_slider
+          .value,
       )
     : [];
 
@@ -145,12 +147,10 @@ export default function ratgeberSeiteFersensporn() {
     setActive(!isActive);
   };
 
-
-
   return (
     <>
       <div className="container mt-[120px] lg:mt-[200px]">
-        <div className="page-title">
+        <div className="page-title hidden md:block">
           <h1 className="title text-[#00795C] text-[40px] md:text-[50px] lg:text-[70px] xl:text-[90px] mb-[30px] lg:mb-[43px] leading-none font-black">
             {page?.ratgeber_seite_fersensporn?.reference?.head_title?.value}
           </h1>
@@ -184,7 +184,7 @@ export default function ratgeberSeiteFersensporn() {
                     ),
                   }}
                 ></div>
-                <div className="box bg-[#EDEDED] rounded-[10px] p-[30px] xl:px-[63px] xl:py-[49px] mt-[43px]">
+                <div className="box bg-[#EDEDED] rounded-[10px] p-[30px] xl:px-[63px] xl:py-[49px] mt-[43px] hidden md:block">
                   <h3 className="text-[35px] xl:text-[40px] text-[#00795C] font-bold leading-[1.2] tracking-[-0.97152px] mb-[33px]">
                     {
                       page?.ratgeber_seite_fersensporn?.reference
@@ -218,12 +218,52 @@ export default function ratgeberSeiteFersensporn() {
                     <h4 className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-[#00795C] tracking-[-0.400697px] font-bold leading-[1.2] mb-[5px]">
                       {mainVideoSection?.video_title}
                     </h4>
-                    <div className="desc text-[18px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
+                    <div className="desc text-[16px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
                       <p>{mainVideoSection?.video_desc}</p>
                     </div>
                   </div>
+                  <div className="mobile-info block md:hidden mt-[20px]">
+                    <h4 className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-bold leading-[1.2] mb-[5px]">
+                      Wie kybun Joya hilft
+                    </h4>
+                    <div className="desc text-[16px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
+                      <p>
+                        Der Fersensporn und die chronische Fasciitis plantaris
+                        sind die häufigsten Folgen dauerhafter Überlastung der
+                        Fusssohlen in den Industrienationen. Harte Böden und
+                        unflexibles, stützendes Schuhwerk, sorgen dafür, dass
+                        ein Grossteil der Last beim Gehen und Stehen von der
+                        Ferse getragen werden muss.
+                      </p>
+                      <p>
+                        Der Fersensporn und die chronische Fasciitis plantaris
+                        sind die häufigsten Folgen dauerhafter Überlastung der
+                        Fusssohlen in den Industrienationen. Harte Böden und
+                        unflexibles, stützendes Schuhwerk, sorgen dafür, dass
+                        ein Grossteil der Last beim Gehen und Stehen von der
+                        Ferse getragen werden muss.
+                      </p>
+                      <ul className="list-style2 list-style3 desc text-[16px] md:text-[16px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mb-[32px]">
+                        <li>
+                          Keine punktuelle Druckstelle aufgrund der
+                          elastisch-federnen Sole
+                        </li>
+                        <li>Optimierte Druckverteilung</li>
+                        <li>Laufen wie auf Wolken</li>
+                        <li>Entlastung der schmerzenden Stelle</li>
+                        <li>Entscheidende Dehnung der Plantarfaszie</li>
+                        <li>Training der Fussmuskulatur</li>
+                      </ul>
+                    </div>
+                    <div className="btn-wrap mt-[20px]">
+                      <a
+                        href="#"
+                        className="pro-btn text-[16px] lg:text-[18px] text-white tracking-[-0.400697px] font-normal flex gap-[10px] px-[20px] lg:px-[30px] py-[12px] lg:py-[15px] bg-black rounded-[100px] max-w-fit items-center transition-all duration-700 hover:bg-[#00795c] mt-[10px] hover:text-white"
+                      ><IconDownload className={'w-[20px] h-[20px]'} /> Fersensporn Broschüre</a>
+                    </div>
+                  </div>
                 </div>
-                <div className="video-info-slider mt-[31px]">
+                <div className="video-info-slider mt-[31px] hidden md:block">
                   <div className="video-slider-inner relative">
                     <Swiper
                       modules={[Navigation, Scrollbar, A11y, Autoplay]}
@@ -235,17 +275,17 @@ export default function ratgeberSeiteFersensporn() {
                       }}
                       breakpoints={{
                         0: {
-                          slidesPerView:1,
+                          slidesPerView: 1,
                         },
                         768: {
-                          slidesPerView:2,
+                          slidesPerView: 2,
                         },
                         1024: {
-                          slidesPerView:1,
+                          slidesPerView: 1,
                         },
                         1800: {
-                          slidesPerView:2,
-                        }
+                          slidesPerView: 2,
+                        },
                       }}
                       className="h-full overflow-visible rounded-xl flex flex-col"
                     >
@@ -297,7 +337,16 @@ export default function ratgeberSeiteFersensporn() {
             </div>
           </div>
         </section>
-        <section className="relevante-links-sec mt-[40px] md:mt-[60px] lg:mt-[80px] xl:mt-[100px]">
+        <section className='mobile-sec block md:hidden mt-[40px]'>
+          <div className='inner-row'>
+            <h2 className='text-[#00795C] text-[35px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] mb-[10px] font-bold'>Shopfinder</h2>
+            <div className='img-wrap relative overflow-hidden rounded-[10px] h-[186px] mt-auto'>
+              <img className='absolute w-full h-full inset-0 object-cover' src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/stgallen_shopfront_eaac67e4-f12f-41cd-aef6-4c4fa529140d.png?v=1681906268" alt="" />
+              <a className='text-black flex justify-end items-center gap-[8px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] tracking-[-0.400697px] font-normal bg-white hover:bg-[#00795C] rounded-[48px] mt-auto hover:!text-white absolute bottom-[15px] right-[15px] py-[10px] px-[20px]' href="#">Jetzt finden <ArrowRightLight className={'w-[25px] h-[25px]'} /></a>
+            </div>
+          </div>
+        </section>
+        <section className="relevante-links-sec mt-[40px] md:mt-[60px] lg:mt-[80px] xl:mt-[100px] hidden md:block">
           <div className="title-wrap">
             <h2 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold">
               {
@@ -353,7 +402,10 @@ export default function ratgeberSeiteFersensporn() {
               <div className="flex flex-col  md:flex-row gap-[20px] px-[20px] py-[15px] shadow-[0px_0px_0.9821px_2px_rgba(0,0,0,0.05),0px_3.9284px_7.8568px_1px_rgba(0,0,0,0.1)] rounded-bl-[10px] rounded-br-[10px]">
                 {relevanteLinksSectionRightPart.map((item, index) => {
                   return (
-                    <div className="item w-full flex flex-col md:w-[50%]" key={index}>
+                    <div
+                      className="item w-full flex flex-col md:w-[50%]"
+                      key={index}
+                    >
                       <h4 className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-[#00795C] font-bold leading-none mb-[10px]">
                         {item?.title}
                       </h4>
@@ -380,7 +432,7 @@ export default function ratgeberSeiteFersensporn() {
             </div>
           </div>
         </section>
-        <section className="rich-text-sec mt-[40px] md:mt-[60px] lg:mt-[80px] xl:mt-[100px]">
+        <section className="rich-text-sec mt-[40px] md:mt-[60px] lg:mt-[80px] xl:mt-[100px] hidden md:block">
           <div className="rich-text -inner max-w-[1077px]">
             <div className="title-wrap">
               <h2 className="title text-[#00795C] text-[35px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] mb-[20px] lg:mb-[40px] leading-[1.1]">
@@ -407,7 +459,10 @@ export default function ratgeberSeiteFersensporn() {
             ></div>
           </div>
         </section>
-        <section className="rich-text-sec mt-[40px] md:mt-[60px] lg:mt-[80px] xl:mt-[100px]" id="section_2">
+        <section
+          className="rich-text-sec mt-[40px] md:mt-[60px] lg:mt-[80px] xl:mt-[100px] hidden md:block"
+          id="section_2"
+        >
           <div className="rich-text-inner">
             <div className="title-wrap">
               <h4 className="title text-[#00795C] text-[35px] lg:text-[40px] xl:text-[45px] tracking-[-0.97152px] mb-[20px] leading-[1.1] font-medium">
@@ -479,7 +534,10 @@ export default function ratgeberSeiteFersensporn() {
                 </div>
               </div>
             </div>
-            <div className="flex lg:flex-row flex-col gap-[30px] xl:gap-x-[77px] w-full mt-[30px]" id="section_3">
+            <div
+              className="flex lg:flex-row flex-col gap-[30px] xl:gap-x-[77px] w-full mt-[30px]"
+              id="section_3"
+            >
               <div className="col-left w-full lg:w-[50%]">
                 <div className="title-wrap">
                   <h4 className="title text-[#00795C] text-[35px] lg:text-[40px] xl:text-[45px] tracking-[-0.97152px] mb-[20px] leading-[1.1] font-medium">
@@ -519,29 +577,32 @@ export default function ratgeberSeiteFersensporn() {
                 ></div>
               </div>
             </div>
-            <div className="flex lg:flex-row flex-col gap-y-[30px] gap-x-[77px] w-full mt-[72px]" id="section_4">
+            <div
+              className="flex lg:flex-row flex-col gap-y-[30px] gap-x-[77px] w-full mt-[72px]"
+              id="section_4"
+            >
               <div className="col-left w-full lg:w-[40%]">
                 <h4 className="title text-[#00795C] text-[24px] md:text-[28px] lg:text-[30px] xl:text-[40px] tracking-[-0.97152px] leading-[1.1] font-medium">
-                    {
-                      page?.ratgeber_seite_fersensporn_second_part?.reference
-                        ?.kybun_wirkungsprinzip_section_title?.value
-                    }
+                  {
+                    page?.ratgeber_seite_fersensporn_second_part?.reference
+                      ?.kybun_wirkungsprinzip_section_title?.value
+                  }
                 </h4>
                 <h5 className="text-[30px] text-[#00795C] font-medium leading-[1.2] text-left">
-                    {
-                      page?.ratgeber_seite_fersensporn_second_part?.reference
-                        ?.kybun_wirkungsprinzip_section_sub_title?.value
-                    }
+                  {
+                    page?.ratgeber_seite_fersensporn_second_part?.reference
+                      ?.kybun_wirkungsprinzip_section_sub_title?.value
+                  }
                 </h5>
-                <div className="desc desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mt-[30px]"
-                    dangerouslySetInnerHTML={{
-                      __html: toHTML(
-                        page?.ratgeber_seite_fersensporn_second_part?.reference
-                          ?.kybun_wirkungsprinzip_section_desc?.value,
-                      ),
-                    }}
-                >
-                </div>
+                <div
+                  className="desc desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mt-[30px]"
+                  dangerouslySetInnerHTML={{
+                    __html: toHTML(
+                      page?.ratgeber_seite_fersensporn_second_part?.reference
+                        ?.kybun_wirkungsprinzip_section_desc?.value,
+                    ),
+                  }}
+                ></div>
               </div>
               <div className="col-right w-full lg:w-[60%]">
                 <div className="img-wrap rounded-[10px] border border-[#D9D9D9]">
@@ -549,7 +610,8 @@ export default function ratgeberSeiteFersensporn() {
                     className="w-full rounded-[10px]"
                     src={
                       page?.ratgeber_seite_fersensporn_second_part?.reference
-                        ?.kybun_wirkungsprinzip_section_image?.reference?.image?.url
+                        ?.kybun_wirkungsprinzip_section_image?.reference?.image
+                        ?.url
                     }
                     alt=""
                   />
@@ -558,7 +620,7 @@ export default function ratgeberSeiteFersensporn() {
             </div>
           </div>
         </section>
-        <section className="rich-text-sec mt-[40px] md:mt-[60px] lg:mt-[80px] xl:mt-[100px]">
+        <section className="rich-text-sec mt-[40px] md:mt-[60px] lg:mt-[80px] xl:mt-[100px] hidden md:block">
           <div className="rich-text-inner">
             <div className="title-wrap">
               <h2 className="title text-[#00795C] text-[35px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] mb-[20px] lg:mb-[40px] leading-[1.1]">
@@ -568,7 +630,10 @@ export default function ratgeberSeiteFersensporn() {
                 }
               </h2>
             </div>
-            <div className="flex lg:flex-row flex-col gap-[30px] xl:gap-x-[85px] w-full" id="section_5">
+            <div
+              className="flex lg:flex-row flex-col gap-[30px] xl:gap-x-[85px] w-full"
+              id="section_5"
+            >
               <div className="col-left w-full lg:w-[50%]">
                 <div className="title-wrap">
                   <h4 className="title text-[#00795C] text-[24px] md:text-[28px] lg:text-[30px] xl:text-[40px] tracking-[-0.97152px] mb-[20px] leading-[1.1] font-medium">
@@ -628,7 +693,10 @@ export default function ratgeberSeiteFersensporn() {
             </div>
           </div>
         </section>
-        <section className="rich-text-sec mt-[40px] md:mt-[60px] lg:mt-[80px] xl:mt-[100px]" id="section_6">
+        <section
+          className="rich-text-sec mt-[40px] md:mt-[60px] lg:mt-[80px] xl:mt-[100px] hidden md:block"
+          id="section_6"
+        >
           <div className="rich-text-inner">
             <div className="flex flex-col lg:flex-row mt-[72px] gap-[30px] xl:gap-[73px]">
               <div className="col-left w-full lg:w-[65%]">
@@ -665,20 +733,23 @@ export default function ratgeberSeiteFersensporn() {
             </div>
           </div>
         </section>
-        <section className="customer-opinions-sec mt-[40px] md:mt-[60px] lg:mt-[80px] xl:mt-[100px]">
+        <section className="customer-opinions-sec mt-[40px] md:mt-[60px] lg:mt-[80px] xl:mt-[100px] hidden md:block">
           <div className="customer-opinions-inner">
             <div className="title-wrap">
               <h2 className="title text-[#00795C] text-[35px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] mb-[20px] lg:mb-[40px] leading-[1.1]">
-                  {
-                    page?.ratgeber_seite_fersensporn_second_part?.reference
-                      ?.kundenmeinungen_section_title?.value
-                  }
-              </h2>
-              <h4 className="title text-[#00795C] text-[24px] md:text-[28px] lg:text-[30px] xl:text-[40px] tracking-[-0.97152px] mb-[20px] leading-[1.1] font-medium" id="section_7">
                 {
-                    page?.ratgeber_seite_fersensporn_second_part?.reference
-                      ?.kundenmeinungen_section_sub_title?.value
-                  }
+                  page?.ratgeber_seite_fersensporn_second_part?.reference
+                    ?.kundenmeinungen_section_title?.value
+                }
+              </h2>
+              <h4
+                className="title text-[#00795C] text-[24px] md:text-[28px] lg:text-[30px] xl:text-[40px] tracking-[-0.97152px] mb-[20px] leading-[1.1] font-medium"
+                id="section_7"
+              >
+                {
+                  page?.ratgeber_seite_fersensporn_second_part?.reference
+                    ?.kundenmeinungen_section_sub_title?.value
+                }
               </h4>
             </div>
             {/* <div className='customer-opinions-box columns-3 gap-[20px]'> */}
@@ -689,19 +760,20 @@ export default function ratgeberSeiteFersensporn() {
             >
               <div className="columns-1 md:columns-2 xl:columns-3 gap-[20px] customer-items">
                 {kundenmeinungenSectionDesc.map((item, index) => {
-                    return (
-                      <div key={index} className="item p-[30px] bg-[#EDEDED] box-border break-inside-avoid mb-[20px] rounded-[10px] shadow-[0px_0px_0.9821px_rgba(0,0,0,0.05),0px_3.9284px_7.8568px_rgba(0,0,0,0.1)]">
+                  return (
+                    <div
+                      key={index}
+                      className="item p-[30px] bg-[#EDEDED] box-border break-inside-avoid mb-[20px] rounded-[10px] shadow-[0px_0px_0.9821px_rgba(0,0,0,0.05),0px_3.9284px_7.8568px_rgba(0,0,0,0.1)]"
+                    >
                       <div className="item-inner">
                         <div className="desc text-[18px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
-                          <p>
-                            {item.user_comment}
-                          </p>
+                          <p>{item.user_comment}</p>
                         </div>
                         <div className="customer-info flex border-t border-[#DEDEDE] pt-[21px] mt-[46px] gap-[27px] items-center">
                           <div className="customer-img w-[109px] h-[109px] relative overflow-hidden rounded-full">
                             <img
                               className="absolute w-full h-full object-cover rounded-full"
-                              src= {item.user_image}
+                              src={item.user_image}
                               alt=""
                             />
                           </div>
@@ -716,7 +788,7 @@ export default function ratgeberSeiteFersensporn() {
                         </div>
                       </div>
                     </div>
-                    );
+                  );
                 })}
               </div>
             </div>
@@ -738,7 +810,7 @@ export default function ratgeberSeiteFersensporn() {
             </button>
           </div>
         </section>
-        <section className="review-slider-sec mt-[40px] md:mt-[60px] lg:mt-[80px] xl:mt-[100px]">
+        <section className="review-slider-sec mt-[40px] md:mt-[60px] lg:mt-[80px] xl:mt-[100px] hidden md:block">
           <div className="slider-inner relative">
             <Swiper
               modules={[Navigation, Scrollbar, A11y, Autoplay]}
@@ -751,69 +823,74 @@ export default function ratgeberSeiteFersensporn() {
               className="h-full overflow-visible rounded-xl flex flex-col"
             >
               {drInfoSlider.map((item, index) => {
-                  return (
-                    <SwiperSlide key={index}>
-                      <div className="slider-items">
-                        <div className="item rounded-[10px] my-[10px]">
-                          <div className="item-inner flex flex-wrap items-center gap-[40px] max-w-[99%] rounded-[10px] p-[30px] [md:py-[50px] xl:py-[100px] md:px-[50px] mx-auto  shadow-[0px_0px_0.9821px_rgba(0,0,0,0.05),0px_-0.0716px_7.8568px_rgba(0,0,0,0.1)]">
-                            <div className="dr-img w-[100px] h-[100px] md:w-[245px] md:h-[245px] rounded-full relative overflow-hidden">
-                              <img
-                                className="absolute w-full h-full inset-0"
-                                src={item.dr_image}
-                                alt=""
-                              />
-                            </div>
-                            <div className="dr-info w-[calc(100%_-_140px)]  md:w-[calc(100%_-_300px)] xl:w-[321px] xl:pr-[60px]">
-                              <h4 className="name text-[24px] md:text-[28px] xl:text-[33px] text-black font-bold">
-                                {item.dr_name}
-                              </h4>
-                              <h5 className="text-[20px] md:text-[24px] tracking-[-0.544698px] font-normal">
-                                {item.dr_location}
-                              </h5>
-                            </div>
-                            <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4] flex-1">
-                              <p>
-                              {item.dr_comment}
-                              </p>
-                            </div>
+                return (
+                  <SwiperSlide key={index}>
+                    <div className="slider-items">
+                      <div className="item rounded-[10px] my-[10px]">
+                        <div className="item-inner flex flex-wrap items-center gap-[40px] max-w-[99%] rounded-[10px] p-[30px] [md:py-[50px] xl:py-[100px] md:px-[50px] mx-auto  shadow-[0px_0px_0.9821px_rgba(0,0,0,0.05),0px_-0.0716px_7.8568px_rgba(0,0,0,0.1)]">
+                          <div className="dr-img w-[100px] h-[100px] md:w-[245px] md:h-[245px] rounded-full relative overflow-hidden">
+                            <img
+                              className="absolute w-full h-full inset-0"
+                              src={item.dr_image}
+                              alt=""
+                            />
+                          </div>
+                          <div className="dr-info w-[calc(100%_-_140px)]  md:w-[calc(100%_-_300px)] xl:w-[321px] xl:pr-[60px]">
+                            <h4 className="name text-[24px] md:text-[28px] xl:text-[33px] text-black font-bold">
+                              {item.dr_name}
+                            </h4>
+                            <h5 className="text-[20px] md:text-[24px] tracking-[-0.544698px] font-normal">
+                              {item.dr_location}
+                            </h5>
+                          </div>
+                          <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4] flex-1">
+                            <p>{item.dr_comment}</p>
                           </div>
                         </div>
                       </div>
-                    </SwiperSlide>
-                  );
+                    </div>
+                  </SwiperSlide>
+                );
               })}
             </Swiper>
-            <div className="absolute top-[50%] z-[1] rounded-full swiper-button-next-review border-[5px] border-[rgba(0,_148,_112,_0.3)] left-[-24px]">
-              <div className="rounded-full w-[45px] h-[45px] text-white hover:bg-black hover:text-white after:text-[30px] bg-[#00795c] flex items-center justify-center rotate-180">
+            <div className="absolute top-1/2 z-[1] rounded-full swiper-button-next-review border-[5px] border-[rgba(0,_148,_112,_0.3)] left-[-20px] lg:left-[-34px]">
+              <div className="rounded-full w-[40px] h-[40px] lg:w-[73px] lg:h-[73px] text-white hover:bg-black hover:text-white after:text-[30px] bg-[#00795c] flex items-center justify-center rotate-180">
                 <ArrowRight
-                  className={'relative left-[1px] w-[20px] h-[20px]'}
+                  className={
+                    'relative left-[1px] w-[20px] h-[20px] lg:w-[30px] lg:h-[30px]'
+                  }
                 />
               </div>
             </div>
-            <div className="absolute top-[50%] z-[1] rounded-full swiper-button-prev-review border-[5px] border-[rgba(0,_148,_112,_0.3)] right-[-24px]">
-              <div className="rounded-full w-[45px] h-[45px] text-white hover:bg-black hover:text-white after:text-[30px] bg-[#00795c] flex items-center justify-center">
+            <div className="absolute top-1/2 z-[1] rounded-full swiper-button-prev-review border-[5px] border-[rgba(0,_148,_112,_0.3)] right-[-20px] lg:right-[-34px]">
+              <div className="rounded-full w-[40px] h-[40px] lg:w-[73px] lg:h-[73px] text-white hover:bg-black hover:text-white after:text-[30px] bg-[#00795c] flex items-center justify-center">
                 <ArrowRight
-                  className={'relative left-[2px] w-[20px] h-[20px]'}
+                  className={
+                    'relative left-[2px] w-[20px] h-[20px] lg:w-[30px] lg:h-[30px]'
+                  }
                 />
               </div>
             </div>
           </div>
         </section>
-        <section className="rich-text mt-[40px] md:mt-[60px] lg:mt-[80px] xl:mt-[100px] mb-[40px]" id="section_8">
+        <section
+          className="rich-text mt-[40px] md:mt-[60px] lg:mt-[80px] xl:mt-[100px] mb-[40px] hidden md:block"
+          id="section_8"
+        >
           <div className="rich-text-inner">
             <div className="title-wrap">
               <h4 className="title text-[#00795C] text-[24px] md:text-[28px] lg:text-[30px] xl:text-[40px] tracking-[-0.97152px] leading-[1.1] font-medium mb-[25px]">
                 {
-                    page?.ratgeber_seite_fersensporn_second_part?.reference
-                      ?.medienberichte_section_title?.value
-                  }
+                  page?.ratgeber_seite_fersensporn_second_part?.reference
+                    ?.medienberichte_section_title?.value
+                }
               </h4>
               <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4] max-w-[605px]">
                 <ul className="list-disc list-outside flex flex-col gap-[15px] pl-[40px] text-[#00795C]">
                   <li className="underline">
                     {
                       page?.ratgeber_seite_fersensporn_second_part?.reference
-                      ?.medienberichte_section_tips?.value
+                        ?.medienberichte_section_tips?.value
                     }
                   </li>
                 </ul>

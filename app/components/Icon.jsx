@@ -278,3 +278,10 @@ export function FaAngleUp(props) {
       </svg>
   );
 }
+export function IconDownload(props) {
+  return (
+    <svg {...props} width={12} height={13} viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10.6692 8.54827V10.4579C10.6692 11.161 10.0992 11.731 9.39608 11.731H1.75747C1.05436 11.731 0.484375 11.161 0.484375 10.4579L0.484375 8.54827M3.03058 6.00207L5.57678 8.54827M5.57678 8.54827L8.12298 6.00207M5.57678 8.54827V0.909668" stroke="white" strokeWidth="0.907084" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+  );
+}
