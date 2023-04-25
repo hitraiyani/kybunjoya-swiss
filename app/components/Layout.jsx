@@ -246,7 +246,7 @@ function MobileHeader({title, isHome, openCart, openMenu, isMenuOpen}) {
       role="banner"
       className={`${
         isHome ? '' : ''
-      } site-header fixed top-0 inset-x-0 z-50  ml-0 mr-0 lg:ml-[60px] lg:mr-[60px] lg:mt-[50px] mt-[0px] ${
+      } site-header fixed top-0 inset-x-0 z-50  ml-0 mr-0 lg:ml-[60px] lg:mr-[60px] xl:ml-[80px] xl:mr-[80px] lg:mt-[50px] mt-[0px] ${
         isScrolled ? 'header-sticky' : ''
       }`}
     >
