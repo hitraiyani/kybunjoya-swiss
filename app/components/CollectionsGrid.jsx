@@ -91,7 +91,14 @@ export function CollectionsGrid({data}) {
               </div>
               <div className="img-overlay absolute w-full h-2/4 inset-x-0 bottom-0"></div>
               <div className="flex absolute bottom-0 left-0 p-5 w-full items-end h-full">
-                <Heading className="flex flex-col font-normal text-[30px] xl:text-[40px] text-white btn w-2/4 gap-5">
+                <div className="content-img relative overflow-hidden w-2/4 h-full">
+                  <Image
+                    data={data?.section_4_mask_image?.reference.image}
+                    className="h-full w-full object-cover object-center"
+                    alt=""
+                  />
+                </div>
+                <Heading className="flex flex-col font-normal text-[30px] lg:text-[34px] xl:text-[45px] text-white leading-none p-5 btn w-2/4 gap-5">
                 <span dangerouslySetInnerHTML={{
                   __html: toHTML(data?.section_4_text?.value),
                 }}></span>

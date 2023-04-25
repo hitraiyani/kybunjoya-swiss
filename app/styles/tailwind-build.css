@@ -3647,8 +3647,16 @@ video {
     margin-bottom: 85px;
   }
 
+  .xl\:ml-\[80px\] {
+    margin-left: 80px;
+  }
+
   .xl\:mr-\[50px\] {
     margin-right: 50px;
+  }
+
+  .xl\:mr-\[80px\] {
+    margin-right: 80px;
   }
 
   .xl\:mt-\[100px\] {
@@ -3689,14 +3697,6 @@ video {
 
   .xl\:mt-\[87px\] {
     margin-top: 87px;
-  }
-
-  .xl\:ml-\[80px\] {
-    margin-left: 80px;
-  }
-
-  .xl\:mr-\[80px\] {
-    margin-right: 80px;
   }
 
   .xl\:flex {
