@@ -19,7 +19,6 @@ export function NewsSlider({news}) {
           modules={[Navigation, Scrollbar, A11y, Autoplay]}
           slidesPerView={4}
           navigation
-          loop="true"
           spaceBetween="20"
           // autoplay={{
           //   delay: 2500,
@@ -94,7 +93,7 @@ export function NewsSlider({news}) {
                           src={imgSrc}
                         ></img>
                       </div>
-                      <p className="text-[16px] text-white font-normal mb-[5px] bg-[#00795C] leading-none top-0 right-0 w-fit py-[10px] px-[16px] rounded-tr-md absolute shadow-md">
+                      <p className="text-[16px] text-white font-normal mb-[5px] bg-[#00795C] leading-none top-[15px] right-[15px] w-fit py-[10px] px-[16px] rounded-[10px] absolute shadow-md capitalize">
                       {badgeLabel}
                       </p>
                     </Link>

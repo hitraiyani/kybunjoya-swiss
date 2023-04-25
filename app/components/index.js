@@ -32,5 +32,6 @@ export {ExpandingCardStyle2} from './ExpandingCardStyle2';
 export {GruppeSection} from './GruppeSection';
 export {ProductBrandSection} from './ProductBrandSection';
 export {ProductMiscUpdate} from './ProductMiscUpdate';
+export {ScrollToTop} from './ScrollToTop';
 // Sue me
 export * from './Icon';
