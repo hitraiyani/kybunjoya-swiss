@@ -93,7 +93,7 @@ p:last-child {
   margin-bottom: 12px;
   font-weight: 400;
 }
-.mobile-menu-Drawer li .sub-menu a.is-active{
+.mobile-menu-Drawer li .sub-menu a.is-active {
   color: #00795c;
 }
 .mobile-menu-Drawer header {
@@ -673,6 +673,13 @@ p:last-child {
 }
 .product-listing .product-item:hover .pro-btn {
   opacity: 1;
+}
+.product-listing .product-item .pro-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
 }
 .filter-list li a:before {
   content: '';

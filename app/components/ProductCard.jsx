@@ -72,20 +72,20 @@ export function ProductCard({
             >
               {cardLabel}
             </Text> */}
-            <button className="pro-btn text-[18px] text-white tracking-[-0.400697px] font-normal gap-[10px] px-[30px] py-[15px] bg-black rounded-[100px] absolute bottom-[34px] max-w-fit left-0 right-0 m-auto items-center opacity-0 transition-all duration-700 hover:bg-[#00795c] hidden">
+            {/* <button className="pro-btn text-[18px] text-white tracking-[-0.400697px] font-normal gap-[10px] px-[30px] py-[15px] bg-black rounded-[100px] absolute bottom-[34px] max-w-fit left-0 right-0 m-auto items-center opacity-0 transition-all duration-700 hover:bg-[#00795c] hidden">
               <IconCart />
               Zum Shop
-            </button>
+            </button> */}
           </div>
-          <div className="grid gap-1">
+          <div className="flex gap-1 flex-col">
             <Text
-              className="text-[24px] md:text-[28px] xl:text-[30px] text-black font-bold"
+              className="text-[24px] md:text-[28px] xl:text-[30px] text-black font-bold pro-title"
               as="h3"
             >
               {product.title}
             </Text>
             <div className="flex gap-4">
-              <Text className="flex gap-4 !text-black text-[16px] font-medium">
+              <Text className="flex gap-4 !text-black text-[16px] font-bold">
                 <Money withoutTrailingZeros data={price} />
                 {isDiscounted(price, compareAtPrice) && (
                   <CompareAtPrice
@@ -95,12 +95,12 @@ export function ProductCard({
                 )}
               </Text>
             </div>
-            {product.description && (
+            {/* {product.description && (
               <div className="desc text-[15px] font-normal mt-[5px] !text-black max-w-[375px]">
                 <p> {truncate(product.description, 100)}</p>
               </div>
-            )}
-            <button className="pro-btn text-[16px] lg:text-[18px] text-white tracking-[-0.400697px] font-normal flex gap-[10px] px-[20px] lg:px-[30px] py-[12px] lg:py-[15px] bg-black rounded-[100px] max-w-fit mt-[10px] items-center transition-all duration-700 hover:bg-[#00795c]">
+            )} */}
+            <button className="pro-btn text-[16px] lg:text-[18px] text-white tracking-[-0.400697px] font-normal flex gap-[10px] px-[20px] lg:px-[30px] py-[12px] lg:py-[15px] bg-black rounded-[100px] max-w-fit items-center transition-all duration-700 hover:bg-[#00795c] mt-[10px]">
               <IconCart />
               Zum Shop
             </button>

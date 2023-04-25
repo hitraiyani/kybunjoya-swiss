@@ -1253,8 +1253,11 @@ video {
 .max-w-xl {
   max-width: 36rem;
 }
-.max-w-\[180px\] {
-  max-width: 180px;
+.max-w-\[223px\] {
+  max-width: 223px;
+}
+.max-w-\[150px\] {
+  max-width: 150px;
 }
 .flex-1 {
   flex: 1 1 0%;
@@ -2003,6 +2006,10 @@ video {
 .py-\[5px\] {
   padding-top: 5px;
   padding-bottom: 5px;
+}
+.py-\[18px\] {
+  padding-top: 18px;
+  padding-bottom: 18px;
 }
 .pb-1 {
   padding-bottom: 0.25rem;
@@ -2922,6 +2929,10 @@ video {
     max-width: 20rem;
   }
 
+  .md\:max-w-\[223px\] {
+    max-width: 223px;
+  }
+
   .md\:translate-y-0 {
     --tw-translate-y: 0px;
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -3602,6 +3613,10 @@ video {
   .lg\:text-\[75px\] {
     font-size: 75px;
   }
+
+  .lg\:text-\[14px\] {
+    font-size: 14px;
+  }
 }
 @media (min-width: 1280px) {
 
@@ -3917,6 +3932,16 @@ video {
     padding-bottom: 80px;
   }
 
+  .xl\:px-\[10px\] {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .xl\:py-\[42px\] {
+    padding-top: 42px;
+    padding-bottom: 42px;
+  }
+
   .xl\:pb-\[100px\] {
     padding-bottom: 100px;
   }
@@ -4003,6 +4028,14 @@ video {
 
   .xl\:text-\[95px\] {
     font-size: 95px;
+  }
+
+  .xl\:text-\[18px\] {
+    font-size: 18px;
+  }
+
+  .xl\:text-\[16px\] {
+    font-size: 16px;
   }
 }
 @media (min-width: 1800px) {
