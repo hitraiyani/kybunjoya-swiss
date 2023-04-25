@@ -22,7 +22,7 @@ export function SortFilter({
   const [isOpen, setIsOpen] = useState(true);
   return (
     <>
-      <div className="items-center justify-between w-full flex md:hidden">
+      <div className="items-center justify-between w-full flex md:hidden mb-[20px]">
         <button
           onClick={() => setIsOpen(!isOpen)}
           className={
@@ -48,7 +48,7 @@ export function SortFilter({
             appliedCustomFilters={appliedCustomFilters}
           />
         </div>
-        <div className="w-full mb-[100px]">{children}</div>
+        <div className="w-full mb-[40px] md:mb-[60px] lg:mb-[80px] xl:mb-[100px]">{children}</div>
       </div>
     </>
   );

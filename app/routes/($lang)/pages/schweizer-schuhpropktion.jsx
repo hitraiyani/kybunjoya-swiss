@@ -60,9 +60,9 @@ export default function schweizerSchuhpropktion() {
             </div>
           </div>
           <div className="banner container">
-            <div className="banner-row">
+            <div className="banner-row product-list-hero-img relative overflow-hidden rounded-xl pb-[35%] min-h-[200px]">
               <img
-                className="object-cover rounded-xl w-full"
+                className="absolute rounded-xl inset-0 w-full h-full object-cover"
                 src={page?.hero_image?.reference?.image?.url}
                 alt=""
               />
@@ -70,7 +70,7 @@ export default function schweizerSchuhpropktion() {
           </div>
           <div className="about-sec container mt-[48px]">
             <div className="flex flex-col lg:flex-row gap-y-[20px] gap-x-[30px] xl:gap-x-[63px]">
-              <div className="img-col flex-1 overflow-hidden lg:w-auto w-full">
+              <div className="img-col lg:w-[40%] overflow-hidden w-full">
                 <Swiper
                   modules={[Navigation, Scrollbar, A11y, Autoplay, Pagination]}
                   slidesPerView={1}
@@ -91,8 +91,8 @@ export default function schweizerSchuhpropktion() {
                     ))}
                 </Swiper>
               </div>
-              <div className="content-col flex-1 flex flex-col justify-center">
-                <h2 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] mb-[20px] md:mb-[30px] xl:mb-[42px] font-bold">
+              <div className="content-col w-full lg:w-[60%] lg:max-w-[678px] flex flex-col justify-center">
+                <h2 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] mb-[20px] font-bold">
                   {page?.main_title?.value}
                 </h2>
                 <h3 className="subtitle text-[18px] lg:text-[23px] text-balck leading-[1.3] mb-[20px] font-[400]"
