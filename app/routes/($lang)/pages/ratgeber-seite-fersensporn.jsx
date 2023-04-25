@@ -2,7 +2,13 @@ import React, {useState, useEffect} from 'react';
 import {json} from '@shopify/remix-oxygen';
 import {Navigation, Pagination, Scrollbar, A11y, Autoplay} from 'swiper';
 import {Swiper, SwiperSlide} from 'swiper/react';
-import {ArrowRight, ArrowRightLight, Link, IconClose,IconDownload} from '~/components';
+import {
+  ArrowRight,
+  ArrowRightLight,
+  Link,
+  IconClose,
+  IconDownload,
+} from '~/components';
 import {useLoaderData} from '@remix-run/react';
 import {MEDIA_FRAGMENT} from '~/data/fragments';
 import {toHTML} from '~/lib/utils';
@@ -259,7 +265,10 @@ export default function ratgeberSeiteFersensporn() {
                       <a
                         href="#"
                         className="pro-btn text-[16px] lg:text-[18px] text-white tracking-[-0.400697px] font-normal flex gap-[10px] px-[20px] lg:px-[30px] py-[12px] lg:py-[15px] bg-black rounded-[100px] max-w-fit items-center transition-all duration-700 hover:bg-[#00795c] mt-[10px] hover:text-white"
-                      ><IconDownload className={'w-[20px] h-[20px]'} /> Fersensporn Broschüre</a>
+                      >
+                        <IconDownload className={'w-[20px] h-[20px]'} />{' '}
+                        Fersensporn Broschüre
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -337,12 +346,23 @@ export default function ratgeberSeiteFersensporn() {
             </div>
           </div>
         </section>
-        <section className='mobile-sec block md:hidden mt-[40px]'>
-          <div className='inner-row'>
-            <h2 className='text-[#00795C] text-[35px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] mb-[10px] font-bold'>Shopfinder</h2>
-            <div className='img-wrap relative overflow-hidden rounded-[10px] h-[186px] mt-auto'>
-              <img className='absolute w-full h-full inset-0 object-cover' src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/stgallen_shopfront_eaac67e4-f12f-41cd-aef6-4c4fa529140d.png?v=1681906268" alt="" />
-              <a className='text-black flex justify-end items-center gap-[8px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] tracking-[-0.400697px] font-normal bg-white hover:bg-[#00795C] rounded-[48px] mt-auto hover:!text-white absolute bottom-[15px] right-[15px] py-[10px] px-[20px]' href="#">Jetzt finden <ArrowRightLight className={'w-[25px] h-[25px]'} /></a>
+        <section className="mobile-sec block md:hidden mt-[40px]">
+          <div className="inner-row">
+            <h2 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] mb-[10px] font-bold">
+              Shopfinder
+            </h2>
+            <div className="img-wrap relative overflow-hidden rounded-[10px] h-[186px] mt-auto">
+              <img
+                className="absolute w-full h-full inset-0 object-cover"
+                src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/stgallen_shopfront_eaac67e4-f12f-41cd-aef6-4c4fa529140d.png?v=1681906268"
+                alt=""
+              />
+              <a
+                className="text-black flex justify-end items-center gap-[8px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] tracking-[-0.400697px] font-normal bg-white hover:bg-[#00795C] rounded-[48px] mt-auto hover:!text-white absolute bottom-[15px] right-[15px] py-[10px] px-[20px]"
+                href="#"
+              >
+                Jetzt finden <ArrowRightLight className={'w-[25px] h-[25px]'} />
+              </a>
             </div>
           </div>
         </section>
@@ -808,6 +828,57 @@ export default function ratgeberSeiteFersensporn() {
                 </>
               )}
             </button>
+          </div>
+        </section>
+        <section className="customer-opinions-sec customer-opinions-sec-mobile mt-[40px] md:mt-[60px] lg:mt-[80px] xl:mt-[100px] md:hidden block mb-[40px]">
+          <div className="customer-opinions-inner">
+            <div
+              className={`${
+                isActive ? '' : 'active'
+              } customer-opinions-box relative`}
+            >
+              <div className="customer-items">
+                <Swiper
+                  modules={[Navigation, Scrollbar, A11y, Autoplay,Pagination]}
+                  slidesPerView={1}
+                  spaceBetween={20}
+                  autoHeight="true"
+                  pagination={{clickable: true}}
+                  className="h-full overflow-visible rounded-xl flex flex-col"
+                >
+                  {kundenmeinungenSectionDesc.map((item, index) => {
+                    return (
+                      <SwiperSlide key={index}>
+                        <div className="item p-[30px] bg-[#EDEDED] box-border break-inside-avoid mb-[20px] rounded-[10px] shadow-[0px_0px_0.9821px_rgba(0,0,0,0.05),0px_3.9284px_7.8568px_rgba(0,0,0,0.1)] w-full">
+                          <div className="item-inner">
+                            <div className="desc text-[16px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
+                              <p>{item.user_comment}</p>
+                            </div>
+                            <div className="customer-info flex border-t border-[#DEDEDE] pt-[10px] mt-[10px] gap-[10px] items-center">
+                              <div className="customer-img w-[50px] h-[50px] relative overflow-hidden rounded-full">
+                                <img
+                                  className="absolute w-full h-full object-cover rounded-full"
+                                  src={item.user_image}
+                                  alt=""
+                                />
+                              </div>
+                              <div className="info flex-1">
+                                <h4 className="text-[16px] font-bold text-black mb-[5px]">
+                                  {item.user_name}
+                                </h4>
+                                <h5 className="text-[16px] tracking-[-0.400697px] text-black font-normal">
+                                  {item.user_location}
+                                </h5>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </SwiperSlide>
+                    );
+                  })}
+                </Swiper>
+              </div>
+            </div>
           </div>
         </section>
         <section className="review-slider-sec mt-[40px] md:mt-[60px] lg:mt-[80px] xl:mt-[100px] hidden md:block">

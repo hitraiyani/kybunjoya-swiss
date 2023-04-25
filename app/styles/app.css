@@ -901,6 +901,9 @@ p:last-child {
 .customer-opinions-box {
   height: 960px;
 }
+.customer-opinions-sec-mobile .customer-opinions-box {
+  height: auto;
+}
 .customer-opinions-box .customer-items::after {
   content: '';
   position: absolute;
@@ -916,11 +919,26 @@ p:last-child {
   bottom: 0;
   z-index: 1;
 }
+.customer-opinions-sec-mobile .customer-opinions-box .customer-items:after {
+  display: none;
+}
 .customer-opinions-box.active .customer-items::after {
   display: none;
 }
 .customer-opinions-box.active {
   height: auto;
+}
+.customer-opinions-sec-mobile .swiper-pagination {
+  position: relative;
+  margin-top: 20px;
+}
+.customer-opinions-sec-mobile .swiper-pagination .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+}
+.customer-opinions-sec-mobile .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background: #000000;
 }
 /* End customer-opinions section */
 .list-decimal {
