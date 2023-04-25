@@ -2,12 +2,20 @@ import {json} from '@shopify/remix-oxygen';
 import {useLoaderData} from '@remix-run/react';
 import {flattenConnection, AnalyticsPageType} from '@shopify/hydrogen';
 import invariant from 'tiny-invariant';
-import {PageHeader, Section, Text, SortFilter, ArrowRight,IconCart,IconMapPin} from '~/components';
+import {
+  PageHeader,
+  Section,
+  Text,
+  SortFilter,
+  ArrowRight,
+  IconCart,
+  IconMapPin,
+} from '~/components';
 import {ProductGrid} from '~/components/ProductGrid';
 import {PRODUCT_CARD_FRAGMENT, MEDIA_FRAGMENT} from '~/data/fragments';
 import {Navigation, Pagination, Scrollbar, A11y, Autoplay} from 'swiper';
 import {Swiper, SwiperSlide} from 'swiper/react';
-import { toHTML } from '~/lib/utils';
+import {toHTML} from '~/lib/utils';
 
 const seo = ({data}) => ({
   title: data?.collection?.seo?.title,
@@ -35,7 +43,6 @@ export async function loader({params, request, context}) {
 
   const searchParams = new URL(request.url).searchParams;
 
-  
   const knownFilters = ['productVendor', 'productType'];
   const available = 'available';
   const variantOption = 'variantOption';
@@ -92,7 +99,6 @@ export async function loader({params, request, context}) {
     });
   }
 
-
   const {collection, collections} = await context.storefront.query(
     COLLECTION_QUERY,
     {
@@ -115,8 +121,8 @@ export async function loader({params, request, context}) {
 
   let brandHereSection = null;
   //searchParams.has('productVendor') && searchParams.get('productVendor') == 'Kybunjoya Swiss'
-  if(true) {
-      brandHereSection = await context.storefront.query(
+  if (true) {
+    brandHereSection = await context.storefront.query(
       BRAND_PAGE_HERO_SECTION_QUERY,
       {
         variables: {metaObjectId: 'gid://shopify/Metaobject/2200076609'},
@@ -141,7 +147,13 @@ export async function loader({params, request, context}) {
 }
 
 export default function Collection() {
-  const {collection, collections, appliedFilters, brandHereSection, appliedCustomFilters} = useLoaderData();
+  const {
+    collection,
+    collections,
+    appliedFilters,
+    brandHereSection,
+    appliedCustomFilters,
+  } = useLoaderData();
 
   return (
     <>
@@ -150,7 +162,11 @@ export default function Collection() {
           {brandHereSection?.data?.head_title?.value}
         </h1> */}
         <div className="img-wrap mb-[30px] xl:mb-[42px] max-w-[150px] md:max-w-[223px]">
-          <img className='w-full h-auto' src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Logo_kybun_Wordmark_1c_black_rgb_3.png?v=1682410655" alt="" />
+          <img
+            className="w-full h-auto"
+            src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Logo_kybun_Wordmark_1c_black_rgb_3.png?v=1682410655"
+            alt=""
+          />
         </div>
         <div className="product-list-hero-img relative overflow-hidden rounded-xl pb-[35%] min-h-[200px]">
           <img
@@ -160,12 +176,15 @@ export default function Collection() {
           />
         </div>
         <section className="info-slider-with-img py-[40px] md:py-[60px] lg:py-[80px] xl:py-[100px]">
-          <div className="row flex flex-col lg:flex-row gap-x-[70px] gap-y-[30px]">
-            <div className='w-full lg:w-[50%]'>
+          <div className="row flex flex-col lg:flex-row gap-x-[30px] xl:gap-x-[70px] gap-y-[30px]">
+            <div className="w-full lg:w-[50%]">
               <div className="img-info-col relative h-[calc(100%_-_60px)]">
                 <div className="img-wrap h-full flex flex-col justify-center">
                   <img
-                    src={brandHereSection?.data?.interective_image?.reference?.image?.url}
+                    src={
+                      brandHereSection?.data?.interective_image?.reference
+                        ?.image?.url
+                    }
                     alt=""
                   />
                 </div>
@@ -255,8 +274,8 @@ export default function Collection() {
                     <span>elastisch-federnd</span>
                   </li>
                   <li>
-                  <span>Swiss made</span>
-                  <img
+                    <span>Swiss made</span>
+                    <img
                       className="line"
                       src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Vector_5.png?v=1681740250"
                       alt=""
@@ -297,13 +316,13 @@ export default function Collection() {
                     </svg>
                   </li>
                   <li>
-                  <span>Swiss made</span>
-                  <img
+                    <span>Swiss made</span>
+                    <img
                       className="line"
                       src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Vector_6.png?v=1681740250"
                       alt=""
                     />
-                    
+
                     <svg
                       className="icon"
                       width={100}
@@ -363,7 +382,75 @@ export default function Collection() {
             </div>
             <div className="w-full lg:w-[50%] content-info-col rounded-xl">
               <div className="content-info-col-inner">
-                <Swiper
+                <div className="item relative">
+                  <Swiper
+                    modules={[
+                      Navigation,
+                      Scrollbar,
+                      A11y,
+                      Autoplay,
+                      Pagination,
+                    ]}
+                    slidesPerView={1}
+                    navigation={{
+                      prevEl: '.swiper-button-next-product-info',
+                      nextEl: '.swiper-button-prev-product-info',
+                    }}
+                    spaceBetween={20}
+                    autoplay="false"
+                    pagination={{
+                      el: '.my-custom-pagination-div',
+                      clickable: true,
+                    }}
+                    breakpoints={{
+                      0: {
+                        autoHeight:"true",
+                      },
+                      1024: {
+                        autoHeight:"false",
+                      },
+                    }}
+                    className="h-full overflow-visible rounded-xl flex flex-col lg:!absolute lg:inset-0 w-full !z-[-1]"
+                  >
+                    <SwiperSlide className="w-full h-full">
+                      <div className="bg-img w-full h-full rounded-[10px]">
+                        <img
+                          className="w-full h-full object-cover rounded-[10px]"
+                          src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/ss23-tennis-athletes-iga-swiatek-editorials-19-Mar23__2_.jpg_1.png?v=1681740595"
+                          alt=""
+                        />
+                      </div>
+                    </SwiperSlide>
+                    <SwiperSlide className="w-full h-full">
+                      <div className="bg-img w-full h-full rounded-[10px]">
+                        <img
+                          className="w-full h-full object-cover rounded-[10px]"
+                          src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/PD04789_-_XL_partnerships_group_image11_944d2487-d106-40c1-81c2-cddcca336bfe.png?v=1681971908"
+                          alt=""
+                        />
+                      </div>
+                    </SwiperSlide>
+                    <SwiperSlide className="w-full h-full">
+                      <div className="bg-img w-full h-full rounded-[10px]">
+                        <img
+                          className="w-full h-full object-cover rounded-[10px]"
+                          src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/ss23-tennis-athletes-iga-swiatek-editorials-19-Mar23__2_.jpg_5.png?v=1682331650"
+                          alt=""
+                        />
+                      </div>
+                    </SwiperSlide>
+                  </Swiper>
+                  <div className="info bg-[#fff] p-[20px] xl:py-[50px] xl:px-[30px] relative z-[1] w-full lg:w-[90%] xl:w-[77%] ml-auto rounded-[10px] mt-[20px] lg:mt-[0] lg:top-[48px] mr-auto xl:mr-[50px]">
+                    <div className="desc mb-[20px]">
+                      <h3 className="desc text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">Im Schweizer Luftkissen-Schuh steht der Fuss direkt auf einer elastisch-federnden Matte, die dem Fuss die maximale Bewegungsfreiheit in alle Richtungen ermöglicht. Durch die Elastizität und Instabilität in alle Richtungen wird die Muskulatur optimal trainiert. </h3>
+                    </div>
+                    <div
+                      className="desc text-black text-[16px] lg:text-[18px] font-normal leading-[1.4] mb-[20px] xl:mb-[42px]"
+                    ><p>Die Gelenke werden geschont und die Rückenmuskulatur entspannt wie in keiner anderen Fussbekleidung. Der kybun ist ein Alltagsschuh, der den ganzen Tag getragen werden kann. Er ist besonders geeignet für Menschen, die im Berufsleben lange stehen und eine intensive körperliche Arbeit verrichten. Die elastisch-federnde Sohle (Luftkissen-Sohle) verhindert schwere Beine, brennende Füsse, Rückenschmerzen und Venenleiden. </p><p>Da das elastisch-federnde Material sich immer dynamisch an die Form der Fusssohle anpasst, ist der kybun auch ideal für alle Fussprobleme. Für Sportler eignet er sich zum Warm Up als auch zum Auslaufen nach Trainingseinheiten oder Wettkämpfen.</p></div>
+                    <KybunShopAndShopFinder />
+                  </div>
+                </div>
+                {/* <Swiper
                   modules={[Navigation, Scrollbar, A11y, Autoplay, Pagination]}
                   slidesPerView={1}
                   navigation={{
@@ -371,7 +458,6 @@ export default function Collection() {
                     nextEl: '.swiper-button-prev-product-info',
                   }}
                   spaceBetween={20}
-                  loop="false"
                   autoplay="false"
                   autoHeight="true"
                   pagination={{
@@ -424,8 +510,8 @@ export default function Collection() {
                               />
                             </div>
                             <div className="info bg-[#fff] p-[20px] xl:py-[42px] xl:px-[30px] relative z-[1] w-[90%] xl:w-[77%] ml-auto rounded-[10px] top-[48px] mr-auto xl:mr-[50px]">
-                              <KybunShopAndShopFinder />
-                              <div className="desc mt-[68px]">
+                              
+                              <div className="desc mb-[20px]">
                                 <h3 className="text-[18px] lg:text-[25px] text-black font-normal tracking-[-0.400697px]"
                                   dangerouslySetInnerHTML={{
                                     __html: toHTML(brandHereSection?.data?.slider_header_content_2?.value),
@@ -433,12 +519,13 @@ export default function Collection() {
                                 >
                                 </h3>
                               </div>
-                              <div className="desc mt-[40px] text-black text-[18px] font-normal leading-[1.4]"
+                              <div className="desc text-black text-[16px] lg:text-[18px] font-normal leading-[1.4] mb-[20px] xl:mb-[42px]"
                                 dangerouslySetInnerHTML={{
                                   __html: toHTML(brandHereSection?.data?.slider_desc_content_2?.value),
                                 }}
                               >
                               </div>
+                              <KybunShopAndShopFinder />
                             </div>
                           </div>
                         </SwiperSlide>
@@ -456,8 +543,8 @@ export default function Collection() {
                               />
                             </div>
                             <div className="info bg-[#fff] p-[20px] xl:py-[42px] xl:px-[30px] relative z-[1] w-[90%] xl:w-[77%] ml-auto rounded-[10px] top-[48px] mr-auto xl:mr-[50px]">
-                              <KybunShopAndShopFinder />
-                              <div className="desc mt-[68px]">
+                              
+                              <div className="desc mb-[20px]">
                                 <h3 className="text-[18px] lg:text-[25px] text-black font-normal tracking-[-0.400697px]"
                                   dangerouslySetInnerHTML={{
                                     __html: toHTML(brandHereSection?.data?.slider_header_content_3?.value),
@@ -465,12 +552,13 @@ export default function Collection() {
                                 >
                                 </h3>
                               </div>
-                              <div className="desc mt-[40px] text-black text-[18px] font-normal leading-[1.4]"
+                              <div className="desc text-black text-[16px] lg:text-[18px] font-normal leading-[1.4] mb-[20px] xl:mb-[42px]"
                                 dangerouslySetInnerHTML={{
                                   __html: toHTML(brandHereSection?.data?.slider_desc_content_3?.value),
                                 }}
                               >
                               </div>
+                              <KybunShopAndShopFinder />
                             </div>
                           </div>
                         </SwiperSlide>
@@ -488,8 +576,7 @@ export default function Collection() {
                               />
                             </div>
                             <div className="info bg-[#fff] p-[20px] xl:py-[42px] xl:px-[30px] relative z-[1] w-[90%] xl:w-[77%] ml-auto rounded-[10px] top-[48px] mr-auto xl:mr-[50px]">
-                              <KybunShopAndShopFinder />
-                              <div className="desc mt-[68px]">
+                              <div className="desc mb-[20px]">
                                 <h3 className="text-[18px] lg:text-[25px] text-black font-normal tracking-[-0.400697px]"
                                   dangerouslySetInnerHTML={{
                                     __html: toHTML(brandHereSection?.data?.slider_header_content_4?.value),
@@ -497,23 +584,26 @@ export default function Collection() {
                                 >
                                 </h3>
                               </div>
-                              <div className="desc mt-[40px] text-black text-[18px] font-normal leading-[1.4]"
+                              <div className="desc text-black text-[16px] lg:text-[18px] font-normal leading-[1.4] mb-[20px] xl:mb-[42px]"
                                 dangerouslySetInnerHTML={{
                                   __html: toHTML(brandHereSection?.data?.slider_desc_content_4?.value),
                                 }}
                               >
                               </div>
+                              <KybunShopAndShopFinder />
                             </div>
                           </div>
                         </SwiperSlide>
                     )
                   }
-                </Swiper>
+                </Swiper> */}
               </div>
             </div>
           </div>
         </section>
-        <Section className={'mt-[40px] md:mt-[60px] lg:mt-[80px] xl:mt-[100px]'}>
+        <Section
+          className={'mt-[40px] md:mt-[60px] lg:mt-[80px] xl:mt-[100px]'}
+        >
           <SortFilter
             filters={collection.products.filters}
             appliedFilters={appliedFilters}
@@ -525,15 +615,14 @@ export default function Collection() {
               collection={collection}
               url={`/collections/${collection.handle}`}
               data-test="product-grid"
-              className="grid grid-cols-2 lg:grid-cols-3 product-listing gap-x-[20px] gap-y-[70px]" 
+              className="grid grid-cols-2 lg:grid-cols-3 product-listing gap-x-[20px] gap-y-[70px]"
             />
           </SortFilter>
-        </Section> 
+        </Section>
       </div>
     </>
   );
 }
-
 
 function KybunShopAndShopFinder() {
   return (
@@ -553,9 +642,8 @@ function KybunShopAndShopFinder() {
         Storefinder
       </a>
     </div>
-  )
+  );
 }
-
 
 const COLLECTION_QUERY = `#graphql
   ${PRODUCT_CARD_FRAGMENT}
@@ -657,7 +745,6 @@ function getSortValuesFromParam(sortParam) {
       };
   }
 }
-
 
 const BRAND_PAGE_HERO_SECTION_QUERY = `#graphql
 ${MEDIA_FRAGMENT}

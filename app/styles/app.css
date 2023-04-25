@@ -932,3 +932,7 @@ p:last-child {
 .swiper-button-prev.swiper-button-disabled {
   opacity: 0 !important;
 }
+.swiper-button-prev-product-info.swiper-button-disabled,
+.swiper-button-next-product-info.swiper-button-disabled {
+  opacity: 0.2 !important;
+}
