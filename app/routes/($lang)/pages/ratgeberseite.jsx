@@ -52,10 +52,18 @@ export default function ratgeberseite() {
           link.classList.remove('active');
         });
 
+        document.querySelectorAll('.kb-body-icon').forEach(function (icon) {
+          icon.classList.remove('active');
+        });
+
         // add active class to clicked element
         this.classList.add('active');
 
         const hashId = this.hash.substring(1);
+
+        
+        const kgIcon = document.getElementById(hashId.replace('link','kb-body-icon-'));
+        kgIcon?.classList?.add('active');
 
         var myElement = document.querySelector('#' + hashId);
         myElement?.querySelector('button')?.click();
@@ -105,25 +113,25 @@ export default function ratgeberseite() {
                     alt=""
                   />
                   <div className="interactive-list w-full left-[-90px] top-0 h-full absolute">
-                    <div className="absolute top-0 left-[240px]">
+                    <div className="absolute top-0 left-[240px] kb-body-icon" id="kb-body-icon-1">
                       <IconClose className="transition-transform transform-gpu duration-200 w-[65px] h-[65px] text-black p-[10px] border border-[#DEDEDE] rounded-full bg-white bg-opacity-50 rotate-45 stroke-[1] hover:bg-[#009470] hover:border-[#009470]" />
                     </div>
-                    <div className="absolute top-[300px] left-[220px]">
+                    <div className="absolute top-[300px] left-[220px] kb-body-icon" id="kb-body-icon-3">
                       <IconClose className="transition-transform transform-gpu duration-200 w-[65px] h-[65px] text-black p-[10px] border border-[#DEDEDE] rounded-full bg-white bg-opacity-50 rotate-45 stroke-[1] hover:bg-[#009470] hover:border-[#009470]" />
                     </div>
-                    <div className="absolute top-[330px] left-[130px]">
+                    <div className="absolute top-[330px] left-[130px] kb-body-icon" id="kb-body-icon-5">
                       <IconClose className="transition-transform transform-gpu duration-200 w-[65px] h-[65px] text-black p-[10px] border border-[#DEDEDE] rounded-full bg-white bg-opacity-50 rotate-45 stroke-[1] hover:bg-[#009470] hover:border-[#009470]" />
                     </div>
-                    <div className="absolute top-[330px] left-[281px]">
+                    <div className="absolute top-[330px] left-[281px] kb-body-icon" id="kb-body-icon-2">
                       <IconClose className="transition-transform transform-gpu duration-200 w-[65px] h-[65px] text-black p-[10px] border border-[#DEDEDE] rounded-full bg-white bg-opacity-50 rotate-45 stroke-[1] hover:bg-[#009470] hover:border-[#009470]" />
                     </div>
-                    <div className="absolute top-[510px] left-[261px]">
+                    <div className="absolute top-[510px] left-[261px] kb-body-icon" id="kb-body-icon-4">
                       <IconClose className="transition-transform transform-gpu duration-200 w-[65px] h-[65px] text-black p-[10px] border border-[#DEDEDE] rounded-full bg-white bg-opacity-50 rotate-45 stroke-[1] hover:bg-[#009470] hover:border-[#009470]" />
                     </div>
-                    <div className="absolute bottom-[110px] left-[180px]">
+                    <div className="absolute bottom-[110px] left-[180px] kb-body-icon" id="kb-body-icon-6">
                       <IconClose className="transition-transform transform-gpu duration-200 w-[65px] h-[65px] text-black p-[10px] border border-[#DEDEDE] rounded-full bg-white bg-opacity-50 rotate-45 stroke-[1] hover:bg-[#009470] hover:border-[#009470]" />
                     </div>
-                    <div className="absolute bottom-[80px] left-[250px]">
+                    <div className="absolute bottom-[80px] left-[250px] kb-body-icon" id="kb-body-icon-7">
                       <IconClose className="transition-transform transform-gpu duration-200 w-[65px] h-[65px] text-black p-[10px] border border-[#DEDEDE] rounded-full bg-white bg-opacity-50 rotate-45 stroke-[1] hover:bg-[#009470] hover:border-[#009470]" />
                     </div>
                   </div>
