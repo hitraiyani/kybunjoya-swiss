@@ -17,7 +17,7 @@ export function CollectionsGrid({data}) {
                   alt=""
                 />
               </div>
-              <div className="img-overlay absolute w-full h-2/4 inset-x-0 bottom-0"></div>
+              <div className="img-overlay absolute w-full h-full md:h-2/4 inset-x-0 bottom-0"></div>
               <Heading className="flex flex-col font-normal text-[30px]  xl:text-[40px] text-white absolute bottom-0 left-0 p-5 btn gap-5 ">
                 <span dangerouslySetInnerHTML={{
                   __html: toHTML(data?.section_1_text?.value),
@@ -39,7 +39,7 @@ export function CollectionsGrid({data}) {
                   alt=""
                 />
               </div>
-              <div className="img-overlay absolute w-full h-2/4 inset-x-0 bottom-0"></div>
+              <div className="img-overlay absolute w-full h-full md:h-2/4 inset-x-0 bottom-0"></div>
               <Heading className="flex flex-col font-normal text-[30px]  xl:text-[40px] text-white absolute bottom-0 left-0 p-5 btn gap-5 ">
               <span dangerouslySetInnerHTML={{
                   __html: toHTML(data?.section_2_text?.value),
@@ -64,7 +64,7 @@ export function CollectionsGrid({data}) {
                   alt=""
                 />
               </div>
-              <div className="img-overlay absolute w-full h-2/4 inset-x-0 bottom-0"></div>
+              <div className="img-overlay absolute w-full h-full md:h-2/4 inset-x-0 bottom-0"></div>
               <Heading className="flex flex-col font-normal text-[30px]  xl:text-[40px] text-white absolute bottom-0 left-0 p-5 btn gap-5 ">
                <span dangerouslySetInnerHTML={{
                   __html: toHTML(data?.section_3_text?.value),
@@ -89,16 +89,9 @@ export function CollectionsGrid({data}) {
                   alt=""
                 />
               </div>
-              <div className="img-overlay absolute w-full h-2/4 inset-x-0 bottom-0"></div>
+              <div className="img-overlay absolute w-full h-full md:h-2/4 inset-x-0 bottom-0"></div>
               <div className="flex absolute bottom-0 left-0 p-5 w-full items-end h-full">
-                <div className="content-img relative overflow-hidden w-2/4 h-full">
-                  <Image
-                    data={data?.section_4_mask_image?.reference.image}
-                    className="h-full w-full object-cover object-center"
-                    alt=""
-                  />
-                </div>
-                <Heading className="flex flex-col font-normal text-[30px] lg:text-[34px] xl:text-[45px] text-white leading-none p-5 btn w-2/4 gap-5">
+              <Heading className="flex flex-col font-normal text-[30px] lg:text-[34px] xl:text-[40px] text-white leading-none btn gap-5 flex-[2]">
                 <span dangerouslySetInnerHTML={{
                   __html: toHTML(data?.section_4_text?.value),
                 }}></span>
@@ -108,6 +101,13 @@ export function CollectionsGrid({data}) {
                     }
                   />
                 </Heading>
+                <div className="content-img relative overflow-hidden w-auto max-w-full flex-1"> 
+                  <Image
+                    data={data?.section_4_mask_image?.reference.image}
+                    className="h-full w-full object-cover object-top"
+                    alt=""
+                  />
+                </div>
               </div>
             </Link>
           </div>

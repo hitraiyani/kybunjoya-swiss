@@ -284,7 +284,7 @@ p:last-child {
 }
 .collectionsGrid-item:nth-child(2) > a,
 .collectionsGrid-item:nth-child(1) > a {
-  padding-bottom: 112%;
+  padding-bottom: 110%;
 }
 .collectionsGrid-item,
 .collectionsGrid-item > a,
@@ -331,7 +331,7 @@ p:last-child {
 }
 @media (max-width: 1279px) {
   .collectionsGrid-item > a {
-    padding-bottom: 160% !important;
+    padding-bottom: 60% !important;
   }
   .collectionsGrid-product-sec .collectionsGrid-item > a {
     padding-bottom: 120% !important;
@@ -343,7 +343,7 @@ p:last-child {
   }
   .collectionsGrid-item > a {
     height: auto !important;
-    padding-bottom: 150% !important;
+    padding-bottom: 70% !important;
   }
   .quick-links-sec .collectionsGrid-item > a {
     padding-bottom: 112% !important;
