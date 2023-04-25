@@ -658,9 +658,6 @@ video {
 .top-\[330px\] {
   top: 330px;
 }
-.top-\[48px\] {
-  top: 48px;
-}
 .top-\[510px\] {
   top: 510px;
 }
@@ -1055,9 +1052,6 @@ video {
 .h-screen {
   height: 100vh;
 }
-.h-\[80px\] {
-  height: 80px;
-}
 .max-h-0 {
   max-height: 0px;
 }
@@ -1175,9 +1169,6 @@ video {
 .w-\[65px\] {
   width: 65px;
 }
-.w-\[90\%\] {
-  width: 90%;
-}
 .w-\[calc\(100\%_-_140px\)\] {
   width: calc(100% - 140px);
 }
@@ -1193,9 +1184,6 @@ video {
 }
 .w-screen {
   width: 100vw;
-}
-.w-\[80px\] {
-  width: 80px;
 }
 .min-w-\[0\.75rem\] {
   min-width: 0.75rem;
@@ -2067,9 +2055,6 @@ video {
 .pb-\[59\%\] {
   padding-bottom: 59%;
 }
-.pb-\[60px\] {
-  padding-bottom: 60px;
-}
 .pb-px {
   padding-bottom: 1px;
 }
@@ -2121,6 +2106,9 @@ video {
 .pt-8 {
   padding-top: 2rem;
 }
+.pt-\[10px\] {
+  padding-top: 10px;
+}
 .pt-\[12px\] {
   padding-top: 12px;
 }
@@ -2135,9 +2123,6 @@ video {
 }
 .pt-\[64px\] {
   padding-top: 64px;
-}
-.pt-\[10px\] {
-  padding-top: 10px;
 }
 .text-left {
   text-align: left;
@@ -4008,11 +3993,6 @@ video {
   .xl\:py-\[28px\] {
     padding-top: 28px;
     padding-bottom: 28px;
-  }
-
-  .xl\:py-\[42px\] {
-    padding-top: 42px;
-    padding-bottom: 42px;
   }
 
   .xl\:py-\[49px\] {

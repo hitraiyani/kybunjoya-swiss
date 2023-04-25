@@ -10,6 +10,7 @@ import {
   ArrowRight,
   IconCart,
   IconMapPin,
+  Link
 } from '~/components';
 import {ProductGrid} from '~/components/ProductGrid';
 import {PRODUCT_CARD_FRAGMENT, MEDIA_FRAGMENT} from '~/data/fragments';
@@ -154,8 +155,6 @@ export default function Collection() {
     brandHereSection,
     appliedCustomFilters,
   } = useLoaderData();
-
-  //console.log("brandHereSection", brandHereSection);
 
   const brandSliderImages =
     brandHereSection?.data?.slider_images?.references?.edges.map(
@@ -447,7 +446,7 @@ export default function Collection() {
                         __html: toHTML(brandHereSection?.data?.slider_overlay_content_2?.value),
                       }}
                     ></div>
-                    <KybunShopAndShopFinder />
+                    <KybunShopAndShopFinder kybun_online_shop_url={brandHereSection?.data?.kybun_online_shop_url?.value} storefinder_url={brandHereSection?.data?.storefinder_url?.value} />
                   </div>
                 </div>
               </div>
@@ -477,23 +476,24 @@ export default function Collection() {
   );
 }
 
-function KybunShopAndShopFinder() {
+function KybunShopAndShopFinder({storefinder_url, kybun_online_shop_url}) {
+
   return (
     <div className="top-btn flex flex-col sm:flex-row justify-between gap-[20px]">
-      <a
-        href="#"
+      <Link
+        to={kybun_online_shop_url}
         className="tracking-[-0.400697px] text-[16px] lg:text-[14px] xl:text-[16px] leading-none flex text-center justify-center items-center gap-[10px] bg-[#000] text-white rounded-[100px] px-[15px] xl:px-[10px] py-[18px] w-full font-normal hover:!bg-[#00795c] hover:!text-[#fff]"
       >
         <IconCart />
         kybun Online-Shop
-      </a>
-      <a
-        href="#"
+      </Link>
+      <Link
+         to={storefinder_url}
         className="tracking-[-0.400697px] text-[16px] lg:text-[14px] xl:text-[16px] leading-none flex text-center justify-center items-center gap-[10px] bg-[#00795C] text-white rounded-[100px] px-[15px] xl:px-[10px] py-[18px] w-full font-normal hover:!bg-[#000000] hover:!text-[#ffffff]"
       >
         <IconMapPin />
         Storefinder
-      </a>
+        </Link>
     </div>
   );
 }
@@ -639,6 +639,12 @@ ${MEDIA_FRAGMENT}
         reference {
           ...Media
         }
+      }
+      kybun_online_shop_url : field(key: "kybun_online_shop_url") {
+        value
+      }
+      storefinder_url : field(key: "storefinder_url") {
+        value
       }
     }
   }
