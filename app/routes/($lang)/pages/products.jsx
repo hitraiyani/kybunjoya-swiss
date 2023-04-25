@@ -89,7 +89,7 @@ export default function schweizerSchuhpropktion() {
                 __html: toHTML(page?.short_description?.value),
               }}
             ></div>
-            <h2 className="text-[20px] lg:text-[25px] text-[#00795C] leading-[1.2] mb-[10px] mt-[47px]">
+            <h2 className="text-[24px] lg:text-[30px] text-[#00795C] leading-[1.2] mb-[10px] mt-[47px]">
               {page?.head_title?.value}
             </h2>
             <div

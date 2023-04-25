@@ -9,15 +9,15 @@ export function ProductMiscUpdate({data}) {
         <h1 className="text-[#000000] text-[18px] mb-[30px] xl:mb-[44px] pb-[20px] uppercase border-b border-black font-normal">
           {data?.head_title?.value}
         </h1>
-        <div className="flex flex-col lg:flex-row gap-y-[20px] gap-x-[30px] xl:gap-x-[64px]">
-          <div className="img-col flex-1 overflow-hidden lg:w-auto w-full">
+        <div className="flex flex-col lg:flex-row gap-y-[20px] gap-x-[30px] xl:gap-x-[49px]">
+          <div className="img-col w-full lg:w-[40%] overflow-hidden">
             <img
               className="h-full object-cover  rounded-xl block"
               src={data.main_section_image.reference.image.url}
               alt=""
             />
           </div>
-          <div className="content-col flex-1 flex flex-col">
+          <div className="content-col w-full lg:w-[60%] flex flex-col">
             <h2 className="text-[35px] lg:text-[40px] text-[#000000] leading-[1.2] tracking-[-0.971px] mb-[17px] font-medium">
               {data.sub_section_1_title.value}
             </h2>
@@ -53,7 +53,7 @@ export function ProductMiscUpdate({data}) {
               />
             </div>
             <div className="content-col flex-1 flex flex-col justify-center">
-              <h2 className="text-[25px] text-[#000000] leading-[1.2] tracking-[-0.40] mb-[15px] font-normal">
+              <h2 className="text-[20px] md:text-[25px] text-[#000000] leading-[1.2] tracking-[-0.40] mb-[15px] font-normal">
                 {data.sub_section_1_title.value}
               </h2>
               <div
@@ -73,7 +73,7 @@ export function ProductMiscUpdate({data}) {
               />
             </div>
             <div className="content-col flex-1 flex flex-col justify-center">
-              <h2 className="text-[25px] text-[#000000] leading-[1.2] tracking-[-0.40] mb-[15px] font-normal">
+              <h2 className="text-[20px] md:text-[25px] text-[#000000] leading-[1.2] tracking-[-0.40] mb-[15px] font-normal">
                 {data.sub_section_2_title.value}
               </h2>
               <div

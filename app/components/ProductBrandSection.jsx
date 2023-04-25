@@ -6,9 +6,9 @@ import { toHTML } from '~/lib/utils';
 export function ProductBrandSection({data}) {
 
   return (
-    <Section className={'collectionsGrid-sec mt-[40px] md:mt-[60px] lg:mt-[80px] xl:mt-[100px]'}>
+    <Section className={'collectionsGrid-sec mt-[40px] md:mt-[60px] lg:mt-[80px] xl:mt-[100px] collectionsGrid-product-sec'}>
       <div className="container">
-        <h1 className='text-[#000000] text-[24px] lg:text-[30px] mb-[33px] leading-[1.2] max-w-[676px] font-bold'>{data?.head_title?.value}</h1>
+        <h1 className='text-[#000000] text-[24px] lg:text-[30px] mb-[33px] leading-[1.2] max-w-[1000px] font-bold'>{data?.head_title?.value}</h1>
         <div className="md:grid md:grid-rows-2 xl:grid-rows-2 md:grid-flow-col gap-7 flex flex-col">
           <div className="collectionsGrid-item relative collectionsGrid-item-prodcut">
             <Link to={`${data?.brand_1_redirect?.value}`} className="relative block w-full overflow-hidden">

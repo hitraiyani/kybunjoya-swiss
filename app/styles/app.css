@@ -329,6 +329,9 @@ p:last-child {
   .collectionsGrid-item > a {
     padding-bottom: 160% !important;
   }
+  .collectionsGrid-product-sec .collectionsGrid-item > a {
+    padding-bottom: 120% !important;
+  }
 }
 @media (max-width: 767px) {
   .collectionsGrid-item {
@@ -343,6 +346,9 @@ p:last-child {
   }
   .quick-links-sec .collectionsGrid-item {
     width: 100%;
+  }
+  .collectionsGrid-product-sec .collectionsGrid-item > a {
+    padding-bottom: 90% !important;
   }
 }
 @media (max-width: 576px) {
