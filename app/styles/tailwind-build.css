@@ -521,9 +521,6 @@ video {
 .absolute {
   position: absolute;
 }
-.\!absolute {
-  position: absolute !important;
-}
 .relative {
   position: relative;
 }
@@ -658,6 +655,9 @@ video {
 .top-\[510px\] {
   top: 510px;
 }
+.\!z-\[-1\] {
+  z-index: -1 !important;
+}
 .z-30 {
   z-index: 30;
 }
@@ -675,9 +675,6 @@ video {
 }
 .z-\[999\] {
   z-index: 999;
-}
-.\!z-\[-1\] {
-  z-index: -1 !important;
 }
 .col-span-1 {
   grid-column: span 1 / span 1;
@@ -910,9 +907,6 @@ video {
 .mt-\[60px\] {
   margin-top: 60px;
 }
-.mt-\[68px\] {
-  margin-top: 68px;
-}
 .mt-\[70px\] {
   margin-top: 70px;
 }
@@ -1051,6 +1045,9 @@ video {
 }
 .h-screen {
   height: 100vh;
+}
+.\!h-full {
+  height: 100% !important;
 }
 .max-h-0 {
   max-height: 0px;
@@ -1524,10 +1521,6 @@ video {
 .gap-x-\[57px\] {
   -moz-column-gap: 57px;
        column-gap: 57px;
-}
-.gap-x-\[70px\] {
-  -moz-column-gap: 70px;
-       column-gap: 70px;
 }
 .gap-x-\[73px\] {
   -moz-column-gap: 73px;
@@ -3275,6 +3268,10 @@ video {
     top: 48px;
   }
 
+  .lg\:\!z-\[-1\] {
+    z-index: -1 !important;
+  }
+
   .lg\:col-span-2 {
     grid-column: span 2 / span 2;
   }
@@ -3320,6 +3317,10 @@ video {
     margin-top: -80px;
   }
 
+  .lg\:mt-\[0\] {
+    margin-top: 0;
+  }
+
   .lg\:mt-\[200px\] {
     margin-top: 200px;
   }
@@ -3344,10 +3345,6 @@ video {
     margin-top: 85px;
   }
 
-  .lg\:mt-\[0\] {
-    margin-top: 0;
-  }
-
   .lg\:flex {
     display: flex;
   }
@@ -3370,6 +3367,10 @@ video {
 
   .lg\:h-\[80px\] {
     height: 80px;
+  }
+
+  .lg\:\!h-full {
+    height: 100% !important;
   }
 
   .lg\:w-2\/5 {
@@ -3412,12 +3413,12 @@ video {
     width: 80px;
   }
 
-  .lg\:w-auto {
-    width: auto;
-  }
-
   .lg\:w-\[90\%\] {
     width: 90%;
+  }
+
+  .lg\:w-auto {
+    width: auto;
   }
 
   .lg\:flex-1 {
@@ -3884,6 +3885,11 @@ video {
          column-gap: 64px;
   }
 
+  .xl\:gap-x-\[70px\] {
+    -moz-column-gap: 70px;
+         column-gap: 70px;
+  }
+
   .xl\:gap-x-\[77px\] {
     -moz-column-gap: 77px;
          column-gap: 77px;
@@ -3901,11 +3907,6 @@ video {
 
   .xl\:gap-y-\[45px\] {
     row-gap: 45px;
-  }
-
-  .xl\:gap-x-\[70px\] {
-    -moz-column-gap: 70px;
-         column-gap: 70px;
   }
 
   .xl\:px-\[10px\] {
@@ -3966,6 +3967,11 @@ video {
   .xl\:py-\[57px\] {
     padding-top: 57px;
     padding-bottom: 57px;
+  }
+
+  .xl\:py-\[90px\] {
+    padding-top: 90px;
+    padding-bottom: 90px;
   }
 
   .xl\:pb-\[100px\] {

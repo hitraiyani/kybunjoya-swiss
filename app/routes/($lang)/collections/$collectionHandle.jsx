@@ -175,7 +175,7 @@ export default function Collection() {
             alt=""
           />
         </div>
-        <section className="info-slider-with-img py-[40px] md:py-[60px] lg:py-[80px] xl:py-[100px]">
+        <section className="info-slider-with-img py-[40px] md:py-[60px] lg:py-[80px] xl:py-[90px]">
           <div className="row flex flex-col lg:flex-row gap-x-[30px] xl:gap-x-[70px] gap-y-[30px]">
             <div className="w-full lg:w-[50%]">
               <div className="img-info-col relative h-[calc(100%_-_60px)]">
@@ -398,6 +398,7 @@ export default function Collection() {
                     }}
                     spaceBetween={20}
                     autoplay="false"
+                    autoHeight="false"
                     pagination={{
                       el: '.my-custom-pagination-div',
                       clickable: true,
@@ -410,9 +411,9 @@ export default function Collection() {
                         autoHeight:"false",
                       },
                     }}
-                    className="h-full overflow-visible rounded-xl flex flex-col lg:!absolute lg:inset-0 w-full !z-[-1]"
+                    className="h-full overflow-visible rounded-xl flex flex-col lg:!absolute lg:inset-0 w-full lg:!z-[-1]"
                   >
-                    <SwiperSlide className="w-full h-full">
+                    <SwiperSlide className="w-full lg:!h-full">
                       <div className="bg-img w-full h-full rounded-[10px]">
                         <img
                           className="w-full h-full object-cover rounded-[10px]"
@@ -421,7 +422,7 @@ export default function Collection() {
                         />
                       </div>
                     </SwiperSlide>
-                    <SwiperSlide className="w-full h-full">
+                    <SwiperSlide className="w-full lg:!h-full">
                       <div className="bg-img w-full h-full rounded-[10px]">
                         <img
                           className="w-full h-full object-cover rounded-[10px]"
@@ -430,7 +431,7 @@ export default function Collection() {
                         />
                       </div>
                     </SwiperSlide>
-                    <SwiperSlide className="w-full h-full">
+                    <SwiperSlide className="w-full lg:!h-full">
                       <div className="bg-img w-full h-full rounded-[10px]">
                         <img
                           className="w-full h-full object-cover rounded-[10px]"
