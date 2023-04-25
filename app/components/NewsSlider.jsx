@@ -55,7 +55,6 @@ export function NewsSlider({news}) {
               var badgeLabel = '';
               var brandName = '';
               if (newItem?.attributes?.brands.length > 0) {
-                console.log(newItem?.attributes?.brands);
                 var brand = newItem?.attributes?.brands[0];
                 for (var nc = 0; nc < brand.translations.length; nc++) {
                   if (brand.translations[nc].locale == STORE_LOCALE) {

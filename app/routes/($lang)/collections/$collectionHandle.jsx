@@ -155,6 +155,14 @@ export default function Collection() {
     appliedCustomFilters,
   } = useLoaderData();
 
+  //console.log("brandHereSection", brandHereSection);
+
+  const brandSliderImages =
+    brandHereSection?.data?.slider_images?.references?.edges.map(
+      (data) => data.node.image.url,
+    );
+
+
   return (
     <>
       <div className="container mt-[120px] lg:mt-[200px]">
@@ -164,7 +172,7 @@ export default function Collection() {
         <div className="img-wrap mb-[30px] xl:mb-[42px] max-w-[150px] md:max-w-[223px]">
           <img
             className="w-full h-auto"
-            src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Logo_kybun_Wordmark_1c_black_rgb_3.png?v=1682410655"
+            src={brandHereSection?.data?.head_image?.reference?.image?.url}
             alt=""
           />
         </div>
@@ -413,191 +421,35 @@ export default function Collection() {
                     }}
                     className="h-full overflow-visible rounded-xl flex flex-col lg:!absolute lg:inset-0 w-full lg:!z-[-1]"
                   >
-                    <SwiperSlide className="w-full lg:!h-full">
-                      <div className="bg-img w-full h-full rounded-[10px]">
-                        <img
-                          className="w-full h-full object-cover rounded-[10px]"
-                          src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/ss23-tennis-athletes-iga-swiatek-editorials-19-Mar23__2_.jpg_1.png?v=1681740595"
-                          alt=""
-                        />
-                      </div>
-                    </SwiperSlide>
-                    <SwiperSlide className="w-full lg:!h-full">
-                      <div className="bg-img w-full h-full rounded-[10px]">
-                        <img
-                          className="w-full h-full object-cover rounded-[10px]"
-                          src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/PD04789_-_XL_partnerships_group_image11_944d2487-d106-40c1-81c2-cddcca336bfe.png?v=1681971908"
-                          alt=""
-                        />
-                      </div>
-                    </SwiperSlide>
-                    <SwiperSlide className="w-full lg:!h-full">
-                      <div className="bg-img w-full h-full rounded-[10px]">
-                        <img
-                          className="w-full h-full object-cover rounded-[10px]"
-                          src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/ss23-tennis-athletes-iga-swiatek-editorials-19-Mar23__2_.jpg_5.png?v=1682331650"
-                          alt=""
-                        />
-                      </div>
-                    </SwiperSlide>
+                    { brandSliderImages.map((image, index) => (
+                        <SwiperSlide className="w-full lg:!h-full" key={index}>
+                        <div className="bg-img w-full h-full rounded-[10px]">
+                          <img
+                            className="w-full h-full object-cover rounded-[10px]"
+                            src={image}
+                            alt=""
+                          />
+                        </div>
+                      </SwiperSlide>
+                    ))}
                   </Swiper>
                   <div className="info bg-[#fff] p-[20px] xl:py-[50px] xl:px-[30px] relative z-[1] w-full lg:w-[90%] xl:w-[77%] ml-auto rounded-[10px] mt-[20px] lg:mt-[0] lg:top-[48px] mr-auto xl:mr-[50px]">
                     <div className="desc mb-[20px]">
-                      <h3 className="desc text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">Im Schweizer Luftkissen-Schuh steht der Fuss direkt auf einer elastisch-federnden Matte, die dem Fuss die maximale Bewegungsfreiheit in alle Richtungen ermöglicht. Durch die Elastizität und Instabilität in alle Richtungen wird die Muskulatur optimal trainiert. </h3>
+                      <h3 className="desc text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
+                         dangerouslySetInnerHTML={{
+                          __html: toHTML(brandHereSection?.data?.slider_overlay_content_1?.value),
+                        }}
+                      ></h3>
                     </div>
                     <div
                       className="desc text-black text-[16px] lg:text-[18px] font-normal leading-[1.4] mb-[20px] xl:mb-[42px]"
-                    ><p>Die Gelenke werden geschont und die Rückenmuskulatur entspannt wie in keiner anderen Fussbekleidung. Der kybun ist ein Alltagsschuh, der den ganzen Tag getragen werden kann. Er ist besonders geeignet für Menschen, die im Berufsleben lange stehen und eine intensive körperliche Arbeit verrichten. Die elastisch-federnde Sohle (Luftkissen-Sohle) verhindert schwere Beine, brennende Füsse, Rückenschmerzen und Venenleiden. </p><p>Da das elastisch-federnde Material sich immer dynamisch an die Form der Fusssohle anpasst, ist der kybun auch ideal für alle Fussprobleme. Für Sportler eignet er sich zum Warm Up als auch zum Auslaufen nach Trainingseinheiten oder Wettkämpfen.</p></div>
+                      dangerouslySetInnerHTML={{
+                        __html: toHTML(brandHereSection?.data?.slider_overlay_content_2?.value),
+                      }}
+                    ></div>
                     <KybunShopAndShopFinder />
                   </div>
                 </div>
-                {/* <Swiper
-                  modules={[Navigation, Scrollbar, A11y, Autoplay, Pagination]}
-                  slidesPerView={1}
-                  navigation={{
-                    prevEl: '.swiper-button-next-product-info',
-                    nextEl: '.swiper-button-prev-product-info',
-                  }}
-                  spaceBetween={20}
-                  autoplay="false"
-                  autoHeight="true"
-                  pagination={{
-                    el: '.my-custom-pagination-div',
-                    clickable: true,
-                  }}
-                  className="h-full overflow-visible rounded-xl flex flex-col"
-                >
-                  {
-                    brandHereSection?.data?.slider_image_1?.reference?.image?.url && (
-                        <SwiperSlide className="pb-[60px]">
-                          <div className="item relative">
-                            <div className="bg-img absolute inset-0 rounded-[10px]">
-                              <img
-                                className="w-full h-full object-cover rounded-[10px]"
-                                src={brandHereSection?.data?.slider_image_1?.reference?.image?.url}
-                                alt=""
-                              />
-                            </div>
-                            <div className="info bg-[#fff] p-[20px] xl:py-[42px] xl:px-[30px] relative z-[1] w-[90%] xl:w-[77%] ml-auto rounded-[10px] top-[48px] mr-auto xl:mr-[50px]">
-                              <div className="desc mb-[20px]">
-                                <h3 className="desc text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
-                                  dangerouslySetInnerHTML={{
-                                    __html: toHTML(brandHereSection?.data?.slider_header_content_1?.value),
-                                  }}
-                                >
-                                </h3>
-                              </div>
-                              <div className="desc text-black text-[16px] lg:text-[18px] font-normal leading-[1.4] mb-[20px] xl:mb-[42px]"
-                                dangerouslySetInnerHTML={{
-                                  __html: toHTML(brandHereSection?.data?.slider_desc_content_1?.value),
-                                }}
-                              >
-                              </div>
-                              <KybunShopAndShopFinder />
-                            </div>
-                          </div>
-                        </SwiperSlide>
-                    )
-                  }
-                  {
-                    brandHereSection?.data?.slider_image_2?.reference?.image?.url && (
-                        <SwiperSlide className="pb-[60px]">
-                          <div className="item relative">
-                            <div className="bg-img absolute inset-0 rounded-[10px]">
-                              <img
-                                className="w-full h-full object-cover rounded-[10px]"
-                                src={brandHereSection?.data?.slider_image_2?.reference?.image?.url}
-                                alt=""
-                              />
-                            </div>
-                            <div className="info bg-[#fff] p-[20px] xl:py-[42px] xl:px-[30px] relative z-[1] w-[90%] xl:w-[77%] ml-auto rounded-[10px] top-[48px] mr-auto xl:mr-[50px]">
-                              
-                              <div className="desc mb-[20px]">
-                                <h3 className="text-[18px] lg:text-[25px] text-black font-normal tracking-[-0.400697px]"
-                                  dangerouslySetInnerHTML={{
-                                    __html: toHTML(brandHereSection?.data?.slider_header_content_2?.value),
-                                  }}
-                                >
-                                </h3>
-                              </div>
-                              <div className="desc text-black text-[16px] lg:text-[18px] font-normal leading-[1.4] mb-[20px] xl:mb-[42px]"
-                                dangerouslySetInnerHTML={{
-                                  __html: toHTML(brandHereSection?.data?.slider_desc_content_2?.value),
-                                }}
-                              >
-                              </div>
-                              <KybunShopAndShopFinder />
-                            </div>
-                          </div>
-                        </SwiperSlide>
-                    )
-                  }
-                  {
-                    brandHereSection?.data?.slider_image_3?.reference?.image?.url && (
-                        <SwiperSlide className="pb-[60px]">
-                          <div className="item relative">
-                            <div className="bg-img absolute inset-0 rounded-[10px]">
-                              <img
-                                className="w-full h-full object-cover rounded-[10px]"
-                                src={brandHereSection?.data?.slider_image_3?.reference?.image?.url}
-                                alt=""
-                              />
-                            </div>
-                            <div className="info bg-[#fff] p-[20px] xl:py-[42px] xl:px-[30px] relative z-[1] w-[90%] xl:w-[77%] ml-auto rounded-[10px] top-[48px] mr-auto xl:mr-[50px]">
-                              
-                              <div className="desc mb-[20px]">
-                                <h3 className="text-[18px] lg:text-[25px] text-black font-normal tracking-[-0.400697px]"
-                                  dangerouslySetInnerHTML={{
-                                    __html: toHTML(brandHereSection?.data?.slider_header_content_3?.value),
-                                  }}
-                                >
-                                </h3>
-                              </div>
-                              <div className="desc text-black text-[16px] lg:text-[18px] font-normal leading-[1.4] mb-[20px] xl:mb-[42px]"
-                                dangerouslySetInnerHTML={{
-                                  __html: toHTML(brandHereSection?.data?.slider_desc_content_3?.value),
-                                }}
-                              >
-                              </div>
-                              <KybunShopAndShopFinder />
-                            </div>
-                          </div>
-                        </SwiperSlide>
-                    )
-                  }
-                  {
-                    brandHereSection?.data?.slider_image_4?.reference?.image?.url && (
-                        <SwiperSlide className="pb-[60px]">
-                          <div className="item relative">
-                            <div className="bg-img absolute inset-0 rounded-[10px]">
-                              <img
-                                className="w-full h-full object-cover rounded-[10px]"
-                                src={brandHereSection?.data?.slider_image_4?.reference?.image?.url}
-                                alt=""
-                              />
-                            </div>
-                            <div className="info bg-[#fff] p-[20px] xl:py-[42px] xl:px-[30px] relative z-[1] w-[90%] xl:w-[77%] ml-auto rounded-[10px] top-[48px] mr-auto xl:mr-[50px]">
-                              <div className="desc mb-[20px]">
-                                <h3 className="text-[18px] lg:text-[25px] text-black font-normal tracking-[-0.400697px]"
-                                  dangerouslySetInnerHTML={{
-                                    __html: toHTML(brandHereSection?.data?.slider_header_content_4?.value),
-                                  }}
-                                >
-                                </h3>
-                              </div>
-                              <div className="desc text-black text-[16px] lg:text-[18px] font-normal leading-[1.4] mb-[20px] xl:mb-[42px]"
-                                dangerouslySetInnerHTML={{
-                                  __html: toHTML(brandHereSection?.data?.slider_desc_content_4?.value),
-                                }}
-                              >
-                              </div>
-                              <KybunShopAndShopFinder />
-                            </div>
-                          </div>
-                        </SwiperSlide>
-                    )
-                  }
-                </Swiper> */}
               </div>
             </div>
           </div>
@@ -758,6 +610,26 @@ ${MEDIA_FRAGMENT}
       head_title : field(key: "head_title") {
         value
       }
+      head_image : field(key: "head_image") {
+        reference {
+          ...Media
+        }
+      }
+      slider_images : field(key: "slider_images") {
+        references(first: 15) {
+          edges {
+            node {
+              ...Media
+            }
+          }
+        }
+      }
+      slider_overlay_content_1 : field(key: "slider_overlay_content_1") {
+        value
+      }
+      slider_overlay_content_2 : field(key: "slider_overlay_content_2") {
+        value
+      }
       banner_image : field(key: "banner_image") {
         reference {
           ...Media
@@ -767,50 +639,6 @@ ${MEDIA_FRAGMENT}
         reference {
           ...Media
         }
-      }
-      slider_image_1 : field(key: "slider_image_1") {
-        reference {
-          ...Media
-        }
-      }
-      slider_header_content_1 : field(key: "slider_header_content_1") {
-        value
-      }
-      slider_desc_content_1 : field(key: "slider_desc_content_1") {
-        value
-      }
-      slider_image_2 : field(key: "slider_image_2") {
-        reference {
-          ...Media
-        }
-      }
-      slider_header_content_2 : field(key: "slider_header_content_2") {
-        value
-      }
-      slider_desc_content_2 : field(key: "slider_desc_content_2") {
-        value
-      }
-      slider_image_3 : field(key: "slider_image_3") {
-        reference {
-          ...Media
-        }
-      }
-      slider_header_content_3 : field(key: "slider_header_content_3") {
-        value
-      }
-      slider_desc_content_3 : field(key: "slider_desc_content_3") {
-        value
-      }
-      slider_image_4 : field(key: "slider_image_4") {
-        reference {
-          ...Media
-        }
-      }
-      slider_header_content_4 : field(key: "slider_header_content_4") {
-        value
-      }
-      slider_desc_content_4 : field(key: "slider_desc_content_4") {
-        value
       }
     }
   }
