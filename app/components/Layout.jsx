@@ -17,7 +17,7 @@ import {
   CartLoading,
   Link,
 } from '~/components';
-import {useParams, Form, Await, useMatches} from '@remix-run/react';
+import {useParams, Form, Await, useMatches, useLocation} from '@remix-run/react';
 import {useWindowScroll} from 'react-use';
 import {Disclosure} from '@headlessui/react';
 import {Suspense, useEffect, useMemo, useState} from 'react';
@@ -128,6 +128,10 @@ export function MenuDrawer({isOpen, onClose, menu}) {
 }
 
 function MenuMobileNav({menu, onClose}) {
+
+  const {pathname, search} = useLocation();
+
+
   useEffect(() => {
       const links = document.querySelectorAll('.kybunjoya-menu-hover');
       const images = document.querySelectorAll('.image-container img');
@@ -176,7 +180,7 @@ function MenuMobileNav({menu, onClose}) {
                 <Link
                   to={item.to}
                   target={item.target}
-                  className='kybunjoya-menu-hover title text-[#00795C] text-[26px] mb-[12px]'
+                  className={`kybunjoya-menu-hover title text-[#00795C] text-[26px] mb-[12px] ${item.to == pathname ? 'is-active' : ''} `}
                   data-image={item.title}
                   onClick={onClose}
                 >
@@ -196,6 +200,8 @@ function MenuMobileNav({menu, onClose}) {
 
 function SubMegaMenu({menu_items,onClose}) {
 
+  const {pathname, search} = useLocation();
+
   return (
     <ul className='sub-menu'>
        {(menu_items || []).map((item, key) => {
@@ -203,7 +209,7 @@ function SubMegaMenu({menu_items,onClose}) {
               <Link
                 to={item.to}
                 target={item.target}
-                className='text-[16px] text-[#595959] block leading-none'
+                className={`text-[16px] text-[#595959] block leading-none ${item.to == pathname ? 'is-active' : ''} `}
                 onClick={onClose}
               >{item.title}</Link>
               </li>)

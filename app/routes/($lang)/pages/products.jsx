@@ -59,8 +59,7 @@ export default function schweizerSchuhpropktion() {
   }
   const [slidesPerView, setSlidesPerView] = useState(1.6);
 
-  const handleTransitionEnd = (swiper) => {
-    console.log(swiper.activeIndex);
+  const handleTransitionEnd = (swiper) => {    
     if (swiper.activeIndex === 0) {
       setSlidesPerView(1.6);
     } else {
