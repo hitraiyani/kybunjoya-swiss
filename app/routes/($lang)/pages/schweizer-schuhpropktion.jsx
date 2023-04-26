@@ -54,7 +54,7 @@ export default function schweizerSchuhpropktion() {
         <>
           <div className="container">
             <div className="title-wrap mt-[120px] lg:mt-[200px]">
-              <h2 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[60px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold">
+              <h2 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] mb-[20px] font-bold">
                 {page?.head_title?.value}
               </h2>
             </div>
@@ -129,7 +129,7 @@ export default function schweizerSchuhpropktion() {
             )}
           <div className="video-sec container mt-[40px] xl:mt-[87px] mb-[50px] lg:mb-[80px] xl:mb-[134px]">
             <div className="title-wrap">
-              <h2 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] mb-[20px] md:mb-[30px] xl:mb-[42px] font-bold">
+              <h2 className="text-[24px] md:text-[28px] xl:text-[30px] text-[#00795C] font-bold leading-[1.2] mb-[20px]">
                 {page?.video_section_title?.value}
               </h2>
               <div className="video-wrap">

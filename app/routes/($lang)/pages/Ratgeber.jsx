@@ -86,7 +86,7 @@ export default function ratgeber() {
               <img className='w-full rounded-xl' src={page?.ratgeber?.reference?.start_consultation_image?.reference?.image?.url} alt="" />
             </div>
             <div className='content-info w-full lg:w-[50%]'>
-              <h4 className='text-[24px] md:text-[30px] lg:text-[40px] tracking-[-0.97152px] font-medium leading-[1.3]'
+              <h4 className='text-[24px] md:text-[28px] xl:text-[30px] text-black font-normal leading-[1.2] mb-[20px]'
                   dangerouslySetInnerHTML={{
                     __html: toHTML(page?.ratgeber?.reference?.start_consultation_text?.value),
                   }}
