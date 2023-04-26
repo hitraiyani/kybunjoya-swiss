@@ -3,7 +3,7 @@ import {json} from '@shopify/remix-oxygen';
 import {useLoaderData} from '@remix-run/react';
 import {MEDIA_FRAGMENT} from '~/data/fragments';
 import { toHTML} from '~/lib/utils';
-import {Link, ArrowRightLight} from '~/components';
+import {Link} from '~/components';
 
 const seo = ({data}) => ({
   title: data?.page?.seo?.title,
