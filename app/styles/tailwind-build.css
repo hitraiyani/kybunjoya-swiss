@@ -781,9 +781,6 @@ video {
 .mb-\[30px\] {
   margin-bottom: 30px;
 }
-.mb-\[32px\] {
-  margin-bottom: 32px;
-}
 .mb-\[33px\] {
   margin-bottom: 33px;
 }
@@ -822,6 +819,9 @@ video {
 }
 .mr-0 {
   margin-right: 0px;
+}
+.mr-\[-20px\] {
+  margin-right: -20px;
 }
 .mr-auto {
   margin-right: auto;
@@ -921,9 +921,6 @@ video {
 }
 .mt-auto {
   margin-top: auto;
-}
-.mr-\[-20px\] {
-  margin-right: -20px;
 }
 .box-border {
   box-sizing: border-box;
@@ -1268,11 +1265,11 @@ video {
 .flex-1 {
   flex: 1 1 0%;
 }
-.flex-\[2\] {
-  flex: 2;
-}
 .flex-\[1\] {
   flex: 1;
+}
+.flex-\[2\] {
+  flex: 2;
 }
 .flex-shrink {
   flex-shrink: 1;
@@ -1488,11 +1485,11 @@ video {
 .gap-\[50px\] {
   gap: 50px;
 }
-.gap-\[8px\] {
-  gap: 8px;
-}
 .gap-\[5px\] {
   gap: 5px;
+}
+.gap-\[8px\] {
+  gap: 8px;
 }
 .gap-x-3 {
   -moz-column-gap: 0.75rem;
@@ -1946,6 +1943,10 @@ video {
   padding-left: 59px;
   padding-right: 59px;
 }
+.px-\[5px\] {
+  padding-left: 5px;
+  padding-right: 5px;
+}
 .px-\[60px\] {
   padding-left: 60px;
   padding-right: 60px;
@@ -2021,10 +2022,6 @@ video {
 .py-\[5px\] {
   padding-top: 5px;
   padding-bottom: 5px;
-}
-.px-\[5px\] {
-  padding-left: 5px;
-  padding-right: 5px;
 }
 .pb-1 {
   padding-bottom: 0.25rem;
@@ -2134,11 +2131,11 @@ video {
 .pt-\[40px\] {
   padding-top: 40px;
 }
-.pt-\[64px\] {
-  padding-top: 64px;
-}
 .pt-\[5px\] {
   padding-top: 5px;
+}
+.pt-\[64px\] {
+  padding-top: 64px;
 }
 .text-left {
   text-align: left;
@@ -2164,6 +2161,9 @@ video {
 }
 .text-\[0\.625rem\] {
   font-size: 0.625rem;
+}
+.text-\[12px\] {
+  font-size: 12px;
 }
 .text-\[15\.94px\] {
   font-size: 15.94px;
@@ -2222,9 +2222,6 @@ video {
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
-}
-.text-\[12px\] {
-  font-size: 12px;
 }
 .font-\[400\] {
   font-weight: 400;
@@ -2291,9 +2288,6 @@ video {
 }
 .tracking-\[-0\.97152px\] {
   letter-spacing: -0.97152px;
-}
-.tracking-\[-0\.971px\] {
-  letter-spacing: -0.971px;
 }
 .tracking-\[-1\.05984px\] {
   letter-spacing: -1.05984px;
@@ -3240,10 +3234,6 @@ video {
     text-align: right;
   }
 
-  .md\:text-\[16px\] {
-    font-size: 16px;
-  }
-
   .md\:text-\[18px\] {
     font-size: 18px;
   }
@@ -3678,6 +3668,10 @@ video {
     font-size: 14px;
   }
 
+  .lg\:text-\[16px\] {
+    font-size: 16px;
+  }
+
   .lg\:text-\[18px\] {
     font-size: 18px;
   }
@@ -3724,10 +3718,6 @@ video {
 
   .lg\:text-\[75px\] {
     font-size: 75px;
-  }
-
-  .lg\:text-\[16px\] {
-    font-size: 16px;
   }
 }
 @media (min-width: 1280px) {
