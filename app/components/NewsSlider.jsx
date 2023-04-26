@@ -93,9 +93,9 @@ export function NewsSlider({news}) {
                           src={imgSrc}
                         ></img>
                       </div>
-                      <p className="text-[16px] text-white font-normal mb-[5px] bg-[#00795C] leading-none top-[15px] right-[15px] w-fit py-[10px] px-[16px] rounded-[10px] absolute shadow-md capitalize"
+                      <p className="right-[15px] absolute top-[15px]"
                       >
-                      <span style={ badgeLabel == 'Kybun' ? { color : "#980A2B"} : {}}>{badgeLabel}</span>
+                      <span className='text-[16px] text-white font-normal mb-[5px] bg-[#00795C] leading-none  w-fit block py-[10px] px-[16px] rounded-[10px] shadow-md capitalize' style={ badgeLabel == 'Kybun' ? { backgroundColor : "#980A2B"} : {}}>{badgeLabel}</span>
                       </p>
                     </Link>
                   </div>

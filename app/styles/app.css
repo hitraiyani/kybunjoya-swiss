@@ -876,6 +876,22 @@ p:last-child {
 .review-slider-sec .swiper-button-disabled {
   display: none;
 }
+.pro-slider-mobile .card-image{
+  filter: drop-shadow(0px 0px 0.526777px rgba(0, 0, 0, 0.05)) drop-shadow(0px 2.10711px 4.21421px rgba(0, 0, 0, 0.1));
+}
+
+.pro-slider-mobile .swiper-pagination {
+  position: relative;
+  margin-top: 20px;
+}
+.pro-slider-mobile .swiper-pagination .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+}
+.pro-slider-mobile .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background: #000000;
+}
 /* end ratgeber-seite-fersensporn page  */
 
 .text-\[\#00795c\] {
@@ -937,8 +953,17 @@ p:last-child {
   height: 10px;
   margin: 0 5px;
 }
-.customer-opinions-sec-mobile .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+.customer-opinions-sec-mobile
+  .swiper-pagination
+  .swiper-pagination-bullet.swiper-pagination-bullet-active {
   background: #000000;
+}
+.customer-opinions-sec-mobile .customer-opinions-box .desc {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 10;
+  -webkit-box-orient: vertical;
 }
 /* End customer-opinions section */
 .list-decimal {

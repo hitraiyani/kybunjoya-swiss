@@ -348,7 +348,7 @@ export default function ratgeberSeiteFersensporn() {
         </section>
         <section className="mobile-sec block md:hidden mt-[40px]">
           <div className="inner-row">
-            <h2 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] mb-[10px] font-bold">
+            <h2 className="text-[#00795C] text-[24px] md:text-[30px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] mb-[10px] font-bold">
               Shopfinder
             </h2>
             <div className="img-wrap relative overflow-hidden rounded-[10px] h-[186px] mt-auto">
@@ -837,14 +837,14 @@ export default function ratgeberSeiteFersensporn() {
                 isActive ? '' : 'active'
               } customer-opinions-box relative`}
             >
-              <div className="customer-items">
+              <div className="customer-items mr-[-20px]">
                 <Swiper
-                  modules={[Navigation, Scrollbar, A11y, Autoplay,Pagination]}
-                  slidesPerView={1}
-                  spaceBetween={20}
+                  modules={[Navigation, Scrollbar, A11y, Autoplay, Pagination]}
+                  slidesPerView={1.2}
+                  spaceBetween={15}
                   autoHeight="true"
                   pagination={{clickable: true}}
-                  className="h-full overflow-visible rounded-xl flex flex-col"
+                  className="h-full overflow-visible flex flex-col"
                 >
                   {kundenmeinungenSectionDesc.map((item, index) => {
                     return (
@@ -878,6 +878,129 @@ export default function ratgeberSeiteFersensporn() {
                   })}
                 </Swiper>
               </div>
+            </div>
+          </div>
+        </section>
+        <section className="pro-slider-mobile md:hidden block mb-[40px]">
+          <div className="pro-slider-inner overflow-hidden">
+            <Swiper
+              modules={[Navigation, Scrollbar, A11y, Autoplay, Pagination]}
+              slidesPerView={1.2}
+              spaceBetween={15}
+              autoHeight="true"
+              pagination={{clickable: true}}
+              className="h-full"
+            >
+              <SwiperSlide>
+                <div className="product-item pt-[5px]">
+                  <div className="grid gap-4">
+                    <div className="card-image aspect-square relative rounded-xl overflow-hidden">
+                      <img
+                        className="object-contain fadeIn absolute inset-0 w-full h-full rounded-xl"
+                        src="https://cdn.shopify.com/s/files/1/0742/9688/5569/products/RETRO_W_weiss_20_1.jpg?v=1681471806&width=640&height=800&crop=master"
+                        alt=""
+                      />
+                    </div>
+                    <div className="flex gap-1 flex-col">
+                      <h3 className="max-w-prose whitespace-pre-wrap text-copy text-[24px] md:text-[28px] xl:text-[30px] text-black font-bold pro-title">
+                        Rolle White
+                      </h3>
+                      <div className="desc text-[16px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
+                        <p>
+                          Bequem kann nicht auch elegant sein? Dann haben Sie
+                          unser traditionelles und verspieltes Modell kybun
+                          Rolle White noch nicht gesehen
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div className="product-item pt-[5px]">
+                  <div className="grid gap-4">
+                    <div className="card-image aspect-square relative rounded-xl overflow-hidden">
+                      <img
+                        className="object-contain fadeIn absolute inset-0 w-full h-full rounded-xl"
+                        src="https://cdn.shopify.com/s/files/1/0742/9688/5569/products/RETRO_W_weiss_20_1.jpg?v=1681471806&width=640&height=800&crop=master"
+                        alt=""
+                      />
+                    </div>
+                    <div className="flex gap-1 flex-col">
+                      <h3 className="max-w-prose whitespace-pre-wrap text-copy text-[24px] md:text-[28px] xl:text-[30px] text-black font-bold pro-title">
+                        Rolle White
+                      </h3>
+                      <div className="desc text-[16px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
+                        <p>
+                          Bequem kann nicht auch elegant sein? Dann haben Sie
+                          unser traditionelles und verspieltes Modell kybun
+                          Rolle White noch nicht gesehen
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div className="product-item pt-[5px]">
+                  <div className="grid gap-4">
+                    <div className="card-image aspect-square relative rounded-xl overflow-hidden">
+                      <img
+                        className="object-contain fadeIn absolute inset-0 w-full h-full rounded-xl"
+                        src="https://cdn.shopify.com/s/files/1/0742/9688/5569/products/RETRO_W_weiss_20_1.jpg?v=1681471806&width=640&height=800&crop=master"
+                        alt=""
+                      />
+                    </div>
+                    <div className="flex gap-1 flex-col">
+                      <h3 className="max-w-prose whitespace-pre-wrap text-copy text-[24px] md:text-[28px] xl:text-[30px] text-black font-bold pro-title">
+                        Rolle White
+                      </h3>
+                      <div className="desc text-[16px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
+                        <p>
+                          Bequem kann nicht auch elegant sein? Dann haben Sie
+                          unser traditionelles und verspieltes Modell kybun
+                          Rolle White noch nicht gesehen
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </SwiperSlide>
+            </Swiper>
+          </div>
+        </section>
+        <section className="mobile-sec block md:hidden mt-[40px] mb-[40px]">
+          <div className="inner-row">
+            <h2 className="text-[#00795C] text-[24px] md:text-[30px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] mb-[10px] font-bold">
+              kybun Schuhe 2 Wochen testen
+            </h2>
+            <div className="img-wrap relative overflow-hidden rounded-[10px] h-[186px] mt-auto">
+              <img
+                className="absolute w-full h-full inset-0 object-cover"
+                src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/PD04789_-_XL_partnerships_group_image11_944d2487-d106-40c1-81c2-cddcca336bfe.png?v=1681971908"
+                alt=""
+              />
+              <a
+                className="text-black flex justify-end items-center gap-[8px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] tracking-[-0.400697px] font-normal bg-white hover:bg-[#00795C] rounded-[48px] mt-auto hover:!text-white absolute bottom-[15px] right-[15px] py-[10px] px-[20px]"
+                href="#"
+              >
+                Schuhe testen{' '}
+                <ArrowRightLight className={'w-[25px] h-[25px]'} />
+              </a>
+            </div>
+            <div className="btn-wrap mt-[40px] flex gap-[5px]">
+              <a
+                href="#"
+                className="pro-btn text-[12px] lg:text-[16px] text-white tracking-[-0.400697px] font-normal flex gap-[5px] justify-center px-[5px] lg:px-[30px] py-[10px] lg:py-[15px] bg-black rounded-[100px] w-full text-center items-center transition-all duration-700 hover:bg-[#00795c] mt-[10px] hover:text-white flex-[1]"
+              >
+                Zurück zur Themenübersicht
+              </a>
+              <a
+                href="#"
+                className="pro-btn text-[12px] lg:text-[16px] text-white tracking-[-0.400697px] font-normal flex gap-[5px] justify-center px-[5px] lg:px-[30px] py-[10px] lg:py-[15px] bg-black rounded-[100px] w-full text-center items-center transition-all duration-700 hover:bg-[#00795c] mt-[10px] hover:text-white flex-[1]"
+              >
+                <IconDownload className={'w-[20px] h-[20px]'} /> Fersensporn Broschüre
+              </a>
             </div>
           </div>
         </section>
