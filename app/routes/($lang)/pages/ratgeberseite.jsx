@@ -44,6 +44,40 @@ export default function ratgeberseite() {
     : [];
 
   useEffect(() => {
+     document.querySelectorAll('.my-achor-link').forEach(function (link) {
+      link.addEventListener('mouseover', function (e) {
+        e.preventDefault();
+        
+        document.querySelectorAll('.kb-body-icon').forEach(function (icon) {
+          icon.classList.remove('active');
+        });
+
+        const hashId = this.hash.substring(1);
+
+        const kgIcon = document.getElementById(hashId.replace('link','kb-body-icon-'));
+        kgIcon?.classList?.add('active');
+
+      });
+      link.addEventListener('mouseout', function (e) {
+        e.preventDefault();
+        document.querySelectorAll('.kb-body-icon').forEach(function (icon) {
+          
+          let activeLink  = document.getElementsByClassName('my-achor-link active')[0];
+          if (activeLink) {
+            const [hash, query] = activeLink.href.split('#')[1].split('?')
+            const iconId = hash.replace('link','kb-body-icon-');
+            if (icon.id != iconId) {
+              icon.classList.remove('active');
+            } else {
+              icon.classList.add('active');
+            }
+          } else {
+            icon.classList.remove('active');
+          }
+        });
+      });
+    });
+
     document.querySelectorAll('.my-achor-link').forEach(function (link) {
       link.addEventListener('click', function (e) {
         e.preventDefault();
@@ -65,10 +99,18 @@ export default function ratgeberseite() {
         const kgIcon = document.getElementById(hashId.replace('link','kb-body-icon-'));
         kgIcon?.classList?.add('active');
 
-        var myElement = document.querySelector('#' + hashId);
-        myElement?.querySelector('button')?.click();
+        document.querySelectorAll('.kb-accordion').forEach(function (accordion) {
+          if (accordion.id != hashId && accordion.getAttribute('data-headlessui-state') == 'open') {
+            accordion?.querySelector('button')?.click();
+          }
+       });
+       var myElement = document.querySelector('#' + hashId);
+        if (myElement && myElement?.getAttribute('data-headlessui-state') != 'open') {
+            myElement?.querySelector('button')?.click();
+        }
 
-        var target = this.hash;
+        setTimeout(()=> {
+          var target = this.hash;
         var $target = document.querySelector(target);
         var scrollDistance = $target.offsetTop - 90;
 
@@ -76,6 +118,7 @@ export default function ratgeberseite() {
           top: scrollDistance,
           behavior: 'smooth',
         });
+        },500);
       });
     });
   }, []);

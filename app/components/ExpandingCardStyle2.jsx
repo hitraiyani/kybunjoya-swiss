@@ -3,7 +3,7 @@ import {Text, IconClose} from '~/components';
 
 export function ExpandingCardStyle2({title, content,id}) {
   return (
-    <Disclosure as="div" className="grid w-full" id={id}>
+    <Disclosure as="div" className="grid w-full kb-accordion" id={id}>
       {({open}) => (
         <>
           <Disclosure.Button           
