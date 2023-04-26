@@ -140,6 +140,8 @@ export default function ratgeberSeiteFersensporn() {
       )
     : [];
 
+  const kundenmeinungenSectionDescMobile = kundenmeinungenSectionDesc.slice(0, 5);
+
   const drInfoSlider = page?.ratgeber_seite_fersensporn_second_part?.reference
     ?.dr_info_slider?.value
     ? JSON.parse(
@@ -846,7 +848,7 @@ export default function ratgeberSeiteFersensporn() {
                   pagination={{clickable: true}}
                   className="h-full overflow-visible flex flex-col"
                 >
-                  {kundenmeinungenSectionDesc.map((item, index) => {
+                  {kundenmeinungenSectionDescMobile.map((item, index) => {
                     return (
                       <SwiperSlide key={index}>
                         <div className="item p-[30px] bg-[#EDEDED] box-border break-inside-avoid mb-[20px] rounded-[10px] shadow-[0px_0px_0.9821px_rgba(0,0,0,0.05),0px_3.9284px_7.8568px_rgba(0,0,0,0.1)] w-full">

@@ -1601,9 +1601,6 @@ video {
 .overflow-visible {
   overflow: visible;
 }
-.\!overflow-visible {
-  overflow: visible !important;
-}
 .overflow-y-auto {
   overflow-y: auto;
 }
@@ -2025,14 +2022,6 @@ video {
   padding-top: 5px;
   padding-bottom: 5px;
 }
-.px-\[12px\] {
-  padding-left: 12px;
-  padding-right: 12px;
-}
-.py-\[8px\] {
-  padding-top: 8px;
-  padding-bottom: 8px;
-}
 .px-\[5px\] {
   padding-left: 5px;
   padding-right: 5px;
@@ -2302,6 +2291,9 @@ video {
 }
 .tracking-\[-0\.97152px\] {
   letter-spacing: -0.97152px;
+}
+.tracking-\[-0\.971px\] {
+  letter-spacing: -0.971px;
 }
 .tracking-\[-1\.05984px\] {
   letter-spacing: -1.05984px;
