@@ -112,14 +112,14 @@ export default function aboutUs() {
                           </div>
                         </div>
                         <div className="content-wrap w-full md:w-[50%]">
-                          <h3 className="text-[#000000] text-[35px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] mb-[5px] font-bold leading-[1.1]">
+                          <h3 className="text-[#000000] text-[35px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] mb-[5px] font-bold leading-[1.1] title">
                             {item?.timeline_title}
                           </h3>
                           <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
                             {item?.timeline_desc}
                           </div>
                         </div>
-                        <div className="text-white bg-[#00795C] px-[30px] py-[5px] tracking-[-0.97152px] leading-none text-[24px] md:text-[28px] lg:text-[30px] xl:text-[40px] absolute left-1/2 -translate-y-4 md:translate-y-0 transform -translate-x-1/2 flex items-center justify-center rounded-[110px] font-medium w-fit">
+                        <div className="text-white bg-[#00795C] px-[30px] py-[5px] tracking-[-0.97152px] leading-none text-[24px] md:text-[28px] lg:text-[30px] xl:text-[40px] absolute left-1/2 -translate-y-4 md:translate-y-0 transform -translate-x-1/2 flex items-center justify-center rounded-[110px] font-medium w-fit date">
                           <span>{item?.timeline_year}</span>
                         </div>
                       </div>
