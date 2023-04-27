@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {json} from '@shopify/remix-oxygen';
 import {useLoaderData} from '@remix-run/react';
 import {toHTML} from '~/lib/utils';
@@ -43,10 +43,30 @@ export default function aboutUs() {
     ?.value
     ? JSON.parse(page.about_us.reference.time_line_section_desc.value)
     : [];
-  const [isActive, setActive] = useState('false');
+  
+    const [isActive, setActive] = useState('false');
   const ToggleClass = () => {
     setActive(!isActive);
   };
+
+  useEffect(() => {
+    window.addEventListener('scroll', function() {
+      var windscroll = this.scrollY;
+      if (windscroll >= 10) {
+        var timelineEvents = document.querySelectorAll('.timeline-items .timeline-item');
+        timelineEvents.forEach(function(event, i) {
+          if ((windscroll) > event.offsetTop+400) {
+           
+            timelineEvents[i].classList.add('active');
+          }
+        });
+      } else {
+        timelineEvents[0].classList.add('active');
+      }
+    });
+    
+  }, []);
+
   return (
     <>
       <div className="container mt-[120px] lg:mt-[200px]">
