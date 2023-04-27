@@ -404,34 +404,7 @@ export default function Collection() {
                         </ul>
                       </div>
                     </SwiperSlide>
-                    <SwiperSlide className="w-full lg:!h-full px-[10px] py-[10px]">
-                      <div className="bg-img w-full h-full rounded-[10px] overflow-hidden shadow-[0_0_0.9821px_#0000000d,0_3.9284px_7.8568px_#0000001a]">
-                        <img
-                          className="w-full h-full object-cover rounded-[10px]"
-                          src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/ss23-tennis-athletes-iga-swiatek-editorials-19-Mar23__2_.jpg_1.png?v=1681740595"
-                          alt=""
-                        />
-                      </div>
-                    </SwiperSlide>
-                    <SwiperSlide className="w-full lg:!h-full px-[10px] py-[10px]">
-                      <div className="bg-img w-full h-full rounded-[10px] overflow-hidden shadow-[0_0_0.9821px_#0000000d,0_3.9284px_7.8568px_#0000001a]">
-                        <img
-                          className="w-full h-full object-cover rounded-[10px]"
-                          src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/PD04789_-_XL_partnerships_group_image11_944d2487-d106-40c1-81c2-cddcca336bfe.png?v=1681971908"
-                          alt=""
-                        />
-                      </div>
-                    </SwiperSlide>
-                    <SwiperSlide className="w-full lg:!h-full px-[10px] py-[10px]">
-                      <div className="bg-img w-full h-full rounded-[10px] overflow-hidden shadow-[0_0_0.9821px_#0000000d,0_3.9284px_7.8568px_#0000001a]">
-                        <img
-                          className="w-full h-full object-cover rounded-[10px]"
-                          src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/ss23-tennis-athletes-iga-swiatek-editorials-19-Mar23__2_.jpg_5.png?v=1682331650"
-                          alt=""
-                        />
-                      </div>
-                    </SwiperSlide>
-                    {/* { brandSliderImages.map((image, index) => (
+                    { brandSliderImages.map((image, index) => (
                         <SwiperSlide className="w-full lg:!h-full px-[10px] py-[10px]" key={index}>
                         <div className="bg-img w-full h-full rounded-[10px] overflow-hidden shadow-[0_0_0.9821px_#0000000d,0_3.9284px_7.8568px_#0000001a]">
                           <img
@@ -441,7 +414,7 @@ export default function Collection() {
                           />
                         </div>
                       </SwiperSlide>
-                    ))} */}
+                    ))}
                   </Swiper>
                   <div className="slider-controls mt-[10px] flex xl:hidden flex-wrap gap-x-[37px] gap-y-[20px] items-center justify-center">
                     <div className="products-swiper-buttons relative flex gap-[10px] xl:gap-[20px]">

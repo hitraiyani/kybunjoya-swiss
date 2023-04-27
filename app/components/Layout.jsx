@@ -213,7 +213,7 @@ function SubMegaMenu({menu_items, onClose}) {
             <Link
               to={item.to}
               target={item.target}
-              className={`text-[16px] text-[#595959] block leading-none ${item.to == pathname ? 'is-active' : ''} `}
+              className={`text-[16px] text-[#595959] block leading-none ${item.to == pathname+search ? 'is-active' : ''} `}
               onClick={onClose}
             >
               {item.title}

@@ -129,50 +129,19 @@ export default function ratgeberSeiteFersensporn() {
     };
   }, [menuLinks]);
 
-  const mainVideoSection = page?.ratgeber_seite_fersensporn?.reference
+  const mainVideoSection = page?.ratgeber_seite_fersensporn_mobile?.reference
     ?.main_video_section?.value
     ? JSON.parse(
-        page.ratgeber_seite_fersensporn.reference.main_video_section.value,
+        page.ratgeber_seite_fersensporn_mobile.reference.main_video_section.value,
       )
     : {};
-  const mainVideoSliderSection = page?.ratgeber_seite_fersensporn?.reference
-    ?.main_video_slider_section?.value
-    ? JSON.parse(
-        page.ratgeber_seite_fersensporn.reference.main_video_slider_section
-          .value,
-      )
-    : [];
-  const relevanteLinksSectionLeftPart = page?.ratgeber_seite_fersensporn
-    ?.reference?.relevante_links_section_left_part?.value
-    ? JSON.parse(
-        page?.ratgeber_seite_fersensporn.reference
-          .relevante_links_section_left_part.value,
-      )
-    : [];
-  const relevanteLinksSectionRightPart = page?.ratgeber_seite_fersensporn
-    ?.reference?.relevante_links_section_right_part?.value
-    ? JSON.parse(
-        page?.ratgeber_seite_fersensporn.reference
-          .relevante_links_section_right_part.value,
-      )
-    : [];
 
   const kundenmeinungenSectionDesc = page
-    ?.ratgeber_seite_fersensporn_second_part?.reference
+    ?.ratgeber_seite_fersensporn_mobile?.reference
     ?.kundenmeinungen_section_desc?.value
     ? JSON.parse(
-        page?.ratgeber_seite_fersensporn_second_part.reference
+        page?.ratgeber_seite_fersensporn_mobile.reference
           .kundenmeinungen_section_desc.value,
-      )
-    : [];
-
-  const kundenmeinungenSectionDescMobile = kundenmeinungenSectionDesc.slice(0, 5);
-
-  const drInfoSlider = page?.ratgeber_seite_fersensporn_second_part?.reference
-    ?.dr_info_slider?.value
-    ? JSON.parse(
-        page?.ratgeber_seite_fersensporn_second_part.reference.dr_info_slider
-          .value,
       )
     : [];
 
@@ -190,13 +159,13 @@ export default function ratgeberSeiteFersensporn() {
               <div className="title-wrap">
                 <h2 className="title text-[#00795C] text-[35px] lg:text-[40px] xl:text-[65px] tracking-[-1.05984px]">
                   {
-                    page?.ratgeber_seite_fersensporn?.reference?.head_title_sub
+                    page?.ratgeber_seite_fersensporn_mobile?.reference?.head_title_sub
                       ?.value
                   }
                 </h2>
                 <h3 className="text-[24px] md:text-[28px] xl:text-[30px] text-[#00795C] font-bold leading-[1.2] mb-[20px]">
                   {
-                    page?.ratgeber_seite_fersensporn?.reference
+                    page?.ratgeber_seite_fersensporn_mobile?.reference
                       ?.head_title_sub_secondary?.value
                   }
                 </h3>
@@ -208,7 +177,7 @@ export default function ratgeberSeiteFersensporn() {
                   className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
                   dangerouslySetInnerHTML={{
                     __html: toHTML(
-                      page?.ratgeber_seite_fersensporn?.reference?.head_desc
+                      page?.ratgeber_seite_fersensporn_mobile?.reference?.head_desc
                         ?.value,
                     ),
                   }}
@@ -239,14 +208,14 @@ export default function ratgeberSeiteFersensporn() {
                   <div className="mobile-info mt-[20px]">
                     <h4 className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-bold leading-[1.2] mb-[5px]">
                       {
-                        page?.ratgeber_seite_fersensporn_second_part?.reference
+                        page?.ratgeber_seite_fersensporn_mobile?.reference
                           ?.wie_kybun_joya_hilft_section_title?.value
                       }
                     </h4>
                     <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
                       dangerouslySetInnerHTML={{
                         __html:
-                          page?.ratgeber_seite_fersensporn_second_part?.reference
+                          page?.ratgeber_seite_fersensporn_mobile?.reference
                             ?.wie_kybun_joya_hilft_section_desc?.value,
                       }}
                     >
@@ -254,7 +223,7 @@ export default function ratgeberSeiteFersensporn() {
                     <div className="btn-wrap mt-[20px]">
                       <a
                         target="_blank" rel="noopener noreferrer"
-                        href={page?.ratgeber_seite_fersensporn_second_part?.reference
+                        href={page?.ratgeber_seite_fersensporn_mobile?.reference
                           ?.wie_kybun_joya_hilft_section_broschure?.reference?.url}
                         className="pro-btn text-[16px] lg:text-[18px] text-white tracking-[-0.400697px] font-normal flex gap-[10px] px-[20px] lg:px-[30px] py-[12px] lg:py-[15px] bg-black rounded-[100px] max-w-fit items-center transition-all duration-700 hover:bg-[#00795c] mt-[10px] hover:text-white download-link"
                       >
@@ -315,7 +284,7 @@ export default function ratgeberSeiteFersensporn() {
                     },
                   }}
                 >
-                  {kundenmeinungenSectionDescMobile.map((item, index) => {
+                  {kundenmeinungenSectionDesc.map((item, index) => {
                     return (
                       <SwiperSlide key={index}>
                         <div className="item p-[30px] bg-[#EDEDED] box-border break-inside-avoid mb-[20px] rounded-[10px] shadow-[0px_0px_0.9821px_rgba(0,0,0,0.05),0px_3.9284px_7.8568px_rgba(0,0,0,0.1)] w-full">
@@ -350,12 +319,12 @@ export default function ratgeberSeiteFersensporn() {
             </div>
           </div>
         </section>
-        <TopProductMobileSlider products={page?.ratgeber_seite_fersensporn_second_part?.reference?.foooter_top_products?.references?.edges} />
+        <TopProductMobileSlider products={page?.ratgeber_seite_fersensporn_mobile?.reference?.footer_pop_products?.references?.edges} />
         <section className="mobile-sec mt-[40px] md:mt-[60px] lg:mt-[80px] xl:mt-[100px] mb-[40px] md:mb-[60px] lg:mb-[80px] xl:mb-[100px] max-w-[767px]">
           <div className="inner-row">
             <h2 className="text-[#00795C] text-[24px] md:text-[30px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] mb-[10px] font-bold">
               {
-                  page?.ratgeber_seite_fersensporn_second_part?.reference
+                  page?.ratgeber_seite_fersensporn_mobile?.reference
                     ?.kybun_schuhe_testen_section_title?.value
               }
             </h2>
@@ -363,7 +332,7 @@ export default function ratgeberSeiteFersensporn() {
               <img
                 className="absolute w-full h-full inset-0 object-cover"
                 src={
-                  page?.ratgeber_seite_fersensporn_second_part?.reference
+                  page?.ratgeber_seite_fersensporn_mobile?.reference
                     ?.kybun_schuhe_testen_section_image?.reference?.image?.url
                 }
                 alt=""
@@ -371,12 +340,12 @@ export default function ratgeberSeiteFersensporn() {
               <Link
                 className="text-black flex justify-end items-center gap-[8px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] tracking-[-0.400697px] font-normal bg-white hover:bg-[#00795C] rounded-[48px] mt-auto hover:!text-white absolute bottom-[15px] right-[15px] py-[10px] px-[20px]"
                 to={
-                  page?.ratgeber_seite_fersensporn_second_part?.reference
+                  page?.ratgeber_seite_fersensporn_mobile?.reference
                     ?.kybun_schuhe_testen_section_button_redirect?.value
                 }
               >
                 {
-                    page?.ratgeber_seite_fersensporn_second_part?.reference
+                    page?.ratgeber_seite_fersensporn_mobile?.reference
                       ?.kybun_schuhe_testen_section_button_text?.value
                 }
                 <ArrowRightLight className={'w-[25px] h-[25px]'} />
@@ -385,19 +354,19 @@ export default function ratgeberSeiteFersensporn() {
             <div className="btn-wrap mt-[40px] flex gap-[5px]">
               <Link
                 to={
-                  page?.ratgeber_seite_fersensporn_second_part?.reference
+                  page?.ratgeber_seite_fersensporn_mobile?.reference
                     ?.kybun_schuhe_testen_section_button_2_redirect?.value
                 }
                 className="pro-btn text-[12px] lg:text-[16px] text-white tracking-[-0.400697px] font-normal flex gap-[5px] justify-center px-[5px] lg:px-[30px] py-[10px] lg:py-[15px] bg-black rounded-[100px] w-full text-center items-center transition-all duration-700 hover:bg-[#00795c] mt-[10px] hover:text-white flex-[1]"
               >
                 {
-                    page?.ratgeber_seite_fersensporn_second_part?.reference
+                    page?.ratgeber_seite_fersensporn_mobile?.reference
                       ?.kybun_schuhe_testen_section_button_2_text?.value
                 }
               </Link>
               <a
                 target="_blank" rel="noopener noreferrer"
-                href={page?.ratgeber_seite_fersensporn_second_part?.reference
+                href={page?.ratgeber_seite_fersensporn_mobile?.reference
                   ?.wie_kybun_joya_hilft_section_broschure?.reference?.url}
                 className="pro-btn text-[12px] lg:text-[16px] text-white tracking-[-0.400697px] font-normal flex gap-[5px] justify-center px-[5px] lg:px-[30px] py-[10px] lg:py-[15px] bg-black rounded-[100px] w-full text-center items-center transition-all duration-700 hover:bg-[#00795c] mt-[10px] hover:text-white flex-[1] download-link"
               >
@@ -485,11 +454,11 @@ ${PRODUCT_CARD_FRAGMENT}
       id
       title
       body
-      ratgeber_seite_fersensporn : metafield(namespace: "custom", key: "ratgeber_seite_fersensporn") {
+      ratgeber_seite_fersensporn_mobile : metafield(namespace: "custom", key: "ratgeber_seite_fersensporn_mobile") {
         reference {
           ... on Metaobject {
             handle
-            head_title : field(key: "head_title") {
+            head_desc : field(key: "head_desc") {
               value
             }
             head_title_sub : field(key: "head_title_sub") {
@@ -498,149 +467,10 @@ ${PRODUCT_CARD_FRAGMENT}
             head_title_sub_secondary : field(key: "head_title_sub_secondary") {
               value
             }
-            head_desc : field(key: "head_desc") {
-              value
-            }
-            overview_title : field(key: "overview_title") {
-              value
-            }
-            overview_desc : field(key: "overview_desc") {
-              value
-            }
             main_video_section : field(key: "main_video_section") {
               value
             }
-            main_video_slider_section : field(key: "main_video_slider_section") {
-              value
-            }
-            kybun_joya_fersensporn_section_title : field(key: "kybun_joya_fersensporn_section_title") {
-              value
-            }
-            kybun_joya_fersensporn_section_sub_title : field(key: "kybun_joya_fersensporn_section_sub_title") {
-              value
-            }
-            kybun_joya_fersensporn_section_desc : field(key: "kybun_joya_fersensporn_section_desc") {
-              value
-            }
-            ursachen_title : field(key: "ursachen_title") {
-              value
-            }
-            ursachen_left_section_title : field(key: "ursachen_left_section_title") {
-              value
-            }
-            ursachen_left_section_desc : field(key: "ursachen_left_section_desc") {
-              value
-            }
-            ursachen_left_section_image : field(key: "ursachen_left_section_image") {
-              reference {
-                ...Media
-              }
-            }
-            ursachen_right_section_title : field(key: "ursachen_right_section_title") {
-              value
-            }
-            ursachen_right_section_desc : field(key: "ursachen_right_section_desc") {
-              value
-            }
-            ursachen_right_section_image : field(key: "ursachen_right_section_image") {
-              reference {
-                ...Media
-              }
-            }
-            langzeitfolgen_section_title : field(key: "langzeitfolgen_section_title") {
-              value
-            }
-            langzeitfolgen_section_desc : field(key: "langzeitfolgen_section_desc") {
-              value
-            }
-            konventionelle_therapie_section_title : field(key: "konventionelle_therapie_section_title") {
-              value
-            }
-            konventionelle_therapie_section_desc : field(key: "konventionelle_therapie_section_desc") {
-              value
-            }
-            relevante_links_section_title : field(key: "relevante_links_section_title") {
-              value
-            }
-            relevante_links_section_left_part : field(key: "relevante_links_section_left_part") {
-              value
-            }
-            relevante_links_section_right_part_title : field(key: "relevante_links_section_right_part_title") {
-              value
-            }
-            relevante_links_section_right_part : field(key: "relevante_links_section_right_part") {
-              value
-            }
-            anwendertipps_title : field(key: "anwendertipps_title") {
-              value
-            }
-            anwendungstipps_section_desc : field(key: "anwendungstipps_section_desc") {
-              value
-            }
-            anwendungstipps_section_sub_title : field(key: "anwendungstipps_section_sub_title") {
-              value
-            }
-            anwendungstipps_section_title : field(key: "anwendungstipps_section_title") {
-              value
-            }
-            erstreaktionen_section_desc : field(key: "erstreaktionen_section_desc") {
-              value
-            }
-            erstreaktionen_section_sub_title : field(key: "erstreaktionen_section_sub_title") {
-              value
-            }
-            erstreaktionen_section_title : field(key: "erstreaktionen_section_title") {
-              value
-            }
-            kybun_ubungen_section_title : field(key: "kybun_ubungen_section_title") {
-              value
-            }
-            kybun_ubungen_section_video_url : field(key: "kybun_ubungen_section_video_url") {
-              value
-            }
-            kybun_ubungen_section_desc : field(key: "kybun_ubungen_section_desc") {
-              value
-            }
-          }
-        }
-      }
-      ratgeber_seite_fersensporn_second_part : metafield(namespace: "custom", key: "ratgeber_seite_fersensporn_second_part") {
-        reference {
-          ... on Metaobject {
-            handle
-            kybun_wirkungsprinzip_section_title : field(key: "kybun_wirkungsprinzip_section_title") {
-              value
-            }
-            kybun_wirkungsprinzip_section_sub_title : field(key: "kybun_wirkungsprinzip_section_sub_title") {
-              value
-            }
-            kybun_wirkungsprinzip_section_desc : field(key: "kybun_wirkungsprinzip_section_desc") {
-              value
-            }
-            kybun_wirkungsprinzip_section_image : field(key: "kybun_wirkungsprinzip_section_image") {
-              reference {
-                ...Media
-              }
-            }
-            kundenmeinungen_section_title : field(key: "kundenmeinungen_section_title") {
-              value
-            }
-            kundenmeinungen_section_sub_title : field(key: "kundenmeinungen_section_sub_title") {
-              value
-            }
             kundenmeinungen_section_desc : field(key: "kundenmeinungen_section_desc") {
-              value
-            }
-            dr_info_slider : field(key: "dr_info_slider") {
-              value
-            }
-            medienberichte_section_title : field(key: "medienberichte_section_title") {
-              value
-            }
-            medienberichte_section_tips : field(key: "medienberichte_section_tips") {
-              value
-            }
-            medienberichte_section_desc : field(key: "medienberichte_section_desc") {
               value
             }
             wie_kybun_joya_hilft_section_title : field(key: "wie_kybun_joya_hilft_section_title") {
@@ -677,7 +507,7 @@ ${PRODUCT_CARD_FRAGMENT}
             kybun_schuhe_testen_section_button_2_redirect : field(key: "kybun_schuhe_testen_section_button_2_redirect") {
               value
             }
-            foooter_top_products : field(key: "foooter_top_products") {
+            footer_pop_products : field(key: "footer_pop_products") {
               references(first: 5) {
                 edges {
                   node {
