@@ -876,8 +876,9 @@ p:last-child {
 .review-slider-sec .swiper-button-disabled {
   display: none;
 }
-.pro-slider-mobile .card-image{
-  filter: drop-shadow(0px 0px 0.526777px rgba(0, 0, 0, 0.05)) drop-shadow(0px 2.10711px 4.21421px rgba(0, 0, 0, 0.1));
+.pro-slider-mobile .card-image {
+  filter: drop-shadow(0px 0px 0.526777px rgba(0, 0, 0, 0.05))
+    drop-shadow(0px 2.10711px 4.21421px rgba(0, 0, 0, 0.1));
 }
 
 .pro-slider-mobile .swiper-pagination {
@@ -889,7 +890,9 @@ p:last-child {
   height: 10px;
   margin: 0 5px;
 }
-.pro-slider-mobile .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+.pro-slider-mobile
+  .swiper-pagination
+  .swiper-pagination-bullet.swiper-pagination-bullet-active {
   background: #000000;
 }
 /* end ratgeber-seite-fersensporn page  */
@@ -974,6 +977,31 @@ p:last-child {
 }
 
 /* timeline section css */
+.timeline-items:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 219px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 0%,
+    #ffffff 75.52%
+  );
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+.timeline-items {
+  max-height: 650px;
+  overflow: hidden;
+}
+.timeline-items.active {
+  max-height: none;
+}
+.timeline-items.active::after {
+  display: none;
+}
 .timeline-items .timeline-item .img-wrap {
   filter: drop-shadow(0px 0px 1.31737px rgba(0, 0, 0, 0.05))
     drop-shadow(0px 5.26947px 10.5389px rgba(0, 0, 0, 0.1));

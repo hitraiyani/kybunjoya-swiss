@@ -37,17 +37,22 @@ export async function loader({request, params, context}) {
 }
 
 export default function aboutUs() {
-
   const {page} = useLoaderData();
-  
-  const timeLineDetailArr = page?.about_us?.reference?.time_line_section_desc?.value ? JSON.parse(page.about_us.reference.time_line_section_desc.value) : [];
 
+  const timeLineDetailArr = page?.about_us?.reference?.time_line_section_desc
+    ?.value
+    ? JSON.parse(page.about_us.reference.time_line_section_desc.value)
+    : [];
+  const [isActive, setActive] = useState('false');
+  const ToggleClass = () => {
+    setActive(!isActive);
+  };
   return (
     <>
       <div className="container mt-[120px] lg:mt-[200px]">
         <section className="video-banner-with-title pb-[20px] md:pb-[30px] lg:pb-[40px] xl:pb-[50px]">
           <h1 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[60px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold">
-            { page?.about_us?.reference?.head_title?.value }
+            {page?.about_us?.reference?.head_title?.value}
           </h1>
           <div className="video-wrap relative overflow-hidden rounded-xl pb-[35%] min-h-[400px] w-full">
             <iframe
@@ -69,10 +74,13 @@ export default function aboutUs() {
           <div className="w-full">
             <div className="relative text-gray-700 antialiased text-sm font-semibold">
               <div className="hidden md:block w-[2px] bg-[#DEDEDE] absolute h-full left-1/2 transform -translate-x-1/2" />
-              <div className="timeline-items">
-                {timeLineDetailArr?.map((item,index) => {
-                    return(
-                      <div className="py-[20px] md:py-[30px] lg:py-[40px] xl:py-[50px] timeline-item" key={index}>
+              <div className={`${isActive ? '' : 'active'} timeline-items relative`}>
+                {timeLineDetailArr?.map((item, index) => {
+                  return (
+                    <div
+                      className="py-[20px] md:py-[30px] lg:py-[40px] xl:py-[50px] timeline-item"
+                      key={index}
+                    >
                       <div className="flex flex-col md:flex-row gap-y-[20px]">
                         <div className="img-wrap w-full md:w-[50%]">
                           <div className="overflow-hidden pb-[59%] relative rounded-[10px] w-full">
@@ -96,40 +104,58 @@ export default function aboutUs() {
                         </div>
                       </div>
                     </div>
-                    )
+                  );
                 })}
               </div>
             </div>
           </div>
           <div className="btn-wrap flex justify-center mt-[20px] md:mt-[30px] xl:mt-[42px]">
+            <button onClick={ToggleClass} className="w-fit px-[30px] py-[15px] bg-black rounded-[100px] transition-all !text-white text-[18px] md:text-[20px] lg:text-[25px] tracking-[-0.400697px] hover:bg-[#00795c] font-normal">
+              {isActive ? 'Mehr Anzeigen' : 'zeige weniger'}
+            </button>
+          </div>
+          {/* <div className="btn-wrap flex justify-center mt-[20px] md:mt-[30px] xl:mt-[42px]">
             <Link
               className="w-fit px-[30px] py-[15px] bg-black rounded-[100px] transition-all !text-white text-[18px] md:text-[20px] lg:text-[25px] tracking-[-0.400697px] hover:bg-[#00795c] font-normal"
               to={page?.about_us?.reference?.time_line_readmore_button_redirect?.value}
             >
               {page?.about_us?.reference?.time_line_readmore_button_text?.value}
             </Link>
-          </div>
+          </div> */}
         </section>
         <section className="about-sec py-[20px] md:py-[30px] lg:py-[40px] xl:py-[50px]">
           <h2 className="text-[#000000] text-[18px] mb-[30px] xl:mb-[44px] pb-[20px] uppercase border-b border-black font-normal">
-            {page?.about_us?.reference?.einblick_in_unsere_produkte_section_title?.value}
+            {
+              page?.about_us?.reference
+                ?.einblick_in_unsere_produkte_section_title?.value
+            }
           </h2>
           <div className="flex flex-col-reverse lg:flex-row gap-y-[20px] gap-x-[30px] xl:gap-x-[64px]">
             <div className="content-col flex-1 flex flex-col">
               <h2 className="text-[35px] lg:text-[40px] xl:text-[50px] text-[#00795C] leading-[1.2] tracking-[-1.05984px] mb-[17px] font-medium">
-                {page?.about_us?.reference?.einblick_in_unsere_produkte_section_sub_title?.value}
+                {
+                  page?.about_us?.reference
+                    ?.einblick_in_unsere_produkte_section_sub_title?.value
+                }
               </h2>
-              <div className="desc text-black text-[16px] lg:text-[25px] leading-[1.3] font-[400]"
+              <div
+                className="desc text-black text-[16px] lg:text-[25px] leading-[1.3] font-[400]"
                 dangerouslySetInnerHTML={{
-                  __html: toHTML(page?.about_us?.reference?.einblick_in_unsere_produkte_section_desc?.value),
+                  __html: toHTML(
+                    page?.about_us?.reference
+                      ?.einblick_in_unsere_produkte_section_desc?.value,
+                  ),
                 }}
-              >
-              </div>
+              ></div>
             </div>
             <div className="img-col flex-1 overflow-hidden lg:w-auto w-full">
               <img
                 className="h-full object-cover  rounded-xl block"
-                src={page?.about_us?.reference?.einblick_in_unsere_produkte_section_image?.reference?.image?.url}
+                src={
+                  page?.about_us?.reference
+                    ?.einblick_in_unsere_produkte_section_image?.reference
+                    ?.image?.url
+                }
                 alt=""
               />
             </div>
@@ -143,20 +169,29 @@ export default function aboutUs() {
             <div className="img-col flex-1 overflow-hidden lg:w-auto w-full">
               <img
                 className="h-full object-cover rounded-xl block"
-                src={page?.about_us?.reference?.was_uns_antreibt_section_image?.reference?.image?.url}
+                src={
+                  page?.about_us?.reference?.was_uns_antreibt_section_image
+                    ?.reference?.image?.url
+                }
                 alt=""
               />
             </div>
             <div className="content-col flex-1 flex flex-col">
               <h2 className="text-[35px] lg:text-[40px] xl:text-[50px] text-[#00795C] leading-[1.2] tracking-[-1.05984px] mb-[17px] font-medium">
-                {page?.about_us?.reference?.was_uns_antreibt_section_sub_title?.value}
+                {
+                  page?.about_us?.reference?.was_uns_antreibt_section_sub_title
+                    ?.value
+                }
               </h2>
-              <div className="desc text-black text-[16px] lg:text-[25px] leading-[1.3] font-[400]"
+              <div
+                className="desc text-black text-[16px] lg:text-[25px] leading-[1.3] font-[400]"
                 dangerouslySetInnerHTML={{
-                  __html: toHTML(page?.about_us?.reference?.was_uns_antreibt_section_desc?.value),
+                  __html: toHTML(
+                    page?.about_us?.reference?.was_uns_antreibt_section_desc
+                      ?.value,
+                  ),
                 }}
-              >
-              </div>
+              ></div>
             </div>
           </div>
         </section>
@@ -167,19 +202,27 @@ export default function aboutUs() {
           <div className="flex flex-col-reverse lg:flex-row gap-y-[20px] gap-x-[30px] xl:gap-x-[64px]">
             <div className="content-col flex-1 flex flex-col">
               <h2 className="text-[35px] lg:text-[40px] xl:text-[50px] text-[#00795C] leading-[1.2] tracking-[-1.05984px] mb-[17px] font-medium">
-              {page?.about_us?.reference?.wissenschaft_section_sub_title?.value}
+                {
+                  page?.about_us?.reference?.wissenschaft_section_sub_title
+                    ?.value
+                }
               </h2>
-              <div className="desc text-black text-[16px] lg:text-[25px] leading-[1.3] font-[400]"
+              <div
+                className="desc text-black text-[16px] lg:text-[25px] leading-[1.3] font-[400]"
                 dangerouslySetInnerHTML={{
-                  __html: toHTML(page?.about_us?.reference?.wissenschaft_section_desc?.value),
+                  __html: toHTML(
+                    page?.about_us?.reference?.wissenschaft_section_desc?.value,
+                  ),
                 }}
-              >
-              </div>
+              ></div>
             </div>
             <div className="img-col flex-1 overflow-hidden lg:w-auto w-full">
               <img
                 className="h-full object-cover  rounded-xl block"
-                src={page?.about_us?.reference?.wissenschaft_section_image?.reference?.image?.url}
+                src={
+                  page?.about_us?.reference?.wissenschaft_section_image
+                    ?.reference?.image?.url
+                }
                 alt=""
               />
             </div>
@@ -189,7 +232,6 @@ export default function aboutUs() {
     </>
   );
 }
-
 
 const PAGE_QUERY = `#graphql
 ${MEDIA_FRAGMENT}
