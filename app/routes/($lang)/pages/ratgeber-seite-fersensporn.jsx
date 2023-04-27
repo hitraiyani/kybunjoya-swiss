@@ -184,11 +184,6 @@ export default function ratgeberSeiteFersensporn() {
   return (
     <>
       <div className="container mt-[120px] lg:mt-[200px]">
-        <div className="page-title hidden md:block">
-          <h1 className="title text-[#00795C] text-[40px] md:text-[50px] lg:text-[70px] xl:text-[90px] mb-[30px] lg:mb-[43px] leading-none font-black">
-            {page?.ratgeber_seite_fersensporn?.reference?.head_title?.value}
-          </h1>
-        </div>
         <section className="rich-text-with-slider" id="section_1">
           <div className="rich-text-inner">
             <div className="w-full mb-[12px]">
@@ -207,8 +202,8 @@ export default function ratgeberSeiteFersensporn() {
                 </h3>
               </div>
             </div>
-            <div className="flex flex-col lg:flex-row gap-y-[30px] lg:gap-x-[50px] xl:gap-x-[93px]">
-              <div className="col-left w-full lg:w-[65%]">
+            <div className="flex flex-col gap-y-[30px] lg:gap-x-[50px] xl:gap-x-[60px]">
+              <div className="col-left w-full">
                 <div
                   className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
                   dangerouslySetInnerHTML={{
@@ -218,23 +213,8 @@ export default function ratgeberSeiteFersensporn() {
                     ),
                   }}
                 ></div>
-                <div className="box bg-[#EDEDED] rounded-[10px] p-[30px] xl:px-[63px] xl:py-[49px] mt-[43px] hidden md:block">
-                  <h3 className="text-[35px] xl:text-[40px] text-[#00795C] font-bold leading-[1.2] tracking-[-0.97152px] mb-[33px]">
-                    {
-                      page?.ratgeber_seite_fersensporn?.reference
-                        ?.overview_title?.value
-                    }
-                  </h3>
-                  <span
-                    dangerouslySetInnerHTML={{
-                      __html:
-                        page?.ratgeber_seite_fersensporn?.reference
-                          ?.overview_desc?.value,
-                    }}
-                  ></span>
-                </div>
               </div>
-              <div className="col-right w-full lg:w-[35%]">
+              <div className="col-right w-full">
                 <div className="video-info">
                   {mainVideoSection?.video_url && (
                     <div className="video-wrap w-full aspect-video rounded-[10px] relative overflow-hidden">
@@ -252,18 +232,18 @@ export default function ratgeberSeiteFersensporn() {
                     <h4 className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-[#00795C] tracking-[-0.400697px] font-bold leading-[1.2] mb-[5px]">
                       {mainVideoSection?.video_title}
                     </h4>
-                    <div className="desc text-[16px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
+                    <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
                       <p>{mainVideoSection?.video_desc}</p>
                     </div>
                   </div>
-                  <div className="mobile-info block md:hidden mt-[20px]">
+                  <div className="mobile-info mt-[20px]">
                     <h4 className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-bold leading-[1.2] mb-[5px]">
                       {
                         page?.ratgeber_seite_fersensporn_second_part?.reference
                           ?.wie_kybun_joya_hilft_section_title?.value
                       }
                     </h4>
-                    <div className="desc text-[16px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
+                    <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
                       dangerouslySetInnerHTML={{
                         __html:
                           page?.ratgeber_seite_fersensporn_second_part?.reference
@@ -284,86 +264,16 @@ export default function ratgeberSeiteFersensporn() {
                     </div>
                   </div>
                 </div>
-                <div className="video-info-slider mt-[31px] hidden md:block">
-                  <div className="video-slider-inner relative">
-                    <Swiper
-                      modules={[Navigation, Scrollbar, A11y, Autoplay]}
-                      slidesPerView={2}
-                      spaceBetween={20}
-                      navigation={{
-                        prevEl: '.swiper-button-next-video',
-                        nextEl: '.swiper-button-prev-video',
-                      }}
-                      breakpoints={{
-                        0: {
-                          slidesPerView: 1,
-                        },
-                        768: {
-                          slidesPerView: 2,
-                        },
-                        1024: {
-                          slidesPerView: 1,
-                        },
-                        1800: {
-                          slidesPerView: 2,
-                        },
-                      }}
-                      className="h-full overflow-visible rounded-xl flex flex-col"
-                    >
-                      {mainVideoSliderSection.length > 0 &&
-                        mainVideoSliderSection.map((item, index) => {
-                          return (
-                            <SwiperSlide key={index}>
-                              <div className="video-info">
-                                <div className="video-wrap w-full aspect-video rounded-[10px] relative overflow-hidden">
-                                  <iframe
-                                    className="absolute w-full h-full inset-0 object-cover bg-cover"
-                                    src={item?.video_url}
-                                    title="YouTube video player"
-                                    frameBorder={0}
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                    allowFullScreen
-                                  />
-                                </div>
-                                <div className="info mt-[12px]">
-                                  <h4 className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] tracking-[-0.400697px] font-bold leading-[1.2] mb-[5px] text-[#00795C]">
-                                    {item?.video_title}
-                                  </h4>
-                                  <div className="desc text-[18px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
-                                    <p>{item?.video_desc}</p>
-                                  </div>
-                                </div>
-                              </div>
-                            </SwiperSlide>
-                          );
-                        })}
-                    </Swiper>
-                    <div className="absolute top-[26%] min-[1800px]:top-[16%] z-[1] rounded-full swiper-button-next-video border-[5px] border-[rgba(0,_148,_112,_0.3)] left-[-24px]">
-                      <div className="rounded-full w-[45px] h-[45px] text-white hover:bg-black hover:text-white after:text-[30px] bg-[#00795c] flex items-center justify-center rotate-180">
-                        <ArrowRight
-                          className={'relative left-[1px] w-[20px] h-[20px]'}
-                        />
-                      </div>
-                    </div>
-                    <div className="absolute top-[26%] min-[1800px]:top-[16%] z-[1] rounded-full swiper-button-prev-video border-[5px] border-[rgba(0,_148,_112,_0.3)] right-[-24px]">
-                      <div className="rounded-full w-[45px] h-[45px] text-white hover:bg-black hover:text-white after:text-[30px] bg-[#00795c] flex items-center justify-center">
-                        <ArrowRight
-                          className={'relative left-[2px] w-[20px] h-[20px]'}
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
         </section>
-        <section className="mobile-sec block md:hidden mt-[40px]">
+        <section className="mobile-sec mt-[40px] md:mt-[60px] lg:mt-[80px] xl:mt-[100px] max-w-[767px]">
           <div className="inner-row">
             <h2 className="text-[#00795C] text-[24px] md:text-[30px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] mb-[10px] font-bold">
               Shopfinder
             </h2>
-            <div className="img-wrap relative overflow-hidden rounded-[10px] h-[186px] mt-auto">
+            <div className="img-wrap relative overflow-hidden rounded-[10px] min-h-[186px] mt-auto pb-[50%]">
               <img
                 className="absolute w-full h-full inset-0 object-cover"
                 src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/stgallen_shopfront_eaac67e4-f12f-41cd-aef6-4c4fa529140d.png?v=1681906268"
@@ -378,496 +288,43 @@ export default function ratgeberSeiteFersensporn() {
             </div>
           </div>
         </section>
-        <section className="relevante-links-sec mt-[40px] md:mt-[60px] lg:mt-[80px] xl:mt-[100px] hidden md:block">
-          <div className="title-wrap">
-            <h2 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold">
-              {
-                page?.ratgeber_seite_fersensporn?.reference
-                  ?.relevante_links_section_title?.value
-              }
-            </h2>
-          </div>
-          <div className="flex flex-col xl:flex-row gap-[20px]">
-            <div className="col-left w-full xl:w-[50%]">
-              <div className="flex flex-col  md:flex-row gap-[20px] h-full">
-                {relevanteLinksSectionLeftPart.map((item, index) => {
-                  return (
-                    <div
-                      key={index}
-                      className="item w-full md:w-[50%] shadow-[0px_0px_0.9821px_2px_rgba(0,0,0,0.05),0px_3.9284px_7.8568px_1px_rgba(0,0,0,0.1)] rounded-[10px] h-full"
-                    >
-                      <div className="box h-full flex flex-col items-center px-[20px] py-[15px]">
-                        <div className="img-title-wrap flex flex-col my-[30px] xl:mb-[10px] h-full justify-center">
-                          <img
-                            className="max-w-full h-[50px] object-contain"
-                            src={item?.brand_logo}
-                            alt=""
-                          />
-                          <h4 className="text-[35px] text-[#00795C] font-bold leading-[1.2] text-center mt-[5px]">
-                            {item?.sub_title}
-                          </h4>
-                        </div>
-                        <div className="link-wrap mt-auto w-full">
-                          <Link
-                            to={item?.redirect_link_url}
-                            className="text-[#00795C] flex justify-end items-center gap-[8px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] tracking-[-0.400697px] font-normal  mt-auto hover:!text-black"
-                          >
-                            {item?.redirect_link_text}
-                            <ArrowRightLight className={'w-[30px] h-[30px]'} />
-                          </Link>
-                        </div>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-            <div className="col-right w-full xl:w-[50%]">
-              <div className="title-wrap bg-[#00795C] rounded-tl-[10px] rounded-tr-[10px]">
-                <h4 className="text-[24px] md:text-[28px] xl:text-[35px] text-white font-bold leading-[1.2] text-left px-[20px] py-[17px]">
-                  {
-                    page?.ratgeber_seite_fersensporn?.reference
-                      ?.relevante_links_section_right_part_title?.value
-                  }
-                </h4>
-              </div>
-              <div className="flex flex-col  md:flex-row gap-[20px] px-[20px] py-[15px] shadow-[0px_0px_0.9821px_2px_rgba(0,0,0,0.05),0px_3.9284px_7.8568px_1px_rgba(0,0,0,0.1)] rounded-bl-[10px] rounded-br-[10px]">
-                {relevanteLinksSectionRightPart.map((item, index) => {
-                  return (
-                    <div
-                      className="item w-full flex flex-col md:w-[50%]"
-                      key={index}
-                    >
-                      <h4 className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-[#00795C] font-bold leading-none mb-[10px]">
-                        {item?.title}
-                      </h4>
-                      <div className="img-wrap relative overflow-hidden rounded-[10px] h-[186px] mt-auto">
-                        <img
-                          className="absolute w-full h-full inset-0 object-cover"
-                          src={item?.image}
-                          alt=""
-                        />
-                      </div>
-                      <div className="link-wrap mt-[10px]">
-                        <Link
-                          to={item?.redirect_link_url}
-                          className="text-[#00795C] flex justify-end items-center gap-[8px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] tracking-[-0.400697px] font-normal  mt-auto hover:!text-black"
-                        >
-                          {item?.redirect_link_text}
-                          <ArrowRightLight className={'w-[30px] h-[30px]'} />
-                        </Link>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-          </div>
-        </section>
-        <section className="rich-text-sec mt-[40px] md:mt-[60px] lg:mt-[80px] xl:mt-[100px] hidden md:block">
-          <div className="rich-text -inner max-w-[1077px]">
-            <div className="title-wrap">
-              <h2 className="title text-[#00795C] text-[35px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] mb-[20px] lg:mb-[40px] leading-[1.1]">
-                {
-                  page?.ratgeber_seite_fersensporn?.reference
-                    ?.kybun_joya_fersensporn_section_title?.value
-                }
-              </h2>
-              <h4 className="title text-[#00795C] text-[35px] lg:text-[40px] xl:text-[45px] tracking-[-0.97152px] mb-[20px] leading-[1.1] font-medium">
-                {
-                  page?.ratgeber_seite_fersensporn?.reference
-                    ?.kybun_joya_fersensporn_section_sub_title?.value
-                }
-              </h4>
-            </div>
-            <div
-              className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
-              dangerouslySetInnerHTML={{
-                __html: toHTML(
-                  page?.ratgeber_seite_fersensporn?.reference
-                    ?.kybun_joya_fersensporn_section_desc?.value,
-                ),
-              }}
-            ></div>
-          </div>
-        </section>
-        <section
-          className="rich-text-sec mt-[40px] md:mt-[60px] lg:mt-[80px] xl:mt-[100px] hidden md:block"
-          id="section_2"
-        >
-          <div className="rich-text-inner">
-            <div className="title-wrap">
-              <h4 className="title text-[#00795C] text-[35px] lg:text-[40px] xl:text-[45px] tracking-[-0.97152px] mb-[20px] leading-[1.1] font-medium">
-                {
-                  page?.ratgeber_seite_fersensporn?.reference?.ursachen_title
-                    ?.value
-                }
-              </h4>
-            </div>
-            <div className="flex lg:flex-row flex-col gap-[30px] xl:gap-x-[77px] w-full">
-              <div className="col-left w-full lg:w-[50%]">
-                <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mb-[15px]">
-                  <p>
-                    <strong>
-                      {
-                        page?.ratgeber_seite_fersensporn?.reference
-                          ?.ursachen_left_section_title?.value
-                      }
-                    </strong>
-                  </p>
-                </div>
-                <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
-                  <img
-                    className="max-w-full rounded-[10px] float-right ml-[15px] mb-[15px] w-[320px] h-[320px] object-cover"
-                    src={
-                      page?.ratgeber_seite_fersensporn?.reference
-                        ?.ursachen_left_section_image?.reference?.image?.url
-                    }
-                    alt=""
-                  />
-                  <span
-                    dangerouslySetInnerHTML={{
-                      __html: toHTML(
-                        page?.ratgeber_seite_fersensporn?.reference
-                          ?.ursachen_left_section_desc?.value,
-                      ),
-                    }}
-                  ></span>
-                </div>
-              </div>
-              <div className="col-right w-full lg:w-[50%]">
-                <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mb-[15px]">
-                  <p>
-                    <strong>
-                      {
-                        page?.ratgeber_seite_fersensporn?.reference
-                          ?.ursachen_right_section_title?.value
-                      }
-                    </strong>
-                  </p>
-                </div>
-                <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
-                  <img
-                    className="max-w-full rounded-[10px] float-right ml-[15px] mb-[15px] border-[2px] border-[#EDEDED] w-[320px] h-[320px] object-contain p-[20px]"
-                    src={
-                      page?.ratgeber_seite_fersensporn?.reference
-                        ?.ursachen_right_section_image?.reference?.image?.url
-                    }
-                    alt=""
-                  />
-                  <span
-                    dangerouslySetInnerHTML={{
-                      __html: toHTML(
-                        page?.ratgeber_seite_fersensporn?.reference
-                          ?.ursachen_right_section_desc?.value,
-                      ),
-                    }}
-                  ></span>
-                </div>
-              </div>
-            </div>
-            <div
-              className="flex lg:flex-row flex-col gap-[30px] xl:gap-x-[77px] w-full mt-[30px]"
-              id="section_3"
-            >
-              <div className="col-left w-full lg:w-[50%]">
-                <div className="title-wrap">
-                  <h4 className="title text-[#00795C] text-[35px] lg:text-[40px] xl:text-[45px] tracking-[-0.97152px] mb-[20px] leading-[1.1] font-medium">
-                    {
-                      page?.ratgeber_seite_fersensporn?.reference
-                        ?.langzeitfolgen_section_title?.value
-                    }
-                  </h4>
-                </div>
-                <div
-                  className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
-                  dangerouslySetInnerHTML={{
-                    __html: toHTML(
-                      page?.ratgeber_seite_fersensporn?.reference
-                        ?.langzeitfolgen_section_desc?.value,
-                    ),
-                  }}
-                ></div>
-              </div>
-              <div className="col-right w-full lg:w-[50%]w-[50%]">
-                <div className="title-wrap">
-                  <h4 className="title text-[#00795C] text-[35px] lg:text-[40px] xl:text-[45px] tracking-[-0.97152px] mb-[20px] leading-[1.1] font-medium">
-                    {
-                      page?.ratgeber_seite_fersensporn?.reference
-                        ?.konventionelle_therapie_section_title?.value
-                    }
-                  </h4>
-                </div>
-                <div
-                  className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
-                  dangerouslySetInnerHTML={{
-                    __html: toHTML(
-                      page?.ratgeber_seite_fersensporn?.reference
-                        ?.konventionelle_therapie_section_desc?.value,
-                    ),
-                  }}
-                ></div>
-              </div>
-            </div>
-            <div
-              className="flex lg:flex-row flex-col gap-y-[30px] gap-x-[77px] w-full mt-[72px]"
-              id="section_4"
-            >
-              <div className="col-left w-full lg:w-[40%]">
-                <h4 className="title text-[#00795C] text-[24px] md:text-[28px] lg:text-[30px] xl:text-[40px] tracking-[-0.97152px] leading-[1.1] font-medium">
-                  {
-                    page?.ratgeber_seite_fersensporn_second_part?.reference
-                      ?.kybun_wirkungsprinzip_section_title?.value
-                  }
-                </h4>
-                <h5 className="text-[30px] text-[#00795C] font-medium leading-[1.2] text-left">
-                  {
-                    page?.ratgeber_seite_fersensporn_second_part?.reference
-                      ?.kybun_wirkungsprinzip_section_sub_title?.value
-                  }
-                </h5>
-                <div
-                  className="desc desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mt-[30px]"
-                  dangerouslySetInnerHTML={{
-                    __html: toHTML(
-                      page?.ratgeber_seite_fersensporn_second_part?.reference
-                        ?.kybun_wirkungsprinzip_section_desc?.value,
-                    ),
-                  }}
-                ></div>
-              </div>
-              <div className="col-right w-full lg:w-[60%]">
-                <div className="img-wrap rounded-[10px] border border-[#D9D9D9]">
-                  <img
-                    className="w-full rounded-[10px]"
-                    src={
-                      page?.ratgeber_seite_fersensporn_second_part?.reference
-                        ?.kybun_wirkungsprinzip_section_image?.reference?.image
-                        ?.url
-                    }
-                    alt=""
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section className="rich-text-sec mt-[40px] md:mt-[60px] lg:mt-[80px] xl:mt-[100px] hidden md:block">
-          <div className="rich-text-inner">
-            <div className="title-wrap">
-              <h2 className="title text-[#00795C] text-[35px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] mb-[20px] lg:mb-[40px] leading-[1.1]">
-                {
-                  page?.ratgeber_seite_fersensporn?.reference
-                    ?.anwendertipps_title?.value
-                }
-              </h2>
-            </div>
-            <div
-              className="flex lg:flex-row flex-col gap-[30px] xl:gap-x-[85px] w-full"
-              id="section_5"
-            >
-              <div className="col-left w-full lg:w-[50%]">
-                <div className="title-wrap">
-                  <h4 className="title text-[#00795C] text-[24px] md:text-[28px] lg:text-[30px] xl:text-[40px] tracking-[-0.97152px] mb-[20px] leading-[1.1] font-medium">
-                    {
-                      page?.ratgeber_seite_fersensporn?.reference
-                        ?.erstreaktionen_section_title?.value
-                    }
-                  </h4>
-                </div>
-                <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mt-[30px]">
-                  <p>
-                    <strong>
-                      {
-                        page?.ratgeber_seite_fersensporn?.reference
-                          ?.erstreaktionen_section_sub_title?.value
-                      }
-                    </strong>
-                  </p>
-                  <span
-                    dangerouslySetInnerHTML={{
-                      __html: toHTML(
-                        page?.ratgeber_seite_fersensporn?.reference
-                          ?.erstreaktionen_section_desc?.value,
-                      ),
-                    }}
-                  ></span>
-                </div>
-              </div>
-              <div className="col-right w-full lg:w-[50%]">
-                <div className="title-wrap">
-                  <h4 className="title text-[#00795C] text-[24px] md:text-[28px] lg:text-[30px] xl:text-[40px] tracking-[-0.97152px] mb-[20px] leading-[1.1] font-medium">
-                    {
-                      page?.ratgeber_seite_fersensporn?.reference
-                        ?.anwendungstipps_section_title?.value
-                    }
-                  </h4>
-                </div>
-                <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mt-[30px]">
-                  <p>
-                    <strong>
-                      {
-                        page?.ratgeber_seite_fersensporn?.reference
-                          ?.anwendungstipps_section_sub_title?.value
-                      }
-                    </strong>
-                  </p>
-                  <span
-                    dangerouslySetInnerHTML={{
-                      __html: toHTML(
-                        page?.ratgeber_seite_fersensporn?.reference
-                          ?.anwendungstipps_section_desc?.value,
-                      ),
-                    }}
-                  ></span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section
-          className="rich-text-sec mt-[40px] md:mt-[60px] lg:mt-[80px] xl:mt-[100px] hidden md:block"
-          id="section_6"
-        >
-          <div className="rich-text-inner">
-            <div className="flex flex-col lg:flex-row mt-[72px] gap-[30px] xl:gap-[73px]">
-              <div className="col-left w-full lg:w-[65%]">
-                <div className="video-wrap w-full aspect-video rounded-[10px] relative overflow-hidden">
-                  <iframe
-                    className="absolute w-full h-full inset-0 object-cover bg-cover"
-                    src={
-                      page?.ratgeber_seite_fersensporn?.reference
-                        ?.kybun_ubungen_section_video_url?.value
-                    }
-                    title="YouTube video player"
-                    frameBorder={0}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowFullScreen
-                  />
-                </div>
-              </div>
-              <div className="col-right w-full lg:w-[35%]">
-                <h4 className="title text-[#00795C] text-[24px] md:text-[28px] lg:text-[30px] xl:text-[40px] tracking-[-0.97152px] leading-[1.1] font-medium mb-[25px]">
-                  {
-                    page?.ratgeber_seite_fersensporn?.reference
-                      ?.kybun_ubungen_section_title?.value
-                  }
-                </h4>
-                <div
-                  className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
-                  dangerouslySetInnerHTML={{
-                    __html:
-                      page?.ratgeber_seite_fersensporn?.reference
-                        ?.kybun_ubungen_section_desc?.value,
-                  }}
-                ></div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section className="customer-opinions-sec mt-[40px] md:mt-[60px] lg:mt-[80px] xl:mt-[100px] hidden md:block">
-          <div className="customer-opinions-inner">
-            <div className="title-wrap">
-              <h2 className="title text-[#00795C] text-[35px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] mb-[20px] lg:mb-[40px] leading-[1.1]">
-                {
-                  page?.ratgeber_seite_fersensporn_second_part?.reference
-                    ?.kundenmeinungen_section_title?.value
-                }
-              </h2>
-              <h4
-                className="title text-[#00795C] text-[24px] md:text-[28px] lg:text-[30px] xl:text-[40px] tracking-[-0.97152px] mb-[20px] leading-[1.1] font-medium"
-                id="section_7"
-              >
-                {
-                  page?.ratgeber_seite_fersensporn_second_part?.reference
-                    ?.kundenmeinungen_section_sub_title?.value
-                }
-              </h4>
-            </div>
-            {/* <div className='customer-opinions-box columns-3 gap-[20px]'> */}
-            <div
-              className={`${
-                isActive ? '' : 'active'
-              } customer-opinions-box relative overflow-hidden`}
-            >
-              <div className="columns-1 md:columns-2 xl:columns-3 gap-[20px] customer-items">
-                {kundenmeinungenSectionDesc.map((item, index) => {
-                  return (
-                    <div
-                      key={index}
-                      className="item p-[30px] bg-[#EDEDED] box-border break-inside-avoid mb-[20px] rounded-[10px] shadow-[0px_0px_0.9821px_rgba(0,0,0,0.05),0px_3.9284px_7.8568px_rgba(0,0,0,0.1)]"
-                    >
-                      <div className="item-inner">
-                        <div className="desc text-[18px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
-                          <p>{item.user_comment}</p>
-                        </div>
-                        <div className="customer-info flex border-t border-[#DEDEDE] pt-[21px] mt-[46px] gap-[27px] items-center">
-                          <div className="customer-img w-[109px] h-[109px] relative overflow-hidden rounded-full">
-                            <img
-                              className="absolute w-full h-full object-cover rounded-full"
-                              src={item.user_image}
-                              alt=""
-                            />
-                          </div>
-                          <div className="info flex-1">
-                            <h4 className="text-[25px] font-bold text-black mb-[15px]">
-                              {item.user_name}
-                            </h4>
-                            <h5 className="text-[18px] tracking-[-0.400697px] text-black font-normal">
-                              {item.user_location}
-                            </h5>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-            <button
-              onClick={ToggleClass}
-              className="toggle-btn desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4] flex items-center gap-[23px] justify-center m-auto hover:text-[#00795c] mt-[10px]"
-            >
-              {isActive ? (
-                <>
-                  <IconClose className="rotate-45 w-[23px] h-[23px]" />
-                  Lese Lesen
-                </>
-              ) : (
-                <>
-                  <IconClose className="w-[23px] h-[23px]" />
-                  Mehr weniger
-                </>
-              )}
-            </button>
-          </div>
-        </section>
-        <section className="customer-opinions-sec customer-opinions-sec-mobile mt-[40px] md:mt-[60px] lg:mt-[80px] xl:mt-[100px] md:hidden block mb-[40px]">
+        <section className="customer-opinions-sec customer-opinions-sec-mobile mt-[40px] md:mt-[60px] lg:mt-[80px] xl:mt-[100px]">
           <div className="customer-opinions-inner">
             <div
               className={`${
                 isActive ? '' : 'active'
-              } customer-opinions-box relative`}
+              } customer-opinions-box-mobile relative`}
             >
               <div className="customer-items mr-[-20px]">
                 <Swiper
                   modules={[Navigation, Scrollbar, A11y, Autoplay, Pagination]}
-                  slidesPerView={1.2}
+                  slidesPerView={1}
                   spaceBetween={15}
                   autoHeight="true"
                   pagination={{clickable: true}}
                   className="h-full overflow-visible flex flex-col"
+                  breakpoints={{
+                    0: {
+                      slidesPerView: 1.2,
+                    },
+                    1024: {
+                      slidesPerView: 2.2,
+                    },
+                    1280: {
+                      slidesPerView: 3,
+                    },
+                  }}
                 >
                   {kundenmeinungenSectionDescMobile.map((item, index) => {
                     return (
                       <SwiperSlide key={index}>
                         <div className="item p-[30px] bg-[#EDEDED] box-border break-inside-avoid mb-[20px] rounded-[10px] shadow-[0px_0px_0.9821px_rgba(0,0,0,0.05),0px_3.9284px_7.8568px_rgba(0,0,0,0.1)] w-full">
                           <div className="item-inner">
-                            <div className="desc text-[16px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
+                            <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
                               <p>{item.user_comment}</p>
                             </div>
                             <div className="customer-info flex border-t border-[#DEDEDE] pt-[10px] mt-[10px] gap-[10px] items-center">
-                              <div className="customer-img w-[50px] h-[50px] relative overflow-hidden rounded-full">
+                              <div className="customer-img w-[50px] h-[50px] md:w-[100px] md:h-[100px] relative overflow-hidden rounded-full">
                                 <img
                                   className="absolute w-full h-full object-cover rounded-full"
                                   src={item.user_image}
@@ -875,10 +332,10 @@ export default function ratgeberSeiteFersensporn() {
                                 />
                               </div>
                               <div className="info flex-1">
-                                <h4 className="text-[16px] font-bold text-black mb-[5px]">
+                                <h4 className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-bold leading-[1.4] mb-[5px]">
                                   {item.user_name}
                                 </h4>
-                                <h5 className="text-[16px] tracking-[-0.400697px] text-black font-normal">
+                                <h5 className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
                                   {item.user_location}
                                 </h5>
                               </div>
@@ -894,7 +351,7 @@ export default function ratgeberSeiteFersensporn() {
           </div>
         </section>
         <TopProductMobileSlider products={page?.ratgeber_seite_fersensporn_second_part?.reference?.foooter_top_products?.references?.edges} />
-        <section className="mobile-sec block md:hidden mt-[40px] mb-[40px]">
+        <section className="mobile-sec mt-[40px] md:mt-[60px] lg:mt-[80px] xl:mt-[100px] mb-[40px] md:mb-[60px] lg:mb-[80px] xl:mb-[100px] max-w-[767px]">
           <div className="inner-row">
             <h2 className="text-[#00795C] text-[24px] md:text-[30px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] mb-[10px] font-bold">
               {
@@ -902,7 +359,7 @@ export default function ratgeberSeiteFersensporn() {
                     ?.kybun_schuhe_testen_section_title?.value
               }
             </h2>
-            <div className="img-wrap relative overflow-hidden rounded-[10px] h-[186px] mt-auto">
+            <div className="img-wrap relative overflow-hidden rounded-[10px] min-h-[186px] mt-auto pb-[50%]">
               <img
                 className="absolute w-full h-full inset-0 object-cover"
                 src={
@@ -949,100 +406,6 @@ export default function ratgeberSeiteFersensporn() {
             </div>
           </div>
         </section>
-        <section className="review-slider-sec mt-[40px] md:mt-[60px] lg:mt-[80px] xl:mt-[100px] hidden md:block">
-          <div className="slider-inner relative">
-            <Swiper
-              modules={[Navigation, Scrollbar, A11y, Autoplay]}
-              slidesPerView={1}
-              spaceBetween={20}
-              navigation={{
-                prevEl: '.swiper-button-next-review',
-                nextEl: '.swiper-button-prev-review',
-              }}
-              className="h-full overflow-visible rounded-xl flex flex-col"
-            >
-              {drInfoSlider.map((item, index) => {
-                return (
-                  <SwiperSlide key={index}>
-                    <div className="slider-items">
-                      <div className="item rounded-[10px] my-[10px]">
-                        <div className="item-inner flex flex-wrap items-center gap-[40px] max-w-[99%] rounded-[10px] p-[30px] [md:py-[50px] xl:py-[100px] md:px-[50px] mx-auto  shadow-[0px_0px_0.9821px_rgba(0,0,0,0.05),0px_-0.0716px_7.8568px_rgba(0,0,0,0.1)]">
-                          <div className="dr-img w-[100px] h-[100px] md:w-[245px] md:h-[245px] rounded-full relative overflow-hidden">
-                            <img
-                              className="absolute w-full h-full inset-0"
-                              src={item.dr_image}
-                              alt=""
-                            />
-                          </div>
-                          <div className="dr-info w-[calc(100%_-_140px)]  md:w-[calc(100%_-_300px)] xl:w-[321px] xl:pr-[60px]">
-                            <h4 className="name text-[24px] md:text-[28px] xl:text-[33px] text-black font-bold">
-                              {item.dr_name}
-                            </h4>
-                            <h5 className="text-[20px] md:text-[24px] tracking-[-0.544698px] font-normal">
-                              {item.dr_location}
-                            </h5>
-                          </div>
-                          <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4] flex-1">
-                            <p>{item.dr_comment}</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </SwiperSlide>
-                );
-              })}
-            </Swiper>
-            <div className="absolute top-1/2 z-[1] rounded-full swiper-button-next-review border-[5px] border-[rgba(0,_148,_112,_0.3)] left-[-20px] lg:left-[-34px]">
-              <div className="rounded-full w-[40px] h-[40px] lg:w-[73px] lg:h-[73px] text-white hover:bg-black hover:text-white after:text-[30px] bg-[#00795c] flex items-center justify-center rotate-180">
-                <ArrowRight
-                  className={
-                    'relative left-[1px] w-[20px] h-[20px] lg:w-[30px] lg:h-[30px]'
-                  }
-                />
-              </div>
-            </div>
-            <div className="absolute top-1/2 z-[1] rounded-full swiper-button-prev-review border-[5px] border-[rgba(0,_148,_112,_0.3)] right-[-20px] lg:right-[-34px]">
-              <div className="rounded-full w-[40px] h-[40px] lg:w-[73px] lg:h-[73px] text-white hover:bg-black hover:text-white after:text-[30px] bg-[#00795c] flex items-center justify-center">
-                <ArrowRight
-                  className={
-                    'relative left-[2px] w-[20px] h-[20px] lg:w-[30px] lg:h-[30px]'
-                  }
-                />
-              </div>
-            </div>
-          </div>
-        </section>
-        <section
-          className="rich-text mt-[40px] md:mt-[60px] lg:mt-[80px] xl:mt-[100px] mb-[40px] hidden md:block"
-          id="section_8"
-        >
-          <div className="rich-text-inner">
-            <div className="title-wrap">
-              <h4 className="title text-[#00795C] text-[24px] md:text-[28px] lg:text-[30px] xl:text-[40px] tracking-[-0.97152px] leading-[1.1] font-medium mb-[25px]">
-                {
-                  page?.ratgeber_seite_fersensporn_second_part?.reference
-                    ?.medienberichte_section_title?.value
-                }
-              </h4>
-              <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4] max-w-[605px]">
-                <ul className="list-disc list-outside flex flex-col gap-[15px] pl-[40px] text-[#00795C]">
-                  <li className="underline">
-                    {
-                      page?.ratgeber_seite_fersensporn_second_part?.reference
-                        ?.medienberichte_section_tips?.value
-                    }
-                  </li>
-                </ul>
-                <p>
-                  {
-                    page?.ratgeber_seite_fersensporn_second_part?.reference
-                      ?.medienberichte_section_desc?.value
-                  }
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
       </div>
     </>
   );
@@ -1052,7 +415,7 @@ function TopProductMobileSlider({products}) {
 
   
   return (
-    <section className="pro-slider-mobile md:hidden block mb-[40px]">
+    <section className="pro-slider-mobile mt-[40px] md:mt-[60px] lg:mt-[80px] xl:mt-[100px]">
     <div className="pro-slider-inner overflow-hidden">
       <Swiper
         modules={[Navigation, Scrollbar, A11y, Autoplay, Pagination]}
@@ -1061,6 +424,17 @@ function TopProductMobileSlider({products}) {
         autoHeight="true"
         pagination={{clickable: true}}
         className="h-full"
+        breakpoints={{
+          0: {
+            slidesPerView: 1.2,
+          },
+          1024: {
+            slidesPerView: 2.2,
+          },
+          1280: {
+            slidesPerView: 3.2,
+          },
+        }}
       >
         {products.map((product, index) => {
           const firstVariant = flattenConnection(product.node.variants)[0];

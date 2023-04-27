@@ -995,7 +995,7 @@ p:last-child {
   z-index: 1;
 }
 .timeline-items {
-  max-height: 600px;
+  max-height: calc(100vh / 1.22);
   overflow: hidden;
 }
 .timeline-items.active {
