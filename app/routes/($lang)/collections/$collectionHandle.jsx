@@ -10,7 +10,7 @@ import {
   ArrowRight,
   IconCart,
   IconMapPin,
-  Link
+  Link,
 } from '~/components';
 import {ProductGrid} from '~/components/ProductGrid';
 import {PRODUCT_CARD_FRAGMENT, MEDIA_FRAGMENT} from '~/data/fragments';
@@ -161,7 +161,6 @@ export default function Collection() {
       (data) => data.node.image.url,
     );
 
-
   return (
     <>
       <div className="container mt-[120px] lg:mt-[200px]">
@@ -184,190 +183,317 @@ export default function Collection() {
         </div>
         <section className="info-slider-with-img py-[40px] md:py-[60px] lg:py-[80px] xl:py-[90px]">
           <div className="row flex flex-col lg:flex-row gap-x-[30px] xl:gap-x-[70px] gap-y-[30px]">
-            <div className="w-full lg:w-[50%]">
-              <div className="img-info-col relative h-[calc(100%_-_60px)]">
-                <div className="img-wrap h-full flex flex-col justify-center">
-                  <img
-                    src={
-                      brandHereSection?.data?.interective_image?.reference
-                        ?.image?.url
-                    }
-                    alt=""
-                  />
-                </div>
-                <ul className="img-info-list">
-                  <li>
-                    <svg
-                      className="icon"
-                      width={100}
-                      height={100}
-                      viewBox="0 0 100 100"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <circle
-                        cx={50}
-                        cy={50}
-                        r={49}
-                        fill="#EDEDED"
-                        fillOpacity="0.5"
-                        stroke="#DEDEDE"
-                        strokeWidth={2}
-                      />
-                      <line
-                        x1="51.4502"
-                        y1="27.9277"
-                        x2="51.4502"
-                        y2="72.9728"
-                        stroke="black"
-                        strokeWidth={2}
-                      />
-                      <line
-                        x1="72.9727"
-                        y1="51.4502"
-                        x2="27.9276"
-                        y2="51.4502"
-                        stroke="black"
-                        strokeWidth={2}
-                      />
-                    </svg>
-                    <img
-                      className="line"
-                      src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Vector_9.png?v=1681740250"
-                      alt=""
-                    />
-                    <span>Dämpfung im Fersenbereich</span>
-                  </li>
-                  <li>
-                    <svg
-                      className="icon"
-                      width={100}
-                      height={100}
-                      viewBox="0 0 100 100"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <circle
-                        cx={50}
-                        cy={50}
-                        r={49}
-                        fill="#EDEDED"
-                        fillOpacity="0.5"
-                        stroke="#DEDEDE"
-                        strokeWidth={2}
-                      />
-                      <line
-                        x1="51.4502"
-                        y1="27.9277"
-                        x2="51.4502"
-                        y2="72.9728"
-                        stroke="black"
-                        strokeWidth={2}
-                      />
-                      <line
-                        x1="72.9727"
-                        y1="51.4502"
-                        x2="27.9276"
-                        y2="51.4502"
-                        stroke="black"
-                        strokeWidth={2}
-                      />
-                    </svg>
-                    <img
-                      className="line"
-                      src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Vector_7.png?v=1681740250"
-                      alt=""
-                    />
-                    <span>elastisch-federnd</span>
-                  </li>
-                  <li>
-                    <span>Swiss made</span>
-                    <img
-                      className="line"
-                      src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Vector_5.png?v=1681740250"
-                      alt=""
-                    />
-                    <svg
-                      className="icon"
-                      width={100}
-                      height={100}
-                      viewBox="0 0 100 100"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <circle
-                        cx={50}
-                        cy={50}
-                        r={49}
-                        fill="#EDEDED"
-                        fillOpacity="0.5"
-                        stroke="#DEDEDE"
-                        strokeWidth={2}
-                      />
-                      <line
-                        x1="51.4502"
-                        y1="27.9277"
-                        x2="51.4502"
-                        y2="72.9728"
-                        stroke="black"
-                        strokeWidth={2}
-                      />
-                      <line
-                        x1="72.9727"
-                        y1="51.4502"
-                        x2="27.9276"
-                        y2="51.4502"
-                        stroke="black"
-                        strokeWidth={2}
-                      />
-                    </svg>
-                  </li>
-                  <li>
-                    <span>Swiss made</span>
-                    <img
-                      className="line"
-                      src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Vector_6.png?v=1681740250"
-                      alt=""
-                    />
+            <div className="w-full content-info-col rounded-xl">
+              <div className="content-info-col-inner">
+                <div className="item relative">
+                  <Swiper
+                    modules={[
+                      Navigation,
+                      Scrollbar,
+                      A11y,
+                      Autoplay,
+                      Pagination,
+                    ]}
+                    slidesPerView={2}
+                    navigation={{
+                      prevEl: '.swiper-button-next-product-info',
+                      nextEl: '.swiper-button-prev-product-info',
+                    }}
+                    spaceBetween={20}
+                    autoplay="false"
+                    autoHeight="false"
+                    pagination={{
+                      el: '.my-custom-pagination-div',
+                      clickable: true,
+                    }}
+                    breakpoints={{
+                      0: {
+                        autoHeight: 'true',
+                        slidesPerView: 1,
+                      },
+                      1024: {
+                        autoHeight: 'false',
+                      },
+                      1280: {
+                        slidesPerView: 2,
+                      },
+                    }}
+                    className="h-full overflow-visible rounded-xl flex flex-col xl:!absolute lg:inset-0 w-[calc(100%_+_20px)] !ml-[-10px] lg:!z-[-1]"
+                  >
+                    <SwiperSlide className="w-full lg:!h-full px-[10px] py-[10px]">
+                      <div className="img-info-col relative h-full overflow-hidden">
+                        <div className="img-wrap h-full flex flex-col justify-center">
+                          <img
+                            src={
+                              brandHereSection?.data?.interective_image
+                                ?.reference?.image?.url
+                            }
+                            alt=""
+                          />
+                        </div>
+                        <ul className="img-info-list">
+                          <li>
+                            <svg
+                              className="icon"
+                              width={100}
+                              height={100}
+                              viewBox="0 0 100 100"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <circle
+                                cx={50}
+                                cy={50}
+                                r={49}
+                                fill="#EDEDED"
+                                fillOpacity="0.5"
+                                stroke="#DEDEDE"
+                                strokeWidth={2}
+                              />
+                              <line
+                                x1="51.4502"
+                                y1="27.9277"
+                                x2="51.4502"
+                                y2="72.9728"
+                                stroke="black"
+                                strokeWidth={2}
+                              />
+                              <line
+                                x1="72.9727"
+                                y1="51.4502"
+                                x2="27.9276"
+                                y2="51.4502"
+                                stroke="black"
+                                strokeWidth={2}
+                              />
+                            </svg>
+                            <img
+                              className="line"
+                              src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Vector_9.png?v=1681740250"
+                              alt=""
+                            />
+                            <span>Dämpfung im Fersenbereich</span>
+                          </li>
+                          <li>
+                            <svg
+                              className="icon"
+                              width={100}
+                              height={100}
+                              viewBox="0 0 100 100"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <circle
+                                cx={50}
+                                cy={50}
+                                r={49}
+                                fill="#EDEDED"
+                                fillOpacity="0.5"
+                                stroke="#DEDEDE"
+                                strokeWidth={2}
+                              />
+                              <line
+                                x1="51.4502"
+                                y1="27.9277"
+                                x2="51.4502"
+                                y2="72.9728"
+                                stroke="black"
+                                strokeWidth={2}
+                              />
+                              <line
+                                x1="72.9727"
+                                y1="51.4502"
+                                x2="27.9276"
+                                y2="51.4502"
+                                stroke="black"
+                                strokeWidth={2}
+                              />
+                            </svg>
+                            <img
+                              className="line"
+                              src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Vector_7.png?v=1681740250"
+                              alt=""
+                            />
+                            <span>elastisch-federnd</span>
+                          </li>
+                          <li>
+                            <span>Swiss made</span>
+                            <img
+                              className="line"
+                              src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Vector_5.png?v=1681740250"
+                              alt=""
+                            />
+                            <svg
+                              className="icon"
+                              width={100}
+                              height={100}
+                              viewBox="0 0 100 100"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <circle
+                                cx={50}
+                                cy={50}
+                                r={49}
+                                fill="#EDEDED"
+                                fillOpacity="0.5"
+                                stroke="#DEDEDE"
+                                strokeWidth={2}
+                              />
+                              <line
+                                x1="51.4502"
+                                y1="27.9277"
+                                x2="51.4502"
+                                y2="72.9728"
+                                stroke="black"
+                                strokeWidth={2}
+                              />
+                              <line
+                                x1="72.9727"
+                                y1="51.4502"
+                                x2="27.9276"
+                                y2="51.4502"
+                                stroke="black"
+                                strokeWidth={2}
+                              />
+                            </svg>
+                          </li>
+                          <li>
+                            <span>Swiss made</span>
+                            <img
+                              className="line"
+                              src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Vector_6.png?v=1681740250"
+                              alt=""
+                            />
 
-                    <svg
-                      className="icon"
-                      width={100}
-                      height={100}
-                      viewBox="0 0 100 100"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <circle
-                        cx={50}
-                        cy={50}
-                        r={49}
-                        fill="#EDEDED"
-                        fillOpacity="0.5"
-                        stroke="#DEDEDE"
-                        strokeWidth={2}
-                      />
-                      <line
-                        x1="51.4502"
-                        y1="27.9277"
-                        x2="51.4502"
-                        y2="72.9728"
-                        stroke="black"
-                        strokeWidth={2}
-                      />
-                      <line
-                        x1="72.9727"
-                        y1="51.4502"
-                        x2="27.9276"
-                        y2="51.4502"
-                        stroke="black"
-                        strokeWidth={2}
-                      />
-                    </svg>
-                  </li>
-                </ul>
+                            <svg
+                              className="icon"
+                              width={100}
+                              height={100}
+                              viewBox="0 0 100 100"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <circle
+                                cx={50}
+                                cy={50}
+                                r={49}
+                                fill="#EDEDED"
+                                fillOpacity="0.5"
+                                stroke="#DEDEDE"
+                                strokeWidth={2}
+                              />
+                              <line
+                                x1="51.4502"
+                                y1="27.9277"
+                                x2="51.4502"
+                                y2="72.9728"
+                                stroke="black"
+                                strokeWidth={2}
+                              />
+                              <line
+                                x1="72.9727"
+                                y1="51.4502"
+                                x2="27.9276"
+                                y2="51.4502"
+                                stroke="black"
+                                strokeWidth={2}
+                              />
+                            </svg>
+                          </li>
+                        </ul>
+                      </div>
+                    </SwiperSlide>
+                    <SwiperSlide className="w-full lg:!h-full px-[10px] py-[10px]">
+                      <div className="bg-img w-full h-full rounded-[10px] overflow-hidden shadow-[0_0_0.9821px_#0000000d,0_3.9284px_7.8568px_#0000001a]">
+                        <img
+                          className="w-full h-full object-cover rounded-[10px]"
+                          src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/ss23-tennis-athletes-iga-swiatek-editorials-19-Mar23__2_.jpg_1.png?v=1681740595"
+                          alt=""
+                        />
+                      </div>
+                    </SwiperSlide>
+                    <SwiperSlide className="w-full lg:!h-full px-[10px] py-[10px]">
+                      <div className="bg-img w-full h-full rounded-[10px] overflow-hidden shadow-[0_0_0.9821px_#0000000d,0_3.9284px_7.8568px_#0000001a]">
+                        <img
+                          className="w-full h-full object-cover rounded-[10px]"
+                          src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/PD04789_-_XL_partnerships_group_image11_944d2487-d106-40c1-81c2-cddcca336bfe.png?v=1681971908"
+                          alt=""
+                        />
+                      </div>
+                    </SwiperSlide>
+                    <SwiperSlide className="w-full lg:!h-full px-[10px] py-[10px]">
+                      <div className="bg-img w-full h-full rounded-[10px] overflow-hidden shadow-[0_0_0.9821px_#0000000d,0_3.9284px_7.8568px_#0000001a]">
+                        <img
+                          className="w-full h-full object-cover rounded-[10px]"
+                          src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/ss23-tennis-athletes-iga-swiatek-editorials-19-Mar23__2_.jpg_5.png?v=1682331650"
+                          alt=""
+                        />
+                      </div>
+                    </SwiperSlide>
+                    {/* { brandSliderImages.map((image, index) => (
+                        <SwiperSlide className="w-full lg:!h-full px-[10px] py-[10px]" key={index}>
+                        <div className="bg-img w-full h-full rounded-[10px] overflow-hidden shadow-[0_0_0.9821px_#0000000d,0_3.9284px_7.8568px_#0000001a]">
+                          <img
+                            className="w-full h-full object-cover rounded-[10px]"
+                            src={image}
+                            alt=""
+                          />
+                        </div>
+                      </SwiperSlide>
+                    ))} */}
+                  </Swiper>
+                  <div className="slider-controls mt-[10px] flex xl:hidden flex-wrap gap-x-[37px] gap-y-[20px] items-center justify-center">
+                    <div className="products-swiper-buttons relative flex gap-[10px] xl:gap-[20px]">
+                      <div className="swiper-button-next-product-info rounded-full w-[50px] h-[50px] xl:w-[74px] xl:h-[74px] text-black hover:bg-black hover:text-white after:text-[30px] bg-[#DEDEDE] flex items-center justify-center rotate-180">
+                        <ArrowRight
+                          className={
+                            'relative left-[3px] w-[25px] h-[30px] xl:w-[40px] xl:h-[40px]'
+                          }
+                        />
+                      </div>
+                      <div className="swiper-button-prev-product-info rounded-full w-[50px] h-[50px] xl:w-[74px] xl:h-[74px] text-black hover:bg-black hover:text-white after:text-[30px] bg-[#DEDEDE] flex items-center justify-center">
+                        <ArrowRight
+                          className={
+                            'relative left-[3px] w-[25px] h-[30px] xl:w-[40px] xl:h-[40px]'
+                          }
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="info bg-[#fff] p-[20px] xl:py-[50px] xl:px-[30px] relative z-[1] w-full lg:w-full xl:w-[40%] ml-auto rounded-[10px] mt-[20px] lg:mt-[0] lg:top-[48px] mr-auto xl:mr-[50px]">
+                    <div className="desc mb-[20px]">
+                      <h3
+                        className="desc text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
+                        dangerouslySetInnerHTML={{
+                          __html: toHTML(
+                            brandHereSection?.data?.slider_overlay_content_1
+                              ?.value,
+                          ),
+                        }}
+                      ></h3>
+                    </div>
+                    <div
+                      className="desc text-black text-[16px] lg:text-[18px] font-normal leading-[1.4] mb-[20px] xl:mb-[42px]"
+                      dangerouslySetInnerHTML={{
+                        __html: toHTML(
+                          brandHereSection?.data?.slider_overlay_content_2
+                            ?.value,
+                        ),
+                      }}
+                    ></div>
+                    <KybunShopAndShopFinder
+                      kybun_online_shop_url={
+                        brandHereSection?.data?.kybun_online_shop_url?.value
+                      }
+                      storefinder_url={
+                        brandHereSection?.data?.storefinder_url?.value
+                      }
+                    />
+                  </div>
+                </div>
               </div>
-              <div className="slider-controls mt-[34px] flex flex-wrap gap-x-[37px] gap-y-[20px] items-center">
+              <div className="slider-controls mt-[34px] hidden xl:flex flex-wrap gap-x-[37px] gap-y-[20px] items-center">
                 <div className="products-swiper-buttons relative flex gap-[10px] xl:gap-[20px]">
                   <div className="swiper-button-next-product-info rounded-full w-[50px] h-[50px] xl:w-[74px] xl:h-[74px] text-black hover:bg-black hover:text-white after:text-[30px] bg-[#DEDEDE] flex items-center justify-center rotate-180">
                     <ArrowRight
@@ -385,70 +511,6 @@ export default function Collection() {
                   </div>
                 </div>
                 <div className="my-custom-pagination-div !w-auto"></div>
-              </div>
-            </div>
-            <div className="w-full lg:w-[50%] content-info-col rounded-xl">
-              <div className="content-info-col-inner">
-                <div className="item relative">
-                  <Swiper
-                    modules={[
-                      Navigation,
-                      Scrollbar,
-                      A11y,
-                      Autoplay,
-                      Pagination,
-                    ]}
-                    slidesPerView={1}
-                    navigation={{
-                      prevEl: '.swiper-button-next-product-info',
-                      nextEl: '.swiper-button-prev-product-info',
-                    }}
-                    spaceBetween={20}
-                    autoplay="false"
-                    autoHeight="false"
-                    pagination={{
-                      el: '.my-custom-pagination-div',
-                      clickable: true,
-                    }}
-                    breakpoints={{
-                      0: {
-                        autoHeight:"true",
-                      },
-                      1024: {
-                        autoHeight:"false",
-                      },
-                    }}
-                    className="h-full overflow-visible rounded-xl flex flex-col lg:!absolute lg:inset-0 w-full lg:!z-[-1]"
-                  >
-                    { brandSliderImages.map((image, index) => (
-                        <SwiperSlide className="w-full lg:!h-full" key={index}>
-                        <div className="bg-img w-full h-full rounded-[10px]">
-                          <img
-                            className="w-full h-full object-cover rounded-[10px]"
-                            src={image}
-                            alt=""
-                          />
-                        </div>
-                      </SwiperSlide>
-                    ))}
-                  </Swiper>
-                  <div className="info bg-[#fff] p-[20px] xl:py-[50px] xl:px-[30px] relative z-[1] w-full lg:w-[90%] xl:w-[77%] ml-auto rounded-[10px] mt-[20px] lg:mt-[0] lg:top-[48px] mr-auto xl:mr-[50px]">
-                    <div className="desc mb-[20px]">
-                      <h3 className="desc text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
-                         dangerouslySetInnerHTML={{
-                          __html: toHTML(brandHereSection?.data?.slider_overlay_content_1?.value),
-                        }}
-                      ></h3>
-                    </div>
-                    <div
-                      className="desc text-black text-[16px] lg:text-[18px] font-normal leading-[1.4] mb-[20px] xl:mb-[42px]"
-                      dangerouslySetInnerHTML={{
-                        __html: toHTML(brandHereSection?.data?.slider_overlay_content_2?.value),
-                      }}
-                    ></div>
-                    <KybunShopAndShopFinder kybun_online_shop_url={brandHereSection?.data?.kybun_online_shop_url?.value} storefinder_url={brandHereSection?.data?.storefinder_url?.value} />
-                  </div>
-                </div>
               </div>
             </div>
           </div>
@@ -477,7 +539,6 @@ export default function Collection() {
 }
 
 function KybunShopAndShopFinder({storefinder_url, kybun_online_shop_url}) {
-
   return (
     <div className="top-btn flex flex-col sm:flex-row justify-between gap-[20px]">
       <Link
@@ -488,12 +549,12 @@ function KybunShopAndShopFinder({storefinder_url, kybun_online_shop_url}) {
         kybun Online-Shop
       </Link>
       <Link
-         to={storefinder_url}
+        to={storefinder_url}
         className="tracking-[-0.400697px] text-[16px] lg:text-[14px] xl:text-[16px] leading-none flex text-center justify-center items-center gap-[10px] bg-[#00795C] text-white rounded-[100px] px-[15px] xl:px-[10px] py-[18px] w-full font-normal hover:!bg-[#000000] hover:!text-[#ffffff]"
       >
         <IconMapPin />
         Storefinder
-        </Link>
+      </Link>
     </div>
   );
 }

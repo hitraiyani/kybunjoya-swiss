@@ -922,6 +922,12 @@ video {
 .mt-auto {
   margin-top: auto;
 }
+.ml-\[-10px\] {
+  margin-left: -10px;
+}
+.\!ml-\[-10px\] {
+  margin-left: -10px !important;
+}
 .box-border {
   box-sizing: border-box;
 }
@@ -1184,6 +1190,9 @@ video {
 }
 .w-screen {
   width: 100vw;
+}
+.w-\[calc\(100\%_\+_20px\)\] {
+  width: calc(100% + 20px);
 }
 .min-w-\[0\.75rem\] {
   min-width: 0.75rem;
@@ -2023,6 +2032,10 @@ video {
   padding-top: 5px;
   padding-bottom: 5px;
 }
+.px-\[10px\] {
+  padding-left: 10px;
+  padding-right: 10px;
+}
 .pb-1 {
   padding-bottom: 0.25rem;
 }
@@ -2407,6 +2420,11 @@ video {
   --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
+.shadow-\[0_0_0\.9821px_\#0000000d\2c 0_3\.9284px_7\.8568px_\#0000001a\] {
+  --tw-shadow: 0 0 0.9821px #0000000d,0 3.9284px 7.8568px #0000001a;
+  --tw-shadow-colored: 0 0 0.9821px var(--tw-shadow-color), 0 3.9284px 7.8568px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
 .outline-none {
   outline: 2px solid transparent;
   outline-offset: 2px;
@@ -2734,14 +2752,6 @@ video {
 
   .sm\:p-6 {
     padding: 1.5rem;
-  }
-
-  .sm\:pl-8 {
-    padding-left: 2rem;
-  }
-
-  .sm\:pr-8 {
-    padding-right: 2rem;
   }
 
   .sm\:text-center {
@@ -3396,6 +3406,18 @@ video {
     margin-top: 85px;
   }
 
+  .lg\:mr-\[50px\] {
+    margin-right: 50px;
+  }
+
+  .lg\:mr-\[2\.5\%\] {
+    margin-right: 2.5%;
+  }
+
+  .lg\:mr-\[2\%\] {
+    margin-right: 2%;
+  }
+
   .lg\:flex {
     display: flex;
   }
@@ -3486,6 +3508,18 @@ video {
 
   .lg\:w-auto {
     width: auto;
+  }
+
+  .lg\:w-\[48\%\] {
+    width: 48%;
+  }
+
+  .lg\:w-\[45\%\] {
+    width: 45%;
+  }
+
+  .lg\:w-full {
+    width: 100%;
   }
 
   .lg\:max-w-\[678px\] {
@@ -3722,8 +3756,16 @@ video {
 }
 @media (min-width: 1280px) {
 
+  .xl\:\!absolute {
+    position: absolute !important;
+  }
+
   .xl\:bottom-\[150px\] {
     bottom: 150px;
+  }
+
+  .xl\:top-\[48px\] {
+    top: 48px;
   }
 
   .xl\:col-span-2 {
@@ -3823,6 +3865,10 @@ video {
     display: flex;
   }
 
+  .xl\:hidden {
+    display: none;
+  }
+
   .xl\:h-\[120px\] {
     height: 120px;
   }
@@ -3881,6 +3927,14 @@ video {
 
   .xl\:w-\[80\%\] {
     width: 80%;
+  }
+
+  .xl\:w-\[45\%\] {
+    width: 45%;
+  }
+
+  .xl\:w-\[40\%\] {
+    width: 40%;
   }
 
   .xl\:max-w-\[280px\] {
