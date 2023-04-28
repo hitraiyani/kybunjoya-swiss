@@ -234,18 +234,13 @@ export default function ratgeberSeiteFersensporn() {
                 </div>
               </div>
               <div className="col-right w-full lg:w-[50%]">
-                <div className="desc text-[16px] md:text-[16px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mb-[32px]">
-                  <ul class="list-style2 list-style3">
-                    <li>
-                      Keine punktuelle Druckstelle aufgrund der
-                      elastisch-federnen Sole
-                    </li>
-                    <li>Optimierte Druckverteilung</li>
-                    <li>Laufen wie auf Wolken</li>
-                    <li>Entlastung der schmerzenden Stelle</li>
-                    <li>Entscheidende Dehnung der Plantarfaszie</li>
-                    <li>Training der Fussmuskulatur</li>
-                  </ul>
+                <div className="desc text-[16px] md:text-[16px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mb-[32px]"
+                     dangerouslySetInnerHTML={{
+                      __html:
+                        page?.ratgeber_seite_fersensporn_mobile?.reference
+                          ?.wie_kybun_joya_hilft_section_right_side_desc?.value,
+                    }}
+                >
                 </div>
                 <div className="btn-wrap mt-[20px]">
                   <a
@@ -270,40 +265,60 @@ export default function ratgeberSeiteFersensporn() {
             <div className="flex flex-col md:flex-row gap-y-[20px] gap-x-[20px]">
               <div className="col-left w-full lg:w-[50%]">
                 <h2 className="text-[#00795C] text-[30px] lg:text-[40px] tracking-[-1.05984px] mb-[20px] font-medium">
-                  Shopfinder
+                  {
+                    page?.ratgeber_seite_fersensporn_mobile?.reference
+                    ?.shopfinder_section_title?.value
+                  }
+                  
                 </h2>
                 <div className="img-wrap relative overflow-hidden rounded-[10px] min-h-[186px] mt-auto pb-[46%]">
                   <img
                     className="absolute w-full h-full inset-0 object-cover"
-                    src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/stgallen_shopfront_eaac67e4-f12f-41cd-aef6-4c4fa529140d.png?v=1681906268"
+                    src={
+                      page?.ratgeber_seite_fersensporn_mobile?.reference
+                        ?.shopfinder_section_image?.reference?.image
+                        ?.url
+                    }
                     alt=""
                   />
-                  <a
+                  <Link
+                    to={page?.ratgeber_seite_fersensporn_mobile?.reference
+                      ?.shopfinder_section_button_redirect?.value}
                     className="text-black flex justify-end items-center gap-[8px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] tracking-[-0.400697px] font-normal bg-white hover:bg-[#00795C] rounded-[48px] mt-auto hover:!text-white absolute bottom-[15px] right-[15px] py-[10px] px-[20px] lg:py-[20px] lg:px-[40px] leading-none"
                     href="#"
                   >
-                    Jetzt finden{' '}
+                    {
+                      page?.ratgeber_seite_fersensporn_mobile?.reference
+                        ?.shopfinder_section_button_text?.value
+                    }
                     <ArrowRightLight
                       className={'w-[25px] h-[25px] lg:w-[35px] lg:h-[35px]'}
                     />
-                  </a>
+                  </Link>
                 </div>
               </div>
               <div className="col-right w-full lg:w-[50%]">
                 <h2 className="text-[#00795C] text-[30px] lg:text-[40px] tracking-[-1.05984px] mb-[20px] font-medium">
-                  Shopfinder
+                  {
+                    page?.ratgeber_seite_fersensporn_mobile?.reference
+                      ?.kybun_schuhe_testen_section_title?.value
+                  }
                 </h2>
                 <div className="img-wrap relative overflow-hidden rounded-[10px] min-h-[186px] mt-auto pb-[46%]">
                   <img
                     className="absolute w-full h-full inset-0 object-cover"
-                    src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/stgallen_shopfront_eaac67e4-f12f-41cd-aef6-4c4fa529140d.png?v=1681906268"
+                    src={
+                      page?.ratgeber_seite_fersensporn_mobile?.reference
+                        ?.kybun_schuhe_testen_section_image?.reference?.image
+                        ?.url
+                    }
                     alt=""
                   />
                   <a
                     className="text-black flex justify-end items-center gap-[8px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] tracking-[-0.400697px] font-normal bg-white hover:bg-[#00795C] rounded-[48px] mt-auto hover:!text-white absolute bottom-[15px] right-[15px] py-[10px] px-[20px] lg:py-[20px] lg:px-[40px] leading-none"
                     href="#"
                   >
-                    Jetzt finden{' '}
+                    Schuhe testen
                     <ArrowRightLight
                       className={'w-[25px] h-[25px] lg:w-[35px] lg:h-[35px]'}
                     />
@@ -422,7 +437,7 @@ export default function ratgeberSeiteFersensporn() {
                 <h2 className="text-[#00795C] text-[30px] lg:text-[40px] tracking-[-1.05984px] mb-[20px] font-medium">
                   {
                     page?.ratgeber_seite_fersensporn_mobile?.reference
-                      ?.kybun_schuhe_testen_section_title?.value
+                      ?.shopfinder_section_title?.value
                   }
                 </h2>
                 <div className="img-wrap relative overflow-hidden rounded-[10px] min-h-[186px] mt-auto pb-[46%]">
@@ -430,7 +445,7 @@ export default function ratgeberSeiteFersensporn() {
                     className="absolute w-full h-full inset-0 object-cover"
                     src={
                       page?.ratgeber_seite_fersensporn_mobile?.reference
-                        ?.kybun_schuhe_testen_section_image?.reference?.image
+                        ?.shopfinder_section_image?.reference?.image
                         ?.url
                     }
                     alt=""
@@ -439,12 +454,12 @@ export default function ratgeberSeiteFersensporn() {
                     className="text-black flex justify-end items-center gap-[8px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] tracking-[-0.400697px] font-normal bg-white hover:bg-[#00795C] rounded-[48px] mt-auto hover:!text-white absolute bottom-[15px] right-[15px] py-[10px] px-[20px] lg:py-[20px] lg:px-[40px] leading-none"
                     to={
                       page?.ratgeber_seite_fersensporn_mobile?.reference
-                        ?.kybun_schuhe_testen_section_button_redirect?.value
+                        ?.shopfinder_section_button_redirect?.value
                     }
                   >
                     {
                       page?.ratgeber_seite_fersensporn_mobile?.reference
-                        ?.kybun_schuhe_testen_section_button_text?.value
+                        ?.shopfinder_section_button_text?.value
                     }
                     <ArrowRightLight
                       className={'w-[25px] h-[25px] lg:w-[35px] lg:h-[35px]'}
@@ -579,6 +594,9 @@ ${PRODUCT_CARD_FRAGMENT}
             wie_kybun_joya_hilft_section_desc : field(key: "wie_kybun_joya_hilft_section_desc") {
               value
             }
+            wie_kybun_joya_hilft_section_right_side_desc : field(key: "wie_kybun_joya_hilft_section_right_side_desc") {
+              value
+            }
             wie_kybun_joya_hilft_section_broschure : field(key: "wie_kybun_joya_hilft_section_broschure") {
               reference {
                 ... on GenericFile {
@@ -605,6 +623,20 @@ ${PRODUCT_CARD_FRAGMENT}
               value
             }
             kybun_schuhe_testen_section_button_2_redirect : field(key: "kybun_schuhe_testen_section_button_2_redirect") {
+              value
+            }
+            shopfinder_section_title : field(key: "shopfinder_section_title") {
+              value
+            }
+            shopfinder_section_image : field(key: "shopfinder_section_image") {
+              reference {
+                ...Media
+              }
+            }
+            shopfinder_section_button_text : field(key: "shopfinder_section_button_text") {
+              value
+            }
+            shopfinder_section_button_redirect : field(key: "shopfinder_section_button_redirect") {
               value
             }
             footer_pop_products : field(key: "footer_pop_products") {

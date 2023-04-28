@@ -952,6 +952,9 @@ video {
 .hidden {
   display: none;
 }
+.\!hidden {
+  display: none !important;
+}
 .aspect-\[2\.5\/2\] {
   aspect-ratio: 2.5/2;
 }
@@ -3942,6 +3945,14 @@ video {
 
   .xl\:mt-\[87px\] {
     margin-top: 87px;
+  }
+
+  .xl\:block {
+    display: block;
+  }
+
+  .xl\:\!block {
+    display: block !important;
   }
 
   .xl\:flex {

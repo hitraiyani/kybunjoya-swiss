@@ -415,6 +415,15 @@ export default function Collection() {
                         </div>
                       </SwiperSlide>
                     ))}
+                    <SwiperSlide className="w-full lg:!h-full px-[10px] py-[10px] !hidden xl:!block ">
+                        <div className="bg-img w-full h-full rounded-[10px] overflow-hidden shadow-[0_0_0.9821px_#0000000d,0_3.9284px_7.8568px_#0000001a]">
+                          <img
+                            className="w-full h-full object-cover rounded-[10px]"
+                            src={'https://cdn.shopify.com/s/files/1/0742/9688/5569/files/blank-img.jpg?v=1682691798'}
+                            alt=""
+                          />
+                        </div>
+                      </SwiperSlide>
                   </Swiper>
                   <div className="slider-controls mt-[10px] flex xl:hidden flex-wrap gap-x-[37px] gap-y-[20px] items-center justify-center">
                     <div className="products-swiper-buttons relative flex gap-[10px] xl:gap-[20px]">
