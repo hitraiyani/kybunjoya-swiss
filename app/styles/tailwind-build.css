@@ -949,11 +949,11 @@ video {
 .contents {
   display: contents;
 }
-.hidden {
-  display: none;
-}
 .\!hidden {
   display: none !important;
+}
+.hidden {
+  display: none;
 }
 .aspect-\[2\.5\/2\] {
   aspect-ratio: 2.5/2;
@@ -1054,6 +1054,9 @@ video {
 }
 .h-screen {
   height: 100vh;
+}
+.\!h-auto {
+  height: auto !important;
 }
 .max-h-0 {
   max-height: 0px;
@@ -3945,10 +3948,6 @@ video {
 
   .xl\:mt-\[87px\] {
     margin-top: 87px;
-  }
-
-  .xl\:block {
-    display: block;
   }
 
   .xl\:\!block {

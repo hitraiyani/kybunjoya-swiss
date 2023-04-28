@@ -201,18 +201,18 @@ export default function Collection() {
                     }}
                     spaceBetween={20}
                     autoplay="false"
-                    autoHeight="false"
+                    // autoHeight="false"
                     pagination={{
                       el: '.my-custom-pagination-div',
                       clickable: true,
                     }}
                     breakpoints={{
                       0: {
-                        autoHeight: 'true',
+                        // autoHeight: 'false',
                         slidesPerView: 1,
                       },
                       1024: {
-                        autoHeight: 'false',
+                        // autoHeight: 'false',
                       },
                       1280: {
                         slidesPerView: 2,
@@ -220,7 +220,7 @@ export default function Collection() {
                     }}
                     className="h-full overflow-visible rounded-xl flex flex-col xl:!absolute lg:inset-0 w-[calc(100%_+_20px)] !ml-[-10px] lg:!z-[-1]"
                   >
-                    <SwiperSlide className="w-full lg:!h-full px-[10px] py-[10px]">
+                    <SwiperSlide className="w-full !h-auto lg:!h-full px-[10px] py-[10px]">
                       <div className="img-info-col relative h-full overflow-hidden">
                         <div className="img-wrap h-full flex flex-col justify-center">
                           <img
@@ -404,8 +404,11 @@ export default function Collection() {
                         </ul>
                       </div>
                     </SwiperSlide>
-                    { brandSliderImages.map((image, index) => (
-                        <SwiperSlide className="w-full lg:!h-full px-[10px] py-[10px]" key={index}>
+                    {brandSliderImages.map((image, index) => (
+                      <SwiperSlide
+                        className="w-full !h-auto lg:!h-full px-[10px] py-[10px]"
+                        key={index}
+                      >
                         <div className="bg-img w-full h-full rounded-[10px] overflow-hidden shadow-[0_0_0.9821px_#0000000d,0_3.9284px_7.8568px_#0000001a]">
                           <img
                             className="w-full h-full object-cover rounded-[10px]"
@@ -416,14 +419,16 @@ export default function Collection() {
                       </SwiperSlide>
                     ))}
                     <SwiperSlide className="w-full lg:!h-full px-[10px] py-[10px] !hidden xl:!block ">
-                        <div className="bg-img w-full h-full rounded-[10px] overflow-hidden shadow-[0_0_0.9821px_#0000000d,0_3.9284px_7.8568px_#0000001a]">
-                          <img
-                            className="w-full h-full object-cover rounded-[10px]"
-                            src={'https://cdn.shopify.com/s/files/1/0742/9688/5569/files/blank-img.jpg?v=1682691798'}
-                            alt=""
-                          />
-                        </div>
-                      </SwiperSlide>
+                      <div className="bg-img w-full h-full rounded-[10px] overflow-hidden shadow-[0_0_0.9821px_#0000000d,0_3.9284px_7.8568px_#0000001a]">
+                        <img
+                          className="w-full h-full object-cover rounded-[10px]"
+                          src={
+                            'https://cdn.shopify.com/s/files/1/0742/9688/5569/files/blank-img.jpg?v=1682691798'
+                          }
+                          alt=""
+                        />
+                      </div>
+                    </SwiperSlide>
                   </Swiper>
                   <div className="slider-controls mt-[10px] flex xl:hidden flex-wrap gap-x-[37px] gap-y-[20px] items-center justify-center">
                     <div className="products-swiper-buttons relative flex gap-[10px] xl:gap-[20px]">
