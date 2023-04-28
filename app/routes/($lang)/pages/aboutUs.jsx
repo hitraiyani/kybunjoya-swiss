@@ -43,20 +43,21 @@ export default function aboutUs() {
     ?.value
     ? JSON.parse(page.about_us.reference.time_line_section_desc.value)
     : [];
-  
-    const [isActive, setActive] = useState('false');
+
+  const [isActive, setActive] = useState('false');
   const ToggleClass = () => {
     setActive(!isActive);
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', function() {
+    window.addEventListener('scroll', function () {
       var windscroll = this.scrollY;
       if (windscroll >= 10) {
-        var timelineEvents = document.querySelectorAll('.timeline-items .timeline-item');
-        timelineEvents.forEach(function(event, i) {
-          if ((windscroll) > event.offsetTop+400) {
-           
+        var timelineEvents = document.querySelectorAll(
+          '.timeline-items .timeline-item',
+        );
+        timelineEvents.forEach(function (event, i) {
+          if (windscroll > event.offsetTop + 400) {
             timelineEvents[i].classList.add('active');
           }
         });
@@ -64,14 +65,13 @@ export default function aboutUs() {
         timelineEvents[0].classList.add('active');
       }
     });
-    
   }, []);
 
   return (
     <>
       <div className="container mt-[120px] lg:mt-[200px]">
         <section className="video-banner-with-title pb-[20px] md:pb-[30px] lg:pb-[40px] xl:pb-[50px]">
-          <h1 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[60px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold">
+          <h1 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold">
             {page?.about_us?.reference?.head_title?.value}
           </h1>
           <div className="video-wrap relative overflow-hidden rounded-xl pb-[35%] min-h-[400px] w-full">
@@ -87,14 +87,18 @@ export default function aboutUs() {
         </section>
         <section className="timeline-sec py-[20px] md:py-[30px] lg:py-[40px] xl:py-[50px]">
           <div className="title-wrap">
-            <h2 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] mb-[20px] md:mb-[30px] xl:mb-[42px] font-bold text-center">
+            <h2 className="text-[#00795C] text-[30px] lg:text-[35px] xl:text-[40px] mb-[20px] md:mb-[30px] xl:mb-[42px] font-bold text-center">
               {page?.about_us?.reference?.time_line_section_title?.value}
             </h2>
           </div>
           <div className="w-full">
             <div className="relative text-gray-700 antialiased text-sm font-semibold">
               <div className="hidden md:block w-[2px] bg-[#DEDEDE] absolute h-full left-1/2 transform -translate-x-1/2" />
-              <div className={`${isActive ? '' : 'active'} timeline-items relative`}>
+              <div
+                className={`${
+                  isActive ? '' : 'active'
+                } timeline-items relative`}
+              >
                 {timeLineDetailArr?.map((item, index) => {
                   return (
                     <div
@@ -112,7 +116,7 @@ export default function aboutUs() {
                           </div>
                         </div>
                         <div className="content-wrap w-full md:w-[50%]">
-                          <h3 className="text-[#000000] text-[35px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] mb-[5px] font-bold leading-[1.1] title">
+                          <h3 className="text-[#000000] text-[30px] lg:text-[35px] xl:text-[40px] mb-[5px] font-bold leading-[1.1] title">
                             {item?.timeline_title}
                           </h3>
                           <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
@@ -130,8 +134,11 @@ export default function aboutUs() {
             </div>
           </div>
           <div className="btn-wrap flex justify-center mt-[20px] md:mt-[30px] xl:mt-[42px]">
-            <button onClick={ToggleClass} className="w-fit px-[30px] py-[15px] bg-black rounded-[100px] transition-all !text-white text-[18px] md:text-[20px] lg:text-[25px] tracking-[-0.400697px] hover:bg-[#00795c] font-normal">
-              {isActive ? 'Mehr Anzeigen' : 'zeige weniger'}
+            <button
+              onClick={ToggleClass}
+              className="w-fit px-[30px] py-[15px] bg-black rounded-[100px] transition-all !text-white text-[18px] md:text-[20px] lg:text-[25px] tracking-[-0.400697px] hover:bg-[#00795c] font-normal"
+            >
+              Weniger Anzeigen
             </button>
           </div>
           {/* <div className="btn-wrap flex justify-center mt-[20px] md:mt-[30px] xl:mt-[42px]">
@@ -152,7 +159,7 @@ export default function aboutUs() {
           </h2>
           <div className="flex flex-col-reverse lg:flex-row gap-y-[20px] gap-x-[30px] xl:gap-x-[64px]">
             <div className="content-col flex-1 flex flex-col">
-              <h2 className="text-[35px] lg:text-[40px] xl:text-[50px] text-[#00795C] leading-[1.2] tracking-[-1.05984px] mb-[17px] font-medium">
+              <h2 className="text-[30px] lg:text-[35px] xl:text-[40px] text-[#00795C] leading-[1.2] tracking-[-1.05984px] mb-[17px] font-medium">
                 {
                   page?.about_us?.reference
                     ?.einblick_in_unsere_produkte_section_sub_title?.value
@@ -197,7 +204,7 @@ export default function aboutUs() {
               />
             </div>
             <div className="content-col flex-1 flex flex-col">
-              <h2 className="text-[35px] lg:text-[40px] xl:text-[50px] text-[#00795C] leading-[1.2] tracking-[-1.05984px] mb-[17px] font-medium">
+              <h2 className="text-[30px] lg:text-[35px] xl:text-[40px] text-[#00795C] leading-[1.2] tracking-[-1.05984px] mb-[17px] font-medium">
                 {
                   page?.about_us?.reference?.was_uns_antreibt_section_sub_title
                     ?.value
@@ -221,7 +228,7 @@ export default function aboutUs() {
           </h2>
           <div className="flex flex-col-reverse lg:flex-row gap-y-[20px] gap-x-[30px] xl:gap-x-[64px]">
             <div className="content-col flex-1 flex flex-col">
-              <h2 className="text-[35px] lg:text-[40px] xl:text-[50px] text-[#00795C] leading-[1.2] tracking-[-1.05984px] mb-[17px] font-medium">
+              <h2 className="text-[30px] lg:text-[35px] xl:text-[40px] text-[#00795C] leading-[1.2] tracking-[-1.05984px] mb-[17px] font-medium">
                 {
                   page?.about_us?.reference?.wissenschaft_section_sub_title
                     ?.value

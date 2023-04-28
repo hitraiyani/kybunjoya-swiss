@@ -11,7 +11,7 @@ export function NewsSlider({news}) {
   return (
     <section className="article-slide py-[40px] md:py-[60px] lg:py-[80px] xl:py-[100px]">
       <div className="container">
-        <h2 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold">
+        <h2 className="text-[#00795C] text-[30px] lg:text-[35px] xl:text-[40px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold">
           Neues und Aktuelles
         </h2>
         <Swiper

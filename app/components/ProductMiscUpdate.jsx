@@ -18,7 +18,7 @@ export function ProductMiscUpdate({data}) {
             />
           </div>
           <div className="content-col w-full lg:w-[60%] flex flex-col">
-            <h2 className="text-[24px] md:text-[28px] xl:text-[30px] text-black font-bold leading-[1.2] mb-[20px]">
+            <h2 className="text-[24px] md:text-[28px] lg:text-[32px] xl:text-[40px] text-black font-bold leading-[1.2] mb-[20px]">
               {data.sub_section_1_title.value}
             </h2>
             <div

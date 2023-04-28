@@ -44,7 +44,7 @@ export default function ratgeber() {
     <>
       <div className="container mt-[120px] lg:mt-[200px]">
         <section className="page-title">
-          <h1 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[60px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold">
+          <h1 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold">
             {page?.title}
           </h1>
         </section>

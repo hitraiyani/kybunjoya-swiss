@@ -336,7 +336,7 @@ export default function ratgeberSeiteFersenspornNew() {
         </section>
         <section className="relevante-links-sec mt-[40px] md:mt-[60px] lg:mt-[80px] xl:mt-[100px]">
           <div className="title-wrap">
-            <h2 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold">
+            <h2 className="text-[#00795C] text-[30px] lg:text-[35px] xl:text-[40px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold">
               {
                 page?.ratgeber_seite_fersensporn?.reference
                   ?.relevante_links_section_title?.value
@@ -423,7 +423,7 @@ export default function ratgeberSeiteFersenspornNew() {
         <section className="rich-text-sec mt-[40px] md:mt-[60px] lg:mt-[80px] xl:mt-[100px]">
           <div className="rich-text -inner max-w-[1077px]">
             <div className="title-wrap">
-              <h2 className="title text-[#00795C] text-[35px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] mb-[20px] lg:mb-[40px] leading-[1.1]">
+              <h2 className="title text-[#00795C] text-[30px] lg:text-[35px] xl:text-[40px] tracking-[-1.05984px] mb-[20px] lg:mb-[40px] leading-[1.1]">
                 {
                   page?.ratgeber_seite_fersensporn?.reference
                     ?.kybun_joya_fersensporn_section_title?.value
@@ -611,7 +611,7 @@ export default function ratgeberSeiteFersenspornNew() {
         <section className="rich-text-sec mt-[40px] md:mt-[60px] lg:mt-[80px] xl:mt-[100px]">
           <div className="rich-text-inner">
             <div className="title-wrap">
-              <h2 className="title text-[#00795C] text-[35px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] mb-[20px] lg:mb-[40px] leading-[1.1]">
+              <h2 className="title text-[#00795C] text-[30px] lg:text-[35px] xl:text-[40px] tracking-[-1.05984px] mb-[20px] lg:mb-[40px] leading-[1.1]">
                 {
                   page?.ratgeber_seite_fersensporn?.reference
                     ?.anwendertipps_title?.value
@@ -724,7 +724,7 @@ export default function ratgeberSeiteFersenspornNew() {
         <section className="customer-opinions-sec mt-[40px] md:mt-[60px] lg:mt-[80px] xl:mt-[100px]">
           <div className="customer-opinions-inner">
             <div className="title-wrap">
-              <h2 className="title text-[#00795C] text-[35px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] mb-[20px] lg:mb-[40px] leading-[1.1]">
+              <h2 className="title text-[#00795C] text-[30px] lg:text-[35px] xl:text-[40px] tracking-[-1.05984px] mb-[20px] lg:mb-[40px] leading-[1.1]">
                 {
                   page?.ratgeber_seite_fersensporn_second_part?.reference
                     ?.kundenmeinungen_section_title?.value

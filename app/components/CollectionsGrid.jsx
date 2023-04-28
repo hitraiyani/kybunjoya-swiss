@@ -6,7 +6,7 @@ export function CollectionsGrid({data}) {
   return (
     <Section className={'collectionsGrid-sec py-[40px] md:py-[60px] lg:py-[80px] xl:py-[100px]'}>
       <div className="container">
-        <h2 className='text-[#00795C] text-[35px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold'>{data?.main_title?.value}</h2>
+        <h2 className='text-[#00795C] text-[30px] lg:text-[35px] xl:text-[40px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold'>{data?.main_title?.value}</h2>
         <div className="md:grid md:grid-rows-2 xl:grid-rows-2 md:grid-flow-col gap-7 flex flex-wrap">
           <div className="collectionsGrid-item relative">
             <Link to={`${data?.section_1_button_redirect?.value}`} className="relative block w-full overflow-hidden">
