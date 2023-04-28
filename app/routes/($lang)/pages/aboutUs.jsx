@@ -138,7 +138,7 @@ export default function aboutUs() {
               onClick={ToggleClass}
               className="w-fit px-[30px] py-[15px] bg-black rounded-[100px] transition-all !text-white text-[18px] md:text-[20px] lg:text-[25px] tracking-[-0.400697px] hover:bg-[#00795c] font-normal"
             >
-              Weniger Anzeigen
+              {isActive ? 'Mehr Anzeigen' : 'Weniger Anzeigenr'}
             </button>
           </div>
           {/* <div className="btn-wrap flex justify-center mt-[20px] md:mt-[30px] xl:mt-[42px]">
