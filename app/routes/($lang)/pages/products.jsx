@@ -57,13 +57,15 @@ export default function schweizerSchuhpropktion() {
     firstSlideImages = sliderImages.slice(0,2);
     restSlideImages = sliderImages.slice(2);
   }
-  const [slidesPerView, setSlidesPerView] = useState(1.6);
+  const [slidesPerView, setSlidesPerView] = useState(false);
 
   const handleTransitionEnd = (swiper) => {    
-    if (swiper.activeIndex === 0) {
-      setSlidesPerView(1.6);
+    console.log(swiper)
+    console.log(swiper.activeIndex, swiper.slides.length)
+    if (swiper.activeIndex === 0 || (swiper.slides.length === swiper.activeIndex) ) {
+      setSlidesPerView(false);
     } else {
-      setSlidesPerView(1);
+      setSlidesPerView(true);
     }
 
   };
@@ -118,10 +120,21 @@ export default function schweizerSchuhpropktion() {
           <div className="img-col w-full lg:w-[60%] overflow-hidden product-slider">
             <Swiper
               modules={[Navigation, Scrollbar, A11y, Autoplay, Pagination]}
-              slidesPerView={slidesPerView}
+              slidesPerView={1.6}
               spaceBetween={20}
               navigation
               onSlideChange={handleTransitionEnd}
+              centeredSlides= {slidesPerView}
+              breakpoints={{
+                0: {
+                  slidesPerView: 1.3,
+                  spaceBetween: 10,
+                },
+                1024: {
+                  slidesPerView: 1.6,
+                  spaceBetween: 20,
+                },
+              }}
               className="h-full overflow-visible flex flex-col lg:h-[660px]"
             >
               <SwiperSlide>
