@@ -58,14 +58,14 @@ export default function ratgeberSeiteFersensporn() {
     downloadLinks.forEach((link) => {
       link.addEventListener('click', (event) => {
         event.preventDefault(); // Prevent the default link behavior
-    
+
         const pdfUrl = link.href;
         const xhr = new XMLHttpRequest();
         xhr.open('GET', pdfUrl, true);
         xhr.responseType = 'blob';
         xhr.onload = () => {
           if (xhr.status === 200) {
-            const blob = new Blob([xhr.response], { type: 'application/pdf' });
+            const blob = new Blob([xhr.response], {type: 'application/pdf'});
             const url = URL.createObjectURL(blob);
             const downloadLink = document.createElement('a');
             downloadLink.setAttribute('download', '');
@@ -132,13 +132,13 @@ export default function ratgeberSeiteFersensporn() {
   const mainVideoSection = page?.ratgeber_seite_fersensporn_mobile?.reference
     ?.main_video_section?.value
     ? JSON.parse(
-        page.ratgeber_seite_fersensporn_mobile.reference.main_video_section.value,
+        page.ratgeber_seite_fersensporn_mobile.reference.main_video_section
+          .value,
       )
     : {};
 
-  const kundenmeinungenSectionDesc = page
-    ?.ratgeber_seite_fersensporn_mobile?.reference
-    ?.kundenmeinungen_section_desc?.value
+  const kundenmeinungenSectionDesc = page?.ratgeber_seite_fersensporn_mobile
+    ?.reference?.kundenmeinungen_section_desc?.value
     ? JSON.parse(
         page?.ratgeber_seite_fersensporn_mobile.reference
           .kundenmeinungen_section_desc.value,
@@ -153,40 +153,40 @@ export default function ratgeberSeiteFersensporn() {
   return (
     <>
       <div className="container mt-[120px] lg:mt-[200px]">
-        <section className="rich-text-with-slider" id="section_1">
+        <section className="rich-text-sec" id="section_1">
           <div className="rich-text-inner">
-            <div className="w-full mb-[12px]">
-              <div className="title-wrap">
-                <h2 className="title text-[#00795C] text-[35px] lg:text-[40px] xl:text-[65px] tracking-[-1.05984px]">
-                  {
-                    page?.ratgeber_seite_fersensporn_mobile?.reference?.head_title_sub
-                      ?.value
-                  }
-                </h2>
-                <h3 className="text-[24px] md:text-[28px] xl:text-[30px] text-[#00795C] font-bold leading-[1.2] mb-[20px]">
-                  {
-                    page?.ratgeber_seite_fersensporn_mobile?.reference
-                      ?.head_title_sub_secondary?.value
-                  }
-                </h3>
-              </div>
-            </div>
-            <div className="flex flex-col gap-y-[30px] lg:gap-x-[50px] xl:gap-x-[60px]">
-              <div className="col-left w-full">
+            <div className="flex flex-col lg:flex-row gap-y-[30px] lg:gap-x-[50px] xl:gap-x-[60px]">
+              <div className="col-left w-full lg:w-[50%]">
+                <div className="w-full mb-[12px]">
+                  <div className="title-wrap">
+                    <h2 className="title text-[#00795C] text-[35px] lg:text-[40px] xl:text-[65px] tracking-[-1.05984px]">
+                      {
+                        page?.ratgeber_seite_fersensporn_mobile?.reference
+                          ?.head_title_sub?.value
+                      }
+                    </h2>
+                    <h3 className="text-[24px] md:text-[28px] xl:text-[30px] text-[#00795C] font-bold leading-[1.2] mb-[20px]">
+                      {
+                        page?.ratgeber_seite_fersensporn_mobile?.reference
+                          ?.head_title_sub_secondary?.value
+                      }
+                    </h3>
+                  </div>
+                </div>
                 <div
                   className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
                   dangerouslySetInnerHTML={{
                     __html: toHTML(
-                      page?.ratgeber_seite_fersensporn_mobile?.reference?.head_desc
-                        ?.value,
+                      page?.ratgeber_seite_fersensporn_mobile?.reference
+                        ?.head_desc?.value,
                     ),
                   }}
                 ></div>
               </div>
-              <div className="col-right w-full">
+              <div className="col-right w-full lg:w-[50%]">
                 <div className="video-info">
                   {mainVideoSection?.video_url && (
-                    <div className="video-wrap w-full aspect-video rounded-[10px] relative overflow-hidden">
+                    <div className="video-wrap w-full rounded-[10px] relative overflow-hidden pb-[50%]">
                       <iframe
                         className="absolute w-full h-full inset-0 object-cover bg-cover"
                         src={mainVideoSection?.video_url}
@@ -201,35 +201,8 @@ export default function ratgeberSeiteFersensporn() {
                     <h4 className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-[#00795C] tracking-[-0.400697px] font-bold leading-[1.2] mb-[5px]">
                       {mainVideoSection?.video_title}
                     </h4>
-                    <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
+                    <div className="desc text-[16px] md:text-[18px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
                       <p>{mainVideoSection?.video_desc}</p>
-                    </div>
-                  </div>
-                  <div className="mobile-info mt-[20px]">
-                    <h4 className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-bold leading-[1.2] mb-[5px]">
-                      {
-                        page?.ratgeber_seite_fersensporn_mobile?.reference
-                          ?.wie_kybun_joya_hilft_section_title?.value
-                      }
-                    </h4>
-                    <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
-                      dangerouslySetInnerHTML={{
-                        __html:
-                          page?.ratgeber_seite_fersensporn_mobile?.reference
-                            ?.wie_kybun_joya_hilft_section_desc?.value,
-                      }}
-                    >
-                    </div>
-                    <div className="btn-wrap mt-[20px]">
-                      <a
-                        target="_blank" rel="noopener noreferrer"
-                        href={page?.ratgeber_seite_fersensporn_mobile?.reference
-                          ?.wie_kybun_joya_hilft_section_broschure?.reference?.url}
-                        className="pro-btn text-[16px] lg:text-[18px] text-white tracking-[-0.400697px] font-normal flex gap-[10px] px-[20px] lg:px-[30px] py-[12px] lg:py-[15px] bg-black rounded-[100px] max-w-fit items-center transition-all duration-700 hover:bg-[#00795c] mt-[10px] hover:text-white download-link"
-                      >
-                        <IconDownload className={'w-[20px] h-[20px]'} />
-                        Fersensporn Broschüre
-                      </a>
                     </div>
                   </div>
                 </div>
@@ -237,23 +210,106 @@ export default function ratgeberSeiteFersensporn() {
             </div>
           </div>
         </section>
-        <section className="mobile-sec mt-[40px] md:mt-[60px] lg:mt-[80px] xl:mt-[100px] max-w-[767px]">
+        <section className="rich-text-sec mt-[40px] md:mt-[60px] lg:mt-[80px] xl:mt-[100px]">
+          <div className="rich-text-inner">
+            <div className="title-wrap mb-[20px]">
+              <h4 className="text-black text-[35px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] mb-[20px] font-medium">
+                {
+                  page?.ratgeber_seite_fersensporn_mobile?.reference
+                    ?.wie_kybun_joya_hilft_section_title?.value
+                }
+              </h4>
+            </div>
+            <div className="flex flex-col lg:flex-row gap-y-[30px] lg:gap-x-[50px] xl:gap-x-[60px]">
+              <div className="col-left w-full lg:w-[50%]">
+                <div className="mobile-info">
+                  <div
+                    className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
+                    dangerouslySetInnerHTML={{
+                      __html:
+                        page?.ratgeber_seite_fersensporn_mobile?.reference
+                          ?.wie_kybun_joya_hilft_section_desc?.value,
+                    }}
+                  ></div>
+                </div>
+              </div>
+              <div className="col-right w-full lg:w-[50%]">
+                <div className="desc text-[16px] md:text-[16px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mb-[32px]">
+                  <ul class="list-style2 list-style3">
+                    <li>
+                      Keine punktuelle Druckstelle aufgrund der
+                      elastisch-federnen Sole
+                    </li>
+                    <li>Optimierte Druckverteilung</li>
+                    <li>Laufen wie auf Wolken</li>
+                    <li>Entlastung der schmerzenden Stelle</li>
+                    <li>Entscheidende Dehnung der Plantarfaszie</li>
+                    <li>Training der Fussmuskulatur</li>
+                  </ul>
+                </div>
+                <div className="btn-wrap mt-[20px]">
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href={
+                      page?.ratgeber_seite_fersensporn_mobile?.reference
+                        ?.wie_kybun_joya_hilft_section_broschure?.reference?.url
+                    }
+                    className="pro-btn text-[16px] lg:text-[18px] text-white tracking-[-0.400697px] font-normal flex gap-[10px] px-[20px] lg:px-[30px] py-[12px] lg:py-[15px] bg-black rounded-[100px] max-w-fit items-center transition-all duration-700 hover:bg-[#00795c] mt-[10px] hover:text-white download-link"
+                  >
+                    <IconDownload className={'w-[20px] h-[20px]'} />
+                    Fersensporn Broschüre
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section className="mobile-sec mt-[40px] md:mt-[60px] lg:mt-[80px] xl:mt-[100px]">
           <div className="inner-row">
-            <h2 className="text-[#00795C] text-[24px] md:text-[30px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] mb-[10px] font-bold">
-              Shopfinder
-            </h2>
-            <div className="img-wrap relative overflow-hidden rounded-[10px] min-h-[186px] mt-auto pb-[50%]">
-              <img
-                className="absolute w-full h-full inset-0 object-cover"
-                src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/stgallen_shopfront_eaac67e4-f12f-41cd-aef6-4c4fa529140d.png?v=1681906268"
-                alt=""
-              />
-              <a
-                className="text-black flex justify-end items-center gap-[8px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] tracking-[-0.400697px] font-normal bg-white hover:bg-[#00795C] rounded-[48px] mt-auto hover:!text-white absolute bottom-[15px] right-[15px] py-[10px] px-[20px]"
-                href="#"
-              >
-                Jetzt finden <ArrowRightLight className={'w-[25px] h-[25px]'} />
-              </a>
+            <div className="flex flex-col md:flex-row gap-y-[20px] gap-x-[20px]">
+              <div className="col-left w-full lg:w-[50%]">
+                <h2 className="text-[#00795C] text-[30px] lg:text-[40px] tracking-[-1.05984px] mb-[20px] font-medium">
+                  Shopfinder
+                </h2>
+                <div className="img-wrap relative overflow-hidden rounded-[10px] min-h-[186px] mt-auto pb-[46%]">
+                  <img
+                    className="absolute w-full h-full inset-0 object-cover"
+                    src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/stgallen_shopfront_eaac67e4-f12f-41cd-aef6-4c4fa529140d.png?v=1681906268"
+                    alt=""
+                  />
+                  <a
+                    className="text-black flex justify-end items-center gap-[8px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] tracking-[-0.400697px] font-normal bg-white hover:bg-[#00795C] rounded-[48px] mt-auto hover:!text-white absolute bottom-[15px] right-[15px] py-[10px] px-[20px] lg:py-[20px] lg:px-[40px] leading-none"
+                    href="#"
+                  >
+                    Jetzt finden{' '}
+                    <ArrowRightLight
+                      className={'w-[25px] h-[25px] lg:w-[35px] lg:h-[35px]'}
+                    />
+                  </a>
+                </div>
+              </div>
+              <div className="col-right w-full lg:w-[50%]">
+                <h2 className="text-[#00795C] text-[30px] lg:text-[40px] tracking-[-1.05984px] mb-[20px] font-medium">
+                  Shopfinder
+                </h2>
+                <div className="img-wrap relative overflow-hidden rounded-[10px] min-h-[186px] mt-auto pb-[46%]">
+                  <img
+                    className="absolute w-full h-full inset-0 object-cover"
+                    src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/stgallen_shopfront_eaac67e4-f12f-41cd-aef6-4c4fa529140d.png?v=1681906268"
+                    alt=""
+                  />
+                  <a
+                    className="text-black flex justify-end items-center gap-[8px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] tracking-[-0.400697px] font-normal bg-white hover:bg-[#00795C] rounded-[48px] mt-auto hover:!text-white absolute bottom-[15px] right-[15px] py-[10px] px-[20px] lg:py-[20px] lg:px-[40px] leading-none"
+                    href="#"
+                  >
+                    Jetzt finden{' '}
+                    <ArrowRightLight
+                      className={'w-[25px] h-[25px] lg:w-[35px] lg:h-[35px]'}
+                    />
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -289,7 +345,7 @@ export default function ratgeberSeiteFersensporn() {
                       <SwiperSlide key={index}>
                         <div className="item p-[30px] bg-[#EDEDED] box-border break-inside-avoid mb-[20px] rounded-[10px] shadow-[0px_0px_0.9821px_rgba(0,0,0,0.05),0px_3.9284px_7.8568px_rgba(0,0,0,0.1)] w-full">
                           <div className="item-inner">
-                            <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
+                            <div className="desc text-[16px] md:text-[18px] lg:text-[20px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
                               <p>{item.user_comment}</p>
                             </div>
                             <div className="customer-info flex border-t border-[#DEDEDE] pt-[10px] mt-[10px] gap-[10px] items-center">
@@ -319,58 +375,108 @@ export default function ratgeberSeiteFersensporn() {
             </div>
           </div>
         </section>
-        <TopProductMobileSlider products={page?.ratgeber_seite_fersensporn_mobile?.reference?.footer_pop_products?.references?.edges} />
-        <section className="mobile-sec mt-[40px] md:mt-[60px] lg:mt-[80px] xl:mt-[100px] mb-[40px] md:mb-[60px] lg:mb-[80px] xl:mb-[100px] max-w-[767px]">
+        <TopProductMobileSlider
+          products={
+            page?.ratgeber_seite_fersensporn_mobile?.reference
+              ?.footer_pop_products?.references?.edges
+          }
+        />
+        <section className="mobile-sec mt-[40px] md:mt-[60px] lg:mt-[80px] xl:mt-[100px] mb-[40px] md:mb-[60px] lg:mb-[80px] xl:mb-[100px]">
           <div className="inner-row">
-            <h2 className="text-[#00795C] text-[24px] md:text-[30px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] mb-[10px] font-bold">
-              {
-                  page?.ratgeber_seite_fersensporn_mobile?.reference
-                    ?.kybun_schuhe_testen_section_title?.value
-              }
-            </h2>
-            <div className="img-wrap relative overflow-hidden rounded-[10px] min-h-[186px] mt-auto pb-[50%]">
-              <img
-                className="absolute w-full h-full inset-0 object-cover"
-                src={
-                  page?.ratgeber_seite_fersensporn_mobile?.reference
-                    ?.kybun_schuhe_testen_section_image?.reference?.image?.url
-                }
-                alt=""
-              />
-              <Link
-                className="text-black flex justify-end items-center gap-[8px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] tracking-[-0.400697px] font-normal bg-white hover:bg-[#00795C] rounded-[48px] mt-auto hover:!text-white absolute bottom-[15px] right-[15px] py-[10px] px-[20px]"
-                to={
-                  page?.ratgeber_seite_fersensporn_mobile?.reference
-                    ?.kybun_schuhe_testen_section_button_redirect?.value
-                }
-              >
-                {
+            <div className="flex flex-col md:flex-row gap-y-[20px] gap-x-[20px]">
+              <div className="col-left w-full lg:w-[50%]">
+                <h2 className="text-[#00795C] text-[30px] lg:text-[40px] tracking-[-1.05984px] mb-[20px] font-medium">
+                  {
                     page?.ratgeber_seite_fersensporn_mobile?.reference
-                      ?.kybun_schuhe_testen_section_button_text?.value
-                }
-                <ArrowRightLight className={'w-[25px] h-[25px]'} />
-              </Link>
+                      ?.kybun_schuhe_testen_section_title?.value
+                  }
+                </h2>
+                <div className="img-wrap relative overflow-hidden rounded-[10px] min-h-[186px] mt-auto pb-[46%]">
+                  <img
+                    className="absolute w-full h-full inset-0 object-cover"
+                    src={
+                      page?.ratgeber_seite_fersensporn_mobile?.reference
+                        ?.kybun_schuhe_testen_section_image?.reference?.image
+                        ?.url
+                    }
+                    alt=""
+                  />
+                  <Link
+                    className="text-black flex justify-end items-center gap-[8px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] tracking-[-0.400697px] font-normal bg-white hover:bg-[#00795C] rounded-[48px] mt-auto hover:!text-white absolute bottom-[15px] right-[15px] py-[10px] px-[20px] lg:py-[20px] lg:px-[40px] leading-none"
+                    to={
+                      page?.ratgeber_seite_fersensporn_mobile?.reference
+                        ?.kybun_schuhe_testen_section_button_redirect?.value
+                    }
+                  >
+                    {
+                      page?.ratgeber_seite_fersensporn_mobile?.reference
+                        ?.kybun_schuhe_testen_section_button_text?.value
+                    }
+                    <ArrowRightLight
+                      className={'w-[25px] h-[25px] lg:w-[35px] lg:h-[35px]'}
+                    />
+                  </Link>
+                </div>
+              </div>
+              <div className="col-right w-full lg:w-[50%]">
+                <h2 className="text-[#00795C] text-[30px] lg:text-[40px] tracking-[-1.05984px] mb-[20px] font-medium">
+                  {
+                    page?.ratgeber_seite_fersensporn_mobile?.reference
+                      ?.kybun_schuhe_testen_section_title?.value
+                  }
+                </h2>
+                <div className="img-wrap relative overflow-hidden rounded-[10px] min-h-[186px] mt-auto pb-[46%]">
+                  <img
+                    className="absolute w-full h-full inset-0 object-cover"
+                    src={
+                      page?.ratgeber_seite_fersensporn_mobile?.reference
+                        ?.kybun_schuhe_testen_section_image?.reference?.image
+                        ?.url
+                    }
+                    alt=""
+                  />
+                  <Link
+                    className="text-black flex justify-end items-center gap-[8px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] tracking-[-0.400697px] font-normal bg-white hover:bg-[#00795C] rounded-[48px] mt-auto hover:!text-white absolute bottom-[15px] right-[15px] py-[10px] px-[20px] lg:py-[20px] lg:px-[40px] leading-none"
+                    to={
+                      page?.ratgeber_seite_fersensporn_mobile?.reference
+                        ?.kybun_schuhe_testen_section_button_redirect?.value
+                    }
+                  >
+                    {
+                      page?.ratgeber_seite_fersensporn_mobile?.reference
+                        ?.kybun_schuhe_testen_section_button_text?.value
+                    }
+                    <ArrowRightLight
+                      className={'w-[25px] h-[25px] lg:w-[35px] lg:h-[35px]'}
+                    />
+                  </Link>
+                </div>
+              </div>
             </div>
-            <div className="btn-wrap mt-[40px] flex gap-[5px]">
+            <div className="btn-wrap mt-[40px] md:mt-[60px] lg:mt-[80px] xl:mt-[100px] flex gap-[5px] lg:gap-[20px] justify-center">
               <Link
                 to={
                   page?.ratgeber_seite_fersensporn_mobile?.reference
                     ?.kybun_schuhe_testen_section_button_2_redirect?.value
                 }
-                className="pro-btn text-[12px] lg:text-[16px] text-white tracking-[-0.400697px] font-normal flex gap-[5px] justify-center px-[5px] lg:px-[30px] py-[10px] lg:py-[15px] bg-black rounded-[100px] w-full text-center items-center transition-all duration-700 hover:bg-[#00795c] mt-[10px] hover:text-white flex-[1]"
+                className="pro-btn text-[12px] md:text-[20px] lg:text-[25px] leading-none text-white tracking-[-0.400697px] font-normal flex gap-[5px] justify-center px-[5px] lg:px-[35px] py-[10px] lg:py-[20px] bg-black rounded-[100px] w-full lg:w-fit text-center items-center transition-all duration-700 hover:bg-[#00795c] mt-[10px] hover:text-white"
               >
                 {
-                    page?.ratgeber_seite_fersensporn_mobile?.reference
-                      ?.kybun_schuhe_testen_section_button_2_text?.value
+                  page?.ratgeber_seite_fersensporn_mobile?.reference
+                    ?.kybun_schuhe_testen_section_button_2_text?.value
                 }
               </Link>
               <a
-                target="_blank" rel="noopener noreferrer"
-                href={page?.ratgeber_seite_fersensporn_mobile?.reference
-                  ?.wie_kybun_joya_hilft_section_broschure?.reference?.url}
-                className="pro-btn text-[12px] lg:text-[16px] text-white tracking-[-0.400697px] font-normal flex gap-[5px] justify-center px-[5px] lg:px-[30px] py-[10px] lg:py-[15px] bg-black rounded-[100px] w-full text-center items-center transition-all duration-700 hover:bg-[#00795c] mt-[10px] hover:text-white flex-[1] download-link"
+                target="_blank"
+                rel="noopener noreferrer"
+                href={
+                  page?.ratgeber_seite_fersensporn_mobile?.reference
+                    ?.wie_kybun_joya_hilft_section_broschure?.reference?.url
+                }
+                className="pro-btn text-[12px] md:text-[20px] lg:text-[25px] leading-none text-white tracking-[-0.400697px] font-normal flex gap-[5px] lg:gap-[15px] justify-center px-[5px] lg:px-[35px] py-[10px] lg:py-[20px] bg-black rounded-[100px] w-full lg:w-fit text-center items-center transition-all duration-700 hover:bg-[#00795c] mt-[10px] hover:text-white download-link"
               >
-                <IconDownload className={'w-[20px] h-[20px]'} /> Fersensporn Broschüre
+                <IconDownload className={'w-[20px] h-[20px] md:w-[25px] md:h-[25px] lg:w-[30px] lg:h-[30px]'} /> Fersensporn
+                Broschüre
               </a>
             </div>
           </div>
@@ -381,42 +487,38 @@ export default function ratgeberSeiteFersensporn() {
 }
 
 function TopProductMobileSlider({products}) {
-
-  
   return (
     <section className="pro-slider-mobile mt-[40px] md:mt-[60px] lg:mt-[80px] xl:mt-[100px]">
-    <div className="pro-slider-inner overflow-hidden">
-      <Swiper
-        modules={[Navigation, Scrollbar, A11y, Autoplay, Pagination]}
-        slidesPerView={1.2}
-        spaceBetween={15}
-        autoHeight="true"
-        pagination={{clickable: true}}
-        className="h-full"
-        breakpoints={{
-          0: {
-            slidesPerView: 1.2,
-          },
-          1024: {
-            slidesPerView: 2.2,
-          },
-          1280: {
-            slidesPerView: 3.2,
-          },
-        }}
-      >
-        {products.map((product, index) => {
-          const firstVariant = flattenConnection(product.node.variants)[0];
-          if (!firstVariant) return null;
-          const {image} = firstVariant;
-          return (
-            <SwiperSlide key={index}>
-              <Link
-                  to={`/products/${product?.node?.handle}`}
-                >
+      <div className="pro-slider-inner overflow-hidden m-[-10px]">
+        <Swiper
+          modules={[Navigation, Scrollbar, A11y, Autoplay, Pagination]}
+          slidesPerView={1.2}
+          spaceBetween={0}
+          autoHeight="true"
+          pagination={{clickable: true}}
+          className="h-full"
+          breakpoints={{
+            0: {
+              slidesPerView: 1.2,
+            },
+            1024: {
+              slidesPerView: 2.2,
+            },
+            1280: {
+              slidesPerView: 3,
+            },
+          }}
+        >
+          {products.map((product, index) => {
+            const firstVariant = flattenConnection(product.node.variants)[0];
+            if (!firstVariant) return null;
+            const {image} = firstVariant;
+            return (
+              <SwiperSlide key={index} className="p-[10px]">
+                <Link to={`/products/${product?.node?.handle}`}>
                   <div className="product-item pt-[5px]">
                     <div className="grid gap-4">
-                      <div className="card-image aspect-square relative rounded-xl overflow-hidden">
+                      <div className="card-image aspect-square relative rounded-xl overflow-hidden shadow-[0_4.76252px_9.52504px_#0000001a]">
                         <img
                           className="object-contain fadeIn absolute inset-0 w-full h-full rounded-xl"
                           src={image?.url}
@@ -428,20 +530,18 @@ function TopProductMobileSlider({products}) {
                           {product?.node?.title}
                         </h3>
                         <div className="desc text-[16px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
-                          <p>
-                            {truncate(product?.node?.description,100)}
-                          </p>
+                          <p>{truncate(product?.node?.description, 100)}</p>
                         </div>
                       </div>
                     </div>
                   </div>
                 </Link>
-            </SwiperSlide>
-          )
-        })}
-      </Swiper>
-    </div>
-  </section>
+              </SwiperSlide>
+            );
+          })}
+        </Swiper>
+      </div>
+    </section>
   );
 }
 

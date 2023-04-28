@@ -876,10 +876,6 @@ p:last-child {
 .review-slider-sec .swiper-button-disabled {
   display: none;
 }
-.pro-slider-mobile .card-image {
-  filter: drop-shadow(0px 0px 0.526777px rgba(0, 0, 0, 0.05))
-    drop-shadow(0px 2.10711px 4.21421px rgba(0, 0, 0, 0.1));
-}
 
 .pro-slider-mobile .swiper-pagination {
   position: relative;
