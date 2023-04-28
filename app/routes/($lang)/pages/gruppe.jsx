@@ -144,13 +144,13 @@ export default function gorup() {
             </div>
           </div>
         </section>
-        <section className="rich-text-sec py-[20px] md:py-[30px] lg:py-[40px] xl:py-[50px]">
+        <section className="rich-text-sec py-[20px] md:py-[30px] lg:py-[40px] xl:py-[80px]">
           <div className="rich-text-inner">
             <div className="flex flex-col lg:flex-row gap-y-[30px] gap-x-[20px]">
-              <div className="col-left w-full lg:w-[510px]">
+              <div className="col-left w-full lg:w-[400px]">
                 <div className="img-wrap h-full">
                   <img
-                    className="w-full rounded-[10px] h-full object-cover"
+                    className="w-full rounded-[10px] h-auto lg:h-full object-cover"
                     src={page?.gruppe_page?.reference?.culture_employee_section_image?.reference?.image?.url}
                     alt=""
                   />
@@ -187,7 +187,7 @@ export default function gorup() {
                     </div>
                   </div>
                 </div>
-                <div className="w-full mt-[20px] md:mt[30px] xl:mt-[64px] max-w-[770px]">
+                <div className="w-full mt-[20px] md:mt[30px] xl:mt-[40px] max-w-[770px]">
                   <div className="title-wrap">
                     <h2 className="text-[#00795C] text-[30px] lg:text-[35px] xl:text-[40px] tracking-0-1.05984px] mb-[20px] font-bold"
                        dangerouslySetInnerHTML={{

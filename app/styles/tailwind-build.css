@@ -3505,6 +3505,10 @@ video {
     height: 80px;
   }
 
+  .lg\:h-full {
+    height: 100%;
+  }
+
   .lg\:w-2\/5 {
     width: 40%;
   }
@@ -3568,6 +3572,14 @@ video {
 
   .lg\:w-full {
     width: 100%;
+  }
+
+  .lg\:w-\[450px\] {
+    width: 450px;
+  }
+
+  .lg\:w-\[400px\] {
+    width: 400px;
   }
 
   .lg\:max-w-\[678px\] {
@@ -3940,6 +3952,10 @@ video {
     margin-top: 87px;
   }
 
+  .xl\:mt-\[40px\] {
+    margin-top: 40px;
+  }
+
   .xl\:flex {
     display: flex;
   }
@@ -4156,6 +4172,11 @@ video {
   .xl\:py-\[90px\] {
     padding-top: 90px;
     padding-bottom: 90px;
+  }
+
+  .xl\:py-\[80px\] {
+    padding-top: 80px;
+    padding-bottom: 80px;
   }
 
   .xl\:pb-\[100px\] {
