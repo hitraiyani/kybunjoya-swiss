@@ -877,6 +877,21 @@ p:last-child {
   display: none;
 }
 
+.review-slider-sec .swiper-pagination {
+  position: relative;
+  margin-top: 20px;
+}
+.review-slider-sec .swiper-pagination .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+}
+.review-slider-sec
+  .swiper-pagination
+  .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background: #000000;
+}
+
 .pro-slider-mobile .swiper-pagination {
   position: relative;
   margin-top: 20px;

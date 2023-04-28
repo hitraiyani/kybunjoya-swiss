@@ -272,7 +272,7 @@ export default function ratgeberSeiteFersenspornNew() {
                       }}
                       breakpoints={{
                         0: {
-                          slidesPerView: 1,
+                          slidesPerView: 1.2,
                         },
                         768: {
                           slidesPerView: 2,
@@ -345,31 +345,31 @@ export default function ratgeberSeiteFersenspornNew() {
           </div>
           <div className="flex flex-col xl:flex-row gap-[20px]">
             <div className="col-left w-full xl:w-[50%]">
-              <div className="flex flex-col  md:flex-row gap-[20px] h-full">
+              <div className="flex flex-row gap-[10px] md:gap-[20px] h-full">
                 {relevanteLinksSectionLeftPart.map((item, index) => {
                   return (
                     <div
                       key={index}
-                      className="item w-full md:w-[50%] shadow-[0px_0px_0.9821px_2px_rgba(0,0,0,0.05),0px_3.9284px_7.8568px_1px_rgba(0,0,0,0.1)] rounded-[10px] h-full"
+                      className="item w-[50%] shadow-[0px_0px_0.9821px_2px_rgba(0,0,0,0.05),0px_3.9284px_7.8568px_1px_rgba(0,0,0,0.1)] rounded-[10px] h-full"
                     >
-                      <div className="box h-full flex flex-col items-center px-[20px] py-[15px]">
+                      <div className="box h-full flex flex-col items-center px-[15px] py-[15px]">
                         <div className="img-title-wrap flex flex-col my-[30px] xl:mb-[10px] h-full justify-center">
                           <img
-                            className="max-w-full h-[50px] object-contain"
+                            className="max-w-full h-[30px] md:h-[50px] object-contain"
                             src={item?.brand_logo}
                             alt=""
                           />
-                          <h4 className="text-[35px] text-[#00795C] font-bold leading-[1.2] text-center mt-[5px]">
+                          <h4 className="text-[20px] md:text-[35px] text-[#00795C] font-bold leading-[1.2] text-center mt-[5px]">
                             {item?.sub_title}
                           </h4>
                         </div>
                         <div className="link-wrap mt-auto w-full">
                           <Link
                             to={item?.redirect_link_url}
-                            className="text-[#00795C] flex justify-end items-center gap-[8px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] tracking-[-0.400697px] font-normal  mt-auto hover:!text-black"
+                            className="text-[#00795C] flex justify-end items-center gap-[8px] text-[14px] md:text-[18px] lg:text-[20px] xl:text-[25px] tracking-[-0.400697px] font-normal  mt-auto hover:!text-black"
                           >
                             {item?.redirect_link_text}
-                            <ArrowRightLight className={'w-[30px] h-[30px]'} />
+                            <ArrowRightLight className={'w-[20px] h-[20px] md:w-[30px] md:h-[30px]'} />
                           </Link>
                         </div>
                       </div>
@@ -850,9 +850,10 @@ export default function ratgeberSeiteFersenspornNew() {
         <section className="review-slider-sec mt-[40px] md:mt-[60px] lg:mt-[80px] xl:mt-[100px]">
           <div className="slider-inner relative">
             <Swiper
-              modules={[Navigation, Scrollbar, A11y, Autoplay]}
+              modules={[Navigation, Scrollbar, A11y, Autoplay,Pagination]}
               slidesPerView={1}
               spaceBetween={20}
+              pagination={{clickable: true}}
               navigation={{
                 prevEl: '.swiper-button-next-review',
                 nextEl: '.swiper-button-prev-review',
@@ -864,7 +865,7 @@ export default function ratgeberSeiteFersenspornNew() {
                   <SwiperSlide key={index}>
                     <div className="slider-items">
                       <div className="item rounded-[10px] my-[10px]">
-                        <div className="item-inner flex flex-wrap items-center gap-[20px] lg:gap-[40px] max-w-[99%] rounded-[10px] p-[20px] lg:p-[30px] [md:py-[50px] xl:py-[100px] md:px-[50px] mx-auto  shadow-[0px_0px_0.9821px_rgba(0,0,0,0.05),0px_-0.0716px_7.8568px_rgba(0,0,0,0.1)]">
+                        <div className="item-inner flex flex-wrap items-center gap-[20px] lg:gap-[40px] max-w-[99%] rounded-[10px] p-[20px] lg:p-[30px] [md:py-[50px] xl:py-[100px] md:px-[50px] mx-auto  shadow-[0px_0px_0.9821px_rgba(0,0,0,0.05),0px_-0.0716px_7.8568px_rgba(0,0,0,0.1)] justify-center text-center sm:text-left">
                           <div className="dr-img w-[100px] h-[100px] md:w-[245px] md:h-[245px] rounded-full relative overflow-hidden">
                             <img
                               className="absolute w-full h-full inset-0"
@@ -872,7 +873,7 @@ export default function ratgeberSeiteFersenspornNew() {
                               alt=""
                             />
                           </div>
-                          <div className="dr-info w-[calc(100%_-_140px)]  md:w-[calc(100%_-_300px)] xl:w-[321px] xl:pr-[60px]">
+                          <div className="dr-info w-full sm:w-[calc(100%_-_140px)]  md:w-[calc(100%_-_300px)] xl:w-[321px] xl:pr-[60px]">
                             <h4 className="name text-[20px] md:text-[24px] xl:text-[33px] text-black font-bold">
                               {item.dr_name}
                             </h4>
@@ -890,7 +891,7 @@ export default function ratgeberSeiteFersenspornNew() {
                 );
               })}
             </Swiper>
-            <div className="absolute top-1/2 z-[1] rounded-full swiper-button-next-review border-[5px] border-[rgba(0,_148,_112,_0.3)] left-[-20px] lg:left-[-34px]">
+            <div className="absolute top-[calc(50%_-_20px)] -translate-y-2/4 z-[1] rounded-full swiper-button-next-review border-[5px] border-[rgba(0,_148,_112,_0.3)] left-[-20px] lg:left-[-34px] hidden md:block">
               <div className="rounded-full w-[40px] h-[40px] lg:w-[73px] lg:h-[73px] text-white hover:bg-black hover:text-white after:text-[30px] bg-[#00795c] flex items-center justify-center rotate-180">
                 <ArrowRight
                   className={
@@ -899,7 +900,7 @@ export default function ratgeberSeiteFersenspornNew() {
                 />
               </div>
             </div>
-            <div className="absolute top-1/2 z-[1] rounded-full swiper-button-prev-review border-[5px] border-[rgba(0,_148,_112,_0.3)] right-[-20px] lg:right-[-34px]">
+            <div className="absolute top-[calc(50%_-_20px)] -translate-y-2/4 z-[1] rounded-full swiper-button-prev-review border-[5px] border-[rgba(0,_148,_112,_0.3)] right-[-20px] lg:right-[-34px] hidden md:block">
               <div className="rounded-full w-[40px] h-[40px] lg:w-[73px] lg:h-[73px] text-white hover:bg-black hover:text-white after:text-[30px] bg-[#00795c] flex items-center justify-center">
                 <ArrowRight
                   className={
