@@ -42,13 +42,12 @@ const seo = ({data}) => ({
 export default function schweizerSchuhpropktion() {
     const {page} = useLoaderData();
 
-
     const sliderImages =
-    page?.slider_images?.references?.edges.map(
+    page?.schweizer_schuhpropktion?.reference?.slider_images?.references?.edges.map(
       (data) => data.node.image.url,
     );
 
-    const faqArr = page?.faq?.value ? JSON.parse(page.faq.value) : [];
+    const faqArr = page?.schweizer_schuhpropktion?.reference?.faq?.value ? JSON.parse(page?.schweizer_schuhpropktion?.reference?.faq.value) : [];
 
     return (
         <>
@@ -63,7 +62,7 @@ export default function schweizerSchuhpropktion() {
             <div className="banner-row product-list-hero-img relative overflow-hidden rounded-xl pb-[35%] min-h-[200px]">
               <img
                 className="absolute rounded-xl inset-0 w-full h-full object-cover"
-                src={page?.hero_image?.reference?.image?.url}
+                src={page?.schweizer_schuhpropktion?.reference?.hero_image?.reference?.image?.url}
                 alt=""
               />
             </div>
@@ -93,21 +92,21 @@ export default function schweizerSchuhpropktion() {
               </div>
               <div className="content-col w-full lg:w-[60%] lg:max-w-[678px] flex flex-col justify-center">
                 <h2 className="text-[#00795C] text-[30px] lg:text-[35px] xl:text-[40px] tracking-[-1.05984px] mb-[20px] font-bold">
-                  {page?.main_title?.value}
+                  {page?.schweizer_schuhpropktion?.reference?.main_title?.value}
                 </h2>
                 <h3 className="subtitle text-[18px] lg:text-[23px] text-balck leading-[1.3] mb-[20px] font-[400]"
                     dangerouslySetInnerHTML={{
-                        __html: toHTML(page?.short_description?.value),
+                        __html: toHTML(page?.schweizer_schuhpropktion?.reference?.short_description?.value),
                       }}
                 >
                 </h3>
-                <Link to={page?.book_now_link?.value} className="inline-block rounded-[100px] bg-black text-white
+                <Link to={page?.schweizer_schuhpropktion?.reference?.book_now_link?.value} className="inline-block rounded-[100px] bg-black text-white
                  text-center px-[35px] py-[15px] hover:bg-[#00795c] hover:text-white text-[18px] max-w-fit">
                     Jetzt Buchen
                 </Link>
                 <div className="desc text-black text-[16px] lg:text-[18px] leading-[1.3] mt-[30px] md:mt-[40px] xl:mt-[60px] font-[400]"
                     dangerouslySetInnerHTML={{
-                        __html: toHTML(page?.long_description?.value),
+                        __html: toHTML(page?.schweizer_schuhpropktion?.reference?.long_description?.value),
                       }}
                 >
                 </div>
@@ -130,12 +129,12 @@ export default function schweizerSchuhpropktion() {
           <div className="video-sec container mt-[40px] xl:mt-[87px] mb-[50px] lg:mb-[80px] xl:mb-[134px]">
             <div className="title-wrap">
               <h2 className="text-[#00795C] text-[30px] lg:text-[35px] xl:text-[40px] tracking-[-1.05984px] mb-[20px] font-bold">
-                {page?.video_section_title?.value}
+                {page?.schweizer_schuhpropktion?.reference?.video_section_title?.value}
               </h2>
               <div className="video-wrap">
                 <iframe
                   className="w-full aspect-video rounded-xl"
-                  src={page?.video_section_url?.value}
+                  src={page?.schweizer_schuhpropktion?.reference?.video_section_url?.value}
                   title="YouTube video player"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -143,7 +142,7 @@ export default function schweizerSchuhpropktion() {
                 ></iframe>
               </div>
               <div className="btn-wrap">
-               <Link to={page?.book_now_link?.value} className="inline-block rounded-[100px] bg-black text-white
+               <Link to={page?.schweizer_schuhpropktion?.reference?.book_now_link?.value} className="inline-block rounded-[100px] bg-black text-white
                  text-center px-[35px] py-[15px] hover:bg-[#00795c] hover:text-white text-[18px] max-w-fit mt-[20px] xl:mt-[48px]">
                     Jetzt Buchen
                </Link>
@@ -163,43 +162,49 @@ ${MEDIA_FRAGMENT}
       id
       title
       body
-      hero_image: metafield(namespace: "custom", key: "hero_image") {
+      schweizer_schuhpropktion : metafield(namespace: "custom", key: "schweizer_schuhpropktion") {
         reference {
-          ...Media
-        }
-      }
-      slider_images: metafield(namespace: "custom", key: "slider_images") {
-        references(first: 5) {
-            edges {
-                node {
+          ... on Metaobject {
+            hero_image : field(key: "hero_image") {
+              reference {
                 ...Media
-                }
+              }
             }
+            slider_images : field(key: "slider_images") {
+              references(first: 5) {
+                  edges {
+                      node {
+                      ...Media
+                      }
+                  }
+              }
+            }
+            main_title : field(key: "main_title") {
+              value
+            }
+            long_description : field(key: "long_description") {
+              value
+            }
+            short_description : field(key: "short_description") {
+              value
+            }
+            book_now_link : field(key: "book_now_link") {
+              value
+            }
+            head_title : field(key: "head_title") {
+              value
+            }
+            video_section_title : field(key: "video_section_title") {
+              value
+            }
+            video_section_url : field(key: "video_section_url") {
+              value
+            }
+            faq : field(key: "faq") {
+              value
+            }
+          }
         }
-      }
-      main_title: metafield(namespace: "custom", key: "main_title") {
-        value
-      }
-      long_description: metafield(namespace: "custom", key: "long_description") {
-        value
-      }
-      short_description: metafield(namespace: "custom", key: "short_description") {
-        value
-      }
-      book_now_link: metafield(namespace: "custom", key: "book_now_link") {
-        value
-      }
-      head_title: metafield(namespace: "custom", key: "head_title") {
-        value
-      }
-      video_section_title: metafield(namespace: "custom", key: "video_section_title") {
-        value
-      }
-      video_section_url: metafield(namespace: "custom", key: "video_section_url") {
-        value
-      }
-      faq: metafield(namespace: "custom", key: "faq") {
-        value
       }
       seo {
         description

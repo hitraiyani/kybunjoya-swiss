@@ -47,7 +47,7 @@ export async function loader({request, params, context}) {
 export default function schweizerSchuhpropktion() {
   const {page} = useLoaderData();
 
-  const sliderImages = page?.slider_images?.references?.edges.map(
+  const sliderImages = page?.product_misc_update?.reference?.slider_images?.references?.edges.map(
     (data) => data.node.image.url,
   );
 
@@ -83,21 +83,21 @@ export default function schweizerSchuhpropktion() {
         <div className="flex gap-[22px] flex-col lg:flex-row">
           <div className="content-col w-full lg:w-[40%] flex flex-col bg-[#EDEDED] rounded-[10px] py-[27px] px-[32px]">
             <h2 className="text-[24px] lg:text-[30px] text-[#00795C] leading-[1.2] mb-[10px]">
-              {page?.main_title?.value}
+              {page?.product_misc_update?.reference?.hero_section_title_1?.value}
             </h2>
             <div
               className="desc text-black text-[20x] xl:text-[25px] lg:text-[18px] leading-[1.3] font-[400]"
               dangerouslySetInnerHTML={{
-                __html: toHTML(page?.short_description?.value),
+                __html: toHTML(page?.product_misc_update?.reference?.hero_section_desc_1?.value),
               }}
             ></div>
             <h2 className="text-[24px] lg:text-[30px] text-[#00795C] leading-[1.2] mb-[10px] mt-[47px]">
-              {page?.head_title?.value}
+              {page?.product_misc_update?.reference?.hero_section_title_2?.value}
             </h2>
             <div
               className="desc text-black text-[20x] xl:text-[25px] lg:text-[18px] leading-[1.3] font-[400] mb-[20px]"
               dangerouslySetInnerHTML={{
-                __html: toHTML(page?.long_description?.value),
+                __html: toHTML(page?.product_misc_update?.reference?.hero_section_desc_2?.value),
               }}
             ></div>
             <div className="flex mt-auto justify-between items-center flex-wrap gap-[15px]">
@@ -206,31 +206,31 @@ ${MEDIA_FRAGMENT}
       id
       title
       body
-      main_title: metafield(namespace: "custom", key: "main_title") {
-        value
-      }
-      head_title: metafield(namespace: "custom", key: "head_title") {
-        value
-      }
-      long_description: metafield(namespace: "custom", key: "long_description") {
-        value
-      }
-      short_description: metafield(namespace: "custom", key: "short_description") {
-        value
-      }
-      slider_images: metafield(namespace: "custom", key: "slider_images") {
-        references(first: 10) {
-            edges {
-                node {
-                ...Media
-                }
-            }
-        }
-      }
       product_misc_update : metafield(namespace: "custom", key: "product_misc_update") {
         reference {
           ... on Metaobject {
             handle
+            hero_section_title_1 : field(key: "hero_section_title_1") {
+              value
+            }
+            hero_section_title_2 : field(key: "hero_section_title_2") {
+              value
+            }
+            hero_section_desc_1 : field(key: "hero_section_desc_1") {
+              value
+            }
+            hero_section_desc_2 : field(key: "hero_section_desc_2") {
+              value
+            }
+            slider_images : field(key: "slider_images") {
+              references(first: 10) {
+                  edges {
+                      node {
+                      ...Media
+                      }
+                  }
+              }
+            }
             head_title : field(key: "head_title") {
               value
             }
