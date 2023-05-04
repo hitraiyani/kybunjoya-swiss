@@ -213,7 +213,7 @@ export default function ratgeberSeiteFersenspornNew() {
             <div className="flex flex-col lg:flex-row gap-y-[30px] lg:gap-x-[50px] xl:gap-x-[93px]">
               <div className="col-left w-full lg:w-[65%]">
                 <div
-                  className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
+                  className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
                   dangerouslySetInnerHTML={{
                     __html: toHTML(
                       page?.ratgeber_seite_fersensporn?.reference?.head_desc
@@ -252,7 +252,7 @@ export default function ratgeberSeiteFersenspornNew() {
                     </div>
                   )}
                   <div className="info mt-[12px]">
-                    <h4 className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-[#00795C] tracking-[-0.400697px] font-bold leading-[1.2] mb-[5px]">
+                    <h4 className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-[#00795C] tracking-[-0.400697px] font-bold leading-[1.2] mb-[5px]">
                       {mainVideoSection?.video_title}
                     </h4>
                     <div className="desc text-[16px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
@@ -302,7 +302,7 @@ export default function ratgeberSeiteFersenspornNew() {
                                   />
                                 </div>
                                 <div className="info mt-[12px]">
-                                  <h4 className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] tracking-[-0.400697px] font-bold leading-[1.2] mb-[5px] text-[#00795C]">
+                                  <h4 className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] tracking-[-0.400697px] font-bold leading-[1.2] mb-[5px] text-[#00795C]">
                                     {item?.video_title}
                                   </h4>
                                   <div className="desc text-[18px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
@@ -366,7 +366,7 @@ export default function ratgeberSeiteFersenspornNew() {
                         <div className="link-wrap mt-auto w-full">
                           <Link
                             to={item?.redirect_link_url}
-                            className="text-[#00795C] flex justify-end items-center gap-[8px] text-[14px] md:text-[18px] lg:text-[20px] xl:text-[25px] tracking-[-0.400697px] font-normal  mt-auto hover:!text-black"
+                            className="text-[#00795C] flex justify-end items-center gap-[8px] text-[14px] md:text-[18px] lg:text-[20px] xl:text-[21px] tracking-[-0.400697px] font-normal  mt-auto hover:!text-black"
                           >
                             {item?.redirect_link_text}
                             <ArrowRightLight className={'w-[20px] h-[20px] md:w-[30px] md:h-[30px]'} />
@@ -394,7 +394,7 @@ export default function ratgeberSeiteFersenspornNew() {
                       className="item w-full flex flex-col md:w-[50%]"
                       key={index}
                     >
-                      <h4 className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-[#00795C] font-bold leading-none mb-[10px]">
+                      <h4 className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-[#00795C] font-bold leading-none mb-[10px]">
                         {item?.title}
                       </h4>
                       <div className="img-wrap relative overflow-hidden rounded-[10px] h-[186px] mt-auto">
@@ -407,7 +407,7 @@ export default function ratgeberSeiteFersenspornNew() {
                       <div className="link-wrap mt-[10px]">
                         <Link
                           to={item?.redirect_link_url}
-                          className="text-[#00795C] flex justify-end items-center gap-[8px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] tracking-[-0.400697px] font-normal  mt-auto hover:!text-black"
+                          className="text-[#00795C] flex justify-end items-center gap-[8px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] tracking-[-0.400697px] font-normal  mt-auto hover:!text-black"
                         >
                           {item?.redirect_link_text}
                           <ArrowRightLight className={'w-[30px] h-[30px]'} />
@@ -437,7 +437,7 @@ export default function ratgeberSeiteFersenspornNew() {
               </h4>
             </div>
             <div
-              className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
+              className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
               dangerouslySetInnerHTML={{
                 __html: toHTML(
                   page?.ratgeber_seite_fersensporn?.reference
@@ -462,7 +462,7 @@ export default function ratgeberSeiteFersenspornNew() {
             </div>
             <div className="flex lg:flex-row flex-col gap-[30px] xl:gap-x-[77px] w-full">
               <div className="col-left w-full lg:w-[50%]">
-                <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mb-[15px]">
+                <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mb-[15px]">
                   <p>
                     <strong>
                       {
@@ -472,7 +472,7 @@ export default function ratgeberSeiteFersenspornNew() {
                     </strong>
                   </p>
                 </div>
-                <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
+                <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
                   <img
                     className="max-w-full rounded-[10px] sm:float-right sm:ml-[15px] mb-[15px] w-full sm:w-[320px] h-[320px] object-cover"
                     src={
@@ -492,7 +492,7 @@ export default function ratgeberSeiteFersenspornNew() {
                 </div>
               </div>
               <div className="col-right w-full lg:w-[50%]">
-                <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mb-[15px]">
+                <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mb-[15px]">
                   <p>
                     <strong>
                       {
@@ -502,7 +502,7 @@ export default function ratgeberSeiteFersenspornNew() {
                     </strong>
                   </p>
                 </div>
-                <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
+                <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
                   <img
                     className="max-w-full rounded-[10px] sm:float-right sm:ml-[15px] mb-[15px] border-[2px] border-[#EDEDED] w-full sm:w-[320px] h-[320px] object-contain p-[20px]"
                     src={
@@ -536,7 +536,7 @@ export default function ratgeberSeiteFersenspornNew() {
                   </h4>
                 </div>
                 <div
-                  className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
+                  className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
                   dangerouslySetInnerHTML={{
                     __html: toHTML(
                       page?.ratgeber_seite_fersensporn?.reference
@@ -555,7 +555,7 @@ export default function ratgeberSeiteFersenspornNew() {
                   </h4>
                 </div>
                 <div
-                  className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
+                  className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
                   dangerouslySetInnerHTML={{
                     __html: toHTML(
                       page?.ratgeber_seite_fersensporn?.reference
@@ -583,7 +583,7 @@ export default function ratgeberSeiteFersenspornNew() {
                   }
                 </h5>
                 <div
-                  className="desc desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mt-[30px]"
+                  className="desc desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mt-[30px]"
                   dangerouslySetInnerHTML={{
                     __html: toHTML(
                       page?.ratgeber_seite_fersensporn_second_part?.reference
@@ -631,7 +631,7 @@ export default function ratgeberSeiteFersenspornNew() {
                     }
                   </h4>
                 </div>
-                <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mt-[30px]">
+                <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mt-[30px]">
                   <p>
                     <strong>
                       {
@@ -659,7 +659,7 @@ export default function ratgeberSeiteFersenspornNew() {
                     }
                   </h4>
                 </div>
-                <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mt-[30px]">
+                <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mt-[30px]">
                   <p>
                     <strong>
                       {
@@ -710,7 +710,7 @@ export default function ratgeberSeiteFersenspornNew() {
                   }
                 </h4>
                 <div
-                  className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
+                  className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
                   dangerouslySetInnerHTML={{
                     __html:
                       page?.ratgeber_seite_fersensporn?.reference
@@ -766,7 +766,7 @@ export default function ratgeberSeiteFersenspornNew() {
                             />
                           </div>
                           <div className="info flex-1">
-                            <h4 className="text-[25px] font-bold text-black mb-[15px]">
+                            <h4 className="text-[21px] font-bold text-black mb-[15px]">
                               {item.user_name}
                             </h4>
                             <h5 className="text-[18px] tracking-[-0.400697px] text-black font-normal">
@@ -831,7 +831,7 @@ export default function ratgeberSeiteFersenspornNew() {
             </div>
             <button
               onClick={ToggleClass}
-              className="toggle-btn desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4] items-center gap-[23px] justify-center m-auto hover:text-[#00795c] mt-[10px] hidden md:flex"
+              className="toggle-btn desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] items-center gap-[23px] justify-center m-auto hover:text-[#00795c] mt-[10px] hidden md:flex"
             >
               {isActive ? (
                 <>
@@ -881,7 +881,7 @@ export default function ratgeberSeiteFersenspornNew() {
                               {item.dr_location}
                             </h5>
                           </div>
-                          <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4] flex-1">
+                          <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] flex-1">
                             <p>{item.dr_comment}</p>
                           </div>
                         </div>
@@ -923,7 +923,7 @@ export default function ratgeberSeiteFersenspornNew() {
                     ?.medienberichte_section_title?.value
                 }
               </h4>
-              <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4] max-w-[605px]">
+              <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] max-w-[605px]">
                 <ul className="list-disc list-outside flex flex-col gap-[15px] pl-[40px] text-[#00795C]">
                   <li className="underline">
                     {

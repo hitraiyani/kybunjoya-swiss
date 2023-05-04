@@ -162,7 +162,7 @@ export function FiltersDrawer({
                   {({open}) => (
                     <>
                       <Disclosure.Button 
-                        className={`px-[30px] py-[15px]  font-normal tracking-[-0.400697px] border border-black text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] rounded-[100px] hover:bg-black hover:text-white ${open ? 'text-white bg-black active' : 'text-black bg-white'}`}
+                        className={`px-[30px] py-[15px]  font-normal tracking-[-0.400697px] border border-black text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] rounded-[100px] hover:bg-black hover:text-white ${open ? 'text-white bg-black active' : 'text-black bg-white'}`}
                          ref={refs[idx]}
                          data-id={filter.id}
                          data-open={open}
@@ -177,7 +177,7 @@ export function FiltersDrawer({
                         <ul key={filter.id} className="px-[20px] py-[20px] min-w-max w-[150px] filter-list">
                           {filter.values?.map((option) => {
                             return (
-                              <li key={option.id} className="pb-[10px] tracking-[-0.400697px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] font-normal last:pb-[0]">
+                              <li key={option.id} className="pb-[10px] tracking-[-0.400697px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] font-normal last:pb-[0]">
                                 {filterMarkup(filter, option)}
                               </li>
                             );

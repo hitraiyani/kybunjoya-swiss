@@ -65,7 +65,7 @@ export default function gorup() {
             </div>
             <div className="flex flex-col lg:flex-row gap-y-[30px] gap-x-[57px]">
               <div className="col-left w-full lg:w-[50%]">
-                <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
+                <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
                   dangerouslySetInnerHTML={{
                     __html: toHTML(page?.gruppe_page?.reference?.values_section_left_short_desc?.value),
                   }}
@@ -125,7 +125,7 @@ export default function gorup() {
                     {page?.gruppe_page?.reference?.work_section_title?.value}
                   </h2>
                 </div>
-                <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
+                <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
                    dangerouslySetInnerHTML={{
                     __html: toHTML(page?.gruppe_page?.reference.work_section_desc.value),
                   }}
@@ -196,7 +196,7 @@ export default function gorup() {
                     >
                     </h2>
                   </div>
-                  <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
+                  <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
                     <p
                       dangerouslySetInnerHTML={{
                         __html: (page?.gruppe_page?.reference.culture_employee_section_desc_3?.value),
@@ -317,7 +317,7 @@ export default function gorup() {
                     {page?.gruppe_page?.reference?.footer_group_title?.value}
                   </h2>
                 </div>
-                <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
+                <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
                    dangerouslySetInnerHTML={{
                     __html: toHTML(page?.gruppe_page?.reference?.footer_group_desc?.value),
                   }}
@@ -331,7 +331,7 @@ export default function gorup() {
                   >
                   </h2>
                 </div>
-                <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
+                <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
                    dangerouslySetInnerHTML={{
                     __html: toHTML(page?.gruppe_page?.reference?.footer_group_sub_desc?.value),
                   }}

@@ -111,7 +111,7 @@ export default function ratgeber() {
                   </h4>
                 </div>
                 <div className="content-info px-[20px] pt-[12px] pb-[20px] bg-[#EDEDED] rounded-bl-[10px] rounded-br-[10px] flex flex-col gap-[8px] h-full">
-                  <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] tracking-[-0.400697px] font-normal leading-[1.4]"
+                  <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] tracking-[-0.400697px] font-normal leading-[1.4]"
                     dangerouslySetInnerHTML={{
                       __html: toHTML(page?.ratgeber?.reference?.footer_section_content_1?.value),
                     }}
@@ -119,7 +119,7 @@ export default function ratgeber() {
                   </div>
                   <Link
                     to={page?.ratgeber?.reference?.footer_section_redirect_1?.value}
-                    className='text-[#00795C] flex justify-end items-center gap-[8px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] tracking-[-0.400697px] font-normal  mt-auto hover:!text-black'>
+                    className='text-[#00795C] flex justify-end items-center gap-[8px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] tracking-[-0.400697px] font-normal  mt-auto hover:!text-black'>
                     Mehr erfahren
                     <ArrowRightLight
                       className={
@@ -136,7 +136,7 @@ export default function ratgeber() {
                   </h4>
                 </div>
                 <div className="content-info px-[20px] pt-[12px] pb-[20px] bg-[#EDEDED] rounded-bl-[10px] rounded-br-[10px] flex flex-col gap-[8px] h-full">
-                  <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] tracking-[-0.400697px] font-normal leading-[1.4]"
+                  <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] tracking-[-0.400697px] font-normal leading-[1.4]"
                     dangerouslySetInnerHTML={{
                       __html: toHTML(page?.ratgeber?.reference?.footer_section_content_2?.value),
                     }}
@@ -144,7 +144,7 @@ export default function ratgeber() {
                   </div>
                   <Link
                     to={page?.ratgeber?.reference?.footer_section_redirect_2?.value}
-                    className='text-[#00795C] flex justify-end items-center gap-[8px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] tracking-[-0.400697px] font-normal  mt-auto hover:!text-black'>
+                    className='text-[#00795C] flex justify-end items-center gap-[8px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] tracking-[-0.400697px] font-normal  mt-auto hover:!text-black'>
                     Mehr erfahren
                     <ArrowRightLight
                       className={
@@ -161,7 +161,7 @@ export default function ratgeber() {
                   </h4>
                 </div>
                 <div className="content-info px-[20px] pt-[12px] pb-[20px] bg-[#EDEDED] rounded-bl-[10px] rounded-br-[10px] flex flex-col gap-[8px] h-full">
-                  <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] tracking-[-0.400697px] font-normal leading-[1.4]"
+                  <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] tracking-[-0.400697px] font-normal leading-[1.4]"
                     dangerouslySetInnerHTML={{
                       __html: toHTML(page?.ratgeber?.reference?.footer_section_content_3?.value),
                     }}
@@ -169,7 +169,7 @@ export default function ratgeber() {
                   </div>
                   <Link
                     to={page?.ratgeber?.reference?.footer_section_redirect_3?.value}
-                    className='text-[#00795C] flex justify-end items-center gap-[8px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] tracking-[-0.400697px] font-normal  mt-auto hover:!text-black'>
+                    className='text-[#00795C] flex justify-end items-center gap-[8px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] tracking-[-0.400697px] font-normal  mt-auto hover:!text-black'>
                     Mehr erfahren
                     <ArrowRightLight
                       className={
@@ -186,7 +186,7 @@ export default function ratgeber() {
                   </h4>
                 </div>
                 <div className="content-info px-[20px] pt-[12px] pb-[20px] bg-[#EDEDED] rounded-bl-[10px] rounded-br-[10px] flex flex-col gap-[8px] h-full">
-                  <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] tracking-[-0.400697px] font-normal leading-[1.4]"
+                  <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] tracking-[-0.400697px] font-normal leading-[1.4]"
                     dangerouslySetInnerHTML={{
                       __html: toHTML(page?.ratgeber?.reference?.footer_section_content_4?.value),
                     }}
@@ -194,7 +194,7 @@ export default function ratgeber() {
                   </div>
                   <Link
                     to={page?.ratgeber?.reference?.footer_section_redirect_4?.value}
-                    className='text-[#00795C] flex justify-end items-center gap-[8px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] tracking-[-0.400697px] font-normal  mt-auto hover:!text-black'>
+                    className='text-[#00795C] flex justify-end items-center gap-[8px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] tracking-[-0.400697px] font-normal  mt-auto hover:!text-black'>
                     Mehr erfahren
                     <ArrowRightLight
                       className={

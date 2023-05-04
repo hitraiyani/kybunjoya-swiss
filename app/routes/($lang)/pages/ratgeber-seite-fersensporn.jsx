@@ -174,7 +174,7 @@ export default function ratgeberSeiteFersensporn() {
                   </div>
                 </div>
                 <div
-                  className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
+                  className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
                   dangerouslySetInnerHTML={{
                     __html: toHTML(
                       page?.ratgeber_seite_fersensporn_mobile?.reference
@@ -198,7 +198,7 @@ export default function ratgeberSeiteFersensporn() {
                     </div>
                   )}
                   <div className="info mt-[12px]">
-                    <h4 className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-[#00795C] tracking-[-0.400697px] font-bold leading-[1.2] mb-[5px]">
+                    <h4 className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-[#00795C] tracking-[-0.400697px] font-bold leading-[1.2] mb-[5px]">
                       {mainVideoSection?.video_title}
                     </h4>
                     <div className="desc text-[16px] md:text-[18px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
@@ -224,7 +224,7 @@ export default function ratgeberSeiteFersensporn() {
               <div className="col-left w-full lg:w-[50%]">
                 <div className="mobile-info">
                   <div
-                    className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
+                    className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
                     dangerouslySetInnerHTML={{
                       __html:
                         page?.ratgeber_seite_fersensporn_mobile?.reference
@@ -234,7 +234,7 @@ export default function ratgeberSeiteFersensporn() {
                 </div>
               </div>
               <div className="col-right w-full lg:w-[50%]">
-                <div className="desc text-[16px] md:text-[16px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mb-[32px]"
+                <div className="desc text-[16px] md:text-[16px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mb-[32px]"
                      dangerouslySetInnerHTML={{
                       __html:
                         page?.ratgeber_seite_fersensporn_mobile?.reference
@@ -284,7 +284,7 @@ export default function ratgeberSeiteFersensporn() {
                   <Link
                     to={page?.ratgeber_seite_fersensporn_mobile?.reference
                       ?.shopfinder_section_button_redirect?.value}
-                    className="text-black flex justify-end items-center gap-[8px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] tracking-[-0.400697px] font-normal bg-white hover:bg-[#00795C] rounded-[48px] mt-auto hover:!text-white absolute bottom-[15px] right-[15px] py-[10px] px-[20px] lg:py-[20px] lg:px-[40px] leading-none"
+                    className="text-black flex justify-end items-center gap-[8px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] tracking-[-0.400697px] font-normal bg-white hover:bg-[#00795C] rounded-[48px] mt-auto hover:!text-white absolute bottom-[15px] right-[15px] py-[10px] px-[20px] lg:py-[20px] lg:px-[40px] leading-none"
                     href="#"
                   >
                     {
@@ -315,7 +315,7 @@ export default function ratgeberSeiteFersensporn() {
                     alt=""
                   />
                   <a
-                    className="text-black flex justify-end items-center gap-[8px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] tracking-[-0.400697px] font-normal bg-white hover:bg-[#00795C] rounded-[48px] mt-auto hover:!text-white absolute bottom-[15px] right-[15px] py-[10px] px-[20px] lg:py-[20px] lg:px-[40px] leading-none"
+                    className="text-black flex justify-end items-center gap-[8px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] tracking-[-0.400697px] font-normal bg-white hover:bg-[#00795C] rounded-[48px] mt-auto hover:!text-white absolute bottom-[15px] right-[15px] py-[10px] px-[20px] lg:py-[20px] lg:px-[40px] leading-none"
                     href="#"
                   >
                     Schuhe testen
@@ -372,10 +372,10 @@ export default function ratgeberSeiteFersensporn() {
                                 />
                               </div>
                               <div className="info flex-1">
-                                <h4 className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-bold leading-[1.4] mb-[5px]">
+                                <h4 className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-bold leading-[1.4] mb-[5px]">
                                   {item.user_name}
                                 </h4>
-                                <h5 className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
+                                <h5 className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
                                   {item.user_location}
                                 </h5>
                               </div>
@@ -417,7 +417,7 @@ export default function ratgeberSeiteFersensporn() {
                     alt=""
                   />
                   <Link
-                    className="text-black flex justify-end items-center gap-[8px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] tracking-[-0.400697px] font-normal bg-white hover:bg-[#00795C] rounded-[48px] mt-auto hover:!text-white absolute bottom-[15px] right-[15px] py-[10px] px-[20px] lg:py-[20px] lg:px-[40px] leading-none"
+                    className="text-black flex justify-end items-center gap-[8px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] tracking-[-0.400697px] font-normal bg-white hover:bg-[#00795C] rounded-[48px] mt-auto hover:!text-white absolute bottom-[15px] right-[15px] py-[10px] px-[20px] lg:py-[20px] lg:px-[40px] leading-none"
                     to={
                       page?.ratgeber_seite_fersensporn_mobile?.reference
                         ?.kybun_schuhe_testen_section_button_redirect?.value
@@ -451,7 +451,7 @@ export default function ratgeberSeiteFersensporn() {
                     alt=""
                   />
                   <Link
-                    className="text-black flex justify-end items-center gap-[8px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] tracking-[-0.400697px] font-normal bg-white hover:bg-[#00795C] rounded-[48px] mt-auto hover:!text-white absolute bottom-[15px] right-[15px] py-[10px] px-[20px] lg:py-[20px] lg:px-[40px] leading-none"
+                    className="text-black flex justify-end items-center gap-[8px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] tracking-[-0.400697px] font-normal bg-white hover:bg-[#00795C] rounded-[48px] mt-auto hover:!text-white absolute bottom-[15px] right-[15px] py-[10px] px-[20px] lg:py-[20px] lg:px-[40px] leading-none"
                     to={
                       page?.ratgeber_seite_fersensporn_mobile?.reference
                         ?.shopfinder_section_button_redirect?.value
@@ -474,7 +474,7 @@ export default function ratgeberSeiteFersensporn() {
                   page?.ratgeber_seite_fersensporn_mobile?.reference
                     ?.kybun_schuhe_testen_section_button_2_redirect?.value
                 }
-                className="pro-btn text-[12px] md:text-[20px] lg:text-[25px] leading-none text-white tracking-[-0.400697px] font-normal flex gap-[5px] justify-center px-[5px] lg:px-[35px] py-[10px] lg:py-[20px] bg-black rounded-[100px] w-full lg:w-fit text-center items-center transition-all duration-700 hover:bg-[#00795c] mt-[10px] hover:text-white"
+                className="pro-btn text-[12px] md:text-[20px] lg:text-[21px] leading-none text-white tracking-[-0.400697px] font-normal flex gap-[5px] justify-center px-[5px] lg:px-[35px] py-[10px] lg:py-[20px] bg-black rounded-[100px] w-full lg:w-fit text-center items-center transition-all duration-700 hover:bg-[#00795c] mt-[10px] hover:text-white"
               >
                 {
                   page?.ratgeber_seite_fersensporn_mobile?.reference
@@ -488,7 +488,7 @@ export default function ratgeberSeiteFersensporn() {
                   page?.ratgeber_seite_fersensporn_mobile?.reference
                     ?.wie_kybun_joya_hilft_section_broschure?.reference?.url
                 }
-                className="pro-btn text-[12px] md:text-[20px] lg:text-[25px] leading-none text-white tracking-[-0.400697px] font-normal flex gap-[5px] lg:gap-[15px] justify-center px-[5px] lg:px-[35px] py-[10px] lg:py-[20px] bg-black rounded-[100px] w-full lg:w-fit text-center items-center transition-all duration-700 hover:bg-[#00795c] mt-[10px] hover:text-white download-link"
+                className="pro-btn text-[12px] md:text-[20px] lg:text-[21px] leading-none text-white tracking-[-0.400697px] font-normal flex gap-[5px] lg:gap-[15px] justify-center px-[5px] lg:px-[35px] py-[10px] lg:py-[20px] bg-black rounded-[100px] w-full lg:w-fit text-center items-center transition-all duration-700 hover:bg-[#00795c] mt-[10px] hover:text-white download-link"
               >
                 <IconDownload className={'w-[20px] h-[20px] md:w-[25px] md:h-[25px] lg:w-[30px] lg:h-[30px]'} /> Fersensporn
                 Broschüre

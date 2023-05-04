@@ -119,7 +119,7 @@ export default function aboutUs() {
                           <h3 className="text-[#000000] text-[30px] lg:text-[35px] xl:text-[40px] mb-[5px] font-bold leading-[1.1] title">
                             {item?.timeline_title}
                           </h3>
-                          <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
+                          <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
                             {item?.timeline_desc}
                           </div>
                         </div>
@@ -136,7 +136,7 @@ export default function aboutUs() {
           <div className="btn-wrap flex justify-center mt-[20px] md:mt-[30px] xl:mt-[42px]">
             <button
               onClick={ToggleClass}
-              className="w-fit px-[30px] py-[15px] bg-black rounded-[100px] transition-all !text-white text-[18px] md:text-[20px] lg:text-[25px] tracking-[-0.400697px] hover:bg-[#00795c] font-normal"
+              className="w-fit px-[30px] py-[15px] bg-black rounded-[100px] transition-all !text-white text-[18px] md:text-[20px] lg:text-[21px] tracking-[-0.400697px] hover:bg-[#00795c] font-normal"
             >
               {isActive ? 'Mehr Anzeigen' : 'Weniger Anzeigenr'}
             </button>
@@ -166,7 +166,7 @@ export default function aboutUs() {
                 }
               </h2>
               <div
-                className="desc text-black text-[16px] lg:text-[25px] leading-[1.3] font-[400]"
+                className="desc text-black text-[16px] lg:text-[21px] leading-[1.3] font-[400]"
                 dangerouslySetInnerHTML={{
                   __html: toHTML(
                     page?.about_us?.reference
@@ -211,7 +211,7 @@ export default function aboutUs() {
                 }
               </h2>
               <div
-                className="desc text-black text-[16px] lg:text-[25px] leading-[1.3] font-[400]"
+                className="desc text-black text-[16px] lg:text-[21px] leading-[1.3] font-[400]"
                 dangerouslySetInnerHTML={{
                   __html: toHTML(
                     page?.about_us?.reference?.was_uns_antreibt_section_desc
@@ -235,7 +235,7 @@ export default function aboutUs() {
                 }
               </h2>
               <div
-                className="desc text-black text-[16px] lg:text-[25px] leading-[1.3] font-[400]"
+                className="desc text-black text-[16px] lg:text-[21px] leading-[1.3] font-[400]"
                 dangerouslySetInnerHTML={{
                   __html: toHTML(
                     page?.about_us?.reference?.wissenschaft_section_desc?.value,
