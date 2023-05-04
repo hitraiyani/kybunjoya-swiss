@@ -125,19 +125,19 @@ export default function ratgeberseite() {
 
   return (
     <>
-      <div className="container mt-[120px] lg:mt-[200px]">
+      <div className="container mt-[120px] lg:mt-[150px] 2xl:mt-[200px]">
         <section className="dr-info-tabs-section">
           <div className="dr-info-tabs-inner">
             <div className="flex flex-wrap flex-col md:flex-row gap-y-[30px] gap-x-[46px] justify-center md:justify-start">
               <div className="content-info w-full xl:flex-[1]">
                 <div className="title-wrap text-left xl:text-right xl:max-w-[280px] ml-auto">
-                  <h2 className="text-[#00795C] leading-none text-[40px] md:text-[50px] lg:text-[70px] xl:text-[100px] font-black">
+                  <h2 className="text-[#00795C] leading-none text-[40px] md:text-[50px] lg:text-[70px] 2xl:text-[100px] font-black">
                     {page?.ratgeber_detail?.reference?.head_title?.value}
                   </h2>
                 </div>
 
                 <div
-                  className="desc mt-[20px] mx-auto lg:mt-[30px] xl:mt-[52px] text-[28px] md:text-[30px] lg:text-[40px] tracking-[-0.97152px]  text-left xl:text-right text-black leading-[1.2]"
+                  className="desc mt-[20px] mx-auto lg:mt-[30px] xl:mt-[52px] text-[28px] md:text-[30px] lg:text-[35px] 2xl:text-[40px] tracking-[-0.97152px]  text-left xl:text-right text-black leading-[1.2]"
                   dangerouslySetInnerHTML={{
                     __html: toHTML(
                       page?.ratgeber_detail?.reference?.head_content?.value,
@@ -218,18 +218,18 @@ export default function ratgeberseite() {
                         type="search"
                         placeholder="Suchen"
                         name="q"
-                        className="text-left transition border-transparent appearance-none focus:outline-0 placeholder:text-[#00795C] text-[#00795C] block pl-[62px] pr-[20px] rounded-[100px] bg-[#EDEDED] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] py-[20px] xl:py-[28px] tracking-[-0.400697px] font-normal leading-none w-full"
+                        className="text-left transition border-transparent appearance-none focus:outline-0 placeholder:text-[#00795C] text-[#00795C] block pl-[62px] pr-[20px] rounded-[100px] bg-[#EDEDED] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] py-[20px] 2xl:py-[28px] tracking-[-0.400697px] font-normal leading-none w-full"
                       />
                     </div>
                   </form>
                 </div>
-                <div className="scroll-links-wrap grid grid-cols-2 min-[1701px]:gap-x-[40px] max-[1700px]:gap-[20px] min-[1701px]:gap-y-[45px] gap-[20px] mt-[30px] xl:mt-[59px]">
+                <div className="scroll-links-wrap grid grid-cols-2 min-[1701px]:gap-x-[40px] max-[1700px]:gap-[20px] min-[1701px]:gap-y-[45px] gap-[20px] mt-[30px]">
                   {buttonAccordionMapping?.map((item, index) => {
                     return (
                       <a
                         key={index}
                         href={`#link${index + 1}`}
-                        className="p-[15px] xl:px-[20px] xl:py-[26px] flex justify-center items-center text-center bg-white rounded-[10px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[20px] 2xl:text-[25px] leading-[1.4] hover:text-white hover:bg-[#00795C] xl:min-h-[116px] font-bold text-[#00795C] transition-all duration-500 my-achor-link"
+                        className="p-[15px] xl:px-[20px] xl:py-[26px] flex justify-center items-center text-center bg-white rounded-[10px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[20px] 2xl:text-[21px] leading-[1.4] hover:text-white hover:bg-[#00795C] xl:min-h-[116px] font-bold text-[#00795C] transition-all duration-500 my-achor-link"
                       >
                         {item.button_name}
                       </a>

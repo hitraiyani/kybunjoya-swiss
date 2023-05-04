@@ -181,9 +181,9 @@ export default function Collection() {
             alt=""
           />
         </div>
-        <section className="info-slider-with-img py-[40px] md:py-[60px] lg:py-[80px] xl:py-[90px]">
+        <section className="info-slider-with-img py-[50px]">
           <div className="row flex flex-col lg:flex-row gap-x-[30px] xl:gap-x-[70px] gap-y-[30px]">
-            <div className="w-full content-info-col rounded-xl">
+            <div className="w-full content-info-col rounded-xl relative">
               <div className="content-info-col-inner">
                 <div className="item relative">
                   <Swiper
@@ -218,195 +218,197 @@ export default function Collection() {
                         slidesPerView: 2,
                       },
                     }}
-                    className="h-full overflow-visible rounded-xl flex flex-col xl:!absolute lg:inset-0 w-[calc(100%_+_20px)] !ml-[-10px] lg:!z-[-1]"
+                    className="h-full overflow-visible rounded-xl flex flex-col xl:!absolute lg:inset-0 w-[calc(100%_+_20px)] !ml-[-10px]"
                   >
-                    <SwiperSlide className="w-full !h-auto lg:!h-full px-[10px] py-[10px]">
-                      <div className="img-info-col relative h-full overflow-hidden">
-                        <div className="img-wrap h-full flex flex-col justify-center">
-                          <img
-                            src={
-                              brandHereSection?.data?.interective_image
-                                ?.reference?.image?.url
-                            }
-                            alt=""
-                          />
-                        </div>
-                        <ul className="img-info-list">
-                          <li>
-                            <svg
-                              className="icon"
-                              width={100}
-                              height={100}
-                              viewBox="0 0 100 100"
-                              fill="none"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <circle
-                                cx={50}
-                                cy={50}
-                                r={49}
-                                fill="#EDEDED"
-                                fillOpacity="0.5"
-                                stroke="#DEDEDE"
-                                strokeWidth={2}
-                              />
-                              <line
-                                x1="51.4502"
-                                y1="27.9277"
-                                x2="51.4502"
-                                y2="72.9728"
-                                stroke="black"
-                                strokeWidth={2}
-                              />
-                              <line
-                                x1="72.9727"
-                                y1="51.4502"
-                                x2="27.9276"
-                                y2="51.4502"
-                                stroke="black"
-                                strokeWidth={2}
-                              />
-                            </svg>
+                    <SwiperSlide className="w-full !h-auto xl:!h-full px-[10px] py-[10px]">
+                      <div className="img-info-col relative h-full overflow-hidden ">
+                        <div className="xl:w-[90%] h-full m-auto xl:top-[-70px] relative">
+                          <div className="img-wrap h-full flex flex-col justify-center">
                             <img
-                              className="line"
-                              src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Vector_9.png?v=1681740250"
+                              src={
+                                brandHereSection?.data?.interective_image
+                                  ?.reference?.image?.url
+                              }
                               alt=""
                             />
-                            <span>Dämpfung im Fersenbereich</span>
-                          </li>
-                          <li>
-                            <svg
-                              className="icon"
-                              width={100}
-                              height={100}
-                              viewBox="0 0 100 100"
-                              fill="none"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <circle
-                                cx={50}
-                                cy={50}
-                                r={49}
-                                fill="#EDEDED"
-                                fillOpacity="0.5"
-                                stroke="#DEDEDE"
-                                strokeWidth={2}
+                          </div>
+                          <ul className="img-info-list">
+                            <li>
+                              <svg
+                                className="icon"
+                                width={100}
+                                height={100}
+                                viewBox="0 0 100 100"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <circle
+                                  cx={50}
+                                  cy={50}
+                                  r={49}
+                                  fill="#EDEDED"
+                                  fillOpacity="0.5"
+                                  stroke="#DEDEDE"
+                                  strokeWidth={2}
+                                />
+                                <line
+                                  x1="51.4502"
+                                  y1="27.9277"
+                                  x2="51.4502"
+                                  y2="72.9728"
+                                  stroke="black"
+                                  strokeWidth={2}
+                                />
+                                <line
+                                  x1="72.9727"
+                                  y1="51.4502"
+                                  x2="27.9276"
+                                  y2="51.4502"
+                                  stroke="black"
+                                  strokeWidth={2}
+                                />
+                              </svg>
+                              <img
+                                className="line"
+                                src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Vector_9.png?v=1681740250"
+                                alt=""
                               />
-                              <line
-                                x1="51.4502"
-                                y1="27.9277"
-                                x2="51.4502"
-                                y2="72.9728"
-                                stroke="black"
-                                strokeWidth={2}
+                              <span>Dämpfung im Fersenbereich</span>
+                            </li>
+                            <li>
+                              <svg
+                                className="icon"
+                                width={100}
+                                height={100}
+                                viewBox="0 0 100 100"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <circle
+                                  cx={50}
+                                  cy={50}
+                                  r={49}
+                                  fill="#EDEDED"
+                                  fillOpacity="0.5"
+                                  stroke="#DEDEDE"
+                                  strokeWidth={2}
+                                />
+                                <line
+                                  x1="51.4502"
+                                  y1="27.9277"
+                                  x2="51.4502"
+                                  y2="72.9728"
+                                  stroke="black"
+                                  strokeWidth={2}
+                                />
+                                <line
+                                  x1="72.9727"
+                                  y1="51.4502"
+                                  x2="27.9276"
+                                  y2="51.4502"
+                                  stroke="black"
+                                  strokeWidth={2}
+                                />
+                              </svg>
+                              <img
+                                className="line"
+                                src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Vector_7.png?v=1681740250"
+                                alt=""
                               />
-                              <line
-                                x1="72.9727"
-                                y1="51.4502"
-                                x2="27.9276"
-                                y2="51.4502"
-                                stroke="black"
-                                strokeWidth={2}
+                              <span>elastisch-federnd</span>
+                            </li>
+                            <li>
+                              <span>Swiss made</span>
+                              <img
+                                className="line"
+                                src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Vector_5.png?v=1681740250"
+                                alt=""
                               />
-                            </svg>
-                            <img
-                              className="line"
-                              src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Vector_7.png?v=1681740250"
-                              alt=""
-                            />
-                            <span>elastisch-federnd</span>
-                          </li>
-                          <li>
-                            <span>Swiss made</span>
-                            <img
-                              className="line"
-                              src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Vector_5.png?v=1681740250"
-                              alt=""
-                            />
-                            <svg
-                              className="icon"
-                              width={100}
-                              height={100}
-                              viewBox="0 0 100 100"
-                              fill="none"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <circle
-                                cx={50}
-                                cy={50}
-                                r={49}
-                                fill="#EDEDED"
-                                fillOpacity="0.5"
-                                stroke="#DEDEDE"
-                                strokeWidth={2}
+                              <svg
+                                className="icon"
+                                width={100}
+                                height={100}
+                                viewBox="0 0 100 100"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <circle
+                                  cx={50}
+                                  cy={50}
+                                  r={49}
+                                  fill="#EDEDED"
+                                  fillOpacity="0.5"
+                                  stroke="#DEDEDE"
+                                  strokeWidth={2}
+                                />
+                                <line
+                                  x1="51.4502"
+                                  y1="27.9277"
+                                  x2="51.4502"
+                                  y2="72.9728"
+                                  stroke="black"
+                                  strokeWidth={2}
+                                />
+                                <line
+                                  x1="72.9727"
+                                  y1="51.4502"
+                                  x2="27.9276"
+                                  y2="51.4502"
+                                  stroke="black"
+                                  strokeWidth={2}
+                                />
+                              </svg>
+                            </li>
+                            <li>
+                              <span>Swiss made</span>
+                              <img
+                                className="line"
+                                src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Vector_6.png?v=1681740250"
+                                alt=""
                               />
-                              <line
-                                x1="51.4502"
-                                y1="27.9277"
-                                x2="51.4502"
-                                y2="72.9728"
-                                stroke="black"
-                                strokeWidth={2}
-                              />
-                              <line
-                                x1="72.9727"
-                                y1="51.4502"
-                                x2="27.9276"
-                                y2="51.4502"
-                                stroke="black"
-                                strokeWidth={2}
-                              />
-                            </svg>
-                          </li>
-                          <li>
-                            <span>Swiss made</span>
-                            <img
-                              className="line"
-                              src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Vector_6.png?v=1681740250"
-                              alt=""
-                            />
 
-                            <svg
-                              className="icon"
-                              width={100}
-                              height={100}
-                              viewBox="0 0 100 100"
-                              fill="none"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <circle
-                                cx={50}
-                                cy={50}
-                                r={49}
-                                fill="#EDEDED"
-                                fillOpacity="0.5"
-                                stroke="#DEDEDE"
-                                strokeWidth={2}
-                              />
-                              <line
-                                x1="51.4502"
-                                y1="27.9277"
-                                x2="51.4502"
-                                y2="72.9728"
-                                stroke="black"
-                                strokeWidth={2}
-                              />
-                              <line
-                                x1="72.9727"
-                                y1="51.4502"
-                                x2="27.9276"
-                                y2="51.4502"
-                                stroke="black"
-                                strokeWidth={2}
-                              />
-                            </svg>
-                          </li>
-                        </ul>
+                              <svg
+                                className="icon"
+                                width={100}
+                                height={100}
+                                viewBox="0 0 100 100"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <circle
+                                  cx={50}
+                                  cy={50}
+                                  r={49}
+                                  fill="#EDEDED"
+                                  fillOpacity="0.5"
+                                  stroke="#DEDEDE"
+                                  strokeWidth={2}
+                                />
+                                <line
+                                  x1="51.4502"
+                                  y1="27.9277"
+                                  x2="51.4502"
+                                  y2="72.9728"
+                                  stroke="black"
+                                  strokeWidth={2}
+                                />
+                                <line
+                                  x1="72.9727"
+                                  y1="51.4502"
+                                  x2="27.9276"
+                                  y2="51.4502"
+                                  stroke="black"
+                                  strokeWidth={2}
+                                />
+                              </svg>
+                            </li>
+                          </ul>
+                        </div>
                       </div>
                     </SwiperSlide>
                     {brandSliderImages.map((image, index) => (
                       <SwiperSlide
-                        className="w-full !h-auto lg:!h-full px-[10px] py-[10px]"
+                        className="w-full !h-auto xl:!h-full px-[10px] py-[10px]"
                         key={index}
                       >
                         <div className="bg-img w-full h-full rounded-[10px] overflow-hidden shadow-[0_0_0.9821px_#0000000d,0_3.9284px_7.8568px_#0000001a]">
@@ -431,7 +433,7 @@ export default function Collection() {
                     </SwiperSlide>
                   </Swiper>
                   <div className="slider-controls mt-[10px] flex xl:hidden flex-wrap gap-x-[37px] gap-y-[20px] items-center justify-center">
-                    <div className="products-swiper-buttons relative flex gap-[10px] xl:gap-[20px]">
+                    <div className="products-swiper-buttons flex gap-[10px] xl:gap-[20px] relative">
                       <div className="swiper-button-next-product-info rounded-full w-[50px] h-[50px] xl:w-[74px] xl:h-[74px] text-black hover:bg-black hover:text-white after:text-[30px] bg-[#DEDEDE] flex items-center justify-center rotate-180">
                         <ArrowRight
                           className={
@@ -448,10 +450,10 @@ export default function Collection() {
                       </div>
                     </div>
                   </div>
-                  <div className="info bg-[#fff] p-[20px] xl:py-[50px] xl:px-[30px] relative z-[1] w-full lg:w-full xl:w-[40%] ml-auto rounded-[10px] mt-[20px] lg:mt-[0] lg:top-[48px] mr-auto xl:mr-[50px]">
+                  <div className="info bg-[#fff] p-[20px] xl:py-[50px] xl:px-[30px] relative z-[1] w-full lg:w-full xl:w-[40%] 2xl:w-[35%] ml-auto rounded-[10px] mt-[20px] lg:mt-[0] lg:top-[48px] mr-auto xl:mr-[50px]">
                     <div className="desc mb-[20px]">
                       <h3
-                        className="desc text-[20px] xl:text-[25px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
+                        className="desc text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
                         dangerouslySetInnerHTML={{
                           __html: toHTML(
                             brandHereSection?.data?.slider_overlay_content_1
@@ -480,8 +482,8 @@ export default function Collection() {
                   </div>
                 </div>
               </div>
-              <div className="slider-controls mt-[34px] hidden xl:flex flex-wrap gap-x-[37px] gap-y-[20px] items-center">
-                <div className="products-swiper-buttons relative flex gap-[10px] xl:gap-[20px]">
+              <div className="slider-controls mt-[34px] hidden xl:flex flex-wrap gap-x-[37px] gap-y-[20px] items-center justify-center">
+                <div className="products-swiper-buttons flex gap-[10px] xl:gap-[20px]  absolute left-[30px] bottom-[90px] z-[1]">
                   <div className="swiper-button-next-product-info rounded-full w-[50px] h-[50px] xl:w-[74px] xl:h-[74px] text-black hover:bg-black hover:text-white after:text-[30px] bg-[#DEDEDE] flex items-center justify-center rotate-180">
                     <ArrowRight
                       className={

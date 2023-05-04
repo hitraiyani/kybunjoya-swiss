@@ -86,7 +86,7 @@ export default function schweizerSchuhpropktion() {
               {page?.product_misc_update?.reference?.hero_section_title_1?.value}
             </h2>
             <div
-              className="desc text-black text-[20x] xl:text-[25px] lg:text-[18px] leading-[1.3] font-[400]"
+              className="desc text-black text-[16x] lg:text-[18px] xl:text-[21px]  leading-[1.3] font-[400]"
               dangerouslySetInnerHTML={{
                 __html: toHTML(page?.product_misc_update?.reference?.hero_section_desc_1?.value),
               }}
@@ -95,7 +95,7 @@ export default function schweizerSchuhpropktion() {
               {page?.product_misc_update?.reference?.hero_section_title_2?.value}
             </h2>
             <div
-              className="desc text-black text-[20x] xl:text-[25px] lg:text-[18px] leading-[1.3] font-[400] mb-[20px]"
+              className="desc text-black text-[16x] lg:text-[18px] xl:text-[21px]  leading-[1.3] font-[400] mb-[20px]"
               dangerouslySetInnerHTML={{
                 __html: toHTML(page?.product_misc_update?.reference?.hero_section_desc_2?.value),
               }}

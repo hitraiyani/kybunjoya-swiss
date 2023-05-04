@@ -18,11 +18,11 @@ export function ProductMiscUpdate({data}) {
             />
           </div>
           <div className="content-col w-full lg:w-[60%] flex flex-col">
-            <h2 className="text-[24px] md:text-[28px] lg:text-[32px] xl:text-[40px] text-black font-bold leading-[1.2] mb-[20px]">
+            <h2 className="text-[24px] md:text-[28px] lg:text-[32px] xl:text-[40px] text-black font-medium leading-[1.2] mb-[20px]">
               {data.sub_section_1_title.value}
             </h2>
             <div
-              className="desc text-black text-[16px] lg:text-[25px] leading-[1.3] font-[400] mb-[30px]"
+              className="desc text-black text-[16px] lg:text-[21px] leading-[1.3] font-[400] mb-[30px]"
               dangerouslySetInnerHTML={{
                 __html: toHTML(data?.main_section_text?.value),
               }}
@@ -53,7 +53,7 @@ export function ProductMiscUpdate({data}) {
               />
             </div>
             <div className="content-col flex-1 flex flex-col justify-center">
-              <h2 className="text-[20px] md:text-[25px] text-[#000000] leading-[1.2] tracking-[-0.40] mb-[15px] font-normal">
+              <h2 className="text-[20px] md:text-[21px] text-[#000000] leading-[1.2] tracking-[-0.40] mb-[15px] font-normal">
                 {data.sub_section_1_title.value}
               </h2>
               <div
@@ -73,7 +73,7 @@ export function ProductMiscUpdate({data}) {
               />
             </div>
             <div className="content-col flex-1 flex flex-col justify-center">
-              <h2 className="text-[20px] md:text-[25px] text-[#000000] leading-[1.2] tracking-[-0.40] mb-[15px] font-normal">
+              <h2 className="text-[20px] md:text-[21px] text-[#000000] leading-[1.2] tracking-[-0.40] mb-[15px] font-normal">
                 {data.sub_section_2_title.value}
               </h2>
               <div
