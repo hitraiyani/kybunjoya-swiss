@@ -791,3 +791,22 @@ export function newsDescription(contentBuilder) {
   html += '</div>';
   return html;
 }
+
+export function getAicoMetaByKeyName(data,key) {
+  if (!Array.isArray(data)) {
+    data = JSON.parse(data);
+  }
+  let obj = data.find(o => o.key === key)
+  return obj?.value;
+}
+
+export function getYoutubeId(url) {
+  var regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+  var match = url.match(regExp);
+
+  if (match && match[2].length == 11) {
+   return match[2];
+  } else {
+   return 'error';
+  }
+}

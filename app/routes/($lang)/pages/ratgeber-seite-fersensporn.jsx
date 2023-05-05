@@ -11,8 +11,9 @@ import {
 } from '~/components';
 import {useLoaderData} from '@remix-run/react';
 import {MEDIA_FRAGMENT, PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
-import {toHTML, truncate} from '~/lib/utils';
+import {toHTML, truncate, getAicoMetaByKeyName, getYoutubeId} from '~/lib/utils';
 import {flattenConnection} from '@shopify/hydrogen';
+import {STORE_LOCALE, AICO_API_IMAGE_PREFIX} from '~/lib/const';
 
 const seo = ({data}) => ({
   title: data?.page?.seo?.title,
@@ -47,6 +48,49 @@ export async function loader({request, params, context}) {
 
 export default function ratgeberSeiteFersensporn() {
   const {page} = useLoaderData();
+
+  const aicoProductData = page?.fersensporn_product?.reference;
+
+  console.log("aicoProductData", aicoProductData);
+
+  const apicoProductTags = [];
+  aicoProductData?.tags?.forEach((item) => {
+    if (item.includes('attribute_de_Dr.')) {
+      apicoProductTags.push(item.split('_').at(-1));
+    }
+  });
+
+  const aicoContentBuilders = aicoProductData?.aico_content_builders?.value ? JSON.parse(aicoProductData.aico_content_builders.value) : [];
+  const aicoTestimonialsData = aicoProductData?.testimonials_data?.value ? JSON.parse(aicoProductData.testimonials_data.value) : [];
+
+  let aicoCotentBuilderHtml = '';
+  if (aicoContentBuilders.length) {
+    aicoCotentBuilderHtml = aicoContentBuilders[0]['values'][0]['contentBuilder']['value'];
+  }
+
+
+  const dkj_videourl_de_ch = getAicoMetaByKeyName(
+    aicoProductData?.aico_custom_fields_de_ch?.value,
+    'dkj_videourl_de_ch',
+  );
+
+  const dkj_name_international_de_ch = getAicoMetaByKeyName(
+    aicoProductData?.aico_custom_fields_de_ch?.value,
+    'dkj_name_international_de_ch',
+  );
+
+  const videoId = getYoutubeId(dkj_videourl_de_ch);
+
+  const dkj_videotitel_de_ch = getAicoMetaByKeyName(
+    aicoProductData?.aico_custom_fields_de_ch?.value,
+    'dkj_videotitel_de_ch',
+  );
+
+  const dkj_videobeschreibung_de_ch = getAicoMetaByKeyName(
+    aicoProductData?.aico_custom_fields_de_ch?.value,
+    'dkj_videobeschreibung_de_ch',
+  );
+
 
   const [menuLinks, setMenuLinks] = useState([]);
 
@@ -161,14 +205,12 @@ export default function ratgeberSeiteFersensporn() {
                   <div className="title-wrap">
                     <h2 className="title text-[#00795C] text-[35px] lg:text-[40px] xl:text-[65px] tracking-[-1.05984px]">
                       {
-                        page?.ratgeber_seite_fersensporn_mobile?.reference
-                          ?.head_title_sub?.value
+                        aicoProductData?.title
                       }
                     </h2>
                     <h3 className="text-[24px] md:text-[28px] xl:text-[30px] text-[#00795C] font-bold leading-[1.2] mb-[20px]">
                       {
-                        page?.ratgeber_seite_fersensporn_mobile?.reference
-                          ?.head_title_sub_secondary?.value
+                        dkj_name_international_de_ch
                       }
                     </h3>
                   </div>
@@ -176,33 +218,33 @@ export default function ratgeberSeiteFersensporn() {
                 <div
                   className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
                   dangerouslySetInnerHTML={{
-                    __html: toHTML(
-                      page?.ratgeber_seite_fersensporn_mobile?.reference
-                        ?.head_desc?.value,
+                    __html: (
+                        page?.fersensporn_product?.reference?.description_de_ch?.value
                     ),
                   }}
                 ></div>
               </div>
               <div className="col-right w-full lg:w-[50%]">
                 <div className="video-info">
-                  {mainVideoSection?.video_url && (
+                  {dkj_videourl_de_ch && (
                     <div className="video-wrap w-full rounded-[10px] relative overflow-hidden pb-[50%]">
-                      <iframe
+                      {videoId !='error' ? (<iframe
                         className="absolute w-full h-full inset-0 object-cover bg-cover"
-                        src={mainVideoSection?.video_url}
+                        src={`//www.youtube.com/embed/${videoId}`}
                         title="YouTube video player"
                         frameBorder={0}
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowFullScreen
-                      />
+                      />) : (<video controls="controls" src={dkj_videourl_de_ch}></video>)}
+                      
                     </div>
                   )}
                   <div className="info mt-[12px]">
                     <h4 className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-[#00795C] tracking-[-0.400697px] font-bold leading-[1.2] mb-[5px]">
-                      {mainVideoSection?.video_title}
+                      {dkj_videotitel_de_ch}
                     </h4>
                     <div className="desc text-[16px] md:text-[18px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
-                      <p>{mainVideoSection?.video_desc}</p>
+                      <p>{dkj_videobeschreibung_de_ch}</p>
                     </div>
                   </div>
                 </div>
@@ -211,36 +253,35 @@ export default function ratgeberSeiteFersensporn() {
           </div>
         </section>
         <section className="rich-text-sec mt-[40px] md:mt-[60px] lg:mt-[80px] xl:mt-[100px]">
+
           <div className="rich-text-inner">
-            <div className="title-wrap mb-[20px]">
+            {/* <div className="title-wrap mb-[20px]">
               <h4 className="text-black text-[35px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] mb-[20px] font-medium">
                 {
                   page?.ratgeber_seite_fersensporn_mobile?.reference
                     ?.wie_kybun_joya_hilft_section_title?.value
                 }
               </h4>
-            </div>
+            </div> */}
             <div className="flex flex-col lg:flex-row gap-y-[30px] lg:gap-x-[50px] xl:gap-x-[60px]">
               <div className="col-left w-full lg:w-[50%]">
                 <div className="mobile-info">
                   <div
                     className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
                     dangerouslySetInnerHTML={{
-                      __html:
-                        page?.ratgeber_seite_fersensporn_mobile?.reference
-                          ?.wie_kybun_joya_hilft_section_desc?.value,
+                      __html: aicoCotentBuilderHtml,
                     }}
                   ></div>
                 </div>
               </div>
               <div className="col-right w-full lg:w-[50%]">
                 <div className="desc text-[16px] md:text-[16px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mb-[32px]"
-                     dangerouslySetInnerHTML={{
-                      __html:
-                        page?.ratgeber_seite_fersensporn_mobile?.reference
-                          ?.wie_kybun_joya_hilft_section_right_side_desc?.value,
-                    }}
                 >
+                  <ul className="list-style2 list-style3">
+                    { apicoProductTags.map((item,index) => {
+                        return (<li key={index}>{item}</li>)
+                    }) }
+                  </ul>
                 </div>
                 <div className="btn-wrap mt-[20px]">
                   <a
@@ -355,7 +396,53 @@ export default function ratgeberSeiteFersensporn() {
                     },
                   }}
                 >
-                  {kundenmeinungenSectionDesc.map((item, index) => {
+                  {
+                    aicoTestimonialsData.map((item,index) => {
+                      const testimonialsObj = {
+                        title : '',
+                        text : '',
+                        image : '',
+                      }
+                      item.values?.forEach((value) => {
+                          if (value.locale.toLowerCase() == STORE_LOCALE.toLowerCase()) {
+                            testimonialsObj.title = value.title;  
+                            testimonialsObj.text = value.text;  
+                            testimonialsObj.image = value.image;  
+                            var prefix = 'http://';
+                            if (value.image && value.image.substr(0, prefix.length) !== prefix) {
+                              testimonialsObj.image = AICO_API_IMAGE_PREFIX + value.image;
+                            }
+                          }
+                      })
+                      return (<SwiperSlide key={index}>
+                        <div className="item p-[30px] bg-[#EDEDED] box-border break-inside-avoid mb-[20px] rounded-[10px] shadow-[0px_0px_0.9821px_rgba(0,0,0,0.05),0px_3.9284px_7.8568px_rgba(0,0,0,0.1)] w-full">
+                          <div className="item-inner">
+                            <div className="desc text-[16px] md:text-[18px] lg:text-[20px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
+                              <p>{testimonialsObj.text}</p>
+                            </div>
+                            <div className="customer-info flex border-t border-[#DEDEDE] pt-[10px] mt-[10px] gap-[10px] items-center">
+                              <div className="customer-img w-[50px] h-[50px] md:w-[100px] md:h-[100px] relative overflow-hidden rounded-full">
+                                <img
+                                  className="absolute w-full h-full object-cover rounded-full"
+                                  src={testimonialsObj.image}
+                                  alt=""
+                                />
+                              </div>
+                              <div className="info flex-1">
+                                <h4 className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-bold leading-[1.4] mb-[5px]">
+                                  {testimonialsObj.title}
+                                </h4>
+                                {/* <h5 className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
+                                  {item.user_location}
+                                </h5> */}
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </SwiperSlide>)
+                    })
+                  }
+                  {/* {kundenmeinungenSectionDesc.map((item, index) => {
                     return (
                       <SwiperSlide key={index}>
                         <div className="item p-[30px] bg-[#EDEDED] box-border break-inside-avoid mb-[20px] rounded-[10px] shadow-[0px_0px_0.9821px_rgba(0,0,0,0.05),0px_3.9284px_7.8568px_rgba(0,0,0,0.1)] w-full">
@@ -384,7 +471,7 @@ export default function ratgeberSeiteFersensporn() {
                         </div>
                       </SwiperSlide>
                     );
-                  })}
+                  })} */}
                 </Swiper>
               </div>
             </div>
@@ -569,6 +656,26 @@ ${PRODUCT_CARD_FRAGMENT}
       id
       title
       body
+      fersensporn_product : metafield(namespace: "custom", key: "fersensporn_product") {
+        reference {
+          ... on Product {
+            title
+            tags
+            aico_content_builders : metafield(namespace: "aico", key: "aico_content_builders") {
+              value
+            }
+            aico_custom_fields_de_ch : metafield(namespace: "aico", key: "aico_custom_fields_de_ch") {
+              value
+            }
+            description_de_ch : metafield(namespace: "custom_fields", key: "description_de_ch") {
+              value
+            }
+            testimonials_data : metafield(namespace: "custom_fields", key: "testimonials_data") {
+              value
+            }
+          }
+        }
+      }
       ratgeber_seite_fersensporn_mobile : metafield(namespace: "custom", key: "ratgeber_seite_fersensporn_mobile") {
         reference {
           ... on Metaobject {

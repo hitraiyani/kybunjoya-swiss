@@ -2218,6 +2218,9 @@ video {
 .text-\[20px\] {
   font-size: 20px;
 }
+.text-\[21px\] {
+  font-size: 21px;
+}
 .text-\[22px\] {
   font-size: 22px;
 }
@@ -2257,9 +2260,6 @@ video {
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
-}
-.text-\[21px\] {
-  font-size: 21px;
 }
 .font-\[400\] {
   font-weight: 400;
