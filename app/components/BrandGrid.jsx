@@ -1,15 +1,64 @@
-export function BrandGrid({data}) {
+import {useEffect, useState} from 'react';
+import {AICO_API_URL, AICO_API_TOKEN, STORE_LOCALE} from '~/lib/const';
 
-  const brandImages =
-    data?.images?.references?.edges.map(
-      (data) => data.node.image.url,
-    );
+
+export function BrandGrid({className}) {
+  
+  const [brandData, setbrandData] = useState([]);
+
+  const loadBrandSlider = async () => {
+    const brandResponse = await fetch(`${AICO_API_URL}brands?filter[isTopBrand]=1`, {
+      method: 'GET',
+      headers: {
+        'Authorization': `Bearer ${AICO_API_TOKEN}`,
+      }
+    });
+    const brandResponseData = await brandResponse.json();
+    setbrandData(brandResponseData.data);
+  }
+
+  // const brandImages =
+  //   data?.images?.references?.edges.map(
+  //     (data) => data.node.image.url,
+  //   );
+
+  useEffect(() => {
+      loadBrandSlider();
+  },[]);
 
   return (
-    <section className={`brand-sec`}>
+    <section className={`${className} brand-sec`}>
       <div className="container">
         <div className="brand-wrap flex flex-row flex-wrap gap-7 lg:gap-10 xl:gap-16 items-center justify-center">
-        {brandImages.map((image, index) => (
+        {
+          brandData.map((item, index) => {
+              let brandImage = '';
+              let brandRedirectUrl = '';
+              if (item?.attributes?.translations != null) {
+                const itemTrans = item?.attributes?.translations;
+                for (var nc = 0; nc < itemTrans.length; nc++) {
+                  if (itemTrans[nc].locale == STORE_LOCALE) {
+                    brandImage = itemTrans[nc].image;
+                    brandRedirectUrl = itemTrans[nc].videoUrl;
+                    var prefix = 'http://';
+                    if (brandRedirectUrl && brandRedirectUrl.substr(0, prefix.length) !== prefix) {
+                      brandRedirectUrl = prefix + brandRedirectUrl;
+                    }
+                  }
+                }
+              }
+             return (
+              <a className="brand-logo opacity-50 hover:opacity-100 w-28 sm:w-40 h-14" href={brandRedirectUrl} key={index}>
+                <img
+                  className="w-full h-full object-contain"
+                  src={brandImage}
+                  alt=""
+                />
+              </a>
+             )
+          })
+        }
+        {/* {brandImages.map((image, index) => (
             <a className="brand-logo opacity-50 hover:opacity-100 w-28 sm:w-40 h-14" href="#" key={index}>
               <img
                 className="w-full h-full object-contain"
@@ -17,7 +66,7 @@ export function BrandGrid({data}) {
                 alt=""
               />
             </a>
-        ))}
+        ))} */}
         </div>
       </div>
     </section>

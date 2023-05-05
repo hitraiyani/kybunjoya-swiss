@@ -11,6 +11,7 @@ import {
   IconCart,
   IconMapPin,
   Link,
+  BrandGrid
 } from '~/components';
 import {ProductGrid} from '~/components/ProductGrid';
 import {PRODUCT_CARD_FRAGMENT, MEDIA_FRAGMENT} from '~/data/fragments';
@@ -522,6 +523,7 @@ export default function Collection() {
             />
           </SortFilter>
         </Section>
+        <BrandGrid className={'pb-[40px] md:pb-[60px] lg:pb-[80px] xl:pb-[100px]'}/>
       </div>
     </>
   );

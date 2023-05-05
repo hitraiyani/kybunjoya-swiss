@@ -42,17 +42,16 @@ export async function loader({params, context}) {
       variables: {metaObjectId: 'gid://shopify/Metaobject/2003108161'},
     },
   );
-  const brandIcons = context.storefront.query(
-    HOMEPAGE_BRAND_ICONS_QUERY,
-    {
-      variables: {metaObjectId: 'gid://shopify/Metaobject/2168619329'},
-    },
-  );
+  // const brandIcons = context.storefront.query(
+  //   HOMEPAGE_BRAND_ICONS_QUERY,
+  //   {
+  //     variables: {metaObjectId: 'gid://shopify/Metaobject/2168619329'},
+  //   },
+  // );
 
   return defer({
     shop,
     heroSlider,
-    brandIcons,
     fourMainSection,
     analytics: {
       pageType: AnalyticsPageType.home,
@@ -63,7 +62,6 @@ export async function loader({params, context}) {
 export default function Homepage() {
   const {
     heroSlider,
-    brandIcons,
     fourMainSection
   } = useLoaderData();
   const [root] = useMatches();
@@ -83,6 +81,7 @@ export default function Homepage() {
     const newsData = await newsResponse.json();
     setNewsSliderData(newsData);
   }
+
 
   useEffect(() => {
       loadNewSlider();
@@ -113,16 +112,7 @@ export default function Homepage() {
         </Suspense>
       )}
 
-      {brandIcons && (
-        <Suspense>
-          <Await resolve={brandIcons}>
-            {({data}) => {
-              if (!data) return <></>;
-              return <BrandGrid data={data} />;
-            }}
-          </Await>
-        </Suspense>
-      )}
+      <BrandGrid />
 
       {newsSliderData?.data && <NewsSlider news={newsSliderData?.data} />}
       
