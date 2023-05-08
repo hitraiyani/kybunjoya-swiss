@@ -1134,3 +1134,25 @@ p:last-child {
 .swiper-button-next-product-info.swiper-button-disabled {
   opacity: 0.2 !important;
 }
+
+/* aico-Cotent-Builder css */
+.aicoCotentBuilderWrap .content-column {
+  padding: 0 !important;
+}
+.aicoCotentBuilderWrap .content-column h1 {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 1.1;
+  letter-spacing: -0.97152px;
+  color: #000000;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 1023px) {
+  .aicoCotentBuilderWrap .content-column h1 {
+    font-size: 30px;
+  }
+}
+/* End aico-Cotent-Builder css */

@@ -265,7 +265,7 @@ export default function ratgeberSeiteFersensporn() {
             </div> */}
             <div className="flex flex-col lg:flex-row gap-y-[30px] lg:gap-x-[50px] xl:gap-x-[60px]">
               <div className="col-left w-full lg:w-[50%]">
-                <div className="mobile-info">
+                <div className="mobile-info aicoCotentBuilderWrap">
                   <div
                     className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
                     dangerouslySetInnerHTML={{
