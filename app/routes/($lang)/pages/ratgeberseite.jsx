@@ -37,6 +37,7 @@ export async function loader({request, params, context}) {
 }
 export default function ratgeberseite() {
   const {page} = useLoaderData();
+  
 
   const buttonAccordionMapping = page?.ratgeber_detail?.reference
     ?.button_accordion_mapping?.value
@@ -89,6 +90,12 @@ export default function ratgeberseite() {
         document.querySelectorAll('.kb-body-icon').forEach(function (icon) {
           icon.classList.remove('active');
         });
+
+        if (this.getAttribute('hreflink')) {
+          window.location.href = this.getAttribute('hreflink')
+          return true;
+        }
+        
 
         // add active class to clicked element
         this.classList.add('active');
@@ -229,6 +236,7 @@ export default function ratgeberseite() {
                       <a
                         key={index}
                         href={`#link${index + 1}`}
+                        hreflink={item.hreflink}
                         className="p-[15px] xl:px-[20px] xl:py-[26px] flex justify-center items-center text-center bg-white rounded-[10px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[20px] 2xl:text-[21px] leading-[1.4] hover:text-white hover:bg-[#00795C] xl:min-h-[116px] font-bold text-[#00795C] transition-all duration-500 my-achor-link"
                       >
                         {item.button_name}
