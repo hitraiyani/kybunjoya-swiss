@@ -2,7 +2,7 @@ import {ExpandingCardStyle2, Link, IconClose} from '~/components';
 import React, {Fragment, useState, useEffect} from 'react';
 import {json} from '@shopify/remix-oxygen';
 import {useLoaderData} from '@remix-run/react';
-import {MEDIA_FRAGMENT} from '~/data/fragments';
+import {MEDIA_FRAGMENT, PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
 import {toHTML} from '~/lib/utils';
 
 const seo = ({data}) => ({
@@ -13,7 +13,7 @@ const seo = ({data}) => ({
 export const handle = {
   seo,
 };
-
+const PAGINATION_SIZE = 40;
 export async function loader({request, params, context}) {
   const {page} = await context.storefront.query(PAGE_QUERY, {
     variables: {
@@ -26,8 +26,37 @@ export async function loader({request, params, context}) {
     throw new Response(null, {status: 404});
   }
 
+  const collectionHandle = 'all-products';
+
+
+  const searchParams = new URL(request.url).searchParams;
+
+  const knownFilters = ['productVendor', 'productType'];
+  const available = 'available';
+  const variantOption = 'variantOption';
+  const {sortKey, reverse} = getSortValuesFromParam(searchParams.get('sort'));
+  const cursor = searchParams.get('cursor');
+  
+  const filters = [ { productType: 'Dr. kybun Joya' } ]
+
+  const {collection} = await context.storefront.query(
+    COLLECTION_QUERY,
+    {
+      variables: {
+        handle: collectionHandle,
+        pageBy: PAGINATION_SIZE,
+        cursor,
+        filters,
+        sortKey,
+        reverse,
+        country: context.storefront.i18n.country,
+        language: context.storefront.i18n.language,
+      },
+    },
+  );
+
   return json(
-    {page},
+    {page, collection},
     {
       headers: {
         // TODO cacheLong()
@@ -36,7 +65,9 @@ export async function loader({request, params, context}) {
   );
 }
 export default function ratgeberseite() {
-  const {page} = useLoaderData();
+  const {page, collection} = useLoaderData();
+
+  console.log("collection", collection);
   
 
   const buttonAccordionMapping = page?.ratgeber_detail?.reference
@@ -231,7 +262,19 @@ export default function ratgeberseite() {
                   </form>
                 </div>
                 <div className="scroll-links-wrap grid grid-cols-2 min-[1701px]:gap-x-[40px] max-[1700px]:gap-[20px] min-[1701px]:gap-y-[45px] gap-[20px] mt-[30px]">
-                  {buttonAccordionMapping?.map((item, index) => {
+                  {collection?.products?.nodes.map((product,index) => {
+                      console.log(product);
+                      return (
+                        <a
+                          key={index}
+                          href={`#link${index + 1}`}
+                          className="p-[15px] xl:px-[20px] xl:py-[26px] flex justify-center items-center text-center bg-white rounded-[10px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[20px] 2xl:text-[21px] leading-[1.4] hover:text-white hover:bg-[#00795C] xl:min-h-[116px] font-bold text-[#00795C] transition-all duration-500 my-achor-link"
+                        >
+                          {product.title}
+                        </a>
+                      );
+                  })}
+                  {/* {buttonAccordionMapping?.map((item, index) => {
                     return (
                       <a
                         key={index}
@@ -242,7 +285,7 @@ export default function ratgeberseite() {
                         {item.button_name}
                       </a>
                     );
-                  })}
+                  })} */}
                 </div>
               </div>
             </div>
@@ -283,6 +326,72 @@ export default function ratgeberseite() {
     </>
   );
 }
+
+const COLLECTION_QUERY = `#graphql
+  ${PRODUCT_CARD_FRAGMENT}
+  query CollectionDetails(
+    $handle: String!
+    $country: CountryCode
+    $language: LanguageCode
+    $pageBy: Int!
+    $cursor: String
+    $filters: [ProductFilter!]
+    $sortKey: ProductCollectionSortKeys!
+    $reverse: Boolean
+  ) @inContext(country: $country, language: $language) {
+    collection(handle: $handle) {
+      id
+      handle
+      title
+      description
+      seo {
+        description
+        title
+      }
+      image {
+        id
+        url
+        width
+        height
+        altText
+      }
+      products(
+        first: $pageBy,
+        after: $cursor,
+        filters: $filters,
+        sortKey: $sortKey,
+        reverse: $reverse
+      ) {
+        filters {
+          id
+          label
+          type
+          values {
+            id
+            label
+            count
+            input
+          }
+        }
+        nodes {
+          ...ProductCard
+        }
+        pageInfo {
+          hasNextPage
+          endCursor
+        }
+      }
+    }
+    collections(first: 100) {
+      edges {
+        node {
+          title
+          handle
+        }
+      }
+    }
+  }
+`;
 
 const PAGE_QUERY = `#graphql
 ${MEDIA_FRAGMENT}
@@ -329,3 +438,39 @@ ${MEDIA_FRAGMENT}
     }
   }
 `;
+
+
+function getSortValuesFromParam(sortParam) {
+  switch (sortParam) {
+    case 'price-high-low':
+      return {
+        sortKey: 'PRICE',
+        reverse: true,
+      };
+    case 'price-low-high':
+      return {
+        sortKey: 'PRICE',
+        reverse: false,
+      };
+    case 'best-selling':
+      return {
+        sortKey: 'BEST_SELLING',
+        reverse: false,
+      };
+    case 'newest':
+      return {
+        sortKey: 'CREATED',
+        reverse: true,
+      };
+    case 'featured':
+      return {
+        sortKey: 'MANUAL',
+        reverse: false,
+      };
+    default:
+      return {
+        sortKey: 'RELEVANCE',
+        reverse: false,
+      };
+  }
+}
