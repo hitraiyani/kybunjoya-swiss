@@ -129,7 +129,7 @@ p:last-child {
 }
 .mobile-menu-Drawer li a.title:hover,
 .mobile-menu-Drawer li a.title.is-active {
-  text-decoration: underline;
+  /* text-decoration: underline; */
 }
 .mobile-menu-Drawer li a.title:hover::before,
 .mobile-menu-Drawer li a.title.is-active::before {

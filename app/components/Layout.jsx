@@ -185,7 +185,7 @@ function MenuMobileNav({menu, onClose}) {
                 <Link
                   to={item.to}
                   target={item.target}
-                  className={`kybunjoya-menu-hover title text-[#00795C] text-[26px] mb-[12px] ${item.to == pathname ? 'is-active' : ''} `}
+                  className={`kybunjoya-menu-hover title text-[#00795C] text-[26px] mb-[12px] outline-none ${item.to == pathname ? 'is-active' : ''} `}
                   data-image={item.title}
                   onClick={onClose}
                 >
@@ -507,7 +507,7 @@ function Footer({menu, main_menu}) {
                                 <Link
                                   to={item.to}
                                   target={item.target}
-                                  className="kybunjoya-menu-hover title text-[#00795C] text-[26px] mb-[12px]"
+                                  className="kybunjoya-menu-hover title text-[#00795C] text-[26px] mb-[12px] outline-none"
                                   data-image={item.title}
                                 >
                                   {item.title}
