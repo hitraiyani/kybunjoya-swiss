@@ -60,14 +60,12 @@ export async function loader({request, params, context}) {
 
 export default function ratgeberSeiteFersensporn() {
   const {page, product, ratgeber_seite_fersensporn_mobile} = useLoaderData();
-
-  console.log("product", product);
-  console.log("ratgeber_seite_fersensporn_mobile", ratgeber_seite_fersensporn_mobile);
+  
   const aicoProductData = product;
 
   const apicoProductTags = [];
   aicoProductData?.tags?.forEach((item) => {
-    if (item.includes('attribute_de_Dr.')) {
+    if (item.includes('attribute_de')) {
       apicoProductTags.push(item.split('_').at(-1));
     }
   });
