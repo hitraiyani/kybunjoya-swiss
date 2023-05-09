@@ -67,7 +67,13 @@ export async function loader({request, params, context}) {
 export default function ratgeberseite() {
   const {page, collection} = useLoaderData();
 
-  console.log("collection", collection);
+  const [searchQuery, setSearchQuery] = useState('');
+
+
+  const filteredKybunJoyaProducts = collection?.products?.nodes.filter((product) => {
+      return product.title.toLowerCase().includes(searchQuery.toLowerCase())
+  });
+
   
 
   const buttonAccordionMapping = page?.ratgeber_detail?.reference
@@ -256,13 +262,15 @@ export default function ratgeberseite() {
                         type="search"
                         placeholder="Suchen"
                         name="q"
+                        value={searchQuery}
+                        onChange={e => setSearchQuery(e.target.value)}
                         className="text-left transition border-transparent appearance-none focus:outline-0 placeholder:text-[#00795C] text-[#00795C] block pl-[62px] pr-[20px] rounded-[100px] bg-[#EDEDED] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] py-[20px] 2xl:py-[28px] tracking-[-0.400697px] font-normal leading-none w-full"
                       />
                     </div>
                   </form>
                 </div>
                 <div className="scroll-links-wrap grid grid-cols-2 min-[1701px]:gap-x-[40px] max-[1700px]:gap-[20px] min-[1701px]:gap-y-[45px] gap-[20px] mt-[30px]">
-                  {collection?.products?.nodes.map((product,index) => {
+                  {filteredKybunJoyaProducts.map((product,index) => {
                       return (
                         <a
                           key={index}
