@@ -60,15 +60,22 @@ export async function loader({request, params, context}) {
 
 export default function ratgeberSeiteFersensporn() {
   const {page, product, ratgeber_seite_fersensporn_mobile} = useLoaderData();
-  
+
   const aicoProductData = product;
 
   const apicoProductTags = [];
   aicoProductData?.tags?.forEach((item) => {
-    if (item.includes('attribute_de')) {
+    if (item.includes('attribute_de_Dr.')) {
       apicoProductTags.push(item.split('_').at(-1));
     }
   });
+  const apicoProductTagsUrsachen = [];
+  aicoProductData?.tags?.forEach((item) => {
+    if (item.includes('attribute_de_Ursachen')) {
+      apicoProductTagsUrsachen.push(item.split('_').at(-1));
+    }
+  });
+  console.log("apicoProductTagsUrsachen", apicoProductTagsUrsachen);
 
   const aicoContentBuilders = aicoProductData?.aico_content_builders?.value ? JSON.parse(aicoProductData.aico_content_builders.value) : [];
   const aicoTestimonialsData = aicoProductData?.testimonials_data?.value ? JSON.parse(aicoProductData.testimonials_data.value) : [];
@@ -276,6 +283,9 @@ export default function ratgeberSeiteFersensporn() {
                   <ul className="list-style2 list-style3">
                     { apicoProductTags.map((item,index) => {
                         return (<li key={index}>{item}</li>)
+                    }) }
+                    { apicoProductTagsUrsachen.map((item,index) => {
+                        return (<li className='list-style-red' key={index}>{item}</li>)
                     }) }
                   </ul>
                 </div>
