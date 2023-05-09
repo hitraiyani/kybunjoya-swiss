@@ -263,11 +263,11 @@ export default function ratgeberseite() {
                 </div>
                 <div className="scroll-links-wrap grid grid-cols-2 min-[1701px]:gap-x-[40px] max-[1700px]:gap-[20px] min-[1701px]:gap-y-[45px] gap-[20px] mt-[30px]">
                   {collection?.products?.nodes.map((product,index) => {
-                      console.log(product);
                       return (
                         <a
                           key={index}
                           href={`#link${index + 1}`}
+                          hreflink={`/products/custom-product/${product.handle}`}
                           className="p-[15px] xl:px-[20px] xl:py-[26px] flex justify-center items-center text-center bg-white rounded-[10px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[20px] 2xl:text-[21px] leading-[1.4] hover:text-white hover:bg-[#00795C] xl:min-h-[116px] font-bold text-[#00795C] transition-all duration-500 my-achor-link"
                         >
                           {product.title}
