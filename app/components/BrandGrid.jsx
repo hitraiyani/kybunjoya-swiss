@@ -30,8 +30,6 @@ export function BrandGrid({className}) {
   }, []);
   const [slidesPerView, setSlidesPerView] = useState(false);
   const handleTransitionEnd = (swiper) => {    
-    console.log(swiper)
-    console.log(swiper.activeIndex, swiper.slides.length)
     if (swiper.activeIndex === 0 || (swiper.slides.length === swiper.activeIndex) ) {
       setSlidesPerView(false);
     } else {
@@ -53,24 +51,20 @@ export function BrandGrid({className}) {
             onSlideChange={handleTransitionEnd}
             centeredSlides= {slidesPerView}
             slidesPerView="auto"
+            autoplay={{
+              delay: 2500,
+              disableOnInteraction: false,
+            }}
             // breakpoints={{
             //   0: {
-            //     slidesPerView: 2.5,
-            //   },
-            //   575: {
-            //     slidesPerView: 3.5,
-            //   },
-            //   768: {
-            //     slidesPerView: 4.5,
-            //   },
-            //   1024: {
-            //     slidesPerView: 5.5,
+            //     autoplay: {
+            //       delay:2500
+            //     }
             //   },
             //   1280: {
-            //     slidesPerView: 6,
+            //     autoplay: "true"
             //   },
             // }}
-            className=""
           >
             {brandData.map((item, index) => {
               let brandImage = '';
