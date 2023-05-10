@@ -572,13 +572,18 @@ function Footer({menu, main_menu}) {
                     </p>
                   </div>
                   <form className="mt-12 mb-10">
-                    <input
-                      type="email"
-                      id="email"
-                      className="bg-transparent border-b-[1px] font-normal border-[#999999] text-[#000] text-base placeholder:text-[#CCCCCC] focus:ring-black-500 focus:border-black-500 block w-full max-w-[576px] max-w-sm-full p-0 focus:bordr-0 focus:outline-none focus:border-b-[1px] focus:border-[#000] dark:placeholder-gray-400  dark:focus:ring-black-500 dark:focus:border-black-500 pb-[10px]"
-                      placeholder="Email"
-                      required
-                    />
+                    <div className='max-w-[576px] max-w-sm-full relative'>
+                      <input
+                        type="email"
+                        id="email"
+                        className="bg-transparent border-b-[1px] font-normal border-[#999999] text-[#000] text-base placeholder:text-[#CCCCCC] focus:ring-black-500 focus:border-black-500 block w-full p-0 focus:bordr-0 focus:outline-none focus:border-b-[1px] focus:border-[#000] dark:placeholder-gray-400  dark:focus:ring-black-500 dark:focus:border-black-500 pb-[10px] pr-[20px]"
+                        placeholder="Email"
+                        required
+                      />
+                      <button className='absolute right-[-10px] top-1/2 -translate-y-1/2 text-[#CCCCCC]'>
+                        <IconArrowBottom className={'rotate-[-90deg] w-[30px] h-[30px]'} />
+                      </button>
+                    </div>
                   </form>
                 </div>
                 <div className="grid grid-cols-2 gap-y-0 gap-8 lg:gap-8 lg:grid-cols-3">
@@ -605,7 +610,9 @@ function Footer({menu, main_menu}) {
                                     className="toggle-menu-icon text-[#00795C] absolute top-0 right-0 w-[40px] h-[30px] flex items-center justify-end md:hidden cursor-pointer"
                                   >
                                     <IconArrowBottom
-                                      className={'w-[30px] h-[30px] transition-all duration-500'}
+                                      className={
+                                        'w-[30px] h-[30px] transition-all duration-500'
+                                      }
                                     />
                                   </div>
                                   <FooterMainMenuSub
@@ -647,7 +654,7 @@ function Footer({menu, main_menu}) {
                 </div> */}
                 <div className="flex mb-11">
                   <p className="font-normal text-base text-[#595959] flex gap-4 items-center">
-                    <span>
+                    {/* <span>
                       <svg
                         width="18"
                         height="13"
@@ -659,12 +666,12 @@ function Footer({menu, main_menu}) {
                           fill="#595959"
                         />
                       </svg>
-                    </span>{' '}
+                    </span>{' '} */}
                     <a
                       href="#"
                       className="hover:underline hover:text-[#00795C] font-normal text-base text-[#595959]"
                     >
-                      Contact us{' '}
+                      Kontakt{' '}
                     </a>{' '}
                   </p>
                 </div>

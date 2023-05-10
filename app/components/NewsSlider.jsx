@@ -1,6 +1,5 @@
-import {Link, Heading} from '~/components';
-import {Navigation, Pagination, Scrollbar, A11y, Autoplay} from 'swiper';
-import {Swiper, SwiperSlide} from 'swiper/react';
+import {Link, Heading, ArrowRight} from '~/components';
+import Slider from 'react-slick';
 import {toHTML, truncate} from '~/lib/utils';
 import {STORE_LOCALE} from '~/lib/const';
 
@@ -8,43 +7,53 @@ import {STORE_LOCALE} from '~/lib/const';
  * Hero component that renders metafields attached to collection resources
  **/
 export function NewsSlider({news}) {
+  var settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    arrows: true,
+    centerMode: true,
+    responsive: [
+      {
+        breakpoint: 1280,
+        settings: {
+          slidesToShow: 3,
+          centerPadding: '0',
+        },
+      },
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          centerPadding: '0',
+        },
+      },
+      {
+        breakpoint: 767,
+        settings: {
+          slidesToShow: 2,
+          centerPadding: '50px',
+        },
+      },
+      {
+        breakpoint: 576,
+        settings: {
+          slidesToShow: 1,
+          centerPadding: '40px',
+        },
+      },
+    ],
+  };
   return (
-    <section className="article-slide py-[40px] md:py-[60px] lg:py-[80px] xl:py-[100px]">
+    <section className="article-slide py-[40px] md:py-[60px] lg:py-[80px] xl:py-[100px] relative">
       <div className="container">
         <h2 className="text-[#00795C] text-[30px] lg:text-[35px] xl:text-[40px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold">
           Neues und Aktuelles
         </h2>
-        <Swiper
-          className="article-slider"
-          modules={[Navigation, Scrollbar, A11y, Autoplay]}
-          slidesPerView={4}
-          navigation
-          spaceBetween="20"
-          // autoplay={{
-          //   delay: 2500,
-          //   disableOnInteraction: false,
-          // }}
-          autoplay="false"
-          breakpoints={{
-            0: {
-              slidesPerView: 1.3,
-              spaceBetween: 10,
-            },
-            768: {
-              slidesPerView: 2.5,
-              spaceBetween: 20,
-            },
-            1024: {
-              slidesPerView: 3,
-              spaceBetween: 20,
-            },
-            1280: {
-              slidesPerView: 4,
-              spaceBetween: 20,
-            },
-          }}
-        >
-          <div className="grid grid-cols-1 gap-4 mb-8 md:grid-cols-2 xl:grid-cols-3">
+        <div className="">
+          <Slider {...settings}>
             {news?.map((newItem, index) => {
               let imgSrc = newItem?.attributes?.optimizedImage;
               if (newItem.attributes.optimizedImage == null) {
@@ -61,12 +70,13 @@ export function NewsSlider({news}) {
                     var brandName = brand.translations[nc].webName
                       ? brand.translations[nc].webName
                       : brand.translations[nc].name;
-                      badgeLabel = brandName.charAt(0).toUpperCase() + brandName.slice(1);
+                    badgeLabel =
+                      brandName.charAt(0).toUpperCase() + brandName.slice(1);
                   }
                 }
               }
               var catName = '';
-              
+
               // if (newItem?.attributes?.newsCategory != null) {
               //   var cat = newItem?.attributes?.newsCategory;
               //   for (var nc = 0; nc < cat.translations.length; nc++) {
@@ -81,8 +91,8 @@ export function NewsSlider({news}) {
               //   }
               // }
               return (
-                <SwiperSlide key={index}>
-                  <div>
+                <>
+                  <div key={index}>
                     <Link
                       to={`/pages/news/${newItem.attributes.urlHandle}`}
                       className="relative block overflow-hidden mb-5"
@@ -93,9 +103,17 @@ export function NewsSlider({news}) {
                           src={imgSrc}
                         ></img>
                       </div>
-                      <p className="right-[15px] absolute top-[15px]"
-                      >
-                      <span className='text-[16px] text-white font-normal mb-[5px] bg-[#00795C] leading-none  w-fit block py-[10px] px-[16px] rounded-[10px] shadow-md capitalize' style={ badgeLabel == 'Kybun' ? { backgroundColor : "#980A2B"} : {}}>{badgeLabel}</span>
+                      <p className="right-[15px] absolute top-[15px]">
+                        <span
+                          className="text-[16px] text-white font-normal mb-[5px] bg-[#00795C] leading-none  w-fit block py-[10px] px-[16px] rounded-[10px] shadow-md capitalize"
+                          style={
+                            badgeLabel == 'Kybun'
+                              ? {backgroundColor: '#980A2B'}
+                              : {}
+                          }
+                        >
+                          {badgeLabel}
+                        </span>
                       </p>
                     </Link>
                   </div>
@@ -107,11 +125,13 @@ export function NewsSlider({news}) {
                       {truncate(newItem?.attributes?.excerpt)}
                     </p>
                   </div>
-                </SwiperSlide>
+                </>
               );
             })}
-          </div>
-        </Swiper>
+          </Slider>
+        </div>
+        {/* <div id="swiper-button-prev-news">next</div>
+        <div id="swiper-button-next-news">prev</div> */}
       </div>
     </section>
   );

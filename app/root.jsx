@@ -26,6 +26,9 @@ import swiper_navigation from 'swiper/css/navigation';
 import swiper_pagination from 'swiper/css/pagination';
 import swiper_scrollbar from 'swiper/css/scrollbar';
 
+// Import css files
+import slick_css from "slick-carousel/slick/slick.css";
+import slick_themecss from "slick-carousel/slick/slick-theme.css";
 
 const seo = ({data, pathname}) => ({
   title: data?.layout?.shop?.name,
@@ -48,6 +51,8 @@ export const links = () => {
     {rel: 'stylesheet', href: swiper_navigation},
     {rel: 'stylesheet', href: swiper_pagination},
     {rel: 'stylesheet', href: swiper_scrollbar},
+    {rel: 'stylesheet', href: slick_css},
+    {rel: 'stylesheet', href: slick_themecss},
     {
       rel: 'preconnect',
       href: 'https://cdn.shopify.com',
