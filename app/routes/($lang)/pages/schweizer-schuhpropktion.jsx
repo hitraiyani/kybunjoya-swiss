@@ -1,10 +1,10 @@
 import React from 'react';
 import {json} from '@shopify/remix-oxygen';
 import {useLoaderData} from '@remix-run/react';
-import { toHTML } from '~/lib/utils';
+import { toHTML, getBreadCrumbs } from '~/lib/utils';
 import {Navigation, Pagination, Scrollbar, A11y, Autoplay} from 'swiper';
 import {Swiper, SwiperSlide} from 'swiper/react';
-import {ExpandingCard, Link} from '~/components';
+import {ExpandingCard, Link, Breadcrumb} from '~/components';
 import {MEDIA_FRAGMENT} from '~/data/fragments';
 
 const seo = ({data}) => ({
@@ -51,6 +51,7 @@ export default function schweizerSchuhpropktion() {
 
     return (
         <>
+          <Breadcrumb crumbs={getBreadCrumbs('schweizerSchuhproduktion','gruppe')}/>
           <div className="container">
             <div className="title-wrap">
               <h2 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold">

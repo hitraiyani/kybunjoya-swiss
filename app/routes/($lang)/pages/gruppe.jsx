@@ -2,8 +2,8 @@ import React from 'react';
 import {json} from '@shopify/remix-oxygen';
 import {useLoaderData} from '@remix-run/react';
 import {MEDIA_FRAGMENT} from '~/data/fragments';
-import { toHTML} from '~/lib/utils';
-import {Link} from '~/components';
+import { toHTML, getBreadCrumbs} from '~/lib/utils';
+import {Link, Breadcrumb } from '~/components';
 
 const seo = ({data}) => ({
   title: data?.page?.seo?.title,
@@ -43,6 +43,7 @@ export default function gorup() {
 
   return (
     <>
+      <Breadcrumb crumbs={getBreadCrumbs(null,'gruppe')}/>
       <div className="container">
         <section className="banner-with-title">
           <h1 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold">

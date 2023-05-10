@@ -33,5 +33,6 @@ export {GruppeSection} from './GruppeSection';
 export {ProductBrandSection} from './ProductBrandSection';
 export {ProductMiscUpdate} from './ProductMiscUpdate';
 export {ScrollToTop} from './ScrollToTop';
+export {Breadcrumb} from './Breadcrumb';
 // Sue me
 export * from './Icon';

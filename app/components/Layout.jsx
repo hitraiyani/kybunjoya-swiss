@@ -51,7 +51,6 @@ export function Layout({children, layout}) {
         id="mainContent"
         className={`${isHome ? '!mt-[0]' : ''} mt-[120px] lg:mt-[190px]`}
       >
-        <Breadcrumb />
         {children}
       </main>
       <Footer menu={layout?.footerMenu} main_menu={layout?.headerMenu} />

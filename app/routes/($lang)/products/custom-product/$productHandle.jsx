@@ -8,10 +8,11 @@ import {
   Link,
   IconClose,
   IconDownload,
+  Breadcrumb
 } from '~/components';
-import {useLoaderData} from '@remix-run/react';
+import {useLoaderData, useLocation} from '@remix-run/react';
 import {MEDIA_FRAGMENT, PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
-import {toHTML, truncate, getAicoMetaByKeyName, getYoutubeId} from '~/lib/utils';
+import {toHTML, truncate, getAicoMetaByKeyName, getYoutubeId, getBreadCrumbs} from '~/lib/utils';
 import {flattenConnection} from '@shopify/hydrogen';
 import {STORE_LOCALE, AICO_API_IMAGE_PREFIX} from '~/lib/const';
 
@@ -75,7 +76,6 @@ export default function ratgeberSeiteFersensporn() {
       apicoProductTagsUrsachen.push(item.split('_').at(-1));
     }
   });
-  console.log("apicoProductTagsUrsachen", apicoProductTagsUrsachen);
 
   const aicoContentBuilders = aicoProductData?.aico_content_builders?.value ? JSON.parse(aicoProductData.aico_content_builders.value) : [];
   const aicoTestimonialsData = aicoProductData?.testimonials_data?.value ? JSON.parse(aicoProductData.testimonials_data.value) : [];
@@ -195,9 +195,14 @@ export default function ratgeberSeiteFersensporn() {
   const ToggleClass = () => {
     setActive(!isActive);
   };
+  
+  const {pathname} = useLocation();
+  const breadCrumbsData =  getBreadCrumbs('beratung','ratgeber');
+  breadCrumbsData.push({title : aicoProductData?.title, to : pathname });
 
   return (
     <>
+      <Breadcrumb crumbs={breadCrumbsData}/>
       <div className="container">
         <section className="rich-text-sec" id="section_1">
           <div className="rich-text-inner">

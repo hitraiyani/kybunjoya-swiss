@@ -1,9 +1,9 @@
-import {ExpandingCardStyle2, Link, IconClose} from '~/components';
+import {ExpandingCardStyle2, Link, IconClose, Breadcrumb} from '~/components';
 import React, {Fragment, useState, useEffect} from 'react';
 import {json} from '@shopify/remix-oxygen';
 import {useLoaderData} from '@remix-run/react';
 import {MEDIA_FRAGMENT, PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
-import {toHTML} from '~/lib/utils';
+import {toHTML, getBreadCrumbs} from '~/lib/utils';
 
 const seo = ({data}) => ({
   title: data?.page?.seo?.title,
@@ -169,6 +169,7 @@ export default function ratgeberseite() {
 
   return (
     <>
+      <Breadcrumb crumbs={getBreadCrumbs('beratung','ratgeber')}/>
       <div className="container">
         <section className="dr-info-tabs-section">
           <div className="dr-info-tabs-inner">

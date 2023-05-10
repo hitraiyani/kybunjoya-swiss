@@ -1,5 +1,5 @@
 import {json} from '@shopify/remix-oxygen';
-import {useLoaderData} from '@remix-run/react';
+import {useLoaderData, useLocation} from '@remix-run/react';
 import {flattenConnection, AnalyticsPageType} from '@shopify/hydrogen';
 import invariant from 'tiny-invariant';
 import {
@@ -11,13 +11,14 @@ import {
   IconCart,
   IconMapPin,
   Link,
-  BrandGrid
+  BrandGrid,
+  Breadcrumb
 } from '~/components';
 import {ProductGrid} from '~/components/ProductGrid';
 import {PRODUCT_CARD_FRAGMENT, MEDIA_FRAGMENT} from '~/data/fragments';
 import {Navigation, Pagination, Scrollbar, A11y, Autoplay} from 'swiper';
 import {Swiper, SwiperSlide} from 'swiper/react';
-import {toHTML} from '~/lib/utils';
+import {toHTML,getBreadCrumbs} from '~/lib/utils';
 
 const seo = ({data}) => ({
   title: data?.collection?.seo?.title,
@@ -161,9 +162,14 @@ export default function Collection() {
     brandHereSection?.data?.slider_images?.references?.edges.map(
       (data) => data.node.image.url,
     );
+    
+    const {pathname, search} = useLocation();
+    const breadCrumbsData =  getBreadCrumbs(null,'produkte');
+    breadCrumbsData.push({title : 'kybun', to : pathname+search });
 
   return (
     <>
+      <Breadcrumb crumbs={breadCrumbsData}/>
       <div className="container">
         {/* <h1 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold">
           {brandHereSection?.data?.head_title?.value}

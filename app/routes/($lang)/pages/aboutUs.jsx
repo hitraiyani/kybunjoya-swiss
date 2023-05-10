@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import {json} from '@shopify/remix-oxygen';
 import {useLoaderData} from '@remix-run/react';
-import {toHTML} from '~/lib/utils';
+import {toHTML, getBreadCrumbs} from '~/lib/utils';
 import {MEDIA_FRAGMENT} from '~/data/fragments';
-import {Link} from '~/components';
+import {Link, Breadcrumb} from '~/components';
 
 const seo = ({data}) => ({
   title: data?.page?.seo?.title,
@@ -69,6 +69,7 @@ export default function aboutUs() {
 
   return (
     <>
+      <Breadcrumb crumbs={getBreadCrumbs(null,'story')}/>
       <div className="container">
         <section className="video-banner-with-title pb-[20px] md:pb-[30px] lg:pb-[40px] xl:pb-[50px]">
           <h1 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold">

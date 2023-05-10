@@ -810,3 +810,24 @@ export function getYoutubeId(url) {
    return 'error';
   }
 }
+
+const roots = {
+  home: {title: 'Home', to: '/'},
+  schweizerSchuhproduktion: {title: 'Erlebnis', to: '/pages/schweizer-schuhpropktion'},
+  gruppe: {title: 'Gruppe', to: '/pages/gruppe'},
+  produkte: {title: 'Produkte', to: '/pages/products'},
+  ratgeber: {title: 'Ratgeber', to: '/pages/ratgeber'},
+  beratung: {title: 'Beratung', to: '/pages/ratgeberseite'},
+  story: {title: 'Story', to: '/pages/aboutus'}
+};
+
+export function getBreadCrumbs(
+  currentPage,
+  root = 'home'
+) {
+  const initial = [roots[root]];
+  if (initial[0].title !== 'home') initial.unshift(roots['home']);
+  if (currentPage) initial.push(roots[currentPage] ? roots[currentPage] : {title: currentPage});
+
+  return initial;
+}
