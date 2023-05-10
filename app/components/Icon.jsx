@@ -240,6 +240,11 @@ export function ArrowRightLight(props) {
     <svg {...props} xmlns="http://www.w3.org/2000/svg" width={256} height={256} viewBox="0 0 256 256"><path fill="currentColor" d="m220.24 132.24l-72 72a6 6 0 0 1-8.48-8.48L201.51 134H40a6 6 0 0 1 0-12h161.51l-61.75-61.76a6 6 0 0 1 8.48-8.48l72 72a6 6 0 0 1 0 8.48Z" /></svg>
   );
 }
+export function ArrowRight2(props) {
+  return (
+    <svg {...props} xmlns="http://www.w3.org/2000/svg" width={16} height={16} viewBox="0 0 16 16" > <path fill="currentColor" fillRule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" /> </svg>
+  );
+}
 export function ArrowRight(props) {
   return (
     <svg {...props} width={23} height={44} viewBox="0 0 23 44" fill="none" xmlns="http://www.w3.org/2000/svg">

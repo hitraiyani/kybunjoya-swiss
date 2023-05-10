@@ -299,7 +299,7 @@ export default function EditAddress() {
           </div>
           <div className="mt-8">
             <Button
-              className="w-full rounded focus:shadow-outline"
+              className="w-full focus:shadow-outline"
               type="submit"
               variant="primary"
               disabled={transition.state !== 'idle'}

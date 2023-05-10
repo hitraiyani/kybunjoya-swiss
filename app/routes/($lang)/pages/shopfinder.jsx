@@ -18,7 +18,7 @@ export default function Collection() {
     return (
         <>
 <div className="container">
-   <div className="title-wrap mt-[120px] lg:mt-[200px]">
+   <div className="title-wrap">
       <h2 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[55px] tracking-[-0.97152px] mb-6 ">
          Shopfinder
       </h2>
@@ -57,7 +57,7 @@ export default function Collection() {
       <div className="item flex flex-col sm:flex-row gap-[20px] w-full xl:w-[50%] items-start">
          <div className="img-col flex-1 overflow-hidden lg:w-auto w-full">
             <img
-               className="h-full object-cover  rounded-xl block aspect-[2.5/2]"
+               className="h-full object-cover block aspect-[2.5/2]"
                src={'https://cdn.shopify.com/s/files/1/0742/9688/5569/files/kybunjoya_arbon-1.png?v=1681740273'}
                alt=""
                />
@@ -85,7 +85,7 @@ export default function Collection() {
       <div className="item flex flex-col sm:flex-row gap-[20px] w-full xl:w-[50%] items-start">
          <div className="img-col flex-1 overflow-hidden lg:w-auto w-full">
             <img
-               className="h-full object-cover  rounded-xl block aspect-[2.5/2]"
+               className="h-full object-cover block aspect-[2.5/2]"
                src={'https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Z_580960e4ea-9x6.png?v=1681740273'}
                alt=""
                />
@@ -113,7 +113,7 @@ export default function Collection() {
       <div className="item flex flex-col sm:flex-row gap-[20px] w-full xl:w-[50%] items-start">
          <div className="img-col flex-1 overflow-hidden lg:w-auto w-full">
             <img
-               className="h-full object-cover  rounded-xl block aspect-[2.5/2]"
+               className="h-full object-cover block aspect-[2.5/2]"
                src={'https://cdn.shopify.com/s/files/1/0742/9688/5569/files/stgallen_shopfront.png?v=1681740273'}
                alt=""
                />
@@ -144,7 +144,7 @@ export default function Collection() {
    <div className="flex gap-[20px] flex-col lg:flex-row">
       <div className="content-col w-full lg:w-[50%] flex flex-col bg-[#EDEDED] rounded-[10px]">
          <div className="img-col w-full overflow-hidden">
-            <div className="h-full overflow-visible rounded-xl flex flex-col">
+            <div className="h-full overflow-visible flex flex-col">
                <img
                   className="object-cover rounded-[10px] w-full h-full"
                   src={'https://cdn.shopify.com/s/files/1/0742/9688/5569/files/snazzy-image_1.png?v=1681741796'}

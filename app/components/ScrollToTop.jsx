@@ -22,10 +22,10 @@ export function ScrollToTop() {
     <div className="top-to-btm">
       {showTopBtn && (
         <div
-          className="fixed right-[20px] md:right-[40px] bottom-[20px] xl:bottom-[40px] lg:right-[60px] w-[50px] h-[50px] lg:w-[80px] lg:h-[80px] xl:w-[100px] xl:h-[100px] rounded-full bg-black hover:bg-[#00795c] text-white flex items-center justify-center cursor-pointer z-[999]"
+          className="fixed right-[20px] md:right-[40px] bottom-[20px] xl:bottom-[40px] lg:right-[60px] w-[50px] h-[50px] lg:w-[60px] lg:h-[60px] xl:w-[74px] xl:h-[74px] rounded-full bg-black hover:bg-[#00795c] text-white flex items-center justify-center cursor-pointer z-[999]"
           onClick={goToTop}
         >
-          <FaAngleUp className="icon-position icon-style w-[15px] lg:w-[20px] xl:w-[23px] h-auto" />
+          <FaAngleUp className="icon-position icon-style w-[15px] lg:w-[18px] xl:w-[20px] h-auto" />
         </div>
       )}
     </div>

@@ -164,7 +164,7 @@ export default function Collection() {
 
   return (
     <>
-      <div className="container mt-[120px] lg:mt-[200px]">
+      <div className="container">
         {/* <h1 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold">
           {brandHereSection?.data?.head_title?.value}
         </h1> */}
@@ -175,9 +175,9 @@ export default function Collection() {
             alt=""
           />
         </div>
-        <div className="product-list-hero-img relative overflow-hidden rounded-xl pb-[35%] min-h-[200px]">
+        <div className="product-list-hero-img relative overflow-hidden pb-[35%] min-h-[200px]">
           <img
-            className="absolute rounded-xl inset-0 w-full h-full object-cover"
+            className="absolute inset-0 w-full h-full object-cover"
             src={brandHereSection?.data?.banner_image?.reference?.image?.url}
             alt=""
           />
@@ -219,7 +219,7 @@ export default function Collection() {
                         slidesPerView: 2,
                       },
                     }}
-                    className="h-full overflow-visible rounded-xl flex flex-col xl:!absolute lg:inset-0 w-[calc(100%_+_20px)] !ml-[-10px]"
+                    className="h-full overflow-visible flex flex-col xl:!absolute lg:inset-0 w-[calc(100%_+_20px)] !ml-[-10px]"
                   >
                     <SwiperSlide className="w-full !h-auto xl:!h-full px-[10px] py-[10px]">
                       <div className="img-info-col relative h-full overflow-hidden ">
@@ -412,9 +412,9 @@ export default function Collection() {
                         className="w-full !h-auto xl:!h-full px-[10px] py-[10px]"
                         key={index}
                       >
-                        <div className="bg-img w-full h-full rounded-[10px] overflow-hidden shadow-[0_0_0.9821px_#0000000d,0_3.9284px_7.8568px_#0000001a]">
+                        <div className="bg-img w-full h-full overflow-hidden shadow-[0_0_0.9821px_#0000000d,0_3.9284px_7.8568px_#0000001a]">
                           <img
-                            className="w-full h-full object-cover rounded-[10px]"
+                            className="w-full h-full object-cover"
                             src={image}
                             alt=""
                           />
@@ -422,9 +422,9 @@ export default function Collection() {
                       </SwiperSlide>
                     ))}
                     <SwiperSlide className="w-full lg:!h-full px-[10px] py-[10px] !hidden xl:!block ">
-                      <div className="bg-img w-full h-full rounded-[10px] overflow-hidden shadow-[0_0_0.9821px_#0000000d,0_3.9284px_7.8568px_#0000001a]">
+                      <div className="bg-img w-full h-full overflow-hidden shadow-[0_0_0.9821px_#0000000d,0_3.9284px_7.8568px_#0000001a]">
                         <img
-                          className="w-full h-full object-cover rounded-[10px]"
+                          className="w-full h-full object-cover"
                           src={
                             'https://cdn.shopify.com/s/files/1/0742/9688/5569/files/blank-img.jpg?v=1682691798'
                           }

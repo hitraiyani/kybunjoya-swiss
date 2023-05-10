@@ -73,7 +73,7 @@ export default function schweizerSchuhpropktion() {
   return (
     <>
       <div className="container">
-        <div className="title-wrap mt-[120px] lg:mt-[200px]">
+        <div className="title-wrap">
           <h2 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold">
             Produkte
           </h2>
@@ -81,7 +81,7 @@ export default function schweizerSchuhpropktion() {
       </div>
       <div className="container lg:!pr-0">
         <div className="flex gap-[22px] flex-col lg:flex-row">
-          <div className="content-col w-full lg:w-[40%] flex flex-col bg-[#EDEDED] rounded-[10px] py-[27px] px-[32px]">
+          <div className="content-col w-full lg:w-[40%] flex flex-col bg-[#EDEDED] py-[27px] px-[32px]">
             <h2 className="text-[24px] lg:text-[30px] text-[#00795C] leading-[1.2] mb-[10px]">
               {page?.product_misc_update?.reference?.hero_section_title_1?.value}
             </h2>
@@ -140,14 +140,14 @@ export default function schweizerSchuhpropktion() {
               <SwiperSlide>
                 <div className="imgs-wrap flex flex-col gap-[20px]">
                   <img
-                    className="w-full object-cover rounded-[10px] h-auto lg:h-[310px]"
+                    className="w-full object-cover h-auto lg:h-[310px]"
                     src={firstSlideImages[0]}
                     alt=""
                   />
-                  <div className='img-2 rounded-[10px] h-full xl:w-[60%] w-full xl:h-[40%] ml-auto block'>
+                  <div className='img-2 h-full xl:w-[60%] w-full xl:h-[40%] ml-auto block'>
 
                   <img
-                    className="object-cover rounded-[10px] w-full h-full ml-auto block"
+                    className="object-cover w-full h-full ml-auto block"
                     src={firstSlideImages[1]}
                     alt=""
                   />
@@ -159,7 +159,7 @@ export default function schweizerSchuhpropktion() {
                     <SwiperSlide key={index}>
                       <div className="imgs-wrap flex flex-col gap-[20px] h-full">
                         <img
-                          className="h-full w-full object-cover rounded-[10px]"
+                          className="h-full w-full object-cover"
                           src={image}
                           alt=""
                         />
@@ -171,17 +171,17 @@ export default function schweizerSchuhpropktion() {
                 <SwiperSlide key={index}>
                   <div className="imgs-wrap grid grid-rows-2 grid-flow-col gap-[20px] lg:h-[700px]">
                     <img
-                      className="h-full w-full object-cover rounded-[10px] col-span-1 xl:col-span-2 aspect-[3/2]"
+                      className="h-full w-full object-cover col-span-1 xl:col-span-2 aspect-[3/2]"
                       src={image}
                       alt=""
                     />
                     <img
-                      className="object-cover rounded-[10px] col-span-1 xl:col-span-2 w-full xl:w-[80%] h-full xl:h-[80%] ml-auto block aspect-[3/2]"
+                      className="object-cover col-span-1 xl:col-span-2 w-full xl:w-[80%] h-full xl:h-[80%] ml-auto block aspect-[3/2]"
                       src={image}
                       alt=""
                     />
                     <img
-                      className="h-full w-full object-cover rounded-[10px] row-span-2 aspect-square"
+                      className="h-full w-full object-cover row-span-2 aspect-square"
                       src={image}
                       alt=""
                     />

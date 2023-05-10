@@ -52,16 +52,16 @@ export default function schweizerSchuhpropktion() {
     return (
         <>
           <div className="container">
-            <div className="title-wrap mt-[120px] lg:mt-[200px]">
+            <div className="title-wrap">
               <h2 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold">
                 {page?.schweizer_schuhpropktion?.reference?.head_title?.value}
               </h2>
             </div>
           </div>
           <div className="banner container">
-            <div className="banner-row product-list-hero-img relative overflow-hidden rounded-xl pb-[35%] min-h-[200px]">
+            <div className="banner-row product-list-hero-img relative overflow-hidden pb-[35%] min-h-[200px]">
               <img
-                className="absolute rounded-xl inset-0 w-full h-full object-cover"
+                className="absolute inset-0 w-full h-full object-cover"
                 src={page?.schweizer_schuhpropktion?.reference?.hero_image?.reference?.image?.url}
                 alt=""
               />
@@ -77,12 +77,12 @@ export default function schweizerSchuhpropktion() {
                   loop="false"
                   autoplay="false"
                   pagination={{clickable: true}}
-                  className="h-full overflow-visible rounded-xl flex flex-col"
+                  className="h-full overflow-visible flex flex-col"
                 >
                     {sliderImages.map((image, index) => (
                         <SwiperSlide key={index}>
                             <img
-                            className="h-full object-cover  rounded-xl block"
+                            className="h-full object-cover block"
                             src={image}
                             alt=""
                             />
@@ -133,7 +133,7 @@ export default function schweizerSchuhpropktion() {
               </h2>
               <div className="video-wrap">
                 <iframe
-                  className="w-full aspect-video rounded-xl"
+                  className="w-full aspect-video"
                   src={page?.schweizer_schuhpropktion?.reference?.video_section_url?.value}
                   title="YouTube video player"
                   frameBorder="0"

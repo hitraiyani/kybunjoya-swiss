@@ -69,12 +69,12 @@ export default function aboutUs() {
 
   return (
     <>
-      <div className="container mt-[120px] lg:mt-[200px]">
+      <div className="container">
         <section className="video-banner-with-title pb-[20px] md:pb-[30px] lg:pb-[40px] xl:pb-[50px]">
           <h1 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold">
             {page?.about_us?.reference?.head_title?.value}
           </h1>
-          <div className="video-wrap relative overflow-hidden rounded-xl pb-[35%] min-h-[400px] w-full">
+          <div className="video-wrap relative overflow-hidden pb-[35%] min-h-[400px] w-full">
             <iframe
               className="absolute w-full h-full inset-0 object-cover bg-cover"
               src={page?.about_us?.reference?.hero_video?.value}
@@ -107,7 +107,7 @@ export default function aboutUs() {
                     >
                       <div className="flex flex-col md:flex-row gap-y-[20px]">
                         <div className="img-wrap w-full md:w-[50%]">
-                          <div className="overflow-hidden pb-[59%] relative rounded-[10px] w-full">
+                          <div className="overflow-hidden pb-[59%] relative w-full">
                             <img
                               className="absolute inset-0 w-full h-full object-cover"
                               src={item?.timeline_image}
@@ -177,7 +177,7 @@ export default function aboutUs() {
             </div>
             <div className="img-col w-full lg:w-[40%] overflow-hidden">
               <img
-                className="h-full object-cover  rounded-xl block"
+                className="h-full object-cover block"
                 src={
                   page?.about_us?.reference
                     ?.einblick_in_unsere_produkte_section_image?.reference
@@ -245,7 +245,7 @@ export default function aboutUs() {
             </div>
             <div className="img-col overflow-hidden w-full lg:w-[40%]">
               <img
-                className="h-full object-cover  rounded-xl block"
+                className="h-full object-cover block"
                 src={
                   page?.about_us?.reference?.wissenschaft_section_image
                     ?.reference?.image?.url

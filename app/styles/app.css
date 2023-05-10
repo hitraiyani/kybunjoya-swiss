@@ -297,7 +297,7 @@ p:last-child {
 .collectionsGrid-item,
 .collectionsGrid-item > a,
 .collectionsGrid-item img {
-  border-radius: 0.5rem;
+  border-radius: 0;
 }
 .collectionsGrid-item .img-overlay {
   background: linear-gradient(
@@ -319,7 +319,7 @@ p:last-child {
   padding-bottom: 34.5% !important;
 }
 .quick-links-sec {
-  border-radius: 0.5rem;
+  border-radius: 0;
 }
 @media (min-width: 1024px) {
   .quick-links-sec .collectionsGrid-item,
@@ -690,7 +690,7 @@ p:last-child {
 .info-slider-with-img .img-info-col {
   box-shadow: 0px 0px 0.9821px rgba(0, 0, 0, 0.05),
     0px 3.9284px 7.8568px rgba(0, 0, 0, 0.1);
-  border-radius: 12px;
+  /* border-radius: 12px; */
 }
 .product-listing .card-image {
   box-shadow: 0px 4.76252px 9.52504px rgba(0, 0, 0, 0.1);

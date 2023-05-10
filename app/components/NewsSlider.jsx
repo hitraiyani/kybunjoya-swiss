@@ -89,7 +89,7 @@ export function NewsSlider({news}) {
                     >
                       <div className="img-wrap">
                         <img
-                          className="object-cover object-center w-full rounded-md aspect-square drop-shadow-md"
+                          className="object-cover object-center w-full aspect-square drop-shadow-md"
                           src={imgSrc}
                         ></img>
                       </div>

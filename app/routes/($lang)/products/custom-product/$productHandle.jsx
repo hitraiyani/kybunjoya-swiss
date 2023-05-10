@@ -198,7 +198,7 @@ export default function ratgeberSeiteFersensporn() {
 
   return (
     <>
-      <div className="container mt-[120px] lg:mt-[200px]">
+      <div className="container">
         <section className="rich-text-sec" id="section_1">
           <div className="rich-text-inner">
             <div className="flex flex-col lg:flex-row gap-y-[30px] lg:gap-x-[50px] xl:gap-x-[60px]">
@@ -229,7 +229,7 @@ export default function ratgeberSeiteFersensporn() {
               <div className="col-right w-full lg:w-[50%]">
                 <div className="video-info">
                   {dkj_videourl_de_ch && (
-                    <div className="video-wrap w-full rounded-[10px] relative overflow-hidden pb-[50%]">
+                    <div className="video-wrap w-full relative overflow-hidden pb-[50%]">
                       {videoId !='error' ? (<iframe
                         className="absolute w-full h-full inset-0 object-cover bg-cover"
                         src={`//www.youtube.com/embed/${videoId}`}
@@ -318,7 +318,7 @@ export default function ratgeberSeiteFersensporn() {
                   }
                   
                 </h2>
-                <div className="img-wrap relative overflow-hidden rounded-[10px] min-h-[186px] mt-auto pb-[46%]">
+                <div className="img-wrap relative overflow-hidden min-h-[186px] mt-auto pb-[46%]">
                   <img
                     className="absolute w-full h-full inset-0 object-cover"
                     src={
@@ -351,7 +351,7 @@ export default function ratgeberSeiteFersensporn() {
                       ?.kybun_schuhe_testen_section_title?.value
                   }
                 </h2>
-                <div className="img-wrap relative overflow-hidden rounded-[10px] min-h-[186px] mt-auto pb-[46%]">
+                <div className="img-wrap relative overflow-hidden min-h-[186px] mt-auto pb-[46%]">
                   <img
                     className="absolute w-full h-full inset-0 object-cover"
                     src={
@@ -469,7 +469,7 @@ export default function ratgeberSeiteFersensporn() {
                       ?.kybun_schuhe_testen_section_title?.value
                   }
                 </h2>
-                <div className="img-wrap relative overflow-hidden rounded-[10px] min-h-[186px] mt-auto pb-[46%]">
+                <div className="img-wrap relative overflow-hidden min-h-[186px] mt-auto pb-[46%]">
                   <img
                     className="absolute w-full h-full inset-0 object-cover"
                     src={
@@ -503,7 +503,7 @@ export default function ratgeberSeiteFersensporn() {
                       ?.shopfinder_section_title?.value
                   }
                 </h2>
-                <div className="img-wrap relative overflow-hidden rounded-[10px] min-h-[186px] mt-auto pb-[46%]">
+                <div className="img-wrap relative overflow-hidden min-h-[186px] mt-auto pb-[46%]">
                   <img
                     className="absolute w-full h-full inset-0 object-cover"
                     src={
@@ -596,9 +596,9 @@ function TopProductMobileSlider({products}) {
                 <Link to={`/products/${product?.node?.handle}`}>
                   <div className="product-item pt-[5px]">
                     <div className="grid gap-4">
-                      <div className="card-image aspect-square relative rounded-xl overflow-hidden shadow-[0_4.76252px_9.52504px_#0000001a]">
+                      <div className="card-image aspect-square relative overflow-hidden shadow-[0_4.76252px_9.52504px_#0000001a]">
                         <img
-                          className="object-contain fadeIn absolute inset-0 w-full h-full rounded-xl"
+                          className="object-contain fadeIn absolute inset-0 w-full h-full"
                           src={image?.url}
                           alt={image?.altText}
                         />

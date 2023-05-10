@@ -169,7 +169,7 @@ export default function ratgeberseite() {
 
   return (
     <>
-      <div className="container mt-[120px] lg:mt-[150px] 2xl:mt-[200px]">
+      <div className="container">
         <section className="dr-info-tabs-section">
           <div className="dr-info-tabs-inner">
             <div className="flex flex-wrap flex-col md:flex-row gap-y-[30px] gap-x-[46px] justify-center md:justify-start">
@@ -275,7 +275,7 @@ export default function ratgeberseite() {
                         <Link
                           key={index}
                           to={`/products/custom-product/${product.handle}`}
-                          className="p-[15px] xl:px-[20px] xl:py-[26px] flex justify-center items-center text-center bg-white rounded-[10px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[20px] 2xl:text-[21px] leading-[1.4] hover:text-white hover:bg-[#00795C] xl:min-h-[116px] font-bold text-[#00795C] transition-all duration-500"
+                          className="p-[15px] xl:px-[20px] xl:py-[26px] flex justify-center items-center text-center bg-white text-[16px] md:text-[18px] lg:text-[20px] xl:text-[20px] 2xl:text-[21px] leading-[1.4] hover:text-white hover:bg-[#00795C] xl:min-h-[116px] font-bold text-[#00795C] transition-all duration-500"
                         >
                           {product.title}
                         </Link>
@@ -287,7 +287,7 @@ export default function ratgeberseite() {
                         key={index}
                         href={`#link${index + 1}`}
                         hreflink={item.hreflink}
-                        className="p-[15px] xl:px-[20px] xl:py-[26px] flex justify-center items-center text-center bg-white rounded-[10px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[20px] 2xl:text-[21px] leading-[1.4] hover:text-white hover:bg-[#00795C] xl:min-h-[116px] font-bold text-[#00795C] transition-all duration-500 my-achor-link"
+                        className="p-[15px] xl:px-[20px] xl:py-[26px] flex justify-center items-center text-center bg-white text-[16px] md:text-[18px] lg:text-[20px] xl:text-[20px] 2xl:text-[21px] leading-[1.4] hover:text-white hover:bg-[#00795C] xl:min-h-[116px] font-bold text-[#00795C] transition-all duration-500 my-achor-link"
                       >
                         {item.button_name}
                       </a>

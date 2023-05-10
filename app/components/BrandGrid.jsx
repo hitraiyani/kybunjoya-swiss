@@ -29,6 +29,7 @@ export function BrandGrid({className}) {
   return (
     <section className={`${className} brand-sec`}>
       <div className="container">
+        <h2 className="text-[#00795C] text-[30px] lg:text-[35px] xl:text-[40px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold">Unsere Marken</h2>
         <div className="brand-wrap flex flex-row flex-wrap gap-7 lg:gap-10 xl:gap-16 items-center justify-center">
         {
           brandData.map((item, index) => {

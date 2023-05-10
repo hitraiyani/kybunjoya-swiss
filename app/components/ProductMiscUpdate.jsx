@@ -12,7 +12,7 @@ export function ProductMiscUpdate({data}) {
         <div className="flex flex-col lg:flex-row gap-y-[20px] gap-x-[30px] xl:gap-x-[49px]">
           <div className="img-col w-full lg:w-[40%] overflow-hidden">
             <img
-              className="h-full object-cover  rounded-xl block"
+              className="h-full object-cover block"
               src={data.main_section_image.reference.image.url}
               alt=""
             />
@@ -47,7 +47,7 @@ export function ProductMiscUpdate({data}) {
           <div className="item flex flex-col sm:flex-row gap-[20px] w-full xl:w-[50%] items-start">
             <div className="img-col flex-1 overflow-hidden lg:w-auto w-full">
               <img
-                className="h-full object-cover  rounded-xl block aspect-[2.5/2]"
+                className="h-full object-cover block aspect-[2.5/2]"
                 src={data.sub_section_1_image.reference.image.url}
                 alt=""
               />
@@ -67,7 +67,7 @@ export function ProductMiscUpdate({data}) {
           <div className="item flex flex-col sm:flex-row gap-[20px] w-full xl:w-[50%] items-start">
             <div className="img-col flex-1 overflow-hidden lg:w-auto w-full">
               <img
-                className="h-full object-cover  rounded-xl block aspect-[2.5/2]"
+                className="h-full object-cover block aspect-[2.5/2]"
                 src={data.sub_section_2_image.reference.image.url}
                 alt=""
               />

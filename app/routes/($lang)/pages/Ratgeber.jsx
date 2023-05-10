@@ -42,19 +42,19 @@ export default function ratgeber() {
 
   return (
     <>
-      <div className="container mt-[120px] lg:mt-[200px]">
+      <div className="container">
         <section className="page-title">
           <h1 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold">
             {page?.title}
           </h1>
         </section>
-        <section className="hero-banner-section ratgeber-banner-section rounded-xl overflow-hidden">
+        <section className="hero-banner-section ratgeber-banner-section  overflow-hidden">
           <div className="hero-banner-inner relative">
             <div className='banner-info'>
               <div className='flex flex-col md:flex-row md:items-end p-[20px] md:px-[40px] md:py-[40px] xl:px-[72px] xl:py-[57px] justify-between'>
                 <div className='title-wrap w-[300px] mb-[20px] md:mb-[0]'>
                 <h4 className='font-black text-white text-[35px] md:text-[50px] lg:text-[70px] xl:text-[100px] leading-[1.1] md:hidden mb-[10px]'>{page?.ratgeber?.reference?.hero_inner_banner_title?.value}</h4>
-                  <h2 className='text-white text-[30px] lg:text-[40px] xl:text-[55px] tracking-[-1.05984px] font-bold leading-[1.1]'
+                  <h2 className='text-white text-[30px] lg:text-[35px] xl:text-[40px] tracking-[-1.05984px] font-bold leading-[1.1]'
                   dangerouslySetInnerHTML={{
                     __html: toHTML(page?.ratgeber?.reference?.hero_banner_title?.value),
                   }}
@@ -65,15 +65,15 @@ export default function ratgeber() {
                     <h4 className='font-black text-white text-[40px] md:text-[50px] lg:text-[70px] xl:text-[100px] leading-[1.1]'>{page?.ratgeber?.reference?.hero_inner_banner_title?.value}</h4>
                   </div>
                   <div className='dr-img'>
-                    <img className='rounded-xl w-[150px] md:w-full' src={page?.ratgeber?.reference?.hero_inner_banner?.reference?.image?.url} alt="" />
+                    <img className=' w-[150px] md:w-full' src={page?.ratgeber?.reference?.hero_inner_banner?.reference?.image?.url} alt="" />
                   </div>
                 </div>
               </div>
             </div>
-            <div className="bg-img w-full h-full absolute inset-0 z-[-1] rounded-xl overflow-hidden">
+            <div className="bg-img w-full h-full absolute inset-0 z-[-1]  overflow-hidden">
               <div className="absolute inset-x-0 bottom-0 w-full img-overlay h-full md:h-2/4"></div>
               <img
-                className="w-full h-full object-cover rounded-xl"
+                className="w-full h-full object-cover "
                 src={page?.ratgeber?.reference?.hero_banner?.reference?.image?.url}
                 alt=""
               />
@@ -83,7 +83,7 @@ export default function ratgeber() {
         <section className='about-sec mt-[40px] md:mt-[60px] lg:mt-[80px] xl:mt-[100px]'>
           <div className='about-sec-inner flex flex-col lg:flex-row gap-y-[20px] gap-x-[30px] xl:gap-x-[50px]'>
             <div className='img-col w-full lg:w-[50%]'>
-              <img className='w-full rounded-xl' src={page?.ratgeber?.reference?.start_consultation_image?.reference?.image?.url} alt="" />
+              <img className='w-full' src={page?.ratgeber?.reference?.start_consultation_image?.reference?.image?.url} alt="" />
             </div>
             <div className='content-info w-full lg:w-[50%]'>
               <h4 className='text-[24px] md:text-[28px] xl:text-[30px] text-black font-normal leading-[1.2] mb-[20px]'

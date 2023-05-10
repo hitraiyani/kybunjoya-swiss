@@ -43,14 +43,14 @@ export default function gorup() {
 
   return (
     <>
-      <div className="container mt-[120px] lg:mt-[200px]">
+      <div className="container">
         <section className="banner-with-title">
           <h1 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold">
             {page?.gruppe_page?.reference?.head_title?.value}
           </h1>
-          <div className="product-list-hero-img relative overflow-hidden rounded-xl pb-[35%] min-h-[400px]">
+          <div className="product-list-hero-img relative overflow-hidden pb-[35%] min-h-[400px]">
             <img
-              className="absolute rounded-xl inset-0 w-full h-full object-cover"
+              className="absolute inset-0 w-full h-full object-cover"
               src={page?.gruppe_page?.reference?.hero_image?.reference?.image?.url}
               alt=""
             />
@@ -136,7 +136,7 @@ export default function gorup() {
                 <div className="img-wrap">
                   <img
                     src={page?.gruppe_page?.reference?.work_section_image?.reference?.image?.url}
-                    className="w-full rounded-[10px]"
+                    className="w-full"
                     alt=""
                   />
                 </div>
@@ -150,7 +150,7 @@ export default function gorup() {
               <div className="col-left w-full lg:w-[400px]">
                 <div className="img-wrap h-full">
                   <img
-                    className="w-full rounded-[10px] h-auto lg:h-full object-cover"
+                    className="w-full  h-auto lg:h-full object-cover"
                     src={page?.gruppe_page?.reference?.culture_employee_section_image?.reference?.image?.url}
                     alt=""
                   />
@@ -226,11 +226,11 @@ export default function gorup() {
                 </h2>
               </div>
             </div>
-            <div className="hero-img relative overflow-hidden rounded-xl pb-[21.5%] min-h-[300px] mb-[48px]">
+            <div className="hero-img relative overflow-hidden pb-[21.5%] min-h-[300px] mb-[48px]">
               <img
                 src={page?.gruppe_page?.reference?.kybun_joya_therapie_section_image?.reference?.image?.url}
                 alt=""
-                className="absolute rounded-xl inset-0 w-full h-full object-cover"
+                className="absolute inset-0 w-full h-full object-cover"
               />
             </div>
             <div className="flex flex-col lg:flex-row gap-y-[30px] gap-x-[73px]">
@@ -341,7 +341,7 @@ export default function gorup() {
               <div className="col-right w-full lg:flex-1">
                 <div className="img-wrap h-full">
                   <img
-                    className="w-full rounded-[10px] h-full object-cover"
+                    className="w-full  h-full object-cover"
                     src={page?.gruppe_page?.reference?.footer_group_image?.reference?.image?.url}
                     alt=""
                   />

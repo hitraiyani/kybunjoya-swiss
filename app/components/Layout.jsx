@@ -17,8 +17,15 @@ import {
   CartLoading,
   Link,
   ScrollToTop,
+  ArrowRight2,
 } from '~/components';
-import {useParams, Form, Await, useMatches, useLocation} from '@remix-run/react';
+import {
+  useParams,
+  Form,
+  Await,
+  useMatches,
+  useLocation,
+} from '@remix-run/react';
 import {useWindowScroll} from 'react-use';
 import {Disclosure} from '@headlessui/react';
 import {Suspense, useEffect, useMemo, useState} from 'react';
@@ -26,6 +33,7 @@ import {useIsHydrated} from '~/hooks/useIsHydrated';
 import {useCartFetchers} from '~/hooks/useCartFetchers';
 
 export function Layout({children, layout}) {
+  const isHome = useIsHomePath();
   return (
     <>
       <div className="">
@@ -37,11 +45,76 @@ export function Layout({children, layout}) {
         title={layout?.shop.name ?? 'Hydrogen'}
         menu={layout?.headerMenu}
       />
-      <main role="main" id="mainContent" className="flex-grow">
+      <main
+        role="main"
+        id="mainContent"
+        className={`${isHome ? '!mt-[0]' : ''} mt-[120px] lg:mt-[190px]`}
+      >
+        <Breadcrumb />
         {children}
       </main>
       <Footer menu={layout?.footerMenu} main_menu={layout?.headerMenu} />
     </>
+  );
+}
+
+function Breadcrumb() {
+  const isHome = useIsHomePath();
+
+  return (
+    <div
+      className={`${
+        isHome ? 'hidden' : ''
+      } Breadcrumb-sec mb-[20px] lg:mb-[25px]`}
+    >
+      <div className="container">
+        <nav className="flex" aria-label="Breadcrumb">
+          <ol className="inline-flex items-center gap-y-[10px] gap-x-[8px] md:gap-x-[16px] flex-wrap">
+            <li className="inline-flex items-center">
+              <a
+                href="#"
+                className="tracking-[-0.400697px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] font-normal text-black leading-none hover:text-[#00795C]"
+              >
+                Home
+              </a>
+            </li>
+            <li>
+              <div className="flex items-center">
+                <ArrowRight2 className={'w-[21px] h-[21px] mr-[8px] md:mr-[16px]'} />
+                <a
+                  href="#"
+                  className="tracking-[-0.400697px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] font-normal text-black leading-none hover:text-[#00795C]"
+                >
+                  Ratgeber
+                </a>
+              </div>
+            </li>
+            <li aria-current="page">
+              <div className="flex items-center">
+                <ArrowRight2 className={'w-[21px] h-[21px] mr-[8px] md:mr-[16px]'} />
+                <a
+                  href="#"
+                  className="tracking-[-0.400697px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] font-normal text-black leading-none hover:text-[#00795C]"
+                >
+                  Beratung
+                </a>
+              </div>
+            </li>
+            <li aria-current="page">
+              <div className="flex items-center">
+                <ArrowRight2 className={'w-[21px] h-[21px] mr-[8px] md:mr-[16px]'} />
+                <a
+                  href="#"
+                  className="tracking-[-0.400697px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] font-normal text-black leading-none hover:text-[#00795C]"
+                >
+                  Fersensporn
+                </a>
+              </div>
+            </li>
+          </ol>
+        </nav>
+      </div>
+    </div>
   );
 }
 
@@ -142,7 +215,7 @@ function MenuMobileNav({menu, onClose}) {
     const links = document.querySelectorAll('.kybunjoya-menu-hover');
     const images = document.querySelectorAll('.image-container img');
     const defaultActive = document.querySelector('#defaultActive');
-   
+
     links.forEach((link) => {
       link.addEventListener('mouseover', () => {
         const image = link.dataset.image;
@@ -185,7 +258,9 @@ function MenuMobileNav({menu, onClose}) {
                 <Link
                   to={item.to}
                   target={item.target}
-                  className={`kybunjoya-menu-hover title text-[#00795C] text-[26px] mb-[12px] outline-none ${item.to == pathname ? 'is-active' : ''} `}
+                  className={`kybunjoya-menu-hover title text-[#00795C] text-[26px] mb-[12px] outline-none ${
+                    item.to == pathname ? 'is-active' : ''
+                  } `}
                   data-image={item.title}
                   onClick={onClose}
                 >
@@ -213,7 +288,9 @@ function SubMegaMenu({menu_items, onClose}) {
             <Link
               to={item.to}
               target={item.target}
-              className={`text-[16px] text-[#595959] block leading-none ${item.to == pathname+search ? 'is-active' : ''} `}
+              className={`text-[16px] text-[#595959] block leading-none ${
+                item.to == pathname + search ? 'is-active' : ''
+              } `}
               onClick={onClose}
             >
               {item.title}

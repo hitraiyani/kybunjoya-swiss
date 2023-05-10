@@ -186,7 +186,7 @@ export default function ratgeberSeiteFersenspornNew() {
 
   return (
     <>
-      <div className="container mt-[120px] lg:mt-[200px]">
+      <div className="container">
         <div className="page-title">
           <h1 className="title text-[#00795C] text-[40px] md:text-[50px] lg:text-[70px] xl:text-[90px] mb-[30px] lg:mb-[43px] leading-none font-black">
             {page?.ratgeber_seite_fersensporn?.reference?.head_title?.value}
@@ -240,7 +240,7 @@ export default function ratgeberSeiteFersenspornNew() {
               <div className="col-right w-full lg:w-[35%]">
                 <div className="video-info">
                   {mainVideoSection?.video_url && (
-                    <div className="video-wrap w-full aspect-video rounded-[10px] relative overflow-hidden">
+                    <div className="video-wrap w-full aspect-video  relative overflow-hidden">
                       <iframe
                         className="absolute w-full h-full inset-0 object-cover bg-cover"
                         src={mainVideoSection?.video_url}
@@ -284,14 +284,14 @@ export default function ratgeberSeiteFersenspornNew() {
                           slidesPerView: 2,
                         },
                       }}
-                      className="h-full overflow-visible rounded-xl flex flex-col"
+                      className="h-full overflow-visible flex flex-col"
                     >
                       {mainVideoSliderSection.length > 0 &&
                         mainVideoSliderSection.map((item, index) => {
                           return (
                             <SwiperSlide key={index}>
                               <div className="video-info">
-                                <div className="video-wrap w-full aspect-video rounded-[10px] relative overflow-hidden">
+                                <div className="video-wrap w-full aspect-video  relative overflow-hidden">
                                   <iframe
                                     className="absolute w-full h-full inset-0 object-cover bg-cover"
                                     src={item?.video_url}
@@ -350,7 +350,7 @@ export default function ratgeberSeiteFersenspornNew() {
                   return (
                     <div
                       key={index}
-                      className="item w-[50%] shadow-[0px_0px_0.9821px_2px_rgba(0,0,0,0.05),0px_3.9284px_7.8568px_1px_rgba(0,0,0,0.1)] rounded-[10px] h-full"
+                      className="item w-[50%] shadow-[0px_0px_0.9821px_2px_rgba(0,0,0,0.05),0px_3.9284px_7.8568px_1px_rgba(0,0,0,0.1)]  h-full"
                     >
                       <div className="box h-full flex flex-col items-center px-[15px] py-[15px]">
                         <div className="img-title-wrap flex flex-col my-[30px] xl:mb-[10px] h-full justify-center">
@@ -379,7 +379,7 @@ export default function ratgeberSeiteFersenspornNew() {
               </div>
             </div>
             <div className="col-right w-full xl:w-[50%]">
-              <div className="title-wrap bg-[#00795C] rounded-tl-[10px] rounded-tr-[10px]">
+              <div className="title-wrap bg-[#00795C]">
                 <h4 className="text-[24px] md:text-[28px] xl:text-[35px] text-white font-bold leading-[1.2] text-left px-[20px] py-[17px]">
                   {
                     page?.ratgeber_seite_fersensporn?.reference
@@ -387,7 +387,7 @@ export default function ratgeberSeiteFersenspornNew() {
                   }
                 </h4>
               </div>
-              <div className="flex flex-col  md:flex-row gap-[20px] px-[20px] py-[15px] shadow-[0px_0px_0.9821px_2px_rgba(0,0,0,0.05),0px_3.9284px_7.8568px_1px_rgba(0,0,0,0.1)] rounded-bl-[10px] rounded-br-[10px]">
+              <div className="flex flex-col  md:flex-row gap-[20px] px-[20px] py-[15px] shadow-[0px_0px_0.9821px_2px_rgba(0,0,0,0.05),0px_3.9284px_7.8568px_1px_rgba(0,0,0,0.1)]">
                 {relevanteLinksSectionRightPart.map((item, index) => {
                   return (
                     <div
@@ -397,7 +397,7 @@ export default function ratgeberSeiteFersenspornNew() {
                       <h4 className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-[#00795C] font-bold leading-none mb-[10px]">
                         {item?.title}
                       </h4>
-                      <div className="img-wrap relative overflow-hidden rounded-[10px] h-[186px] mt-auto">
+                      <div className="img-wrap relative overflow-hidden  h-[186px] mt-auto">
                         <img
                           className="absolute w-full h-full inset-0 object-cover"
                           src={item?.image}
@@ -474,7 +474,7 @@ export default function ratgeberSeiteFersenspornNew() {
                 </div>
                 <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
                   <img
-                    className="max-w-full rounded-[10px] sm:float-right sm:ml-[15px] mb-[15px] w-full sm:w-[320px] h-[320px] object-cover"
+                    className="max-w-full  sm:float-right sm:ml-[15px] mb-[15px] w-full sm:w-[320px] h-[320px] object-cover"
                     src={
                       page?.ratgeber_seite_fersensporn?.reference
                         ?.ursachen_left_section_image?.reference?.image?.url
@@ -504,7 +504,7 @@ export default function ratgeberSeiteFersenspornNew() {
                 </div>
                 <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
                   <img
-                    className="max-w-full rounded-[10px] sm:float-right sm:ml-[15px] mb-[15px] border-[2px] border-[#EDEDED] w-full sm:w-[320px] h-[320px] object-contain p-[20px]"
+                    className="max-w-full  sm:float-right sm:ml-[15px] mb-[15px] border-[2px] border-[#EDEDED] w-full sm:w-[320px] h-[320px] object-contain p-[20px]"
                     src={
                       page?.ratgeber_seite_fersensporn?.reference
                         ?.ursachen_right_section_image?.reference?.image?.url
@@ -545,7 +545,7 @@ export default function ratgeberSeiteFersenspornNew() {
                   }}
                 ></div>
               </div>
-              <div className="col-right w-full lg:w-[50%]w-[50%]">
+              <div className="col-right w-full lg:w-[50%]">
                 <div className="title-wrap">
                   <h4 className="title text-[#00795C] text-[35px] lg:text-[40px] xl:text-[45px] tracking-[-0.97152px] mb-[20px] leading-[1.1] font-medium">
                     {
@@ -593,9 +593,9 @@ export default function ratgeberSeiteFersenspornNew() {
                 ></div>
               </div>
               <div className="col-right w-full lg:w-[60%]">
-                <div className="img-wrap rounded-[10px] border border-[#D9D9D9]">
+                <div className="img-wrap  border border-[#D9D9D9]">
                   <img
-                    className="w-full rounded-[10px]"
+                    className="w-full"
                     src={
                       page?.ratgeber_seite_fersensporn_second_part?.reference
                         ?.kybun_wirkungsprinzip_section_image?.reference?.image
@@ -688,7 +688,7 @@ export default function ratgeberSeiteFersenspornNew() {
           <div className="rich-text-inner">
             <div className="flex flex-col lg:flex-row mt-[72px] gap-[30px] xl:gap-[73px]">
               <div className="col-left w-full lg:w-[65%]">
-                <div className="video-wrap w-full aspect-video rounded-[10px] relative overflow-hidden">
+                <div className="video-wrap w-full aspect-video  relative overflow-hidden">
                   <iframe
                     className="absolute w-full h-full inset-0 object-cover bg-cover"
                     src={
@@ -858,7 +858,7 @@ export default function ratgeberSeiteFersenspornNew() {
                 prevEl: '.swiper-button-next-review',
                 nextEl: '.swiper-button-prev-review',
               }}
-              className="h-full overflow-visible rounded-xl flex flex-col"
+              className="h-full overflow-visible flex flex-col"
             >
               {drInfoSlider.map((item, index) => {
                 return (

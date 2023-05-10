@@ -7,7 +7,7 @@ export default function quickLink() {
   return (
     <>
       <div className="container">
-        <div className="title-wrap mt-[120px] lg:mt-[200px]">
+        <div className="title-wrap">
           <h2 className="title text-[#00795C] tracking-[-2.07729px] text-[35px] md:text-[45px] lg:text-[75px] xl:text-[95px] mb-[35px] md:mb-[45px] lg::mb-[65px] xl:mb-[85px]">
             Erlebnis
           </h2>
@@ -32,18 +32,18 @@ export default function quickLink() {
               loop="false"
               autoplay="false"
               pagination={{clickable: true}}
-              className="h-full overflow-visible rounded-xl flex flex-col"
+              className="h-full overflow-visible flex flex-col"
             >
               <SwiperSlide>
                 <img
-                  className="h-full object-cover  rounded-xl block"
+                  className="h-full object-cover block"
                   src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Images.jpg?v=1680858582"
                   alt=""
                 />
               </SwiperSlide>
               <SwiperSlide>
                 <img
-                  className="h-full object-cover  rounded-xl block"
+                  className="h-full object-cover block"
                   src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/jeremy-lapak-CVvFVQ_-oUg-unsplash_1.png?v=1680858463"
                   alt=""
                 />
@@ -125,7 +125,7 @@ export default function quickLink() {
           </h2>
           <div className="video-wrap">
             <iframe
-              className="w-full aspect-video rounded-xl"
+              className="w-full aspect-video"
               src="https://www.youtube.com/embed/yAoLSRbwxL8"
               title="YouTube video player"
               frameborder="0"
