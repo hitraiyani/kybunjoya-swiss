@@ -18,6 +18,7 @@ import {
   Link,
   ScrollToTop,
   ArrowRight2,
+  IconArrowBottom,
 } from '~/components';
 import {
   useParams,
@@ -80,7 +81,9 @@ function Breadcrumb() {
             </li>
             <li>
               <div className="flex items-center">
-                <ArrowRight2 className={'w-[21px] h-[21px] mr-[8px] md:mr-[16px]'} />
+                <ArrowRight2
+                  className={'w-[21px] h-[21px] mr-[8px] md:mr-[16px]'}
+                />
                 <a
                   href="#"
                   className="tracking-[-0.400697px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] font-normal text-black leading-none hover:text-[#00795C]"
@@ -91,7 +94,9 @@ function Breadcrumb() {
             </li>
             <li aria-current="page">
               <div className="flex items-center">
-                <ArrowRight2 className={'w-[21px] h-[21px] mr-[8px] md:mr-[16px]'} />
+                <ArrowRight2
+                  className={'w-[21px] h-[21px] mr-[8px] md:mr-[16px]'}
+                />
                 <a
                   href="#"
                   className="tracking-[-0.400697px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] font-normal text-black leading-none hover:text-[#00795C]"
@@ -102,7 +107,9 @@ function Breadcrumb() {
             </li>
             <li aria-current="page">
               <div className="flex items-center">
-                <ArrowRight2 className={'w-[21px] h-[21px] mr-[8px] md:mr-[16px]'} />
+                <ArrowRight2
+                  className={'w-[21px] h-[21px] mr-[8px] md:mr-[16px]'}
+                />
                 <a
                   href="#"
                   className="tracking-[-0.400697px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] font-normal text-black leading-none hover:text-[#00795C]"
@@ -509,7 +516,7 @@ function Badge({openCart, dark, count}) {
 
 function FooterMainMenuSub({sub_menu_item}) {
   return (
-    <ul className="font-normal text-base text-[#595959]">
+    <ul className="font-normal text-base text-[#595959] sub-menu">
       {sub_menu_item.map((subItem, index) => (
         <li className="mb-2" key={index}>
           <Link
@@ -538,7 +545,9 @@ function Footer({menu, main_menu}) {
       ? 4
       : menu?.items?.length + 1
     : [];
-
+  const footerMenuToggle = (event) => {
+    event.currentTarget.parentNode.classList.toggle('active');
+  };
   return (
     <>
       <Section
@@ -547,7 +556,7 @@ function Footer({menu, main_menu}) {
         role="contentinfo"
         // className={`grid min-h-[25rem] items-start grid-flow-row w-full gap-6 py-8 px-6 md:px-8 lg:px-12 md:gap-8 lg:gap-12 grid-cols-1 md:grid-cols-2 lg:grid-cols-${itemsCount}
         //   bg-primary dark:bg-contrast dark:text-primary text-contrast overflow-hidden`}
-        className="pt-[64px] pb-[52px] bg-[#EDEDED] "
+        className="pt-[64px] pb-[52px] bg-[#EDEDED] site-footer"
       >
         <div className="container relative">
           <ScrollToTop />
@@ -567,20 +576,20 @@ function Footer({menu, main_menu}) {
                     <input
                       type="email"
                       id="email"
-                      className="bg-transparent border-b-[1px] font-normal border-[#999999] text-[#000] text-base placeholder:text-[#999] focus:ring-black-500 focus:border-black-500 block w-full max-w-[576px] max-w-sm-full p-0 focus:bordr-0 focus:outline-none focus:border-b-[1px] focus:border-[#000] dark:placeholder-gray-400  dark:focus:ring-black-500 dark:focus:border-black-500"
+                      className="bg-transparent border-b-[1px] font-normal border-[#999999] text-[#000] text-base placeholder:text-[#CCCCCC] focus:ring-black-500 focus:border-black-500 block w-full max-w-[576px] max-w-sm-full p-0 focus:bordr-0 focus:outline-none focus:border-b-[1px] focus:border-[#000] dark:placeholder-gray-400  dark:focus:ring-black-500 dark:focus:border-black-500 pb-[10px]"
                       placeholder="Email"
                       required
                     />
                   </form>
                 </div>
-                <div className="grid grid-cols-2 gap-8 lg:gap-8 lg:grid-cols-3">
+                <div className="grid grid-cols-2 gap-y-0 gap-8 lg:gap-8 lg:grid-cols-3">
                   {(mainMenuChunk || []).map((menuitem, index) => {
                     return (
                       <div key={index}>
                         {menuitem.map((item, subIndex) => {
                           return (
-                            <span key={subIndex}>
-                              <h2 className="mb-8 lg:text-[26px] text-[22px] font-bold capitalize text-[#00795C]">
+                            <span key={subIndex} className="nav-item relative">
+                              <h2 className="mb-8 lg:text-[26px] text-[22px] font-bold capitalize text-[#00795C] pr-[40px] md:pr-0">
                                 <Link
                                   to={item.to}
                                   target={item.target}
@@ -591,7 +600,19 @@ function Footer({menu, main_menu}) {
                                 </Link>
                               </h2>
                               {item.items.length > 0 && (
-                                <FooterMainMenuSub sub_menu_item={item.items} />
+                                <>
+                                  <div
+                                    onClick={footerMenuToggle}
+                                    className="toggle-menu-icon text-[#00795C] absolute top-0 right-0 w-[40px] h-[30px] flex items-center justify-end md:hidden cursor-pointer"
+                                  >
+                                    <IconArrowBottom
+                                      className={'w-[30px] h-[30px] transition-all duration-500'}
+                                    />
+                                  </div>
+                                  <FooterMainMenuSub
+                                    sub_menu_item={item.items}
+                                  />
+                                </>
                               )}
                             </span>
                           );
@@ -602,7 +623,7 @@ function Footer({menu, main_menu}) {
                 </div>
               </div>
               <div className="mt-[40px] lg:mt-[-80px]">
-                <div className="flex mb-6">
+                {/* <div className="flex mb-6">
                   <p className="font-normal text-base text-[#595959] flex gap-4 items-center">
                     <span>
                       <svg
@@ -624,7 +645,7 @@ function Footer({menu, main_menu}) {
                       Chat{' '}
                     </a>{' '}
                   </p>
-                </div>
+                </div> */}
                 <div className="flex mb-11">
                   <p className="font-normal text-base text-[#595959] flex gap-4 items-center">
                     <span>
@@ -661,16 +682,11 @@ function Footer({menu, main_menu}) {
                       href="#"
                       className="hover:underline hover:text-[#00795C] font-normal text-base text-[#595959]"
                     >
-                      Deutsch{' '}
+                      DE{' '}
                     </a>{' '}
                   </p>
                 </div>
                 <div className="flex mb-12">
-                  <span className="text-[15.94px] font-normal sm:text-center text-[#595959]">
-                    © kybun Joya {new Date().getFullYear()}{' '}
-                  </span>
-                </div>
-                <div className="sm:flex sm:items-center sm:justify-between">
                   <ul className="font-normal text-base  text-[#595959] flex gap-3 lg:gap-9 flex-wrap">
                     {(menu?.items || []).map((item, index) => (
                       <li key={index}>
@@ -683,6 +699,11 @@ function Footer({menu, main_menu}) {
                       </li>
                     ))}
                   </ul>
+                </div>
+                <div className="sm:flex sm:items-center sm:justify-between">
+                  <span className="text-[15.94px] font-normal sm:text-center text-[#595959]">
+                    © kybun Joya {new Date().getFullYear()}{' '}
+                  </span>
                   <div className="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
                     <a
                       href="#"

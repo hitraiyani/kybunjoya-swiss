@@ -12,7 +12,7 @@ export function Hero({
     <div className="heroSlider-sec">
       <div className="prodcut-items">
         <div className="prodcut-item">
-          <div className="relative flex w-full h-screen flex-co image-container">
+          <div className="relative flex w-full h-[50vh] sm:h-[60vh] md:h-[82vh] flex-co image-container min-h-[450px]">
             <img
               className="object-cover object-center w-full active"
               id="defaultActive"
