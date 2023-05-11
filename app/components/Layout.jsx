@@ -572,7 +572,7 @@ function Footer({menu, main_menu}) {
                     </p>
                   </div>
                   <form className="mt-12 mb-10">
-                    <div className='max-w-[576px] max-w-sm-full relative'>
+                    <div className="max-w-[576px] max-w-sm-full relative">
                       <input
                         type="email"
                         id="email"
@@ -580,11 +580,36 @@ function Footer({menu, main_menu}) {
                         placeholder="Email"
                         required
                       />
-                      <button className='absolute right-[-10px] top-1/2 -translate-y-1/2 text-[#CCCCCC]'>
-                        <IconArrowBottom className={'rotate-[-90deg] w-[30px] h-[30px]'} />
+                      <button className="absolute right-[-10px] top-1/2 -translate-y-1/2 text-[#CCCCCC]">
+                        <IconArrowBottom
+                          className={'rotate-[-90deg] w-[30px] h-[30px]'}
+                        />
                       </button>
                     </div>
                   </form>
+                  <div className="flex mb-11">
+                    <p className="font-normal text-base text-[#595959] flex gap-4 items-center">
+                      {/* <span>
+                      <svg
+                        width="18"
+                        height="13"
+                        viewBox="0 0 18 13"
+                        fill="none"
+                      >
+                        <path
+                          d="M0 0.390625H18V12.3906H0V0.390625ZM1 2.40263V11.3906H17V2.40263L9 8.51962L1 2.40263ZM16.677 1.39062H1.323L9 7.26062L16.677 1.39062Z"
+                          fill="#595959"
+                        />
+                      </svg>
+                    </span>{' '} */}
+                      <a
+                        href="#"
+                        className="hover:underline hover:text-[#00795C] font-normal text-base text-[#595959]"
+                      >
+                        Kontakt{' '}
+                      </a>{' '}
+                    </p>
+                  </div>
                 </div>
                 <div className="grid grid-cols-2 gap-y-0 gap-8 lg:gap-8 lg:grid-cols-3">
                   {(mainMenuChunk || []).map((menuitem, index) => {
@@ -593,7 +618,7 @@ function Footer({menu, main_menu}) {
                         {menuitem.map((item, subIndex) => {
                           return (
                             <span key={subIndex} className="nav-item relative">
-                              <h2 className="mb-8 lg:text-[26px] text-[22px] font-bold capitalize text-[#00795C] pr-[40px] md:pr-0">
+                              <h2 className="mb-8 lg:text-[26px] text-[20px] font-bold capitalize text-[#00795C] pr-[40px] md:pr-0">
                                 <Link
                                   to={item.to}
                                   target={item.target}
@@ -628,7 +653,7 @@ function Footer({menu, main_menu}) {
                   })}
                 </div>
               </div>
-              <div className="mt-[40px] lg:mt-[-80px]">
+              <div className="mt-[40px]">
                 {/* <div className="flex mb-6">
                   <p className="font-normal text-base text-[#595959] flex gap-4 items-center">
                     <span>
@@ -652,29 +677,25 @@ function Footer({menu, main_menu}) {
                     </a>{' '}
                   </p>
                 </div> */}
-                <div className="flex mb-11">
-                  <p className="font-normal text-base text-[#595959] flex gap-4 items-center">
-                    {/* <span>
-                      <svg
-                        width="18"
-                        height="13"
-                        viewBox="0 0 18 13"
-                        fill="none"
-                      >
-                        <path
-                          d="M0 0.390625H18V12.3906H0V0.390625ZM1 2.40263V11.3906H17V2.40263L9 8.51962L1 2.40263ZM16.677 1.39062H1.323L9 7.26062L16.677 1.39062Z"
-                          fill="#595959"
-                        />
-                      </svg>
-                    </span>{' '} */}
+                <div className="space-x-6 sm:justify-center mb-10 flex sm:hidden">
                     <a
                       href="#"
-                      className="hover:underline hover:text-[#00795C] font-normal text-base text-[#595959]"
+                      className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
                     >
-                      Kontakt{' '}
-                    </a>{' '}
-                  </p>
-                </div>
+                      <svg
+                        width="50"
+                        height="50"
+                        viewBox="0 0 50 50"
+                        fill="none"
+                      >
+                        <rect width="50" height="50" rx="8" fill="#595959" />
+                        <path
+                          d="M17.7785 14.8876C17.7785 16.4216 16.7515 17.7427 14.886 17.7427C13.1326 17.7427 12 16.498 12 14.964C12 13.3894 13.0985 12 14.8892 12C16.68 12 17.7428 13.313 17.7785 14.8876ZM12 38V19.2215H17.7785V37.9984L12 38ZM20.6661 25.6419C20.6661 23.4108 20.593 21.5453 20.5199 19.9349H25.7101L25.9685 22.4227H26.0774C26.8086 21.2527 28.601 19.5351 31.5991 19.5351C35.2554 19.5351 38 21.9824 38 27.2506V38H32.2215V28.0875C32.2215 25.7849 31.3456 24.0283 29.3339 24.0283C27.7999 24.0283 27.0312 25.2714 26.6283 26.2951C26.482 26.6607 26.4446 27.1726 26.4446 27.6861V37.9967H20.6661V25.6386V25.6419Z"
+                          fill="#F5F5F5"
+                        />
+                      </svg>
+                    </a>
+                  </div>
                 <div className="flex mb-10">
                   <p className="font-normal text-base text-[#595959] flex gap-4 items-center">
                     <span>
@@ -693,7 +714,7 @@ function Footer({menu, main_menu}) {
                   </p>
                 </div>
                 <div className="flex mb-12">
-                  <ul className="font-normal text-base  text-[#595959] flex gap-3 lg:gap-9 flex-wrap">
+                  <ul className="font-normal text-base  text-[#595959] flex gap-3 lg:gap-9 flex-col sm:flex-row flex-wrap">
                     {(menu?.items || []).map((item, index) => (
                       <li key={index}>
                         <Link
@@ -710,7 +731,7 @@ function Footer({menu, main_menu}) {
                   <span className="text-[15.94px] font-normal sm:text-center text-[#595959]">
                     © kybun Joya {new Date().getFullYear()}{' '}
                   </span>
-                  <div className="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
+                  <div className="mt-4 space-x-6 sm:justify-center sm:mt-0 hidden sm:flex">
                     <a
                       href="#"
                       className="text-gray-500 hover:text-gray-900 dark:hover:text-white"

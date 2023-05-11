@@ -32,7 +32,7 @@ export function BrandGrid({className}) {
     infinite: true,
     speed: 500,
     slidesToShow: 1,
-    slidesToScroll: 3,
+    slidesToScroll: 5,
     variableWidth: true,
     arrows: false,
     centerMode: true,
@@ -59,7 +59,8 @@ export function BrandGrid({className}) {
       {
         breakpoint: 576,
         settings: {
-          slidesToScroll: 1,
+          slidesToScroll: 2,
+          centerPadding: '50px',
         },
       },
     ],
