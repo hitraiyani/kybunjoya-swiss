@@ -79,10 +79,11 @@ export default function ratgeberSeiteFersensporn() {
 
   const aicoContentBuilders = aicoProductData?.aico_content_builders?.value ? JSON.parse(aicoProductData.aico_content_builders.value) : [];
   const aicoTestimonialsData = aicoProductData?.testimonials_data?.value ? JSON.parse(aicoProductData.testimonials_data.value) : [];
-
   let aicoCotentBuilderHtml = '';
   if (aicoContentBuilders.length) {
-    aicoCotentBuilderHtml = aicoContentBuilders[0]['values'][0]['contentBuilder']['value'];
+    if (aicoContentBuilders[0]['values'][0]['contentBuilder']) {
+      aicoCotentBuilderHtml = aicoContentBuilders[0]['values'][0]['contentBuilder']['value'];
+    }
   }
 
 
