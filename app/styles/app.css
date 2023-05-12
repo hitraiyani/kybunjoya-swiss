@@ -408,6 +408,7 @@ p:last-child {
 .article-slide .swiper-button-prev {
   color: #fff;
   top: calc(50% - 100px);
+  transform: translateY(-230%);
 }
 
 .article-slide .article-slider {
@@ -445,11 +446,11 @@ p:last-child {
   padding-left: 0 !important;
 }
 .article-slide .slick-prev {
-  left: 10px;
+  left: -40px;
   z-index: 11;
 }
 .article-slide .slick-next {
-  right: 10px;
+  right: -40px;
   z-index: 11;
 }
 .article-slide .slick-prev,
@@ -460,12 +461,12 @@ p:last-child {
 }
 .article-slide .slick-next:before {
   content: '';
-  background: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="24" height="24" viewBox="0 0 24 24"%3E%3Cpath fill="white" d="M7.15 21.1q-.375-.375-.375-.888t.375-.887L14.475 12l-7.35-7.35q-.35-.35-.35-.875t.375-.9q.375-.375.888-.375t.887.375l8.4 8.425q.15.15.213.325T17.6 12q0 .2-.063.375t-.212.325L8.9 21.125q-.35.35-.863.35T7.15 21.1Z"%2F%3E%3C%2Fsvg%3E');
+  background: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="24" height="24" viewBox="0 0 24 24"%3E%3Cpath fill="%2300795c" d="M7.15 21.1q-.375-.375-.375-.888t.375-.887L14.475 12l-7.35-7.35q-.35-.35-.35-.875t.375-.9q.375-.375.888-.375t.887.375l8.4 8.425q.15.15.213.325T17.6 12q0 .2-.063.375t-.212.325L8.9 21.125q-.35.35-.863.35T7.15 21.1Z"%2F%3E%3C%2Fsvg%3E');
 }
 
 .article-slide .slick-prev:before {
   content: '';
-  background: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="24" height="24" viewBox="0 0 24 24"%3E%3Cpath fill="white" d="M15.125 21.1L6.7 12.7q-.15-.15-.213-.325T6.425 12q0-.2.062-.375T6.7 11.3l8.425-8.425q.35-.35.875-.35t.9.375q.375.375.375.875t-.375.875L9.55 12l7.35 7.35q.35.35.35.863t-.375.887q-.375.375-.875.375t-.875-.375Z"%2F%3E%3C%2Fsvg%3E');
+  background: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="24" height="24" viewBox="0 0 24 24"%3E%3Cpath fill="%2300795c" d="M15.125 21.1L6.7 12.7q-.15-.15-.213-.325T6.425 12q0-.2.062-.375T6.7 11.3l8.425-8.425q.35-.35.875-.35t.9.375q.375.375.375.875t-.375.875L9.55 12l7.35 7.35q.35.35.35.863t-.375.887q-.375.375-.875.375t-.875-.375Z"%2F%3E%3C%2Fsvg%3E');
 }
 .article-slide .slick-prev:before,
 .article-slide .slick-next:before {
@@ -475,6 +476,23 @@ p:last-child {
   opacity: 1;
   background-repeat: no-repeat !important;
   background-size: 100% !important;
+}
+@media (max-width: 1023px) {
+  .article-slide .slick-next:before {
+    content: '';
+    background: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="24" height="24" viewBox="0 0 24 24"%3E%3Cpath fill="white" d="M7.15 21.1q-.375-.375-.375-.888t.375-.887L14.475 12l-7.35-7.35q-.35-.35-.35-.875t.375-.9q.375-.375.888-.375t.887.375l8.4 8.425q.15.15.213.325T17.6 12q0 .2-.063.375t-.212.325L8.9 21.125q-.35.35-.863.35T7.15 21.1Z"%2F%3E%3C%2Fsvg%3E');
+  }
+
+  .article-slide .slick-prev:before {
+    content: '';
+    background: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="24" height="24" viewBox="0 0 24 24"%3E%3Cpath fill="white" d="M15.125 21.1L6.7 12.7q-.15-.15-.213-.325T6.425 12q0-.2.062-.375T6.7 11.3l8.425-8.425q.35-.35.875-.35t.9.375q.375.375.375.875t-.375.875L9.55 12l7.35 7.35q.35.35.35.863t-.375.887q-.375.375-.875.375t-.875-.375Z"%2F%3E%3C%2Fsvg%3E');
+  }
+  .article-slide .slick-prev {
+    left: 10px;
+  }
+  .article-slide .slick-next {
+    right: 10px;
+  }
 }
 @media (max-width: 767px) {
   .article-slide .slick-slide {
@@ -801,7 +819,9 @@ p:last-child {
 /* Product linsting page css */
 
 /* ratgeber page css */
-.ratgeber-banner-section .img-overlay {
+.ratgeber-banner-section .img-overlay,
+.blog-bannersec .img-overlay,
+.kontakt-banner-section .img-overlay {
   background: linear-gradient(
     180deg,
     rgba(118, 118, 118, 0) 0%,
@@ -1238,13 +1258,13 @@ p:last-child {
   outline: none !important;
 }
 
-select{
+select {
   background: url("data:image/svg+xml;utf8,<svg viewBox='0 0 140 140' width='24' height='24' xmlns='http://www.w3.org/2000/svg'><g><path d='m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z' fill='balck'/></g></svg>")
-					no-repeat;
-				background-position: right 0 top 50%;
-				background-size: 17px;
-				cursor: pointer;
-				-webkit-appearance: none;
-				-moz-appearance: none;
-				appearance: none;
+    no-repeat;
+  background-position: right 0 top 50%;
+  background-size: 17px;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }

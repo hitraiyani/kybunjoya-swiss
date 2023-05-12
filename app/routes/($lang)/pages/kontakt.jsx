@@ -32,10 +32,10 @@ export default function kontakt() {
           </nav>
         </div>
       </div>
-      <section className="hero-banner-section ratgeber-banner-section  overflow-hidden">
+      <section className="hero-banner-section kontakt-banner-section  overflow-hidden">
         <div className="hero-banner-inner relative">
           <div className="banner-info">
-            <div className="flex flex-col md:flex-row md:items-end pt-[16.5%] pb-[50px] px-[20px] md:px-[40px] lg:px-[60px] xl:px-[80px] justify-between min-h-[300px]">
+            <div className="flex flex-row items-end pt-[16.5%] pb-[50px] px-[20px] md:px-[40px] lg:px-[60px] xl:px-[80px] justify-between min-h-[300px]">
               <div className="title-wrap">
                 <h1 className="text-white text-[35px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] font-bold leading-[1.1]">
                   Wie können wir dir helfen?

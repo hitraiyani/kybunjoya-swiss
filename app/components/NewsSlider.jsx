@@ -14,7 +14,8 @@ export function NewsSlider({news}) {
     slidesToShow: 4,
     slidesToScroll: 1,
     arrows: true,
-    centerMode: true,
+    centerMode: false,
+    centerPadding: '0',
     responsive: [
       {
         breakpoint: 1280,
@@ -35,6 +36,7 @@ export function NewsSlider({news}) {
         settings: {
           slidesToShow: 2,
           centerPadding: '50px',
+          centerMode: true,
         },
       },
       {
@@ -42,6 +44,7 @@ export function NewsSlider({news}) {
         settings: {
           slidesToShow: 1,
           centerPadding: '40px',
+          centerMode: true,
         },
       },
     ],
