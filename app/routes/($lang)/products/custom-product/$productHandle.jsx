@@ -64,27 +64,35 @@ export default function ratgeberSeiteFersensporn() {
 
   const aicoProductData = product;
 
-  const apicoProductTags = [];
+  const aicoDrKybunJoyaProductTags = [];
+  let drKybunJoyaTagHeading = '';
   aicoProductData?.tags?.forEach((item) => {
     if (item.includes('attribute_de_Dr.')) {
-      apicoProductTags.push(item.split('_').at(-1));
+      if (!drKybunJoyaTagHeading) {
+          drKybunJoyaTagHeading = item.split('_').at(-2);
+      }
+      aicoDrKybunJoyaProductTags.push(item.split('_').at(-1));
     }
   });
-  const apicoProductTagsUrsachen = [];
+  const aicoProductTagsUrsachen = [];
+  let ursachenTagHeading = '';
   aicoProductData?.tags?.forEach((item) => {
     if (item.includes('attribute_de_Ursachen')) {
-      apicoProductTagsUrsachen.push(item.split('_').at(-1));
+      if (!ursachenTagHeading) {
+        ursachenTagHeading = item.split('_').at(-2);
+      }
+      aicoProductTagsUrsachen.push(item.split('_').at(-1));
     }
   });
 
-  const aicoContentBuilders = aicoProductData?.aico_content_builders?.value ? JSON.parse(aicoProductData.aico_content_builders.value) : [];
   const aicoTestimonialsData = aicoProductData?.testimonials_data?.value ? JSON.parse(aicoProductData.testimonials_data.value) : [];
-  let aicoCotentBuilderHtml = '';
-  if (aicoContentBuilders.length) {
-    if (aicoContentBuilders[0]['values'][0]['contentBuilder']) {
-      aicoCotentBuilderHtml = aicoContentBuilders[0]['values'][0]['contentBuilder']['value'];
-    }
-  }
+  // const aicoContentBuilders = aicoProductData?.aico_content_builders?.value ? JSON.parse(aicoProductData.aico_content_builders.value) : [];
+  // let aicoCotentBuilderHtml = '';
+  // if (aicoContentBuilders.length) {
+  //   if (aicoContentBuilders[0]['values'][0]['contentBuilder']) {
+  //     aicoCotentBuilderHtml = aicoContentBuilders[0]['values'][0]['contentBuilder']['value'];
+  //   }
+  // }
 
 
   const dkj_videourl_de_ch = getAicoMetaByKeyName(
@@ -261,7 +269,6 @@ export default function ratgeberSeiteFersensporn() {
           </div>
         </section>
         <section className="rich-text-sec mt-[40px] md:mt-[60px] lg:mt-[80px] xl:mt-[100px]">
-
           <div className="rich-text-inner">
             {/* <div className="title-wrap mb-[20px]">
               <h4 className="text-black text-[35px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] mb-[20px] font-medium">
@@ -273,27 +280,32 @@ export default function ratgeberSeiteFersensporn() {
             </div> */}
             <div className="flex flex-col lg:flex-row gap-y-[30px] lg:gap-x-[50px] xl:gap-x-[60px]">
               <div className="col-left w-full lg:w-[50%]">
-                <div className="mobile-info aicoCotentBuilderWrap">
-                  <div
-                    className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
-                    dangerouslySetInnerHTML={{
-                      __html: aicoCotentBuilderHtml,
-                    }}
-                  ></div>
-                </div>
-              </div>
-
-              <div className="col-right w-full lg:w-[50%]">
-                <div className="desc text-[16px] md:text-[16px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mb-[32px]"
+              <div className="desc text-[16px] md:text-[16px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mb-[32px]"
                 >
-                  <ul className="list-style2 list-style3">
-                    { apicoProductTags.map((item,index) => {
-                        return (<li key={index}>{item}</li>)
-                    }) }
-                    { apicoProductTagsUrsachen.map((item,index) => {
+                 {aicoProductTagsUrsachen.length > 0 && (
+                  <>
+                    <h2 className="text-[#00795C] text-[30px] lg:text-[40px] tracking-[-1.05984px] mb-[20px] font-medium">
+                      {ursachenTagHeading}
+                    </h2>
+                    <ul className="list-style2 list-style3">
+                      {aicoProductTagsUrsachen.map((item, index) => {
                         return (<li className='list-style-red' key={index}>{item}</li>)
-                    }) }
-                  </ul>
+                      })}
+                    </ul>
+                  </>
+                 )}
+                 {aicoDrKybunJoyaProductTags.length > 0 && (
+                    <>
+                      <h2 className="text-[#00795C] text-[30px] lg:text-[40px] tracking-[-1.05984px] mb-[20px] font-medium">
+                        {drKybunJoyaTagHeading}
+                      </h2>
+                      <ul className="list-style2 list-style3">
+                        {aicoDrKybunJoyaProductTags.map((item, index) => {
+                          return (<li key={index}>{item}</li>)
+                        })}
+                      </ul>
+                    </>
+                )}
                 </div>
                 <div className="btn-wrap mt-[20px]">
                   <a
@@ -309,6 +321,29 @@ export default function ratgeberSeiteFersensporn() {
                     Fersensporn Broschüre
                   </a>
                 </div>
+                {/* <div className="mobile-info aicoCotentBuilderWrap">
+                  <div
+                    className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
+                    dangerouslySetInnerHTML={{
+                      __html: aicoCotentBuilderHtml,
+                    }}
+                  ></div>
+                </div> */}
+              </div>
+
+              <div className="col-right w-full lg:w-[50%]">
+                {/* <div className="desc text-[16px] md:text-[16px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mb-[32px]"
+                >
+                  <ul className="list-style2 list-style3">
+                    { apicoProductTags.map((item,index) => {
+                        return (<li key={index}>{item}</li>)
+                    }) }
+                    { aicoProductTagsUrsachen.map((item,index) => {
+                        return (<li className='list-style-red' key={index}>{item}</li>)
+                    }) }
+                  </ul>
+                </div> */}
+                
               </div>
             </div>
           </div>
