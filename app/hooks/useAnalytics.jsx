@@ -29,10 +29,10 @@ export function useAnalytics(hasUserConsent, locale) {
       ...pageAnalytics,
     };
 
-    sendShopifyAnalytics({
-      eventName: AnalyticsEventName.PAGE_VIEW,
-      payload,
-    });
+    // sendShopifyAnalytics({
+    //   eventName: AnalyticsEventName.PAGE_VIEW,
+    //   payload,
+    // });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location]);
 
