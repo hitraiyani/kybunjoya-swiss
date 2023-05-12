@@ -429,7 +429,7 @@ export default function ratgeberSeiteFersenspornNew() {
                     ?.kybun_joya_fersensporn_section_title?.value
                 }
               </h2>
-              <h4 className="title text-[#00795C] text-[35px] lg:text-[40px] xl:text-[45px] tracking-[-0.97152px] mb-[20px] leading-[1.1] font-medium">
+              <h4 className="title text-[#00795C] text-[28px] md:text-[30px] lg:text-[35px] tracking-[-0.97152px] mb-[20px] leading-[1.1] font-medium">
                 {
                   page?.ratgeber_seite_fersensporn?.reference
                     ?.kybun_joya_fersensporn_section_sub_title?.value
@@ -453,7 +453,7 @@ export default function ratgeberSeiteFersenspornNew() {
         >
           <div className="rich-text-inner">
             <div className="title-wrap">
-              <h4 className="title text-[#00795C] text-[35px] lg:text-[40px] xl:text-[45px] tracking-[-0.97152px] mb-[20px] leading-[1.1] font-medium">
+              <h4 className="title text-[#00795C] text-[28px] md:text-[30px] lg:text-[35px] tracking-[-0.97152px] mb-[20px] leading-[1.1] font-medium">
                 {
                   page?.ratgeber_seite_fersensporn?.reference?.ursachen_title
                     ?.value
@@ -528,7 +528,7 @@ export default function ratgeberSeiteFersenspornNew() {
             >
               <div className="col-left w-full lg:w-[50%]">
                 <div className="title-wrap">
-                  <h4 className="title text-[#00795C] text-[35px] lg:text-[40px] xl:text-[45px] tracking-[-0.97152px] mb-[20px] leading-[1.1] font-medium">
+                  <h4 className="title text-[#00795C] text-[28px] md:text-[30px] lg:text-[35px] tracking-[-0.97152px] mb-[20px] leading-[1.1] font-medium">
                     {
                       page?.ratgeber_seite_fersensporn?.reference
                         ?.langzeitfolgen_section_title?.value
@@ -547,7 +547,7 @@ export default function ratgeberSeiteFersenspornNew() {
               </div>
               <div className="col-right w-full lg:w-[50%]">
                 <div className="title-wrap">
-                  <h4 className="title text-[#00795C] text-[35px] lg:text-[40px] xl:text-[45px] tracking-[-0.97152px] mb-[20px] leading-[1.1] font-medium">
+                  <h4 className="title text-[#00795C] text-[28px] md:text-[30px] lg:text-[35px] tracking-[-0.97152px] mb-[20px] leading-[1.1] font-medium">
                     {
                       page?.ratgeber_seite_fersensporn?.reference
                         ?.konventionelle_therapie_section_title?.value
