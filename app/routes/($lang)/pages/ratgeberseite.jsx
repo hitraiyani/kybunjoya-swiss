@@ -26,6 +26,17 @@ export async function loader({request, params, context}) {
     throw new Response(null, {status: 404});
   }
 
+  const pageCollectionTitle = page?.ratgeber_detail?.reference?.page_collection?.reference?.title;
+
+  const {sub_collections} = await context.storefront.query(COLLECTIONS_QUERY, {
+    variables: {
+      searchTerm : `title:\\"${pageCollectionTitle}\\"`,
+      country: context.storefront.i18n.country,
+      language: context.storefront.i18n.language,
+    },
+  });
+
+
   const collectionHandle = 'all-products';
 
 
@@ -56,7 +67,7 @@ export async function loader({request, params, context}) {
   );
 
   return json(
-    {page, collection},
+    {page, collection, sub_collections, pageCollectionTitle},
     {
       headers: {
         // TODO cacheLong()
@@ -65,7 +76,7 @@ export async function loader({request, params, context}) {
   );
 }
 export default function ratgeberseite() {
-  const {page, collection} = useLoaderData();
+  const {page, collection, sub_collections, pageCollectionTitle} = useLoaderData();
 
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -180,7 +191,6 @@ export default function ratgeberseite() {
                     {page?.ratgeber_detail?.reference?.head_title?.value}
                   </h2>
                 </div>
-
                 <div
                   className="desc mt-[20px] mx-auto lg:mt-[30px] xl:mt-[52px] text-[28px] md:text-[30px] lg:text-[35px] 2xl:text-[40px] tracking-[-0.97152px]  text-left xl:text-right text-black leading-[1.2]"
                   dangerouslySetInnerHTML={{
@@ -300,7 +310,23 @@ export default function ratgeberseite() {
           </div>
         </section>
         <section className="dr-faq-sec !max-w-[870px] mx-auto flex flex-col gap-[20px] my-[40px] md:my-[60px] lg:my-[80px] xl:my-[100px]">
-          {buttonAccordionMapping?.map((item, index) => {
+          {sub_collections?.nodes?.map((item,index) => {
+              if (item.title != pageCollectionTitle) {
+                  console.log("item", );
+                  <ul><li>Fersensporn / Plantar Fasciitis / Fasziitisplantaris</li></ul>
+                  return (
+                    <ExpandingCardStyle2
+                      key={index}
+                      id={`link${index + 1}`}
+                      content={""}
+                      products={item?.products?.edges}
+                      title={item.title.replace(pageCollectionTitle, "")}
+                    />
+                  )
+              }
+          })}
+          {/* {buttonAccordionMapping?.map((item, index) => {
+            console.log("item",item);
             if (!item.accordion_title) return <></>;
             return (
               <ExpandingCardStyle2
@@ -310,7 +336,7 @@ export default function ratgeberseite() {
                 title={item.accordion_title}
               />
             );
-          })}
+          })} */}
           <div className="info-bottom mt-[20px] md:mt-[40px] lg:mt-[60px] xl:mt-[80px]">
             <div className="title-wrap">
               <h3 className="text-center tracking-[-0.97152px] text-[28px] md:text-[30px] lg:text-[2 leading-[1.1] font-medium">
@@ -436,12 +462,45 @@ ${MEDIA_FRAGMENT}
             button_accordion_mapping : field(key: "button_accordion_mapping") {
               value
             }
+            page_collection : field(key: "page_collection") {
+              reference {
+                ... on Collection {
+                  title
+                  handle
+                }
+              }
+            }
           }
         }
       }
       seo {
         description
         title
+      }
+    }
+  }
+`;
+
+const COLLECTIONS_QUERY = `#graphql
+  query Collections(
+    $country: CountryCode
+    $language: LanguageCode
+    $searchTerm: String
+  ) @inContext(country: $country, language: $language) {
+    sub_collections : collections (first : 250,  query: $searchTerm) {
+      nodes {
+        id
+        title
+        handle
+        products(first: 50, sortKey : TITLE) {
+          edges {
+            node {
+              id
+              title
+              handle
+            }
+          }
+        }
       }
     }
   }

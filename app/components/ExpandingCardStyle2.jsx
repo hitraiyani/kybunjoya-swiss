@@ -1,7 +1,8 @@
 import {Disclosure, Transition} from '@headlessui/react';
-import {Text, IconClose} from '~/components';
+import {Text, IconClose, Link} from '~/components';
 
-export function ExpandingCardStyle2({title, content,id}) {
+export function ExpandingCardStyle2({title, content,id, products = []}) {
+
   return (
     <Disclosure as="div" className="grid w-full kb-accordion" id={id}>
       {({open}) => (
@@ -38,7 +39,16 @@ export function ExpandingCardStyle2({title, content,id}) {
               className="editor-content p-[20px] tracking-[-0.400697px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] font-normal leading-[1.4]"
               static
             >
-              <p dangerouslySetInnerHTML={{__html: content}}></p>
+              <ul>
+                {products?.length > 0 && products.map((item, index) => {
+                  return (<li key={index}>
+                    <Link
+                      to={`/products/custom-product/${item?.node?.handle}`} >
+                      {item?.node?.title}
+                    </Link>
+                  </li>)
+                })}
+              </ul>
             </Disclosure.Panel>
           </Transition>
         </>
