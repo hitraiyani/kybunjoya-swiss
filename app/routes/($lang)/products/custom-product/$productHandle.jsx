@@ -637,7 +637,7 @@ function TopProductMobileSlider({products}) {
                 <Link to={`/products/${product?.node?.handle}`}>
                   <div className="product-item pt-[5px]">
                     <div className="grid gap-4">
-                      <div className="card-image aspect-square relative overflow-hidden shadow-[0_4.76252px_9.52504px_#0000001a]">
+                      <div className="card-image pb-[100%] relative overflow-hidden shadow-[0_4.76252px_9.52504px_#0000001a]">
                         <img
                           className="object-contain fadeIn absolute inset-0 w-full h-full"
                           src={image?.url}
@@ -645,7 +645,7 @@ function TopProductMobileSlider({products}) {
                         />
                       </div>
                       <div className="flex gap-1 flex-col">
-                        <h3 className="max-w-prose whitespace-pre-wrap text-copy text-[24px] md:text-[28px] xl:text-[30px] text-black font-bold pro-title">
+                        <h3 className="max-w-prose whitespace-pre-wrap text-copy text-[18px] sm:text-[24px] md:text-[28px] xl:text-[30px] text-black font-bold pro-title">
                           {product?.node?.title}
                         </h3>
                         <div className="desc text-[16px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
@@ -653,7 +653,7 @@ function TopProductMobileSlider({products}) {
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </div> 
                 </Link>
               </SwiperSlide>
             );

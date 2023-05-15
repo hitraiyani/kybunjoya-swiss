@@ -48,7 +48,7 @@ export function ProductCard({
         prefetch="intent"
       >
         <div className={clsx('grid gap-4', className)}>
-          <div className="card-image aspect-square relative overflow-hidden">
+          <div className="card-image pb-[100%] relative overflow-hidden">
             {image && (
               <Image
                 className="object-contain fadeIn absolute inset-0 w-full h-full"
@@ -79,7 +79,7 @@ export function ProductCard({
           </div>
           <div className="flex gap-1 flex-col">
             <Text
-              className="text-[24px] md:text-[28px] xl:text-[30px] text-black font-bold pro-title"
+              className="text-[18px] sm:text-[24px] md:text-[28px] xl:text-[30px] text-black font-bold pro-title"
               as="h3"
             >
               {product.title}
