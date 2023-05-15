@@ -385,7 +385,7 @@ export default function ratgeberSeiteFersensporn() {
                   </Link>
                 </div>
               </div>
-              <div className="col-right w-full lg:w-[50%]">
+              {/* <div className="col-right w-full lg:w-[50%]">
                 <h2 className="text-[#00795C] text-[30px] lg:text-[40px] tracking-[-1.05984px] mb-[20px] font-medium">
                   {
                     ratgeber_seite_fersensporn_mobile
@@ -412,7 +412,7 @@ export default function ratgeberSeiteFersensporn() {
                     />
                   </a>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </section>
@@ -537,7 +537,7 @@ export default function ratgeberSeiteFersensporn() {
                   </Link>
                 </div>
               </div>
-              <div className="col-right w-full lg:w-[50%]">
+              {/* <div className="col-right w-full lg:w-[50%]">
                 <h2 className="text-[#00795C] text-[30px] lg:text-[40px] tracking-[-1.05984px] mb-[20px] font-medium">
                   {
                     ratgeber_seite_fersensporn_mobile
@@ -570,7 +570,7 @@ export default function ratgeberSeiteFersensporn() {
                     />
                   </Link>
                 </div>
-              </div>
+              </div> */}
             </div>
             <div className="btn-wrap mt-[40px] md:mt-[60px] lg:mt-[80px] xl:mt-[100px] flex gap-[5px] lg:gap-[20px] justify-center">
               <Link
@@ -585,7 +585,7 @@ export default function ratgeberSeiteFersensporn() {
                     ?.kybun_schuhe_testen_section_button_2_text?.value
                 }
               </Link>
-              <a
+              {/* <a
                 target="_blank"
                 rel="noopener noreferrer"
                 href={
@@ -596,7 +596,7 @@ export default function ratgeberSeiteFersensporn() {
               >
                 <IconDownload className={'w-[20px] h-[20px] md:w-[25px] md:h-[25px] lg:w-[30px] lg:h-[30px]'} /> Fersensporn
                 Broschüre
-              </a>
+              </a> */}
             </div>
           </div>
         </section>
