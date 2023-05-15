@@ -818,7 +818,9 @@ const roots = {
   produkte: {title: 'Produkte', to: '/pages/products'},
   ratgeber: {title: 'Ratgeber', to: '/pages/ratgeber'},
   beratung: {title: 'Beratung', to: '/pages/ratgeberseite'},
-  story: {title: 'Unsere Story', to: '/pages/aboutus'}
+  story: {title: 'Unsere Story', to: '/pages/aboutus'},
+  kontakt: {title: 'Kontakt', to: '/pages/kontakt'},
+  shopfinder: {title: 'Shopfinder', to: '/pages/shopfinder'}
 };
 
 export function getBreadCrumbs(

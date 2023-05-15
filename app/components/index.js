@@ -34,5 +34,6 @@ export {ProductBrandSection} from './ProductBrandSection';
 export {ProductMiscUpdate} from './ProductMiscUpdate';
 export {ScrollToTop} from './ScrollToTop';
 export {Breadcrumb} from './Breadcrumb';
+export {ResponsiveIframe} from './ResponsiveIframe';
 // Sue me
 export * from './Icon';

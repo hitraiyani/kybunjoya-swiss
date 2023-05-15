@@ -6,6 +6,7 @@ export const AICO_API_URL = 'https://kjmvp.aico.swiss/api/v1/';
 export const AICO_API_IMAGE_PREFIX = 'https://kjmvp.aico.swiss/storage/';
 export const AICO_API_TOKEN = 'aJ5cIAdY16usaN37pnw5ed4GFdJhSSkrIYCxpDBK';
 export const STORE_LOCALE = 'de_CH';
+export const AICO_STOREFINDER_URL = 'http://store-locator-kj.s3-website.eu-central-2.amazonaws.com/';
 
 export function getImageLoadingPriority(
   index,

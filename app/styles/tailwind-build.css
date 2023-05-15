@@ -925,14 +925,8 @@ video {
 .mt-\[48px\] {
   margin-top: 48px;
 }
-.mt-\[50px\] {
-  margin-top: 50px;
-}
 .mt-\[5px\] {
   margin-top: 5px;
-}
-.mt-\[60px\] {
-  margin-top: 60px;
 }
 .mt-\[70px\] {
   margin-top: 70px;
@@ -1881,10 +1875,6 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
-.bg-gray-200 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(229 231 235 / var(--tw-bg-opacity));
-}
 .bg-green-100 {
   --tw-bg-opacity: 1;
   background-color: rgb(220 252 231 / var(--tw-bg-opacity));
@@ -2093,10 +2083,6 @@ video {
   padding-top: 20px;
   padding-bottom: 20px;
 }
-.py-\[22px\] {
-  padding-top: 22px;
-  padding-bottom: 22px;
-}
 .py-\[25px\] {
   padding-top: 25px;
   padding-bottom: 25px;
@@ -2138,6 +2124,9 @@ video {
 }
 .pb-8 {
   padding-bottom: 2rem;
+}
+.pb-\[100\%\] {
+  padding-bottom: 100%;
 }
 .pb-\[10px\] {
   padding-bottom: 10px;
@@ -2244,6 +2233,9 @@ video {
 .pt-\[25\.5\%\] {
   padding-top: 25.5%;
 }
+.pt-\[35\.3\%\] {
+  padding-top: 35.3%;
+}
 .pt-\[40px\] {
   padding-top: 40px;
 }
@@ -2252,12 +2244,6 @@ video {
 }
 .pt-\[64px\] {
   padding-top: 64px;
-}
-.pt-\[35\.3\%\] {
-  padding-top: 35.3%;
-}
-.pb-\[100\%\] {
-  padding-bottom: 100%;
 }
 .text-left {
   text-align: left;
@@ -2451,9 +2437,6 @@ video {
 .text-\[16x\] {
   color: 16x;
 }
-.text-\[20x\] {
-  color: 20x;
-}
 .text-black {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
@@ -2466,6 +2449,10 @@ video {
   --tw-text-opacity: 1;
   color: rgb(55 65 81 / var(--tw-text-opacity));
 }
+.text-green-600 {
+  --tw-text-opacity: 1;
+  color: rgb(22 163 74 / var(--tw-text-opacity));
+}
 .text-green-700 {
   --tw-text-opacity: 1;
   color: rgb(21 128 61 / var(--tw-text-opacity));
@@ -2477,6 +2464,10 @@ video {
 .text-red-500 {
   --tw-text-opacity: 1;
   color: rgb(239 68 68 / var(--tw-text-opacity));
+}
+.text-red-600 {
+  --tw-text-opacity: 1;
+  color: rgb(220 38 38 / var(--tw-text-opacity));
 }
 .text-red-900 {
   --tw-text-opacity: 1;
@@ -2952,12 +2943,12 @@ video {
     vertical-align: middle;
   }
 
-  .sm\:text-\[30px\] {
-    font-size: 30px;
-  }
-
   .sm\:text-\[24px\] {
     font-size: 24px;
+  }
+
+  .sm\:text-\[30px\] {
+    font-size: 30px;
   }
 }
 @media (min-width: 768px) {
@@ -3616,10 +3607,6 @@ video {
 
   .lg\:mb-\[43px\] {
     margin-bottom: 43px;
-  }
-
-  .lg\:mb-\[50px\] {
-    margin-bottom: 50px;
   }
 
   .lg\:mb-\[80px\] {
@@ -4432,10 +4419,6 @@ video {
 
   .xl\:text-\[21px\] {
     font-size: 21px;
-  }
-
-  .xl\:text-\[25px\] {
-    font-size: 25px;
   }
 
   .xl\:text-\[30px\] {
