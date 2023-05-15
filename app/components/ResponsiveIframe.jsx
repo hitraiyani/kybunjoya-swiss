@@ -1,15 +1,19 @@
-import React from 'react'
+import React, {useRef} from 'react';
 
-export function ResponsiveIframe({ url }) {
+export function ResponsiveIframe({url}) {
+  const iframeRef = useRef();
   return (
-    <div style={{ position: 'relative', paddingBottom: '56.25%', height: 0, overflow: 'hidden' }}>
-      <iframe
-        src={url}
-        title="Embedded Content"
-        style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
-        frameBorder="0"
-        allowFullScreen
-      />
-    </div>
-  )
+    <iframe
+      src={url}
+      title="Embedded Content"
+      frameBorder="0"
+      allowFullScreen
+      ref={iframeRef}
+      width={'100%'}
+      onLoad={() => {
+        iframeRef.current.style.height =
+          iframeRef.current.contentWindow.document.body.scrollHeight + 'px';
+      }}
+    />
+  );
 }
