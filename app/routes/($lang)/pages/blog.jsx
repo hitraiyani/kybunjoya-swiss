@@ -156,7 +156,7 @@ export default function blog() {
               <div className="absolute inset-x-0 bottom-0 w-full img-overlay h-full md:h-2/4"></div>
               <img
                 className="w-full h-full object-cover "
-                src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Manufaktur_1200x800px_05.jpg_122.png?v=1681807071"
+                src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/kJ_Reisfeld_Hoch_1.jpg?v=1683889699"
                 alt=""
               />
             </div>
