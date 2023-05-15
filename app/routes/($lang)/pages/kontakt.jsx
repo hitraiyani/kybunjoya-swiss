@@ -155,13 +155,13 @@ export default function kontakt() {
                     <Form ref={formRef} method="post">
                     {isSubmitted && (
                           <>
-                              {emailSend ? (<h2 className="text-4xl mb-2 text-green-600">Nachricht gesendet.</h2>) : (<h2 className="text-4xl mb-2 text-red-600">Etwas ist schief gelaufen, bitte versuchen Sie es später noch einmal.</h2>)}
+                              {emailSend ? (<div className='bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-[20px]'><h2 className="text-green-700">Nachricht gesendet.</h2></div>) : (<h2 className="text-4xl mb-2 text-red-600">Etwas ist schief gelaufen, bitte versuchen Sie es später noch einmal.</h2>)}
                           </>
                           )
                       }
                       {actionData?.formError && (
-                          <div className="flex items-center justify-center mb-6 bg-red-100">
-                          <p className="m-4 text-base text-red-600">{actionData.formError}</p>
+                          <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-[20px]">
+                          <p>{actionData.formError}</p>
                           </div>
                       )}
                       <div className="flex flex-col gap-[30px] md:gap-[50px] lg:gap-[70px] xl:gap-[94px]">

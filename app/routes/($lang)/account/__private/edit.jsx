@@ -110,8 +110,8 @@ export default function AccountDetailsEdit() {
       </Text>
       <Form method="post">
         {actionData?.formError && (
-          <div className="flex items-center justify-center mb-6 bg-red-100 rounded">
-            <p className="m-4 text-sm text-red-900">{actionData.formError}</p>
+          <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-[20px]">
+            <p>{actionData.formError}</p>
           </div>
         )}
         <div className="mt-3">

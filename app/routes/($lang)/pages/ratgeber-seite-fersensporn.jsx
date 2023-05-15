@@ -620,7 +620,7 @@ function TopProductMobileSlider({products}) {
                 <Link to={`/products/${product?.node?.handle}`}>
                   <div className="product-item pt-[5px]">
                     <div className="grid gap-4">
-                      <div className="card-image aspect-square relative overflow-hidden shadow-[0_4.76252px_9.52504px_#0000001a]">
+                      <div className="card-image pb-[100%] relative overflow-hidden shadow-[0_4.76252px_9.52504px_#0000001a]">
                         <img
                           className="object-contain fadeIn absolute inset-0 w-full h-full"
                           src={image?.url}

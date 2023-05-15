@@ -866,7 +866,7 @@ p:last-child {
   background-size: contain;
   position: absolute;
   left: 0;
-  top: 4px;
+  top: 0;
 }
 .dr-info-tabs-section .interactive-list .active svg {
   background: #00795c;
@@ -1268,3 +1268,32 @@ select {
   -moz-appearance: none;
   appearance: none;
 }
+
+/* blog details page */
+.content-wrap-sec .sliderbar-wrap ul li.links::before {
+  content: '';
+  background-image: url("data:image/svg+xml,%3Csvg class='w-12 h-12 border rounded-full p-2 text-white border-white transition-all' xmlns='http://www.w3.org/2000/svg' width='256' height='256' viewBox='0 0 256 256'%3E%3Cpath fill='%23000000' d='m220.24 132.24l-72 72a6 6 0 0 1-8.48-8.48L201.51 134H40a6 6 0 0 1 0-12h161.51l-61.75-61.76a6 6 0 0 1 8.48-8.48l72 72a6 6 0 0 1 0 8.48Z'%3E%3C/path%3E%3C/svg%3E");
+  width: 27px;
+  height: 27px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  left: 0;
+  top: -3px;
+}
+.content-wrap-sec .sliderbar-wrap ul li.links {
+  display: flex;
+  gap: 13px 13px;
+  padding-bottom: 10px;
+  align-items: center;
+  padding-left: 40px;
+  position: relative;
+}
+.content-wrap-sec .sliderbar-wrap ul li.links:last-child {
+  padding-bottom: 0;
+}
+.content-wrap-sec .sliderbar-wrap ul:last-child {
+  margin-bottom: 0;
+}
+/* End blog details page */
