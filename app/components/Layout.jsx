@@ -602,12 +602,12 @@ function Footer({menu, main_menu}) {
                         />
                       </svg>
                     </span>{' '} */}
-                      <a
-                        href="#"
+                      <Link
+                        to={'/pages/kontakt'}
                         className="hover:underline hover:text-[#00795C] font-normal text-base text-[#595959]"
                       >
-                        Kontakt{' '}
-                      </a>{' '}
+                        Kontakt
+                      </Link>
                     </p>
                   </div>
                 </div>
