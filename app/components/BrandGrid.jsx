@@ -95,7 +95,7 @@ export function BrandGrid({className}) {
               }
               return (
                 <a
-                  className="brand-logo opacity-50 hover:opacity-100 !w-[180px] md:!w-[200px]"
+                  className="brand-logo opacity-50 hover:opacity-100 !w-[180px] md:!w-[200px] mx-[10px] lg:mx-[30px]"
                   href={brandRedirectUrl}
                   key={index}
                 >
