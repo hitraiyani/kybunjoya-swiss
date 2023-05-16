@@ -1440,6 +1440,10 @@ video {
   -moz-columns: 3;
        columns: 3;
 }
+.columns-2 {
+  -moz-columns: 2;
+       columns: 2;
+}
 .break-inside-avoid {
   -moz-column-break-inside: avoid;
        break-inside: avoid;

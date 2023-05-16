@@ -611,7 +611,48 @@ function Footer({menu, main_menu}) {
                     </p>
                   </div>
                 </div>
-                <div className="grid grid-cols-2 gap-y-0 gap-8 lg:gap-8 lg:grid-cols-3">
+                <div className="columns-2 md:columns-3">
+                  { main_menu.items && main_menu.items.map((item,index) => {
+                      return (
+                        <div key={index}>
+                            <span  className="nav-item relative">
+
+                              <h2 className="mb-8 lg:text-[26px] text-[20px] font-bold capitalize text-[#00795C] pr-[40px] md:pr-0">
+                                    <Link
+                                      to={item.to}
+                                      target={item.target}
+                                      className="kybunjoya-menu-hover title text-[#00795C] text-[26px] mb-[12px] outline-none"
+                                      data-image={item.title}
+                                    >
+                                      {item.title}
+                                    </Link>
+                                  </h2>
+                                  {item.items.length > 0 && (
+                                  <>
+                                    <div
+                                      onClick={footerMenuToggle}
+                                      className="toggle-menu-icon text-[#00795C] absolute top-0 right-0 w-[40px] h-[30px] flex items-center justify-end md:hidden cursor-pointer"
+                                    >
+                                      <IconArrowBottom
+                                        className={
+                                          'w-[30px] h-[30px] transition-all duration-500'
+                                        }
+                                      />
+                                    </div>
+                                    <FooterMainMenuSub
+                                      sub_menu_item={item.items}
+                                    />
+                                  </>
+                                )}
+                            </span>
+                        </div>
+                      )
+                  })}
+                  </div>
+                <div>
+                    
+                </div>
+                {/* <div className="grid grid-cols-2 gap-y-0 gap-8 lg:gap-8 lg:grid-cols-3">
                   {(mainMenuChunk || []).map((menuitem, index) => {
                     return (
                       <div key={index}>
@@ -651,7 +692,7 @@ function Footer({menu, main_menu}) {
                       </div>
                     );
                   })}
-                </div>
+                </div> */}
               </div>
               <div className="mt-[40px]">
                 {/* <div className="flex mb-6">

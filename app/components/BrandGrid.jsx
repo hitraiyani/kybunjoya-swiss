@@ -30,13 +30,14 @@ export function BrandGrid({className}) {
   var settings = {
     dots: false,
     infinite: true,
-    speed: 500,
     slidesToShow: 1,
     slidesToScroll: 5,
     variableWidth: true,
     arrows: false,
     centerMode: true,
     centerPadding: '100px',
+    autoplay: true,
+    autoplaySpeed: 2000,
     responsive: [
       {
         breakpoint: 1280,
