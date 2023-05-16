@@ -611,7 +611,7 @@ function Footer({menu, main_menu}) {
                     </p>
                   </div>
                 </div>
-                <div className="columns-2 md:columns-3">
+                <div className="grid grid-cols-2 gap-x-[10px] md:gap-0 md:block md:columns-3 footer-menu-items">
                   { main_menu.items && main_menu.items.map((item,index) => {
                       return (
                         <div key={index}>
@@ -621,7 +621,7 @@ function Footer({menu, main_menu}) {
                                     <Link
                                       to={item.to}
                                       target={item.target}
-                                      className="kybunjoya-menu-hover title text-[#00795C] text-[26px] mb-[12px] outline-none"
+                                      className="kybunjoya-menu-hover title text-[#00795C] text-[20px] lg:text-[26px] mb-[12px] outline-none"
                                       data-image={item.title}
                                     >
                                       {item.title}

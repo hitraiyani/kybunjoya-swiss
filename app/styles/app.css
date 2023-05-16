@@ -276,6 +276,13 @@ p:last-child {
 /* End barnd section  */
 
 /* footer css */
+.footer-menu-items > div{
+  box-sizing: border-box;
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
+  break-inside: avoid;
+  counter-increment: brick-counter;
+}
 /* .site-footer {
   background-color: #3a3e3f;
 } */
