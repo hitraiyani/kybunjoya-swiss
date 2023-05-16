@@ -35,5 +35,6 @@ export {ProductMiscUpdate} from './ProductMiscUpdate';
 export {ScrollToTop} from './ScrollToTop';
 export {Breadcrumb} from './Breadcrumb';
 export {ResponsiveIframe} from './ResponsiveIframe';
+export {SingleNewsSlide} from './SingleNewsSlide';
 // Sue me
 export * from './Icon';
