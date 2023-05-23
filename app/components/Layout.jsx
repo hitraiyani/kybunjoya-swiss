@@ -36,7 +36,7 @@ import {useCartFetchers} from '~/hooks/useCartFetchers';
 import {COOKIEBOT_KEY} from '~/lib/const';
 import {Helmet} from 'react-helmet';
 
-export function Layout({children, layout}) {
+export function Layout({children, layout, locale}) {
   const isHome = useIsHomePath();
 
   const [isCookieAccepted, setisCookieAccepted] = useState(false);
