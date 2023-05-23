@@ -305,7 +305,6 @@ export default function ratgeberSeiteFersensporn() {
                     </h2>
                     {rtgb_textursachen_de_ch && ( <p>{ rtgb_textursachen_de_ch }</p> )}
                     <ul className="list-style2 list-style3">
-                      <li className='list-style-red'></li>
                       {aicoProductTagsUrsachen.map((item, index) => {
                         return (<li className='list-style-red' key={index}>{item}</li>)
                       })}
@@ -325,8 +324,8 @@ export default function ratgeberSeiteFersensporn() {
                       </ul>
                     </>
                 )}
+                  {rtgb_textnachbutton_de_ch && ( <p>{ rtgb_textnachbutton_de_ch }</p> )}
                 </div>
-                {rtgb_textnachbutton_de_ch && ( <p>{ rtgb_textnachbutton_de_ch }</p> )}
                 <div className="btn-wrap mt-[20px]">
                   <a
                     target="_blank"
