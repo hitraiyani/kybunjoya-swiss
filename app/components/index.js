@@ -36,5 +36,6 @@ export {ScrollToTop} from './ScrollToTop';
 export {Breadcrumb} from './Breadcrumb';
 export {ResponsiveIframe} from './ResponsiveIframe';
 export {SingleNewsSlide} from './SingleNewsSlide';
+export {ShopifyCookie} from './ShopifyCookie';
 // Sue me
 export * from './Icon';

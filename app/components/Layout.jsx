@@ -32,11 +32,44 @@ import {Disclosure} from '@headlessui/react';
 import {Suspense, useEffect, useMemo, useState} from 'react';
 import {useIsHydrated} from '~/hooks/useIsHydrated';
 import {useCartFetchers} from '~/hooks/useCartFetchers';
+import {COOKIEBOT_KEY} from '~/lib/const';
+import {Helmet} from 'react-helmet';
 
 export function Layout({children, layout}) {
   const isHome = useIsHomePath();
+
+  const [isCookieAccepted, setisCookieAccepted] = useState(false);
+
+  useEffect(() => {
+    function handleCookiebotAccept(e) {
+      if (Cookiebot.consent.marketing) {
+        //Execute code that sets marketing cookies
+        setisCookieAccepted(true);
+      }
+    }
+    window.addEventListener('CookiebotOnAccept', handleCookiebotAccept, false);
+
+    return () => {
+      window.removeEventListener(
+        'CookiebotOnAccept',
+        handleCookiebotAccept,
+        false,
+      );
+    };
+  }, []);
+
   return (
     <>
+      {isCookieAccepted ? <ShopifyCookie locale={locale} /> : ''}
+      <Helmet>
+        <script
+          id="Cookiebot"
+          src="https://consent.cookiebot.com/uc.js"
+          data-cbid={COOKIEBOT_KEY}
+          data-blockingmode="auto"
+          type="text/javascript"
+        />
+      </Helmet>
       <div className="">
         <a href="#mainContent" className="sr-only">
           Skip to content
