@@ -67,7 +67,7 @@ export default function ratgeberSeiteFersensporn() {
   const aicoDrKybunJoyaProductTags = [];
   let drKybunJoyaTagHeading = '';
   aicoProductData?.tags?.forEach((item) => {
-    if (item.includes('attribute_de_Dr.')) {
+    if (item.includes('attribute_de_kybun')) {
       if (!drKybunJoyaTagHeading) {
           drKybunJoyaTagHeading = item.split('_').at(-2);
       }
@@ -116,6 +116,22 @@ export default function ratgeberSeiteFersensporn() {
     aicoProductData?.aico_custom_fields_de_ch?.value,
     'dkj_videobeschreibung_de_ch',
   );
+
+  const rtgb_textursachen_de_ch = getAicoMetaByKeyName(
+    aicoProductData?.aico_custom_fields_de_ch?.value,
+    'rtgb_textursachen_de_ch',
+  );
+
+  const rtgb_textkybunjoyatherapie_de_ch = getAicoMetaByKeyName(
+    aicoProductData?.aico_custom_fields_de_ch?.value,
+    'rtgb_textkybunjoyatherapie_de_ch',
+  );
+  
+  const rtgb_textnachbutton_de_ch = getAicoMetaByKeyName(
+    aicoProductData?.aico_custom_fields_de_ch?.value,
+    'rtgb_textnachbutton_de_ch',
+  );
+
 
 
   const [menuLinks, setMenuLinks] = useState([]);
@@ -287,7 +303,9 @@ export default function ratgeberSeiteFersensporn() {
                     <h2 className="text-[#00795C] text-[30px] lg:text-[40px] tracking-[-1.05984px] mb-[20px] font-medium">
                       {ursachenTagHeading}
                     </h2>
+                    {rtgb_textursachen_de_ch && ( <p>{ rtgb_textursachen_de_ch }</p> )}
                     <ul className="list-style2 list-style3">
+                      <li className='list-style-red'></li>
                       {aicoProductTagsUrsachen.map((item, index) => {
                         return (<li className='list-style-red' key={index}>{item}</li>)
                       })}
@@ -299,6 +317,7 @@ export default function ratgeberSeiteFersensporn() {
                       <h2 className="text-[#00795C] text-[30px] lg:text-[40px] tracking-[-1.05984px] mb-[20px] font-medium">
                         {drKybunJoyaTagHeading}
                       </h2>
+                      { rtgb_textkybunjoyatherapie_de_ch && ( <p>{ rtgb_textkybunjoyatherapie_de_ch }</p> )}
                       <ul className="list-style2 list-style3">
                         {aicoDrKybunJoyaProductTags.map((item, index) => {
                           return (<li key={index}>{item}</li>)
@@ -307,6 +326,7 @@ export default function ratgeberSeiteFersensporn() {
                     </>
                 )}
                 </div>
+                {rtgb_textnachbutton_de_ch && ( <p>{ rtgb_textnachbutton_de_ch }</p> )}
                 <div className="btn-wrap mt-[20px]">
                   <a
                     target="_blank"
@@ -318,7 +338,7 @@ export default function ratgeberSeiteFersensporn() {
                     className="pro-btn text-[16px] lg:text-[18px] text-white tracking-[-0.400697px] font-normal flex gap-[10px] px-[20px] lg:px-[30px] py-[12px] lg:py-[15px] bg-black rounded-[100px] max-w-fit items-center transition-all duration-700 hover:bg-[#00795c] mt-[10px] hover:text-white download-link"
                   >
                     <IconDownload className={'w-[20px] h-[20px]'} />
-                    Fersensporn Broschüre
+                    {aicoProductData?.title} Broschüre
                   </a>
                 </div>
                 {/* <div className="mobile-info aicoCotentBuilderWrap">
