@@ -19,6 +19,7 @@ import {
   ScrollToTop,
   ArrowRight2,
   IconArrowBottom,
+  ShopifyCookie
 } from '~/components';
 import {
   useParams,
