@@ -86,6 +86,18 @@ export default function ratgeberSeiteFersensporn() {
   });
 
   const aicoTestimonialsData = aicoProductData?.testimonials_data?.value ? JSON.parse(aicoProductData.testimonials_data.value) : [];
+  const aicoKnowledgeBasesData = aicoProductData?.knowledgebases_data?.value ? JSON.parse(aicoProductData.knowledgebases_data.value) : [];
+  let productPdfTitle = '';
+  let productPdfUrl = '';
+  if (aicoKnowledgeBasesData.length > 0) {
+      productPdfTitle = aicoKnowledgeBasesData[0]?.title;
+      if(aicoKnowledgeBasesData[0]?.file) {
+        productPdfUrl = aicoKnowledgeBasesData[0]?.file
+      } else if (aicoKnowledgeBasesData[0]?.image) {
+        productPdfUrl = AICO_API_IMAGE_PREFIX + aicoKnowledgeBasesData[0]?.image
+      }
+  }
+  console.log("productPdfUrl", productPdfUrl);
   // const aicoContentBuilders = aicoProductData?.aico_content_builders?.value ? JSON.parse(aicoProductData.aico_content_builders.value) : [];
   // let aicoCotentBuilderHtml = '';
   // if (aicoContentBuilders.length) {
@@ -326,20 +338,19 @@ export default function ratgeberSeiteFersensporn() {
                 )}
                   {rtgb_textnachbutton_de_ch && ( <p>{ rtgb_textnachbutton_de_ch }</p> )}
                 </div>
-                <div className="btn-wrap mt-[20px]">
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href={
-                      ratgeber_seite_fersensporn_mobile
-                        ?.wie_kybun_joya_hilft_section_broschure?.reference?.url
-                    }
-                    className="pro-btn text-[16px] lg:text-[18px] text-white tracking-[-0.400697px] font-normal flex gap-[10px] px-[20px] lg:px-[30px] py-[12px] lg:py-[15px] bg-black rounded-[100px] max-w-fit items-center transition-all duration-700 hover:bg-[#00795c] mt-[10px] hover:text-white download-link"
-                  >
-                    <IconDownload className={'w-[20px] h-[20px]'} />
-                    {aicoProductData?.title} Broschüre
-                  </a>
-                </div>
+                {productPdfUrl && (
+                  <div className="btn-wrap mt-[20px]">
+                    <a
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href={productPdfUrl}
+                      className="pro-btn text-[16px] lg:text-[18px] text-white tracking-[-0.400697px] font-normal flex gap-[10px] px-[20px] lg:px-[30px] py-[12px] lg:py-[15px] bg-black rounded-[100px] max-w-fit items-center transition-all duration-700 hover:bg-[#00795c] mt-[10px] hover:text-white"
+                    >
+                      <IconDownload className={'w-[20px] h-[20px]'} />
+                      {productPdfTitle}
+                    </a>
+                  </div>
+                )}
                 {/* <div className="mobile-info aicoCotentBuilderWrap">
                   <div
                     className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
@@ -704,6 +715,9 @@ ${PRODUCT_CARD_FRAGMENT}
         value
       }
       testimonials_data : metafield(namespace: "custom_fields", key: "testimonials_data") {
+        value
+      }
+      knowledgebases_data : metafield(namespace: "custom_fields", key: "knowledgebases_data") {
         value
       }
     }
