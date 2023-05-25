@@ -276,7 +276,7 @@ p:last-child {
 /* End barnd section  */
 
 /* footer css */
-.footer-menu-items > div{
+.footer-menu-items > div {
   box-sizing: border-box;
   -webkit-column-break-inside: avoid;
   page-break-inside: avoid;
@@ -396,6 +396,21 @@ p:last-child {
     padding-bottom: 120% !important;
   }
   .collectionsGrid-product-sec .collectionsGrid-item {
+    width: 100%;
+  }
+}
+
+.collectionsGrid-sec-box-layout .collectionsGrid-item:first-child {
+  grid-row: auto;
+}
+.collectionsGrid-sec-box-layout .collectionsGrid-item:nth-child(2) {
+  grid-row: auto;
+}
+.collectionsGrid-sec-box-layout .collectionsGrid-item > a {
+  padding-bottom: 118% !important;
+}
+@media (max-width: 767px) {
+  .collectionsGrid-sec-box-layout .collectionsGrid-item {
     width: 100%;
   }
 }

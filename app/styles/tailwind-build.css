@@ -676,6 +676,9 @@ video {
 .top-\[calc\(50\%_-_20px\)\] {
   top: calc(50% - 20px);
 }
+.bottom-\[40px\] {
+  bottom: 40px;
+}
 .z-30 {
   z-index: 30;
 }
@@ -2287,6 +2290,9 @@ video {
 .pt-\[64px\] {
   padding-top: 64px;
 }
+.\!pt-\[40px\] {
+  padding-top: 40px !important;
+}
 .text-left {
   text-align: left;
 }
@@ -2872,6 +2878,10 @@ video {
     height: 60vh;
   }
 
+  .sm\:h-\[35px\] {
+    height: 35px;
+  }
+
   .sm\:w-12 {
     width: 3rem;
   }
@@ -2894,6 +2904,10 @@ video {
 
   .sm\:w-full {
     width: 100%;
+  }
+
+  .sm\:w-\[35px\] {
+    width: 35px;
   }
 
   .sm\:max-w-none {
@@ -2942,6 +2956,18 @@ video {
 
   .sm\:gap-7 {
     gap: 1.75rem;
+  }
+
+  .sm\:gap-\[10px\] {
+    gap: 10px;
+  }
+
+  .sm\:gap-\[30px\] {
+    gap: 30px;
+  }
+
+  .sm\:gap-\[17px\] {
+    gap: 17px;
   }
 
   .sm\:divide-y > :not([hidden]) ~ :not([hidden]) {
@@ -2994,6 +3020,10 @@ video {
 
   .sm\:text-\[30px\] {
     font-size: 30px;
+  }
+
+  .sm\:text-\[26px\] {
+    font-size: 26px;
   }
 }
 @media (min-width: 768px) {
@@ -3639,6 +3669,10 @@ video {
 
   .lg\:top-\[48px\] {
     top: 48px;
+  }
+
+  .lg\:bottom-\[80px\] {
+    bottom: 80px;
   }
 
   .lg\:col-span-2 {
@@ -4340,6 +4374,10 @@ video {
 
   .xl\:grid-rows-2 {
     grid-template-rows: repeat(2, minmax(0, 1fr));
+  }
+
+  .xl\:grid-rows-4 {
+    grid-template-rows: repeat(4, minmax(0, 1fr));
   }
 
   .xl\:flex-row {

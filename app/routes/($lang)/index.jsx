@@ -112,7 +112,7 @@ export default function Homepage() {
         </Suspense>
       )}
 
-      <BrandGrid />
+      {/* <BrandGrid /> */}
 
       {newsSliderData?.data && <NewsSlider news={newsSliderData?.data} />}
       
