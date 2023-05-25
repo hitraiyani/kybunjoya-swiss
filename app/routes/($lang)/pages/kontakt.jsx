@@ -71,7 +71,7 @@ export const action = async ({ request, context, params }) => {
 export async function loader({request, params, context}) {
   const {page} = await context.storefront.query(PAGE_QUERY, {
     variables: {
-      handle: 'contact',
+      handle: 'kontakt',
       language: context.storefront.i18n.language,
     },
   });

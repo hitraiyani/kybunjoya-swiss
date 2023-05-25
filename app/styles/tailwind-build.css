@@ -562,6 +562,9 @@ video {
 .bottom-\[34px\] {
   bottom: 34px;
 }
+.bottom-\[40px\] {
+  bottom: 40px;
+}
 .bottom-\[80px\] {
   bottom: 80px;
 }
@@ -675,9 +678,6 @@ video {
 }
 .top-\[calc\(50\%_-_20px\)\] {
   top: calc(50% - 20px);
-}
-.bottom-\[40px\] {
-  bottom: 40px;
 }
 .z-30 {
   z-index: 30;
@@ -2152,6 +2152,9 @@ video {
   padding-top: 5px;
   padding-bottom: 5px;
 }
+.\!pt-\[40px\] {
+  padding-top: 40px !important;
+}
 .pb-1 {
   padding-bottom: 0.25rem;
 }
@@ -2289,9 +2292,6 @@ video {
 }
 .pt-\[64px\] {
   padding-top: 64px;
-}
-.\!pt-\[40px\] {
-  padding-top: 40px !important;
 }
 .text-left {
   text-align: left;
@@ -2870,20 +2870,12 @@ video {
     display: none;
   }
 
-  .sm\:h-12 {
-    height: 3rem;
-  }
-
-  .sm\:h-\[60vh\] {
-    height: 60vh;
-  }
-
   .sm\:h-\[35px\] {
     height: 35px;
   }
 
-  .sm\:w-12 {
-    width: 3rem;
+  .sm\:h-\[60vh\] {
+    height: 60vh;
   }
 
   .sm\:w-40 {
@@ -2892,6 +2884,10 @@ video {
 
   .sm\:w-\[320px\] {
     width: 320px;
+  }
+
+  .sm\:w-\[35px\] {
+    width: 35px;
   }
 
   .sm\:w-\[calc\(100\%_-_140px\)\] {
@@ -2904,10 +2900,6 @@ video {
 
   .sm\:w-full {
     width: 100%;
-  }
-
-  .sm\:w-\[35px\] {
-    width: 35px;
   }
 
   .sm\:max-w-none {
@@ -2952,18 +2944,6 @@ video {
 
   .sm\:gap-5 {
     gap: 1.25rem;
-  }
-
-  .sm\:gap-7 {
-    gap: 1.75rem;
-  }
-
-  .sm\:gap-\[10px\] {
-    gap: 10px;
-  }
-
-  .sm\:gap-\[30px\] {
-    gap: 30px;
   }
 
   .sm\:gap-\[17px\] {
@@ -3016,10 +2996,6 @@ video {
 
   .sm\:text-\[24px\] {
     font-size: 24px;
-  }
-
-  .sm\:text-\[30px\] {
-    font-size: 30px;
   }
 
   .sm\:text-\[26px\] {
@@ -3655,6 +3631,10 @@ video {
     bottom: 7rem;
   }
 
+  .lg\:bottom-\[80px\] {
+    bottom: 80px;
+  }
+
   .lg\:left-\[-34px\] {
     left: -34px;
   }
@@ -3669,10 +3649,6 @@ video {
 
   .lg\:top-\[48px\] {
     top: 48px;
-  }
-
-  .lg\:bottom-\[80px\] {
-    bottom: 80px;
   }
 
   .lg\:col-span-2 {
@@ -4374,10 +4350,6 @@ video {
 
   .xl\:grid-rows-2 {
     grid-template-rows: repeat(2, minmax(0, 1fr));
-  }
-
-  .xl\:grid-rows-4 {
-    grid-template-rows: repeat(4, minmax(0, 1fr));
   }
 
   .xl\:flex-row {
