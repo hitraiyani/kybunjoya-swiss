@@ -141,9 +141,15 @@ p:last-child {
 @media (min-width: 768px) {
   .mobile-menu-Drawer .nav-list > ul > li:last-child {
     border-left: 1px solid #dedede;
-    left: -80px;
+    left: -50px;
     position: relative;
     padding-left: 20%;
+    min-height: 230px;
+  }
+}
+@media (min-width: 992px) {
+  .mobile-menu-Drawer .nav-list > ul > li:last-child {
+    left: -80px;
   }
 }
 @media (min-width: 1024px) {
