@@ -91,21 +91,21 @@ export default function schweizerSchuhpropktion() {
                     ))}
                 </Swiper>
               </div>
-              <div className="content-col w-full lg:w-[60%] lg:max-w-[678px] flex flex-col justify-center">
+              <div className="content-col w-full lg:w-[60%] lg:max-w-[678px] flex flex-col">
                 <h2 className="text-[#00795C] text-[30px] lg:text-[35px] xl:text-[40px] tracking-[-1.05984px] mb-[20px] font-bold">
                   {page?.schweizer_schuhpropktion?.reference?.main_title?.value}
                 </h2>
-                <h3 className="subtitle text-[18px] lg:text-[23px] text-balck leading-[1.3] mb-[20px] font-[400]"
+                <h3 className="subtitle text-[18px] lg:text-[23px] text-balck leading-[1.3] mb-[20px] font-[400] hidden"
                     dangerouslySetInnerHTML={{
                         __html: toHTML(page?.schweizer_schuhpropktion?.reference?.short_description?.value),
                       }}
                 >
                 </h3>
                 <Link to={page?.schweizer_schuhpropktion?.reference?.book_now_link?.value} className="inline-block rounded-[100px] bg-black text-white
-                 text-center px-[35px] py-[15px] hover:bg-[#00795c] hover:text-white text-[18px] max-w-fit">
+                 text-center px-[35px] py-[15px] hover:bg-[#00795c] hover:text-white text-[18px] max-w-fit !hidden">
                     Jetzt Buchen
                 </Link>
-                <div className="desc text-black text-[16px] lg:text-[18px] leading-[1.3] mt-[30px] md:mt-[40px] xl:mt-[60px] font-[400]"
+                <div className="desc text-black text-[16px] lg:text-[18px] leading-[1.3] font-[400]"
                     dangerouslySetInnerHTML={{
                         __html: toHTML(page?.schweizer_schuhpropktion?.reference?.long_description?.value),
                       }}
@@ -115,7 +115,7 @@ export default function schweizerSchuhpropktion() {
             </div>
           </div>
             {faqArr.length > 0 && (
-                <div className="faq-sec container mt-10">
+                <div className="faq-sec container mt-10 hidden">
                 <h3 className="title uppercase text-[18px] leading-[1.2] pb-[10px] border-b border-[#595959] font-normal">
                 Häufige Fragen
                 </h3>
@@ -127,9 +127,9 @@ export default function schweizerSchuhpropktion() {
                 ))}
                 </div>
             )}
-          <div className="video-sec container mt-[40px] xl:mt-[87px] mb-[50px] lg:mb-[80px] xl:mb-[134px]">
+          <div className="video-sec container mt-[40px] xl:mt-[87px] mb-[50px]">
             <div className="title-wrap">
-              <h2 className="text-[#00795C] text-[30px] lg:text-[35px] xl:text-[40px] tracking-[-1.05984px] mb-[20px] font-bold">
+              <h2 className="text-[#00795C] text-[30px] lg:text-[35px] xl:text-[40px] tracking-[-1.05984px] mb-[20px] font-bold hidden">
                 {page?.schweizer_schuhpropktion?.reference?.video_section_title?.value}
               </h2>
               <div className="video-wrap">
@@ -142,7 +142,7 @@ export default function schweizerSchuhpropktion() {
                   allowFullScreen
                 ></iframe>
               </div>
-              <div className="btn-wrap">
+              <div className="btn-wrap hidden">
                <Link to={page?.schweizer_schuhpropktion?.reference?.book_now_link?.value} className="inline-block rounded-[100px] bg-black text-white
                  text-center px-[35px] py-[15px] hover:bg-[#00795c] hover:text-white text-[18px] max-w-fit mt-[20px] xl:mt-[48px]">
                     Jetzt Buchen

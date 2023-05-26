@@ -6,10 +6,10 @@ import { toHTML } from '~/lib/utils';
 export function ProductBrandSection({data}) {
 
   return (
-    <Section className={'collectionsGrid-sec mt-[40px] md:mt-[60px] lg:mt-[80px] xl:mt-[100px] collectionsGrid-product-sec'}>
+    <Section className={'collectionsGrid-sec mt-[40px] md:mt-[53px] collectionsGrid-sec-box-layout'}>
       <div className="container">
-        <h1 className='text-[#000000] text-[24px] lg:text-[30px] mb-[33px] leading-[1.2] max-w-[1000px] font-bold'>{data?.head_title?.value}</h1>
-        <div className="md:grid md:grid-rows-2 xl:grid-rows-2 md:grid-flow-col gap-7 flex flex-wrap">
+        <h2 className='text-[#000000] text-[24px] lg:text-[30px] mb-[33px] leading-[1.2] max-w-[1000px] font-bold hidden'>{data?.head_title?.value}</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[10px] sm:gap-[17px]">
           <div className="collectionsGrid-item relative collectionsGrid-item-prodcut">
             <Link to={`${data?.brand_1_redirect?.value}`} className="relative block w-full overflow-hidden">
               <div className="img-wrap w-full h-full absolute inset-0">
@@ -93,7 +93,7 @@ export function ProductBrandSection({data}) {
               </div>
               <div className="img-overlay absolute w-full h-2/4 inset-x-0 bottom-0"></div>
               <div className="flex absolute bottom-0 left-0 p-5 w-full items-end h-full">
-                <Heading className="whitespace-pre-wrap flex flex-col font-normal text-[30px] xl:text-[40px] text-white btn w-2/4 gap-5">
+                <Heading className="whitespace-pre-wrap flex flex-col font-normal text-[30px] xl:text-[40px] text-white btn gap-5">
                 <span dangerouslySetInnerHTML={{
                   __html: (data?.brand_4_text?.value),
                 }}></span>
@@ -105,6 +105,31 @@ export function ProductBrandSection({data}) {
                 </Heading>
               </div>
             </Link>
+          </div>
+          <div className="collectionsGrid-item relative">
+            <a
+              href='#'
+              className="relative block w-full h-full overflow-hidden"
+            >
+              <div className="img-wrap w-full h-full absolute inset-0">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Group_80.png"
+                  className="h-full w-full absolute inset-0 transition hover:duration-500 object-cover object-center"
+                  alt=""
+                />
+              </div>
+              <div className="img-overlay absolute w-full h-2/4 inset-x-0 bottom-0"></div>
+              <div className="flex absolute bottom-0 left-0 p-5 w-full items-end h-full">
+                <Heading className="whitespace-pre-wrap flex flex-col font-normal text-[30px] xl:text-[40px] text-white btn w-2/4 gap-5">
+                <span>Filialen</span>
+                  <ArrowRightLight
+                    className={
+                      'w-12 h-12 border rounded-full p-2 text-white border-white transition-all'
+                    }
+                  />
+                </Heading>
+              </div>
+            </a>
           </div>
         </div>
       </div>

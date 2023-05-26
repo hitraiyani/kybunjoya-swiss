@@ -8,7 +8,7 @@ export function GruppeSection({gruppeMenu}) {
     <Section className={'collectionsGrid-sec pb-[40px] md:pb-[60px] lg:pb-[80px] xl:pb-[100px]'}>
       <div className="container">
       <h2 className="text-[#00795C] text-[30px] lg:text-[35px] xl:text-[40px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold">
-           Gruppe
+      Über uns
         </h2>
         <div className='quick-links-sec bg-[#EDEDED] mt-[28px]'>
         <div className="collectionsGrid-item flex flex-wrap">
@@ -16,7 +16,7 @@ export function GruppeSection({gruppeMenu}) {
               <div className="img-wrap w-full h-full absolute inset-0">
                 <Image
                   data={{
-                    url: 'https://cdn.shopify.com/s/files/1/0742/9688/5569/files/SS22_Cloudmonster_Mood_Acai_Lavender_2_jpg.png?v=1680769904',
+                    url: 'https://cdn.shopify.com/s/files/1/0742/9688/5569/files/ss23-tennis-athletes-iga-swiatek-editorials-19-Mar23__2_.jpg_12.png?v=1685081723',
                   }}
                   className="h-full w-full absolute inset-0 transition hover:duration-500 object-cover object-center"
                   alt=""

@@ -10,7 +10,7 @@ import {
   Link,
   ProductBrandSection,
   ProductMiscUpdate,
-  Breadcrumb
+  Breadcrumb,
 } from '~/components';
 import {MEDIA_FRAGMENT} from '~/data/fragments';
 
@@ -48,58 +48,84 @@ export async function loader({request, params, context}) {
 export default function schweizerSchuhpropktion() {
   const {page} = useLoaderData();
 
-  const sliderImages = page?.product_misc_update?.reference?.slider_images?.references?.edges.map(
-    (data) => data.node.image.url,
-  );
+  const sliderImages =
+    page?.product_misc_update?.reference?.slider_images?.references?.edges.map(
+      (data) => data.node.image.url,
+    );
 
   let firstSlideImages = [];
   let restSlideImages = [];
   if (sliderImages.length > 0) {
-    firstSlideImages = sliderImages.slice(0,2);
+    firstSlideImages = sliderImages.slice(0, 2);
     restSlideImages = sliderImages.slice(2);
   }
   const [slidesPerView, setSlidesPerView] = useState(false);
 
-  const handleTransitionEnd = (swiper) => {    
-    console.log(swiper)
-    console.log(swiper.activeIndex, swiper.slides.length)
-    if (swiper.activeIndex === 0 || (swiper.slides.length === swiper.activeIndex) ) {
+  const handleTransitionEnd = (swiper) => {
+    console.log(swiper);
+    console.log(swiper.activeIndex, swiper.slides.length);
+    if (
+      swiper.activeIndex === 0 ||
+      swiper.slides.length === swiper.activeIndex
+    ) {
       setSlidesPerView(false);
     } else {
       setSlidesPerView(true);
     }
-
   };
 
   return (
     <>
-      <Breadcrumb crumbs={getBreadCrumbs(null,'produkte')}/>
+      <Breadcrumb crumbs={getBreadCrumbs(null, 'produkte')} />
       <div className="container">
         <div className="title-wrap">
           <h2 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold">
             Produkte
           </h2>
         </div>
+        <div className="sub-title">
+          <h4 className="text-[#000000] text-[24px] lg:text-[30px] mb-[33px] leading-[1.2] max-w-[1000px] font-bold">
+            Über 4 Millionen begeisterte Kunden weltweit bestätigen die
+            außergewöhnliche Wirkung von unseren Produkten.
+          </h4>
+        </div>
+        <div className='desc text-black text-[16px] lg:text-[21px] leading-[1.3] font-[400] max-w-[1000px]'>
+          <p>Wir glauben, dass der menschliche Bewegungsapparat so konstruiert ist, dass er bis ins hohe Alter sportlich aktiv und gesund bleiben kann, und dass Pflegeheime nur in seltenen Fällen notwendig wären. Wir sind überzeugt, dass geläufige Bewegungsbeschwerden – an denen mindestens 1/3 aller Menschen ab 65 regelmäßig leiden, dank gesunder Bewegung im Alltag und Begleitung durch geschulte kybun Joya Anwendungen in den meisten Fällen nachhaltig vermieden werden können.</p>
+          <p>Unsere Produkte sollen unseren Kunden täglich dabei begleiten, fit, beweglich und schmerzfrei zu bleiben.</p>
+          <p>Neben unseren Schweizer Schuhen mit Luftkissen Technologie bieten wir weitere Produkte an, dürfen wir vorstellen:</p>
+        </div>
       </div>
-      <div className="container lg:!pr-0">
+      <div className="container lg:!pr-0 hidden">
         <div className="flex gap-[22px] flex-col lg:flex-row">
           <div className="content-col w-full lg:w-[40%] flex flex-col bg-[#EDEDED] py-[27px] px-[32px]">
             <h2 className="text-[24px] lg:text-[30px] text-[#00795C] leading-[1.2] mb-[10px]">
-              {page?.product_misc_update?.reference?.hero_section_title_1?.value}
+              {
+                page?.product_misc_update?.reference?.hero_section_title_1
+                  ?.value
+              }
             </h2>
             <div
               className="desc text-black text-[16x] lg:text-[18px] xl:text-[21px]  leading-[1.3] font-[400]"
               dangerouslySetInnerHTML={{
-                __html: toHTML(page?.product_misc_update?.reference?.hero_section_desc_1?.value),
+                __html: toHTML(
+                  page?.product_misc_update?.reference?.hero_section_desc_1
+                    ?.value,
+                ),
               }}
             ></div>
             <h2 className="text-[24px] lg:text-[30px] text-[#00795C] leading-[1.2] mb-[10px] mt-[47px]">
-              {page?.product_misc_update?.reference?.hero_section_title_2?.value}
+              {
+                page?.product_misc_update?.reference?.hero_section_title_2
+                  ?.value
+              }
             </h2>
             <div
               className="desc text-black text-[16x] lg:text-[18px] xl:text-[21px]  leading-[1.3] font-[400] mb-[20px]"
               dangerouslySetInnerHTML={{
-                __html: toHTML(page?.product_misc_update?.reference?.hero_section_desc_2?.value),
+                __html: toHTML(
+                  page?.product_misc_update?.reference?.hero_section_desc_2
+                    ?.value,
+                ),
               }}
             ></div>
             <div className="flex mt-auto justify-between items-center flex-wrap gap-[15px]">
@@ -126,7 +152,7 @@ export default function schweizerSchuhpropktion() {
               spaceBetween={20}
               navigation
               onSlideChange={handleTransitionEnd}
-              centeredSlides= {slidesPerView}
+              centeredSlides={slidesPerView}
               breakpoints={{
                 0: {
                   slidesPerView: 1.3,
@@ -146,28 +172,27 @@ export default function schweizerSchuhpropktion() {
                     src={firstSlideImages[0]}
                     alt=""
                   />
-                  <div className='img-2 h-full xl:w-[60%] w-full xl:h-[40%] ml-auto block'>
-
-                  <img
-                    className="object-cover w-full h-full ml-auto block"
-                    src={firstSlideImages[1]}
-                    alt=""
-                  />
+                  <div className="img-2 h-full xl:w-[60%] w-full xl:h-[40%] ml-auto block">
+                    <img
+                      className="object-cover w-full h-full ml-auto block"
+                      src={firstSlideImages[1]}
+                      alt=""
+                    />
                   </div>
                 </div>
               </SwiperSlide>
-              {restSlideImages.map((image,index) => {
-                  return (
-                    <SwiperSlide key={index}>
-                      <div className="imgs-wrap flex flex-col gap-[20px] h-full">
-                        <img
-                          className="h-full w-full object-cover"
-                          src={image}
-                          alt=""
-                        />
-                      </div>
-                    </SwiperSlide>
-                  );
+              {restSlideImages.map((image, index) => {
+                return (
+                  <SwiperSlide key={index}>
+                    <div className="imgs-wrap flex flex-col gap-[20px] h-full">
+                      <img
+                        className="h-full w-full object-cover"
+                        src={image}
+                        alt=""
+                      />
+                    </div>
+                  </SwiperSlide>
+                );
               })}
               {/* {sliderImages.map((image, index) => (
                 <SwiperSlide key={index}>
