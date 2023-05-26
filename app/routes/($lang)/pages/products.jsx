@@ -363,6 +363,17 @@ ${MEDIA_FRAGMENT}
             brand_4_redirect : field(key: "brand_4_redirect") {
               value
             }
+            brand_5_text : field(key: "brand_5_text") {
+              value
+            }
+            brand_5_image : field(key: "brand_5_image") {
+              reference {
+                ...Media
+              }
+            }
+            brand_5_redirect : field(key: "brand_5_redirect") {
+              value
+            }
           }
         }
       }

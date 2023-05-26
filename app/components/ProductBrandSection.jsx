@@ -56,7 +56,7 @@ export function ProductBrandSection({data}) {
           </div>
            <div className="collectionsGrid-item relative">
             <Link
-             to={`${data?.brand_2_redirect?.value}`}
+             to={`${data?.brand_3_redirect?.value}`}
               className="relative block w-full h-full overflow-hidden"
             >
               <div className="img-wrap w-full h-full absolute inset-0">
@@ -81,7 +81,7 @@ export function ProductBrandSection({data}) {
           </div>
           <div className="collectionsGrid-item relative">
             <Link
-              to={`${data?.brand_5_redirect?.value}`}
+              to={`${data?.brand_4_redirect?.value}`}
               className="relative block w-full h-full overflow-hidden"
             >
               <div className="img-wrap w-full h-full absolute inset-0">
@@ -107,13 +107,13 @@ export function ProductBrandSection({data}) {
             </Link>
           </div>
           <div className="collectionsGrid-item relative">
-            <a
-              href='#'
+            <Link
+              to={`${data?.brand_5_redirect?.value}`}
               className="relative block w-full h-full overflow-hidden"
             >
               <div className="img-wrap w-full h-full absolute inset-0">
-                <img
-                  src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Group_80.png"
+                <Image
+                  data={data?.brand_5_image?.reference.image}
                   className="h-full w-full absolute inset-0 transition hover:duration-500 object-cover object-center"
                   alt=""
                 />
@@ -121,7 +121,9 @@ export function ProductBrandSection({data}) {
               <div className="img-overlay absolute w-full h-2/4 inset-x-0 bottom-0"></div>
               <div className="flex absolute bottom-0 left-0 p-5 w-full items-end h-full">
                 <Heading className="whitespace-pre-wrap flex flex-col font-normal text-[30px] xl:text-[40px] text-white btn w-2/4 gap-5">
-                <span>Filialen</span>
+                <span dangerouslySetInnerHTML={{
+                  __html: (data?.brand_5_text?.value),
+                }}></span>
                   <ArrowRightLight
                     className={
                       'w-12 h-12 border rounded-full p-2 text-white border-white transition-all'
@@ -129,7 +131,7 @@ export function ProductBrandSection({data}) {
                   />
                 </Heading>
               </div>
-            </a>
+            </Link>
           </div>
         </div>
       </div>

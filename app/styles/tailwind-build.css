@@ -1153,12 +1153,6 @@ video {
 .min-h-full {
   min-height: 100%;
 }
-.min-h-\[1704\] {
-  min-height: 1704;
-}
-.min-h-\[1704px\] {
-  min-height: 1704px;
-}
 .min-h-screen {
   min-height: 100vh;
 }
@@ -1270,9 +1264,6 @@ video {
 }
 .w-screen {
   width: 100vw;
-}
-.w-2\/4 {
-  width: 50%;
 }
 .min-w-\[0\.75rem\] {
   min-width: 0.75rem;
@@ -4490,11 +4481,6 @@ video {
   .xl\:py-\[80px\] {
     padding-top: 80px;
     padding-bottom: 80px;
-  }
-
-  .xl\:px-\[49px\] {
-    padding-left: 49px;
-    padding-right: 49px;
   }
 
   .xl\:pb-\[100px\] {
