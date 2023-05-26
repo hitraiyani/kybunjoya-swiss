@@ -1,47 +1,47 @@
 import React from 'react';
-import {ArrowRight2, IconDownload} from '~/components';
+import {ArrowRight2, IconDownload, Breadcrumb} from '~/components';
+import {json} from '@shopify/remix-oxygen';
+import {useLoaderData} from '@remix-run/react';
+import {toHTML, getBreadCrumbs} from '~/lib/utils';
+
+
+const seo = ({data}) => ({
+  title: data?.page?.seo?.title,
+  description: data?.page?.seo?.description,
+});
+
+export const handle = {
+  seo,
+};
+
+export async function loader({request, params, context}) {
+  
+  const {page} = await context.storefront.query(PAGE_QUERY, {
+      variables: {
+        handle: 'karriere',
+        language: context.storefront.i18n.language,
+      },
+    });
+
+  if (!page) {
+    throw new Response(null, {status: 404});
+  }
+
+  return json(
+    {page},
+    {
+      headers: {
+        // TODO cacheLong()
+      },
+    },
+  );
+}
+
 
 export default function karriere() {
   return (
     <>
-      <div className="Breadcrumb-sec mb-[20px] lg:mb-[25px]">
-        <div className="container">
-          <nav className="flex" aria-label="Breadcrumb">
-            <ol className="inline-flex items-center gap-y-[10px] gap-x-[8px] md:gap-x-[16px] flex-wrap">
-              <li className="inline-flex items-center">
-                <a
-                  href="#"
-                  className="tracking-[-0.400697px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] font-normal text-black leading-none hover:text-[#00795C]"
-                >
-                  Home
-                </a>
-              </li>
-              <li className="inline-flex items-center">
-                <ArrowRight2
-                  className={'w-[21px] h-[21px] mr-[8px] md:mr-[16px]'}
-                />
-                <a
-                  href="#"
-                  className="tracking-[-0.400697px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] font-normal text-black leading-none hover:text-[#00795C]"
-                >
-                  Über uns
-                </a>
-              </li>
-              <li className="inline-flex items-center">
-                <ArrowRight2
-                  className={'w-[21px] h-[21px] mr-[8px] md:mr-[16px]'}
-                />
-                <a
-                  href="#"
-                  className="tracking-[-0.400697px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] font-normal text-black leading-none hover:text-[#00795C]"
-                >
-                  karriere
-                </a>
-              </li>
-            </ol>
-          </nav>
-        </div>
-      </div>
+      <Breadcrumb crumbs={getBreadCrumbs('karriere','uberuns')}/>
       <div className="container mt-10 mb-[50px]">
         <h1 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold">
           Karriere
@@ -210,3 +210,20 @@ export default function karriere() {
     </>
   );
 }
+
+
+
+const PAGE_QUERY = `#graphql
+  query PageDetails($language: LanguageCode, $handle: String!)
+  @inContext(language: $language) {
+    page(handle: $handle) {
+      id
+      title
+      body
+      seo {
+        description
+        title
+      }
+    }
+  }
+`;

@@ -75,6 +75,8 @@ export default function ratgeberseite() {
   const {page, collection, sub_collections, pageCollectionTitle} =
     useLoaderData();
 
+  console.log("page", page);
+
   const [searchQuery, setSearchQuery] = useState('');
 
   const filteredKybunJoyaProducts = collection?.products?.nodes.filter(
@@ -352,8 +354,6 @@ export default function ratgeberseite() {
         <section className="dr-faq-sec !max-w-[1166px] mx-auto flex flex-col gap-[20px] my-[40px] md:my-[60px] lg:my-[80px] xl:my-[100px]">
           {sub_collections?.nodes?.map((item,index) => {
               if (item.title != pageCollectionTitle) {
-                  
-                  <ul><li>Fersensporn / Plantar Fasciitis / Fasziitisplantaris</li></ul>
                   return (
                     <ExpandingCardStyle2
                       key={index}
@@ -448,22 +448,29 @@ export default function ratgeberseite() {
               <div className="col-inner shadow-[0px_0px_0.9821px_2px_rgba(0,0,0,0.05),0px_3.9284px_7.8568px_1px_rgba(0,0,0,0.1)] h-full flex flex-col">
                 <div className="img-wrap relative overflow-hidden pb-[28%]">
                   <img className='absolute w-full h-full inset-0 object-cover'
-                    src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/PD04789_-_XL_partnerships_group_image.png_2.png?v=1685090294"
+                  src={
+                      page?.ratgeber_detail?.reference?.footer_main_left_section_image
+                        ?.reference?.image?.url
+                    }
                     alt=""
                   />
                 </div>
                 <div className="info-col p-[15px] md:p-[25px] lg:p-[30px] xl:p-[40px] md:!pt-[25px] max-w-[663px] mx-auto h-full flex flex-col">
-                  <h4 className="text-[24px] md:text-[28px] xl:text-[30px] text-black font-[500] leading-[1.2] text-center">
-                    Sie vermissen ein Krankheitsbild oder möchten persönlich
-                    beraten werden?
+                  <h4 className="text-[24px] md:text-[28px] xl:text-[30px] text-black font-[500] leading-[1.2] text-center"
+                    dangerouslySetInnerHTML={{
+                      __html: toHTML(
+                        page?.ratgeber_detail?.reference?.footer_main_left_section_desc?.value,
+                      ),
+                    }}
+                  >
                   </h4>
                   <div className="btn-wrap flex justify-center mt-auto">
-                    <a
-                      href="#"
+                    <Link
+                      to={page?.ratgeber_detail?.reference?.footer_main_left_section_cta?.value}
                       className="inline-block rounded-[100px] bg-black text-white text-center px-[40px] lg:px-[59px] py-[20px] lg:py-[25px] hover:bg-[#00795c] hover:text-white text-[16px] lg:text-[18px] max-w-fit mt-[10px] leading-none"
                     >
-                      Schreiben Sie Uns
-                    </a>
+                      { page?.ratgeber_detail?.reference?.footer_main_left_section_cta_label?.value }
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -472,22 +479,29 @@ export default function ratgeberseite() {
               <div className="col-inner shadow-[0px_0px_0.9821px_2px_rgba(0,0,0,0.05),0px_3.9284px_7.8568px_1px_rgba(0,0,0,0.1)] h-full flex flex-col">
                 <div className="img-wrap relative overflow-hidden pb-[28%]">
                   <img className='absolute w-full h-full inset-0 object-cover'
-                    src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/jeremy-lapak-CVvFVQ_-oUg-unsplash_1_2.png?v=1685090294"
+                     src={
+                      page?.ratgeber_detail?.reference?.footer_main_right_section_image
+                        ?.reference?.image?.url
+                    }
                     alt=""
                   />
                 </div>
                 <div className="info-col p-[15px] md:p-[25px] lg:p-[30px] xl:p-[40px] md:!pt-[25px] max-w-[663px] mx-auto h-full flex flex-col">
-                  <h4 className="text-[24px] md:text-[28px] xl:text-[30px] text-black font-[500] leading-[1.2] text-center">
-                    Um nicht «die Katze im Sack zu kaufen», können kybun Joya
-                    Schuhe außerdem bis zu 2 Wochen risikolos gemietet werden.
+                  <h4 className="text-[24px] md:text-[28px] xl:text-[30px] text-black font-[500] leading-[1.2] text-center"
+                    dangerouslySetInnerHTML={{
+                      __html: toHTML(
+                        page?.ratgeber_detail?.reference?.footer_main_right_section_desc?.value,
+                      ),
+                    }}
+                  >
                   </h4>
                   <div className="btn-wrap flex justify-center mt-auto">
-                    <a
-                      href="https://ch.kybun.swiss/collections/kybun-probier-schuhe"
+                    <Link
+                      to={page?.ratgeber_detail?.reference?.footer_main_right_section_cta?.value}
                       className="inline-block rounded-[100px] bg-black text-white text-center px-[40px] lg:px-[59px] py-[20px] lg:py-[25px] hover:bg-[#00795c] hover:text-white text-[16px] lg:text-[18px] max-w-fit mt-[10px] leading-none"
                     >
-                      kybun Shop
-                    </a>
+                      { page?.ratgeber_detail?.reference?.footer_main_right_section_cta_label?.value }
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -500,51 +514,60 @@ export default function ratgeberseite() {
               <div className="item flex flex-col rounded-[10px]">
                 <div className="title-wrap bg-[#00795C] rounded-tl-[10px] rounded-tr-[10px]">
                   <h4 className="text-white text-[24px] md:text-[28px] xl:text-[30px] font-bold leading-none p-[20px]">
-                    Medizin
+                      {page?.ratgeber_detail?.reference?.footer_section_title_1?.value}
                   </h4>
                 </div>
                 <div className="content-info px-[20px] pt-[12px] pb-[20px] lg:pb-[40px] bg-[#EDEDED] rounded-bl-[10px] rounded-br-[10px] flex flex-col gap-[8px] h-full">
-                  <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] tracking-[-0.400697px] font-normal leading-[1.4]">
-                    Medizinische Themen im Überblick
+                  <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] tracking-[-0.400697px] font-normal leading-[1.4]"
+                     dangerouslySetInnerHTML={{
+                      __html: toHTML(page?.ratgeber_detail?.reference?.footer_section_content_1?.value),
+                    }}
+                  >
                   </div>
                 </div>
               </div>
               <div className="item flex flex-col rounded-[10px]">
                 <div className="title-wrap bg-[#00795C] rounded-tl-[10px] rounded-tr-[10px]">
                   <h4 className="text-white text-[24px] md:text-[28px] xl:text-[30px] font-bold leading-none p-[20px]">
-                    Wirkungsweise
+                    {page?.ratgeber_detail?.reference?.footer_section_title_2?.value}
                   </h4>
                 </div>
                 <div className="content-info px-[20px] pt-[12px] pb-[20px] lg:pb-[40px] bg-[#EDEDED] rounded-bl-[10px] rounded-br-[10px] flex flex-col gap-[8px] h-full">
-                  <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] tracking-[-0.400697px] font-normal leading-[1.4]">
-                    Wie kann das Gehen und Stehen auf weich-elastisch-federndem
-                    Material Ihre Gesundheit unterstützen?
+                  <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] tracking-[-0.400697px] font-normal leading-[1.4]"
+                    dangerouslySetInnerHTML={{
+                      __html: toHTML(page?.ratgeber_detail?.reference?.footer_section_content_2?.value),
+                    }}
+                  >
                   </div>
                 </div>
               </div>
               <div className="item flex flex-col rounded-[10px]">
                 <div className="title-wrap bg-[#00795C] rounded-tl-[10px] rounded-tr-[10px]">
                   <h4 className="text-white text-[24px] md:text-[28px] xl:text-[30px] font-bold leading-none p-[20px]">
-                    Gesundheit-Events
+                    {page?.ratgeber_detail?.reference?.footer_section_title_3?.value}
                   </h4>
                 </div>
                 <div className="content-info px-[20px] pt-[12px] pb-[20px] lg:pb-[40px] bg-[#EDEDED] rounded-bl-[10px] rounded-br-[10px] flex flex-col gap-[8px] h-full">
-                  <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] tracking-[-0.400697px] font-normal leading-[1.4]">
-                    Hier erfahren Sie, wann der nächste Gesundheits-event in
-                    ihrer Nähe stattfindet.
+                  <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] tracking-[-0.400697px] font-normal leading-[1.4]"
+                     dangerouslySetInnerHTML={{
+                      __html: toHTML(page?.ratgeber_detail?.reference?.footer_section_content_3?.value),
+                    }}
+                  >
                   </div>
                 </div>
               </div>
               <div className="item flex flex-col rounded-[10px]">
                 <div className="title-wrap bg-[#00795C] rounded-tl-[10px] rounded-tr-[10px]">
                   <h4 className="text-white text-[24px] md:text-[28px] xl:text-[30px] font-bold leading-none p-[20px]">
-                    Studien
+                    {page?.ratgeber_detail?.reference?.footer_section_title_4?.value}
                   </h4>
                 </div>
                 <div className="content-info px-[20px] pt-[12px] pb-[20px] lg:pb-[40px] bg-[#EDEDED] rounded-bl-[10px] rounded-br-[10px] flex flex-col gap-[8px] h-full">
-                  <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] tracking-[-0.400697px] font-normal leading-[1.4]">
-                    Erhalten Sie Hintergrundinfos zu unseren Studien und
-                    Gütersiegeln.
+                  <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] tracking-[-0.400697px] font-normal leading-[1.4]"
+                     dangerouslySetInnerHTML={{
+                      __html: toHTML(page?.ratgeber_detail?.reference?.footer_section_content_4?.value),
+                    }}
+                  >
                   </div>
                 </div>
               </div>
@@ -655,6 +678,70 @@ ${MEDIA_FRAGMENT}
               value
             }
             button_accordion_mapping : field(key: "button_accordion_mapping") {
+              value
+            }
+            footer_section_title_1 : field(key: "footer_section_title_1") {
+              value
+            }
+            footer_section_content_1 : field(key: "footer_section_content_1") {
+              value
+            }
+            footer_section_redirect_1 : field(key: "footer_section_redirect_1") {
+              value
+            }
+            footer_section_title_2 : field(key: "footer_section_title_2") {
+              value
+            }
+            footer_section_content_2 : field(key: "footer_section_content_2") {
+              value
+            }
+            footer_section_redirect_2 : field(key: "footer_section_redirect_2") {
+              value
+            }
+            footer_section_title_3 : field(key: "footer_section_title_3") {
+              value
+            }
+            footer_section_content_3 : field(key: "footer_section_content_3") {
+              value
+            }
+            footer_section_redirect_3 : field(key: "footer_section_redirect_3") {
+              value
+            }
+            footer_section_title_4 : field(key: "footer_section_title_4") {
+              value
+            }
+            footer_section_content_4 : field(key: "footer_section_content_4") {
+              value
+            }
+            footer_section_redirect_4 : field(key: "footer_section_redirect_4") {
+              value
+            }
+            footer_main_left_section_desc : field(key: "footer_main_left_section_desc") {
+              value
+            }
+            footer_main_left_section_image : field(key: "footer_main_left_section_image") {
+              reference {
+                ...Media
+              }
+            }
+            footer_main_left_section_cta : field(key: "footer_main_left_section_cta") {
+              value
+            }
+            footer_main_left_section_cta_label : field(key: "footer_main_left_section_cta_label") {
+              value
+            }
+            footer_main_right_section_desc : field(key: "footer_main_right_section_desc") {
+              value
+            }
+            footer_main_right_section_image : field(key: "footer_main_right_section_image") {
+              reference {
+                ...Media
+              }
+            }
+            footer_main_right_section_cta : field(key: "footer_main_right_section_cta") {
+              value
+            }
+            footer_main_right_section_cta_label : field(key: "footer_main_right_section_cta_label") {
               value
             }
             page_collection : field(key: "page_collection") {

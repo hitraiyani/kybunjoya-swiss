@@ -816,6 +816,7 @@ const roots = {
   schweizerSchuhproduktion: {title: 'Schweizer Schuhproduktion', to: '/pages/schweizer-schuhpropktion'},
   uberuns: {title: 'Über uns', to: '/pages/uber-uns'},
   kybunjoyatherapie: {title: 'kybun Joya Therapie', to: '/pages/kybun-joya-therapie'},
+  karriere: {title: 'Karriere', to: '/pages/karriere'},
   produkte: {title: 'Produkte', to: '/pages/products'},
   ratgeber: {title: 'Ratgeber', to: '/pages/ratgeber'},
   beratung: {title: 'Beratung', to: '/pages/ratgeberseite'},
