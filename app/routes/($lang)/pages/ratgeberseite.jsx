@@ -192,13 +192,17 @@ export default function ratgeberseite() {
                   </h2>
                 </div>
                 <div
-                  className="desc mt-[20px] mx-auto lg:mt-[30px] xl:mt-[52px] text-[28px] md:text-[30px] lg:text-[35px] 2xl:text-[40px] tracking-[-0.97152px]  text-left xl:text-right text-black leading-[1.2]"
+                  className="desc mt-[20px] mx-auto lg:mt-[30px] xl:mt-[52px] text-[28px] md:text-[30px] lg:text-[35px] 2xl:text-[40px] tracking-[-0.97152px]  text-left xl:text-right text-black leading-[1.2] hidden"
                   dangerouslySetInnerHTML={{
                     __html: toHTML(
                       page?.ratgeber_detail?.reference?.head_content?.value,
                     ),
                   }}
                 ></div>
+                <div className='desc  mt-[20px] lg:mt-[40px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] max-w-[870px]'>
+                  <p>Dank der kybun Joya Therapie können bei über 50 medizinischen Diagnosen Linderung schaffen.</p>
+                  <p>Unser Ratgeber bietet mit seinem medizinischen Lexikon eine umfassende Information zum Verständnis einzelner Krankheitsbilder und der optimalen therapeutischen Integration von kybun und Joya Produkten zur Schmerzlinderung sowie zur Verkürzung der Rekonvaleszenz.</p>
+                </div>
               </div>
               <div className="interactive-img-wrap mx-auto block w-[320px] !hidden">
                 <div className="img-wrap w-full text-center relative">
@@ -236,7 +240,7 @@ export default function ratgeberseite() {
                 </div>
               </div>
               <div className="right-col tabs-wrap xl:flex-[1]">
-                <div className="search-bar">
+                <div className="search-bar hidden">
                   <form action="">
                     <div className="relative">
                       <button
@@ -280,13 +284,13 @@ export default function ratgeberseite() {
                     </div>
                   </form>
                 </div>
-                <div className="scroll-links-wrap grid grid-cols-2 min-[1701px]:gap-x-[40px] max-[1700px]:gap-[20px] min-[1701px]:gap-y-[45px] gap-[20px] mt-[30px]">
+                <div className="scroll-links-wrap grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 min-[1701px]:gap-x-[40px] max-[1700px]:gap-[20px] min-[1701px]:gap-y-[45px] gap-[20px] mt-[30px]">
                   {filteredKybunJoyaProducts.map((product,index) => {
                       return (
                         <Link
                           key={index}
                           to={`/products/custom-product/${product.handle}`}
-                          className="p-[15px] xl:px-[20px] xl:py-[26px] flex justify-center items-center text-center bg-white text-[16px] md:text-[18px] lg:text-[20px] xl:text-[20px] 2xl:text-[21px] leading-[1.4] hover:text-white hover:bg-[#00795C] xl:min-h-[116px] font-bold text-[#00795C] transition-all duration-500"
+                          className="p-[15px] xl:px-[20px] xl:py-[26px] flex justify-center items-center text-center bg-white text-[16px] md:text-[18px] lg:text-[20px] xl:text-[20px] 2xl:text-[21px] leading-[1.4] hover:text-white hover:bg-[#00795C] xl:min-h-[116px] font-bold text-[#00795C] transition-all duration-500 rounded-[10px]"
                         >
                           {product.title}
                         </Link>

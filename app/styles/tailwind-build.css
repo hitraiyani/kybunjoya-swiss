@@ -1120,8 +1120,8 @@ video {
 .max-h-48 {
   max-height: 12rem;
 }
-.max-h-\[100vh\] {
-  max-height: 100vh;
+.max-h-\[200vh\] {
+  max-height: 200vh;
 }
 .max-h-\[300px\] {
   max-height: 300px;
@@ -1323,6 +1323,9 @@ video {
 .max-w-\[85\%\] {
   max-width: 85%;
 }
+.max-w-\[870px\] {
+  max-width: 870px;
+}
 .max-w-\[99\%\] {
   max-width: 99%;
 }
@@ -1347,6 +1350,12 @@ video {
 }
 .flex-1 {
   flex: 1 1 0%;
+}
+.flex-\[1\.2\] {
+  flex: 1.2;
+}
+.flex-\[1\] {
+  flex: 1;
 }
 .flex-\[2\] {
   flex: 2;
@@ -3447,6 +3456,11 @@ video {
     padding-right: 2rem;
   }
 
+  .md\:px-\[30px\] {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
   .md\:px-\[35px\] {
     padding-left: 35px;
     padding-right: 35px;
@@ -3500,11 +3514,6 @@ video {
   .md\:py-\[60px\] {
     padding-top: 60px;
     padding-bottom: 60px;
-  }
-
-  .md\:px-\[30px\] {
-    padding-left: 30px;
-    padding-right: 30px;
   }
 
   .md\:pb-12 {
@@ -3896,6 +3905,10 @@ video {
     gap: 20px;
   }
 
+  .lg\:gap-\[30px\] {
+    gap: 30px;
+  }
+
   .lg\:gap-\[40px\] {
     gap: 40px;
   }
@@ -4057,12 +4070,12 @@ video {
     padding-top: 40px;
   }
 
-  .lg\:pt-\[80px\] {
-    padding-top: 80px;
-  }
-
   .lg\:pt-\[60px\] {
     padding-top: 60px;
+  }
+
+  .lg\:pt-\[80px\] {
+    padding-top: 80px;
   }
 
   .lg\:text-right {
@@ -4188,6 +4201,10 @@ video {
     margin-bottom: 50px;
   }
 
+  .xl\:mb-\[55px\] {
+    margin-bottom: 55px;
+  }
+
   .xl\:mb-\[83px\] {
     margin-bottom: 83px;
   }
@@ -4238,10 +4255,6 @@ video {
 
   .xl\:mt-\[87px\] {
     margin-top: 87px;
-  }
-
-  .xl\:mb-\[55px\] {
-    margin-bottom: 55px;
   }
 
   .xl\:\!block {
@@ -4332,10 +4345,6 @@ video {
     width: 90%;
   }
 
-  .xl\:max-w-\[280px\] {
-    max-width: 280px;
-  }
-
   .xl\:flex-\[1\] {
     flex: 1;
   }
@@ -4365,12 +4374,12 @@ video {
     gap: 73px;
   }
 
-  .xl\:gap-\[94px\] {
-    gap: 94px;
-  }
-
   .xl\:gap-\[80px\] {
     gap: 80px;
+  }
+
+  .xl\:gap-\[94px\] {
+    gap: 94px;
   }
 
   .xl\:gap-x-\[49px\] {
@@ -4585,6 +4594,10 @@ video {
     width: 35%;
   }
 
+  .\32xl\:grid-cols-5 {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
   .\32xl\:justify-center {
     justify-content: center;
   }
@@ -4607,14 +4620,14 @@ video {
     padding-right: 120px;
   }
 
-  .\32xl\:py-\[28px\] {
-    padding-top: 28px;
-    padding-bottom: 28px;
-  }
-
   .\32xl\:px-\[49px\] {
     padding-left: 49px;
     padding-right: 49px;
+  }
+
+  .\32xl\:py-\[28px\] {
+    padding-top: 28px;
+    padding-bottom: 28px;
   }
 
   .\32xl\:text-\[100px\] {

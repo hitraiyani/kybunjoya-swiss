@@ -159,7 +159,7 @@ export default function Heritage() {
             }
           </h2>
           <div className="flex flex-col-reverse lg:flex-row gap-y-[20px] gap-x-[30px] xl:gap-x-[64px]">
-            <div className="content-col w-full lg:w-[60%] flex flex-col">
+            <div className="content-col w-full lg:w-[50%] flex flex-col">
               <h2 className="text-[30px] lg:text-[35px] xl:text-[40px] text-[#00795C] leading-[1.2] tracking-[-1.05984px] mb-[17px] font-medium">
                 {
                   page?.about_us?.reference
@@ -176,7 +176,7 @@ export default function Heritage() {
                 }}
               ></div>
             </div>
-            <div className="img-col w-full lg:w-[40%] overflow-hidden">
+            <div className="img-col w-full lg:w-[50%] overflow-hidden">
               <img
                 className="h-full object-cover block"
                 src={
@@ -194,7 +194,7 @@ export default function Heritage() {
             {page?.about_us?.reference?.was_uns_antreibt_section_title?.value}
           </h2>
           <div className="flex flex-col lg:flex-row gap-y-[20px] gap-x-[30px] xl:gap-x-[64px]">
-            <div className="img-col w-full lg:w-[40%] overflow-hidden">
+            <div className="img-col w-full lg:w-[50%] overflow-hidden">
               <img
                 className="h-full object-cover rounded-xl block"
                 src={
@@ -204,7 +204,7 @@ export default function Heritage() {
                 alt=""
               />
             </div>
-            <div className="content-col w-full lg:w-[60%] flex flex-col">
+            <div className="content-col w-full lg:w-[50%] flex flex-col">
               <h2 className="text-[30px] lg:text-[35px] xl:text-[40px] text-[#00795C] leading-[1.2] tracking-[-1.05984px] mb-[17px] font-medium">
                 {
                   page?.about_us?.reference?.was_uns_antreibt_section_sub_title
@@ -228,7 +228,7 @@ export default function Heritage() {
             {page?.about_us?.reference?.wissenschaft_section_title?.value}
           </h2>
           <div className="flex flex-col-reverse lg:flex-row gap-y-[20px] gap-x-[30px] xl:gap-x-[64px]">
-            <div className="content-col w-full lg:w-[60%] flex flex-col">
+            <div className="content-col w-full lg:w-[50%] flex flex-col">
               <h2 className="text-[30px] lg:text-[35px] xl:text-[40px] text-[#00795C] leading-[1.2] tracking-[-1.05984px] mb-[17px] font-medium">
                 {
                   page?.about_us?.reference?.wissenschaft_section_sub_title
@@ -244,7 +244,7 @@ export default function Heritage() {
                 }}
               ></div>
             </div>
-            <div className="img-col overflow-hidden w-full lg:w-[40%]">
+            <div className="img-col overflow-hidden w-full lg:w-[50%]">
               <img
                 className="h-full object-cover block"
                 src={
