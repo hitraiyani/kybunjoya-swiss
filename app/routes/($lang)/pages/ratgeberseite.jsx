@@ -349,7 +349,7 @@ export default function ratgeberseite() {
             </div>
           </div>
         </section>
-        <section className="dr-faq-sec !max-w-[870px] mx-auto flex flex-col gap-[20px] my-[40px] md:my-[60px] lg:my-[80px] xl:my-[100px]">
+        <section className="dr-faq-sec !max-w-[1166px] mx-auto flex flex-col gap-[20px] my-[40px] md:my-[60px] lg:my-[80px] xl:my-[100px]">
           {sub_collections?.nodes?.map((item,index) => {
               if (item.title != pageCollectionTitle) {
                   
@@ -377,7 +377,7 @@ export default function ratgeberseite() {
               />
             );
           })} */}
-          <div className="info-bottom mt-[20px] md:mt-[40px] lg:mt-[60px] xl:mt-[80px]">
+          <div className="info-bottom mt-[20px] md:mt-[40px] lg:mt-[60px] xl:mt-[80px] hidden">
             <div className="title-wrap">
               <h3 className="text-center tracking-[-0.97152px] text-[28px] md:text-[30px] lg:text-[2 leading-[1.1] font-medium">
                 {page?.ratgeber_detail?.reference?.cta_text?.value}

@@ -1311,6 +1311,9 @@ video {
 .max-w-\[605px\] {
   max-width: 605px;
 }
+.max-w-\[663px\] {
+  max-width: 663px;
+}
 .max-w-\[770px\] {
   max-width: 770px;
 }
@@ -1345,8 +1348,8 @@ video {
 .max-w-xl {
   max-width: 36rem;
 }
-.max-w-\[663px\] {
-  max-width: 663px;
+.\!max-w-\[1166px\] {
+  max-width: 1166px !important;
 }
 .flex-1 {
   flex: 1 1 0%;
@@ -2009,9 +2012,6 @@ video {
 .p-\[5px\] {
   padding: 5px;
 }
-.p-\[25px\] {
-  padding: 25px;
-}
 .px-0 {
   padding-left: 0px;
   padding-right: 0px;
@@ -2197,6 +2197,9 @@ video {
 .pb-\[21\.5\%\] {
   padding-bottom: 21.5%;
 }
+.pb-\[28\%\] {
+  padding-bottom: 28%;
+}
 .pb-\[30\%\] {
   padding-bottom: 30%;
 }
@@ -2305,18 +2308,6 @@ video {
 .pt-\[64px\] {
   padding-top: 64px;
 }
-.pt-\[25px\] {
-  padding-top: 25px;
-}
-.\!pt-\[25px\] {
-  padding-top: 25px !important;
-}
-.pb-\[235px\] {
-  padding-bottom: 235px;
-}
-.pb-\[28\%\] {
-  padding-bottom: 28%;
-}
 .text-left {
   text-align: left;
 }
@@ -2409,6 +2400,9 @@ video {
 .font-\[400\] {
   font-weight: 400;
 }
+.font-\[500\] {
+  font-weight: 500;
+}
 .font-black {
   font-weight: 900;
 }
@@ -2426,9 +2420,6 @@ video {
 }
 .font-semibold {
   font-weight: 600;
-}
-.font-\[500\] {
-  font-weight: 500;
 }
 .uppercase {
   text-transform: uppercase;
@@ -3454,10 +3445,6 @@ video {
     padding: 2rem;
   }
 
-  .md\:p-\[20px\] {
-    padding: 20px;
-  }
-
   .md\:p-\[25px\] {
     padding: 25px;
   }
@@ -3542,6 +3529,10 @@ video {
     padding-bottom: 60px;
   }
 
+  .md\:\!pt-\[25px\] {
+    padding-top: 25px !important;
+  }
+
   .md\:pb-12 {
     padding-bottom: 3rem;
   }
@@ -3584,10 +3575,6 @@ video {
 
   .md\:pt-\[60px\] {
     padding-top: 60px;
-  }
-
-  .md\:\!pt-\[25px\] {
-    padding-top: 25px !important;
   }
 
   .md\:text-center {
@@ -4291,10 +4278,6 @@ video {
     margin-top: 87px;
   }
 
-  .xl\:mt-\[55px\] {
-    margin-top: 55px;
-  }
-
   .xl\:\!block {
     display: block !important;
   }
@@ -4468,10 +4451,6 @@ video {
   .xl\:gap-x-\[93px\] {
     -moz-column-gap: 93px;
          column-gap: 93px;
-  }
-
-  .xl\:p-\[40xp\] {
-    padding: 40xp;
   }
 
   .xl\:p-\[40px\] {
