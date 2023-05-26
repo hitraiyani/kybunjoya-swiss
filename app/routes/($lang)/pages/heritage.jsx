@@ -17,7 +17,7 @@ export const handle = {
 export async function loader({request, params, context}) {
   const {page} = await context.storefront.query(PAGE_QUERY, {
     variables: {
-      handle: 'aboutus',
+      handle: 'heritage',
       language: context.storefront.i18n.language,
     },
   });
@@ -36,7 +36,7 @@ export async function loader({request, params, context}) {
   );
 }
 
-export default function aboutUs() {
+export default function Heritage() {
   const {page} = useLoaderData();
 
   const timeLineDetailArr = page?.about_us?.reference?.time_line_section_desc
