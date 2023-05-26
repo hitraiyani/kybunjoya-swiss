@@ -19,7 +19,7 @@ const badRequest = (data) => json(data, { status: 400 });
 
 export const action = async ({ request, context, params }) => {
 
-    console.log("call inside");
+    
     const { session, storefront } = context;
     const formData = await request.formData();
 

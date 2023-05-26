@@ -11,7 +11,7 @@ import {
 import {MEDIA_FRAGMENT, PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
 import {getHeroPlaceholder} from '~/lib/placeholders';
 import {AnalyticsPageType} from '@shopify/hydrogen';
-import {AICO_API_URL, AICO_API_TOKEN} from '~/lib/const';
+import {AICO_API_URL, AICO_API_TOKEN, QUICK_LINK_MENU_TITLE} from '~/lib/const';
 
 export async function loader({params, context}) {
   const {language, country} = context.storefront.i18n;
@@ -67,7 +67,7 @@ export default function Homepage() {
   const [root] = useMatches();
 
   const [newsSliderData, setNewsSliderData] = useState();
-  const gruppeMenu = root?.data?.layout?.headerMenu?.items?.find((item) => item.title == 'Über uns');
+  const gruppeMenu = root?.data?.layout?.headerMenu?.items?.find((item) => item.title == QUICK_LINK_MENU_TITLE);
 
   const loadNewSlider = async () => {
     const newsResponse = await fetch(`${AICO_API_URL}news?page[number]=1&page[size]=4&sort=-publishDate&filter[isActive]=1`, {
