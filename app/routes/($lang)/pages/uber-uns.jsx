@@ -18,7 +18,7 @@ export async function loader({request, params, context}) {
   
   const {page} = await context.storefront.query(PAGE_QUERY, {
     variables: {
-      handle: 'gruppe',
+      handle: 'uber-uns',
       language: context.storefront.i18n.language,
     },
   });
@@ -43,7 +43,7 @@ export default function gorup() {
 
   return (
     <>
-      <Breadcrumb crumbs={getBreadCrumbs(null,'gruppe')}/>
+      <Breadcrumb crumbs={getBreadCrumbs(null,'uberuns')}/>
       <div className="container">
         <section className="banner-with-title">
           <h1 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold">

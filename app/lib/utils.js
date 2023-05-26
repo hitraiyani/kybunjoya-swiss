@@ -814,7 +814,7 @@ export function getYoutubeId(url) {
 const roots = {
   home: {title: 'Home', to: '/'},
   schweizerSchuhproduktion: {title: 'Erlebnis', to: '/pages/schweizer-schuhpropktion'},
-  gruppe: {title: 'Gruppe', to: '/pages/gruppe'},
+  uberuns: {title: 'Über uns', to: '/pages/uber-uns'},
   produkte: {title: 'Produkte', to: '/pages/products'},
   ratgeber: {title: 'Ratgeber', to: '/pages/ratgeber'},
   beratung: {title: 'Beratung', to: '/pages/ratgeberseite'},
