@@ -69,7 +69,7 @@ export default function aboutUs() {
 
   return (
     <>
-      <Breadcrumb crumbs={getBreadCrumbs(null,'story')}/>
+      <Breadcrumb crumbs={getBreadCrumbs(null,'heritage')}/>
       <div className="container">
         <section className="video-banner-with-title pb-[20px] md:pb-[30px] lg:pb-[40px] xl:pb-[50px]">
           <h1 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold">

@@ -51,7 +51,7 @@ export default function schweizerSchuhpropktion() {
 
     return (
         <>
-          <Breadcrumb crumbs={getBreadCrumbs('schweizerSchuhproduktion','gruppe')}/>
+          <Breadcrumb crumbs={getBreadCrumbs('schweizerSchuhproduktion','uberuns')}/>
           <div className="container">
             <div className="title-wrap">
               <h2 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold">
