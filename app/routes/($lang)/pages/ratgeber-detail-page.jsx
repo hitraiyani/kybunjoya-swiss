@@ -360,7 +360,7 @@ export default function ratgeberseite() {
                       id={`link${index + 1}`}
                       content={""}
                       products={item?.products?.edges}
-                      title={item.title.replace(pageCollectionTitle, "")}
+                      title={item.title.replace(pageCollectionTitle, "").trim()}
                     />
                   )
               }

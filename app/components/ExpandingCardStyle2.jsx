@@ -16,7 +16,7 @@ export function ExpandingCardStyle2({title, content, id, products = []}) {
             <div className="flex items-center gap-x-3 justify-between">
               <Text
                 as="h5"
-                className="text-white text-left text-[24px] md:text-[28px] xl:text-[30px] font-bold flex-1 leading-none"
+                className="text-white text-left text-[24px] md:text-[28px] xl:text-[30px] font-bold flex-1 line leading-tight"
                 dangerouslySetInnerHTML={{__html: title}}
               ></Text>
               <IconClose
