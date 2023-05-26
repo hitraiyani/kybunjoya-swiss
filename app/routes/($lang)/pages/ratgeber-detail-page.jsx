@@ -322,13 +322,13 @@ export default function ratgeberseite() {
                     </div>
                   </form>
                 </div>
-                <div className="scroll-links-wrap grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 min-[1701px]:gap-x-[40px] max-[1700px]:gap-[20px] min-[1701px]:gap-y-[45px] gap-[20px] mt-[30px]">
+                <div className="scroll-links-wrap flex flex-wrap gap-[20px] mt-[40px] lg:mt-[60px] xl:mt-[80px] border-t-[1px] border-black pt-[40px] lg:pt-[60px] xl:pt-[80px] justify-center">
                   {filteredKybunJoyaProducts.map((product, index) => {
                     return (
                       <Link
                         key={index}
                         to={`/products/custom-product/${product.handle}`}
-                        className="p-[15px] xl:px-[20px] xl:py-[26px] flex justify-center items-center text-center bg-white text-[16px] md:text-[18px] lg:text-[20px] xl:text-[20px] 2xl:text-[21px] leading-[1.4] hover:text-white hover:bg-[#00795C] xl:min-h-[116px] font-bold text-[#00795C] transition-all duration-500 rounded-[10px]"
+                        className="w-[calc(50%_-_16px)] lg:w-[calc(33.33%_-_16px)] xl:w-[calc(25%_-_16px)] 2xl:w-[calc(20%_-_16px)] p-[15px] xl:px-[20px] xl:py-[26px] flex justify-center items-center text-center bg-white text-[16px] md:text-[18px] lg:text-[20px] xl:text-[20px] 2xl:text-[21px] leading-[1.4] hover:text-white hover:bg-[#00795C] xl:min-h-[116px] font-bold text-[#00795C] transition-all duration-500 rounded-[10px]"
                       >
                         {product.title}
                       </Link>

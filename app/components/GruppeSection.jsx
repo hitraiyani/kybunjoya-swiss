@@ -24,7 +24,7 @@ export function GruppeSection({gruppeMenu}) {
               </div>
               <div className="img-overlay absolute w-full h-2/4 inset-x-0 bottom-0"></div>
               <Heading className="flex flex-col font-normal text-[30px] lg:text-[34px] xl:text-[45px] text-white absolute bottom-0 left-0 p-5 btn gap-5 leading-none">
-                <span>Gruppe</span>
+                <span>Über uns</span>
                 <ArrowRightLight
                   className={
                     'w-12 h-12 border rounded-full p-2 text-white border-white transition-all'
