@@ -3,7 +3,7 @@ import {Text, IconClose} from '~/components';
 
 export function ExpandingCard({title, content}) {
   return (
-    <Disclosure as="div" className="grid w-full gap-2 border-[#595959]  border-b">
+    <Disclosure as="div" className="grid w-full gap-2 border-[#595959]  border-t">
       {({open}) => (
         <>
           <Disclosure.Button
@@ -29,13 +29,13 @@ export function ExpandingCard({title, content}) {
             className="overflow-hidden"
             enter="transition-all duration-500"
             enterFrom="max-h-0"
-            enterTo={`max-h-[300px]`}
+            enterTo={`max-h-[200vh]`}
             leave="transition-all duration-500"
-            leaveFrom="max-h-[300px]"
+            leaveFrom="max-h-[200vh]"
             leaveTo="max-h-0"
           >
             <Disclosure.Panel
-              className="editor-content pb-[50px] px-[25px] grid gap-2 text-lg font-normal max-w-[700px]"
+              className="editor-content pb-[50px] px-[25px] grid gap-2 text-lg font-normal max-w-[991px]"
               static
             >
               <p dangerouslySetInnerHTML={{__html: content}}></p>
