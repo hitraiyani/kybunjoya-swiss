@@ -1311,9 +1311,6 @@ video {
 .max-w-\[605px\] {
   max-width: 605px;
 }
-.max-w-\[700px\] {
-  max-width: 700px;
-}
 .max-w-\[770px\] {
   max-width: 770px;
 }
@@ -1325,6 +1322,9 @@ video {
 }
 .max-w-\[99\%\] {
   max-width: 99%;
+}
+.max-w-\[991px\] {
+  max-width: 991px;
 }
 .max-w-fit {
   max-width: -moz-fit-content;
@@ -1345,8 +1345,8 @@ video {
 .max-w-xl {
   max-width: 36rem;
 }
-.max-w-\[991px\] {
-  max-width: 991px;
+.max-w-\[663px\] {
+  max-width: 663px;
 }
 .flex-1 {
   flex: 1 1 0%;
@@ -2009,6 +2009,9 @@ video {
 .p-\[5px\] {
   padding: 5px;
 }
+.p-\[25px\] {
+  padding: 25px;
+}
 .px-0 {
   padding-left: 0px;
   padding-right: 0px;
@@ -2302,6 +2305,18 @@ video {
 .pt-\[64px\] {
   padding-top: 64px;
 }
+.pt-\[25px\] {
+  padding-top: 25px;
+}
+.\!pt-\[25px\] {
+  padding-top: 25px !important;
+}
+.pb-\[235px\] {
+  padding-bottom: 235px;
+}
+.pb-\[28\%\] {
+  padding-bottom: 28%;
+}
 .text-left {
   text-align: left;
 }
@@ -2411,6 +2426,9 @@ video {
 }
 .font-semibold {
   font-weight: 600;
+}
+.font-\[500\] {
+  font-weight: 500;
 }
 .uppercase {
   text-transform: uppercase;
@@ -3436,6 +3454,14 @@ video {
     padding: 2rem;
   }
 
+  .md\:p-\[20px\] {
+    padding: 20px;
+  }
+
+  .md\:p-\[25px\] {
+    padding: 25px;
+  }
+
   .md\:px-0 {
     padding-left: 0px;
     padding-right: 0px;
@@ -3558,6 +3584,10 @@ video {
 
   .md\:pt-\[60px\] {
     padding-top: 60px;
+  }
+
+  .md\:\!pt-\[25px\] {
+    padding-top: 25px !important;
   }
 
   .md\:text-center {
@@ -3695,6 +3725,10 @@ video {
     margin-bottom: 43px;
   }
 
+  .lg\:mb-\[60px\] {
+    margin-bottom: 60px;
+  }
+
   .lg\:mb-\[80px\] {
     margin-bottom: 80px;
   }
@@ -3737,10 +3771,6 @@ video {
 
   .lg\:mt-\[85px\] {
     margin-top: 85px;
-  }
-
-  .lg\:mb-\[60px\] {
-    margin-bottom: 60px;
   }
 
   .lg\:flex {
@@ -4261,6 +4291,10 @@ video {
     margin-top: 87px;
   }
 
+  .xl\:mt-\[55px\] {
+    margin-top: 55px;
+  }
+
   .xl\:\!block {
     display: block !important;
   }
@@ -4434,6 +4468,14 @@ video {
   .xl\:gap-x-\[93px\] {
     -moz-column-gap: 93px;
          column-gap: 93px;
+  }
+
+  .xl\:p-\[40xp\] {
+    padding: 40xp;
+  }
+
+  .xl\:p-\[40px\] {
+    padding: 40px;
   }
 
   .xl\:px-\[10px\] {

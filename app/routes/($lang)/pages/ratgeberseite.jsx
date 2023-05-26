@@ -26,19 +26,18 @@ export async function loader({request, params, context}) {
     throw new Response(null, {status: 404});
   }
 
-  const pageCollectionTitle = page?.ratgeber_detail?.reference?.page_collection?.reference?.title;
+  const pageCollectionTitle =
+    page?.ratgeber_detail?.reference?.page_collection?.reference?.title;
 
   const {sub_collections} = await context.storefront.query(COLLECTIONS_QUERY, {
     variables: {
-      searchTerm : `title:\\"${pageCollectionTitle}\\"`,
+      searchTerm: `title:\\"${pageCollectionTitle}\\"`,
       country: context.storefront.i18n.country,
       language: context.storefront.i18n.language,
     },
   });
 
-
   const collectionHandle = 'all-products';
-
 
   const searchParams = new URL(request.url).searchParams;
 
@@ -47,24 +46,21 @@ export async function loader({request, params, context}) {
   const variantOption = 'variantOption';
   const {sortKey, reverse} = getSortValuesFromParam(searchParams.get('sort'));
   const cursor = searchParams.get('cursor');
-  
-  const filters = [ { productType: 'Dr. kybun Joya' } ]
 
-  const {collection} = await context.storefront.query(
-    COLLECTION_QUERY,
-    {
-      variables: {
-        handle: collectionHandle,
-        pageBy: PAGINATION_SIZE,
-        cursor,
-        filters,
-        sortKey,
-        reverse,
-        country: context.storefront.i18n.country,
-        language: context.storefront.i18n.language,
-      },
+  const filters = [{productType: 'Dr. kybun Joya'}];
+
+  const {collection} = await context.storefront.query(COLLECTION_QUERY, {
+    variables: {
+      handle: collectionHandle,
+      pageBy: PAGINATION_SIZE,
+      cursor,
+      filters,
+      sortKey,
+      reverse,
+      country: context.storefront.i18n.country,
+      language: context.storefront.i18n.language,
     },
-  );
+  });
 
   return json(
     {page, collection, sub_collections, pageCollectionTitle},
@@ -76,16 +72,16 @@ export async function loader({request, params, context}) {
   );
 }
 export default function ratgeberseite() {
-  const {page, collection, sub_collections, pageCollectionTitle} = useLoaderData();
+  const {page, collection, sub_collections, pageCollectionTitle} =
+    useLoaderData();
 
   const [searchQuery, setSearchQuery] = useState('');
 
-
-  const filteredKybunJoyaProducts = collection?.products?.nodes.filter((product) => {
-      return product.title.toLowerCase().includes(searchQuery.toLowerCase())
-  });
-
-  
+  const filteredKybunJoyaProducts = collection?.products?.nodes.filter(
+    (product) => {
+      return product.title.toLowerCase().includes(searchQuery.toLowerCase());
+    },
+  );
 
   const buttonAccordionMapping = page?.ratgeber_detail?.reference
     ?.button_accordion_mapping?.value
@@ -93,28 +89,30 @@ export default function ratgeberseite() {
     : [];
 
   useEffect(() => {
-     document.querySelectorAll('.my-achor-link').forEach(function (link) {
+    document.querySelectorAll('.my-achor-link').forEach(function (link) {
       link.addEventListener('mouseover', function (e) {
         e.preventDefault();
-        
+
         document.querySelectorAll('.kb-body-icon').forEach(function (icon) {
           icon.classList.remove('active');
         });
 
         const hashId = this.hash.substring(1);
 
-        const kgIcon = document.getElementById(hashId.replace('link','kb-body-icon-'));
+        const kgIcon = document.getElementById(
+          hashId.replace('link', 'kb-body-icon-'),
+        );
         kgIcon?.classList?.add('active');
-
       });
       link.addEventListener('mouseout', function (e) {
         e.preventDefault();
         document.querySelectorAll('.kb-body-icon').forEach(function (icon) {
-          
-          let activeLink  = document.getElementsByClassName('my-achor-link active')[0];
+          let activeLink = document.getElementsByClassName(
+            'my-achor-link active',
+          )[0];
           if (activeLink) {
-            const [hash, query] = activeLink.href.split('#')[1].split('?')
-            const iconId = hash.replace('link','kb-body-icon-');
+            const [hash, query] = activeLink.href.split('#')[1].split('?');
+            const iconId = hash.replace('link', 'kb-body-icon-');
             if (icon.id != iconId) {
               icon.classList.remove('active');
             } else {
@@ -140,47 +138,55 @@ export default function ratgeberseite() {
         });
 
         if (this.getAttribute('hreflink')) {
-          window.location.href = this.getAttribute('hreflink')
+          window.location.href = this.getAttribute('hreflink');
           return true;
         }
-        
 
         // add active class to clicked element
         this.classList.add('active');
 
         const hashId = this.hash.substring(1);
 
-        
-        const kgIcon = document.getElementById(hashId.replace('link','kb-body-icon-'));
+        const kgIcon = document.getElementById(
+          hashId.replace('link', 'kb-body-icon-'),
+        );
         kgIcon?.classList?.add('active');
 
-        document.querySelectorAll('.kb-accordion').forEach(function (accordion) {
-          if (accordion.id != hashId && accordion.getAttribute('data-headlessui-state') == 'open') {
-            accordion?.querySelector('button')?.click();
-          }
-       });
-       var myElement = document.querySelector('#' + hashId);
-        if (myElement && myElement?.getAttribute('data-headlessui-state') != 'open') {
-            myElement?.querySelector('button')?.click();
+        document
+          .querySelectorAll('.kb-accordion')
+          .forEach(function (accordion) {
+            if (
+              accordion.id != hashId &&
+              accordion.getAttribute('data-headlessui-state') == 'open'
+            ) {
+              accordion?.querySelector('button')?.click();
+            }
+          });
+        var myElement = document.querySelector('#' + hashId);
+        if (
+          myElement &&
+          myElement?.getAttribute('data-headlessui-state') != 'open'
+        ) {
+          myElement?.querySelector('button')?.click();
         }
 
-        setTimeout(()=> {
+        setTimeout(() => {
           var target = this.hash;
-        var $target = document.querySelector(target);
-        var scrollDistance = $target.offsetTop - 90;
+          var $target = document.querySelector(target);
+          var scrollDistance = $target.offsetTop - 90;
 
-        window.scrollTo({
-          top: scrollDistance,
-          behavior: 'smooth',
-        });
-        },500);
+          window.scrollTo({
+            top: scrollDistance,
+            behavior: 'smooth',
+          });
+        }, 500);
       });
     });
   }, []);
 
   return (
     <>
-      <Breadcrumb crumbs={getBreadCrumbs('beratung','ratgeber')}/>
+      <Breadcrumb crumbs={getBreadCrumbs('beratung', 'ratgeber')} />
       <div className="container">
         <section className="dr-info-tabs-section">
           <div className="dr-info-tabs-inner">
@@ -199,9 +205,18 @@ export default function ratgeberseite() {
                     ),
                   }}
                 ></div>
-                <div className='desc  mt-[20px] lg:mt-[40px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] max-w-[870px]'>
-                  <p>Dank der kybun Joya Therapie können bei über 50 medizinischen Diagnosen Linderung schaffen.</p>
-                  <p>Unser Ratgeber bietet mit seinem medizinischen Lexikon eine umfassende Information zum Verständnis einzelner Krankheitsbilder und der optimalen therapeutischen Integration von kybun und Joya Produkten zur Schmerzlinderung sowie zur Verkürzung der Rekonvaleszenz.</p>
+                <div className="desc  mt-[20px] lg:mt-[40px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] max-w-[870px]">
+                  <p>
+                    Dank der kybun Joya Therapie können bei über 50
+                    medizinischen Diagnosen Linderung schaffen.
+                  </p>
+                  <p>
+                    Unser Ratgeber bietet mit seinem medizinischen Lexikon eine
+                    umfassende Information zum Verständnis einzelner
+                    Krankheitsbilder und der optimalen therapeutischen
+                    Integration von kybun und Joya Produkten zur
+                    Schmerzlinderung sowie zur Verkürzung der Rekonvaleszenz.
+                  </p>
                 </div>
               </div>
               <div className="interactive-img-wrap mx-auto block w-[320px] !hidden">
@@ -215,25 +230,46 @@ export default function ratgeberseite() {
                     alt=""
                   />
                   <div className="interactive-list w-full left-[-90px] top-0 h-full absolute">
-                    <div className="absolute top-0 left-[240px] kb-body-icon" id="kb-body-icon-1">
+                    <div
+                      className="absolute top-0 left-[240px] kb-body-icon"
+                      id="kb-body-icon-1"
+                    >
                       <IconClose className="transition-transform transform-gpu duration-200 w-[65px] h-[65px] text-black p-[10px] border border-[#DEDEDE] rounded-full bg-white bg-opacity-50 rotate-45 stroke-[1] hover:bg-[#009470] hover:border-[#009470]" />
                     </div>
-                    <div className="absolute top-[300px] left-[220px] kb-body-icon" id="kb-body-icon-3">
+                    <div
+                      className="absolute top-[300px] left-[220px] kb-body-icon"
+                      id="kb-body-icon-3"
+                    >
                       <IconClose className="transition-transform transform-gpu duration-200 w-[65px] h-[65px] text-black p-[10px] border border-[#DEDEDE] rounded-full bg-white bg-opacity-50 rotate-45 stroke-[1] hover:bg-[#009470] hover:border-[#009470]" />
                     </div>
-                    <div className="absolute top-[330px] left-[130px] kb-body-icon" id="kb-body-icon-5">
+                    <div
+                      className="absolute top-[330px] left-[130px] kb-body-icon"
+                      id="kb-body-icon-5"
+                    >
                       <IconClose className="transition-transform transform-gpu duration-200 w-[65px] h-[65px] text-black p-[10px] border border-[#DEDEDE] rounded-full bg-white bg-opacity-50 rotate-45 stroke-[1] hover:bg-[#009470] hover:border-[#009470]" />
                     </div>
-                    <div className="absolute top-[330px] left-[281px] kb-body-icon" id="kb-body-icon-2">
+                    <div
+                      className="absolute top-[330px] left-[281px] kb-body-icon"
+                      id="kb-body-icon-2"
+                    >
                       <IconClose className="transition-transform transform-gpu duration-200 w-[65px] h-[65px] text-black p-[10px] border border-[#DEDEDE] rounded-full bg-white bg-opacity-50 rotate-45 stroke-[1] hover:bg-[#009470] hover:border-[#009470]" />
                     </div>
-                    <div className="absolute top-[510px] left-[261px] kb-body-icon" id="kb-body-icon-4">
+                    <div
+                      className="absolute top-[510px] left-[261px] kb-body-icon"
+                      id="kb-body-icon-4"
+                    >
                       <IconClose className="transition-transform transform-gpu duration-200 w-[65px] h-[65px] text-black p-[10px] border border-[#DEDEDE] rounded-full bg-white bg-opacity-50 rotate-45 stroke-[1] hover:bg-[#009470] hover:border-[#009470]" />
                     </div>
-                    <div className="absolute bottom-[110px] left-[180px] kb-body-icon" id="kb-body-icon-6">
+                    <div
+                      className="absolute bottom-[110px] left-[180px] kb-body-icon"
+                      id="kb-body-icon-6"
+                    >
                       <IconClose className="transition-transform transform-gpu duration-200 w-[65px] h-[65px] text-black p-[10px] border border-[#DEDEDE] rounded-full bg-white bg-opacity-50 rotate-45 stroke-[1] hover:bg-[#009470] hover:border-[#009470]" />
                     </div>
-                    <div className="absolute bottom-[80px] left-[250px] kb-body-icon" id="kb-body-icon-7">
+                    <div
+                      className="absolute bottom-[80px] left-[250px] kb-body-icon"
+                      id="kb-body-icon-7"
+                    >
                       <IconClose className="transition-transform transform-gpu duration-200 w-[65px] h-[65px] text-black p-[10px] border border-[#DEDEDE] rounded-full bg-white bg-opacity-50 rotate-45 stroke-[1] hover:bg-[#009470] hover:border-[#009470]" />
                     </div>
                   </div>
@@ -278,23 +314,23 @@ export default function ratgeberseite() {
                         placeholder="Suchen"
                         name="q"
                         value={searchQuery}
-                        onChange={e => setSearchQuery(e.target.value)}
+                        onChange={(e) => setSearchQuery(e.target.value)}
                         className="text-left transition border-transparent appearance-none focus:outline-0 placeholder:text-[#00795C] text-[#00795C] block pl-[62px] pr-[20px] rounded-[100px] bg-[#EDEDED] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] py-[20px] 2xl:py-[28px] tracking-[-0.400697px] font-normal leading-none w-full"
                       />
                     </div>
                   </form>
                 </div>
                 <div className="scroll-links-wrap grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 min-[1701px]:gap-x-[40px] max-[1700px]:gap-[20px] min-[1701px]:gap-y-[45px] gap-[20px] mt-[30px]">
-                  {filteredKybunJoyaProducts.map((product,index) => {
-                      return (
-                        <Link
-                          key={index}
-                          to={`/products/custom-product/${product.handle}`}
-                          className="p-[15px] xl:px-[20px] xl:py-[26px] flex justify-center items-center text-center bg-white text-[16px] md:text-[18px] lg:text-[20px] xl:text-[20px] 2xl:text-[21px] leading-[1.4] hover:text-white hover:bg-[#00795C] xl:min-h-[116px] font-bold text-[#00795C] transition-all duration-500 rounded-[10px]"
-                        >
-                          {product.title}
-                        </Link>
-                      );
+                  {filteredKybunJoyaProducts.map((product, index) => {
+                    return (
+                      <Link
+                        key={index}
+                        to={`/products/custom-product/${product.handle}`}
+                        className="p-[15px] xl:px-[20px] xl:py-[26px] flex justify-center items-center text-center bg-white text-[16px] md:text-[18px] lg:text-[20px] xl:text-[20px] 2xl:text-[21px] leading-[1.4] hover:text-white hover:bg-[#00795C] xl:min-h-[116px] font-bold text-[#00795C] transition-all duration-500 rounded-[10px]"
+                      >
+                        {product.title}
+                      </Link>
+                    );
                   })}
                   {/* {buttonAccordionMapping?.map((item, index) => {
                     return (
@@ -357,6 +393,161 @@ export default function ratgeberseite() {
               >
                 {page?.ratgeber_detail?.reference?.cta_button_text?.value}
               </Link>
+            </div>
+          </div>
+        </section>
+        <section className="search-bar-section mb-[40px] md:mb-[60px] lg:mb-[80px] xl:mb-[100px]">
+          <div className="search-bar max-w-[991px] mx-auto">
+            <form action="">
+              <div className="relative">
+                <button
+                  type="submit"
+                  className="text-black absolute inset-y-0 left-[28px] flex items-center"
+                >
+                  <svg
+                    width={32}
+                    height={32}
+                    viewBox="0 0 53 54"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    {' '}
+                    <circle
+                      cx="22.6274"
+                      cy="23.4645"
+                      r={15}
+                      transform="rotate(-45 22.6274 23.4645)"
+                      stroke="black"
+                      strokeWidth={2}
+                    />{' '}
+                    <line
+                      x1="33.9415"
+                      y1="34.7782"
+                      x2="41.0126"
+                      y2="41.8493"
+                      stroke="black"
+                      strokeWidth={2}
+                    />{' '}
+                  </svg>
+                </button>
+                <input
+                  type="search"
+                  placeholder="Suchen"
+                  name="q"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="text-left transition border-transparent appearance-none focus:outline-0 placeholder:text-[#00795C] text-[#00795C] block pl-[62px] pr-[20px] rounded-[100px] bg-[#EDEDED] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] py-[20px] 2xl:py-[28px] tracking-[-0.400697px] font-normal leading-none w-full"
+                />
+              </div>
+            </form>
+          </div>
+        </section>
+        <section className="two-box-sec">
+          <div className="flex flex-col lg:flex-row gap-[20px]">
+            <div className="col w-full lg:w-[50%]">
+              <div className="col-inner shadow-[0px_0px_0.9821px_2px_rgba(0,0,0,0.05),0px_3.9284px_7.8568px_1px_rgba(0,0,0,0.1)] h-full flex flex-col">
+                <div className="img-wrap relative overflow-hidden pb-[28%]">
+                  <img className='absolute w-full h-full inset-0 object-cover'
+                    src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/PD04789_-_XL_partnerships_group_image.png_2.png?v=1685090294"
+                    alt=""
+                  />
+                </div>
+                <div className="info-col p-[15px] md:p-[25px] lg:p-[30px] xl:p-[40px] md:!pt-[25px] max-w-[663px] mx-auto h-full flex flex-col">
+                  <h4 className="text-[24px] md:text-[28px] xl:text-[30px] text-black font-[500] leading-[1.2] text-center">
+                    Sie vermissen ein Krankheitsbild oder möchten persönlich
+                    beraten werden?
+                  </h4>
+                  <div className="btn-wrap flex justify-center mt-auto">
+                    <a
+                      href="#"
+                      className="inline-block rounded-[100px] bg-black text-white text-center px-[40px] lg:px-[59px] py-[20px] lg:py-[25px] hover:bg-[#00795c] hover:text-white text-[16px] lg:text-[18px] max-w-fit mt-[10px] leading-none"
+                    >
+                      Schreiben Sie Uns
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="col w-full lg:w-[50%]">
+              <div className="col-inner shadow-[0px_0px_0.9821px_2px_rgba(0,0,0,0.05),0px_3.9284px_7.8568px_1px_rgba(0,0,0,0.1)] h-full flex flex-col">
+                <div className="img-wrap relative overflow-hidden pb-[28%]">
+                  <img className='absolute w-full h-full inset-0 object-cover'
+                    src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/jeremy-lapak-CVvFVQ_-oUg-unsplash_1_2.png?v=1685090294"
+                    alt=""
+                  />
+                </div>
+                <div className="info-col p-[15px] md:p-[25px] lg:p-[30px] xl:p-[40px] md:!pt-[25px] max-w-[663px] mx-auto h-full flex flex-col">
+                  <h4 className="text-[24px] md:text-[28px] xl:text-[30px] text-black font-[500] leading-[1.2] text-center">
+                    Um nicht «die Katze im Sack zu kaufen», können kybun Joya
+                    Schuhe außerdem bis zu 2 Wochen risikolos gemietet werden.
+                  </h4>
+                  <div className="btn-wrap flex justify-center mt-auto">
+                    <a
+                      href="https://ch.kybun.swiss/collections/kybun-probier-schuhe"
+                      className="inline-block rounded-[100px] bg-black text-white text-center px-[40px] lg:px-[59px] py-[20px] lg:py-[25px] hover:bg-[#00795c] hover:text-white text-[16px] lg:text-[18px] max-w-fit mt-[10px] leading-none"
+                    >
+                      kybun Shop
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section className="four-boxes-section my-[40px] md:my-[60px] lg:my-[80px] xl:my-[100px]">
+          <div className="four-boxes-inner">
+            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-[20px]">
+              <div className="item flex flex-col rounded-[10px]">
+                <div className="title-wrap bg-[#00795C] rounded-tl-[10px] rounded-tr-[10px]">
+                  <h4 className="text-white text-[24px] md:text-[28px] xl:text-[30px] font-bold leading-none p-[20px]">
+                    Medizin
+                  </h4>
+                </div>
+                <div className="content-info px-[20px] pt-[12px] pb-[20px] lg:pb-[40px] bg-[#EDEDED] rounded-bl-[10px] rounded-br-[10px] flex flex-col gap-[8px] h-full">
+                  <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] tracking-[-0.400697px] font-normal leading-[1.4]">
+                    Medizinische Themen im Überblick
+                  </div>
+                </div>
+              </div>
+              <div className="item flex flex-col rounded-[10px]">
+                <div className="title-wrap bg-[#00795C] rounded-tl-[10px] rounded-tr-[10px]">
+                  <h4 className="text-white text-[24px] md:text-[28px] xl:text-[30px] font-bold leading-none p-[20px]">
+                    Wirkungsweise
+                  </h4>
+                </div>
+                <div className="content-info px-[20px] pt-[12px] pb-[20px] lg:pb-[40px] bg-[#EDEDED] rounded-bl-[10px] rounded-br-[10px] flex flex-col gap-[8px] h-full">
+                  <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] tracking-[-0.400697px] font-normal leading-[1.4]">
+                    Wie kann das Gehen und Stehen auf weich-elastisch-federndem
+                    Material Ihre Gesundheit unterstützen?
+                  </div>
+                </div>
+              </div>
+              <div className="item flex flex-col rounded-[10px]">
+                <div className="title-wrap bg-[#00795C] rounded-tl-[10px] rounded-tr-[10px]">
+                  <h4 className="text-white text-[24px] md:text-[28px] xl:text-[30px] font-bold leading-none p-[20px]">
+                    Gesundheit-Events
+                  </h4>
+                </div>
+                <div className="content-info px-[20px] pt-[12px] pb-[20px] lg:pb-[40px] bg-[#EDEDED] rounded-bl-[10px] rounded-br-[10px] flex flex-col gap-[8px] h-full">
+                  <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] tracking-[-0.400697px] font-normal leading-[1.4]">
+                    Hier erfahren Sie, wann der nächste Gesundheits-event in
+                    ihrer Nähe stattfindet.
+                  </div>
+                </div>
+              </div>
+              <div className="item flex flex-col rounded-[10px]">
+                <div className="title-wrap bg-[#00795C] rounded-tl-[10px] rounded-tr-[10px]">
+                  <h4 className="text-white text-[24px] md:text-[28px] xl:text-[30px] font-bold leading-none p-[20px]">
+                    Studien
+                  </h4>
+                </div>
+                <div className="content-info px-[20px] pt-[12px] pb-[20px] lg:pb-[40px] bg-[#EDEDED] rounded-bl-[10px] rounded-br-[10px] flex flex-col gap-[8px] h-full">
+                  <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] tracking-[-0.400697px] font-normal leading-[1.4]">
+                    Erhalten Sie Hintergrundinfos zu unseren Studien und
+                    Gütersiegeln.
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -509,7 +700,6 @@ const COLLECTIONS_QUERY = `#graphql
     }
   }
 `;
-
 
 function getSortValuesFromParam(sortParam) {
   switch (sortParam) {
