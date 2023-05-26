@@ -105,7 +105,7 @@ export default function karriere() {
                     <div className="flex justify-between items-center gap-[20px]">
                       <div className="info flex flex-col">
                         <span className="block font-medium text-[24px] md:text-[30px] lg:text-[35px] text-black tracking-[-0.97152px] leading-none mb-[5px]">
-                          vacancies
+                          Offene Stelle
                         </span>
                         <span className="block font-normal text-[20px] md:text-[26px] lg:text-[30px] text-[#898989] tracking-[-0.97152px] leading-none">
                           Job Ort
@@ -127,7 +127,7 @@ export default function karriere() {
                     <div className="flex justify-between items-center gap-[20px]">
                       <div className="info flex flex-col">
                         <span className="block font-medium text-[24px] md:text-[30px] lg:text-[35px] text-black tracking-[-0.97152px] leading-none mb-[5px]">
-                          vacancies
+                          Offene Stelle
                         </span>
                         <span className="block font-normal text-[20px] md:text-[26px] lg:text-[30px] text-[#898989] tracking-[-0.97152px] leading-none">
                           Job Ort
@@ -149,7 +149,7 @@ export default function karriere() {
                     <div className="flex justify-between items-center gap-[20px]">
                       <div className="info flex flex-col">
                         <span className="block font-medium text-[24px] md:text-[30px] lg:text-[35px] text-black tracking-[-0.97152px] leading-none mb-[5px]">
-                          vacancies
+                          Offene Stelle
                         </span>
                         <span className="block font-normal text-[20px] md:text-[26px] lg:text-[30px] text-[#898989] tracking-[-0.97152px] leading-none">
                           Job Ort
@@ -171,7 +171,7 @@ export default function karriere() {
                     <div className="flex justify-between items-center gap-[20px]">
                       <div className="info flex flex-col">
                         <span className="block font-medium text-[24px] md:text-[30px] lg:text-[35px] text-black tracking-[-0.97152px] leading-none mb-[5px]">
-                          vacancies
+                          Offene Stelle
                         </span>
                         <span className="block font-normal text-[20px] md:text-[26px] lg:text-[30px] text-[#898989] tracking-[-0.97152px] leading-none">
                           Job Ort
