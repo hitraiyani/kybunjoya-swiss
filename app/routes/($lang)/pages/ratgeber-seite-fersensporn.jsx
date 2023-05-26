@@ -51,7 +51,6 @@ export default function ratgeberSeiteFersensporn() {
 
   const aicoProductData = page?.fersensporn_product?.reference;
 
-  console.log("aicoProductData", aicoProductData);
 
   const apicoProductTags = [];
   aicoProductData?.tags?.forEach((item) => {

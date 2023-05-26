@@ -216,7 +216,7 @@ export default function kontakt() {
                               <input
                                 type="text"
                                 name='firm'
-                                placeholder="Firm *"
+                                placeholder="Firma *"
                                 className="placeholder-[#333333] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal w-full pb-[10px] border-b-black border-black border-b-[1px] focus:outline-none focus:shadow-none"
                               />
                             </div>
