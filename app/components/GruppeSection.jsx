@@ -36,7 +36,7 @@ export function GruppeSection({gruppeMenu}) {
               <h2 className='title text-[#595959] text-[25px] mb-5 md:mb-[40px] xl:mb-[83px] font-medium'>Quick Links</h2>
               <div className='quick-link-list'>
                 <ul>
-                  {quickLinkMenu.map((item, index) => {
+                  {quickLinkMenu?.map((item, index) => {
                       return (
                         <li key={index}>
                           <Link to={`${item.to}`} className='text-[24px] md:text-[30px] lg:text-[35px] text-black hover:text[#00795C] block tracking-[-0.97152px] leading-none mb-5'>{item.title}</Link>

@@ -67,8 +67,8 @@ export default function Homepage() {
   const [root] = useMatches();
 
   const [newsSliderData, setNewsSliderData] = useState();
-
-  const gruppeMenu = root?.data?.layout?.headerMenu?.items?.find((item) => item.title == 'Gruppe');
+  console.log("root?.data?.layout?.headerMenu",root?.data?.layout?.headerMenu);
+  const gruppeMenu = root?.data?.layout?.headerMenu?.items?.find((item) => item.title == 'Über uns');
 
   const loadNewSlider = async () => {
     const newsResponse = await fetch(`${AICO_API_URL}news?page[number]=1&page[size]=4&sort=-publishDate&filter[isActive]=1`, {
