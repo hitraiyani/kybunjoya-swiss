@@ -67,7 +67,6 @@ export default function Homepage() {
   const [root] = useMatches();
 
   const [newsSliderData, setNewsSliderData] = useState();
-  console.log("root?.data?.layout?.headerMenu",root?.data?.layout?.headerMenu);
   const gruppeMenu = root?.data?.layout?.headerMenu?.items?.find((item) => item.title == 'Über uns');
 
   const loadNewSlider = async () => {

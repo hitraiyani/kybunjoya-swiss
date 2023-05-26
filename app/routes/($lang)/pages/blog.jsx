@@ -42,11 +42,10 @@ export default function blog() {
   const {page} = useLoaderData();
   const [newsSliderData, setNewsSliderData] = useState();
   const blogMetaReference = page?.blog?.reference;
-  console.log("page", blogMetaReference);
+  
 
   useEffect(() => {
       getNews(10).then((result) => {
-          console.log("result", result);
           setNewsSliderData(result);
       });
   },[]);

@@ -48,6 +48,7 @@ export async function loader({request, params, context}) {
 export default function schweizerSchuhpropktion() {
   const {page} = useLoaderData();
 
+
   const sliderImages =
     page?.product_misc_update?.reference?.slider_images?.references?.edges.map(
       (data) => data.node.image.url,
@@ -62,8 +63,7 @@ export default function schweizerSchuhpropktion() {
   const [slidesPerView, setSlidesPerView] = useState(false);
 
   const handleTransitionEnd = (swiper) => {
-    console.log(swiper);
-    console.log(swiper.activeIndex, swiper.slides.length);
+   
     if (
       swiper.activeIndex === 0 ||
       swiper.slides.length === swiper.activeIndex
@@ -84,15 +84,24 @@ export default function schweizerSchuhpropktion() {
           </h2>
         </div>
         <div className="sub-title">
-          <h4 className="text-[#000000] text-[24px] lg:text-[30px] mb-[33px] leading-[1.2] max-w-[1000px] font-bold">
-            Über 4 Millionen begeisterte Kunden weltweit bestätigen die
-            außergewöhnliche Wirkung von unseren Produkten.
+          <h4 className="text-[#000000] text-[24px] lg:text-[30px] mb-[33px] leading-[1.2] max-w-[1000px] font-bold"
+            dangerouslySetInnerHTML={{
+              __html: toHTML(
+                page?.product_misc_update?.reference?.new_hero_main_title
+                  ?.value,
+              ),
+            }}
+          >
           </h4>
         </div>
-        <div className='desc text-black text-[16px] lg:text-[21px] leading-[1.3] font-[400] max-w-[1000px]'>
-          <p>Wir glauben, dass der menschliche Bewegungsapparat so konstruiert ist, dass er bis ins hohe Alter sportlich aktiv und gesund bleiben kann, und dass Pflegeheime nur in seltenen Fällen notwendig wären. Wir sind überzeugt, dass geläufige Bewegungsbeschwerden – an denen mindestens 1/3 aller Menschen ab 65 regelmäßig leiden, dank gesunder Bewegung im Alltag und Begleitung durch geschulte kybun Joya Anwendungen in den meisten Fällen nachhaltig vermieden werden können.</p>
-          <p>Unsere Produkte sollen unseren Kunden täglich dabei begleiten, fit, beweglich und schmerzfrei zu bleiben.</p>
-          <p>Neben unseren Schweizer Schuhen mit Luftkissen Technologie bieten wir weitere Produkte an, dürfen wir vorstellen:</p>
+        <div className='desc text-black text-[16px] lg:text-[21px] leading-[1.3] font-[400] max-w-[1000px]'
+          dangerouslySetInnerHTML={{
+            __html: toHTML(
+              page?.product_misc_update?.reference?.new_hero_main_desc
+                ?.value,
+            ),
+          }}
+        >
         </div>
       </div>
       <div className="container lg:!pr-0 hidden">
@@ -309,6 +318,13 @@ ${MEDIA_FRAGMENT}
             sub_section_2_redirect : field(key: "sub_section_2_redirect") {
               value
             }
+            new_hero_main_title : field(key: "new_hero_main_title") {
+              value
+            }
+            new_hero_main_desc : field(key: "new_hero_main_desc") {
+              value
+            }
+
           }
         }
       }

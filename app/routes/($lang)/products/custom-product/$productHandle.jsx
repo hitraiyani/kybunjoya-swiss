@@ -97,7 +97,6 @@ export default function ratgeberSeiteFersensporn() {
         productPdfUrl = AICO_API_IMAGE_PREFIX + aicoKnowledgeBasesData[0]?.image
       }
   }
-  console.log("productPdfUrl", productPdfUrl);
   // const aicoContentBuilders = aicoProductData?.aico_content_builders?.value ? JSON.parse(aicoProductData.aico_content_builders.value) : [];
   // let aicoCotentBuilderHtml = '';
   // if (aicoContentBuilders.length) {

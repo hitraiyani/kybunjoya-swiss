@@ -316,7 +316,7 @@ export default function ratgeberseite() {
         <section className="dr-faq-sec !max-w-[870px] mx-auto flex flex-col gap-[20px] my-[40px] md:my-[60px] lg:my-[80px] xl:my-[100px]">
           {sub_collections?.nodes?.map((item,index) => {
               if (item.title != pageCollectionTitle) {
-                  console.log("item", );
+                  
                   <ul><li>Fersensporn / Plantar Fasciitis / Fasziitisplantaris</li></ul>
                   return (
                     <ExpandingCardStyle2
