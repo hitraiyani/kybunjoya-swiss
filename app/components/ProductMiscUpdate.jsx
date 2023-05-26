@@ -39,7 +39,7 @@ export function ProductMiscUpdate({data}) {
         </div>
       </div>
 
-      <div className="about-sec container mt-[30px] lg:mt-[60px] mb-[50px] md:mb-[80px] lg:mb-[100px] xl:mb-[170px]">
+      <div className="about-sec container mt-[30px] lg:mt-[60px] mb-[40px] md:mb-[50px] lg:mb-[80px] xl:mb-[100px]">
         <h1 className="text-[#000000] text-[18px] mb-[30px] xl:mb-[44px] pb-[20px] uppercase border-b border-black font-normal">
           {data?.sub_title?.value}
         </h1>

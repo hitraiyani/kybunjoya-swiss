@@ -651,7 +651,7 @@ function Footer({menu, main_menu}) {
                         <div key={index}>
                             <span  className="nav-item relative">
 
-                              <h2 className="mb-8 lg:text-[26px] text-[20px] font-bold capitalize text-[#00795C] pr-[40px] md:pr-0">
+                              <h2 className="mb-[20px] lg:text-[26px] text-[20px] font-bold capitalize text-[#00795C] pr-[40px] md:pr-0">
                                     <Link
                                       to={item.to}
                                       target={item.target}
@@ -693,7 +693,7 @@ function Footer({menu, main_menu}) {
                         {menuitem.map((item, subIndex) => {
                           return (
                             <span key={subIndex} className="nav-item relative">
-                              <h2 className="mb-8 lg:text-[26px] text-[20px] font-bold capitalize text-[#00795C] pr-[40px] md:pr-0">
+                              <h2 className="mb-[20px] lg:text-[26px] text-[20px] font-bold capitalize text-[#00795C] pr-[40px] md:pr-0">
                                 <Link
                                   to={item.to}
                                   target={item.target}
