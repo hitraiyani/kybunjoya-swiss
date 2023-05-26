@@ -57,6 +57,30 @@ export default function gorup() {
             />
           </div>
         </section>
+        <section className='info-with-quick-link pt-[40px] lg:pt-[60px]'>
+            <div className='flex flex-col lg:flex-row gap-[30px] xl:gap-[80px] 2xl:gap-[163px] items-start'>
+              <div className='w-full lg:w-[65%]'>
+                <div className='desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4]'>
+                  <p>Seit 1996 beschäftigt sich die kybun Joya Gruppe, Schuhtechnologien zu entwickeln, die Menschen qualitative und hochwertige Lösungen für Probleme am Bewegungsapparat bieten.</p>
+                  <p>Unsere kybun Joya Shops sind eine Beratungsstelle für Zweitmeinungen vor orthopädischen Operationen und wir geben unser Wissen über schmerzfreies Gehen weiter. Unsere Philosophie ist THERAPIEREN STATT OPERIEREN.</p>
+                  <p>Unsere Herzensangelegenheit ist die Schweizer Schuhproduktion. Unsere Schuhfabrik in Sennwald/SG ist ein Aushängeschild für Innovation und Pioniergeist.</p>
+                  <p>Die kybun Joya Gruppe besteht aus den Schuhmarken kybun, Joya und Kandahar, aus den zwei Fachhandelskonzepten «Passt!» und «kybun | Joya» sowie einem weltweiten Entwicklungs- und Produktionsnetzwerk für Gesundheitsschuhe.</p>
+                  <p>Die kybun Joya Gruppe beschäftigt über 200 Mitarbeiter, die Hälfte davon in der Schweiz. Dir Firma produziert 400’000 Paar Schuhe im Jahr. Die Firma ist in über 40 Ländern vertreten, mit über 1.200 Verkaufspunkten.</p>
+                </div>
+              </div>
+              <div className='w-full lg:w-[35%] quick-link-wrap px-[20px] py-[30px] md:px-[30px] 2xl:px-[49px] lg:py-[30px] bg-[#EDEDED] rounded-[10px]'>
+                <h2 className='title text-[#595959] text-[25px] mb-5 md:mb-[40px] xl:mb-[55px] font-medium'>Quick Links</h2>
+                <div className='quick-link-list'>
+                  <ul>
+                    <li> <a className='text-[24px] md:text-[30px] xl:text-[35px] text-black hover:text[#00795C] block tracking-[-0.97152px] leading-none mb-5' href="#">Karriere</a> </li>
+                    <li> <a className='text-[24px] md:text-[30px] xl:text-[35px] text-black hover:text[#00795C] block tracking-[-0.97152px] leading-none mb-5' href="#">Schweizer Schuhproduktion</a> </li>
+                    <li> <a className='text-[24px] md:text-[30px] xl:text-[35px] text-black hover:text[#00795C] block tracking-[-0.97152px] leading-none mb-5' href="#">kybun Joya Therapie</a> </li>
+                    <li> <a className='text-[24px] md:text-[30px] xl:text-[35px] text-black hover:text[#00795C] block tracking-[-0.97152px] leading-none mb-5' href="#">Kontakt</a> </li>
+                  </ul>
+                </div>
+              </div>
+          </div>
+        </section>
         <section className="rich-text-sec py-[20px] md:py-[30px] lg:py-[40px] xl:py-[50px] pt-[40px] md:pt-[60px] lg:pt-[80px] xl:pt-[100px]">
           <div className="rich-text-inner">
             <div className="title-wrap">

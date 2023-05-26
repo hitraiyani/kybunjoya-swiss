@@ -184,9 +184,9 @@ export default function ratgeberseite() {
       <div className="container">
         <section className="dr-info-tabs-section">
           <div className="dr-info-tabs-inner">
-            <div className="flex flex-wrap flex-col md:flex-row gap-y-[30px] gap-x-[46px] justify-center md:justify-start">
+            <div className="flex flex-wrap flex-col gap-y-[30px] gap-x-[46px] justify-center md:justify-start">
               <div className="content-info w-full xl:flex-[1]">
-                <div className="title-wrap text-left xl:text-right xl:max-w-[280px] ml-auto">
+                <div className="title-wrap text-left">
                   <h2 className="text-[#00795C] leading-none text-[40px] md:text-[50px] lg:text-[70px] 2xl:text-[100px] font-black">
                     {page?.ratgeber_detail?.reference?.head_title?.value}
                   </h2>
@@ -200,7 +200,7 @@ export default function ratgeberseite() {
                   }}
                 ></div>
               </div>
-              <div className="interactive-img-wrap mx-auto block w-[320px]">
+              <div className="interactive-img-wrap mx-auto block w-[320px] !hidden">
                 <div className="img-wrap w-full text-center relative">
                   <img
                     className="m-auto"

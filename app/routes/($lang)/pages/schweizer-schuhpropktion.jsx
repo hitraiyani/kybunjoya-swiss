@@ -134,7 +134,7 @@ export default function schweizerSchuhpropktion() {
               </h2>
               <div className="video-wrap">
                 <iframe
-                  className="w-full aspect-video"
+                  className="w-full aspect-[4/2]"
                   src={page?.schweizer_schuhpropktion?.reference?.video_section_url?.value}
                   title="YouTube video player"
                   frameBorder="0"
