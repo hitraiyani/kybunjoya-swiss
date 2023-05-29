@@ -966,6 +966,9 @@ video {
 .mt-auto {
   margin-top: auto;
 }
+.mb-\[100px\] {
+  margin-bottom: 100px;
+}
 .box-border {
   box-sizing: border-box;
 }
