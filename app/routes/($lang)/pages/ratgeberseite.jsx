@@ -320,7 +320,7 @@ export default function ratgeberseite() {
                     </div>
                   </form>
                 </div>
-                <div className="scroll-links-wrap flex flex-wrap gap-[20px] mt-[40px] lg:mt-[60px] xl:mt-[80px] border-t-[1px] border-black pt-[40px] lg:pt-[60px] xl:pt-[80px] justify-center">
+                <div className="scroll-links-wrap flex flex-wrap gap-[20px] mt-[40px] lg:mt-[60px] xl:mt-[80px] border-t-[1px] border-black pt-[40px] lg:pt-[60px] xl:pt-[80px]">
                   {filteredKybunJoyaProducts.map((product, index) => {
                     return (
                       <Link
