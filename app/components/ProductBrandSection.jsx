@@ -106,7 +106,7 @@ export function ProductBrandSection({data}) {
               </div>
             </Link>
           </div>
-          <div className="collectionsGrid-item relative">
+          {/* <div className="collectionsGrid-item relative">
             <Link
               to={`${data?.brand_5_redirect?.value}`}
               className="relative block w-full h-full overflow-hidden"
@@ -132,7 +132,7 @@ export function ProductBrandSection({data}) {
                 </Heading>
               </div>
             </Link>
-          </div>
+          </div> */}
         </div>
       </div>
     </Section>

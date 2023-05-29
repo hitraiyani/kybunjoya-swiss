@@ -437,7 +437,7 @@ export default function ratgeberseite() {
             </form>
           </div>
         </section>
-        <section className="two-box-sec">
+        <section className="two-box-sec mb-[40px] md:mb-[60px] lg:mb-[80px] xl:mb-[100px]">
           <div className="flex flex-col lg:flex-row gap-[20px]">
             <div className="col w-full lg:w-[50%]">
               <div className="col-inner shadow-[0px_0px_0.9821px_2px_rgba(0,0,0,0.05),0px_3.9284px_7.8568px_1px_rgba(0,0,0,0.1)] h-full flex flex-col">
@@ -503,7 +503,7 @@ export default function ratgeberseite() {
             </div>
           </div>
         </section>
-        <section className="four-boxes-section my-[40px] md:my-[60px] lg:my-[80px] xl:my-[100px]">
+        {/* <section className="four-boxes-section my-[40px] md:my-[60px] lg:my-[80px] xl:my-[100px]">
           <div className="four-boxes-inner">
             <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-[20px]">
               <div className="item flex flex-col rounded-[10px]">
@@ -568,7 +568,7 @@ export default function ratgeberseite() {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
       </div>
     </>
   );

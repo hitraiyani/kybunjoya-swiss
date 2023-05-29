@@ -4,11 +4,12 @@ import {Heading, Section, Link, ArrowRightLight} from '~/components';
 export function GruppeSection({gruppeMenu}) {
 
   const quickLinkMenu = gruppeMenu?.items?.slice(0, 6);
+
   return (
     <Section className={'collectionsGrid-sec pb-[40px] md:pb-[60px] lg:pb-[80px] xl:pb-[100px]'}>
       <div className="container">
-      <h2 className="text-[#00795C] text-[30px] lg:text-[35px] xl:text-[40px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold">
-      Über uns
+        <h2 className="text-[#00795C] text-[30px] lg:text-[35px] xl:text-[40px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold">
+          { gruppeMenu?.title }
         </h2>
         <div className='quick-links-sec bg-[#EDEDED] mt-[28px]'>
         <div className="collectionsGrid-item flex flex-wrap">
@@ -24,7 +25,7 @@ export function GruppeSection({gruppeMenu}) {
               </div>
               <div className="img-overlay absolute w-full h-2/4 inset-x-0 bottom-0"></div>
               <Heading className="flex flex-col font-normal text-[30px] lg:text-[34px] xl:text-[45px] text-white absolute bottom-0 left-0 p-5 btn gap-5 leading-none">
-                <span>Über uns</span>
+                <span>{ gruppeMenu?.title }</span>
                 <ArrowRightLight
                   className={
                     'w-12 h-12 border rounded-full p-2 text-white border-white transition-all'
@@ -36,6 +37,9 @@ export function GruppeSection({gruppeMenu}) {
               <h2 className='title text-[#595959] text-[25px] mb-5 md:mb-[40px] xl:mb-[83px] font-medium'>Quick Links</h2>
               <div className='quick-link-list'>
                 <ul>
+                  <li>
+                    <Link to={`${gruppeMenu.to}`} className='text-[24px] md:text-[30px] lg:text-[35px] text-black hover:text[#00795C] block tracking-[-0.97152px] leading-none mb-5'>{ gruppeMenu?.title }</Link>
+                  </li>
                   {quickLinkMenu?.map((item, index) => {
                       return (
                         <li key={index}>

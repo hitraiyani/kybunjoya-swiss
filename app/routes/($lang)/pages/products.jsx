@@ -229,7 +229,7 @@ export default function schweizerSchuhpropktion() {
         </div>
       </div>
       <ProductBrandSection data={page?.products_brand_section?.reference} />
-      <ProductMiscUpdate data={page?.product_misc_update?.reference} />
+      {/* <ProductMiscUpdate data={page?.product_misc_update?.reference} /> */}
     </>
   );
 }

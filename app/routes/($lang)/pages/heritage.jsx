@@ -151,7 +151,7 @@ export default function Heritage() {
             </Link>
           </div> */}
         </section>
-        <section className="about-sec py-[20px] md:py-[30px] lg:py-[40px] xl:py-[50px]">
+        {/* <section className="about-sec py-[20px] md:py-[30px] lg:py-[40px] xl:py-[50px]">
           <h2 className="text-[#000000] text-[18px] mb-[30px] xl:mb-[44px] pb-[20px] uppercase border-b border-black font-normal">
             {
               page?.about_us?.reference
@@ -255,7 +255,7 @@ export default function Heritage() {
               />
             </div>
           </div>
-        </section>
+        </section> */}
       </div>
     </>
   );
