@@ -299,7 +299,7 @@ p:last-child {
   .site-footer .nav-item.active .sub-menu {
     display: block;
     margin-bottom: 30px;
-    margin-top: -20px;
+    margin-top: 10px;
   }
   .site-footer .nav-item.active .toggle-menu-icon svg {
     transform: rotate(180deg);
@@ -995,6 +995,11 @@ p:last-child {
 @media (max-width: 767px) {
   .list-style2 li:before {
     top: 0;
+  }
+  .about-sec .img-col .swiper-pagination .swiper-pagination-bullet{
+    width: 10px;
+    height: 10px;
+    margin: 0 3px;
   }
 }
 .video-wrap {

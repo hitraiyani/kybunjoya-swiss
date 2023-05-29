@@ -122,7 +122,7 @@ export default function karriere() {
               <ul className="last:border-b-[1px] last:border-[#000000]">
                 {offeneStellData.length > 0 && offeneStellData.map((item,index) => {
                   return (
-                    <li key={index} className="py-[15px] md:py-[23px] px-[15px] md:px-[30px] xl:px-[50px] border-t-[1px] border-[#000000]">
+                    <li key={index} className="py-[20px] md:py-[23px] px-[15px] md:px-[30px] xl:px-[50px] border-t-[1px] border-[#000000]">
                       <div className="vacancies-list-inner">
                         <div className="flex justify-between items-center gap-[20px]">
                           <div className="info flex flex-col">

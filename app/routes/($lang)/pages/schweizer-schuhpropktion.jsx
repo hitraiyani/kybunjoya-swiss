@@ -69,7 +69,7 @@ export default function schweizerSchuhpropktion() {
             </div>
           </div>
           <div className="about-sec container mt-[48px]">
-            <div className="flex flex-col lg:flex-row gap-y-[20px] gap-x-[30px] xl:gap-x-[63px]">
+            <div className="flex flex-col-reverse lg:flex-row gap-y-[20px] gap-x-[30px] xl:gap-x-[63px] ">
               <div className="img-col lg:w-[40%] overflow-hidden w-full">
                 <Swiper
                   modules={[Navigation, Scrollbar, A11y, Autoplay, Pagination]}
