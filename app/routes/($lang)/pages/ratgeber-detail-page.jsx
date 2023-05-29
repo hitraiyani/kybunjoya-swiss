@@ -207,18 +207,13 @@ export default function ratgeberseite() {
                     ),
                   }}
                 ></div>
-                <div className="desc  mt-[20px] lg:mt-[40px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] max-w-[870px]">
-                  <p>
-                    Dank der kybun Joya Therapie können bei über 50
-                    medizinischen Diagnosen Linderung schaffen.
-                  </p>
-                  <p>
-                    Unser Ratgeber bietet mit seinem medizinischen Lexikon eine
-                    umfassende Information zum Verständnis einzelner
-                    Krankheitsbilder und der optimalen therapeutischen
-                    Integration von kybun und Joya Produkten zur
-                    Schmerzlinderung sowie zur Verkürzung der Rekonvaleszenz.
-                  </p>
+                <div className="desc  mt-[20px] lg:mt-[40px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] max-w-[870px]"
+                  dangerouslySetInnerHTML={{
+                    __html: toHTML(
+                      page?.ratgeber_detail?.reference?.head_new_desc?.value,
+                    ),
+                  }}
+                >
                 </div>
               </div>
               <div className="interactive-img-wrap mx-auto block w-[320px] !hidden">
@@ -666,6 +661,9 @@ ${MEDIA_FRAGMENT}
               value
             }
             head_content : field(key: "head_content") {
+              value
+            }
+            head_new_desc : field(key: "head_new_desc") {
               value
             }
             cta_text : field(key: "cta_text") {

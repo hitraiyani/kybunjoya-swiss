@@ -148,6 +148,14 @@ export default function ratgeberSeiteFersensporn() {
   const [menuLinks, setMenuLinks] = useState([]);
 
   useEffect(() => {
+
+    console.log("dom loaded");  
+    var container = document.createElement('div');
+    container.innerHTML = aicoProductData.documents.value;
+
+    var linkValue = container.querySelector('a').href;
+    console.log(linkValue);
+
     const links = document.querySelectorAll('.scroll-link');
     setMenuLinks(Array.from(links));
 
@@ -717,6 +725,9 @@ ${PRODUCT_CARD_FRAGMENT}
         value
       }
       knowledgebases_data : metafield(namespace: "custom_fields", key: "knowledgebases_data") {
+        value
+      }
+      documents : metafield(namespace: "custom_fields", key: "documents") {
         value
       }
     }
