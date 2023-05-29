@@ -4409,6 +4409,10 @@ video {
     width: calc(25% - 16px);
   }
 
+  .xl\:w-\[calc\(33\.33\%_-_16px\)\] {
+    width: calc(33.33% - 16px);
+  }
+
   .xl\:flex-\[1\] {
     flex: 1;
   }
@@ -4678,6 +4682,10 @@ video {
 
   .\32xl\:w-\[calc\(20\%_-_16px\)\] {
     width: calc(20% - 16px);
+  }
+
+  .\32xl\:w-\[calc\(33\.33\%_-_16px\)\] {
+    width: calc(33.33% - 16px);
   }
 
   .\32xl\:justify-center {

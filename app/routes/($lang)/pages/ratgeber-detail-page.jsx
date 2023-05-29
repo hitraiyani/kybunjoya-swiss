@@ -323,7 +323,7 @@ export default function ratgeberseite() {
                       <Link
                         key={index}
                         to={`/products/custom-product/${product.handle}`}
-                        className="w-[calc(50%_-_16px)] lg:w-[calc(33.33%_-_16px)] xl:w-[calc(25%_-_16px)] 2xl:w-[calc(20%_-_16px)] p-[15px] xl:px-[20px] xl:py-[26px] flex justify-center items-center text-center bg-white text-[16px] md:text-[18px] lg:text-[20px] xl:text-[20px] 2xl:text-[21px] leading-[1.4] hover:text-white hover:bg-[#00795C] xl:min-h-[116px] font-bold text-[#00795C] transition-all duration-500 rounded-[10px]"
+                        className="w-[calc(50%_-_16px)] lg:w-[calc(33.33%_-_16px)] xl:w-[calc(33.33%_-_16px)] 2xl:w-[calc(33.33%_-_16px)] p-[15px] xl:px-[20px] xl:py-[26px] flex justify-center items-center text-center bg-white text-[16px] md:text-[18px] lg:text-[20px] xl:text-[20px] 2xl:text-[21px] leading-[1.4] hover:text-white hover:bg-[#00795C] xl:min-h-[116px] font-bold text-[#00795C] transition-all duration-500 rounded-[10px]"
                       >
                         {product.title}
                       </Link>

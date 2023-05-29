@@ -1208,30 +1208,30 @@ p:last-child {
 .timeline-item.active .date {
   -webkit-animation-name: fadeIn;
   animation-name: fadeIn;
-  animation-duration: 1s;
+  animation-duration: 0.5s;
   animation-fill-mode: both;
   animation-delay: 0.15s;
 }
 .timeline-item.active .img-wrap {
   -webkit-animation-name: fadeInUp;
   animation-name: fadeInUp;
-  animation-duration: 1s;
+  animation-duration: 0.5s;
   animation-fill-mode: both;
-  animation-delay: 0.4s;
+  animation-delay: 0.2s;
 }
 .timeline-item.active .content-wrap .title {
   -webkit-animation-name: fadeInUp;
   animation-name: fadeInUp;
-  animation-duration: 1s;
+  animation-duration: 0.5s;
   animation-fill-mode: both;
-  animation-delay: 0.6s;
+  animation-delay: 0.2s;
 }
 .timeline-item.active .content-wrap .desc {
   -webkit-animation-name: fadeInUp;
   animation-name: fadeInUp;
   animation-duration: 1s;
   animation-fill-mode: both;
-  animation-delay: 0.8s;
+  animation-delay: 0.6s;
 }
 
 .timeline-item {
