@@ -83,7 +83,7 @@ export default function kybunJoyaTherapie() {
             <div className='desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4]'>
               <p>Über 4 Millionen begeisterte Kunden weltweit bestätigen die außergewöhnliche Wirkung. Wo würden ihre Füße und ihr ganzer Körper wohl lieber gehen, barfuß auf weich-elastisch-federndem Moos, oder eingepackt in flachen Schuhen auf dem harten Asphalt? Gönnen sie ihren Füßen nur das Allerbeste, denn sie tragen Sie noch ihr ganzes Leben. </p>
             </div>
-          </div>
+          </div> 
         </div>
       </div>
     </>
