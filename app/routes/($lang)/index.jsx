@@ -6,7 +6,8 @@ import {
   CollectionsGrid,
   BrandGrid,
   NewsSlider,
-  GruppeSection
+  GruppeSection,
+  PursueSection
 } from '~/components';
 import {MEDIA_FRAGMENT, PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
 import {getHeroPlaceholder} from '~/lib/placeholders';
@@ -42,6 +43,13 @@ export async function loader({params, context}) {
       variables: {metaObjectId: 'gid://shopify/Metaobject/2003108161'},
     },
   );
+
+  const pursueSection = context.storefront.query(
+    HOMEPAGE_PURSUE_SECTION_SECTION_QUERY,
+    {
+      variables: {metaObjectId: 'gid://shopify/Metaobject/2353365313'},
+    },
+  );
   // const brandIcons = context.storefront.query(
   //   HOMEPAGE_BRAND_ICONS_QUERY,
   //   {
@@ -53,6 +61,7 @@ export async function loader({params, context}) {
     shop,
     heroSlider,
     fourMainSection,
+    pursueSection,
     analytics: {
       pageType: AnalyticsPageType.home,
     },
@@ -62,12 +71,13 @@ export async function loader({params, context}) {
 export default function Homepage() {
   const {
     heroSlider,
-    fourMainSection
+    fourMainSection,
+    pursueSection
   } = useLoaderData();
   const [root] = useMatches();
 
   const [newsSliderData, setNewsSliderData] = useState();
-  const gruppeMenu = root?.data?.layout?.headerMenu?.items?.find((item) => item.title == QUICK_LINK_MENU_TITLE);
+  //const gruppeMenu = root?.data?.layout?.headerMenu?.items?.find((item) => item.title == QUICK_LINK_MENU_TITLE);
 
   const loadNewSlider = async () => {
     const newsResponse = await fetch(`${AICO_API_URL}news?page[number]=1&page[size]=4&sort=-publishDate&filter[isActive]=1`, {
@@ -115,7 +125,18 @@ export default function Homepage() {
 
       {newsSliderData?.data && <NewsSlider news={newsSliderData?.data} />}
       
-      <GruppeSection  gruppeMenu={gruppeMenu} />
+      {pursueSection && (
+        <Suspense>
+          <Await resolve={pursueSection}>
+            {({data}) => {
+              if (!data) return <></>;
+              return <PursueSection data={data} />;
+            }}
+          </Await>
+        </Suspense>
+      )}
+
+      {/* <GruppeSection  gruppeMenu={gruppeMenu} /> */}
     </>
   );
 }
@@ -252,6 +273,11 @@ ${MEDIA_FRAGMENT}
       cta_label : field(key: "cta_label") {
         value
       }
+      sub_title_image : field(key: "sub_title_image") {
+        reference {
+          ...Media
+        }
+      }
       menu_image_mapping : field(key: "menu_image_mapping") {
         value
       }
@@ -347,6 +373,66 @@ ${MEDIA_FRAGMENT}
         value
       }
       section_4_button_redirect : field(key: "section_4_button_redirect") {
+        value
+      }
+    }
+  }
+`;
+
+
+const HOMEPAGE_PURSUE_SECTION_SECTION_QUERY = `#graphql
+${MEDIA_FRAGMENT}
+  query homeStyleGuide($metaObjectId: ID!, $country: CountryCode, $language: LanguageCode)
+  @inContext(country: $country, language: $language) {
+    data : metaobject(id : $metaObjectId) {
+      handle
+      id
+      type
+      main_title : field(key: "main_title") {
+        value
+      }
+      section_1_text : field(key: "section_1_text") {
+        value
+      }
+      section_1_image : field(key: "section_1_image") {
+        reference {
+          ...Media
+        }
+      }
+      section_1_button_text : field(key: "section_1_button_text") {
+        value
+      }
+      section_2_image : field(key: "section_2_image") {
+        reference {
+          ...Media
+        }
+      }
+      section_2_text : field(key: "section_2_text") {
+        value
+      }
+      section_2_button_text : field(key: "section_2_button_text") {
+        value
+      }
+      section_3_image : field(key: "section_3_image") {
+        reference {
+          ...Media
+        }
+      }
+      section_3_text : field(key: "section_3_text") {
+        value
+      }
+      section_3_button_text : field(key: "section_3_button_text") {
+        value
+      }
+      section_4_image : field(key: "section_4_image") {
+        reference {
+          ...Media
+        }
+      }
+      section_4_text : field(key: "section_4_text") {
+        value
+      }
+      section_4_button_text : field(key: "section_4_button_text") {
         value
       }
     }

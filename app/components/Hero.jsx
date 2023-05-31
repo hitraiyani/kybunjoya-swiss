@@ -41,9 +41,14 @@ export function Hero({hereMetaObj}) {
               ></h1>
               <h4 className="text-white desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] tracking-[-0.400697px] font-normal leading-[1.2] flex gap-[10px] items-center">
                 <span className="w-[36px] h-[36px] overflow-hidden relative">
-                  <img className="inset-0 absolute object-contain w-full h-full block" src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Flag_of_Switzerland_1.svg?v=1685508046" />
+                  <img className="inset-0 absolute object-contain w-full h-full block" src={hereMetaObj?.data?.sub_title_image?.reference?.image?.url
+              } />
                 </span>
-                <span>Schweizer <br />Familienunternehmen</span>
+                <span
+                   dangerouslySetInnerHTML={{
+                    __html: toHTML(hereMetaObj?.data?.sub_title?.value),
+                  }}
+                ></span>
               </h4>
               <Link
                 to={`${hereMetaObj?.data?.cta?.value}`}

@@ -813,7 +813,7 @@ export function getYoutubeId(url) {
 
 const roots = {
   home: {title: 'Home', to: '/'},
-  schweizerSchuhproduktion: {title: 'Schweizer Schuhproduktion', to: '/pages/schweizer-schuhpropktion'},
+  schweizerSchuhproduktion: {title: 'Schweizer Produktion', to: '/pages/schweizer-schuhpropktion'},
   uberuns: {title: 'Über uns', to: '/pages/uber-uns'},
   kybunjoyatherapie: {title: 'kybun Joya Therapie', to: '/pages/kybun-joya-therapie'},
   karriere: {title: 'Karriere', to: '/pages/karriere'},

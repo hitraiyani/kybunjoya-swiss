@@ -38,5 +38,6 @@ export {Breadcrumb} from './Breadcrumb';
 export {ResponsiveIframe} from './ResponsiveIframe';
 export {SingleNewsSlide} from './SingleNewsSlide';
 export {ShopifyCookie} from './ShopifyCookie';
+export {PursueSection} from './PursueSection';
 // Sue me
 export * from './Icon';
