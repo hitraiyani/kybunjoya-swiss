@@ -1,159 +1,203 @@
 import React from 'react';
 import {json} from '@shopify/remix-oxygen';
 import {useLoaderData} from '@remix-run/react';
-import { toHTML, getBreadCrumbs } from '~/lib/utils';
+import {toHTML, getBreadCrumbs} from '~/lib/utils';
 import {Navigation, Pagination, Scrollbar, A11y, Autoplay} from 'swiper';
 import {Swiper, SwiperSlide} from 'swiper/react';
 import {ExpandingCard, Link, Breadcrumb} from '~/components';
 import {MEDIA_FRAGMENT} from '~/data/fragments';
 
 const seo = ({data}) => ({
-    title: data?.page?.seo?.title,
-    description: data?.page?.seo?.description,
+  title: data?.page?.seo?.title,
+  description: data?.page?.seo?.description,
+});
+
+export const handle = {
+  seo,
+};
+
+export async function loader({request, params, context}) {
+  const {page} = await context.storefront.query(PAGE_QUERY, {
+    variables: {
+      handle: 'schweizer-schuhpropktion',
+      language: context.storefront.i18n.language,
+    },
   });
-  
-  export const handle = {
-    seo,
-  };
-  
-  export async function loader({request, params, context}) {
-    
-    const {page} = await context.storefront.query(PAGE_QUERY, {
-        variables: {
-          handle: 'schweizer-schuhpropktion',
-          language: context.storefront.i18n.language,
-        },
-      });
-  
-    if (!page) {
-      throw new Response(null, {status: 404});
-    }
-  
-    return json(
-      {page},
-      {
-        headers: {
-          // TODO cacheLong()
-        },
-      },
-    );
+
+  if (!page) {
+    throw new Response(null, {status: 404});
   }
 
-export default function schweizerSchuhpropktion() {
-    const {page} = useLoaderData();
+  return json(
+    {page},
+    {
+      headers: {
+        // TODO cacheLong()
+      },
+    },
+  );
+}
 
-    const sliderImages =
+export default function schweizerSchuhpropktion() {
+  const {page} = useLoaderData();
+
+  const sliderImages =
     page?.schweizer_schuhpropktion?.reference?.slider_images?.references?.edges.map(
       (data) => data.node.image.url,
     );
 
-    const faqArr = page?.schweizer_schuhpropktion?.reference?.faq?.value ? JSON.parse(page?.schweizer_schuhpropktion?.reference?.faq.value) : [];
+  const faqArr = page?.schweizer_schuhpropktion?.reference?.faq?.value
+    ? JSON.parse(page?.schweizer_schuhpropktion?.reference?.faq.value)
+    : [];
 
-    return (
-        <>
-          <Breadcrumb crumbs={getBreadCrumbs('schweizerSchuhproduktion','uberuns')}/>
-          <div className="container">
-            <div className="title-wrap">
-              <h2 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold">
-                {page?.schweizer_schuhpropktion?.reference?.head_title?.value}
-              </h2>
+  return (
+    <>
+      <Breadcrumb
+        crumbs={getBreadCrumbs('schweizerSchuhproduktion', 'uberuns')}
+      />
+      <div className="container">
+        <div className="title-wrap">
+          <h2 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold">
+            {page?.schweizer_schuhpropktion?.reference?.head_title?.value}
+          </h2>
+        </div>
+      </div>
+      <div className="banner container">
+        <div className="banner-row product-list-hero-img relative overflow-hidden pb-[35%] min-h-[200px]">
+          <img
+            className="absolute inset-0 w-full h-full object-cover"
+            src={
+              page?.schweizer_schuhpropktion?.reference?.hero_image?.reference
+                ?.image?.url
+            }
+            alt=""
+          />
+        </div>
+        <div className="desc text-black text-[16px] lg:text-[21px] leading-[1.3] font-[400] mt-[40px] lg:mt-[44px] max-w-[1100px]">
+          <p>
+            Der kybun Schuhproduktionsstandort in Sennwald (Schweiz) steht im
+            Mittelpunkt der kybun Schuhproduktion und ein Aushängeschild für
+            Schweizer Produktionsunternehmen, welches dank Pioniergeist,
+            Innovation und Automatisation die Rückkehr in die Schweiz gelungen
+            ist. Erleben hinter den Kulissen wie der Schweizer Luftkissen-Schuh
+            mit der elastisch-federnden Sohle in bis zu 40 Arbeitsschritten mit
+            viel Handarbeit hergestellt wird. 
+          </p>
+        </div>
+      </div>
+      <div className="about-sec container pb-[20px] md:pb-[30px] lg:pb-[40px] xl:pb-[50px] pt-[40px] md:pt-[60px] lg:pt-[80px] xl:pt-[100px]">
+        <div className="flex flex-col-reverse lg:flex-row gap-y-[20px] gap-x-[30px] xl:gap-x-[63px] ">
+          <div className="img-col lg:w-[40%] overflow-hidden w-full">
+            <Swiper
+              modules={[Navigation, Scrollbar, A11y, Autoplay, Pagination]}
+              slidesPerView={1}
+              navigation={false}
+              loop="false"
+              autoplay="false"
+              pagination={{clickable: true}}
+              className="h-full overflow-visible flex flex-col"
+            >
+              {sliderImages.map((image, index) => (
+                <SwiperSlide key={index}>
+                  <img
+                    className="h-full object-cover block"
+                    src={image}
+                    alt=""
+                  />
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
+          <div className="content-col w-full lg:w-[60%] lg:max-w-[785px] flex flex-col">
+            <h2 className="text-[#00795C] text-[30px] lg:text-[35px] xl:text-[40px] tracking-[-1.05984px] mb-[20px] font-bold">
+              {page?.schweizer_schuhpropktion?.reference?.main_title?.value}
+            </h2>
+            <h3
+              className="subtitle text-[18px] lg:text-[23px] text-balck leading-[1.3] mb-[20px] font-[400] hidden"
+              dangerouslySetInnerHTML={{
+                __html: toHTML(
+                  page?.schweizer_schuhpropktion?.reference?.short_description
+                    ?.value,
+                ),
+              }}
+            ></h3>
+            <div
+              className="desc text-black text-[16px] lg:text-[21px] leading-[1.3] font-[400] mb-[25px]"
+              dangerouslySetInnerHTML={{
+                __html: toHTML(
+                  page?.schweizer_schuhpropktion?.reference?.long_description
+                    ?.value,
+                ),
+              }}
+            ></div>
+            <Link
+              to={
+                page?.schweizer_schuhpropktion?.reference?.book_now_link?.value
+              }
+              className="inline-block rounded-[100px] bg-black text-white
+                 text-center px-[35px] py-[15px] hover:bg-[#00795c] hover:text-white text-[18px] max-w-fit"
+            >
+              Kandahar entdecken
+            </Link>
+          </div>
+        </div>
+      </div>
+      {faqArr.length > 0 && (
+        <div className="faq-sec container mt-10 hidden">
+          <h3 className="title uppercase text-[18px] leading-[1.2] pb-[10px] border-b border-[#595959] font-normal">
+            Häufige Fragen
+          </h3>
+          {faqArr.map((item) => (
+            <ExpandingCard content={item.answer} title={item.question} />
+          ))}
+        </div>
+      )}
+      <div className="video-sec container pt-[20px] md:pt-[30px] lg:pt-[40px] xl:pt-[50px] pb-[40px] md:pb-[60px] lg:pb-[80px] xl:pb-[100px]">
+        <div className="flex flex-col lg:flex-row gap-y-[20px] gap-x-[30px] xl:gap-x-[63px] ">
+          <div className="content-col w-full lg:w-[35%] flex flex-col">
+            <h2 className="text-[#00795C] text-[30px] lg:text-[35px] xl:text-[40px] tracking-[-1.05984px] mb-[20px] font-bold">
+              {
+                page?.schweizer_schuhpropktion?.reference?.video_section_title
+                  ?.value
+              }
+            </h2>
+            <div className="desc text-black text-[16px] lg:text-[21px] leading-[1.3] font-[400] mb-[25px]">
+              <p>
+                In der kybun-Miniserie erklären wir Schritt für Schritt wie
+                unsere Schuhe hergestellt werden. 
+              </p>
+            </div>
+            <div className="btn-wrap">
+              <Link
+                to={
+                  page?.schweizer_schuhpropktion?.reference?.book_now_link
+                    ?.value
+                }
+                className="inline-block rounded-[100px] bg-black text-white
+                 text-center px-[35px] py-[15px] hover:bg-[#00795c] hover:text-white text-[18px] max-w-fit"
+              >
+                Miniserie entdecken
+              </Link>
             </div>
           </div>
-          <div className="banner container">
-            <div className="banner-row product-list-hero-img relative overflow-hidden pb-[35%] min-h-[200px]">
-              <img
-                className="absolute inset-0 w-full h-full object-cover"
-                src={page?.schweizer_schuhpropktion?.reference?.hero_image?.reference?.image?.url}
-                alt=""
-              />
-            </div>
+          <div className="video-wrap lg:w-[65%] overflow-hidden w-full">
+            <iframe
+              className="w-full aspect-[4/2]"
+              src={
+                page?.schweizer_schuhpropktion?.reference?.video_section_url
+                  ?.value
+              }
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            ></iframe>
           </div>
-          <div className="about-sec container mt-[48px]">
-            <div className="flex flex-col-reverse lg:flex-row gap-y-[20px] gap-x-[30px] xl:gap-x-[63px] ">
-              <div className="img-col lg:w-[40%] overflow-hidden w-full">
-                <Swiper
-                  modules={[Navigation, Scrollbar, A11y, Autoplay, Pagination]}
-                  slidesPerView={1}
-                  navigation={false}
-                  loop="false"
-                  autoplay="false"
-                  pagination={{clickable: true}}
-                  className="h-full overflow-visible flex flex-col"
-                >
-                    {sliderImages.map((image, index) => (
-                        <SwiperSlide key={index}>
-                            <img
-                            className="h-full object-cover block"
-                            src={image}
-                            alt=""
-                            />
-                        </SwiperSlide>
-                    ))}
-                </Swiper>
-              </div>
-              <div className="content-col w-full lg:w-[60%] lg:max-w-[678px] flex flex-col">
-                <h2 className="text-[#00795C] text-[30px] lg:text-[35px] xl:text-[40px] tracking-[-1.05984px] mb-[20px] font-bold">
-                  {page?.schweizer_schuhpropktion?.reference?.main_title?.value}
-                </h2>
-                <h3 className="subtitle text-[18px] lg:text-[23px] text-balck leading-[1.3] mb-[20px] font-[400] hidden"
-                    dangerouslySetInnerHTML={{
-                        __html: toHTML(page?.schweizer_schuhpropktion?.reference?.short_description?.value),
-                      }}
-                >
-                </h3>
-                <Link to={page?.schweizer_schuhpropktion?.reference?.book_now_link?.value} className="inline-block rounded-[100px] bg-black text-white
-                 text-center px-[35px] py-[15px] hover:bg-[#00795c] hover:text-white text-[18px] max-w-fit !hidden">
-                    Jetzt Buchen
-                </Link>
-                <div className="desc text-black text-[16px] lg:text-[18px] leading-[1.3] font-[400]"
-                    dangerouslySetInnerHTML={{
-                        __html: toHTML(page?.schweizer_schuhpropktion?.reference?.long_description?.value),
-                      }}
-                >
-                </div>
-              </div>
-            </div>
-          </div>
-            {faqArr.length > 0 && (
-                <div className="faq-sec container mt-10 hidden">
-                <h3 className="title uppercase text-[18px] leading-[1.2] pb-[10px] border-b border-[#595959] font-normal">
-                Häufige Fragen
-                </h3>
-                {faqArr.map((item) => (
-                    <ExpandingCard
-                    content={item.answer}
-                    title={item.question}
-                    />
-                ))}
-                </div>
-            )}
-          <div className="video-sec container mt-[40px] xl:mt-[87px] mb-[50px]">
-            <div className="title-wrap">
-              <h2 className="text-[#00795C] text-[30px] lg:text-[35px] xl:text-[40px] tracking-[-1.05984px] mb-[20px] font-bold hidden">
-                {page?.schweizer_schuhpropktion?.reference?.video_section_title?.value}
-              </h2>
-              <div className="video-wrap">
-                <iframe
-                  className="w-full aspect-[4/2]"
-                  src={page?.schweizer_schuhpropktion?.reference?.video_section_url?.value}
-                  title="YouTube video player"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                ></iframe>
-              </div>
-              <div className="btn-wrap hidden">
-               <Link to={page?.schweizer_schuhpropktion?.reference?.book_now_link?.value} className="inline-block rounded-[100px] bg-black text-white
-                 text-center px-[35px] py-[15px] hover:bg-[#00795c] hover:text-white text-[18px] max-w-fit mt-[20px] xl:mt-[48px]">
-                    Jetzt Buchen
-               </Link>
-              </div>
-            </div>
-          </div>
-        </>
-      );
+        </div>
+      </div>
+    </>
+  );
 }
-
 
 const PAGE_QUERY = `#graphql
 ${MEDIA_FRAGMENT}

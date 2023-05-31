@@ -260,7 +260,7 @@ export default function schweizerSchuhpropktion() {
                   <div className="container">
                     <div className="brand-info-inner p-[20px] lg:p-[40px] 2xl:px-[60px] 2xl:py-[50px] shadow-[0px_0px_0.9821px_2px_rgba(0,0,0,0.05),0px_3.9284px_7.8568px_1px_rgba(0,0,0,0.1)] bg-white lg:rounded-[10px] w-full">
                       <div className="max-w-[795px]">
-                        <h4 className="text-blacktext-[24px] md:text-[30px] lg:text-[35px] leading-[1.1] tracking-[-0.97152px]">
+                        <h4 className="text-black text-[24px] md:text-[30px] lg:text-[35px] leading-[1.1] tracking-[-0.97152px]">
                           Kernmarke kybun
                         </h4>
                         <div className="desc text-black text-[16px] lg:text-[21px] leading-[1.3] font-[400] mt-[15px]">
@@ -327,7 +327,7 @@ export default function schweizerSchuhpropktion() {
                   <div className="container">
                     <div className="brand-info-inner p-[20px] lg:p-[40px] 2xl:px-[60px] 2xl:py-[50px] shadow-[0px_0px_0.9821px_2px_rgba(0,0,0,0.05),0px_3.9284px_7.8568px_1px_rgba(0,0,0,0.1)] bg-white lg:rounded-[10px] w-full">
                       <div className="max-w-[795px]">
-                        <h4 className="text-blacktext-[24px] md:text-[30px] lg:text-[35px] leading-[1.1] tracking-[-0.97152px]">
+                        <h4 className="text-black text-[24px] md:text-[30px] lg:text-[35px] leading-[1.1] tracking-[-0.97152px]">
                           Kernmarke kybun
                         </h4>
                         <div className="desc text-black text-[16px] lg:text-[21px] leading-[1.3] font-[400] mt-[15px]">
@@ -394,7 +394,7 @@ export default function schweizerSchuhpropktion() {
                   <div className="container">
                     <div className="brand-info-inner p-[20px] lg:p-[40px] 2xl:px-[60px] 2xl:py-[50px] shadow-[0px_0px_0.9821px_2px_rgba(0,0,0,0.05),0px_3.9284px_7.8568px_1px_rgba(0,0,0,0.1)] bg-white lg:rounded-[10px] w-full">
                       <div className="max-w-[795px]">
-                        <h4 className="text-blacktext-[24px] md:text-[30px] lg:text-[35px] leading-[1.1] tracking-[-0.97152px]">
+                        <h4 className="text-black text-[24px] md:text-[30px] lg:text-[35px] leading-[1.1] tracking-[-0.97152px]">
                           Kernmarke kybun
                         </h4>
                         <div className="desc text-black text-[16px] lg:text-[21px] leading-[1.3] font-[400] mt-[15px]">
@@ -461,7 +461,7 @@ export default function schweizerSchuhpropktion() {
                   <div className="container">
                     <div className="brand-info-inner p-[20px] lg:p-[40px] 2xl:px-[60px] 2xl:py-[50px] shadow-[0px_0px_0.9821px_2px_rgba(0,0,0,0.05),0px_3.9284px_7.8568px_1px_rgba(0,0,0,0.1)] bg-white lg:rounded-[10px] w-full">
                       <div className="max-w-[795px]">
-                        <h4 className="text-blacktext-[24px] md:text-[30px] lg:text-[35px] leading-[1.1] tracking-[-0.97152px]">
+                        <h4 className="text-black text-[24px] md:text-[30px] lg:text-[35px] leading-[1.1] tracking-[-0.97152px]">
                           Kernmarke kybun
                         </h4>
                         <div className="desc text-black text-[16px] lg:text-[21px] leading-[1.3] font-[400] mt-[15px]">
