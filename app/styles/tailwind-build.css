@@ -2255,6 +2255,9 @@ video {
 .pb-\[28\%\] {
   padding-bottom: 28%;
 }
+.pb-\[29\%\] {
+  padding-bottom: 29%;
+}
 .pb-\[30\%\] {
   padding-bottom: 30%;
 }
@@ -2371,9 +2374,6 @@ video {
 }
 .pt-\[64px\] {
   padding-top: 64px;
-}
-.pb-\[29\%\] {
-  padding-bottom: 29%;
 }
 .text-left {
   text-align: left;
