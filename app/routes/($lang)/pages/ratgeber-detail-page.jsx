@@ -535,6 +535,7 @@ export default function ratgeberseite() {
       </section>
       <section className="dr-faq-sec mx-auto my-[40px] md:my-[60px] lg:my-[80px] xl:my-[100px]">
         <div className="container flex flex-col gap-[20px]">
+          <h2 className='text-[#00795C] text-[30px] lg:text-[35px] xl:text-[40px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold'>Medizienisches Lexikon</h2>
           {sub_collections?.nodes?.map((item, index) => {
             if (item.title != pageCollectionTitle) {
               return (
