@@ -40,7 +40,7 @@ export function ExpandingCardStyle2({title, content, id, products = []}) {
               className="editor-content p-[20px] tracking-[-0.400697px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] font-normal leading-[1.4] flex flex-col lg:flex-row gap-[20px] lg:gap-[30px]"
               static
             >
-              <div className="img-wrap flex-[1] relative overflow-hidden">
+              <div className="img-wrap flex-[1] relative overflow-hidden hidden">
                 <img
                   className="w-full h-auto max-w-full"
                   src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Manufaktur_1200x800px_05.jpg_1_3.png?v=1685085390"

@@ -5,7 +5,6 @@ import {useLoaderData} from '@remix-run/react';
 import {toHTML, getBreadCrumbs} from '~/lib/utils';
 import {MEDIA_FRAGMENT} from '~/data/fragments';
 
-
 const seo = ({data}) => ({
   title: data?.page?.seo?.title,
   description: data?.page?.seo?.description,
@@ -16,13 +15,12 @@ export const handle = {
 };
 
 export async function loader({request, params, context}) {
-  
   const {page} = await context.storefront.query(PAGE_QUERY, {
-      variables: {
-        handle: 'karriere',
-        language: context.storefront.i18n.language,
-      },
-    });
+    variables: {
+      handle: 'karriere',
+      language: context.storefront.i18n.language,
+    },
+  });
 
   if (!page) {
     throw new Response(null, {status: 404});
@@ -38,15 +36,15 @@ export async function loader({request, params, context}) {
   );
 }
 
-
 export default function karriere() {
   const {page} = useLoaderData();
-  
+
   const karriere = page?.karriere?.reference;
-  const offeneStellData = karriere?.offene_stelle_data?.value ? JSON.parse(karriere?.offene_stelle_data?.value) : [];
-  
+  const offeneStellData = karriere?.offene_stelle_data?.value
+    ? JSON.parse(karriere?.offene_stelle_data?.value)
+    : [];
+
   useEffect(() => {
-    
     const downloadLinks = document.querySelectorAll('.download-link');
     downloadLinks.forEach((link) => {
       link.addEventListener('click', (event) => {
@@ -75,17 +73,17 @@ export default function karriere() {
 
   return (
     <>
-      <Breadcrumb crumbs={getBreadCrumbs('karriere','uberuns')}/>
+      <Breadcrumb crumbs={getBreadCrumbs('karriere', 'uberuns')} />
       <div className="container mt-10 mb-[50px]">
         <h1 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold">
-          { karriere?.head_title?.value }
+          {karriere?.head_title?.value}
         </h1>
-        <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] max-w-[991px]"
+        <div
+          className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] max-w-[991px]"
           dangerouslySetInnerHTML={{
             __html: toHTML(karriere?.head_desc_part_1?.value),
           }}
-        >
-        </div>
+        ></div>
       </div>
       <section className="about-sec container mt-[48px]">
         <div className="flex flex-col lg:flex-row gap-y-[20px] gap-x-[30px] xl:gap-x-[45px]">
@@ -97,12 +95,12 @@ export default function karriere() {
             ></iframe>
           </div>
           <div className="content-col w-full lg:w-[35%] flex flex-col">
-            <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
+            <div
+              className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
               dangerouslySetInnerHTML={{
                 __html: toHTML(karriere?.head_desc_part_2?.value),
               }}
-            >
-            </div>
+            ></div>
           </div>
         </div>
       </section>
@@ -112,48 +110,65 @@ export default function karriere() {
             <h4 className="text-[#00795C] text-[30px] lg:text-[35px] xl:text-[40px] tracking-[-1.05984px] mb-[22px] font-bold">
               {karriere?.offene_stellen_section_title?.value}
             </h4>
-            <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mb-[40px] lg:mb-[60px] max-w-[645px]"
+            <div
+              className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mb-[40px] lg:mb-[60px] max-w-[645px]"
               dangerouslySetInnerHTML={{
                 __html: toHTML(karriere?.offene_stellen_section_desc?.value),
               }}
-            >
-            </div>
+            ></div>
             <div className="vacancies-lists mt-[40px] lg:mt-[50px]">
               <ul className="last:border-b-[1px] last:border-[#000000]">
-                {offeneStellData.length > 0 && offeneStellData.map((item,index) => {
-                  return (
-                    <li key={index} className="py-[20px] md:py-[23px] px-[15px] md:px-[30px] xl:px-[50px] border-t-[1px] border-[#000000]">
-                      <div className="vacancies-list-inner">
-                        <div className="flex justify-between items-center gap-[20px]">
-                          <div className="info flex flex-col">
-                            <span className="block font-medium text-[24px] md:text-[30px] lg:text-[35px] text-black tracking-[-0.97152px] leading-none mb-[5px]">
-                              {item?.offene_stelle}
-                            </span>
-                            <span className="block font-normal text-[20px] md:text-[26px] lg:text-[30px] text-[#898989] tracking-[-0.97152px] leading-none">
-                              {item?.job_ort}
-                            </span>
-                          </div>
-                          <div className="btn-wrap flex">
-                            <Link
-                              href="#"
-                              to={item?.bewerben_link}
-                              className='"md:px-[35px] px-[30px] md:py-[18px] py-[15px] bg-black text-[16px] md:text-[18px] font-medium text-white rounded-[100px] w-fit hover:bg-[#00795c] hover:!text-white text-center'
-                            >
-                              {item?.bewerben}
-                            </Link>
+                {offeneStellData.length > 0 &&
+                  offeneStellData.map((item, index) => {
+                    return (
+                      <li
+                        key={index}
+                        className="py-[20px] md:py-[23px] px-[15px] md:px-[30px] xl:px-[50px] border-t-[1px] border-[#000000]"
+                      >
+                        <div className="vacancies-list-inner">
+                          <div className="flex justify-between items-center gap-[20px]">
+                            <div className="info flex flex-col">
+                              <span className="block font-medium text-[24px] md:text-[30px] lg:text-[35px] text-black tracking-[-0.97152px] leading-none mb-[5px]">
+                                {item?.offene_stelle}
+                              </span>
+                              <span className="block font-normal text-[20px] md:text-[26px] lg:text-[30px] text-[#898989] tracking-[-0.97152px] leading-none">
+                                {item?.job_ort}
+                              </span>
+                            </div>
+                            <div className="btn-wrap flex">
+                              <Link
+                                href="#"
+                                to={item?.bewerben_link}
+                                className='"md:px-[35px] px-[30px] md:py-[18px] py-[15px] bg-black text-[16px] md:text-[18px] font-medium text-white rounded-[100px] w-fit hover:bg-[#00795c] hover:!text-white text-center'
+                              >
+                                {item?.bewerben}
+                              </Link>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    </li>
-                  )
-                })}
+                      </li>
+                    );
+                  })}
               </ul>
             </div>
-            <div className="btn-wrap justify-center mt-[20px] md:mt-[40px] xl:mt-[60px]">
+            <div className="btn-wrap justify-start items-start mt-[20px] md:mt-[40px] xl:mt-[60px] flex flex-col gap-[20px] md:gap-[30px] xl:gap-[50px]">
+              <h4 className='text-[#00795C] text-[30px] lg:text-[35px] xl:text-[40px] tracking-[-1.05984px] font-bold'>Downloads</h4>
               <a
                 rel="noopener noreferrer"
                 href={karriere?.footer_cta?.reference?.url}
-                className="download-link pro-btn text-[16px] md:text-[20px] lg:text-[21px] leading-none text-white tracking-[-0.400697px] font-normal flex gap-[5px] lg:gap-[15px] justify-center px-[20px] lg:px-[35px] py-[15px] lg:py-[20px] bg-black rounded-[100px] w-fit text-center items-center transition-all duration-700 hover:bg-[#00795c] hover:text-white download-link mx-auto"
+                className="download-link pro-btn text-[16px] md:text-[20px] lg:text-[21px] leading-none text-white tracking-[-0.400697px] font-normal flex gap-[5px] lg:gap-[15px] justify-center px-[20px] lg:px-[35px] py-[15px] lg:py-[20px] bg-black rounded-[100px] w-fit text-center items-center transition-all duration-700 hover:bg-[#00795c] hover:text-white download-link"
+              >
+                <IconDownload
+                  className={
+                    'w-[20px] h-[20px] md:w-[25px] md:h-[25px] lg:w-[30px] lg:h-[30px]'
+                  }
+                />
+                Mission kybun Joya Gruppe
+              </a>
+              <a
+                rel="noopener noreferrer"
+                href={karriere?.footer_cta?.reference?.url}
+                className="download-link pro-btn text-[16px] md:text-[20px] lg:text-[21px] leading-none text-white tracking-[-0.400697px] font-normal flex gap-[5px] lg:gap-[15px] justify-center px-[20px] lg:px-[35px] py-[15px] lg:py-[20px] bg-black rounded-[100px] w-fit text-center items-center transition-all duration-700 hover:bg-[#00795c] hover:text-white download-link"
               >
                 <IconDownload
                   className={
@@ -169,8 +184,6 @@ export default function karriere() {
     </>
   );
 }
-
-
 
 const PAGE_QUERY = `#graphql
   query PageDetails($language: LanguageCode, $handle: String!)

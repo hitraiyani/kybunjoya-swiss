@@ -4,6 +4,8 @@ import {json} from '@shopify/remix-oxygen';
 import {useLoaderData} from '@remix-run/react';
 import {MEDIA_FRAGMENT, PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
 import {toHTML, getBreadCrumbs} from '~/lib/utils';
+import {Navigation, Pagination, Scrollbar, A11y, Autoplay} from 'swiper';
+import {Swiper, SwiperSlide} from 'swiper/react';
 
 const seo = ({data}) => ({
   title: data?.page?.seo?.title,
@@ -75,7 +77,7 @@ export default function ratgeberseite() {
   const {page, collection, sub_collections, pageCollectionTitle} =
     useLoaderData();
 
-  console.log("page", page);
+  console.log('page', page);
 
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -189,8 +191,8 @@ export default function ratgeberseite() {
   return (
     <>
       <Breadcrumb crumbs={getBreadCrumbs('beratung', 'ratgeber')} />
-      <div className="container">
-        <section className="dr-info-tabs-section">
+      <section className="dr-info-tabs-section">
+        <div className="container">
           <div className="dr-info-tabs-inner">
             <div className="flex flex-wrap flex-col gap-y-[30px] gap-x-[46px] justify-center md:justify-start">
               <div className="content-info w-full xl:flex-[1]">
@@ -207,14 +209,14 @@ export default function ratgeberseite() {
                     ),
                   }}
                 ></div>
-                <div className="desc  mt-[20px] lg:mt-[40px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] max-w-[870px]"
+                <div
+                  className="desc  mt-[20px] lg:mt-[40px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] max-w-[870px]"
                   dangerouslySetInnerHTML={{
                     __html: toHTML(
                       page?.ratgeber_detail?.reference?.head_new_desc?.value,
                     ),
                   }}
-                >
-                </div>
+                ></div>
               </div>
               <div className="interactive-img-wrap mx-auto block w-[320px] !hidden">
                 <div className="img-wrap w-full text-center relative">
@@ -317,19 +319,23 @@ export default function ratgeberseite() {
                     </div>
                   </form>
                 </div>
-                <div className="scroll-links-wrap flex flex-wrap gap-[20px] mt-[40px] lg:mt-[60px] xl:mt-[80px] border-t-[1px] border-black pt-[40px] lg:pt-[60px] xl:pt-[80px]">
-                  {filteredKybunJoyaProducts.map((product, index) => {
-                    return (
-                      <Link
-                        key={index}
-                        to={`/products/custom-product/${product.handle}`}
-                        className="w-[calc(50%_-_16px)] lg:w-[calc(33.33%_-_16px)] xl:w-[calc(33.33%_-_16px)] 2xl:w-[calc(33.33%_-_16px)] p-[15px] xl:px-[20px] xl:py-[26px] flex justify-center items-center text-center bg-white text-[16px] md:text-[18px] lg:text-[20px] xl:text-[20px] 2xl:text-[21px] leading-[1.4] hover:text-white hover:bg-[#00795C] xl:min-h-[116px] font-bold text-[#00795C] transition-all duration-500 rounded-[10px]"
-                      >
-                        {product.title}
-                      </Link>
-                    );
-                  })}
-                  {/* {buttonAccordionMapping?.map((item, index) => {
+                <div className="mt-[40px] lg:mt-[60px] xl:mt-[80px] border-t-[1px] border-black pt-[30px] lg:pt-[40px] xl:pt-[60px]">
+                  <h2 className="text-[#00795C] text-[30px] lg:text-[35px] xl:text-[40px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold">
+                    Meistgesuchte Indikationen
+                  </h2>
+                  <div className="scroll-links-wrap flex flex-wrap gap-x-[20px] lg:gap-x-[30px] xl:gap-x-[40px] 2xl:gap-x-[78px] gap-y-[20px] lg:gap-y-[30px] xl:gap-y-[40px] 2xl:gap-y-[64px]">
+                    {filteredKybunJoyaProducts.map((product, index) => {
+                      return (
+                        <Link
+                          key={index}
+                          to={`/products/custom-product/${product.handle}`}
+                          className="w-[calc(50%_-_10px)] lg:w-[calc(33.33%_-_20px)] xl:w-[calc(33.33%_-_26.66px)] 2xl:w-[calc(33.33%_-_52px)] p-[15px] xl:px-[20px] xl:py-[26px] flex justify-center items-center text-center bg-white text-[16px] md:text-[18px] lg:text-[20px] xl:text-[28px] 2xl:text-[36px] leading-[1.4] hover:text-white hover:bg-[#00795C] xl:min-h-[116px] font-bold text-[#00795C] transition-all duration-500 rounded-[10px]"
+                        >
+                          {product.title}
+                        </Link>
+                      );
+                    })}
+                    {/* {buttonAccordionMapping?.map((item, index) => {
                     return (
                       <a
                         key={index}
@@ -341,25 +347,208 @@ export default function ratgeberseite() {
                       </a>
                     );
                   })} */}
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </section>
-        <section className="dr-faq-sec !max-w-[1166px] mx-auto flex flex-col gap-[20px] my-[40px] md:my-[60px] lg:my-[80px] xl:my-[100px]">
-          {sub_collections?.nodes?.map((item,index) => {
-              if (item.title != pageCollectionTitle) {
-                  return (
-                    <ExpandingCardStyle2
-                      key={index}
-                      id={`link${index + 1}`}
-                      content={""}
-                      products={item?.products?.edges}
-                      title={item.title.replace(pageCollectionTitle, "").trim()}
-                    />
-                  )
-              }
+        </div>
+      </section>
+      <section className="popular-items-section pt-[40px] md:pt-[60px] lg:pt-[80px] xl:pt-[100px]">
+        <div className="container !pr-0">
+          <h2 className="text-[#00795C] text-[30px] lg:text-[35px] xl:text-[40px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold">
+            Unsere 6 beliebtesten Artikel
+          </h2>
+          <Swiper
+            modules={[Navigation, Scrollbar, A11y, Autoplay, Pagination]}
+            slidesPerView={2.5}
+            spaceBetween={20}
+            autoplay={{
+              delay: 3500,
+              disableOnInteraction: false,
+            }}
+            breakpoints={{
+              0: {
+                slidesPerView: 1.3,
+              },
+              767: {
+                slidesPerView: 2.1,
+              },
+              1280: {
+                slidesPerView: 2.3,
+              },
+              1500: {
+                slidesPerView: 2.5,
+              },
+            }}
+            className=""
+          >
+            <SwiperSlide>
+              <div className="popular-item">
+                <div className="img-wrap overflow-hidden pb-[60%] mb-[15px] relative">
+                  <img
+                    className="absolute inset-0 w-full h-full object-cover"
+                    src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Manufaktur_1200x800px_05.jpg_1_4.png?v=1685525783"
+                    alt=""
+                  />
+                </div>
+                <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mb-[15px]">
+                  <p>Fersensporn / Plantar Fasciitis / Fasziitisplantaris</p>
+                </div>
+                <a
+                  href="#"
+                  className="inline-block rounded-[100px] bg-black text-white
+                 text-center px-[35px] py-[15px] hover:bg-[#00795c] hover:text-white text-[18px] max-w-fit"
+                >
+                  Mehr erfahren
+                </a>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="popular-item">
+                <div className="img-wrap overflow-hidden pb-[60%] mb-[15px] relative">
+                  <img
+                    className="absolute inset-0 w-full h-full object-cover"
+                    src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Manufaktur_1200x800px_05.jpg_1_4.png?v=1685525783"
+                    alt=""
+                  />
+                </div>
+                <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mb-[15px]">
+                  <p>Fersensporn / Plantar Fasciitis / Fasziitisplantaris</p>
+                </div>
+                <a
+                  href="#"
+                  className="inline-block rounded-[100px] bg-black text-white
+                 text-center px-[35px] py-[15px] hover:bg-[#00795c] hover:text-white text-[18px] max-w-fit"
+                >
+                  Mehr erfahren
+                </a>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="popular-item">
+                <div className="img-wrap overflow-hidden pb-[60%] mb-[15px] relative">
+                  <img
+                    className="absolute inset-0 w-full h-full object-cover"
+                    src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Manufaktur_1200x800px_05.jpg_1_4.png?v=1685525783"
+                    alt=""
+                  />
+                </div>
+                <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mb-[15px]">
+                  <p>Fersensporn / Plantar Fasciitis / Fasziitisplantaris</p>
+                </div>
+                <a
+                  href="#"
+                  className="inline-block rounded-[100px] bg-black text-white
+                 text-center px-[35px] py-[15px] hover:bg-[#00795c] hover:text-white text-[18px] max-w-fit"
+                >
+                  Mehr erfahren
+                </a>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="popular-item">
+                <div className="img-wrap overflow-hidden pb-[60%] mb-[15px] relative">
+                  <img
+                    className="absolute inset-0 w-full h-full object-cover"
+                    src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Manufaktur_1200x800px_05.jpg_1_4.png?v=1685525783"
+                    alt=""
+                  />
+                </div>
+                <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mb-[15px]">
+                  <p>Fersensporn / Plantar Fasciitis / Fasziitisplantaris</p>
+                </div>
+                <a
+                  href="#"
+                  className="inline-block rounded-[100px] bg-black text-white
+                 text-center px-[35px] py-[15px] hover:bg-[#00795c] hover:text-white text-[18px] max-w-fit"
+                >
+                  Mehr erfahren
+                </a>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="popular-item">
+                <div className="img-wrap overflow-hidden pb-[60%] mb-[15px] relative">
+                  <img
+                    className="absolute inset-0 w-full h-full object-cover"
+                    src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Manufaktur_1200x800px_05.jpg_1_4.png?v=1685525783"
+                    alt=""
+                  />
+                </div>
+                <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mb-[15px]">
+                  <p>Fersensporn / Plantar Fasciitis / Fasziitisplantaris</p>
+                </div>
+                <a
+                  href="#"
+                  className="inline-block rounded-[100px] bg-black text-white
+                 text-center px-[35px] py-[15px] hover:bg-[#00795c] hover:text-white text-[18px] max-w-fit"
+                >
+                  Mehr erfahren
+                </a>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="popular-item">
+                <div className="img-wrap overflow-hidden pb-[60%] mb-[15px] relative">
+                  <img
+                    className="absolute inset-0 w-full h-full object-cover"
+                    src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Manufaktur_1200x800px_05.jpg_1_4.png?v=1685525783"
+                    alt=""
+                  />
+                </div>
+                <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mb-[15px]">
+                  <p>Fersensporn / Plantar Fasciitis / Fasziitisplantaris</p>
+                </div>
+                <a
+                  href="#"
+                  className="inline-block rounded-[100px] bg-black text-white
+                 text-center px-[35px] py-[15px] hover:bg-[#00795c] hover:text-white text-[18px] max-w-fit"
+                >
+                  Mehr erfahren
+                </a>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="popular-item">
+                <div className="img-wrap overflow-hidden pb-[60%] mb-[15px] relative">
+                  <img
+                    className="absolute inset-0 w-full h-full object-cover"
+                    src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Manufaktur_1200x800px_05.jpg_1_4.png?v=1685525783"
+                    alt=""
+                  />
+                </div>
+                <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mb-[15px]">
+                  <p>Fersensporn / Plantar Fasciitis / Fasziitisplantaris</p>
+                </div>
+                <a
+                  href="#"
+                  className="inline-block rounded-[100px] bg-black text-white
+                 text-center px-[35px] py-[15px] hover:bg-[#00795c] hover:text-white text-[18px] max-w-fit"
+                >
+                  Mehr erfahren
+                </a>
+              </div>
+            </SwiperSlide>
+          </Swiper>
+        </div>
+      </section>
+      <section className="dr-faq-sec mx-auto my-[40px] md:my-[60px] lg:my-[80px] xl:my-[100px]">
+        <div className="container flex flex-col gap-[20px]">
+          {sub_collections?.nodes?.map((item, index) => {
+            if (item.title != pageCollectionTitle) {
+              return (
+                <ExpandingCardStyle2
+                  key={index}
+                  id={`link${index + 1}`}
+                  content={''}
+                  products={item?.products?.edges}
+                  title={item.title.replace(pageCollectionTitle, '').trim()}
+                />
+              );
+            }
           })}
+
           {/* {buttonAccordionMapping?.map((item, index) => {
             console.log("item",item);
             if (!item.accordion_title) return <></>;
@@ -390,8 +579,10 @@ export default function ratgeberseite() {
               </Link>
             </div>
           </div>
-        </section>
-        <section className="search-bar-section mb-[40px] md:mb-[60px] lg:mb-[80px] xl:mb-[100px]">
+        </div>
+      </section>
+      <section className="search-bar-section mb-[40px] md:mb-[60px] lg:mb-[80px] xl:mb-[100px]">
+        <div className="container">
           <div className="search-bar max-w-[991px] mx-auto">
             <form action="">
               <div className="relative">
@@ -436,35 +627,45 @@ export default function ratgeberseite() {
               </div>
             </form>
           </div>
-        </section>
-        <section className="two-box-sec mb-[40px] md:mb-[60px] lg:mb-[80px] xl:mb-[100px]">
+        </div>
+      </section>
+      <section className="two-box-sec mb-[40px] md:mb-[60px] lg:mb-[80px] xl:mb-[100px]">
+        <div className="container">
           <div className="flex flex-col lg:flex-row gap-[20px]">
             <div className="col w-full lg:w-[50%]">
               <div className="col-inner shadow-[0px_0px_0.9821px_2px_rgba(0,0,0,0.05),0px_3.9284px_7.8568px_1px_rgba(0,0,0,0.1)] h-full flex flex-col">
                 <div className="img-wrap relative overflow-hidden pb-[28%]">
-                  <img className='absolute w-full h-full inset-0 object-cover'
-                  src={
-                      page?.ratgeber_detail?.reference?.footer_main_left_section_image
-                        ?.reference?.image?.url
+                  <img
+                    className="absolute w-full h-full inset-0 object-cover"
+                    src={
+                      page?.ratgeber_detail?.reference
+                        ?.footer_main_left_section_image?.reference?.image?.url
                     }
                     alt=""
                   />
                 </div>
                 <div className="info-col p-[15px] md:p-[25px] lg:p-[30px] xl:p-[40px] md:!pt-[25px] max-w-[663px] mx-auto h-full flex flex-col">
-                  <h4 className="text-[24px] md:text-[28px] xl:text-[30px] text-black font-[500] leading-[1.2] text-center"
+                  <h4
+                    className="text-[24px] md:text-[28px] xl:text-[30px] text-black font-[500] leading-[1.2] text-center"
                     dangerouslySetInnerHTML={{
                       __html: toHTML(
-                        page?.ratgeber_detail?.reference?.footer_main_left_section_desc?.value,
+                        page?.ratgeber_detail?.reference
+                          ?.footer_main_left_section_desc?.value,
                       ),
                     }}
-                  >
-                  </h4>
+                  ></h4>
                   <div className="btn-wrap flex justify-center mt-auto">
                     <Link
-                      to={page?.ratgeber_detail?.reference?.footer_main_left_section_cta?.value}
+                      to={
+                        page?.ratgeber_detail?.reference
+                          ?.footer_main_left_section_cta?.value
+                      }
                       className="inline-block rounded-[100px] bg-black text-white text-center px-[40px] lg:px-[59px] py-[20px] lg:py-[25px] hover:bg-[#00795c] hover:text-white text-[16px] lg:text-[18px] max-w-fit mt-[10px] leading-none"
                     >
-                      { page?.ratgeber_detail?.reference?.footer_main_left_section_cta_label?.value }
+                      {
+                        page?.ratgeber_detail?.reference
+                          ?.footer_main_left_section_cta_label?.value
+                      }
                     </Link>
                   </div>
                 </div>
@@ -473,37 +674,46 @@ export default function ratgeberseite() {
             <div className="col w-full lg:w-[50%]">
               <div className="col-inner shadow-[0px_0px_0.9821px_2px_rgba(0,0,0,0.05),0px_3.9284px_7.8568px_1px_rgba(0,0,0,0.1)] h-full flex flex-col">
                 <div className="img-wrap relative overflow-hidden pb-[28%]">
-                  <img className='absolute w-full h-full inset-0 object-cover'
-                     src={
-                      page?.ratgeber_detail?.reference?.footer_main_right_section_image
-                        ?.reference?.image?.url
+                  <img
+                    className="absolute w-full h-full inset-0 object-cover"
+                    src={
+                      page?.ratgeber_detail?.reference
+                        ?.footer_main_right_section_image?.reference?.image?.url
                     }
                     alt=""
                   />
                 </div>
                 <div className="info-col p-[15px] md:p-[25px] lg:p-[30px] xl:p-[40px] md:!pt-[25px] max-w-[663px] mx-auto h-full flex flex-col">
-                  <h4 className="text-[24px] md:text-[28px] xl:text-[30px] text-black font-[500] leading-[1.2] text-center"
+                  <h4
+                    className="text-[24px] md:text-[28px] xl:text-[30px] text-black font-[500] leading-[1.2] text-center"
                     dangerouslySetInnerHTML={{
                       __html: toHTML(
-                        page?.ratgeber_detail?.reference?.footer_main_right_section_desc?.value,
+                        page?.ratgeber_detail?.reference
+                          ?.footer_main_right_section_desc?.value,
                       ),
                     }}
-                  >
-                  </h4>
+                  ></h4>
                   <div className="btn-wrap flex justify-center mt-auto">
                     <Link
-                      to={page?.ratgeber_detail?.reference?.footer_main_right_section_cta?.value}
+                      to={
+                        page?.ratgeber_detail?.reference
+                          ?.footer_main_right_section_cta?.value
+                      }
                       className="inline-block rounded-[100px] bg-black text-white text-center px-[40px] lg:px-[59px] py-[20px] lg:py-[25px] hover:bg-[#00795c] hover:text-white text-[16px] lg:text-[18px] max-w-fit mt-[10px] leading-none"
                     >
-                      { page?.ratgeber_detail?.reference?.footer_main_right_section_cta_label?.value }
+                      {
+                        page?.ratgeber_detail?.reference
+                          ?.footer_main_right_section_cta_label?.value
+                      }
                     </Link>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </section>
-        {/* <section className="four-boxes-section my-[40px] md:my-[60px] lg:my-[80px] xl:my-[100px]">
+        </div>
+      </section>
+      {/* <section className="four-boxes-section my-[40px] md:my-[60px] lg:my-[80px] xl:my-[100px]">
           <div className="four-boxes-inner">
             <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-[20px]">
               <div className="item flex flex-col rounded-[10px]">
@@ -569,7 +779,6 @@ export default function ratgeberseite() {
             </div>
           </div>
         </section> */}
-      </div>
     </>
   );
 }
