@@ -351,7 +351,7 @@ export default function ratgeberSeiteFersensporn() {
                       target="_blank"
                       rel="noopener noreferrer"
                       href={productPdfUrl}
-                      className="pro-btn text-[16px] lg:text-[18px] text-white tracking-[-0.400697px] font-normal flex gap-[10px] px-[20px] lg:px-[30px] py-[12px] lg:py-[15px] bg-black rounded-[100px] max-w-fit items-center transition-all duration-700 hover:bg-[#00795c] mt-[10px] hover:text-white"
+                      className="download-link pro-btn text-[16px] md:text-[20px] lg:text-[21px] leading-none text-black tracking-[-0.400697px] font-normal flex gap-[5px] lg:gap-[25px] justify-center w-fit text-left items-center transition-all duration-700 hover:text-[#00795c] download-link underline"
                     >
                       <IconDownload className={'w-[20px] h-[20px]'} />
                       {productPdfTitle}

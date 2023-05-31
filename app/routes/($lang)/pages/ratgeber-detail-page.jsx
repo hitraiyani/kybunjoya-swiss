@@ -194,12 +194,19 @@ export default function ratgeberseite() {
       <section className="dr-info-tabs-section">
         <div className="container">
           <div className="dr-info-tabs-inner">
-            <div className="flex flex-wrap flex-col gap-y-[30px] gap-x-[46px] justify-center md:justify-start">
+            <div className="flex flex-wrap flex-col gap-x-[46px] justify-center md:justify-start">
               <div className="content-info w-full xl:flex-[1]">
                 <div className="title-wrap text-left">
-                  <h2 className="text-[#00795C] leading-none text-[40px] md:text-[50px] lg:text-[70px] 2xl:text-[100px] font-black">
+                  <h2 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold">
                     {page?.ratgeber_detail?.reference?.head_title?.value}
                   </h2>
+                  <div className="product-list-hero-img relative overflow-hidden pb-[29%]">
+                    <img
+                      className="absolute inset-0 w-full h-full object-cover"
+                      src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Manufaktur_1200x800px_05.jpg_1_6.png?v=1685534920"
+                      alt=""
+                    />
+                  </div>
                 </div>
                 <div
                   className="desc mt-[20px] mx-auto lg:mt-[30px] xl:mt-[52px] text-[28px] md:text-[30px] lg:text-[35px] 2xl:text-[40px] tracking-[-0.97152px]  text-left xl:text-right text-black leading-[1.2] hidden"
@@ -535,7 +542,9 @@ export default function ratgeberseite() {
       </section>
       <section className="dr-faq-sec mx-auto my-[40px] md:my-[60px] lg:my-[80px] xl:my-[100px]">
         <div className="container flex flex-col gap-[20px]">
-          <h2 className='text-[#00795C] text-[30px] lg:text-[35px] xl:text-[40px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold'>Medizienisches Lexikon</h2>
+          <h2 className="text-[#00795C] text-[30px] lg:text-[35px] xl:text-[40px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold">
+            Medizienisches Lexikon
+          </h2>
           {sub_collections?.nodes?.map((item, index) => {
             if (item.title != pageCollectionTitle) {
               return (
