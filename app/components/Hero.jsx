@@ -32,19 +32,19 @@ export function Hero({hereMetaObj}) {
             })}
 
             <div className="absolute inset-x-0 bottom-0 w-full img-overlay h-full md:h-2/4"></div>
-            <div className="absolute slider-content bottom-[40px] lg:bottom-[80px] left-0 right-0 w-full container">
+            <div className="absolute slider-content bottom-[40px] lg:bottom-[58px] left-0 right-0 w-full container">
               <h1
-                className="mb-[15px] text-white title text-[35px] lg:text-[40px] xl:text-[50px] leading-[-1.05984px] font-bold"
+                className="mb-[15px] text-white title text-[35px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] font-bold"
                 dangerouslySetInnerHTML={{
                   __html: toHTML(hereMetaObj?.data?.title?.value),
                 }}
               ></h1>
-              <h4
-                className="mb-[20px] text-white sub-title text-[24px] md:text-[32.96px] font-normal hidden"
-                dangerouslySetInnerHTML={{
-                  __html: toHTML(hereMetaObj?.data?.sub_title?.value),
-                }}
-              ></h4>
+              <h4 className="text-white desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] tracking-[-0.400697px] font-normal leading-[1.2] flex gap-[10px] items-center">
+                <span className="w-[36px] h-[36px] overflow-hidden relative">
+                  <img className="inset-0 absolute object-contain w-full h-full block" src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Flag_of_Switzerland_1.svg?v=1685508046" />
+                </span>
+                <span>Schweizer <br />Familienunternehmen</span>
+              </h4>
               <Link
                 to={`${hereMetaObj?.data?.cta?.value}`}
                 className="inline-block md:px-[60px] px-[40px] py-[20px] md:py-[25px] md:text-[18px] text-[16px] font-medium text-black transition-all bg-white btn hover:bg-black hover:text-white leading-none !hidden"
