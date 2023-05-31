@@ -1317,11 +1317,17 @@ video {
 .max-w-\[1000px\] {
   max-width: 1000px;
 }
+.max-w-\[1030px\] {
+  max-width: 1030px;
+}
 .max-w-\[1077px\] {
   max-width: 1077px;
 }
 .max-w-\[1100px\] {
   max-width: 1100px;
+}
+.max-w-\[1206px\] {
+  max-width: 1206px;
 }
 .max-w-\[150px\] {
   max-width: 150px;
@@ -1386,9 +1392,6 @@ video {
 }
 .max-w-xl {
   max-width: 36rem;
-}
-.max-w-\[1206px\] {
-  max-width: 1206px;
 }
 .flex-1 {
   flex: 1 1 0%;
@@ -2610,6 +2613,9 @@ video {
 .line-through {
   text-decoration-line: line-through;
 }
+.underline-offset-\[7px\] {
+  text-underline-offset: 7px;
+}
 .antialiased {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -3067,16 +3073,16 @@ video {
     vertical-align: middle;
   }
 
+  .sm\:text-\[20px\] {
+    font-size: 20px;
+  }
+
   .sm\:text-\[24px\] {
     font-size: 24px;
   }
 
   .sm\:text-\[26px\] {
     font-size: 26px;
-  }
-
-  .sm\:text-\[20px\] {
-    font-size: 20px;
   }
 }
 @media (min-width: 768px) {
@@ -3386,10 +3392,6 @@ video {
     flex-direction: row;
   }
 
-  .md\:flex-col {
-    flex-direction: column;
-  }
-
   .md\:items-start {
     align-items: flex-start;
   }
@@ -3450,12 +3452,12 @@ video {
     gap: 30px;
   }
 
-  .md\:gap-\[50px\] {
-    gap: 50px;
-  }
-
   .md\:gap-\[40px\] {
     gap: 40px;
+  }
+
+  .md\:gap-\[50px\] {
+    gap: 50px;
   }
 
   .md\:gap-x-\[16px\] {
@@ -4059,12 +4061,16 @@ video {
     gap: 40px;
   }
 
+  .lg\:gap-\[60px\] {
+    gap: 60px;
+  }
+
   .lg\:gap-\[70px\] {
     gap: 70px;
   }
 
-  .lg\:gap-\[60px\] {
-    gap: 60px;
+  .lg\:gap-\[25px\] {
+    gap: 25px;
   }
 
   .lg\:gap-x-\[30px\] {
@@ -4289,6 +4295,10 @@ video {
     font-size: 26px;
   }
 
+  .lg\:text-\[28px\] {
+    font-size: 28px;
+  }
+
   .lg\:text-\[30px\] {
     font-size: 30px;
   }
@@ -4319,10 +4329,6 @@ video {
 
   .lg\:text-\[75px\] {
     font-size: 75px;
-  }
-
-  .lg\:text-\[28px\] {
-    font-size: 28px;
   }
 }
 @media (min-width: 1280px) {
@@ -4557,6 +4563,10 @@ video {
     flex-direction: row;
   }
 
+  .xl\:gap-\[100px\] {
+    gap: 100px;
+  }
+
   .xl\:gap-\[20px\] {
     gap: 20px;
   }
@@ -4579,10 +4589,6 @@ video {
 
   .xl\:gap-\[94px\] {
     gap: 94px;
-  }
-
-  .xl\:gap-\[100px\] {
-    gap: 100px;
   }
 
   .xl\:gap-x-\[40px\] {
@@ -4857,12 +4863,12 @@ video {
     gap: 0px;
   }
 
-  .\32xl\:gap-\[163px\] {
-    gap: 163px;
-  }
-
   .\32xl\:gap-\[140px\] {
     gap: 140px;
+  }
+
+  .\32xl\:gap-\[163px\] {
+    gap: 163px;
   }
 
   .\32xl\:gap-x-\[78px\] {

@@ -55,7 +55,7 @@ export default function unternehmen() {
           </div>
         </div>
       </section>
-      <section className="aboutus-section mt-[40px] lg:mt-[62px] pb-[40px] md:pb-[60px] lg:pb-[80px] xl:pb-[100px] max-w-[870px] mx-auto">
+      <section className="aboutus-section mt-[40px] lg:mt-[62px] pb-[40px] md:pb-[60px] lg:pb-[80px] xl:pb-[100px] max-w-[1030px] mx-auto">
         <div className="container">
           <div className="desc text-black text-[16px] lg:text-[21px] leading-[1.3] font-[400] mb-[40px] md:mb-[50px] lg:mb-[70px] xl:mb-[86px]">
             <p>

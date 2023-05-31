@@ -151,16 +151,16 @@ export default function karriere() {
                   })}
               </ul>
             </div>
-            <div className="btn-wrap justify-start items-start mt-[20px] md:mt-[40px] xl:mt-[60px] flex flex-col gap-[20px] md:gap-[30px] xl:gap-[50px]">
+            <div className="btn-wrap justify-start items-start mt-[20px] md:mt-[40px] xl:mt-[60px] flex flex-col gap-[20px] md:gap-[20px] xl:gap-[30px]">
               <h4 className='text-[#00795C] text-[30px] lg:text-[35px] xl:text-[40px] tracking-[-1.05984px] font-bold'>Downloads</h4>
               <a
                 rel="noopener noreferrer"
                 href={karriere?.footer_cta?.reference?.url}
-                className="download-link pro-btn text-[16px] md:text-[20px] lg:text-[21px] leading-none text-white tracking-[-0.400697px] font-normal flex gap-[5px] lg:gap-[15px] justify-center px-[20px] lg:px-[35px] py-[15px] lg:py-[20px] bg-black rounded-[100px] w-fit text-center items-center transition-all duration-700 hover:bg-[#00795c] hover:text-white download-link"
+                className="download-link pro-btn text-[16px] md:text-[20px] lg:text-[21px] leading-none text-black tracking-[-0.400697px] font-normal flex gap-[5px] lg:gap-[25px] justify-center w-fit text-left items-center transition-all duration-700 hover:text-[#00795c] download-link underline"
               >
                 <IconDownload
                   className={
-                    'w-[20px] h-[20px] md:w-[25px] md:h-[25px] lg:w-[30px] lg:h-[30px]'
+                    'w-[20px] h-[20px] md:w-[25px] md:h-[25px] lg:w-[30px] lg:h-[30px] text-black'
                   }
                 />
                 Mission kybun Joya Gruppe
@@ -168,11 +168,11 @@ export default function karriere() {
               <a
                 rel="noopener noreferrer"
                 href={karriere?.footer_cta?.reference?.url}
-                className="download-link pro-btn text-[16px] md:text-[20px] lg:text-[21px] leading-none text-white tracking-[-0.400697px] font-normal flex gap-[5px] lg:gap-[15px] justify-center px-[20px] lg:px-[35px] py-[15px] lg:py-[20px] bg-black rounded-[100px] w-fit text-center items-center transition-all duration-700 hover:bg-[#00795c] hover:text-white download-link"
+                className="download-link pro-btn text-[16px] md:text-[20px] lg:text-[21px] leading-none text-black tracking-[-0.400697px] font-normal flex gap-[5px] lg:gap-[25px] justify-center w-fit text-left items-center transition-all duration-700 hover:text-[#00795c] download-link underline"
               >
                 <IconDownload
                   className={
-                    'w-[20px] h-[20px] md:w-[25px] md:h-[25px] lg:w-[30px] lg:h-[30px]'
+                    'w-[20px] h-[20px] md:w-[25px] md:h-[25px] lg:w-[30px] lg:h-[30px] text-black'
                   }
                 />
                 {karriere?.footer_cta_label?.value}
