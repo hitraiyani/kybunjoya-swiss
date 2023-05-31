@@ -823,7 +823,8 @@ const roots = {
   heritage: {title: 'Heritage', to: '/pages/aboutus'},
   kontakt: {title: 'Kontakt', to: '/pages/kontakt'},
   shopfinder: {title: 'Shopfinder', to: '/pages/shopfinder'},
-  blog: {title: 'Blog', to: '/pages/blog'}
+  blog: {title: 'Blog', to: '/pages/blog'},
+  unternehmen: {title: 'Unternehmen', to: '/pages/unternehmen'}
 };
 
 export function getBreadCrumbs(

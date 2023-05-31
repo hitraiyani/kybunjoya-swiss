@@ -226,281 +226,7 @@ export default function schweizerSchuhpropktion() {
           </div>
         </div>
       </div>
-      <section className="product-brand-section py-[40px] md:py-[60px] lg:py-[80px] xl:py-[100px]">
-        <div className="product-brand-inner">
-          <div className="product-brand-lists flex flex-col gap-y-[40px] md:gap-y-[60px] lg:gap-y-[80px] xl:gap-y-[100px]">
-            <div className="product-brand-list">
-              <div className="product-brand-list-inner relative">
-                <div className="img-with-text relative">
-                  <a
-                    href="#"
-                    className="relative block w-full overflow-hidden pb-[42%]"
-                  >
-                    <div className="img-wrap w-full h-full absolute inset-0">
-                      <img
-                        className="h-full w-full absolute inset-0 transition hover:duration-500 object-cover"
-                        src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/204.01031-weather_jacket-ss23-stratosphere_pearl-w-4x5-c-g4.png_1_5e72f5de-c16e-4e8f-a627-a386b930667f.png?v=1685513712"
-                        alt=""
-                      />
-                    </div>
-                    <div className="img-overlay absolute w-full h-full md:h-2/4 inset-x-0 bottom-0"></div>
-                    <div className="title-col container absolute bottom-0 left-0 w-full py-[20px] lg:py-[30px] xl:py-[40px] 2xl:py-[50px]">
-                      <h2 className="whitespace-pre-wrap flex flex-col font-normal text-[30px] lg:text-[34px] xl:text-[45px] text-white btn gap-[20px] leading-none">
-                        <span>kybun Schuhe</span>
-                        <ArrowRightLight
-                          className={
-                            'w-[30px] h-[30px] sm:w-[35px] sm:h-[35px] lg:w-[74px] lg:h-[74px] border rounded-full p-[5px] sm:p-2 lg:p-[12px] text-white border-white transition-all'
-                          }
-                        />
-                      </h2>
-                    </div>
-                  </a>
-                </div>
-                <div className="brand-info relative z-[1px] lg:ml-auto mt-auto lg:mt-[-20%] w-full lg:w-[60%]">
-                  <div className="container">
-                    <div className="brand-info-inner p-[20px] lg:p-[40px] 2xl:px-[60px] 2xl:py-[50px] shadow-[0px_0px_0.9821px_2px_rgba(0,0,0,0.05),0px_3.9284px_7.8568px_1px_rgba(0,0,0,0.1)] bg-white lg:rounded-[10px] w-full">
-                      <div className="max-w-[795px]">
-                        <h4 className="text-black text-[24px] md:text-[30px] lg:text-[35px] leading-[1.1] tracking-[-0.97152px]">
-                          Kernmarke kybun
-                        </h4>
-                        <div className="desc text-black text-[16px] lg:text-[21px] leading-[1.3] font-[400] mt-[15px]">
-                          <ul>
-                            <li>Trainiert die Muskulatur bei jedem Schritt</li>
-                            <li>Verbessert die Durchblutung</li>
-                            <li>
-                              Ermöglicht schmerzfreies Stehen und Gehen – auch
-                              im Alter
-                            </li>
-                          </ul>
-                          <p>
-                            Für die häufigsten Fuss-, Knie-, Hüft- und
-                            Rückenprobleme ist kybun der Schweizer
-                            Luftkissen-Schuh die optimale Lösung gegen Schmerzen
-                            am Bewegungsapparat. Der medizinisch erprobte und in
-                            der Schweiz hergestellte Luftkissen-Schuh ermöglicht
-                            bereits Millionen von Menschen weltweit ein
-                            schmerzfreies und gesundes Leben.
-                          </p>
-                        </div>
-                        <div className="btn-wrap flex mt-[19px]">
-                          <a
-                            href="#"
-                            className='"md:px-[35px] px-[30px] md:py-[18px] py-[15px] bg-black text-[16px] md:text-[18px] font-medium text-white rounded-[100px] w-fit hover:bg-[#00795c] hover:!text-white text-center'
-                          >
-                            kybun entdecken
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="product-brand-list">
-              <div className="product-brand-list-inner relative">
-                <div className="img-with-text relative">
-                  <a
-                    href="#"
-                    className="relative block w-full overflow-hidden pb-[42%]"
-                  >
-                    <div className="img-wrap w-full h-full absolute inset-0">
-                      <img
-                        className="h-full w-full absolute inset-0 transition hover:duration-500 object-cover"
-                        src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/204.01031-weather_jacket-ss23-stratosphere_pearl-w-4x5-c-g4.png_1_5e72f5de-c16e-4e8f-a627-a386b930667f.png?v=1685513712"
-                        alt=""
-                      />
-                    </div>
-                    <div className="img-overlay absolute w-full h-full md:h-2/4 inset-x-0 bottom-0"></div>
-                    <div className="title-col container absolute bottom-0 left-0 w-full py-[20px] lg:py-[30px] xl:py-[40px] 2xl:py-[50px]">
-                      <h2 className="whitespace-pre-wrap flex flex-col font-normal text-[30px] lg:text-[34px] xl:text-[45px] text-white btn gap-[20px] leading-none">
-                        <span>kybun Schuhe</span>
-                        <ArrowRightLight
-                          className={
-                            'w-[30px] h-[30px] sm:w-[35px] sm:h-[35px] lg:w-[74px] lg:h-[74px] border rounded-full p-[5px] sm:p-2 lg:p-[12px] text-white border-white transition-all'
-                          }
-                        />
-                      </h2>
-                    </div>
-                  </a>
-                </div>
-                <div className="brand-info relative z-[1px] lg:ml-auto mt-auto lg:mt-[-20%] w-full lg:w-[60%]">
-                  <div className="container">
-                    <div className="brand-info-inner p-[20px] lg:p-[40px] 2xl:px-[60px] 2xl:py-[50px] shadow-[0px_0px_0.9821px_2px_rgba(0,0,0,0.05),0px_3.9284px_7.8568px_1px_rgba(0,0,0,0.1)] bg-white lg:rounded-[10px] w-full">
-                      <div className="max-w-[795px]">
-                        <h4 className="text-black text-[24px] md:text-[30px] lg:text-[35px] leading-[1.1] tracking-[-0.97152px]">
-                          Kernmarke kybun
-                        </h4>
-                        <div className="desc text-black text-[16px] lg:text-[21px] leading-[1.3] font-[400] mt-[15px]">
-                          <ul>
-                            <li>Trainiert die Muskulatur bei jedem Schritt</li>
-                            <li>Verbessert die Durchblutung</li>
-                            <li>
-                              Ermöglicht schmerzfreies Stehen und Gehen – auch
-                              im Alter
-                            </li>
-                          </ul>
-                          <p>
-                            Für die häufigsten Fuss-, Knie-, Hüft- und
-                            Rückenprobleme ist kybun der Schweizer
-                            Luftkissen-Schuh die optimale Lösung gegen Schmerzen
-                            am Bewegungsapparat. Der medizinisch erprobte und in
-                            der Schweiz hergestellte Luftkissen-Schuh ermöglicht
-                            bereits Millionen von Menschen weltweit ein
-                            schmerzfreies und gesundes Leben.
-                          </p>
-                        </div>
-                        <div className="btn-wrap flex mt-[19px]">
-                          <a
-                            href="#"
-                            className='"md:px-[35px] px-[30px] md:py-[18px] py-[15px] bg-black text-[16px] md:text-[18px] font-medium text-white rounded-[100px] w-fit hover:bg-[#00795c] hover:!text-white text-center'
-                          >
-                            kybun entdecken
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="product-brand-list">
-              <div className="product-brand-list-inner relative">
-                <div className="img-with-text relative">
-                  <a
-                    href="#"
-                    className="relative block w-full overflow-hidden pb-[42%]"
-                  >
-                    <div className="img-wrap w-full h-full absolute inset-0">
-                      <img
-                        className="h-full w-full absolute inset-0 transition hover:duration-500 object-cover"
-                        src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/204.01031-weather_jacket-ss23-stratosphere_pearl-w-4x5-c-g4.png_1_5e72f5de-c16e-4e8f-a627-a386b930667f.png?v=1685513712"
-                        alt=""
-                      />
-                    </div>
-                    <div className="img-overlay absolute w-full h-full md:h-2/4 inset-x-0 bottom-0"></div>
-                    <div className="title-col container absolute bottom-0 left-0 w-full py-[20px] lg:py-[30px] xl:py-[40px] 2xl:py-[50px]">
-                      <h2 className="whitespace-pre-wrap flex flex-col font-normal text-[30px] lg:text-[34px] xl:text-[45px] text-white btn gap-[20px] leading-none">
-                        <span>kybun Schuhe</span>
-                        <ArrowRightLight
-                          className={
-                            'w-[30px] h-[30px] sm:w-[35px] sm:h-[35px] lg:w-[74px] lg:h-[74px] border rounded-full p-[5px] sm:p-2 lg:p-[12px] text-white border-white transition-all'
-                          }
-                        />
-                      </h2>
-                    </div>
-                  </a>
-                </div>
-                <div className="brand-info relative z-[1px] lg:ml-auto mt-auto lg:mt-[-20%] w-full lg:w-[60%]">
-                  <div className="container">
-                    <div className="brand-info-inner p-[20px] lg:p-[40px] 2xl:px-[60px] 2xl:py-[50px] shadow-[0px_0px_0.9821px_2px_rgba(0,0,0,0.05),0px_3.9284px_7.8568px_1px_rgba(0,0,0,0.1)] bg-white lg:rounded-[10px] w-full">
-                      <div className="max-w-[795px]">
-                        <h4 className="text-black text-[24px] md:text-[30px] lg:text-[35px] leading-[1.1] tracking-[-0.97152px]">
-                          Kernmarke kybun
-                        </h4>
-                        <div className="desc text-black text-[16px] lg:text-[21px] leading-[1.3] font-[400] mt-[15px]">
-                          <ul>
-                            <li>Trainiert die Muskulatur bei jedem Schritt</li>
-                            <li>Verbessert die Durchblutung</li>
-                            <li>
-                              Ermöglicht schmerzfreies Stehen und Gehen – auch
-                              im Alter
-                            </li>
-                          </ul>
-                          <p>
-                            Für die häufigsten Fuss-, Knie-, Hüft- und
-                            Rückenprobleme ist kybun der Schweizer
-                            Luftkissen-Schuh die optimale Lösung gegen Schmerzen
-                            am Bewegungsapparat. Der medizinisch erprobte und in
-                            der Schweiz hergestellte Luftkissen-Schuh ermöglicht
-                            bereits Millionen von Menschen weltweit ein
-                            schmerzfreies und gesundes Leben.
-                          </p>
-                        </div>
-                        <div className="btn-wrap flex mt-[19px]">
-                          <a
-                            href="#"
-                            className='"md:px-[35px] px-[30px] md:py-[18px] py-[15px] bg-black text-[16px] md:text-[18px] font-medium text-white rounded-[100px] w-fit hover:bg-[#00795c] hover:!text-white text-center'
-                          >
-                            kybun entdecken
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="product-brand-list">
-              <div className="product-brand-list-inner relative">
-                <div className="img-with-text relative">
-                  <a
-                    href="#"
-                    className="relative block w-full overflow-hidden pb-[42%]"
-                  >
-                    <div className="img-wrap w-full h-full absolute inset-0">
-                      <img
-                        className="h-full w-full absolute inset-0 transition hover:duration-500 object-cover"
-                        src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/204.01031-weather_jacket-ss23-stratosphere_pearl-w-4x5-c-g4.png_1_5e72f5de-c16e-4e8f-a627-a386b930667f.png?v=1685513712"
-                        alt=""
-                      />
-                    </div>
-                    <div className="img-overlay absolute w-full h-full md:h-2/4 inset-x-0 bottom-0"></div>
-                    <div className="title-col container absolute bottom-0 left-0 w-full py-[20px] lg:py-[30px] xl:py-[40px] 2xl:py-[50px]">
-                      <h2 className="whitespace-pre-wrap flex flex-col font-normal text-[30px] lg:text-[34px] xl:text-[45px] text-white btn gap-[20px] leading-none">
-                        <span>kybun Schuhe</span>
-                        <ArrowRightLight
-                          className={
-                            'w-[30px] h-[30px] sm:w-[35px] sm:h-[35px] lg:w-[74px] lg:h-[74px] border rounded-full p-[5px] sm:p-2 lg:p-[12px] text-white border-white transition-all'
-                          }
-                        />
-                      </h2>
-                    </div>
-                  </a>
-                </div>
-                <div className="brand-info relative z-[1px] lg:ml-auto mt-auto lg:mt-[-20%] w-full lg:w-[60%]">
-                  <div className="container">
-                    <div className="brand-info-inner p-[20px] lg:p-[40px] 2xl:px-[60px] 2xl:py-[50px] shadow-[0px_0px_0.9821px_2px_rgba(0,0,0,0.05),0px_3.9284px_7.8568px_1px_rgba(0,0,0,0.1)] bg-white lg:rounded-[10px] w-full">
-                      <div className="max-w-[795px]">
-                        <h4 className="text-black text-[24px] md:text-[30px] lg:text-[35px] leading-[1.1] tracking-[-0.97152px]">
-                          Kernmarke kybun
-                        </h4>
-                        <div className="desc text-black text-[16px] lg:text-[21px] leading-[1.3] font-[400] mt-[15px]">
-                          <ul>
-                            <li>Trainiert die Muskulatur bei jedem Schritt</li>
-                            <li>Verbessert die Durchblutung</li>
-                            <li>
-                              Ermöglicht schmerzfreies Stehen und Gehen – auch
-                              im Alter
-                            </li>
-                          </ul>
-                          <p>
-                            Für die häufigsten Fuss-, Knie-, Hüft- und
-                            Rückenprobleme ist kybun der Schweizer
-                            Luftkissen-Schuh die optimale Lösung gegen Schmerzen
-                            am Bewegungsapparat. Der medizinisch erprobte und in
-                            der Schweiz hergestellte Luftkissen-Schuh ermöglicht
-                            bereits Millionen von Menschen weltweit ein
-                            schmerzfreies und gesundes Leben.
-                          </p>
-                        </div>
-                        <div className="btn-wrap flex mt-[19px]">
-                          <a
-                            href="#"
-                            className='"md:px-[35px] px-[30px] md:py-[18px] py-[15px] bg-black text-[16px] md:text-[18px] font-medium text-white rounded-[100px] w-fit hover:bg-[#00795c] hover:!text-white text-center'
-                          >
-                            kybun entdecken
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      {/* <ProductBrandSection data={page?.products_brand_section?.reference} /> */}
+      <ProductBrandSection data={page?.products_brand_section?.reference} />
       {/* <ProductMiscUpdate data={page?.product_misc_update?.reference} /> */}
     </>
   );
@@ -618,6 +344,18 @@ ${MEDIA_FRAGMENT}
             brand_1_redirect : field(key: "brand_1_redirect") {
               value
             }
+            brand_1_sub_text : field(key: "brand_1_sub_text") {
+              value
+            }
+            brand_1_sub_desc : field(key: "brand_1_sub_desc") {
+              value
+            }
+            brand_1_sub_button_text : field(key: "brand_1_sub_button_text") {
+              value
+            }
+            brand_1_sub_button_redirect : field(key: "brand_1_sub_button_redirect") {
+              value
+            }
             brand_2_text : field(key: "brand_2_text") {
               value
             }
@@ -627,6 +365,18 @@ ${MEDIA_FRAGMENT}
               }
             }
             brand_2_redirect : field(key: "brand_2_redirect") {
+              value
+            }
+            brand_2_sub_text : field(key: "brand_2_sub_text") {
+              value
+            }
+            brand_2_sub_desc : field(key: "brand_2_sub_desc") {
+              value
+            }
+            brand_2_sub_button_text : field(key: "brand_2_sub_button_text") {
+              value
+            }
+            brand_2_sub_button_redirect : field(key: "brand_2_sub_button_redirect") {
               value
             }
             brand_3_text : field(key: "brand_3_text") {
@@ -640,6 +390,18 @@ ${MEDIA_FRAGMENT}
             brand_3_redirect : field(key: "brand_3_redirect") {
               value
             }
+            brand_3_sub_text : field(key: "brand_3_sub_text") {
+              value
+            }
+            brand_3_sub_desc : field(key: "brand_3_sub_desc") {
+              value
+            }
+            brand_3_sub_button_text : field(key: "brand_3_sub_button_text") {
+              value
+            }
+            brand_3_sub_button_redirect : field(key: "brand_3_sub_button_redirect") {
+              value
+            }
             brand_4_text : field(key: "brand_4_text") {
               value
             }
@@ -651,15 +413,16 @@ ${MEDIA_FRAGMENT}
             brand_4_redirect : field(key: "brand_4_redirect") {
               value
             }
-            brand_5_text : field(key: "brand_5_text") {
+            brand_4_sub_text : field(key: "brand_4_sub_text") {
               value
             }
-            brand_5_image : field(key: "brand_5_image") {
-              reference {
-                ...Media
-              }
+            brand_4_sub_desc : field(key: "brand_4_sub_desc") {
+              value
             }
-            brand_5_redirect : field(key: "brand_5_redirect") {
+            brand_4_sub_button_text : field(key: "brand_4_sub_button_text") {
+              value
+            }
+            brand_4_sub_button_redirect : field(key: "brand_4_sub_button_redirect") {
               value
             }
           }

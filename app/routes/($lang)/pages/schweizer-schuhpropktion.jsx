@@ -73,16 +73,14 @@ export default function schweizerSchuhpropktion() {
             alt=""
           />
         </div>
-        <div className="desc text-black text-[16px] lg:text-[21px] leading-[1.3] font-[400] mt-[40px] lg:mt-[44px] max-w-[1100px]">
-          <p>
-            Der kybun Schuhproduktionsstandort in Sennwald (Schweiz) steht im
-            Mittelpunkt der kybun Schuhproduktion und ein Aushängeschild für
-            Schweizer Produktionsunternehmen, welches dank Pioniergeist,
-            Innovation und Automatisation die Rückkehr in die Schweiz gelungen
-            ist. Erleben hinter den Kulissen wie der Schweizer Luftkissen-Schuh
-            mit der elastisch-federnden Sohle in bis zu 40 Arbeitsschritten mit
-            viel Handarbeit hergestellt wird. 
-          </p>
+        <div className="desc text-black text-[16px] lg:text-[21px] leading-[1.3] font-[400] mt-[40px] lg:mt-[44px] max-w-[1100px]"
+          dangerouslySetInnerHTML={{
+            __html: toHTML(
+              page?.schweizer_schuhpropktion?.reference?.short_description
+                ?.value,
+            ),
+          }}
+        >
         </div>
       </div>
       <div className="about-sec container pb-[20px] md:pb-[30px] lg:pb-[40px] xl:pb-[50px] pt-[40px] md:pt-[60px] lg:pt-[80px] xl:pt-[100px]">
@@ -112,15 +110,6 @@ export default function schweizerSchuhpropktion() {
             <h2 className="text-[#00795C] text-[30px] lg:text-[35px] xl:text-[40px] tracking-[-1.05984px] mb-[20px] font-bold">
               {page?.schweizer_schuhpropktion?.reference?.main_title?.value}
             </h2>
-            <h3
-              className="subtitle text-[18px] lg:text-[23px] text-balck leading-[1.3] mb-[20px] font-[400] hidden"
-              dangerouslySetInnerHTML={{
-                __html: toHTML(
-                  page?.schweizer_schuhpropktion?.reference?.short_description
-                    ?.value,
-                ),
-              }}
-            ></h3>
             <div
               className="desc text-black text-[16px] lg:text-[21px] leading-[1.3] font-[400] mb-[25px]"
               dangerouslySetInnerHTML={{
@@ -141,7 +130,7 @@ export default function schweizerSchuhpropktion() {
             </Link>
           </div>
         </div>
-      </div>
+      </div>  
       {faqArr.length > 0 && (
         <div className="faq-sec container mt-10 hidden">
           <h3 className="title uppercase text-[18px] leading-[1.2] pb-[10px] border-b border-[#595959] font-normal">
@@ -161,22 +150,26 @@ export default function schweizerSchuhpropktion() {
                   ?.value
               }
             </h2>
-            <div className="desc text-black text-[16px] lg:text-[21px] leading-[1.3] font-[400] mb-[25px]">
-              <p>
-                In der kybun-Miniserie erklären wir Schritt für Schritt wie
-                unsere Schuhe hergestellt werden. 
-              </p>
+            <div className="desc text-black text-[16px] lg:text-[21px] leading-[1.3] font-[400] mb-[25px]"
+               dangerouslySetInnerHTML={{
+                __html: toHTML(
+                  page?.schweizer_schuhpropktion?.reference?.video_section_desc
+                    ?.value,
+                ),
+              }}
+            >
             </div>
             <div className="btn-wrap">
               <Link
                 to={
-                  page?.schweizer_schuhpropktion?.reference?.book_now_link
+                  page?.schweizer_schuhpropktion?.reference?.video_section_button_redirect
                     ?.value
                 }
                 className="inline-block rounded-[100px] bg-black text-white
                  text-center px-[35px] py-[15px] hover:bg-[#00795c] hover:text-white text-[18px] max-w-fit"
               >
-                Miniserie entdecken
+                {page?.schweizer_schuhpropktion?.reference?.video_section_button_text
+                    ?.value}
               </Link>
             </div>
           </div>
@@ -236,6 +229,9 @@ ${MEDIA_FRAGMENT}
             book_now_link : field(key: "book_now_link") {
               value
             }
+            book_now_link_text : field(key: "book_now_link_text") {
+              value
+            }
             head_title : field(key: "head_title") {
               value
             }
@@ -243,6 +239,15 @@ ${MEDIA_FRAGMENT}
               value
             }
             video_section_url : field(key: "video_section_url") {
+              value
+            }
+            video_section_desc : field(key: "video_section_desc") {
+              value
+            }
+            video_section_button_text : field(key: "video_section_button_text") {
+              value
+            }
+            video_section_button_redirect : field(key: "video_section_button_redirect") {
               value
             }
             faq : field(key: "faq") {
