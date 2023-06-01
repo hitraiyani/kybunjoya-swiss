@@ -425,6 +425,29 @@ ${MEDIA_FRAGMENT}
             brand_4_sub_button_redirect : field(key: "brand_4_sub_button_redirect") {
               value
             }
+            brand_5_text : field(key: "brand_5_text") {
+              value
+            }
+            brand_5_image : field(key: "brand_5_image") {
+              reference {
+                ...Media
+              }
+            }
+            brand_5_redirect : field(key: "brand_5_redirect") {
+              value
+            }
+            brand_5_sub_text : field(key: "brand_5_sub_text") {
+              value
+            }
+            brand_5_sub_desc : field(key: "brand_5_sub_desc") {
+              value
+            }
+            brand_5_sub_button_text : field(key: "brand_5_sub_button_text") {
+              value
+            }
+            brand_5_sub_button_redirect : field(key: "brand_5_sub_button_redirect") {
+              value
+            }
           }
         }
       }
