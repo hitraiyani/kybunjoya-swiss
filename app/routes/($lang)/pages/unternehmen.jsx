@@ -52,7 +52,7 @@ export default function unternehmen() {
           <h1 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold">
              {unternehmenReference?.head_title?.value}
           </h1>
-          <div className="product-list-hero-img relative overflow-hidden pb-[35%] min-h-[400px]">
+          <div className="product-list-hero-img relative overflow-hidden pb-[35%] aspect-[3/2] md:aspect-auto">
             <img
               className="absolute inset-0 w-full h-full object-cover"
               src={unternehmenReference?.hero_image?.reference?.image?.url}

@@ -3231,6 +3231,10 @@ video {
     aspect-ratio: 4/5;
   }
 
+  .md\:aspect-auto {
+    aspect-ratio: auto;
+  }
+
   .md\:h-2\/4 {
     height: 50%;
   }

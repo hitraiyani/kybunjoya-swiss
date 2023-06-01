@@ -17,7 +17,7 @@ export function CollectionsGrid({data}) {
                   alt=""
                 />
               </div>
-              <div className="img-overlay absolute w-full h-full md:h-2/4 inset-x-0 bottom-0"></div>
+              <div className="img-overlay absolute w-full h-2/4 inset-x-0 bottom-0"></div>
               <Heading className="flex flex-col font-normal text-[18px] sm:text-[26px] text-white absolute bottom-0 left-0 p-[15px] sm:p-5 btn gap-[10px] w-full">
                 <span dangerouslySetInnerHTML={{
                   __html: toHTML(data?.section_1_text?.value),
@@ -39,7 +39,7 @@ export function CollectionsGrid({data}) {
                   alt=""
                 />
               </div>
-              <div className="img-overlay absolute w-full h-full md:h-2/4 inset-x-0 bottom-0"></div>
+              <div className="img-overlay absolute w-full h-2/4 inset-x-0 bottom-0"></div>
               <Heading className="flex flex-col font-normal text-[18px] sm:text-[26px] text-white absolute bottom-0 left-0 p-[15px] sm:p-5 btn gap-[10px] w-full">
               <span dangerouslySetInnerHTML={{
                   __html: toHTML(data?.section_2_text?.value),
@@ -64,7 +64,7 @@ export function CollectionsGrid({data}) {
                   alt=""
                 />
               </div>
-              <div className="img-overlay absolute w-full h-full md:h-2/4 inset-x-0 bottom-0"></div>
+              <div className="img-overlay absolute w-full h-2/4 inset-x-0 bottom-0"></div>
               <Heading className="flex flex-col font-normal text-[18px] sm:text-[26px] text-white absolute bottom-0 left-0 p-[15px] sm:p-5 btn gap-[10px] w-full">
                <span dangerouslySetInnerHTML={{
                   __html: toHTML(data?.section_3_text?.value),
@@ -89,7 +89,7 @@ export function CollectionsGrid({data}) {
                   alt=""
                 />
               </div>
-              <div className="img-overlay absolute w-full h-full md:h-2/4 inset-x-0 bottom-0"></div>
+              <div className="img-overlay absolute w-full h-2/4 inset-x-0 bottom-0"></div>
               <div className="flex absolute bottom-0 left-0 p-[15px] sm:p-5 w-full items-end h-full">
               <Heading className="flex flex-col font-normal text-[18px] sm:text-[26px] text-white leading-none btn gap-[10px] flex-[2]">
                 <span dangerouslySetInnerHTML={{

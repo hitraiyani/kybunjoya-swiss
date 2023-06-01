@@ -413,7 +413,7 @@ p:last-child {
   grid-row: auto;
 }
 .collectionsGrid-sec-box-layout .collectionsGrid-item > a {
-  padding-bottom: 118% !important;
+  padding-bottom: 100% !important;
 }
 .collectionsGrid-sec-box-layout .collectionsGrid-item img {
   transition: all 0.5s;
@@ -439,10 +439,10 @@ p:last-child {
   list-style: disc;
   padding-left: 27px;
 }
-.product-brand-section ul li{
+.product-brand-section ul li {
   padding-bottom: 10px;
 }
-.product-brand-section ul li:last-child{
+.product-brand-section ul li:last-child {
   padding-bottom: 0;
 }
 .product-brand-section a:hover svg {
@@ -450,7 +450,7 @@ p:last-child {
   background-color: #fff;
 }
 @media (max-width: 1023px) {
-  .brand-info .container{
+  .brand-info .container {
     padding-left: 0;
     padding-right: 0;
   }
@@ -1037,8 +1037,11 @@ p:last-child {
     margin: 0 3px;
   }
   .collectionsGrid-sec-box-layout .collectionsGrid-item > a {
-    padding-bottom: 118% !important;
-    /* aspect-ratio: 1/1; */
+    padding-bottom: 100% !important;
+  }
+  .collectionsGrid-sec-box-layout.collectionsGrid-sec-box-layout2 .collectionsGrid-item > a {
+    padding-bottom: 0% !important;
+    aspect-ratio: 3/2;
   }
   .collectionsGrid-sec-box-layout .collectionsGrid-item > a img {
     /* aspect-ratio: 1/1; */

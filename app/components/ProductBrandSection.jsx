@@ -22,7 +22,7 @@ export function ProductBrandSection({data}) {
                     alt=""
                   />
                 </div>
-                <div className="img-overlay absolute w-full h-full md:h-2/4 inset-x-0 bottom-0"></div>
+                <div className="img-overlay absolute w-full h-2/4 inset-x-0 bottom-0"></div>
                 <div className="title-col container absolute bottom-0 left-0 w-full py-[20px] lg:py-[30px] xl:py-[40px] 2xl:py-[50px]">
                   <h2 className="whitespace-pre-wrap flex flex-col font-normal text-[30px] lg:text-[34px] xl:text-[45px] text-white btn gap-[20px] leading-none">
                       <span dangerouslySetInnerHTML={{
@@ -79,7 +79,7 @@ export function ProductBrandSection({data}) {
                     alt=""
                   />
                 </div>
-                <div className="img-overlay absolute w-full h-full md:h-2/4 inset-x-0 bottom-0"></div>
+                <div className="img-overlay absolute w-full h-2/4 inset-x-0 bottom-0"></div>
                 <div className="title-col container absolute bottom-0 left-0 w-full py-[20px] lg:py-[30px] xl:py-[40px] 2xl:py-[50px]">
                   <h2 className="whitespace-pre-wrap flex flex-col font-normal text-[30px] lg:text-[34px] xl:text-[45px] text-white btn gap-[20px] leading-none">
                       <span dangerouslySetInnerHTML={{
@@ -136,7 +136,7 @@ export function ProductBrandSection({data}) {
                     alt=""
                   />
                 </div>
-                <div className="img-overlay absolute w-full h-full md:h-2/4 inset-x-0 bottom-0"></div>
+                <div className="img-overlay absolute w-full h-2/4 inset-x-0 bottom-0"></div>
                 <div className="title-col container absolute bottom-0 left-0 w-full py-[20px] lg:py-[30px] xl:py-[40px] 2xl:py-[50px]">
                   <h2 className="whitespace-pre-wrap flex flex-col font-normal text-[30px] lg:text-[34px] xl:text-[45px] text-white btn gap-[20px] leading-none">
                       <span dangerouslySetInnerHTML={{
@@ -193,7 +193,7 @@ export function ProductBrandSection({data}) {
                     alt=""
                   />
                 </div>
-                <div className="img-overlay absolute w-full h-full md:h-2/4 inset-x-0 bottom-0"></div>
+                <div className="img-overlay absolute w-full h-2/4 inset-x-0 bottom-0"></div>
                 <div className="title-col container absolute bottom-0 left-0 w-full py-[20px] lg:py-[30px] xl:py-[40px] 2xl:py-[50px]">
                   <h2 className="whitespace-pre-wrap flex flex-col font-normal text-[30px] lg:text-[34px] xl:text-[45px] text-white btn gap-[20px] leading-none">
                       <span dangerouslySetInnerHTML={{
