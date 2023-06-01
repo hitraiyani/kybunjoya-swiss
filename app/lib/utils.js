@@ -818,7 +818,7 @@ const roots = {
   kybunjoyatherapie: {title: 'kybun Joya Therapie', to: '/pages/kybun-joya-therapie'},
   karriere: {title: 'Karriere', to: '/pages/karriere'},
   produkte: {title: 'Produkte', to: '/pages/products'},
-  ratgeber: {title: 'Ratgeber', to: '/pages/ratgeber'},
+  ratgeber: {title: 'Dr. kybun Joya', to: '/pages/ratgeber'},
   beratung: {title: 'Beratung', to: '/pages/ratgeberseite'},
   heritage: {title: 'Heritage', to: '/pages/aboutus'},
   kontakt: {title: 'Kontakt', to: '/pages/kontakt'},
