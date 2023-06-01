@@ -145,44 +145,49 @@ export default function ratgeberSeiteFersensporn() {
 
 
 
+  const [downloadLinks, setDownloadLinks] = useState([]);
   const [menuLinks, setMenuLinks] = useState([]);
 
   useEffect(() => {
 
-    console.log("dom loaded");  
-    var container = document.createElement('div');
-    container.innerHTML = aicoProductData.documents.value;
-
-    var linkValue = container.querySelector('a').href;
-    console.log(linkValue);
+    if (aicoProductData?.documents?.value) {
+      var container = document.createElement('div');
+      container.innerHTML = aicoProductData.documents.value;
+      var downlinks = container.querySelectorAll('a');
+      let downListArr = [];
+      downlinks.forEach((link) => {
+         downListArr.push({'href': link.href, 'title' :link.innerText.trim() })
+      });
+      setDownloadLinks(downListArr);
+    }
 
     const links = document.querySelectorAll('.scroll-link');
     setMenuLinks(Array.from(links));
 
-    const downloadLinks = document.querySelectorAll('.download-link');
-    downloadLinks.forEach((link) => {
-      link.addEventListener('click', (event) => {
-        event.preventDefault(); // Prevent the default link behavior
+    // const downloadLinks = document.querySelectorAll('.download-link');
+    // downloadLinks.forEach((link) => {
+    //   link.addEventListener('click', (event) => {
+    //     event.preventDefault(); // Prevent the default link behavior
 
-        const pdfUrl = link.href;
-        const xhr = new XMLHttpRequest();
-        xhr.open('GET', pdfUrl, true);
-        xhr.responseType = 'blob';
-        xhr.onload = () => {
-          if (xhr.status === 200) {
-            const blob = new Blob([xhr.response], {type: 'application/pdf'});
-            const url = URL.createObjectURL(blob);
-            const downloadLink = document.createElement('a');
-            downloadLink.setAttribute('download', '');
-            downloadLink.href = url;
-            document.body.appendChild(downloadLink);
-            downloadLink.click();
-            document.body.removeChild(downloadLink);
-          }
-        };
-        xhr.send();
-      });
-    });
+    //     const pdfUrl = link.href;
+    //     const xhr = new XMLHttpRequest();
+    //     xhr.open('GET', pdfUrl, true);
+    //     xhr.responseType = 'blob';
+    //     xhr.onload = () => {
+    //       if (xhr.status === 200) {
+    //         const blob = new Blob([xhr.response], {type: 'application/pdf'});
+    //         const url = URL.createObjectURL(blob);
+    //         const downloadLink = document.createElement('a');
+    //         downloadLink.setAttribute('download', '');
+    //         downloadLink.href = url;
+    //         document.body.appendChild(downloadLink);
+    //         downloadLink.click();
+    //         document.body.removeChild(downloadLink);
+    //       }
+    //     };
+    //     xhr.send();
+    //   });
+    // });
   }, []);
 
   const scrollToSection = (targetId, headerHeight) => {
@@ -345,18 +350,24 @@ export default function ratgeberSeiteFersensporn() {
                 )}
                   {rtgb_textnachbutton_de_ch && ( <p>{ rtgb_textnachbutton_de_ch }</p> )}
                 </div>
-                {productPdfUrl && (
-                  <div className="btn-wrap mt-[20px]">
-                    <a
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      href={productPdfUrl}
-                      className="download-link pro-btn text-[16px] md:text-[20px] lg:text-[21px] leading-none text-black tracking-[-0.400697px] font-normal flex gap-[5px] lg:gap-[25px] justify-center w-fit text-left items-center transition-all duration-700 hover:text-[#00795c] download-link underline"
-                    >
-                      <IconDownload className={'w-[20px] h-[20px]'} />
-                      {productPdfTitle}
-                    </a>
-                  </div>
+                {downloadLinks.length > 0 && (
+                  <>
+                    {downloadLinks.map((item, index) => {
+                        return (
+                          <div className="btn-wrap mt-[20px]" key={index}>
+                            <a
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              href={item.href}
+                              className="download-link pro-btn text-[16px] md:text-[20px] lg:text-[21px] leading-none text-black tracking-[-0.400697px] font-normal flex gap-[5px] lg:gap-[25px] justify-center w-fit text-left items-center transition-all duration-700 hover:text-[#00795c] download-link underline"
+                            >
+                              <IconDownload className={'w-[20px] h-[20px]'} />
+                              {item.title}
+                            </a>
+                          </div>
+                        );
+                    })}
+                  </>
                 )}
                 {/* <div className="mobile-info aicoCotentBuilderWrap">
                   <div
