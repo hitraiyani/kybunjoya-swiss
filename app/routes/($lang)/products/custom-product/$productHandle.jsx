@@ -241,7 +241,7 @@ export default function ratgeberSeiteFersensporn() {
   };
   
   const {pathname} = useLocation();
-  const breadCrumbsData =  getBreadCrumbs('beratung','ratgeber');
+  const breadCrumbsData =  getBreadCrumbs(null,'ratgeber');
   breadCrumbsData.push({title : aicoProductData?.title, to : pathname });
 
   return (

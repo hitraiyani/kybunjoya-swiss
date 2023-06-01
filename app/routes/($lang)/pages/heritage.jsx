@@ -44,6 +44,8 @@ export default function Heritage() {
     ? JSON.parse(page.about_us.reference.time_line_section_desc.value)
     : [];
 
+  const heritageReference = page?.about_us?.reference;
+
   const [isActive, setActive] = useState('false');
   const ToggleClass = () => {
     setActive(!isActive);
@@ -67,86 +69,88 @@ export default function Heritage() {
     });
   }, []);
 
+
   return (
     <>
       <Breadcrumb crumbs={getBreadCrumbs(null, 'heritage')} />
       <div className="container">
         <section className="video-banner-with-title pb-[20px] md:pb-[30px] lg:pb-[40px] xl:pb-[50px]">
           <h1 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold">
-            {page?.about_us?.reference?.head_title?.value}
+            {heritageReference?.time_line_1_title?.value}
           </h1>
           <div className="video-wrap relative overflow-hidden pb-[35%] min-h-[300px] w-full">
             <img
               className="absolute w-full h-full inset-0 object-cover bg-cover"
-              src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Mask_group_2_43338518-eb9e-47ea-943b-759ff4329a75.png?v=1685530034"
+              src={heritageReference?.time_line_1_media?.value}
               alt=""
             />
           </div>
           <div className="info-with-year mt-[20px] lg:mt-[30px] flex flex-col md:flex-row gap-[20px] md:gap-[40px] lg:gap-[60px] xl:gap-[100px] 2xl:gap-[140px] items-start">
             <div className="text-white bg-[#00795C] px-[30px] py-[5px] tracking-[-0.97152px] leading-none text-[16px] sm:text-[20px] md:text-[24px] lg:text-[28px] xl:text-[35px] flex items-center justify-center rounded-[110px] font-medium w-fit date">
-              1996
+              {heritageReference?.time_line_1_year?.value}
             </div>
-            <div className="desc text-[16px] sm:text-[20px] md:text-[24px] lg:text-[28px] xl:text-[35px] text-black tracking-[-0.400697px] font-normal leading-[1.4] max-w-[1206px]">
-              <p>
-                Die Erfindung der Abrollschuhe MBT durch den Schweizer Ingenieur
-                Karl Müller war die Revolution in der Schuhindustrie. Geplagt
-                durch Achillessehnenschmerzen, entdeckte er, wie seine Schmerzen
-                beim Gehen in den Reisfeldern Südkoreas nachliessen – der
-                Ursprung der Funktionsschuhe.
-              </p>
+            <div className="desc text-[16px] sm:text-[20px] md:text-[24px] lg:text-[28px] xl:text-[35px] text-black tracking-[-0.400697px] font-normal leading-[1.4] max-w-[1206px]"
+              dangerouslySetInnerHTML={{
+                __html: toHTML(
+                  heritageReference
+                    ?.time_line_1_desc?.value,
+                ),
+              }}
+            >
             </div>
           </div>
         </section>
         <section className="video-banner-with-title py-[20px] md:py-[30px] lg:py-[40px] xl:py-[50px]">
           <h2 className="text-[#00795C] text-[30px] lg:text-[35px] xl:text-[40px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold">
-            Wie alles begann
+            {heritageReference?.time_line_2_title?.value}
           </h2>
           <div className="video-wrap relative overflow-hidden pb-[35%] min-h-[300px] w-full">
             <iframe
               className="absolute w-full h-full inset-0 object-cover bg-cover"
-              src={page?.about_us?.reference?.hero_video?.value}
+              src={heritageReference?.time_line_2_media?.value}
               title="YouTube video player"
-              frameBorder={0}
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
             />
           </div>
           <div className="info-with-year mt-[20px] lg:mt-[30px] flex flex-col md:flex-row gap-[20px] md:gap-[40px] lg:gap-[60px] xl:gap-[100px] 2xl:gap-[140px] items-start">
             <div className="text-white bg-[#00795C] px-[30px] py-[5px] tracking-[-0.97152px] leading-none text-[16px] sm:text-[20px] md:text-[24px] lg:text-[28px] xl:text-[35px] flex items-center justify-center rounded-[110px] font-medium w-fit date">
-              2008
+            {heritageReference?.time_line_2_year?.value}
             </div>
-            <div className="desc text-[16px] sm:text-[20px] md:text-[24px] lg:text-[28px] xl:text-[35px] text-black tracking-[-0.400697px] font-normal leading-[1.4] max-w-[1206px]">
-              <p>
-                2008 Nach dem Verkauf der Firma MBT (Differenzen mit seinen
-                Partnern wegen medizinischem Fokus) gründete Karl III die Firma
-                kybun mit der Vision die Schuhproduktion zurück in die Schweiz
-                zu holen und die Idee der Therapieschuhe weiter leben zu lassen.
-                Zur gleichen Zeit entstand aus einer Meinungsverschiedenheit mit
-                seinem ältesten Sohn Karl IV, die Marke Joya.  
-              </p>
+            <div className="desc text-[16px] sm:text-[20px] md:text-[24px] lg:text-[28px] xl:text-[35px] text-black tracking-[-0.400697px] font-normal leading-[1.4] max-w-[1206px]"
+              dangerouslySetInnerHTML={{
+                __html: toHTML(
+                  heritageReference
+                    ?.time_line_2_desc?.value,
+                ),
+              }}
+            >
             </div>
           </div>
         </section>
         <section className="video-banner-with-title py-[20px] md:py-[30px] lg:py-[40px] xl:py-[50px]">
           <h2 className="text-[#00795C] text-[30px] lg:text-[35px] xl:text-[40px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold">
-            kybun Joya
+            {heritageReference?.time_line_3_title?.value}
           </h2>
           <div className="video-wrap relative overflow-hidden pb-[35%] min-h-[300px] w-full">
             <img
               className="absolute w-full h-full inset-0 object-cover bg-cover"
-              src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Mask_group_3_a55c56dd-b766-49db-b8af-be8984c9d6f3.png?v=1685530034"
+              src={heritageReference?.time_line_3_media?.value}
               alt=""
             />
           </div>
           <div className="info-with-year mt-[20px] lg:mt-[30px] flex flex-col md:flex-row gap-[20px] md:gap-[40px] lg:gap-[60px] xl:gap-[100px] 2xl:gap-[140px] items-start">
             <div className="text-white bg-[#00795C] px-[30px] py-[5px] tracking-[-0.97152px] leading-none text-[16px] sm:text-[20px] md:text-[24px] lg:text-[28px] xl:text-[35px] flex items-center justify-center rounded-[110px] font-medium w-fit date">
-              2022
+              {heritageReference?.time_line_3_year?.value}
             </div>
-            <div className="desc text-[16px] sm:text-[20px] md:text-[24px] lg:text-[28px] xl:text-[35px] text-black tracking-[-0.400697px] font-normal leading-[1.4] max-w-[1206px]">
-              <p>
-                Fusion der beiden Marken kybun und Joya um langfristig Menschen
-                ein gesundes Gehen zu ermöglichen.  
-              </p>
+            <div className="desc text-[16px] sm:text-[20px] md:text-[24px] lg:text-[28px] xl:text-[35px] text-black tracking-[-0.400697px] font-normal leading-[1.4] max-w-[1206px]"
+              dangerouslySetInnerHTML={{
+                __html: toHTML(
+                  heritageReference
+                    ?.time_line_3_desc?.value,
+                ),
+              }}
+            >
             </div>
           </div>
         </section>
@@ -399,6 +403,42 @@ ${MEDIA_FRAGMENT}
               reference {
                 ...Media
               }
+            }
+            time_line_1_title : field(key: "time_line_1_title") {
+              value
+            }
+            time_line_1_year : field(key: "time_line_1_year") {
+              value
+            }
+            time_line_1_desc : field(key: "time_line_1_desc") {
+              value
+            }
+            time_line_1_media : field(key: "time_line_1_media") {
+              value
+            }
+            time_line_2_title : field(key: "time_line_2_title") {
+              value
+            }
+            time_line_2_year : field(key: "time_line_2_year") {
+              value
+            }
+            time_line_2_desc : field(key: "time_line_2_desc") {
+              value
+            }
+            time_line_2_media : field(key: "time_line_2_media") {
+              value
+            }
+            time_line_3_title : field(key: "time_line_3_title") {
+              value
+            }
+            time_line_3_year : field(key: "time_line_3_year") {
+              value
+            }
+            time_line_3_desc : field(key: "time_line_3_desc") {
+              value
+            }
+            time_line_3_media : field(key: "time_line_3_media") {
+              value
             }
           }
         }

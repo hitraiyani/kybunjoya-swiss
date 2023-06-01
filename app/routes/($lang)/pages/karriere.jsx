@@ -155,7 +155,7 @@ export default function karriere() {
               <h4 className='text-[#00795C] text-[30px] lg:text-[35px] xl:text-[40px] tracking-[-1.05984px] font-bold'>Downloads</h4>
               <a
                 rel="noopener noreferrer"
-                href={karriere?.footer_cta?.reference?.url}
+                href={karriere?.footer_2_cta?.reference?.url}
                 className="download-link pro-btn text-[16px] md:text-[20px] lg:text-[21px] leading-none text-black tracking-[-0.400697px] font-normal flex gap-[5px] lg:gap-[25px] justify-center w-fit text-left items-center transition-all duration-700 hover:text-[#00795c] download-link underline"
               >
                 <IconDownload
@@ -163,7 +163,7 @@ export default function karriere() {
                     'w-[20px] h-[20px] md:w-[25px] md:h-[25px] lg:w-[30px] lg:h-[30px] text-black'
                   }
                 />
-                Mission kybun Joya Gruppe
+                  { karriere?.footer_2_cta_label?.value }
               </a>
               <a
                 rel="noopener noreferrer"
@@ -220,6 +220,17 @@ const PAGE_QUERY = `#graphql
               value
             }
             footer_cta : field(key: "footer_cta") {
+              reference {
+                ... on GenericFile {
+                    id
+                    url
+                }
+              }
+            }
+            footer_2_cta_label : field(key: "footer_2_cta_label") {
+              value
+            }
+            footer_2_cta : field(key: "footer_2_cta") {
               reference {
                 ... on GenericFile {
                     id

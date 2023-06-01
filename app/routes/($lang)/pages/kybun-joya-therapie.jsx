@@ -3,6 +3,7 @@ import {ArrowRight2, ExpandingCardStyle3, Breadcrumb} from '~/components';
 import {json} from '@shopify/remix-oxygen';
 import {useLoaderData} from '@remix-run/react';
 import {toHTML, getBreadCrumbs} from '~/lib/utils';
+import {MEDIA_FRAGMENT} from '~/data/fragments';
 
 const seo = ({data}) => ({
   title: data?.page?.seo?.title,
@@ -53,7 +54,7 @@ export default function kybunJoyaTherapie() {
             {kybunJoyaTherapie?.head_title?.value}
           </h1>
           <div className='product-list-hero-img relative overflow-hidden pb-[35%]'>
-            <img className='absolute inset-0 w-full h-full object-cover' src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Manufaktur_1200x800px_05.jpg_1_5.png?v=1685527064" alt="" />
+            <img className='absolute inset-0 w-full h-full object-cover' src={kybunJoyaTherapie?.hero_image?.reference?.image?.url} alt="" />
           </div>
         </div>
       </div>
@@ -70,6 +71,7 @@ export default function kybunJoyaTherapie() {
               key={index}
               content={item.description}
               title={item.title}
+              image={item.image}
             />
           );
         })}
@@ -77,11 +79,14 @@ export default function kybunJoyaTherapie() {
       <div className='about-sec container py-[40px] md:py-[60px] lg:py-[80px] xl:py-[100px]'>
         <div className='flex flex-col lg:flex-row gap-[20px] lg:gap-[30px]'>
           <div className='img-wrap lg:w-[50%] overflow-hidden w-full'>
-            <img className='w-full h-auto' src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Map.png?v=1685529112" alt="" />
+            <img className='w-full h-auto' src={kybunJoyaTherapie?.about_section_image?.reference?.image?.url} alt="" />
           </div>
           <div className='content-col w-full lg:w-[50%] flex flex-col'>
-            <div className='desc text-[16px] sm:text-[20px] md:text-[24px] lg:text-[28px] xl:text-[35px] text-black tracking-[-0.400697px] font-normal leading-[1.4]'>
-              <p>Über 4 Millionen begeisterte Kunden weltweit bestätigen die außergewöhnliche Wirkung. Wo würden ihre Füße und ihr ganzer Körper wohl lieber gehen, barfuß auf weich-elastisch-federndem Moos, oder eingepackt in flachen Schuhen auf dem harten Asphalt? Gönnen sie ihren Füßen nur das Allerbeste, denn sie tragen Sie noch ihr ganzes Leben. </p>
+            <div className='desc text-[16px] sm:text-[20px] md:text-[24px] lg:text-[28px] xl:text-[35px] text-black tracking-[-0.400697px] font-normal leading-[1.4]'
+              dangerouslySetInnerHTML={{
+                __html: toHTML(kybunJoyaTherapie?.about_section_desc?.value),
+              }}
+            >
             </div>
           </div>
         </div>
@@ -91,6 +96,7 @@ export default function kybunJoyaTherapie() {
 }
 
 const PAGE_QUERY = `#graphql
+${MEDIA_FRAGMENT}
   query PageDetails($language: LanguageCode, $handle: String!)
   @inContext(language: $language) {
     page(handle: $handle) {
@@ -107,6 +113,19 @@ const PAGE_QUERY = `#graphql
               value
             }
             faq : field(key: "faq") {
+              value
+            }
+            hero_image : field(key: "hero_image") {
+              reference {
+                ...Media
+              }
+            }
+            about_section_image : field(key: "about_section_image") {
+              reference {
+                ...Media
+              }
+            }
+            about_section_desc : field(key: "about_section_desc") {
               value
             }
           }

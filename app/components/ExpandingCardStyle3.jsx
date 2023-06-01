@@ -1,7 +1,7 @@
 import {Disclosure, Transition} from '@headlessui/react';
 import {Text, IconClose} from '~/components';
 
-export function ExpandingCardStyle3({title, content}) {
+export function ExpandingCardStyle3({title, content, image}) {
   return (
     <Disclosure as="div" className="grid w-full gap-2 border-[#595959]  border-t">
       {({open}) => (
@@ -39,13 +39,15 @@ export function ExpandingCardStyle3({title, content}) {
               static
             >
               <div className='flex-[1]' dangerouslySetInnerHTML={{__html: content}}></div>
-              <div className="img-wrap flex-[1] relative overflow-hidden">
-                <img
-                  className="w-full h-auto max-w-full"
-                  src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Screenshot_2023-05-30_at_2.42_1.png?v=1685527417"
-                  alt=""
-                />
-              </div>
+              {image && (
+                <div className="img-wrap flex-[1] relative overflow-hidden">
+                  <img
+                    className="w-full h-auto max-w-full"
+                    src={image}
+                    alt=""
+                  />
+                </div>
+              )}
             </Disclosure.Panel>
           </Transition>
         </>

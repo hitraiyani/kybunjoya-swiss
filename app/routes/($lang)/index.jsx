@@ -273,6 +273,9 @@ ${MEDIA_FRAGMENT}
       cta_label : field(key: "cta_label") {
         value
       }
+      hero_video_url : field(key: "hero_video_url") {
+        value
+      }
       sub_title_image : field(key: "sub_title_image") {
         reference {
           ...Media
