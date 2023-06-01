@@ -3751,6 +3751,10 @@ video {
 }
 @media (min-width: 1024px) {
 
+  .lg\:absolute {
+    position: absolute;
+  }
+
   .lg\:inset-0 {
     top: 0px;
     right: 0px;
@@ -3780,6 +3784,10 @@ video {
 
   .lg\:top-\[48px\] {
     top: 48px;
+  }
+
+  .lg\:bottom-\[-140px\] {
+    bottom: -140px;
   }
 
   .lg\:col-span-2 {
@@ -4282,6 +4290,10 @@ video {
 
   .lg\:pt-\[80px\] {
     padding-top: 80px;
+  }
+
+  .lg\:pb-\[140px\] {
+    padding-bottom: 140px;
   }
 
   .lg\:text-right {

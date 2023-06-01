@@ -9,7 +9,7 @@ export function ProductBrandSection({data}) {
     <section className="product-brand-section py-[40px] md:py-[60px] lg:py-[80px] xl:py-[100px]">
     <div className="product-brand-inner">
       <div className="product-brand-lists flex flex-col gap-y-[40px] md:gap-y-[60px] lg:gap-y-[80px] xl:gap-y-[100px]">
-        <div className="product-brand-list">
+        <div className="product-brand-list lg:pb-[140px]">
           <div className="product-brand-list-inner relative">
             <div className="img-with-text relative">
               <Link to={`${data?.brand_1_redirect?.value}`}
@@ -38,7 +38,7 @@ export function ProductBrandSection({data}) {
                 </div>
               </Link>
             </div>
-            <div className="brand-info relative z-[1px] lg:ml-auto mt-auto lg:mt-[-20%] w-full lg:w-[60%]">
+            <div className="brand-info relative lg:ml-auto mt-auto lg:absolute right-0 lg:bottom-[-140px] z-[1] w-full lg:w-[60%]">
               <div className="container">
                 <div className="brand-info-inner p-[20px] lg:p-[40px] 2xl:px-[60px] 2xl:py-[50px] shadow-[0px_0px_0.9821px_2px_rgba(0,0,0,0.05),0px_3.9284px_7.8568px_1px_rgba(0,0,0,0.1)] bg-white lg:rounded-[10px] w-full">
                   <div className="max-w-[795px]">
@@ -66,7 +66,7 @@ export function ProductBrandSection({data}) {
             </div>
           </div>
         </div>
-        <div className="product-brand-list">
+        <div className="product-brand-list lg:pb-[140px]">
           <div className="product-brand-list-inner relative">
             <div className="img-with-text relative">
               <Link to={`${data?.brand_2_redirect?.value}`}
@@ -95,7 +95,7 @@ export function ProductBrandSection({data}) {
                 </div>
               </Link>
             </div>
-            <div className="brand-info relative z-[1px] lg:ml-auto mt-auto lg:mt-[-20%] w-full lg:w-[60%]">
+            <div className="brand-info relative lg:ml-auto mt-auto lg:absolute right-0 lg:bottom-[-140px] z-[1] w-full lg:w-[60%]">
               <div className="container">
                 <div className="brand-info-inner p-[20px] lg:p-[40px] 2xl:px-[60px] 2xl:py-[50px] shadow-[0px_0px_0.9821px_2px_rgba(0,0,0,0.05),0px_3.9284px_7.8568px_1px_rgba(0,0,0,0.1)] bg-white lg:rounded-[10px] w-full">
                   <div className="max-w-[795px]">
@@ -123,7 +123,7 @@ export function ProductBrandSection({data}) {
             </div>
           </div>
         </div>
-        <div className="product-brand-list">
+        <div className="product-brand-list lg:pb-[140px]">
           <div className="product-brand-list-inner relative">
             <div className="img-with-text relative">
               <Link to={`${data?.brand_3_redirect?.value}`}
@@ -152,7 +152,7 @@ export function ProductBrandSection({data}) {
                 </div>
               </Link>
             </div>
-            <div className="brand-info relative z-[1px] lg:ml-auto mt-auto lg:mt-[-20%] w-full lg:w-[60%]">
+            <div className="brand-info relative lg:ml-auto mt-auto lg:absolute right-0 lg:bottom-[-140px] z-[1] w-full lg:w-[60%]">
               <div className="container">
                 <div className="brand-info-inner p-[20px] lg:p-[40px] 2xl:px-[60px] 2xl:py-[50px] shadow-[0px_0px_0.9821px_2px_rgba(0,0,0,0.05),0px_3.9284px_7.8568px_1px_rgba(0,0,0,0.1)] bg-white lg:rounded-[10px] w-full">
                   <div className="max-w-[795px]">
@@ -180,7 +180,7 @@ export function ProductBrandSection({data}) {
             </div>
           </div>
         </div>
-        <div className="product-brand-list">
+        <div className="product-brand-list lg:pb-[140px]">
           <div className="product-brand-list-inner relative">
             <div className="img-with-text relative">
               <Link to={`${data?.brand_4_redirect?.value}`}
@@ -209,7 +209,7 @@ export function ProductBrandSection({data}) {
                 </div>
               </Link>
             </div>
-            <div className="brand-info relative z-[1px] lg:ml-auto mt-auto lg:mt-[-20%] w-full lg:w-[60%]">
+            <div className="brand-info relative lg:ml-auto mt-auto lg:absolute right-0 lg:bottom-[-140px] z-[1] w-full lg:w-[60%]">
               <div className="container">
                 <div className="brand-info-inner p-[20px] lg:p-[40px] 2xl:px-[60px] 2xl:py-[50px] shadow-[0px_0px_0.9821px_2px_rgba(0,0,0,0.05),0px_3.9284px_7.8568px_1px_rgba(0,0,0,0.1)] bg-white lg:rounded-[10px] w-full">
                   <div className="max-w-[795px]">
