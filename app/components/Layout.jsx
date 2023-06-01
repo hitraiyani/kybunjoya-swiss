@@ -645,7 +645,7 @@ function Footer({menu, main_menu}) {
                     </p>
                   </div>
                 </div>
-                <div className="grid grid-cols-2 gap-x-[10px] md:gap-0 md:block md:columns-3 footer-menu-items">
+                <div className="grid grid-cols-2 gap-x-[10px] md:gap-[20px] md:block md:columns-3 footer-menu-items">
                   { main_menu.items && main_menu.items.map((item,index) => {
                       return (
                         <div key={index}>
