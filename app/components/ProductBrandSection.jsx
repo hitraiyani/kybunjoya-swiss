@@ -13,7 +13,7 @@ export function ProductBrandSection({data}) {
           <div className="product-brand-list-inner relative">
             <div className="img-with-text relative">
               <Link to={`${data?.brand_1_redirect?.value}`}
-                className="relative block w-full overflow-hidden pb-[42%]"
+                className="relative block w-full overflow-hidden pb-[42%] min-h-[250px]"
               >
                 <div className="img-wrap w-full h-full absolute inset-0">
                   <img
@@ -70,7 +70,7 @@ export function ProductBrandSection({data}) {
           <div className="product-brand-list-inner relative">
             <div className="img-with-text relative">
               <Link to={`${data?.brand_2_redirect?.value}`}
-                className="relative block w-full overflow-hidden pb-[42%]"
+                className="relative block w-full overflow-hidden pb-[42%] min-h-[250px]"
               >
                 <div className="img-wrap w-full h-full absolute inset-0">
                   <img
@@ -127,7 +127,7 @@ export function ProductBrandSection({data}) {
           <div className="product-brand-list-inner relative">
             <div className="img-with-text relative">
               <Link to={`${data?.brand_3_redirect?.value}`}
-                className="relative block w-full overflow-hidden pb-[42%]"
+                className="relative block w-full overflow-hidden pb-[42%] min-h-[250px]"
               >
                 <div className="img-wrap w-full h-full absolute inset-0">
                   <img
@@ -184,7 +184,7 @@ export function ProductBrandSection({data}) {
           <div className="product-brand-list-inner relative">
             <div className="img-with-text relative">
               <Link to={`${data?.brand_4_redirect?.value}`}
-                className="relative block w-full overflow-hidden pb-[42%]"
+                className="relative block w-full overflow-hidden pb-[42%] min-h-[250px]"
               >
                 <div className="img-wrap w-full h-full absolute inset-0">
                   <img

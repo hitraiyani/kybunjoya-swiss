@@ -12,8 +12,9 @@ export function Hero({hereMetaObj}) {
     <div className="heroSlider-sec">
       <div className="prodcut-items">
         <div className="prodcut-item">
-          <div className="relative flex w-full h-[50vh] sm:h-[60vh] md:h-[82vh] flex-co image-container min-h-[450px]">
-            <img
+          <div className="relative flex w-full h-[50vh] sm:h-[60vh] md:h-[82vh] flex-co image-container min-h-[450px] overflow-hidden">
+          <iframe className="object-cover object-center active  w-[100vw] h-[54.25vw] sm:h-[64.25vw] md:h-[86.25vw] min-h-[54vh] sm:min-h-[64vh] md:min-h-[86vh] min-w-fit absolute -translate-y-2/4 left-0 top-2/4 pointer-events-none" src="https://www.youtube.com/embed/D0UnqGm_miA?playlist=D0UnqGm_miA&autoplay=1&controls=0&loop=1&mute=1&autohide=1&showinfo=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            {/* <img
               className="object-cover object-center w-full active"
               id="defaultActive"
               src={
@@ -29,7 +30,7 @@ export function Hero({hereMetaObj}) {
                   src={menuBannerImageMapping[oneKey]}
                 ></img>
               );
-            })}
+            })} */}
 
             <div className="absolute inset-x-0 bottom-0 w-full img-overlay h-full md:h-2/4"></div>
             <div className="absolute slider-content bottom-[40px] lg:bottom-[58px] left-0 right-0 w-full container">

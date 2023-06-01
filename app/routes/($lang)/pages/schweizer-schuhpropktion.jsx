@@ -85,7 +85,7 @@ export default function schweizerSchuhpropktion() {
       </div>
       <div className="about-sec container pb-[20px] md:pb-[30px] lg:pb-[40px] xl:pb-[50px] pt-[40px] md:pt-[60px] lg:pt-[80px] xl:pt-[100px]">
         <div className="flex flex-col-reverse lg:flex-row gap-y-[20px] gap-x-[30px] xl:gap-x-[63px] ">
-          <div className="img-col lg:w-[40%] overflow-hidden w-full">
+          <div className="img-col lg:w-[40%] overflow-hidden w-full hidden lg:block">
             <Swiper
               modules={[Navigation, Scrollbar, A11y, Autoplay, Pagination]}
               slidesPerView={1}
@@ -110,6 +110,27 @@ export default function schweizerSchuhpropktion() {
             <h2 className="text-[#00795C] text-[30px] lg:text-[35px] xl:text-[40px] tracking-[-1.05984px] mb-[20px] font-bold">
               {page?.schweizer_schuhpropktion?.reference?.main_title?.value}
             </h2>
+            <div className="img-col lg:w-[40%] overflow-hidden w-full lg:hidden mb-[20px]">
+            <Swiper
+              modules={[Navigation, Scrollbar, A11y, Autoplay, Pagination]}
+              slidesPerView={1}
+              navigation={false}
+              loop="false"
+              autoplay="false"
+              pagination={{clickable: true}}
+              className="h-full overflow-visible flex flex-col"
+            >
+              {sliderImages.map((image, index) => (
+                <SwiperSlide key={index}>
+                  <img
+                    className="h-full object-cover block"
+                    src={image}
+                    alt=""
+                  />
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
             <div
               className="desc text-black text-[16px] lg:text-[21px] leading-[1.3] font-[400] mb-[25px]"
               dangerouslySetInnerHTML={{
@@ -150,6 +171,17 @@ export default function schweizerSchuhpropktion() {
                   ?.value
               }
             </h2>
+            <iframe
+              className="w-full aspect-[4/2] lg:hidden mb-[20px]"
+              src={
+                page?.schweizer_schuhpropktion?.reference?.video_section_url
+                  ?.value
+              }
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            ></iframe>
             <div className="desc text-black text-[16px] lg:text-[21px] leading-[1.3] font-[400] mb-[25px]"
                dangerouslySetInnerHTML={{
                 __html: toHTML(
@@ -175,7 +207,7 @@ export default function schweizerSchuhpropktion() {
           </div>
           <div className="video-wrap lg:w-[65%] overflow-hidden w-full">
             <iframe
-              className="w-full aspect-[4/2]"
+              className="w-full aspect-[4/2] hidden lg:block"
               src={
                 page?.schweizer_schuhpropktion?.reference?.video_section_url
                   ?.value
