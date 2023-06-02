@@ -685,9 +685,6 @@ video {
 .top-\[calc\(50\%_-_20px\)\] {
   top: calc(50% - 20px);
 }
-.bottom-\[33px\] {
-  bottom: 33px;
-}
 .z-30 {
   z-index: 30;
 }
@@ -1185,9 +1182,6 @@ video {
 }
 .min-h-screen {
   min-height: 100vh;
-}
-.min-h-\[310px\] {
-  min-height: 310px;
 }
 .min-h-\[320px\] {
   min-height: 320px;
@@ -2237,10 +2231,6 @@ video {
 .py-\[5px\] {
   padding-top: 5px;
   padding-bottom: 5px;
-}
-.px-\[33px\] {
-  padding-left: 33px;
-  padding-right: 33px;
 }
 .\!pr-0 {
   padding-right: 0px !important;

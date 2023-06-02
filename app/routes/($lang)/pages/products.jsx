@@ -46,8 +46,9 @@ export async function loader({request, params, context}) {
   );
 }
 
-export default function schweizerSchuhpropktion() {
+export default function products() {
   const {page} = useLoaderData();
+
 
   const sliderImages =
     page?.product_misc_update?.reference?.slider_images?.references?.edges.map(
@@ -226,7 +227,7 @@ export default function schweizerSchuhpropktion() {
           </div>
         </div>
       </div>
-      <ProductBrandSection data={page?.products_brand_section?.reference} />
+      <ProductBrandSection data={ {...page?.products_brand_section?.reference, ...page?.product_brand_section_2?.reference} } />
       {/* <ProductMiscUpdate data={page?.product_misc_update?.reference} /> */}
     </>
   );
@@ -323,6 +324,35 @@ ${MEDIA_FRAGMENT}
               value
             }
 
+          }
+        }
+      }
+      product_brand_section_2: metafield(namespace: "custom", key: "product_brand_section_2") {
+      	reference {
+          ... on Metaobject {
+            brand_6_text : field(key: "brand_6_text") {
+              value
+            }
+            brand_6_image : field(key: "brand_6_image") {
+              reference {
+                ...Media
+              }
+            }
+            brand_6_redirect : field(key: "brand_6_redirect") {
+              value
+            }
+            brand_6_sub_text : field(key: "brand_6_sub_text") {
+              value
+            }
+            brand_6_sub_desc : field(key: "brand_6_sub_desc") {
+              value
+            }
+            brand_6_sub_button_text : field(key: "brand_6_sub_button_text") {
+              value
+            }
+            brand_6_sub_button_redirect : field(key: "brand_6_sub_button_redirect") {
+              value
+            }
           }
         }
       }
