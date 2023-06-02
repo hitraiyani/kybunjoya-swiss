@@ -921,6 +921,9 @@ video {
 .mt-\[20px\] {
   margin-top: 20px;
 }
+.mt-\[21px\] {
+  margin-top: 21px;
+}
 .mt-\[24px\] {
   margin-top: 24px;
 }
@@ -977,9 +980,6 @@ video {
 }
 .mt-auto {
   margin-top: auto;
-}
-.mt-\[21px\] {
-  margin-top: 21px;
 }
 .box-border {
   box-sizing: border-box;
@@ -1165,6 +1165,9 @@ video {
 .min-h-\[300px\] {
   min-height: 300px;
 }
+.min-h-\[320px\] {
+  min-height: 320px;
+}
 .min-h-\[350px\] {
   min-height: 350px;
 }
@@ -1185,6 +1188,11 @@ video {
 }
 .min-h-\[320px\] {
   min-height: 320px;
+.min-h-\[86px\] {
+  min-height: 86px;
+}
+.min-h-\[270px\] {
+  min-height: 270px;
 }
 .\!w-\[180px\] {
   width: 180px !important;
@@ -2049,6 +2057,10 @@ video {
 .object-top {
   -o-object-position: top;
      object-position: top;
+}
+.object-left-top {
+  -o-object-position: left top;
+     object-position: left top;
 }
 .p-0 {
   padding: 0px;
@@ -3110,16 +3122,16 @@ video {
     position: sticky;
   }
 
+  .md\:bottom-\[33px\] {
+    bottom: 33px;
+  }
+
   .md\:left-20 {
     left: 5rem;
   }
 
   .md\:right-\[40px\] {
     right: 40px;
-  }
-
-  .md\:bottom-\[33px\] {
-    bottom: 33px;
   }
 
   .md\:col-span-1 {
@@ -3571,6 +3583,11 @@ video {
     padding-right: 30px;
   }
 
+  .md\:px-\[33px\] {
+    padding-left: 33px;
+    padding-right: 33px;
+  }
+
   .md\:px-\[35px\] {
     padding-left: 35px;
     padding-right: 35px;
@@ -3634,11 +3651,6 @@ video {
   .md\:py-\[60px\] {
     padding-top: 60px;
     padding-bottom: 60px;
-  }
-
-  .md\:px-\[33px\] {
-    padding-left: 33px;
-    padding-right: 33px;
   }
 
   .md\:\!pt-\[25px\] {
@@ -4191,6 +4203,11 @@ video {
     padding-right: 40px;
   }
 
+  .lg\:px-\[46px\] {
+    padding-left: 46px;
+    padding-right: 46px;
+  }
+
   .lg\:px-\[49px\] {
     padding-left: 49px;
     padding-right: 49px;
@@ -4254,11 +4271,6 @@ video {
   .lg\:py-\[80px\] {
     padding-top: 80px;
     padding-bottom: 80px;
-  }
-
-  .lg\:px-\[46px\] {
-    padding-left: 46px;
-    padding-right: 46px;
   }
 
   .lg\:\!pr-0 {
@@ -4827,6 +4839,10 @@ video {
     font-size: 21px;
   }
 
+  .xl\:text-\[25px\] {
+    font-size: 25px;
+  }
+
   .xl\:text-\[28px\] {
     font-size: 28px;
   }
@@ -4873,10 +4889,6 @@ video {
 
   .xl\:text-\[95px\] {
     font-size: 95px;
-  }
-
-  .xl\:text-\[25px\] {
-    font-size: 25px;
   }
 }
 @media (min-width: 1536px) {

@@ -200,9 +200,9 @@ export default function ratgeberseite() {
                   <h2 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold">
                     {page?.ratgeber_detail?.reference?.head_title?.value}
                   </h2>
-                  <div className="product-list-hero-img relative overflow-hidden pb-[29%]">
+                  <div className="product-list-hero-img relative overflow-hidden pb-[29%] min-h-[270px]">
                     <img
-                      className="absolute inset-0 w-full h-full object-cover"
+                      className="absolute inset-0 w-full h-full object-cover object-left-top"
                       src={page?.ratgeber_detail?.reference?.hero_image?.reference?.image?.url}
                       alt=""
                     />
@@ -337,7 +337,7 @@ export default function ratgeberseite() {
                         <Link
                           key={index}
                           to={`/products/custom-product/${product.handle}`}
-                          className="w-[calc(50%_-_10px)] lg:w-[calc(33.33%_-_20px)] xl:w-[calc(33.33%_-_26.66px)] 2xl:w-[calc(33.33%_-_52px)] p-[15px] xl:px-[20px] xl:py-[26px] flex justify-center items-center text-center bg-white text-[16px] md:text-[18px] lg:text-[20px] xl:text-[28px] 2xl:text-[36px] leading-[1.4] hover:text-white hover:bg-[#00795C] xl:min-h-[116px] font-bold text-[#00795C] transition-all duration-500 rounded-[10px]"
+                          className="w-[calc(50%_-_10px)] lg:w-[calc(33.33%_-_20px)] xl:w-[calc(33.33%_-_26.66px)] 2xl:w-[calc(33.33%_-_52px)] p-[15px] xl:px-[20px] xl:py-[26px] flex justify-center items-center text-center bg-white text-[16px] md:text-[18px] lg:text-[20px] xl:text-[28px] 2xl:text-[36px] leading-[1.4] hover:text-white hover:bg-[#00795C] xl:min-h-[116px] font-bold text-[#00795C] transition-all duration-500 rounded-[10px] min-h-[86px]"
                         >
                           {product.title}
                         </Link>

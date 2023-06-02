@@ -98,7 +98,7 @@ export default function schweizerSchuhpropktion() {
               {sliderImages.map((image, index) => (
                 <SwiperSlide key={index}>
                   <img
-                    className="h-full object-cover block"
+                    className="h-full w-full object-cover block"
                     src={image}
                     alt=""
                   />
