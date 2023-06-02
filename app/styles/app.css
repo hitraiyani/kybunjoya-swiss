@@ -169,6 +169,9 @@ p:last-child {
     max-height: none;
     background: #fff;
   }
+  .mobile-menu-Drawer li a.title {
+    margin-bottom: 20px;
+  }
 }
 /* End header css */
 
@@ -1040,7 +1043,9 @@ p:last-child {
   .collectionsGrid-sec-box-layout .collectionsGrid-item > a {
     padding-bottom: 100% !important;
   }
-  .collectionsGrid-sec-box-layout.collectionsGrid-sec-box-layout2 .collectionsGrid-item > a {
+  .collectionsGrid-sec-box-layout.collectionsGrid-sec-box-layout2
+    .collectionsGrid-item
+    > a {
     padding-bottom: 0% !important;
     aspect-ratio: 3/2;
   }

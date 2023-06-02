@@ -326,8 +326,9 @@ export default function ratgeberseite() {
                     </div>
                   </form>
                 </div>
-                <div className="mt-[40px] lg:mt-[60px] xl:mt-[80px] border-t-[1px] border-black pt-[30px] lg:pt-[40px] xl:pt-[60px]">
-                  <h2 className="text-[#00795C] text-[30px] lg:text-[35px] xl:text-[40px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold">
+                {/* <div className="mt-[40px] lg:mt-[60px] xl:mt-[80px] border-t-[1px] border-black pt-[30px] lg:pt-[40px] xl:pt-[60px]"> */}
+                <div className="mt-[33px] border-black">
+                  <h2 className="text-[#00795C] text-[30px] lg:text-[35px] xl:text-[40px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold hidden">
                     {page?.ratgeber_detail?.reference?.product_list_title?.value}
                   </h2>
                   <div className="scroll-links-wrap flex flex-wrap gap-x-[20px] lg:gap-x-[30px] xl:gap-x-[40px] 2xl:gap-x-[78px] gap-y-[20px] lg:gap-y-[30px] xl:gap-y-[40px] 2xl:gap-y-[64px]">
