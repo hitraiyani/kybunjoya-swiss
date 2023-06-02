@@ -822,7 +822,7 @@ const roots = {
   beratung: {title: 'Beratung', to: '/pages/ratgeberseite'},
   heritage: {title: 'Heritage', to: '/pages/aboutus'},
   kontakt: {title: 'Kontakt', to: '/pages/kontakt'},
-  shopfinder: {title: 'Shopfinder', to: '/pages/shopfinder'},
+  shopfinder: {title: 'Filialen', to: '/pages/shopfinder'},
   blog: {title: 'Blog', to: '/pages/blog'},
   unternehmen: {title: 'Unternehmen', to: '/pages/unternehmen'}
 };
