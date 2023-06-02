@@ -578,6 +578,15 @@ p:last-child {
   filter: drop-shadow(0px 0px 0.9821px rgba(0, 0, 0, 0.05))
     drop-shadow(0px 3.9284px 7.8568px rgba(0, 0, 0, 0.1));
 }
+.about-sec-slider .img-col .swiper-slide {
+  padding-bottom: 100%;
+}
+.about-sec-slider .img-col .swiper-slide img {
+  width: calc(100% - 10px);
+  margin: 0 auto;
+  height: calc(100% - 10px);
+  margin-top: 5px;
+}
 .about-sec .img-col .swiper-pagination {
   position: relative;
   margin-top: 20px;

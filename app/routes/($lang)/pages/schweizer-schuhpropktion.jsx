@@ -83,7 +83,7 @@ export default function schweizerSchuhpropktion() {
         >
         </div>
       </div>
-      <div className="about-sec container pb-[20px] md:pb-[30px] lg:pb-[40px] xl:pb-[50px] pt-[40px] md:pt-[60px] lg:pt-[80px] xl:pt-[100px]">
+      <div className="about-sec about-sec-slider container pb-[20px] md:pb-[30px] lg:pb-[40px] xl:pb-[50px] pt-[40px] md:pt-[60px] lg:pt-[80px] xl:pt-[100px]">
         <div className="flex flex-col-reverse lg:flex-row gap-y-[20px] gap-x-[30px] xl:gap-x-[63px] ">
           <div className="img-col lg:w-[40%] overflow-hidden w-full hidden lg:block">
             <Swiper
@@ -96,7 +96,7 @@ export default function schweizerSchuhpropktion() {
               className="h-full overflow-visible flex flex-col"
             >
               {sliderImages.map((image, index) => (
-                <SwiperSlide key={index} className='pb-[100%] relative overflow-hidden'>
+                <SwiperSlide key={index}>
                   <img
                     className="h-full w-full object-cover block absolute inset-0"
                     src={image}
