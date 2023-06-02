@@ -2385,6 +2385,9 @@ video {
 .pt-\[64px\] {
   padding-top: 64px;
 }
+.pr-\[30px\] {
+  padding-right: 30px;
+}
 .text-left {
   text-align: left;
 }
@@ -3474,6 +3477,11 @@ video {
 
   .md\:gap-y-\[60px\] {
     row-gap: 60px;
+  }
+
+  .md\:gap-x-\[80px\] {
+    -moz-column-gap: 80px;
+         column-gap: 80px;
   }
 
   .md\:overflow-x-auto {

@@ -78,7 +78,7 @@ p:last-child {
   margin-top: 142px;
   margin-right: 80px;
   max-height: 310px;
-  padding: 20px 50px;
+  padding: 30px 50px;
 }
 @media (max-width: 1279px) {
   .mobile-menu-Drawer {
@@ -292,6 +292,10 @@ p:last-child {
   page-break-inside: avoid;
   break-inside: avoid;
   counter-increment: brick-counter;
+}
+.footer-menu-items > div:last-child .nav-item > h2 a,
+.footer-menu-items > div:last-child .nav-item .toggle-menu-icon {
+  color: #595959;
 }
 /* .site-footer {
   background-color: #3a3e3f;
