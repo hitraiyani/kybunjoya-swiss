@@ -39,5 +39,6 @@ export {ResponsiveIframe} from './ResponsiveIframe';
 export {SingleNewsSlide} from './SingleNewsSlide';
 export {ShopifyCookie} from './ShopifyCookie';
 export {PursueSection} from './PursueSection';
+export {NewsBanner} from './NewsBanner';
 // Sue me
 export * from './Icon';

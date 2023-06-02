@@ -7,7 +7,8 @@ import {
   BrandGrid,
   NewsSlider,
   GruppeSection,
-  PursueSection
+  PursueSection,
+  NewsBanner
 } from '~/components';
 import {MEDIA_FRAGMENT, PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
 import {getHeroPlaceholder} from '~/lib/placeholders';
@@ -50,6 +51,13 @@ export async function loader({params, context}) {
       variables: {metaObjectId: 'gid://shopify/Metaobject/2353365313'},
     },
   );
+
+  const newsBannerSection = context.storefront.query(
+    HOMEPAGE_NEWS_BANNER_QUERY,
+    {
+      variables: {metaObjectId: 'gid://shopify/Metaobject/2362212673'},
+    },
+  );
   // const brandIcons = context.storefront.query(
   //   HOMEPAGE_BRAND_ICONS_QUERY,
   //   {
@@ -62,6 +70,7 @@ export async function loader({params, context}) {
     heroSlider,
     fourMainSection,
     pursueSection,
+    newsBannerSection,
     analytics: {
       pageType: AnalyticsPageType.home,
     },
@@ -72,29 +81,30 @@ export default function Homepage() {
   const {
     heroSlider,
     fourMainSection,
-    pursueSection
+    pursueSection,
+    newsBannerSection
   } = useLoaderData();
   const [root] = useMatches();
 
   const [newsSliderData, setNewsSliderData] = useState();
   //const gruppeMenu = root?.data?.layout?.headerMenu?.items?.find((item) => item.title == QUICK_LINK_MENU_TITLE);
 
-  const loadNewSlider = async () => {
-    const newsResponse = await fetch(`${AICO_API_URL}news?page[number]=1&page[size]=4&sort=-publishDate&filter[isActive]=1`, {
-      method: 'GET',
-      headers: {
-        'Authorization': `Bearer ${AICO_API_TOKEN}`,
-      }
-    });
+  // const loadNewSlider = async () => {
+  //   const newsResponse = await fetch(`${AICO_API_URL}news?page[number]=1&page[size]=4&sort=-publishDate&filter[isActive]=1`, {
+  //     method: 'GET',
+  //     headers: {
+  //       'Authorization': `Bearer ${AICO_API_TOKEN}`,
+  //     }
+  //   });
 
-    const newsData = await newsResponse.json();
-    setNewsSliderData(newsData);
-  }
+  //   const newsData = await newsResponse.json();
+  //   setNewsSliderData(newsData);
+  // }
 
 
-  useEffect(() => {
-      loadNewSlider();
-  },[]);
+  // useEffect(() => {
+  //     loadNewSlider();
+  // },[]);
   // TODO: skeletons vs placeholders
   const skeletons = getHeroPlaceholder([{}, {}, {}]);
 
@@ -123,7 +133,18 @@ export default function Homepage() {
 
       {/* <BrandGrid /> */}
 
-      {newsSliderData?.data && <NewsSlider news={newsSliderData?.data} />}
+      {/* {newsSliderData?.data && <NewsSlider news={newsSliderData?.data} />} */}
+
+      {newsBannerSection && (
+        <Suspense>
+          <Await resolve={newsBannerSection}>
+            {({data}) => {
+              if (!data) return <></>;
+              return <NewsBanner data={data} />;
+            }}
+          </Await>
+        </Suspense>
+      )}
       
       {pursueSection && (
         <Suspense>
@@ -437,6 +458,29 @@ ${MEDIA_FRAGMENT}
       }
       section_4_button_text : field(key: "section_4_button_text") {
         value
+      }
+    }
+  }
+`;
+
+const HOMEPAGE_NEWS_BANNER_QUERY = `#graphql
+${MEDIA_FRAGMENT}
+  query homeStyleGuide($metaObjectId: ID!, $country: CountryCode, $language: LanguageCode)
+  @inContext(country: $country, language: $language) {
+    data : metaobject(id : $metaObjectId) {
+      handle
+      id
+      type
+      title : field(key: "title") {
+        value
+      }
+      sub_title : field(key: "sub_title") {
+        value
+      }
+      banner_image : field(key: "banner_image") {
+        reference {
+          ...Media
+        }
       }
     }
   }
