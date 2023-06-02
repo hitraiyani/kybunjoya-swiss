@@ -96,9 +96,9 @@ export default function schweizerSchuhpropktion() {
               className="h-full overflow-visible flex flex-col"
             >
               {sliderImages.map((image, index) => (
-                <SwiperSlide key={index}>
+                <SwiperSlide key={index} className='pb-[100%] relative overflow-hidden'>
                   <img
-                    className="h-full w-full object-cover block"
+                    className="h-full w-full object-cover block absolute inset-0"
                     src={image}
                     alt=""
                   />

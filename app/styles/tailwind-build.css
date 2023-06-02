@@ -1162,6 +1162,9 @@ video {
 .min-h-\[25rem\] {
   min-height: 25rem;
 }
+.min-h-\[270px\] {
+  min-height: 270px;
+}
 .min-h-\[300px\] {
   min-height: 300px;
 }
@@ -1177,6 +1180,9 @@ video {
 .min-h-\[450px\] {
   min-height: 450px;
 }
+.min-h-\[86px\] {
+  min-height: 86px;
+}
 .min-h-\[86vh\] {
   min-height: 86vh;
 }
@@ -1185,14 +1191,6 @@ video {
 }
 .min-h-screen {
   min-height: 100vh;
-}
-.min-h-\[320px\] {
-  min-height: 320px;
-.min-h-\[86px\] {
-  min-height: 86px;
-}
-.min-h-\[270px\] {
-  min-height: 270px;
 }
 .\!w-\[180px\] {
   width: 180px !important;
@@ -2050,6 +2048,10 @@ video {
   -o-object-position: center;
      object-position: center;
 }
+.object-left-top {
+  -o-object-position: left top;
+     object-position: left top;
+}
 .object-right {
   -o-object-position: right;
      object-position: right;
@@ -2057,10 +2059,6 @@ video {
 .object-top {
   -o-object-position: top;
      object-position: top;
-}
-.object-left-top {
-  -o-object-position: left top;
-     object-position: left top;
 }
 .p-0 {
   padding: 0px;
