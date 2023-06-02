@@ -586,6 +586,8 @@ p:last-child {
   margin: 0 auto;
   height: calc(100% - 10px);
   margin-top: 5px;
+  position: absolute;
+  inset: 0;
 }
 .about-sec .img-col .swiper-pagination {
   position: relative;
