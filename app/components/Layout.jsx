@@ -649,7 +649,7 @@ function Footer({menu, main_menu}) {
                   { main_menu.items && main_menu.items.map((item,index) => {
                       return (
                         <div key={index}>
-                            <span  className="nav-item relative">
+                            <span  className="nav-item relative block">
 
                               <h2 className="mb-[20px] lg:text-[26px] md:text-[20px] font-bold capitalize text-[#00795C] pr-[30px] md:pr-0">
                                     <Link
