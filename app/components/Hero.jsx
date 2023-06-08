@@ -14,10 +14,27 @@ export function Hero({hereMetaObj}) {
         <div className="prodcut-item">
           <div className="relative flex w-full h-[50vh] sm:h-[60vh] md:h-[82vh] flex-co image-container min-h-[450px] overflow-hidden">
             {/* <iframe className="object-cover object-center active  w-[100vw] h-[86.25vw] min-h-[86vh] min-w-fit absolute -translate-y-2/4 left-0 top-2/4 pointer-events-none" src={hereMetaObj?.data?.hero_video_url?.value} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe> */}
-            <video className="object-cover object-center active w-full h-full absolute -translate-y-2/4 left-0 top-2/4 pointer-events-none"  width={320} height={240} autoPlay loop muted>
-              <source src="https://cdn.shopify.com/videos/c/o/v/3f2ec8489e1c4a64be66ec91b1a6f17c.mp4" type="video/mp4" />
-              <source src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/kybunJoya_Webseite-Header_HD1.ogg?v=1686198997" type="video/ogg" />
-              <img src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/blog-1.jpg?v=1683892321" title="Your browser does not support the <video> tag" />
+            <video
+              className="object-cover object-center active w-full h-full absolute -translate-y-2/4 left-0 top-2/4 pointer-events-none"
+              width="{320}"
+              height="{240}"
+              autoPlay
+              loop
+              muted
+              playsInline
+            >
+              <source
+                src="https://cdn.shopify.com/videos/c/o/v/3f2ec8489e1c4a64be66ec91b1a6f17c.mp4"
+                type="video/mp4"
+              />
+              <source
+                src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/kybunJoya_Webseite-Header_HD1.ogg?v=1686198997"
+                type="video/ogg"
+              />
+              <img
+                src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/blog-1.jpg?v=1683892321"
+                title="Your browser does not support the <video> tag"
+              />
             </video>
             {/* <img
               className="object-cover object-center w-full active"
