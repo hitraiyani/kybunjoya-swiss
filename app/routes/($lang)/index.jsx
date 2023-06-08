@@ -297,6 +297,15 @@ ${MEDIA_FRAGMENT}
       hero_video_url : field(key: "hero_video_url") {
         value
       }
+      video_tag_mp_4_url : field(key: "video_tag_mp_4_url") {
+        value
+      }
+      video_tag_ogg_url : field(key: "video_tag_ogg_url") {
+        value
+      }
+      video_tag_image_url : field(key: "video_tag_image_url") {
+        value
+      }
       sub_title_image : field(key: "sub_title_image") {
         reference {
           ...Media

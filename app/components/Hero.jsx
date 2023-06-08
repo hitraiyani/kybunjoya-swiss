@@ -24,15 +24,15 @@ export function Hero({hereMetaObj}) {
               playsInline
             >
               <source
-                src="https://cdn.shopify.com/videos/c/o/v/3f2ec8489e1c4a64be66ec91b1a6f17c.mp4"
+                src={hereMetaObj?.data?.video_tag_mp_4_url?.value}
                 type="video/mp4"
               />
               <source
-                src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/kybunJoya_Webseite-Header_HD1.ogg?v=1686198997"
+                src={hereMetaObj?.data?.video_tag_ogg_url?.value}
                 type="video/ogg"
               />
               <img
-                src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/blog-1.jpg?v=1683892321"
+                src={hereMetaObj?.data?.video_tag_image_url?.value}
                 title="Your browser does not support the <video> tag"
               />
             </video>
