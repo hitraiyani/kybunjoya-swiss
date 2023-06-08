@@ -297,6 +297,9 @@ p:last-child {
 .footer-menu-items > div:last-child .nav-item .toggle-menu-icon {
   color: #595959;
 }
+.footer-menu-items > div:last-child .nav-item > h2{
+  margin-bottom: 10px;
+}
 /* .site-footer {
   background-color: #3a3e3f;
 } */

@@ -298,7 +298,7 @@ function MenuMobileNav({menu, onClose}) {
                 <Link
                   to={item.to}
                   target={item.target}
-                  className={`${item.to == '/' ? 'pointer-events-none' : ''} kybunjoya-menu-hover title text-[#00795C] text-[26px] mb-[12px] outline-none ${
+                  className={`${item.to == '/pages/uber-uns' ? 'pointer-events-none' : ''} kybunjoya-menu-hover title text-[#00795C] text-[26px] mb-[12px] outline-none ${
                     item.to == pathname ? 'is-active' : ''
                   } `}
                   data-image={item.title}
@@ -595,8 +595,8 @@ function Footer({menu, main_menu}) {
           <ScrollToTop />
           <div className="flex justify-between gap-4">
             <div className="w-full mx-auto">
-              <div className="pr-0 xl:pr-16 xl:flex md:justify-between">
-                <div className="pr-0 mb-6 md:mb-0 xl:pr-5">
+              <div className="xl:flex md:justify-between gap-x-[15px]">
+                <div className="pr-0 mb-6 md:mb-0 xl:pr-5 flex-1">
                   <div className="flex flex-wrap items-center ">
                     <h3 className="text-[#00795C] w-full font-bold lg:text-[42px] text-[30px] mb-3">
                       Updates in deine Inbox
@@ -645,17 +645,17 @@ function Footer({menu, main_menu}) {
                     </p>
                   </div>
                 </div>
-                <div className="grid grid-cols-2 gap-x-[10px] md:gap-x-[80px] md:block md:columns-3 footer-menu-items">
+                <div className="grid grid-cols-2 gap-x-[10px] md:gap-x-[20px] lg:gap-x-[40px] xl:gap-x-[60px] 2xl:gap-x-[80px] md:block md:columns-3 footer-menu-items xl:flex-1 2xl:flex-[1]">
                   { main_menu.items && main_menu.items.map((item,index) => {
                       return (
                         <div key={index}>
                             <span  className="nav-item relative block">
 
-                              <h2 className="mb-[20px] lg:text-[26px] md:text-[20px] font-bold capitalize text-[#00795C] pr-[30px] md:pr-0">
+                              <h2 className="mb-[20px] md:mb-[30px] lg:text-[26px] md:text-[20px] font-bold text-[#00795C] pr-[30px] md:pr-0">
                                     <Link
                                       to={item.to}
                                       target={item.target}
-                                      className={ `${item.to == '/' ? 'pointer-events-none' : ''} kybunjoya-menu-hover title text-[#00795C] text-[18px] md:text-[20px] lg:text-[26px] mb-[12px] outline-none`}
+                                      className={ `${item.to == '/pages/uber-uns' ? 'pointer-events-none' : ''} kybunjoya-menu-hover title text-[#00795C] text-[18px] md:text-[20px] lg:text-[26px] mb-[12px] outline-none`}
                                       data-image={item.title}
                                     >
                                       {item.title}
@@ -771,7 +771,7 @@ function Footer({menu, main_menu}) {
                       </svg>
                     </a>
                   </div>
-                <div className="flex mb-10">
+                <div className="flex mb-10 !hidden">
                   <p className="font-normal text-base text-[#595959] flex gap-4 items-center">
                     <span>
                       <img

@@ -74,7 +74,7 @@ export default function Heritage() {
     <>
       <Breadcrumb crumbs={getBreadCrumbs(null, 'heritage')} />
       <div className="container">
-        <section className="video-banner-with-title pb-[20px] md:pb-[30px] lg:pb-[40px] xl:pb-[50px]">
+        <section className="video-banner-with-title pb-[40px] md:pb-[60px] lg:pb-[80px] xl:pb-[100px]">
           <h1 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold">
             {heritageReference?.time_line_1_title?.value}
           </h1>
@@ -89,7 +89,7 @@ export default function Heritage() {
             <div className="text-white bg-[#00795C] px-[30px] py-[5px] tracking-[-0.97152px] leading-none text-[16px] sm:text-[20px] md:text-[24px] lg:text-[28px] xl:text-[35px] flex items-center justify-center rounded-[110px] font-medium w-fit date">
               {heritageReference?.time_line_1_year?.value}
             </div>
-            <div className="desc text-[16px] sm:text-[20px] md:text-[24px] lg:text-[28px] xl:text-[35px] text-black tracking-[-0.400697px] font-normal leading-[1.4] max-w-[1206px]"
+            <div className="desc text-[16px] lg:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] max-w-[1206px]"
               dangerouslySetInnerHTML={{
                 __html: toHTML(
                   heritageReference
@@ -100,7 +100,7 @@ export default function Heritage() {
             </div>
           </div>
         </section>
-        <section className="video-banner-with-title py-[20px] md:py-[30px] lg:py-[40px] xl:py-[50px]">
+        <section className="video-banner-with-title pb-[40px] md:pb-[60px] lg:pb-[80px] xl:pb-[100px]">
           <h2 className="text-[#00795C] text-[30px] lg:text-[35px] xl:text-[40px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold">
             {heritageReference?.time_line_2_title?.value}
           </h2>
@@ -117,7 +117,7 @@ export default function Heritage() {
             <div className="text-white bg-[#00795C] px-[30px] py-[5px] tracking-[-0.97152px] leading-none text-[16px] sm:text-[20px] md:text-[24px] lg:text-[28px] xl:text-[35px] flex items-center justify-center rounded-[110px] font-medium w-fit date">
             {heritageReference?.time_line_2_year?.value}
             </div>
-            <div className="desc text-[16px] sm:text-[20px] md:text-[24px] lg:text-[28px] xl:text-[35px] text-black tracking-[-0.400697px] font-normal leading-[1.4] max-w-[1206px]"
+            <div className="desc text-[16px] lg:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] max-w-[1206px]"
               dangerouslySetInnerHTML={{
                 __html: toHTML(
                   heritageReference
@@ -128,7 +128,7 @@ export default function Heritage() {
             </div>
           </div>
         </section>
-        <section className="video-banner-with-title py-[20px] md:py-[30px] lg:py-[40px] xl:py-[50px]">
+        <section className="video-banner-with-title pb-[40px] md:pb-[60px] lg:pb-[80px] xl:pb-[100px]">
           <h2 className="text-[#00795C] text-[30px] lg:text-[35px] xl:text-[40px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold">
             {heritageReference?.time_line_3_title?.value}
           </h2>
@@ -143,7 +143,7 @@ export default function Heritage() {
             <div className="text-white bg-[#00795C] px-[30px] py-[5px] tracking-[-0.97152px] leading-none text-[16px] sm:text-[20px] md:text-[24px] lg:text-[28px] xl:text-[35px] flex items-center justify-center rounded-[110px] font-medium w-fit date">
               {heritageReference?.time_line_3_year?.value}
             </div>
-            <div className="desc text-[16px] sm:text-[20px] md:text-[24px] lg:text-[28px] xl:text-[35px] text-black tracking-[-0.400697px] font-normal leading-[1.4] max-w-[1206px]"
+            <div className="desc text-[16px] lg:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] max-w-[1206px]"
               dangerouslySetInnerHTML={{
                 __html: toHTML(
                   heritageReference
@@ -154,7 +154,7 @@ export default function Heritage() {
             </div>
           </div>
         </section>
-        <section className="timeline-sec py-[20px] md:py-[30px] lg:py-[40px] xl:py-[50px] hidden">
+        <section className="timeline-sec pb-[40px] md:pb-[60px] lg:pb-[80px] xl:pb-[100px] hidden">
           <div className="title-wrap">
             <h2 className="text-[#00795C] text-[30px] lg:text-[35px] xl:text-[40px] mb-[20px] md:mb-[30px] xl:mb-[42px] font-bold text-center">
               {page?.about_us?.reference?.time_line_section_title?.value}

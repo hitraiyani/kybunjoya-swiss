@@ -53,8 +53,12 @@ export default function kybunJoyaTherapie() {
           <h1 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold">
             {kybunJoyaTherapie?.head_title?.value}
           </h1>
-          <div className='product-list-hero-img relative overflow-hidden pb-[35%]'>
-            <img className='absolute inset-0 w-full h-full object-cover' src={kybunJoyaTherapie?.hero_image?.reference?.image?.url} alt="" />
+          <div className="product-list-hero-img relative overflow-hidden pb-[35%]">
+            <img
+              className="absolute inset-0 w-full h-full object-cover"
+              src={kybunJoyaTherapie?.hero_image?.reference?.image?.url}
+              alt=""
+            />
           </div>
         </div>
       </div>
@@ -65,29 +69,37 @@ export default function kybunJoyaTherapie() {
             __html: toHTML(kybunJoyaTherapie?.head_desc?.value),
           }}
         ></div>
-        {faqArr.map((item, index) => {
-          return (
-            <ExpandingCardStyle3
-              key={index}
-              content={item.description}
-              title={item.title}
-              image={item.image}
-            />
-          );
-        })}
+        <div className="last:border-b border-[#595959]">
+          {faqArr.map((item, index) => {
+            return (
+              <ExpandingCardStyle3
+                key={index}
+                content={item.description}
+                title={item.title}
+                image={item.image}
+              />
+            );
+          })}
+        </div>
       </div>
-      <div className='about-sec container py-[40px] md:py-[60px] lg:py-[80px] xl:py-[100px]'>
-        <div className='flex flex-col lg:flex-row gap-[20px] lg:gap-[30px]'>
-          <div className='img-wrap lg:w-[50%] overflow-hidden w-full'>
-            <img className='w-full h-auto' src={kybunJoyaTherapie?.about_section_image?.reference?.image?.url} alt="" />
+      <div className="about-sec container py-[40px] md:py-[60px] lg:py-[80px] xl:py-[100px]">
+        <div className="flex flex-col lg:flex-row gap-[20px] lg:gap-[30px]">
+          <div className="img-wrap lg:w-[50%] overflow-hidden w-full">
+            <img
+              className="w-full h-auto"
+              src={
+                kybunJoyaTherapie?.about_section_image?.reference?.image?.url
+              }
+              alt=""
+            />
           </div>
-          <div className='content-col w-full lg:w-[50%] flex flex-col'>
-            <div className='desc text-[16px] sm:text-[20px] md:text-[24px] lg:text-[28px] xl:text-[35px] text-black tracking-[-0.400697px] font-normal leading-[1.4]'
+          <div className="content-col w-full lg:w-[50%] flex flex-col">
+            <div
+              className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
               dangerouslySetInnerHTML={{
                 __html: toHTML(kybunJoyaTherapie?.about_section_desc?.value),
               }}
-            >
-            </div>
+            ></div>
           </div>
         </div>
       </div>
