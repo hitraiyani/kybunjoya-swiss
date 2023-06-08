@@ -11,6 +11,7 @@ export function NewsBanner({data}) {
             id="defaultActive"
             src={data?.banner_image?.reference?.image?.url}
           ></img>
+          <div className="absolute inset-x-0 bottom-0 w-full img-overlay h-full md:h-2/4"></div>
           <div className="absolute slider-content bottom-[15px] md:bottom-[33px] left-0 right-0 w-full px-[15px] md:px-[33px] lg:px-[46px]">
             <h4 className="text-white desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[25px] font-bold leading-[1.2] mb-[10px]">
               {data?.title?.value}
