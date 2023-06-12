@@ -63,9 +63,9 @@ export default function ratgeberSeiteFersensporn() {
   const aicoTestimonialsData = aicoProductData?.testimonials_data?.value ? JSON.parse(aicoProductData.testimonials_data.value) : [];
 
   let aicoCotentBuilderHtml = '';
-  if (aicoContentBuilders.length) {
-    aicoCotentBuilderHtml = aicoContentBuilders[0]['values'][0]['contentBuilder']['value'];
-  }
+  // if (aicoContentBuilders.length) {
+  //   aicoCotentBuilderHtml = aicoContentBuilders[0]['values'][0]['contentBuilder']['value'];
+  // }
 
 
   const dkj_videourl_de_ch = getAicoMetaByKeyName(
