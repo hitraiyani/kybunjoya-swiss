@@ -1,5 +1,5 @@
 import React from 'react';
-import {ArrowRight2, ExpandingCardStyle3, Breadcrumb} from '~/components';
+import {ArrowRight2, ExpandingCardStyle3, Breadcrumb, Link} from '~/components';
 import {json} from '@shopify/remix-oxygen';
 import {useLoaderData} from '@remix-run/react';
 import {toHTML, getBreadCrumbs} from '~/lib/utils';
@@ -45,6 +45,8 @@ export default function kybunJoyaTherapie() {
     ? JSON.parse(kybunJoyaTherapie?.faq?.value)
     : [];
 
+  console.log("kybunJoyaTherapie", kybunJoyaTherapie);
+
   return (
     <>
       <Breadcrumb crumbs={getBreadCrumbs('kybunjoyatherapie', 'uberuns')} />
@@ -87,21 +89,19 @@ export default function kybunJoyaTherapie() {
           <div className="img-wrap lg:w-[50%] overflow-hidden w-full">
             <img
               className="w-full h-auto"
-              src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Screenshot_2023-05-30_at_2.42_1.png?v=1685527417"
+              src={kybunJoyaTherapie?.holistic_section_image?.reference?.image?.url}
               alt=""
             />
           </div>
           <div className="content-col w-full lg:w-[50%] flex flex-col justify-center">
             <h2 className="mb-[15px] text-black text-[24px] md:text-[30px] lg:text-[35px] leading-[1.1] tracking-[-0.97152px] font-medium">
-              Ganzheitliche Therapie erleben
+              {kybunJoyaTherapie.holistic_section_title.value}
             </h2>
-            <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mb-[20px]">
-              <p>
-                Neben den elastisch-federnden Schuhen zum Gehen und
-                trampolin-ähnlichen Matten zum Stehen, besteht die kybun Joya
-                Therapie zudem aus einem Fundus von speziellen Übungen und
-                Methoden zum manuellen Lösen von Faszien-Verklebungen.  
-              </p>
+            <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mb-[20px]"
+              dangerouslySetInnerHTML={{
+                __html: toHTML(kybunJoyaTherapie?.holistic_section_desc?.value),
+              }}
+            >
             </div>
           </div>
         </div>
@@ -119,7 +119,7 @@ export default function kybunJoyaTherapie() {
           </div>
           <div className="content-col w-full lg:w-[50%] flex flex-col justify-center">
             <h2 className="mb-[15px] text-black text-[24px] md:text-[30px] lg:text-[35px] leading-[1.1] tracking-[-0.97152px] font-medium">
-              Filialen in Ihrer Nähe
+              {kybunJoyaTherapie?.about_section_title?.value}
             </h2>
             <div
               className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mb-[20px]"
@@ -128,13 +128,14 @@ export default function kybunJoyaTherapie() {
               }}
             ></div>
             <div className="btn-wrap">
-              <a
+              <Link
                 href="#"
+                to={kybunJoyaTherapie?.about_section_redirect_url?.value}
                 className="inline-block rounded-[100px] bg-[#00795c] text-white
                  text-center px-[35px] py-[15px] hover:bg-black hover:text-white text-[18px] max-w-fit"
               >
-                Filiale finden
-              </a>
+                {kybunJoyaTherapie?.about_section_redirect_text?.value}
+              </Link>
             </div>
           </div>
         </div>
@@ -163,6 +164,17 @@ ${MEDIA_FRAGMENT}
             faq : field(key: "faq") {
               value
             }
+            holistic_section_title : field(key: "holistic_section_title") {
+              value
+            }
+            holistic_section_desc : field(key: "holistic_section_desc") {
+              value
+            }
+            holistic_section_image : field(key: "holistic_section_image") {
+              reference {
+                ...Media
+              }
+            }
             hero_image : field(key: "hero_image") {
               reference {
                 ...Media
@@ -174,6 +186,15 @@ ${MEDIA_FRAGMENT}
               }
             }
             about_section_desc : field(key: "about_section_desc") {
+              value
+            }
+            about_section_title : field(key: "about_section_title") {
+              value
+            }
+            about_section_redirect_text : field(key: "about_section_redirect_text") {
+              value
+            }
+            about_section_redirect_url : field(key: "about_section_redirect_url") {
               value
             }
           }
