@@ -408,8 +408,8 @@ export default function ratgeberseite() {
                           </div>
                           <Link
                             to={item.redirect_button_link}
-                            className="inline-block rounded-[100px] bg-black text-white
-                          text-center px-[35px] py-[15px] hover:bg-[#00795c] hover:text-white text-[18px] max-w-fit"
+                            className="inline-block rounded-[100px] bg-[#00795c] text-white
+                          text-center px-[35px] py-[15px] hover:bg-black hover:text-white text-[18px] max-w-fit"
                           >
                             {item.redirect_button_text}
                           </Link>

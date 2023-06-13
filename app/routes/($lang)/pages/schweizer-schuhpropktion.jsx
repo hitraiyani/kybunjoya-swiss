@@ -144,8 +144,8 @@ export default function schweizerSchuhpropktion() {
               to={
                 page?.schweizer_schuhpropktion?.reference?.book_now_link?.value
               }
-              className="inline-block rounded-[100px] bg-black text-white
-                 text-center px-[35px] py-[15px] hover:bg-[#00795c] hover:text-white text-[18px] max-w-fit"
+              className="inline-block rounded-[100px] bg-[#00795c] text-white
+                 text-center px-[35px] py-[15px] hover:bg-black hover:text-white text-[18px] max-w-fit"
             >
               Kandahar entdecken
             </Link>
@@ -197,8 +197,8 @@ export default function schweizerSchuhpropktion() {
                   page?.schweizer_schuhpropktion?.reference?.video_section_button_redirect
                     ?.value
                 }
-                className="inline-block rounded-[100px] bg-black text-white
-                 text-center px-[35px] py-[15px] hover:bg-[#00795c] hover:text-white text-[18px] max-w-fit"
+                className="inline-block rounded-[100px] bg-[#00795c] text-white
+                 text-center px-[35px] py-[15px] hover:bg-black hover:text-white text-[18px] max-w-fit"
               >
                 {page?.schweizer_schuhpropktion?.reference?.video_section_button_text
                     ?.value}

@@ -89,8 +89,8 @@ export default function unternehmen() {
             </h4>
           </div>
           <div className='btn-wrap'>
-            <Link to={unternehmenReference?.quote_section_button_redirect?.value} className='inline-block rounded-[100px] bg-black text-white
-                 text-center px-[35px] py-[15px] hover:bg-[#00795c] hover:text-white text-[18px] max-w-fit' href="#">
+            <Link to={unternehmenReference?.quote_section_button_redirect?.value} className='inline-block rounded-[100px] bg-[#00795c] text-white
+                 text-center px-[35px] py-[15px] hover:bg-black hover:text-white text-[18px] max-w-fit' href="#">
                     {unternehmenReference?.quote_section_button_text?.value}
             </Link>
           </div>

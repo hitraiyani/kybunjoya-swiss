@@ -55,7 +55,7 @@ export function ProductBrandSection({data}) {
                       <Link
                         href="#"
                         to={data?.brand_1_sub_button_redirect?.value}
-                        className='"md:px-[35px] px-[30px] md:py-[18px] py-[15px] bg-black text-[16px] md:text-[18px] font-medium text-white rounded-[100px] w-fit hover:bg-[#00795c] hover:!text-white text-center'
+                        className='md:px-[35px] px-[30px] md:py-[18px] py-[15px] bg-[#00795c] text-[16px] md:text-[18px] font-medium text-white rounded-[100px] w-fit hover:bg-black hover:!text-white text-center'
                       >
                         { data?.brand_1_sub_button_text?.value }
                       </Link>
@@ -112,7 +112,7 @@ export function ProductBrandSection({data}) {
                       <Link
                         href="#"
                         to={data?.brand_2_sub_button_redirect?.value}
-                        className='"md:px-[35px] px-[30px] md:py-[18px] py-[15px] bg-black text-[16px] md:text-[18px] font-medium text-white rounded-[100px] w-fit hover:bg-[#00795c] hover:!text-white text-center'
+                        className='md:px-[35px] px-[30px] md:py-[18px] py-[15px] bg-[#00795c] text-[16px] md:text-[18px] font-medium text-white rounded-[100px] w-fit hover:bg-black hover:!text-white text-center'
                       >
                         { data?.brand_2_sub_button_text?.value }
                       </Link>
@@ -169,7 +169,7 @@ export function ProductBrandSection({data}) {
                       <Link
                         href="#"
                         to={data?.brand_3_sub_button_redirect?.value}
-                        className='"md:px-[35px] px-[30px] md:py-[18px] py-[15px] bg-black text-[16px] md:text-[18px] font-medium text-white rounded-[100px] w-fit hover:bg-[#00795c] hover:!text-white text-center'
+                        className='md:px-[35px] px-[30px] md:py-[18px] py-[15px] bg-[#00795c] text-[16px] md:text-[18px] font-medium text-white rounded-[100px] w-fit hover:bg-black hover:!text-white text-center'
                       >
                         { data?.brand_3_sub_button_text?.value }
                       </Link>
@@ -226,7 +226,7 @@ export function ProductBrandSection({data}) {
                       <Link
                         href="#"
                         to={data?.brand_5_sub_button_redirect?.value}
-                        className='"md:px-[35px] px-[30px] md:py-[18px] py-[15px] bg-black text-[16px] md:text-[18px] font-medium text-white rounded-[100px] w-fit hover:bg-[#00795c] hover:!text-white text-center'
+                        className='md:px-[35px] px-[30px] md:py-[18px] py-[15px] bg-[#00795c] text-[16px] md:text-[18px] font-medium text-white rounded-[100px] w-fit hover:bg-black hover:!text-white text-center'
                       >
                         { data?.brand_5_sub_button_text?.value }
                       </Link>
@@ -283,7 +283,7 @@ export function ProductBrandSection({data}) {
                       <Link
                         href="#"
                         to={data?.brand_4_sub_button_redirect?.value}
-                        className='"md:px-[35px] px-[30px] md:py-[18px] py-[15px] bg-black text-[16px] md:text-[18px] font-medium text-white rounded-[100px] w-fit hover:bg-[#00795c] hover:!text-white text-center'
+                        className='md:px-[35px] px-[30px] md:py-[18px] py-[15px] bg-[#00795c] text-[16px] md:text-[18px] font-medium text-white rounded-[100px] w-fit hover:bg-black hover:!text-white text-center'
                       >
                         { data?.brand_4_sub_button_text?.value }
                       </Link>
@@ -340,7 +340,7 @@ export function ProductBrandSection({data}) {
                       <Link
                         href="#"
                         to={data?.brand_6_sub_button_redirect?.value}
-                        className='"md:px-[35px] px-[30px] md:py-[18px] py-[15px] bg-black text-[16px] md:text-[18px] font-medium text-white rounded-[100px] w-fit hover:bg-[#00795c] hover:!text-white text-center'
+                        className='md:px-[35px] px-[30px] md:py-[18px] py-[15px] bg-[#00795c] text-[16px] md:text-[18px] font-medium text-white rounded-[100px] w-fit hover:bg-black hover:!text-white text-center'
                       >
                         { data?.brand_6_sub_button_text?.value }
                       </Link>
