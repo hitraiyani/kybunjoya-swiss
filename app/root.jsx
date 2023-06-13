@@ -234,9 +234,92 @@ async function getLayoutData({storefront}) {
           - /collections/all -> /products
       */
   const customPrefixes = {BLOG: '', CATALOG: 'products'};
-
+  
+  const tempHeaderMenu = {
+    "id": "gid://shopify/Menu/231974633793",
+    "items": [
+      {
+        "id": "gid://shopify/MenuItem/544372031809",
+        "resourceId": "gid://shopify/Page/116347437377",
+        "tags": [],
+        "title": "Produkte",
+        "type": "PAGE",
+        "url": "https://kybunjoya-swiss.myshopify.com/pages/products",
+        "items": []
+      },
+      {
+        "id": "gid://shopify/MenuItem/544373014849",
+        "resourceId": "gid://shopify/Page/119344857409",
+        "tags": [],
+        "title": "Filialen",
+        "type": "PAGE",
+        "url": "https://kybunjoya-swiss.myshopify.com/pages/shopfinder",
+        "items": []
+      },
+      {
+        "id": "gid://shopify/MenuItem/544372064577",
+        "resourceId": "gid://shopify/Page/116722336065",
+        "tags": [],
+        "title": "Dr. kybun Joya",
+        "type": "PAGE",
+        "url": "https://kybunjoya-swiss.myshopify.com/pages/ratgeber-detail-page",
+        "items": []
+      },
+      {
+        "id": "gid://shopify/MenuItem/544372228417",
+        "resourceId": "gid://shopify/Page/120569528641",
+        "tags": [],
+        "title": "kybun Joya Story",
+        "type": "PAGE",
+        "url": "https://kybunjoya-swiss.myshopify.com/pages/heritage",
+        "items": []
+      },
+      {
+        "id": "gid://shopify/MenuItem/544372687169",
+        "resourceId": "gid://shopify/Page/120567333185",
+        "tags": [],
+        "title": "Über uns",
+        "type": "PAGE",
+        "url": "https://kybunjoya-swiss.myshopify.com/pages/uber-uns",
+        "items": [
+          {
+            "id": "gid://shopify/MenuItem/544372719937",
+            "resourceId": "gid://shopify/Page/121076089153",
+            "tags": [],
+            "title": "Unternehmen",
+            "type": "PAGE",
+            "url": "https://kybunjoya-swiss.myshopify.com/pages/unternehmen"
+          },
+          {
+            "id": "gid://shopify/MenuItem/544373047617",
+            "resourceId": "gid://shopify/Page/115421249857",
+            "tags": [],
+            "title": "Schweizer Produktion",
+            "type": "PAGE",
+            "url": "https://kybunjoya-swiss.myshopify.com/pages/schweizer-schuhpropktion"
+          },
+          {
+            "id": "gid://shopify/MenuItem/544373080385",
+            "resourceId": "gid://shopify/Page/120583618881",
+            "tags": [],
+            "title": "kybun Joya Therapie",
+            "type": "PAGE",
+            "url": "https://kybunjoya-swiss.myshopify.com/pages/kybun-joya-therapie"
+          },
+          {
+            "id": "gid://shopify/MenuItem/544373113153",
+            "resourceId": "gid://shopify/Page/120591647041",
+            "tags": [],
+            "title": "Karriere",
+            "type": "PAGE",
+            "url": "https://kybunjoya-swiss.myshopify.com/pages/karriere"
+          }
+        ]
+      }
+    ]
+  }
   const headerMenu = data?.headerMenu
-    ? parseMenu(data.headerMenu, customPrefixes)
+    ? parseMenu(tempHeaderMenu, customPrefixes)
     : undefined;
 
   const footerMenu = data?.footerMenu
