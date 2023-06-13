@@ -691,6 +691,9 @@ video {
 .top-\[calc\(50\%_-_20px\)\] {
   top: calc(50% - 20px);
 }
+.left-\[85px\] {
+  left: 85px;
+}
 .z-30 {
   z-index: 30;
 }
@@ -2346,8 +2349,8 @@ video {
 .pb-\[60\%\] {
   padding-bottom: 60%;
 }
-.pb-\[60px\] {
-  padding-bottom: 60px;
+.pb-\[70px\] {
+  padding-bottom: 70px;
 }
 .pb-px {
   padding-bottom: 1px;
@@ -2435,9 +2438,6 @@ video {
 }
 .pt-\[64px\] {
   padding-top: 64px;
-}
-.pb-\[70px\] {
-  padding-bottom: 70px;
 }
 .text-left {
   text-align: left;

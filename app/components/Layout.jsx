@@ -665,11 +665,11 @@ function Footer({menu, main_menu}) {
                                   <>
                                     <div
                                       onClick={footerMenuToggle}
-                                      className="toggle-menu-icon text-[#00795C] top-[-3px] right-0 w-[40px] h-[30px] flex items-center justify-end md:hidden cursor-pointer relative"
+                                      className="toggle-menu-icon text-[#00795C] top-[-3px] right-0 h-[30px] flex items-center md:hidden cursor-pointer absolute w-full justify-start"
                                     >
                                       <IconArrowBottom
                                         className={
-                                          'w-[30px] h-[30px] transition-all duration-500'
+                                          'w-[30px] h-[30px] transition-all duration-500 relative left-[85px]'
                                         }
                                       />
                                     </div>
