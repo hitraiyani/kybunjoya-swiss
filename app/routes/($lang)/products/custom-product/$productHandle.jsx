@@ -726,21 +726,20 @@ export default function ratgeberSeiteFersensporn() {
                 </div>
               </div>
               <div className="col-right w-full lg:w-[45%]">
-                <h2 className='text-black text-[24px] md:text-[30px] lg:text-[35px] leading-[1.1] tracking-[-0.97152px] font-medium  mb-[25px] text-center lg:text-left'>Geschäfte in deiner Nähe </h2>
-                <div className='btn-wrap text-center lg:text-left'>
-                  <a href="#" className='inline-block rounded-[100px] bg-[#00795c] text-white
-                 text-center px-[15px] lg:px-[35px] py-[10px] lg:py-[20px] hover:bg-black hover:text-white text-[12px] md:text-[18px]  max-w-fit'>Filiale finden</a>
+                <h2 className='text-black text-[24px] md:text-[30px] lg:text-[35px] leading-[1.1] tracking-[-0.97152px] font-medium  mb-[25px] text-center md:text-left'>Geschäfte in deiner Nähe </h2>
+                <div className='btn-wrap text-center md:text-left'>
+                  <a href="#" className='md:px-[35px] px-[20px] md:py-[18px] py-[15px] bg-[#00795c] text-[16px] md:text-[18px] font-medium text-white rounded-[100px] w-fit hover:bg-black hover:!text-white text-center block mx-auto md:mx-0'>Filiale finden</a>
                 </div>
               </div>
             </div>
           </div>
-          <div className="btn-wrap mt-[40px] md:mt-[60px] lg:mt-[80px] flex gap-[5px] lg:gap-[20px] justify-center">
+          <div className="btn-wrap mt-[40px] md:mt-[60px] lg:mt-[80px] flex gap-[20px] justify-center flex-col items-center">
             <Link
               to={
                 ratgeber_seite_fersensporn_mobile
                   ?.kybun_schuhe_testen_section_button_2_redirect?.value
               }
-              className="pro-btn text-[12px] md:text-[20px] lg:text-[21px] leading-none text-white tracking-[-0.400697px] font-normal flex gap-[5px] justify-center px-[5px] lg:px-[35px] py-[10px] lg:py-[20px] bg-[#00795c] rounded-[100px] w-full lg:w-fit text-center items-center transition-all duration-700 hover:bg-black mt-[10px] hover:text-white"
+              className="md:px-[35px] px-[20px] md:py-[18px] py-[15px] bg-[#00795c] text-[16px] md:text-[18px] font-medium text-white rounded-[100px] w-fit hover:bg-black hover:!text-white text-center"
             >
               {
                 ratgeber_seite_fersensporn_mobile
@@ -754,7 +753,7 @@ export default function ratgeberSeiteFersensporn() {
                 ratgeber_seite_fersensporn_mobile
                   ?.wie_kybun_joya_hilft_section_broschure?.reference?.url
               }
-              className="pro-btn text-[12px] md:text-[20px] lg:text-[21px] leading-none text-white tracking-[-0.400697px] font-normal flex gap-[5px] lg:gap-[15px] justify-center px-[5px] lg:px-[35px] py-[10px] lg:py-[20px] bg-[#00795c] rounded-[100px] w-full lg:w-fit text-center items-center transition-all duration-700 hover:bg-black mt-[10px] hover:text-white download-link"
+              className="download-link pro-btn text-[16px] md:text-[20px] lg:text-[21px] leading-none text-black tracking-[-0.400697px] font-normal flex gap-[5px] lg:gap-[25px] justify-center w-fit text-left items-center transition-all duration-700 hover:text-[#00795c] download-link underline mb-[15px]"
             >
               <IconDownload
                 className={

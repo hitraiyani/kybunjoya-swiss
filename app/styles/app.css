@@ -1652,3 +1652,7 @@ select {
 .desc *{
   line-height: 1.4 !important;
 }
+.title-wrap *{
+  word-break: break-word;
+  word-wrap: break-word;
+}

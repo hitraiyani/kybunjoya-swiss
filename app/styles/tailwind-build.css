@@ -3202,6 +3202,11 @@ video {
     margin-bottom: 60px;
   }
 
+  .md\:mx-0 {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
   .md\:mb-0 {
     margin-bottom: 0px;
   }
@@ -3748,6 +3753,10 @@ video {
 
   .md\:pt-\[60px\] {
     padding-top: 60px;
+  }
+
+  .md\:text-left {
+    text-align: left;
   }
 
   .md\:text-center {
