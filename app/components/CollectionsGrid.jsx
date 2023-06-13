@@ -31,6 +31,40 @@ export function CollectionsGrid({data}) {
             </Link>
           </div>
           <div className="collectionsGrid-item relative">
+            <Link
+              to={`${data?.section_4_button_redirect?.value}`}
+              className="relative block w-full h-full overflow-hidden"
+            >
+              <div className="img-wrap w-full h-full absolute inset-0">
+                <Image
+                  data={data?.section_4_image?.reference.image}
+                  className="h-full w-full absolute inset-0 transition hover:duration-500 object-cover object-right sm:object-top"
+                  alt=""
+                />
+              </div>
+              <div className="img-overlay absolute w-full h-2/4 inset-x-0 bottom-0"></div>
+              <div className="flex absolute bottom-0 left-0 p-[15px] sm:p-5 w-full items-end h-full">
+              <Heading className="flex justify-between items-center font-normal text-[18px] sm:text-[26px] text-white leading-none btn gap-[10px] flex-[2]">
+                <span dangerouslySetInnerHTML={{
+                  __html: toHTML(data?.section_4_text?.value),
+                }}></span>
+                  <ArrowRightLight
+                    className={
+                      'w-[30px] h-[30px] sm:w-[35px] sm:h-[35px] border rounded-full p-[5px] sm:p-2 text-white border-white transition-all'
+                    }
+                  />
+                </Heading>
+                <div className="content-img relative overflow-hidden w-auto max-w-full flex-1 hidden"> 
+                  <Image
+                    data={data?.section_4_mask_image?.reference.image}
+                    className="h-full w-full object-cover object-top"
+                    alt=""
+                  />
+                </div>
+              </div>
+            </Link>
+          </div>
+          <div className="collectionsGrid-item relative">
             <Link to={`${data?.section_2_button_redirect?.value}`} className="relative block w-full overflow-hidden">
               <div className="img-wrap w-full h-full absolute inset-0">
                 <Image
@@ -77,40 +111,7 @@ export function CollectionsGrid({data}) {
               </Heading>
             </Link>
           </div>
-          <div className="collectionsGrid-item relative">
-            <Link
-              to={`${data?.section_4_button_redirect?.value}`}
-              className="relative block w-full h-full overflow-hidden"
-            >
-              <div className="img-wrap w-full h-full absolute inset-0">
-                <Image
-                  data={data?.section_4_image?.reference.image}
-                  className="h-full w-full absolute inset-0 transition hover:duration-500 object-cover object-right sm:object-top"
-                  alt=""
-                />
-              </div>
-              <div className="img-overlay absolute w-full h-2/4 inset-x-0 bottom-0"></div>
-              <div className="flex absolute bottom-0 left-0 p-[15px] sm:p-5 w-full items-end h-full">
-              <Heading className="flex justify-between items-center font-normal text-[18px] sm:text-[26px] text-white leading-none btn gap-[10px] flex-[2]">
-                <span dangerouslySetInnerHTML={{
-                  __html: toHTML(data?.section_4_text?.value),
-                }}></span>
-                  <ArrowRightLight
-                    className={
-                      'w-[30px] h-[30px] sm:w-[35px] sm:h-[35px] border rounded-full p-[5px] sm:p-2 text-white border-white transition-all'
-                    }
-                  />
-                </Heading>
-                <div className="content-img relative overflow-hidden w-auto max-w-full flex-1 hidden"> 
-                  <Image
-                    data={data?.section_4_mask_image?.reference.image}
-                    className="h-full w-full object-cover object-top"
-                    alt=""
-                  />
-                </div>
-              </div>
-            </Link>
-          </div>
+         
         </div>
       </div>
     </Section>

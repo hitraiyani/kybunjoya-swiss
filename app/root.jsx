@@ -248,6 +248,15 @@ async function getLayoutData({storefront}) {
         "items": []
       },
       {
+        "id": "gid://shopify/MenuItem/544372228417",
+        "resourceId": "gid://shopify/Page/120569528641",
+        "tags": [],
+        "title": "kybun Joya Story",
+        "type": "PAGE",
+        "url": "https://kybunjoya-swiss.myshopify.com/pages/heritage",
+        "items": []
+      },
+      {
         "id": "gid://shopify/MenuItem/544373014849",
         "resourceId": "gid://shopify/Page/119344857409",
         "tags": [],
@@ -263,15 +272,6 @@ async function getLayoutData({storefront}) {
         "title": "Dr. kybun Joya",
         "type": "PAGE",
         "url": "https://kybunjoya-swiss.myshopify.com/pages/ratgeber-detail-page",
-        "items": []
-      },
-      {
-        "id": "gid://shopify/MenuItem/544372228417",
-        "resourceId": "gid://shopify/Page/120569528641",
-        "tags": [],
-        "title": "kybun Joya Story",
-        "type": "PAGE",
-        "url": "https://kybunjoya-swiss.myshopify.com/pages/heritage",
         "items": []
       },
       {
