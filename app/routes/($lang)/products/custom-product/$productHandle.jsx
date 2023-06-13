@@ -286,9 +286,7 @@ export default function ratgeberSeiteFersensporn() {
                 <div
                   className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] max-w-[870px] mx-auto mt-[44px]"
                   dangerouslySetInnerHTML={{
-                    __html:
-                      page?.fersensporn_product?.reference?.description_de_ch
-                        ?.value,
+                    __html: aicoProductData?.descriptionHtml
                   }}
                 ></div>
               </div>
@@ -842,6 +840,8 @@ ${PRODUCT_CARD_FRAGMENT}
     product(handle: $handle) {
       title
       tags
+      descriptionHtml
+      description
       aico_content_builders : metafield(namespace: "aico", key: "aico_content_builders") {
         value
       }

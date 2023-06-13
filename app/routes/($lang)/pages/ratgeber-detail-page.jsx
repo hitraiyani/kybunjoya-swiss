@@ -85,6 +85,9 @@ export default function ratgeberseite() {
     },
   );
 
+  console.log("filteredKybunJoyaProducts", filteredKybunJoyaProducts);
+  console.log("collection?.products", collection?.products);
+
   const buttonAccordionMapping = page?.ratgeber_detail?.reference
     ?.button_accordion_mapping?.value
     ? JSON.parse(page.ratgeber_detail.reference.button_accordion_mapping.value)
@@ -224,27 +227,10 @@ export default function ratgeberseite() {
                 ></div>
                 <div
                   className="desc  mt-[20px] lg:mt-[40px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] max-w-[870px]"
-                  // dangerouslySetInnerHTML={{
-                  //   __html: toHTML(
-                  //     page?.ratgeber_detail?.reference?.head_new_desc?.value,
-                  //   ),
-                  // }}
+                  dangerouslySetInnerHTML={{
+                    __html: page?.ratgeber_detail?.reference?.head_new_desc_with_list?.value
+                  }}
                 >
-                  <p>
-                    «THERAPIEREN STATT OPERIEREN»: Dank der kybun Joya Therapie
-                    können Menschen mit Gehbeschwerden Operationen vermeiden und
-                    wieder schmerzfrei leben. Studien sowie Rückmeldungen von
-                    medizinischen Fachpersonen und unseren Kunden bestätigen,
-                    dass unsere Produkte bei über 50 medizinischen Diagnosen
-                    Linderung schaffen, wie zum Beispiel 
-                  </p>
-                  <ul className="list-outside list-disc pl-[20px] flex flex-col gap-y-[10px]">
-                    <li>Fersensporn</li>
-                    <li>Knie- und Hüftarthrose</li>
-                    <li>Rückenbeschwerden</li>
-                    <li>Fussfehlstellung und Beschwerden</li>
-                    <li>Osteoporose und Venenleiden</li>
-                  </ul>
                 </div>
               </div>
               <div className="interactive-img-wrap mx-auto block w-[320px] !hidden">
@@ -416,7 +402,39 @@ export default function ratgeberseite() {
             }}
             className=""
           >
-            {productSliderData.length > 0 &&
+             {filteredKybunJoyaProducts.length > 0 && (
+                filteredKybunJoyaProducts.map((product, index) => {
+                    return (
+                      <SwiperSlide key={index}>
+                        <div className="popular-item">
+                          <div className="img-wrap overflow-hidden pb-[60%] mb-[15px] relative">
+                            <img
+                              className="absolute inset-0 w-full h-full object-cover"
+                              src={
+                                'https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Manufaktur_1200x800px_05.jpg_1_4.png?v=1685525783'
+                              }
+                              alt=""
+                            />
+                          </div>
+                          <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mb-[5px]">
+                            <p>Gesundheitswissen</p>
+                          </div>
+                          <div className="text-black text-[24px] md:text-[30px] lg:text-[35px] leading-[1.1] tracking-[-0.97152px] font-medium mb-[15px]">
+                            <p>{product.title}</p>
+                          </div>
+                          <Link
+                            to={`/products/custom-product/${product.handle}`}
+                            className="inline-block rounded-[100px] bg-[#00795c] text-white
+                            text-center px-[35px] py-[15px] hover:bg-black hover:text-white text-[18px] max-w-fit"
+                          >
+                            Mehr erfahren
+                          </Link>
+                        </div>
+                      </SwiperSlide>
+                    );
+                })
+              )}
+            {/* {productSliderData.length > 0 &&
               productSliderData.map((item, index) => {
                 return (
                   <SwiperSlide key={index}>
@@ -444,14 +462,13 @@ export default function ratgeberseite() {
                     </div>
                   </SwiperSlide>
                 );
-              })}
+              })} */}
           </Swiper>
-          <div className="desc lg:mt-[40px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] max-w-[934px] mt-[30px] pr-[20px]">
-            <p>
-              Unser medizinischer Ratgeber bietet eine umfassende Information
-              zum Verständnis einzelner Krankheitsbilder und der optimalen
-              therapeutischen Integration von kybun und Joya Produkte.  
-            </p>
+          <div className="desc lg:mt-[40px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] max-w-[914px] mt-[30px] pr-[20px]"
+              dangerouslySetInnerHTML={{
+                __html: toHTML(page?.ratgeber_detail?.reference?.product_slider_sub_desc?.value)
+              }}
+            >
           </div>
         </div>
       </section>
@@ -800,6 +817,9 @@ ${MEDIA_FRAGMENT}
             head_new_desc : field(key: "head_new_desc") {
               value
             }
+            head_new_desc_with_list : field(key: "head_new_desc_with_list") {
+              value
+            }
             cta_text : field(key: "cta_text") {
               value
             }
@@ -885,6 +905,9 @@ ${MEDIA_FRAGMENT}
               value
             }
             product_slider_title : field(key: "product_slider_title") {
+              value
+            }
+            product_slider_sub_desc : field(key: "product_slider_sub_desc") {
               value
             }
             product_slider_data : field(key: "product_slider_data") {
