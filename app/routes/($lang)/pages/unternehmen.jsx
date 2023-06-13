@@ -5,7 +5,6 @@ import {toHTML, getBreadCrumbs} from '~/lib/utils';
 import {Breadcrumb, Link} from '~/components';
 import {MEDIA_FRAGMENT} from '~/data/fragments';
 
-
 const seo = ({data}) => ({
   title: data?.page?.seo?.title,
   description: data?.page?.seo?.description,
@@ -38,69 +37,93 @@ export async function loader({request, params, context}) {
 }
 
 export default function unternehmen() {
-
   const {page} = useLoaderData();
   const unternehmenReference = page?.unternehmen?.reference;
 
   return (
     <>
-      <Breadcrumb
-        crumbs={getBreadCrumbs(null,'unternehmen')}
-      />
+      <Breadcrumb crumbs={getBreadCrumbs(null, 'unternehmen')} />
       <section className="banner-with-title">
         <div className="container">
           <h1 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold">
-             {unternehmenReference?.head_title?.value}
+            {unternehmenReference?.head_title?.value}
           </h1>
           <div className="product-list-hero-img relative overflow-hidden pb-[35%] aspect-[3/2] md:aspect-auto">
-            <img
+            <iframe
+              width={100}
+              height={100}
+              src="https://www.youtube.com/embed/UBpScaVSvkM"
+              title="YouTube video player"
+              frameBorder={0}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+            {/* <img
               className="absolute inset-0 w-full h-full object-cover"
               src={unternehmenReference?.hero_image?.reference?.image?.url}
               alt=""
-            />
+            /> */}
           </div>
         </div>
       </section>
       <section className="aboutus-section mt-[40px] lg:mt-[62px] pb-[40px] md:pb-[60px] lg:pb-[80px] xl:pb-[100px] max-w-[1030px] mx-auto">
         <div className="container">
-          <div className="desc text-black text-[16px] lg:text-[21px] leading-[1.3] font-[400] mb-[40px] md:mb-[50px] lg:mb-[70px] xl:mb-[86px]"
+          <div
+            className="desc text-black text-[16px] lg:text-[21px] leading-[1.3] font-[400] mb-[40px] md:mb-[50px]"
             dangerouslySetInnerHTML={{
-              __html: toHTML(
-                unternehmenReference?.main_desc?.value,
-              ),
+              __html: toHTML(unternehmenReference?.main_desc?.value),
             }}
-          >
+          ></div>
+
+          <div className="img-wrap mb-[20px] lg:mb-[35px]">
+            <img
+              className="max-w-full h-auto w-full"
+              src={
+                unternehmenReference?.quote_section_image?.reference?.image?.url
+              }
+              alt=""
+            />
           </div>
-          
-          <div className='img-wrap mb-[20px] lg:mb-[35px]'>
-            <img className='max-w-full h-auto w-full' src={unternehmenReference?.quote_section_image?.reference?.image?.url} alt="" />
-          </div>
-          <div className='desc text-black text-[16px] lg:text-[21px] leading-[1.3] font-[400] mb-[25px]'
-              dangerouslySetInnerHTML={{
-                __html: toHTML(
-                  unternehmenReference?.quote_section_desc?.value,
-                ),
-              }}
-          >
-          </div>
-          <div className='sub-title mb-[25px]'>
-            <h4 className='text-black text-[24px] md:text-[30px] lg:text-[35px] leading-[1.1] tracking-[-0.97152px] font-normal'>
-              {unternehmenReference?.quote_section_title?.value}
-            </h4>
-          </div>
-          <div className='btn-wrap'>
-            <Link to={unternehmenReference?.quote_section_button_redirect?.value} className='inline-block rounded-[100px] bg-[#00795c] text-white
-                 text-center px-[35px] py-[15px] hover:bg-black hover:text-white text-[18px] max-w-fit' href="#">
-                    {unternehmenReference?.quote_section_button_text?.value}
-            </Link>
+          <div
+            className="desc text-black text-[16px] lg:text-[21px] leading-[1.3] font-[400] mb-[25px]"
+            dangerouslySetInnerHTML={{
+              __html: toHTML(unternehmenReference?.quote_section_desc?.value),
+            }}
+          ></div>
+          <div className="flex flex-col gap-y-[30px] lg:flex-row gap-x-[30px] 2xl:gap-x-[49px] pt-[40px] md:pt-[60px] lg:pt-[80px] xl:pt-[100px]">
+            <div className="w-full lg:w-[45%]">
+              <div className="img-wrap">
+                <img className='max-w-full mx-auto' src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Book-Cover_The-Joya-Way_Soft-Schatten_DE_1.png?v=1686644705" alt="" />
+              </div>
+            </div>
+            <div className="w-full lg:w-[55%]">
+              <div className="sub-title mb-[10px]">
+                <h4 className="text-black text-[24px] md:text-[30px] lg:text-[35px] leading-[1.1] tracking-[-0.97152px] font-normal">
+                  {unternehmenReference?.quote_section_title?.value}
+                </h4>
+              </div>
+              <div className='desc desc text-black text-[16px] lg:text-[21px] leading-[1.3] font-[400] mb-[25px]'>
+                <p>Basierend auf unserer Erfahrung der letzten 12 Jahre im Jungunternehmerdasein haben wir unser neues Managementkonzept entwickelt. Mit The Joya Way versprechen wir uns Stabilität und Kontinuität im Tagesgeschäft bei gleichzeitiger, steigernder Innovationskraft.</p>
+              </div>
+              <div className="btn-wrap">
+                <Link
+                  to={
+                    unternehmenReference?.quote_section_button_redirect?.value
+                  }
+                  className="inline-block rounded-[100px] bg-[#00795c] text-white
+                 text-center px-[35px] py-[15px] hover:bg-black hover:text-white text-[18px] max-w-fit"
+                >
+                  {unternehmenReference?.quote_section_button_text?.value}
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>
     </>
   );
 }
-
-
 
 const PAGE_QUERY = `#graphql
 ${MEDIA_FRAGMENT}
