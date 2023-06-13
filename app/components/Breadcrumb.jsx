@@ -7,7 +7,7 @@ import {
 export function Breadcrumb({crumbs}) {
   return (
      <div
-      className={`Breadcrumb-sec mb-[20px] lg:mb-[25px]`}
+      className={`Breadcrumb-sec mb-[20px] lg:mb-[25px] hidden`}
     >
       <div className="container">
         <nav className="flex" aria-label="Breadcrumb">
