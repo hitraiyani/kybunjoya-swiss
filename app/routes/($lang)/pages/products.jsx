@@ -353,6 +353,60 @@ ${MEDIA_FRAGMENT}
             brand_6_sub_button_redirect : field(key: "brand_6_sub_button_redirect") {
               value
             }
+            brand_1_image_slider : field(key: "brand_1_image_slider") {
+              references(first: 5) {
+                  edges {
+                      node {
+                      ...Media
+                      }
+                  }
+              }
+            }
+            brand_2_image_slider : field(key: "brand_2_image_slider") {
+              references(first: 5) {
+                  edges {
+                      node {
+                      ...Media
+                      }
+                  }
+              }
+            }
+            brand_3_image_slider : field(key: "brand_3_image_slider") {
+              references(first: 5) {
+                  edges {
+                      node {
+                      ...Media
+                      }
+                  }
+              }
+            }
+            brand_4_image_slider : field(key: "brand_4_image_slider") {
+              references(first: 5) {
+                  edges {
+                      node {
+                      ...Media
+                      }
+                  }
+              }
+            }
+            brand_5_image_slider : field(key: "brand_5_image_slider") {
+              references(first: 5) {
+                  edges {
+                      node {
+                      ...Media
+                      }
+                  }
+              }
+            }
+            brand_6_image_slider : field(key: "brand_6_image_slider") {
+              references(first: 5) {
+                  edges {
+                      node {
+                      ...Media
+                      }
+                  }
+              }
+            }
           }
         }
       }

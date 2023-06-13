@@ -59,39 +59,23 @@ export function ProductBrandSection({data}) {
                   }}
                   className=""
                 >
-                  <SwiperSlide>
-                    <div className="relative block overflow-hidden pb-[100%] md:pb-[72%] w-full">
-                      <div className="img-wrap w-full h-full absolute inset-0">
-                        <img
-                          className="h-full w-full absolute inset-0 transition hover:duration-500 object-cover"
-                          src={data?.brand_1_image?.reference?.image?.url}
-                          alt=""
-                        />
-                      </div>
-                    </div>
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <div className="relative block overflow-hidden pb-[100%] md:pb-[72%] w-full">
-                      <div className="img-wrap w-full h-full absolute inset-0">
-                        <img
-                          className="h-full w-full absolute inset-0 transition hover:duration-500 object-cover"
-                          src={data?.brand_1_image?.reference?.image?.url}
-                          alt=""
-                        />
-                      </div>
-                    </div>
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <div className="relative block overflow-hidden pb-[100%] md:pb-[72%] w-full">
-                      <div className="img-wrap w-full h-full absolute inset-0">
-                        <img
-                          className="h-full w-full absolute inset-0 transition hover:duration-500 object-cover"
-                          src={data?.brand_1_image?.reference?.image?.url}
-                          alt=""
-                        />
-                      </div>
-                    </div>
-                  </SwiperSlide>
+                  {data?.brand_1_image_slider?.references?.edges?.map(
+                    (item, index) => {
+                      return (
+                        <SwiperSlide key={index}>
+                          <div className="relative block overflow-hidden pb-[100%] md:pb-[72%] w-full">
+                            <div className="img-wrap w-full h-full absolute inset-0">
+                              <Image
+                                data={item.node.image}
+                                className="h-full w-full absolute inset-0 transition hover:duration-500 object-cover"
+                                alt=""
+                              />
+                            </div>
+                          </div>
+                        </SwiperSlide>
+                      );
+                    },
+                  )}
                 </Swiper>
                 {/* <div className="img-overlay absolute w-full h-2/4 inset-x-0 bottom-0"></div> */}
                 {/* <div className="title-col container absolute bottom-0 left-0 w-full py-[20px] lg:py-[30px] xl:py-[40px] 2xl:py-[50px]">
@@ -108,7 +92,10 @@ export function ProductBrandSection({data}) {
                       />
                     </h2>
                   </div> */}
-                <div id="product-brand-pagination-div1" className="product-brand-pagination-div text-center mt-[10px]"></div>
+                <div
+                  id="product-brand-pagination-div1"
+                  className="product-brand-pagination-div text-center mt-[10px]"
+                ></div>
               </div>
               <div className="brand-info relative w-full lg:w-[50%]">
                 <div className="brand-info-inner bg-white lg:rounded-[10px] w-full">
@@ -178,39 +165,23 @@ export function ProductBrandSection({data}) {
                   }}
                   className=""
                 >
-                  <SwiperSlide>
-                    <div className="relative block overflow-hidden pb-[100%] md:pb-[72%] w-full">
-                      <div className="img-wrap w-full h-full absolute inset-0">
-                        <img
-                          className="h-full w-full absolute inset-0 transition hover:duration-500 object-cover"
-                          src={'https://cdn.shopify.com/s/files/1/0742/9688/5569/files/kybun_Joya_Product_Joya_400x400px.jpg?v=1686663003'}
-                          alt=""
-                        />
-                      </div>
-                    </div>
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <div className="relative block overflow-hidden pb-[100%] md:pb-[72%] w-full">
-                      <div className="img-wrap w-full h-full absolute inset-0">
-                        <img
-                          className="h-full w-full absolute inset-0 transition hover:duration-500 object-cover"
-                          src={'https://cdn.shopify.com/s/files/1/0742/9688/5569/files/MicrosoftTeams-image-1.jpg?v=1686663003'}
-                          alt=""
-                        />
-                      </div>
-                    </div>
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <div className="relative block overflow-hidden pb-[100%] md:pb-[72%] w-full">
-                      <div className="img-wrap w-full h-full absolute inset-0">
-                        <img
-                          className="h-full w-full absolute inset-0 transition hover:duration-500 object-cover"
-                          src={'https://cdn.shopify.com/s/files/1/0742/9688/5569/files/JO517A_Sven_Grey_II_a.png?v=1686663005'}
-                          alt=""
-                        />
-                      </div>
-                    </div>
-                  </SwiperSlide>
+                  {data?.brand_2_image_slider?.references?.edges?.map(
+                    (item, index) => {
+                      return (
+                        <SwiperSlide key={index}>
+                          <div className="relative block overflow-hidden pb-[100%] md:pb-[72%] w-full">
+                            <div className="img-wrap w-full h-full absolute inset-0">
+                              <Image
+                                data={item.node.image}
+                                className="h-full w-full absolute inset-0 transition hover:duration-500 object-cover"
+                                alt=""
+                              />
+                            </div>
+                          </div>
+                        </SwiperSlide>
+                      );
+                    },
+                  )}
                 </Swiper>
                 {/* <div className="img-overlay absolute w-full h-2/4 inset-x-0 bottom-0"></div> */}
                 {/* <div className="title-col container absolute bottom-0 left-0 w-full py-[20px] lg:py-[30px] xl:py-[40px] 2xl:py-[50px]">
@@ -227,7 +198,10 @@ export function ProductBrandSection({data}) {
                       />
                     </h2>
                   </div> */}
-                <div id="product-brand-pagination-div2" className="product-brand-pagination-div text-center mt-[10px]"></div>
+                <div
+                  id="product-brand-pagination-div2"
+                  className="product-brand-pagination-div text-center mt-[10px]"
+                ></div>
               </div>
               <div className="brand-info relative w-full lg:w-[50%]">
                 <div className="brand-info-inner bg-white lg:rounded-[10px] w-full">
@@ -254,7 +228,7 @@ export function ProductBrandSection({data}) {
                 </div>
               </div>
             </div>
-          </div>            
+          </div>
           <div className="product-brand-list pb-[70px] md:pb-[100px] lg:pb-[140px] container">
             <div className="product-brand-list-inner relative flex flex-col lg:flex-row gap-y-[10px]  gap-x-[50px] 2xl:gap-x-[80px] items-center">
               <div className="img-with-text relative w-full lg:w-[50%]">
@@ -308,28 +282,23 @@ export function ProductBrandSection({data}) {
                       </div>
                     </div>
                   </SwiperSlide> */}
-                  <SwiperSlide>
-                    <div className="relative block overflow-hidden pb-[100%] md:pb-[72%] w-full">
-                      <div className="img-wrap w-full h-full absolute inset-0">
-                        <img
-                          className="h-full w-full absolute inset-0 transition hover:duration-500 object-cover"
-                          src={'https://cdn.shopify.com/s/files/1/0742/9688/5569/files/kybun_Joya_Matte_Product_400x400px.jpg?v=1686662829'}
-                          alt=""
-                        />
-                      </div>
-                    </div>
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <div className="relative block overflow-hidden pb-[100%] md:pb-[72%] w-full">
-                      <div className="img-wrap w-full h-full absolute inset-0">
-                        <img
-                          className="h-full w-full absolute inset-0 transition hover:duration-500 object-cover"
-                          src={'https://cdn.shopify.com/s/files/1/0742/9688/5569/files/kybun_Joya_Matte_400x400px.jpg?v=1686662829'}
-                          alt=""
-                        />
-                      </div>
-                    </div>
-                  </SwiperSlide>
+                  {data?.brand_3_image_slider?.references?.edges?.map(
+                    (item, index) => {
+                      return (
+                        <SwiperSlide key={index}>
+                          <div className="relative block overflow-hidden pb-[100%] md:pb-[72%] w-full">
+                            <div className="img-wrap w-full h-full absolute inset-0">
+                              <Image
+                                data={item.node.image}
+                                className="h-full w-full absolute inset-0 transition hover:duration-500 object-cover"
+                                alt=""
+                              />
+                            </div>
+                          </div>
+                        </SwiperSlide>
+                      );
+                    },
+                  )}
                 </Swiper>
                 {/* <div className="img-overlay absolute w-full h-2/4 inset-x-0 bottom-0"></div> */}
                 {/* <div className="title-col container absolute bottom-0 left-0 w-full py-[20px] lg:py-[30px] xl:py-[40px] 2xl:py-[50px]">
@@ -346,7 +315,10 @@ export function ProductBrandSection({data}) {
                       />
                     </h2>
                   </div> */}
-                <div id="product-brand-pagination-div3" className="product-brand-pagination-div text-center mt-[10px]"></div>
+                <div
+                  id="product-brand-pagination-div3"
+                  className="product-brand-pagination-div text-center mt-[10px]"
+                ></div>
               </div>
               <div className="brand-info relative w-full lg:w-[50%]">
                 <div className="brand-info-inner bg-white lg:rounded-[10px] w-full">
@@ -416,39 +388,23 @@ export function ProductBrandSection({data}) {
                   }}
                   className=""
                 >
-                  <SwiperSlide>
-                    <div className="relative block overflow-hidden pb-[100%] md:pb-[72%] w-full">
-                      <div className="img-wrap w-full h-full absolute inset-0">
-                        <img
-                          className="h-full w-full absolute inset-0 transition hover:duration-500 object-cover"
-                          src={data?.brand_5_image?.reference?.image?.url}
-                          alt=""
-                        />
-                      </div>
-                    </div>
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <div className="relative block overflow-hidden pb-[100%] md:pb-[72%] w-full">
-                      <div className="img-wrap w-full h-full absolute inset-0">
-                        <img
-                          className="h-full w-full absolute inset-0 transition hover:duration-500 object-cover"
-                          src={data?.brand_5_image?.reference?.image?.url}
-                          alt=""
-                        />
-                      </div>
-                    </div>
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <div className="relative block overflow-hidden pb-[100%] md:pb-[72%] w-full">
-                      <div className="img-wrap w-full h-full absolute inset-0">
-                        <img
-                          className="h-full w-full absolute inset-0 transition hover:duration-500 object-cover"
-                          src={data?.brand_5_image?.reference?.image?.url}
-                          alt=""
-                        />
-                      </div>
-                    </div>
-                  </SwiperSlide>
+                  {data?.brand_5_image_slider?.references?.edges?.map(
+                    (item, index) => {
+                      return (
+                        <SwiperSlide key={index}>
+                          <div className="relative block overflow-hidden pb-[100%] md:pb-[72%] w-full">
+                            <div className="img-wrap w-full h-full absolute inset-0">
+                              <Image
+                                data={item.node.image}
+                                className="h-full w-full absolute inset-0 transition hover:duration-500 object-cover"
+                                alt=""
+                              />
+                            </div>
+                          </div>
+                        </SwiperSlide>
+                      );
+                    },
+                  )}
                 </Swiper>
                 {/* <div className="img-overlay absolute w-full h-2/4 inset-x-0 bottom-0"></div> */}
                 {/* <div className="title-col container absolute bottom-0 left-0 w-full py-[20px] lg:py-[30px] xl:py-[40px] 2xl:py-[50px]">
@@ -465,7 +421,10 @@ export function ProductBrandSection({data}) {
                       />
                     </h2>
                   </div> */}
-                <div id="product-brand-pagination-div5" className="product-brand-pagination-div text-center mt-[10px]"></div>
+                <div
+                  id="product-brand-pagination-div5"
+                  className="product-brand-pagination-div text-center mt-[10px]"
+                ></div>
               </div>
               <div className="brand-info relative w-full lg:w-[50%]">
                 <div className="brand-info-inner bg-white lg:rounded-[10px] w-full">
@@ -535,39 +494,23 @@ export function ProductBrandSection({data}) {
                   }}
                   className=""
                 >
-                  <SwiperSlide>
-                    <div className="relative block overflow-hidden pb-[100%] md:pb-[72%] w-full">
-                      <div className="img-wrap w-full h-full absolute inset-0">
-                        <img
-                          className="h-full w-full absolute inset-0 transition hover:duration-500 object-cover"
-                          src={data?.brand_4_image?.reference?.image?.url}
-                          alt=""
-                        />
-                      </div>
-                    </div>
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <div className="relative block overflow-hidden pb-[100%] md:pb-[72%] w-full">
-                      <div className="img-wrap w-full h-full absolute inset-0">
-                        <img
-                          className="h-full w-full absolute inset-0 transition hover:duration-500 object-cover"
-                          src={data?.brand_4_image?.reference?.image?.url}
-                          alt=""
-                        />
-                      </div>
-                    </div>
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <div className="relative block overflow-hidden pb-[100%] md:pb-[72%] w-full">
-                      <div className="img-wrap w-full h-full absolute inset-0">
-                        <img
-                          className="h-full w-full absolute inset-0 transition hover:duration-500 object-cover"
-                          src={data?.brand_4_image?.reference?.image?.url}
-                          alt=""
-                        />
-                      </div>
-                    </div>
-                  </SwiperSlide>
+                   {data?.brand_4_image_slider?.references?.edges?.map(
+                    (item, index) => {
+                      return (
+                        <SwiperSlide key={index}>
+                          <div className="relative block overflow-hidden pb-[100%] md:pb-[72%] w-full">
+                            <div className="img-wrap w-full h-full absolute inset-0">
+                              <Image
+                                data={item.node.image}
+                                className="h-full w-full absolute inset-0 transition hover:duration-500 object-cover"
+                                alt=""
+                              />
+                            </div>
+                          </div>
+                        </SwiperSlide>
+                      );
+                    },
+                  )}
                 </Swiper>
                 {/* <div className="img-overlay absolute w-full h-2/4 inset-x-0 bottom-0"></div> */}
                 {/* <div className="title-col container absolute bottom-0 left-0 w-full py-[20px] lg:py-[30px] xl:py-[40px] 2xl:py-[50px]">
@@ -584,7 +527,10 @@ export function ProductBrandSection({data}) {
                       />
                     </h2>
                   </div> */}
-                <div id="product-brand-pagination-div4" className="product-brand-pagination-div text-center mt-[10px]"></div>
+                <div
+                  id="product-brand-pagination-div4"
+                  className="product-brand-pagination-div text-center mt-[10px]"
+                ></div>
               </div>
               <div className="brand-info relative w-full lg:w-[50%]">
                 <div className="brand-info-inner bg-white lg:rounded-[10px] w-full">
@@ -612,7 +558,7 @@ export function ProductBrandSection({data}) {
               </div>
             </div>
           </div>
-          
+
           <div className="product-brand-list pb-[70px] md:pb-[100px] lg:pb-[140px] container">
             <div className="product-brand-list-inner relative flex flex-col lg:flex-row gap-y-[10px]  gap-x-[50px] 2xl:gap-x-[80px] items-center">
               <div className="img-with-text relative w-full lg:w-[50%]">
@@ -655,17 +601,23 @@ export function ProductBrandSection({data}) {
                   }}
                   className=""
                 >
-                  <SwiperSlide>
-                    <div className="relative block overflow-hidden pb-[100%] md:pb-[72%] w-full">
-                      <div className="img-wrap w-full h-full absolute inset-0">
-                        <img
-                          className="h-full w-full absolute inset-0 transition hover:duration-500 object-cover"
-                          src={data?.brand_6_image?.reference?.image?.url}
-                          alt=""
-                        />
-                      </div>
-                    </div>
-                  </SwiperSlide>
+                  {data?.brand_6_image_slider?.references?.edges?.map(
+                    (item, index) => {
+                      return (
+                        <SwiperSlide key={index}>
+                          <div className="relative block overflow-hidden pb-[100%] md:pb-[72%] w-full">
+                            <div className="img-wrap w-full h-full absolute inset-0">
+                              <Image
+                                data={item.node.image}
+                                className="h-full w-full absolute inset-0 transition hover:duration-500 object-cover"
+                                alt=""
+                              />
+                            </div>
+                          </div>
+                        </SwiperSlide>
+                      );
+                    },
+                  )}
                 </Swiper>
                 {/* <div className="img-overlay absolute w-full h-2/4 inset-x-0 bottom-0"></div> */}
                 {/* <div className="title-col container absolute bottom-0 left-0 w-full py-[20px] lg:py-[30px] xl:py-[40px] 2xl:py-[50px]">
@@ -682,14 +634,17 @@ export function ProductBrandSection({data}) {
                       />
                     </h2>
                   </div> */}
-                <div id="product-brand-pagination-div6" className="product-brand-pagination-div text-center mt-[10px]"></div>
+                <div
+                  id="product-brand-pagination-div6"
+                  className="product-brand-pagination-div text-center mt-[10px]"
+                ></div>
               </div>
               <div className="brand-info relative w-full lg:w-[50%]">
                 <div className="brand-info-inner bg-white lg:rounded-[10px] w-full">
                   <div className="max-w-[795px]">
                     <h4 className="text-black text-[24px] md:text-[30px] lg:text-[35px] leading-[1.1] tracking-[-0.97152px]">
                       {data?.brand_6_sub_text?.value}
-                    </h4> 
+                    </h4>
                     {/* <div
                       className="desc text-black text-[16px] lg:text-[21px] leading-[1.3] font-[400] mt-[15px]"
                       dangerouslySetInnerHTML={{
