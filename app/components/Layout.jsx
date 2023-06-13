@@ -649,9 +649,9 @@ function Footer({menu, main_menu}) {
                   { main_menu.items && main_menu.items.map((item,index) => {
                       return (
                         <div key={index}>
-                            <span  className="nav-item relative block">
+                            <span  className="nav-item relative flex flex-wrap md:block">
 
-                              <h2 className="mb-[20px] md:mb-[30px] lg:text-[26px] md:text-[20px] font-bold text-[#00795C] pr-[30px] md:pr-0">
+                              <h2 className="mb-[20px] md:mb-[35px] lg:text-[26px] md:text-[20px] font-bold text-[#00795C]">
                                     <Link
                                       to={item.to}
                                       target={item.target}
@@ -665,7 +665,7 @@ function Footer({menu, main_menu}) {
                                   <>
                                     <div
                                       onClick={footerMenuToggle}
-                                      className="toggle-menu-icon text-[#00795C] absolute top-0 right-0 w-[40px] h-[30px] flex items-center justify-end md:hidden cursor-pointer"
+                                      className="toggle-menu-icon text-[#00795C] top-[-3px] right-0 w-[40px] h-[30px] flex items-center justify-end md:hidden cursor-pointer relative"
                                     >
                                       <IconArrowBottom
                                         className={

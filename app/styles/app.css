@@ -86,7 +86,7 @@ p:last-child {
   max-width: 950px;
   margin-top: 142px;
   margin-right: 80px;
-  max-height: 310px;
+  max-height: 250px;
   padding: 30px 50px;
 }
 
@@ -162,16 +162,16 @@ p:last-child {
 @media (min-width: 768px) {
   .mobile-menu-Drawer .nav-list > ul > li:last-child {
     border-left: 1px solid #dedede;
-    left: -50px;
+    left: 0;
     position: relative;
     padding-left: 20%;
-    min-height: 230px;
+    min-height: 170px;
   }
 }
 
 @media (min-width: 992px) {
   .mobile-menu-Drawer .nav-list > ul > li:last-child {
-    left: -80px;
+    left: 0;
   }
 }
 
@@ -358,6 +358,7 @@ p:last-child {
     display: block;
     margin-bottom: 30px;
     margin-top: 10px;
+		width: 100%;
   }
 
   .site-footer .nav-item.active .toggle-menu-icon svg {
