@@ -297,7 +297,7 @@ p:last-child {
 .footer-menu-items > div:last-child .nav-item .toggle-menu-icon {
   color: #595959;
 }
-.footer-menu-items > div:last-child .nav-item > h2{
+.footer-menu-items > div:last-child .nav-item > h2 {
   margin-bottom: 10px;
 }
 /* .site-footer {
@@ -345,8 +345,9 @@ p:last-child {
   );
 }
 .collectionsGrid-item a:hover svg {
-  color: #00795c;
-  background-color: #fff;
+  color: #fff;
+  background-color: #00795c;
+  border-color: #00795c;
 }
 .collectionsGrid-item {
   box-shadow: 0px 0px 0.9821px rgba(0, 0, 0, 0.05),
