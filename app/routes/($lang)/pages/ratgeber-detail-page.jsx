@@ -428,7 +428,10 @@ export default function ratgeberseite() {
                           alt=""
                         />
                       </div>
-                      <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mb-[15px]">
+                      <div className='desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mb-[5px]'>
+                        <p>Gesundheitswissen</p>
+                      </div>
+                      <div className="text-black text-[24px] md:text-[30px] lg:text-[35px] leading-[1.1] tracking-[-0.97152px] font-medium mb-[15px]">
                         <p>{item.title}</p>
                       </div>
                       <Link
