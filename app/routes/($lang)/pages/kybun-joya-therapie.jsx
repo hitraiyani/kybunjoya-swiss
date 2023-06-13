@@ -82,6 +82,30 @@ export default function kybunJoyaTherapie() {
           })}
         </div>
       </div>
+      <div className="about-sec container pt-[40px] md:pt-[60px] lg:pt-[80px] xl:pt-[100px]">
+        <div className="flex flex-col gap-[20px] lg:gap-[30px] lg:flex-row-reverse">
+          <div className="img-wrap lg:w-[50%] overflow-hidden w-full">
+            <img
+              className="w-full h-auto"
+              src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Screenshot_2023-05-30_at_2.42_1.png?v=1685527417"
+              alt=""
+            />
+          </div>
+          <div className="content-col w-full lg:w-[50%] flex flex-col justify-center">
+            <h2 className="mb-[15px] text-black text-[24px] md:text-[30px] lg:text-[35px] leading-[1.1] tracking-[-0.97152px] font-medium">
+              Ganzheitliche Therapie erleben
+            </h2>
+            <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mb-[20px]">
+              <p>
+                Neben den elastisch-federnden Schuhen zum Gehen und
+                trampolin-ähnlichen Matten zum Stehen, besteht die kybun Joya
+                Therapie zudem aus einem Fundus von speziellen Übungen und
+                Methoden zum manuellen Lösen von Faszien-Verklebungen.  
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
       <div className="about-sec container py-[40px] md:py-[60px] lg:py-[80px] xl:py-[100px]">
         <div className="flex flex-col lg:flex-row gap-[20px] lg:gap-[30px]">
           <div className="img-wrap lg:w-[50%] overflow-hidden w-full">
@@ -94,16 +118,23 @@ export default function kybunJoyaTherapie() {
             />
           </div>
           <div className="content-col w-full lg:w-[50%] flex flex-col justify-center">
-            <h2 className='mb-[15px] text-black text-[24px] md:text-[30px] lg:text-[35px] leading-[1.1] tracking-[-0.97152px] font-medium'>Filialen in Ihrer Nähe</h2>
+            <h2 className="mb-[15px] text-black text-[24px] md:text-[30px] lg:text-[35px] leading-[1.1] tracking-[-0.97152px] font-medium">
+              Filialen in Ihrer Nähe
+            </h2>
             <div
               className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mb-[20px]"
               dangerouslySetInnerHTML={{
                 __html: toHTML(kybunJoyaTherapie?.about_section_desc?.value),
               }}
             ></div>
-            <div className='btn-wrap'>
-              <a href="#" className='inline-block rounded-[100px] bg-[#00795c] text-white
-                 text-center px-[35px] py-[15px] hover:bg-black hover:text-white text-[18px] max-w-fit'>Filiale finden</a>
+            <div className="btn-wrap">
+              <a
+                href="#"
+                className="inline-block rounded-[100px] bg-[#00795c] text-white
+                 text-center px-[35px] py-[15px] hover:bg-black hover:text-white text-[18px] max-w-fit"
+              >
+                Filiale finden
+              </a>
             </div>
           </div>
         </div>

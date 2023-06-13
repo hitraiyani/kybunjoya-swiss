@@ -3187,6 +3187,11 @@ video {
     grid-column: span 3 / span 3;
   }
 
+  .md\:mx-0 {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
   .md\:mx-auto {
     margin-left: auto;
     margin-right: auto;
@@ -3200,11 +3205,6 @@ video {
   .md\:my-\[60px\] {
     margin-top: 60px;
     margin-bottom: 60px;
-  }
-
-  .md\:mx-0 {
-    margin-left: 0px;
-    margin-right: 0px;
   }
 
   .md\:mb-0 {
@@ -4361,10 +4361,6 @@ video {
 
   .lg\:pt-\[80px\] {
     padding-top: 80px;
-  }
-
-  .lg\:text-left {
-    text-align: left;
   }
 
   .lg\:text-right {

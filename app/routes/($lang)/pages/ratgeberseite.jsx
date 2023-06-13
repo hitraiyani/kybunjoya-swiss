@@ -446,8 +446,8 @@ export default function ratgeberseite() {
           <div className="flex flex-col lg:flex-row gap-[20px]">
             <div className="col w-full lg:w-[50%]">
               <div className="col-inner shadow-[0px_0px_0.9821px_2px_rgba(0,0,0,0.05),0px_3.9284px_7.8568px_1px_rgba(0,0,0,0.1)] h-full flex flex-col">
-                <div className="img-wrap relative overflow-hidden pb-[28%]">
-                  <img className='absolute w-full h-full inset-0 object-cover'
+                <div className="img-wrap relative overflow-hidden pb-[28%] min-h-[200px]">
+                  <img className='absolute w-full h-full inset-0 object-cover object-left-top'
                     src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/PD04789_-_XL_partnerships_group_image.png_2.png?v=1685090294"
                     alt=""
                   />
@@ -470,8 +470,8 @@ export default function ratgeberseite() {
             </div>
             <div className="col w-full lg:w-[50%]">
               <div className="col-inner shadow-[0px_0px_0.9821px_2px_rgba(0,0,0,0.05),0px_3.9284px_7.8568px_1px_rgba(0,0,0,0.1)] h-full flex flex-col">
-                <div className="img-wrap relative overflow-hidden pb-[28%]">
-                  <img className='absolute w-full h-full inset-0 object-cover'
+                <div className="img-wrap relative overflow-hidden pb-[28%] min-h-[200px]">
+                  <img className='absolute w-full h-full inset-0 object-cover object-left-top'
                     src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/jeremy-lapak-CVvFVQ_-oUg-unsplash_1_2.png?v=1685090294"
                     alt=""
                   />

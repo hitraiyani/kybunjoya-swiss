@@ -576,9 +576,9 @@ export default function ratgeberseite() {
           <div className="flex flex-col lg:flex-row gap-[20px]">
             <div className="col w-full lg:w-[50%]">
               <div className="col-inner shadow-[0px_0px_0.9821px_2px_rgba(0,0,0,0.05),0px_3.9284px_7.8568px_1px_rgba(0,0,0,0.1)] h-full flex flex-col">
-                <div className="img-wrap relative overflow-hidden pb-[28%]">
+                <div className="img-wrap relative overflow-hidden pb-[28%] min-h-[200px]">
                   <img
-                    className="absolute w-full h-full inset-0 object-cover"
+                    className="absolute w-full h-full inset-0 object-cover object-left-top"
                     src={
                       page?.ratgeber_detail?.reference
                         ?.footer_main_left_section_image?.reference?.image?.url
@@ -615,9 +615,9 @@ export default function ratgeberseite() {
             </div>
             <div className="col w-full lg:w-[50%]">
               <div className="col-inner shadow-[0px_0px_0.9821px_2px_rgba(0,0,0,0.05),0px_3.9284px_7.8568px_1px_rgba(0,0,0,0.1)] h-full flex flex-col">
-                <div className="img-wrap relative overflow-hidden pb-[28%]">
+                <div className="img-wrap relative overflow-hidden pb-[28%] min-h-[200px]">
                   <img
-                    className="absolute w-full h-full inset-0 object-cover"
+                    className="absolute w-full h-full inset-0 object-cover object-left-top"
                     src={
                       page?.ratgeber_detail?.reference
                         ?.footer_main_right_section_image?.reference?.image?.url
