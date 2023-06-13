@@ -460,7 +460,7 @@ export default function ratgeberseite() {
                   <div className="btn-wrap flex justify-center mt-auto">
                     <a
                       href="#"
-                      className="inline-block rounded-[100px] bg-black text-white text-center px-[40px] lg:px-[59px] py-[20px] lg:py-[25px] hover:bg-[#00795c] hover:text-white text-[16px] lg:text-[18px] max-w-fit mt-[10px] leading-none"
+                      className="inline-block rounded-[100px] bg-[#00795c] text-white text-center px-[40px] lg:px-[59px] py-[20px] lg:py-[25px] hover:bg-black hover:text-white text-[16px] lg:text-[18px] max-w-fit mt-[10px] leading-none"
                     >
                       Schreiben Sie Uns
                     </a>
@@ -484,7 +484,7 @@ export default function ratgeberseite() {
                   <div className="btn-wrap flex justify-center mt-auto">
                     <a
                       href="https://ch.kybun.swiss/collections/kybun-probier-schuhe"
-                      className="inline-block rounded-[100px] bg-black text-white text-center px-[40px] lg:px-[59px] py-[20px] lg:py-[25px] hover:bg-[#00795c] hover:text-white text-[16px] lg:text-[18px] max-w-fit mt-[10px] leading-none"
+                      className="inline-block rounded-[100px] bg-[#00795c] text-white text-center px-[40px] lg:px-[59px] py-[20px] lg:py-[25px] hover:bg-black hover:text-white text-[16px] lg:text-[18px] max-w-fit mt-[10px] leading-none"
                     >
                       kybun Shop
                     </a>

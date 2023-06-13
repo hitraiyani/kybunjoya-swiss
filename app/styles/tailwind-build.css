@@ -4203,11 +4203,6 @@ video {
     padding-right: 39px;
   }
 
-  .lg\:px-\[40px\] {
-    padding-left: 40px;
-    padding-right: 40px;
-  }
-
   .lg\:px-\[46px\] {
     padding-left: 46px;
     padding-right: 46px;
@@ -4236,6 +4231,11 @@ video {
   .lg\:py-6 {
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
+  }
+
+  .lg\:py-\[12px\] {
+    padding-top: 12px;
+    padding-bottom: 12px;
   }
 
   .lg\:py-\[15px\] {
@@ -4276,11 +4276,6 @@ video {
   .lg\:py-\[80px\] {
     padding-top: 80px;
     padding-bottom: 80px;
-  }
-
-  .lg\:py-\[12px\] {
-    padding-top: 12px;
-    padding-bottom: 12px;
   }
 
   .lg\:\!pr-0 {

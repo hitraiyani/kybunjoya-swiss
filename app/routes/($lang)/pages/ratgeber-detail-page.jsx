@@ -551,7 +551,7 @@ export default function ratgeberseite() {
                         page?.ratgeber_detail?.reference
                           ?.footer_main_left_section_cta?.value
                       }
-                      className="inline-block rounded-[100px] bg-black text-white text-center px-[40px] lg:px-[59px] py-[20px] lg:py-[25px] hover:bg-[#00795c] hover:text-white text-[16px] lg:text-[18px] max-w-fit mt-[10px] leading-none"
+                      className="inline-block rounded-[100px] bg-[#00795c] text-white text-center px-[40px] lg:px-[59px] py-[20px] lg:py-[25px] hover:bg-black hover:text-white text-[16px] lg:text-[18px] max-w-fit mt-[10px] leading-none"
                     >
                       {
                         page?.ratgeber_detail?.reference
@@ -590,7 +590,7 @@ export default function ratgeberseite() {
                         page?.ratgeber_detail?.reference
                           ?.footer_main_right_section_cta?.value
                       }
-                      className="inline-block rounded-[100px] bg-black text-white text-center px-[40px] lg:px-[59px] py-[20px] lg:py-[25px] hover:bg-[#00795c] hover:text-white text-[16px] lg:text-[18px] max-w-fit mt-[10px] leading-none"
+                      className="inline-block rounded-[100px] bg-[#00795c] text-white text-center px-[40px] lg:px-[59px] py-[20px] lg:py-[25px] hover:bg-black hover:text-white text-[16px] lg:text-[18px] max-w-fit mt-[10px] leading-none"
                     >
                       {
                         page?.ratgeber_detail?.reference
