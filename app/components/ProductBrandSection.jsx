@@ -17,8 +17,8 @@ export function ProductBrandSection({data}) {
     <section className="product-brand-section pt-[40px] md:pt-[60px] lg:pt-[80px] xl:pt-[100px]">
       <div className="product-brand-inner">
         <div className="product-brand-lists flex flex-col">
-          <div className="product-brand-list pb-[60px] md:pb-[100px] lg:pb-[140px] container">
-            <div className="product-brand-list-inner relative flex flex-col lg:flex-row gap-y-[30px]  gap-x-[50px] 2xl:gap-x-[80px] items-center">
+          <div className="product-brand-list pb-[70px] md:pb-[100px] lg:pb-[140px] container">
+            <div className="product-brand-list-inner relative flex flex-col lg:flex-row gap-y-[10px]  gap-x-[50px] 2xl:gap-x-[80px] items-center">
               <div className="img-with-text relative w-full lg:w-[50%]">
                 {/* <Link to={`${data?.brand_1_redirect?.value}`}
                 className="relative block w-full overflow-hidden pb-[42%] min-h-[250px]"
@@ -136,8 +136,8 @@ export function ProductBrandSection({data}) {
               </div>
             </div>
           </div>
-          <div className="product-brand-list pb-[60px] md:pb-[100px] lg:pb-[140px] container">
-            <div className="product-brand-list-inner relative flex flex-col lg:flex-row gap-y-[30px]  gap-x-[50px] 2xl:gap-x-[80px] items-center">
+          <div className="product-brand-list pb-[70px] md:pb-[100px] lg:pb-[140px] container">
+            <div className="product-brand-list-inner relative flex flex-col lg:flex-row gap-y-[10px]  gap-x-[50px] 2xl:gap-x-[80px] items-center">
               <div className="img-with-text relative w-full lg:w-[50%]">
                 {/* <Link to={`${data?.brand_2_redirect?.value}`}
                 className="relative block w-full overflow-hidden pb-[42%] min-h-[250px]"
@@ -255,8 +255,8 @@ export function ProductBrandSection({data}) {
               </div>
             </div>
           </div>            
-          <div className="product-brand-list pb-[60px] md:pb-[100px] lg:pb-[140px] container">
-            <div className="product-brand-list-inner relative flex flex-col lg:flex-row gap-y-[30px]  gap-x-[50px] 2xl:gap-x-[80px] items-center">
+          <div className="product-brand-list pb-[70px] md:pb-[100px] lg:pb-[140px] container">
+            <div className="product-brand-list-inner relative flex flex-col lg:flex-row gap-y-[10px]  gap-x-[50px] 2xl:gap-x-[80px] items-center">
               <div className="img-with-text relative w-full lg:w-[50%]">
                 {/* <Link to={`${data?.brand_3_redirect?.value}`}
                 className="relative block w-full overflow-hidden pb-[42%] min-h-[250px]"
@@ -374,8 +374,8 @@ export function ProductBrandSection({data}) {
               </div>
             </div>
           </div>
-          <div className="product-brand-list pb-[60px] md:pb-[100px] lg:pb-[140px] container">
-            <div className="product-brand-list-inner relative flex flex-col lg:flex-row gap-y-[30px]  gap-x-[50px] 2xl:gap-x-[80px] items-center">
+          <div className="product-brand-list pb-[70px] md:pb-[100px] lg:pb-[140px] container">
+            <div className="product-brand-list-inner relative flex flex-col lg:flex-row gap-y-[10px]  gap-x-[50px] 2xl:gap-x-[80px] items-center">
               <div className="img-with-text relative w-full lg:w-[50%]">
                 {/* <Link to={`${data?.brand_5_redirect?.value}`}
                 className="relative block w-full overflow-hidden pb-[42%] min-h-[250px]"
@@ -493,8 +493,8 @@ export function ProductBrandSection({data}) {
               </div>
             </div>
           </div>
-          <div className="product-brand-list pb-[60px] md:pb-[100px] lg:pb-[140px] container">
-            <div className="product-brand-list-inner relative flex flex-col lg:flex-row gap-y-[30px]  gap-x-[50px] 2xl:gap-x-[80px] items-center">
+          <div className="product-brand-list pb-[70px] md:pb-[100px] lg:pb-[140px] container">
+            <div className="product-brand-list-inner relative flex flex-col lg:flex-row gap-y-[10px]  gap-x-[50px] 2xl:gap-x-[80px] items-center">
               <div className="img-with-text relative w-full lg:w-[50%]">
                 {/* <Link to={`${data?.brand_4_redirect?.value}`}
                 className="relative block w-full overflow-hidden pb-[42%] min-h-[250px]"
@@ -613,8 +613,8 @@ export function ProductBrandSection({data}) {
             </div>
           </div>
           
-          <div className="product-brand-list pb-[60px] md:pb-[100px] lg:pb-[140px] container">
-            <div className="product-brand-list-inner relative flex flex-col lg:flex-row gap-y-[30px]  gap-x-[50px] 2xl:gap-x-[80px] items-center">
+          <div className="product-brand-list pb-[70px] md:pb-[100px] lg:pb-[140px] container">
+            <div className="product-brand-list-inner relative flex flex-col lg:flex-row gap-y-[10px]  gap-x-[50px] 2xl:gap-x-[80px] items-center">
               <div className="img-with-text relative w-full lg:w-[50%]">
                 {/* <Link to={`${data?.brand_6_redirect?.value}`}
                 className="relative block w-full overflow-hidden pb-[42%] min-h-[250px]"
