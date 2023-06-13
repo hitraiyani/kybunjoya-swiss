@@ -350,7 +350,7 @@ export default function ratgeberseite() {
                 </div>
                 {/* <div className="mt-[40px] lg:mt-[60px] xl:mt-[80px] border-t-[1px] border-black pt-[30px] lg:pt-[40px] xl:pt-[60px]"> */}
                 <div className="mt-[33px] border-black">
-                  <h3 className="text-[#00795C] text-[30px] lg:text-[35px] xl:text-[40px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold hidden">
+                  <h3 className="text-[#00795C] text-[30px] lg:text-[35px] xl:text-[40px] tracking-[-1.05984px] mb-[30px] font-bold hidden">
                     {
                       page?.ratgeber_detail?.reference?.product_list_title
                         ?.value
@@ -446,7 +446,7 @@ export default function ratgeberseite() {
                 );
               })}
           </Swiper>
-          <div className="desc lg:mt-[40px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] max-w-[914px] mt-[30px] pr-[20px]">
+          <div className="desc lg:mt-[40px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] max-w-[934px] mt-[30px] pr-[20px]">
             <p>
               Unser medizinischer Ratgeber bietet eine umfassende Information
               zum Verständnis einzelner Krankheitsbilder und der optimalen
@@ -457,9 +457,9 @@ export default function ratgeberseite() {
       </section>
       <section className="dr-faq-sec mx-auto my-[40px] md:my-[60px] lg:my-[80px] xl:my-[100px]">
         <div className="container flex flex-col gap-[20px]">
-          <h2 className="text-[#00795C] text-[30px] lg:text-[35px] xl:text-[40px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold">
+          <h3 className="text-[#00795C] text-[30px] lg:text-[35px] xl:text-[40px] tracking-[-1.05984px] mb-[30px] font-bold">
             {page?.ratgeber_detail?.reference?.product_sub_list_title?.value}
-          </h2>
+          </h3>
           {sub_collections?.nodes?.map((item, index) => {
             if (item.title != pageCollectionTitle) {
               return (

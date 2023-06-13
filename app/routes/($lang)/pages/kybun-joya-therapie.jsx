@@ -93,13 +93,18 @@ export default function kybunJoyaTherapie() {
               alt=""
             />
           </div>
-          <div className="content-col w-full lg:w-[50%] flex flex-col">
+          <div className="content-col w-full lg:w-[50%] flex flex-col justify-center">
+            <h2 className='mb-[15px] text-black text-[24px] md:text-[30px] lg:text-[35px] leading-[1.1] tracking-[-0.97152px] font-medium'>Filialen in Ihrer Nähe</h2>
             <div
-              className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
+              className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mb-[20px]"
               dangerouslySetInnerHTML={{
                 __html: toHTML(kybunJoyaTherapie?.about_section_desc?.value),
               }}
             ></div>
+            <div className='btn-wrap'>
+              <a href="#" className='inline-block rounded-[100px] bg-[#00795c] text-white
+                 text-center px-[35px] py-[15px] hover:bg-black hover:text-white text-[18px] max-w-fit'>Filiale finden</a>
+            </div>
           </div>
         </div>
       </div>

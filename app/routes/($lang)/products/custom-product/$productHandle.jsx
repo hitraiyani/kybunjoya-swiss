@@ -326,7 +326,7 @@ export default function ratgeberSeiteFersensporn() {
             </div>
           </div>
         </section>
-        <section className="rich-text-sec mt-[40px] md:mt-[60px] lg:mt-[80px] xl:mt-[100px]">
+        <section className="rich-text-sec mt-[40px] md:mt-[60px] lg:mt-[80px]">
           <div className="rich-text-inner">
             {/* <div className="title-wrap mb-[20px]">
               <h4 className="text-black text-[35px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] mb-[20px] font-medium">

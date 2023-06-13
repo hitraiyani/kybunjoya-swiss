@@ -84,7 +84,7 @@ export default function schweizerSchuhpropktion() {
         </div>
       </div>
       <div className="about-sec about-sec-slider container pb-[20px] md:pb-[30px] lg:pb-[40px] xl:pb-[50px] pt-[40px] md:pt-[60px] lg:pt-[80px] xl:pt-[100px]">
-        <div className="flex flex-col-reverse lg:flex-row gap-y-[20px] gap-x-[30px] xl:gap-x-[63px] ">
+        <div className="flex flex-col-reverse lg:flex-row gap-y-[20px] gap-x-[30px] xl:gap-x-[63px] items-center ">
           <div className="img-col lg:w-[40%] overflow-hidden w-full hidden lg:block">
             <Swiper
               modules={[Navigation, Scrollbar, A11y, Autoplay, Pagination]}
@@ -163,7 +163,7 @@ export default function schweizerSchuhpropktion() {
         </div>
       )}
       <div className="video-sec container pt-[20px] md:pt-[30px] lg:pt-[40px] xl:pt-[50px] pb-[40px] md:pb-[60px] lg:pb-[80px] xl:pb-[100px]">
-        <div className="flex flex-col lg:flex-row gap-y-[20px] gap-x-[30px] xl:gap-x-[63px] ">
+        <div className="flex flex-col lg:flex-row gap-y-[20px] gap-x-[30px] xl:gap-x-[63px] items-center">
           <div className="content-col w-full lg:w-[35%] flex flex-col">
             <h2 className="text-[#00795C] text-[30px] lg:text-[35px] xl:text-[40px] tracking-[-1.05984px] mb-[20px] font-bold">
               {

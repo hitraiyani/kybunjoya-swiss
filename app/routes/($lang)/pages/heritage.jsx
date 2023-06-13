@@ -89,7 +89,7 @@ export default function Heritage() {
             <div className="text-white bg-[#00795C] px-[30px] py-[5px] tracking-[-0.97152px] leading-none text-[16px] sm:text-[20px] md:text-[24px] lg:text-[28px] xl:text-[35px] flex items-center justify-center rounded-[110px] font-medium w-fit date">
               {heritageReference?.time_line_1_year?.value}
             </div>
-            <div className="desc text-[16px] lg:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] max-w-[1206px]"
+            <div className="desc text-[16px] lg:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] max-w-[853px]"
               dangerouslySetInnerHTML={{
                 __html: toHTML(
                   heritageReference
@@ -117,7 +117,7 @@ export default function Heritage() {
             <div className="text-white bg-[#00795C] px-[30px] py-[5px] tracking-[-0.97152px] leading-none text-[16px] sm:text-[20px] md:text-[24px] lg:text-[28px] xl:text-[35px] flex items-center justify-center rounded-[110px] font-medium w-fit date">
             {heritageReference?.time_line_2_year?.value}
             </div>
-            <div className="desc text-[16px] lg:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] max-w-[1206px]"
+            <div className="desc text-[16px] lg:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] max-w-[853px]"
               dangerouslySetInnerHTML={{
                 __html: toHTML(
                   heritageReference
@@ -143,7 +143,7 @@ export default function Heritage() {
             <div className="text-white bg-[#00795C] px-[30px] py-[5px] tracking-[-0.97152px] leading-none text-[16px] sm:text-[20px] md:text-[24px] lg:text-[28px] xl:text-[35px] flex items-center justify-center rounded-[110px] font-medium w-fit date">
               {heritageReference?.time_line_3_year?.value}
             </div>
-            <div className="desc text-[16px] lg:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] max-w-[1206px]"
+            <div className="desc text-[16px] lg:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] max-w-[853px]"
               dangerouslySetInnerHTML={{
                 __html: toHTML(
                   heritageReference

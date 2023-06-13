@@ -86,7 +86,7 @@ export default function karriere() {
         ></div>
       </div>
       <section className="about-sec container mt-[48px]">
-        <div className="flex flex-col lg:flex-row gap-y-[20px] gap-x-[30px] xl:gap-x-[45px]">
+        <div className="flex flex-col lg:flex-row gap-y-[20px] gap-x-[30px] xl:gap-x-[45px] items-center">
           <div className="img-col lg:w-[65%] overflow-hidden w-full">
             <iframe
               className="w-full aspect-[4/2]"
