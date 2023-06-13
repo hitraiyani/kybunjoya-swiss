@@ -661,28 +661,6 @@ export function ProductBrandSection({data}) {
                       </div>
                     </div>
                   </SwiperSlide>
-                  <SwiperSlide>
-                    <div className="relative block overflow-hidden pb-[100%] md:pb-[72%] w-full">
-                      <div className="img-wrap w-full h-full absolute inset-0">
-                        <img
-                          className="h-full w-full absolute inset-0 transition hover:duration-500 object-cover"
-                          src={data?.brand_6_image?.reference?.image?.url}
-                          alt=""
-                        />
-                      </div>
-                    </div>
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <div className="relative block overflow-hidden pb-[100%] md:pb-[72%] w-full">
-                      <div className="img-wrap w-full h-full absolute inset-0">
-                        <img
-                          className="h-full w-full absolute inset-0 transition hover:duration-500 object-cover"
-                          src={data?.brand_6_image?.reference?.image?.url}
-                          alt=""
-                        />
-                      </div>
-                    </div>
-                  </SwiperSlide>
                 </Swiper>
                 {/* <div className="img-overlay absolute w-full h-2/4 inset-x-0 bottom-0"></div> */}
                 {/* <div className="title-col container absolute bottom-0 left-0 w-full py-[20px] lg:py-[30px] xl:py-[40px] 2xl:py-[50px]">

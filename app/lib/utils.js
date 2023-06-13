@@ -824,7 +824,8 @@ const roots = {
   kontakt: {title: 'Kontakt', to: '/pages/kontakt'},
   shopfinder: {title: 'Filialen', to: '/pages/shopfinder'},
   blog: {title: 'Blog', to: '/pages/blog'},
-  unternehmen: {title: 'Unternehmen', to: '/pages/unternehmen'}
+  unternehmen: {title: 'Unternehmen', to: '/pages/unternehmen'},
+  ratgeberdetailpage: {title: 'Dr. kybun Joya', to: '/pages/ratgeber-detail-page'}
 };
 
 export function getBreadCrumbs(

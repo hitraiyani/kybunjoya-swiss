@@ -42,7 +42,8 @@ export default function unternehmen() {
 
   return (
     <>
-      <Breadcrumb crumbs={getBreadCrumbs(null, 'unternehmen')} />
+
+      <Breadcrumb crumbs={getBreadCrumbs('unternehmen','uberuns')} />
       <section className="banner-with-title">
         <div className="container">
           <h1 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold">
