@@ -183,7 +183,7 @@ export function ProductBrandSection({data}) {
                       <div className="img-wrap w-full h-full absolute inset-0">
                         <img
                           className="h-full w-full absolute inset-0 transition hover:duration-500 object-cover"
-                          src={data?.brand_2_image?.reference?.image?.url}
+                          src={'https://cdn.shopify.com/s/files/1/0742/9688/5569/files/kybun_Joya_Product_Joya_400x400px.jpg?v=1686663003'}
                           alt=""
                         />
                       </div>
@@ -194,7 +194,7 @@ export function ProductBrandSection({data}) {
                       <div className="img-wrap w-full h-full absolute inset-0">
                         <img
                           className="h-full w-full absolute inset-0 transition hover:duration-500 object-cover"
-                          src={data?.brand_2_image?.reference?.image?.url}
+                          src={'https://cdn.shopify.com/s/files/1/0742/9688/5569/files/MicrosoftTeams-image-1.jpg?v=1686663003'}
                           alt=""
                         />
                       </div>
@@ -205,7 +205,7 @@ export function ProductBrandSection({data}) {
                       <div className="img-wrap w-full h-full absolute inset-0">
                         <img
                           className="h-full w-full absolute inset-0 transition hover:duration-500 object-cover"
-                          src={data?.brand_2_image?.reference?.image?.url}
+                          src={'https://cdn.shopify.com/s/files/1/0742/9688/5569/files/JO517A_Sven_Grey_II_a.png?v=1686663005'}
                           alt=""
                         />
                       </div>
@@ -297,12 +297,23 @@ export function ProductBrandSection({data}) {
                   }}
                   className=""
                 >
-                  <SwiperSlide>
+                  {/* <SwiperSlide>
                     <div className="relative block overflow-hidden pb-[100%] md:pb-[72%] w-full">
                       <div className="img-wrap w-full h-full absolute inset-0">
                         <img
                           className="h-full w-full absolute inset-0 transition hover:duration-500 object-cover"
                           src={data?.brand_3_image?.reference?.image?.url}
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                  </SwiperSlide> */}
+                  <SwiperSlide>
+                    <div className="relative block overflow-hidden pb-[100%] md:pb-[72%] w-full">
+                      <div className="img-wrap w-full h-full absolute inset-0">
+                        <img
+                          className="h-full w-full absolute inset-0 transition hover:duration-500 object-cover"
+                          src={'https://cdn.shopify.com/s/files/1/0742/9688/5569/files/kybun_Joya_Matte_Product_400x400px.jpg?v=1686662829'}
                           alt=""
                         />
                       </div>
@@ -313,18 +324,7 @@ export function ProductBrandSection({data}) {
                       <div className="img-wrap w-full h-full absolute inset-0">
                         <img
                           className="h-full w-full absolute inset-0 transition hover:duration-500 object-cover"
-                          src={data?.brand_3_image?.reference?.image?.url}
-                          alt=""
-                        />
-                      </div>
-                    </div>
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <div className="relative block overflow-hidden pb-[100%] md:pb-[72%] w-full">
-                      <div className="img-wrap w-full h-full absolute inset-0">
-                        <img
-                          className="h-full w-full absolute inset-0 transition hover:duration-500 object-cover"
-                          src={data?.brand_3_image?.reference?.image?.url}
+                          src={'https://cdn.shopify.com/s/files/1/0742/9688/5569/files/kybun_Joya_Matte_400x400px.jpg?v=1686662829'}
                           alt=""
                         />
                       </div>
