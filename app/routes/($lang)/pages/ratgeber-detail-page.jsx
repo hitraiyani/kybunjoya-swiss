@@ -90,7 +90,10 @@ export default function ratgeberseite() {
     ? JSON.parse(page.ratgeber_detail.reference.button_accordion_mapping.value)
     : [];
 
-  const productSliderData = page?.ratgeber_detail?.reference?.product_slider_data?.value ? JSON.parse(page?.ratgeber_detail?.reference?.product_slider_data?.value) : [];
+  const productSliderData = page?.ratgeber_detail?.reference
+    ?.product_slider_data?.value
+    ? JSON.parse(page?.ratgeber_detail?.reference?.product_slider_data?.value)
+    : [];
 
   useEffect(() => {
     document.querySelectorAll('.my-achor-link').forEach(function (link) {
@@ -203,7 +206,10 @@ export default function ratgeberseite() {
                   <div className="product-list-hero-img relative overflow-hidden pb-[29%] min-h-[270px]">
                     <img
                       className="absolute inset-0 w-full h-full object-cover object-left-top"
-                      src={page?.ratgeber_detail?.reference?.hero_image?.reference?.image?.url}
+                      src={
+                        page?.ratgeber_detail?.reference?.hero_image?.reference
+                          ?.image?.url
+                      }
                       alt=""
                     />
                   </div>
@@ -218,12 +224,28 @@ export default function ratgeberseite() {
                 ></div>
                 <div
                   className="desc  mt-[20px] lg:mt-[40px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] max-w-[870px]"
-                  dangerouslySetInnerHTML={{
-                    __html: toHTML(
-                      page?.ratgeber_detail?.reference?.head_new_desc?.value,
-                    ),
-                  }}
-                ></div>
+                  // dangerouslySetInnerHTML={{
+                  //   __html: toHTML(
+                  //     page?.ratgeber_detail?.reference?.head_new_desc?.value,
+                  //   ),
+                  // }}
+                >
+                  <p>
+                    «THERAPIEREN STATT OPERIEREN»: Dank der kybun Joya Therapie
+                    können Menschen mit Gehbeschwerden Operationen vermeiden und
+                    wieder schmerzfrei leben. Studien sowie Rückmeldungen von
+                    medizinischen Fachpersonen und unseren Kunden bestätigen,
+                    dass unsere Produkte bei über 50 medizinischen Diagnosen
+                    Linderung schaffen, wie zum Beispiel 
+                  </p>
+                  <ul className="list-outside list-disc pl-[20px] flex flex-col gap-y-[10px]">
+                    <li>Fersensporn</li>
+                    <li>Knie- und Hüftarthrose</li>
+                    <li>Rückenbeschwerden</li>
+                    <li>Fussfehlstellung und Beschwerden</li>
+                    <li>Osteoporose und Venenleiden</li>
+                  </ul>
+                </div>
               </div>
               <div className="interactive-img-wrap mx-auto block w-[320px] !hidden">
                 <div className="img-wrap w-full text-center relative">
@@ -328,10 +350,13 @@ export default function ratgeberseite() {
                 </div>
                 {/* <div className="mt-[40px] lg:mt-[60px] xl:mt-[80px] border-t-[1px] border-black pt-[30px] lg:pt-[40px] xl:pt-[60px]"> */}
                 <div className="mt-[33px] border-black">
-                  <h2 className="text-[#00795C] text-[30px] lg:text-[35px] xl:text-[40px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold hidden">
-                    {page?.ratgeber_detail?.reference?.product_list_title?.value}
-                  </h2>
-                  <div className="scroll-links-wrap flex flex-wrap gap-x-[20px] lg:gap-x-[30px] xl:gap-x-[40px] 2xl:gap-x-[78px] gap-y-[20px] lg:gap-y-[30px] xl:gap-y-[40px] 2xl:gap-y-[64px]">
+                  <h3 className="text-[#00795C] text-[30px] lg:text-[35px] xl:text-[40px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold hidden">
+                    {
+                      page?.ratgeber_detail?.reference?.product_list_title
+                        ?.value
+                    }
+                  </h3>
+                  <div className="scroll-links-wrap flex flex-wrap gap-x-[20px] lg:gap-x-[30px] xl:gap-x-[40px] 2xl:gap-x-[78px] gap-y-[20px] lg:gap-y-[30px] xl:gap-y-[40px] 2xl:gap-y-[64px] !hidden">
                     {filteredKybunJoyaProducts.map((product, index) => {
                       return (
                         <Link
@@ -362,10 +387,10 @@ export default function ratgeberseite() {
           </div>
         </div>
       </section>
-      <section className="popular-items-section pt-[40px] md:pt-[60px] lg:pt-[80px] xl:pt-[100px]">
+      <section className="popular-items-section pt-[40px] md:pt-[60px]">
         <div className="container !pr-0">
-          <h2 className="text-[#00795C] text-[30px] lg:text-[35px] xl:text-[40px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold">
-            { page?.ratgeber_detail?.reference?.product_slider_title?.value }
+          <h2 className="text-[#00795C] text-[30px] lg:text-[35px] xl:text-[40px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold pr-[20px]">
+            {page?.ratgeber_detail?.reference?.product_slider_title?.value}
           </h2>
           <Swiper
             modules={[Navigation, Scrollbar, A11y, Autoplay, Pagination]}
@@ -391,40 +416,46 @@ export default function ratgeberseite() {
             }}
             className=""
           >
-            {productSliderData.length > 0 && (
-                productSliderData.map((item, index) => {
-                    return (
-                      <SwiperSlide key={index}>
-                        <div className="popular-item">
-                          <div className="img-wrap overflow-hidden pb-[60%] mb-[15px] relative">
-                            <img
-                              className="absolute inset-0 w-full h-full object-cover"
-                              src={item.image}
-                              alt=""
-                            />
-                          </div>
-                          <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mb-[15px]">
-                            <p>{item.title}</p>
-                          </div>
-                          <Link
-                            to={item.redirect_button_link}
-                            className="inline-block rounded-[100px] bg-[#00795c] text-white
+            {productSliderData.length > 0 &&
+              productSliderData.map((item, index) => {
+                return (
+                  <SwiperSlide key={index}>
+                    <div className="popular-item">
+                      <div className="img-wrap overflow-hidden pb-[60%] mb-[15px] relative">
+                        <img
+                          className="absolute inset-0 w-full h-full object-cover"
+                          src={item.image}
+                          alt=""
+                        />
+                      </div>
+                      <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mb-[15px]">
+                        <p>{item.title}</p>
+                      </div>
+                      <Link
+                        to={item.redirect_button_link}
+                        className="inline-block rounded-[100px] bg-[#00795c] text-white
                           text-center px-[35px] py-[15px] hover:bg-black hover:text-white text-[18px] max-w-fit"
-                          >
-                            {item.redirect_button_text}
-                          </Link>
-                        </div>
-                      </SwiperSlide>
-                    );
-                })
-            )}
+                      >
+                        {item.redirect_button_text}
+                      </Link>
+                    </div>
+                  </SwiperSlide>
+                );
+              })}
           </Swiper>
+          <div className="desc lg:mt-[40px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] max-w-[914px] mt-[30px] pr-[20px]">
+            <p>
+              Unser medizinischer Ratgeber bietet eine umfassende Information
+              zum Verständnis einzelner Krankheitsbilder und der optimalen
+              therapeutischen Integration von kybun und Joya Produkte.  
+            </p>
+          </div>
         </div>
       </section>
       <section className="dr-faq-sec mx-auto my-[40px] md:my-[60px] lg:my-[80px] xl:my-[100px]">
         <div className="container flex flex-col gap-[20px]">
           <h2 className="text-[#00795C] text-[30px] lg:text-[35px] xl:text-[40px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold">
-            { page?.ratgeber_detail?.reference?.product_sub_list_title?.value }
+            {page?.ratgeber_detail?.reference?.product_sub_list_title?.value}
           </h2>
           {sub_collections?.nodes?.map((item, index) => {
             if (item.title != pageCollectionTitle) {
@@ -535,7 +566,7 @@ export default function ratgeberseite() {
                     alt=""
                   />
                 </div>
-                <div className="info-col p-[15px] md:p-[25px] lg:p-[30px] xl:p-[40px] md:!pt-[25px] max-w-[663px] mx-auto h-full flex flex-col">
+                <div className="info-col p-[15px] md:p-[25px] lg:p-[30px] xl:p-[40px] md:!pt-[25px] max-w-[683px] mx-auto h-full flex flex-col">
                   <h4
                     className="text-[24px] md:text-[28px] xl:text-[30px] text-black font-[500] leading-[1.2] text-center"
                     dangerouslySetInnerHTML={{
@@ -574,7 +605,7 @@ export default function ratgeberseite() {
                     alt=""
                   />
                 </div>
-                <div className="info-col p-[15px] md:p-[25px] lg:p-[30px] xl:p-[40px] md:!pt-[25px] max-w-[663px] mx-auto h-full flex flex-col">
+                <div className="info-col p-[15px] md:p-[25px] lg:p-[30px] xl:p-[40px] md:!pt-[25px] max-w-[683px] mx-auto h-full flex flex-col">
                   <h4
                     className="text-[24px] md:text-[28px] xl:text-[30px] text-black font-[500] leading-[1.2] text-center"
                     dangerouslySetInnerHTML={{
