@@ -411,14 +411,14 @@ export default function ratgeberseite() {
                             <img
                               className="absolute inset-0 w-full h-full object-cover"
                               src={
-                                'https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Manufaktur_1200x800px_05.jpg_1_4.png?v=1685525783'
+                                product.featuredImage.url ? product.featuredImage.url : 'https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Manufaktur_1200x800px_05.jpg_1_4.png?v=1685525783'
                               }
                               alt=""
                             />
                           </div>
-                          <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mb-[5px]">
+                          {/* <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mb-[5px]">
                             <p>Gesundheitswissen</p>
-                          </div>
+                          </div> */}
                           <div className="text-black text-[24px] md:text-[30px] lg:text-[35px] leading-[1.1] tracking-[-0.97152px] font-medium mb-[15px]">
                             <p>{product.title}</p>
                           </div>

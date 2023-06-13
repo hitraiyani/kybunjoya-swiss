@@ -125,6 +125,7 @@ export function ProductBrandSection({data}) {
                     <div className="btn-wrap flex mt-[19px]">
                       <Link
                         to={data?.brand_1_sub_button_redirect?.value}
+                        target="_blank"
                         className="md:px-[35px] px-[30px] md:py-[18px] py-[15px] bg-[#00795c] text-[16px] md:text-[18px] font-medium text-white rounded-[100px] w-fit hover:bg-black hover:!text-white text-center"
                       >
                         {data?.brand_1_sub_button_text?.value}
@@ -243,6 +244,7 @@ export function ProductBrandSection({data}) {
                     <div className="btn-wrap flex mt-[19px]">
                       <Link
                         to={data?.brand_2_sub_button_redirect?.value}
+                        target="_blank"
                         className="md:px-[35px] px-[30px] md:py-[18px] py-[15px] bg-[#00795c] text-[16px] md:text-[18px] font-medium text-white rounded-[100px] w-fit hover:bg-black hover:!text-white text-center"
                       >
                         {data?.brand_2_sub_button_text?.value}
@@ -361,6 +363,7 @@ export function ProductBrandSection({data}) {
                     <div className="btn-wrap flex mt-[19px]">
                       <Link
                         to={data?.brand_3_sub_button_redirect?.value}
+                        target="_blank"
                         className="md:px-[35px] px-[30px] md:py-[18px] py-[15px] bg-[#00795c] text-[16px] md:text-[18px] font-medium text-white rounded-[100px] w-fit hover:bg-black hover:!text-white text-center"
                       >
                         {data?.brand_3_sub_button_text?.value}
@@ -479,6 +482,7 @@ export function ProductBrandSection({data}) {
                     <div className="btn-wrap flex mt-[19px]">
                       <Link
                         to={data?.brand_5_sub_button_redirect?.value}
+                        target="_blank"
                         className="md:px-[35px] px-[30px] md:py-[18px] py-[15px] bg-[#00795c] text-[16px] md:text-[18px] font-medium text-white rounded-[100px] w-fit hover:bg-black hover:!text-white text-center"
                       >
                         {data?.brand_5_sub_button_text?.value}
@@ -597,6 +601,7 @@ export function ProductBrandSection({data}) {
                     <div className="btn-wrap flex mt-[19px]">
                       <Link
                         to={data?.brand_4_sub_button_redirect?.value}
+                        target="_blank"
                         className="md:px-[35px] px-[30px] md:py-[18px] py-[15px] bg-[#00795c] text-[16px] md:text-[18px] font-medium text-white rounded-[100px] w-fit hover:bg-black hover:!text-white text-center"
                       >
                         {data?.brand_4_sub_button_text?.value}
@@ -694,6 +699,7 @@ export function ProductBrandSection({data}) {
                     <div className="btn-wrap flex mt-[19px]">
                       <Link
                         to={data?.brand_6_sub_button_redirect?.value}
+                        target="_blank"
                         className="md:px-[35px] px-[30px] md:py-[18px] py-[15px] bg-[#00795c] text-[16px] md:text-[18px] font-medium text-white rounded-[100px] w-fit hover:bg-black hover:!text-white text-center"
                       >
                         {data?.brand_6_sub_button_text?.value}
