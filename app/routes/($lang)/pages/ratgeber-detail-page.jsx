@@ -190,7 +190,7 @@ export default function ratgeberseite() {
 
   return (
     <>
-      <Breadcrumb crumbs={getBreadCrumbs(null, 'ratgeber')} />
+      {/* <Breadcrumb crumbs={getBreadCrumbs(null, 'ratgeber')} /> */}
       <section className="dr-info-tabs-section">
         <div className="container">
           <div className="dr-info-tabs-inner">
