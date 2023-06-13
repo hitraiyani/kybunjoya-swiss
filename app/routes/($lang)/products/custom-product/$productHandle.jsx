@@ -8,11 +8,17 @@ import {
   Link,
   IconClose,
   IconDownload,
-  Breadcrumb
+  Breadcrumb,
 } from '~/components';
 import {useLoaderData, useLocation} from '@remix-run/react';
 import {MEDIA_FRAGMENT, PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
-import {toHTML, truncate, getAicoMetaByKeyName, getYoutubeId, getBreadCrumbs} from '~/lib/utils';
+import {
+  toHTML,
+  truncate,
+  getAicoMetaByKeyName,
+  getYoutubeId,
+  getBreadCrumbs,
+} from '~/lib/utils';
 import {flattenConnection} from '@shopify/hydrogen';
 import {STORE_LOCALE, AICO_API_IMAGE_PREFIX} from '~/lib/const';
 
@@ -26,17 +32,16 @@ export const handle = {
 };
 
 export async function loader({request, params, context}) {
-
   const {productHandle} = params;
 
-  const {product, ratgeber_seite_fersensporn_mobile} = await context.storefront.query(PRODUCT_QUERY, {
-    variables: {
-      handle: productHandle,
-      country: context.storefront.i18n.country,
-      language: context.storefront.i18n.language,
-    },
-  });
-
+  const {product, ratgeber_seite_fersensporn_mobile} =
+    await context.storefront.query(PRODUCT_QUERY, {
+      variables: {
+        handle: productHandle,
+        country: context.storefront.i18n.country,
+        language: context.storefront.i18n.language,
+      },
+    });
 
   const {page} = await context.storefront.query(PAGE_QUERY, {
     variables: {
@@ -69,7 +74,7 @@ export default function ratgeberSeiteFersensporn() {
   aicoProductData?.tags?.forEach((item) => {
     if (item.includes('attribute_de_kybun')) {
       if (!drKybunJoyaTagHeading) {
-          drKybunJoyaTagHeading = item.split('_').at(-2);
+        drKybunJoyaTagHeading = item.split('_').at(-2);
       }
       aicoDrKybunJoyaProductTags.push(item.split('_').at(-1));
     }
@@ -85,17 +90,21 @@ export default function ratgeberSeiteFersensporn() {
     }
   });
 
-  const aicoTestimonialsData = aicoProductData?.testimonials_data?.value ? JSON.parse(aicoProductData.testimonials_data.value) : [];
-  const aicoKnowledgeBasesData = aicoProductData?.knowledgebases_data?.value ? JSON.parse(aicoProductData.knowledgebases_data.value) : [];
+  const aicoTestimonialsData = aicoProductData?.testimonials_data?.value
+    ? JSON.parse(aicoProductData.testimonials_data.value)
+    : [];
+  const aicoKnowledgeBasesData = aicoProductData?.knowledgebases_data?.value
+    ? JSON.parse(aicoProductData.knowledgebases_data.value)
+    : [];
   let productPdfTitle = '';
   let productPdfUrl = '';
   if (aicoKnowledgeBasesData.length > 0) {
-      productPdfTitle = aicoKnowledgeBasesData[0]?.title;
-      if(aicoKnowledgeBasesData[0]?.file) {
-        productPdfUrl = aicoKnowledgeBasesData[0]?.file
-      } else if (aicoKnowledgeBasesData[0]?.image) {
-        productPdfUrl = AICO_API_IMAGE_PREFIX + aicoKnowledgeBasesData[0]?.image
-      }
+    productPdfTitle = aicoKnowledgeBasesData[0]?.title;
+    if (aicoKnowledgeBasesData[0]?.file) {
+      productPdfUrl = aicoKnowledgeBasesData[0]?.file;
+    } else if (aicoKnowledgeBasesData[0]?.image) {
+      productPdfUrl = AICO_API_IMAGE_PREFIX + aicoKnowledgeBasesData[0]?.image;
+    }
   }
   // const aicoContentBuilders = aicoProductData?.aico_content_builders?.value ? JSON.parse(aicoProductData.aico_content_builders.value) : [];
   // let aicoCotentBuilderHtml = '';
@@ -104,7 +113,6 @@ export default function ratgeberSeiteFersensporn() {
   //     aicoCotentBuilderHtml = aicoContentBuilders[0]['values'][0]['contentBuilder']['value'];
   //   }
   // }
-
 
   const dkj_videourl_de_ch = getAicoMetaByKeyName(
     aicoProductData?.aico_custom_fields_de_ch?.value,
@@ -137,26 +145,23 @@ export default function ratgeberSeiteFersensporn() {
     aicoProductData?.aico_custom_fields_de_ch?.value,
     'rtgb_textkybunjoyatherapie_de_ch',
   );
-  
+
   const rtgb_textnachbutton_de_ch = getAicoMetaByKeyName(
     aicoProductData?.aico_custom_fields_de_ch?.value,
     'rtgb_textnachbutton_de_ch',
   );
 
-
-
   const [downloadLinks, setDownloadLinks] = useState([]);
   const [menuLinks, setMenuLinks] = useState([]);
 
   useEffect(() => {
-
     if (aicoProductData?.documents?.value) {
       var container = document.createElement('div');
       container.innerHTML = aicoProductData.documents.value;
       var downlinks = container.querySelectorAll('a');
       let downListArr = [];
       downlinks.forEach((link) => {
-         downListArr.push({'href': link.href, 'title' :link.innerText.trim() })
+        downListArr.push({href: link.href, title: link.innerText.trim()});
       });
       setDownloadLinks(downListArr);
     }
@@ -239,60 +244,73 @@ export default function ratgeberSeiteFersensporn() {
     };
   }, [menuLinks]);
 
-
   const [isActive, setActive] = useState('false');
   const ToggleClass = () => {
     setActive(!isActive);
   };
-  
+
   const {pathname} = useLocation();
   const breadCrumbsData =  getBreadCrumbs(null,'ratgeberdetailpage');
   breadCrumbsData.push({title : aicoProductData?.title, to : pathname });
 
   return (
     <>
-      <Breadcrumb crumbs={breadCrumbsData}/>
+      <Breadcrumb crumbs={breadCrumbsData} />
       <div className="container">
         <section className="rich-text-sec" id="section_1">
           <div className="rich-text-inner">
-            <div className="flex flex-col lg:flex-row gap-y-[30px] lg:gap-x-[50px] xl:gap-x-[60px]">
-              <div className="col-left w-full lg:w-[50%]">
+            <div className="flex flex-col gap-y-[30px] lg:gap-x-[50px] xl:gap-x-[60px]">
+              <div className="col-left w-full">
                 <div className="w-full mb-[12px]">
                   <div className="title-wrap">
-                    <h2 className="title text-[#00795C] text-[35px] lg:text-[40px] xl:text-[65px] tracking-[-1.05984px]">
-                      {
-                        aicoProductData?.title
-                      }
+                    <h2 className="title text-[#00795C] text-[35px] lg:text-[40px] xl:text-[65px] tracking-[-1.05984px] mb-[30px] max-w-[837px]">
+                      {aicoProductData?.title}
                     </h2>
-                    <h3 className="text-[24px] md:text-[28px] xl:text-[30px] text-[#00795C] font-bold leading-[1.2] mb-[20px]">
-                      {
-                        dkj_name_international_de_ch
-                      }
-                    </h3>
-                  </div>
-                </div>
-                <div
-                  className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
-                  dangerouslySetInnerHTML={{
-                    __html: (
-                        page?.fersensporn_product?.reference?.description_de_ch?.value
-                    ),
-                  }}
-                ></div>
-              </div>
-              <div className="col-right w-full lg:w-[50%]">
-                <div className="video-info">
-                  {dkj_videourl_de_ch && (
-                    <div className="video-wrap w-full relative overflow-hidden pb-[50%]">
-                      {videoId !='error' ? (<iframe
-                        className="absolute w-full h-full inset-0 object-cover bg-cover"
-                        src={`//www.youtube.com/embed/${videoId}`}
+                    <div className="product-list-hero-img relative overflow-hidden pb-[35%] aspect-[3/2] md:aspect-auto">
+                      <iframe
+                        width={100}
+                        height={100}
+                        src="https://www.youtube.com/embed/UBpScaVSvkM"
                         title="YouTube video player"
                         frameBorder={0}
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowFullScreen
-                      />) : (<video controls="controls" src={dkj_videourl_de_ch}></video>)}
-                      
+                        className="absolute inset-0 w-full h-full object-cover"
+                      />
+                    </div>
+                    <h3 className="text-[24px] md:text-[28px] xl:text-[30px] text-[#00795C] font-bold leading-[1.2] mb-[20px]">
+                      {dkj_name_international_de_ch}
+                    </h3>
+                  </div>
+                </div>
+                <div
+                  className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] max-w-[870px] mx-auto mt-[44px]"
+                  dangerouslySetInnerHTML={{
+                    __html:
+                      page?.fersensporn_product?.reference?.description_de_ch
+                        ?.value,
+                  }}
+                ></div>
+              </div>
+              {/* <div className="col-right w-full">
+                <div className="video-info">
+                  {dkj_videourl_de_ch && (
+                    <div className="video-wrap w-full relative overflow-hidden pb-[50%]">
+                      {videoId != 'error' ? (
+                        <iframe
+                          className="absolute w-full h-full inset-0 object-cover bg-cover"
+                          src={`//www.youtube.com/embed/${videoId}`}
+                          title="YouTube video player"
+                          frameBorder={0}
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                          allowFullScreen
+                        />
+                      ) : (
+                        <video
+                          controls="controls"
+                          src={dkj_videourl_de_ch}
+                        ></video>
+                      )}
                     </div>
                   )}
                   <div className="info mt-[12px]">
@@ -304,7 +322,7 @@ export default function ratgeberSeiteFersensporn() {
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </section>
@@ -318,54 +336,102 @@ export default function ratgeberSeiteFersensporn() {
                 }
               </h4>
             </div> */}
-            <div className="flex flex-col lg:flex-row gap-y-[30px] lg:gap-x-[50px] xl:gap-x-[60px]">
-              <div className="col-left w-full lg:w-[50%]">
-              <div className="desc text-[16px] md:text-[16px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mb-[32px]"
-                >
-                 {aicoProductTagsUrsachen.length > 0 && (
-                  <>
-                    <h2 className="text-[#00795C] text-[30px] lg:text-[40px] tracking-[-1.05984px] mb-[20px] font-medium">
-                      {ursachenTagHeading}
-                    </h2>
-                    {rtgb_textursachen_de_ch && ( <p>{ rtgb_textursachen_de_ch }</p> )}
-                    <ul className="list-style2 list-style3">
-                      {aicoProductTagsUrsachen.map((item, index) => {
-                        return (<li className='list-style-red' key={index}>{item}</li>)
-                      })}
-                    </ul>
-                  </>
-                 )}
-                 {aicoDrKybunJoyaProductTags.length > 0 && (
+            <div className="flex flex-col gap-y-[30px] lg:gap-x-[50px] xl:gap-x-[60px]">
+              <div className="col-left w-full max-w-[870px] mx-auto">
+                <div className="desc text-[16px] md:text-[16px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mb-[32px]">
+                  {aicoProductTagsUrsachen.length > 0 && (
                     <>
-                      <h2 className="text-[#00795C] text-[30px] lg:text-[40px] tracking-[-1.05984px] mb-[20px] font-medium">
-                        {drKybunJoyaTagHeading}
+                      <h2 className="text-black text-[24px] md:text-[30px] lg:text-[35px] leading-[1.1] tracking-[-0.97152px] mb-[20px] font-medium">
+                        {ursachenTagHeading}
                       </h2>
-                      { rtgb_textkybunjoyatherapie_de_ch && ( <p>{ rtgb_textkybunjoyatherapie_de_ch }</p> )}
+                      {rtgb_textursachen_de_ch && (
+                        <p>{rtgb_textursachen_de_ch}</p>
+                      )}
                       <ul className="list-style2 list-style3">
-                        {aicoDrKybunJoyaProductTags.map((item, index) => {
-                          return (<li key={index}>{item}</li>)
+                        {aicoProductTagsUrsachen.map((item, index) => {
+                          return (
+                            <li className="list-style-red" key={index}>
+                              {item}
+                            </li>
+                          );
                         })}
                       </ul>
                     </>
-                )}
-                  {rtgb_textnachbutton_de_ch && ( <p>{ rtgb_textnachbutton_de_ch }</p> )}
+                  )}
+                  {aicoDrKybunJoyaProductTags.length > 0 && (
+                    <>
+                      <h2 className="text-black text-[24px] md:text-[30px] lg:text-[35px] leading-[1.1] tracking-[-0.97152px] mb-[20px] font-medium">
+                        {drKybunJoyaTagHeading}
+                      </h2>
+                      {rtgb_textkybunjoyatherapie_de_ch && (
+                        <p>{rtgb_textkybunjoyatherapie_de_ch}</p>
+                      )}
+                      <ul className="list-style2 list-style3">
+                        {aicoDrKybunJoyaProductTags.map((item, index) => {
+                          return (
+                            <li className="list-style-green" key={index}>
+                              {item}
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    </>
+                  )}
+                  <div className="btn-wrap mt-[40px]">
+                    <div className="desc text-[16px] md:text-[16px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mb-[10px] max-w-[500px]">
+                      <p>
+                        Möchten mehr Informationen zum Thema? Laden Sie
+                        kostenlos unsere Broschüre herunter.
+                      </p>
+                    </div>
+                    <a
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href="#"
+                      className="download-link pro-btn text-[16px] md:text-[20px] lg:text-[21px] leading-none text-black tracking-[-0.400697px] font-normal flex gap-[5px] lg:gap-[25px] justify-center w-fit text-left items-center transition-all duration-700 hover:text-[#00795c] download-link underline mb-[15px]"
+                    >
+                      <IconDownload className={'w-[20px] h-[20px]'} />
+                      Training der Fussmuskulatur
+                    </a>
+                    <a
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href="#"
+                      className="download-link pro-btn text-[16px] md:text-[20px] lg:text-[21px] leading-none text-black tracking-[-0.400697px] font-normal flex gap-[5px] lg:gap-[25px] justify-center w-fit text-left items-center transition-all duration-700 hover:text-[#00795c] download-link underline mb-[15px]"
+                    >
+                      <IconDownload className={'w-[20px] h-[20px]'} />
+                      Training der Fussmuskulatur
+                    </a>
+                    <a
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href="#"
+                      className="download-link pro-btn text-[16px] md:text-[20px] lg:text-[21px] leading-none text-black tracking-[-0.400697px] font-normal flex gap-[5px] lg:gap-[25px] justify-center w-fit text-left items-center transition-all duration-700 hover:text-[#00795c] download-link underline mb-[15px]"
+                    >
+                      <IconDownload className={'w-[20px] h-[20px]'} />
+                      Training der Fussmuskulatur
+                    </a>
+                  </div>
+                  {rtgb_textnachbutton_de_ch && (
+                    <p>{rtgb_textnachbutton_de_ch}</p>
+                  )}
                 </div>
                 {downloadLinks.length > 0 && (
                   <>
                     {downloadLinks.map((item, index) => {
-                        return (
-                          <div className="btn-wrap mt-[20px]" key={index}>
-                            <a
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              href={item.href}
-                              className="download-link pro-btn text-[16px] md:text-[20px] lg:text-[21px] leading-none text-black tracking-[-0.400697px] font-normal flex gap-[5px] lg:gap-[25px] justify-center w-fit text-left items-center transition-all duration-700 hover:text-[#00795c] download-link underline"
-                            >
-                              <IconDownload className={'w-[20px] h-[20px]'} />
-                              {item.title}
-                            </a>
-                          </div>
-                        );
+                      return (
+                        <div className="btn-wrap mt-[20px]" key={index}>
+                          <a
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href={item.href}
+                            className="download-link pro-btn text-[16px] md:text-[20px] lg:text-[21px] leading-none text-black tracking-[-0.400697px] font-normal flex gap-[5px] lg:gap-[25px] justify-center w-fit text-left items-center transition-all duration-700 hover:text-[#00795c] download-link underline"
+                          >
+                            <IconDownload className={'w-[20px] h-[20px]'} />
+                            {item.title}
+                          </a>
+                        </div>
+                      );
                     })}
                   </>
                 )}
@@ -379,8 +445,8 @@ export default function ratgeberSeiteFersensporn() {
                 </div> */}
               </div>
 
-              <div className="col-right w-full lg:w-[50%]">
-                {/* <div className="desc text-[16px] md:text-[16px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mb-[32px]"
+              {/* <div className="col-right w-full lg:w-[50%]">
+                <div className="desc text-[16px] md:text-[16px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mb-[32px]"
                 >
                   <ul className="list-style2 list-style3">
                     { apicoProductTags.map((item,index) => {
@@ -390,36 +456,35 @@ export default function ratgeberSeiteFersensporn() {
                         return (<li className='list-style-red' key={index}>{item}</li>)
                     }) }
                   </ul>
-                </div> */}
-                
-              </div>
+                </div> 
+              </div> */}
             </div>
           </div>
         </section>
-        <section className="mobile-sec mt-[40px] md:mt-[60px] lg:mt-[80px] xl:mt-[100px]">
+        {/* <section className="mobile-sec mt-[40px] md:mt-[60px] lg:mt-[80px] xl:mt-[100px]">
           <div className="inner-row">
             <div className="flex flex-col md:flex-row gap-y-[20px] gap-x-[20px]">
               <div className="col-left w-full lg:w-[50%]">
                 <h2 className="text-[#00795C] text-[30px] lg:text-[40px] tracking-[-1.05984px] mb-[20px] font-medium">
                   {
-                    ratgeber_seite_fersensporn_mobile
-                    ?.shopfinder_section_title?.value
+                    ratgeber_seite_fersensporn_mobile?.shopfinder_section_title
+                      ?.value
                   }
-                  
                 </h2>
                 <div className="img-wrap relative overflow-hidden min-h-[186px] mt-auto pb-[46%]">
                   <img
                     className="absolute w-full h-full inset-0 object-cover"
                     src={
                       ratgeber_seite_fersensporn_mobile
-                        ?.shopfinder_section_image?.reference?.image
-                        ?.url
+                        ?.shopfinder_section_image?.reference?.image?.url
                     }
                     alt=""
                   />
                   <Link
-                    to={ratgeber_seite_fersensporn_mobile
-                      ?.shopfinder_section_button_redirect?.value}
+                    to={
+                      ratgeber_seite_fersensporn_mobile
+                        ?.shopfinder_section_button_redirect?.value
+                    }
                     className="text-white flex justify-end items-center gap-[8px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] tracking-[-0.400697px] font-normal bg-[#00795C] hover:bg-black rounded-[48px] mt-auto hover:!text-white absolute bottom-[15px] right-[15px] py-[10px] px-[20px] lg:py-[12px] lg:px-[30px] leading-none"
                     href="#"
                   >
@@ -433,7 +498,7 @@ export default function ratgeberSeiteFersensporn() {
                   </Link>
                 </div>
               </div>
-              {/* <div className="col-right w-full lg:w-[50%]">
+              <div className="col-right w-full lg:w-[50%]">
                 <h2 className="text-[#00795C] text-[30px] lg:text-[40px] tracking-[-1.05984px] mb-[20px] font-medium">
                   {
                     ratgeber_seite_fersensporn_mobile
@@ -460,11 +525,11 @@ export default function ratgeberSeiteFersensporn() {
                     />
                   </a>
                 </div>
-              </div> */}
+              </div>
             </div>
           </div>
-        </section>
-        <section className="customer-opinions-sec customer-opinions-sec-mobile mt-[40px] md:mt-[60px] lg:mt-[80px] xl:mt-[100px]">
+        </section> */}
+        {/* <section className="customer-opinions-sec customer-opinions-sec-mobile mt-[40px] md:mt-[60px] lg:mt-[80px] xl:mt-[100px]">
           <div className="customer-opinions-inner">
             <div
               className={`${
@@ -491,25 +556,31 @@ export default function ratgeberSeiteFersensporn() {
                     },
                   }}
                 >
-                  {
-                    aicoTestimonialsData.map((item,index) => {
-                      const testimonialsObj = {
-                        title : '',
-                        text : '',
-                        image : '',
+                  {aicoTestimonialsData.map((item, index) => {
+                    const testimonialsObj = {
+                      title: '',
+                      text: '',
+                      image: '',
+                    };
+                    item.values?.forEach((value) => {
+                      if (
+                        value.locale.toLowerCase() == STORE_LOCALE.toLowerCase()
+                      ) {
+                        testimonialsObj.title = value.title;
+                        testimonialsObj.text = value.text;
+                        testimonialsObj.image = value.image;
+                        var prefix = 'http://';
+                        if (
+                          value.image &&
+                          value.image.substr(0, prefix.length) !== prefix
+                        ) {
+                          testimonialsObj.image =
+                            AICO_API_IMAGE_PREFIX + value.image;
+                        }
                       }
-                      item.values?.forEach((value) => {
-                          if (value.locale.toLowerCase() == STORE_LOCALE.toLowerCase()) {
-                            testimonialsObj.title = value.title;  
-                            testimonialsObj.text = value.text;  
-                            testimonialsObj.image = value.image;  
-                            var prefix = 'http://';
-                            if (value.image && value.image.substr(0, prefix.length) !== prefix) {
-                              testimonialsObj.image = AICO_API_IMAGE_PREFIX + value.image;
-                            }
-                          }
-                      })
-                      return (<SwiperSlide key={index}>
+                    });
+                    return (
+                      <SwiperSlide key={index}>
                         <div className="item p-[30px] bg-[#EDEDED] box-border break-inside-avoid mb-[20px] rounded-[10px] shadow-[0px_0px_0.9821px_rgba(0,0,0,0.05),0px_3.9284px_7.8568px_rgba(0,0,0,0.1)] w-full">
                           <div className="item-inner">
                             <div className="desc text-[16px] md:text-[18px] lg:text-[20px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
@@ -527,28 +598,28 @@ export default function ratgeberSeiteFersensporn() {
                                 <h4 className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-bold leading-[1.4] mb-[5px]">
                                   {testimonialsObj.title}
                                 </h4>
-                                {/* <h5 className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
+                                <h5 className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4]">
                                   {item.user_location}
-                                </h5> */}
+                                </h5>
                               </div>
                             </div>
                           </div>
                         </div>
-                      </SwiperSlide>)
-                    })
-                  }
+                      </SwiperSlide>
+                    );
+                  })}
                 </Swiper>
               </div>
             </div>
           </div>
-        </section>
-        <TopProductMobileSlider
+        </section> */}
+        {/* <TopProductMobileSlider
           products={
-            ratgeber_seite_fersensporn_mobile
-              ?.footer_pop_products?.references?.edges
+            ratgeber_seite_fersensporn_mobile?.footer_pop_products?.references
+              ?.edges
           }
-        />
-        <section className="mobile-sec mt-[40px] md:mt-[60px] lg:mt-[80px] xl:mt-[100px] mb-[40px] md:mb-[60px] lg:mb-[80px] xl:mb-[100px]">
+        /> */}
+        {/* <section className="mobile-sec mt-[40px] md:mt-[60px] lg:mt-[80px] xl:mt-[100px] mb-[40px] md:mb-[60px] lg:mb-[80px] xl:mb-[100px]">
           <div className="inner-row">
             <div className="flex flex-col md:flex-row gap-y-[20px] gap-x-[20px]">
               <div className="col-left w-full lg:w-[50%]">
@@ -585,7 +656,7 @@ export default function ratgeberSeiteFersensporn() {
                   </Link>
                 </div>
               </div>
-              {/* <div className="col-right w-full lg:w-[50%]">
+              <div className="col-right w-full lg:w-[50%]">
                 <h2 className="text-[#00795C] text-[30px] lg:text-[40px] tracking-[-1.05984px] mb-[20px] font-medium">
                   {
                     ratgeber_seite_fersensporn_mobile
@@ -618,7 +689,7 @@ export default function ratgeberSeiteFersensporn() {
                     />
                   </Link>
                 </div>
-              </div> */}
+              </div>
             </div>
             <div className="btn-wrap mt-[40px] md:mt-[60px] lg:mt-[80px] xl:mt-[100px] flex gap-[5px] lg:gap-[20px] justify-center">
               <Link
@@ -633,7 +704,7 @@ export default function ratgeberSeiteFersensporn() {
                     ?.kybun_schuhe_testen_section_button_2_text?.value
                 }
               </Link>
-              {/* <a
+              <a
                 target="_blank"
                 rel="noopener noreferrer"
                 href={
@@ -644,8 +715,56 @@ export default function ratgeberSeiteFersensporn() {
               >
                 <IconDownload className={'w-[20px] h-[20px] md:w-[25px] md:h-[25px] lg:w-[30px] lg:h-[30px]'} /> Fersensporn
                 Broschüre
-              </a> */}
+              </a>
             </div>
+          </div>
+        </section> */}
+        <section className="about-us-sec py-[40px] md:py-[60px] lg:py-[80px] xl:py-[100px]">
+          <div className="inner-row max-w-[1058px] mx-auto">
+            <div className="flex flex-col md:flex-row gap-y-[20px] gap-x-[20px] items-center">
+              <div className="col-left w-full lg:w-[55%]">
+                <div className='img-wrap'>
+                  <img className='max-w-full mx-auto' src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/204.01031-weather_jacket-ss23-stratosphere_pearl-w-4x5-c-g4.png_6_fa0f88b2-fe13-417e-8865-007a0a672388.png?v=1686649620" alt="" />
+                </div>
+              </div>
+              <div className="col-right w-full lg:w-[45%]">
+                <h2 className='text-black text-[24px] md:text-[30px] lg:text-[35px] leading-[1.1] tracking-[-0.97152px] font-medium  mb-[25px] text-center lg:text-left'>Geschäfte in deiner Nähe </h2>
+                <div className='btn-wrap text-center lg:text-left'>
+                  <a href="#" className='inline-block rounded-[100px] bg-[#00795c] text-white
+                 text-center px-[15px] lg:px-[35px] py-[10px] lg:py-[20px] hover:bg-black hover:text-white text-[12px] md:text-[18px]  max-w-fit'>Filiale finden</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="btn-wrap mt-[40px] md:mt-[60px] lg:mt-[80px] flex gap-[5px] lg:gap-[20px] justify-center">
+            <Link
+              to={
+                ratgeber_seite_fersensporn_mobile
+                  ?.kybun_schuhe_testen_section_button_2_redirect?.value
+              }
+              className="pro-btn text-[12px] md:text-[20px] lg:text-[21px] leading-none text-white tracking-[-0.400697px] font-normal flex gap-[5px] justify-center px-[5px] lg:px-[35px] py-[10px] lg:py-[20px] bg-[#00795c] rounded-[100px] w-full lg:w-fit text-center items-center transition-all duration-700 hover:bg-black mt-[10px] hover:text-white"
+            >
+              {
+                ratgeber_seite_fersensporn_mobile
+                  ?.kybun_schuhe_testen_section_button_2_text?.value
+              }
+            </Link>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href={
+                ratgeber_seite_fersensporn_mobile
+                  ?.wie_kybun_joya_hilft_section_broschure?.reference?.url
+              }
+              className="pro-btn text-[12px] md:text-[20px] lg:text-[21px] leading-none text-white tracking-[-0.400697px] font-normal flex gap-[5px] lg:gap-[15px] justify-center px-[5px] lg:px-[35px] py-[10px] lg:py-[20px] bg-[#00795c] rounded-[100px] w-full lg:w-fit text-center items-center transition-all duration-700 hover:bg-black mt-[10px] hover:text-white download-link"
+            >
+              <IconDownload
+                className={
+                  'w-[20px] h-[20px] md:w-[25px] md:h-[25px] lg:w-[30px] lg:h-[30px]'
+                }
+              />{' '}
+              Fersensporn Broschüre
+            </a>
           </div>
         </section>
       </div>
@@ -701,7 +820,7 @@ function TopProductMobileSlider({products}) {
                         </div>
                       </div>
                     </div>
-                  </div> 
+                  </div>
                 </Link>
               </SwiperSlide>
             );
