@@ -69,7 +69,6 @@ export default function Heritage() {
     });
   }, []);
 
-
   return (
     <>
       <Breadcrumb crumbs={getBreadCrumbs(null, 'heritage')} />
@@ -78,79 +77,92 @@ export default function Heritage() {
           <h1 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold">
             {heritageReference?.time_line_1_title?.value}
           </h1>
-          <div className="video-wrap relative overflow-hidden pb-[35%] min-h-[300px] w-full">
-            <img
-              className="absolute w-full h-full inset-0 object-cover bg-cover"
-              src={heritageReference?.time_line_1_media?.value}
-              alt=""
-            />
-          </div>
-          <div className="info-with-year mt-[20px] lg:mt-[30px] flex flex-col md:flex-row gap-[20px] md:gap-[40px] lg:gap-[60px] xl:gap-[100px] 2xl:gap-[140px] items-start">
-            <div className="text-white bg-[#00795C] px-[30px] py-[5px] tracking-[-0.97152px] leading-none text-[16px] sm:text-[20px] md:text-[24px] lg:text-[28px] xl:text-[35px] flex items-center justify-center rounded-[110px] font-medium w-fit date">
-              {heritageReference?.time_line_1_year?.value}
-            </div>
-            <div className="desc text-[16px] lg:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] max-w-[853px]"
-              dangerouslySetInnerHTML={{
-                __html: toHTML(
-                  heritageReference
-                    ?.time_line_1_desc?.value,
-                ),
-              }}
-            >
+          <div className="video-banner-with-title">
+            <div className="flex flex-col lg:flex-row gap-y-[30px] gap-x-[40px] 2xl:gap-x-[80px] items-center">
+              <div className="w-full lg:w-[50%]">
+                <div className="video-wrap relative overflow-hidden pb-[100%] lg:pb-[72%] w-full">
+                  <img
+                    className="absolute w-full h-full inset-0 object-cover bg-cover"
+                    src={heritageReference?.time_line_1_media?.value}
+                    alt=""
+                  />
+                </div>
+              </div>
+              <div className="w-full lg:w-[50%]">
+                <div className="info-with-year flex flex-col gap-[20px] items-start">
+                  <div className="text-white bg-[#00795C] px-[30px] py-[5px] tracking-[-0.97152px] leading-none text-[16px] sm:text-[20px] md:text-[24px] lg:text-[28px] xl:text-[35px] flex items-center justify-center rounded-[110px] font-medium w-fit date">
+                    {heritageReference?.time_line_1_year?.value}
+                  </div>
+                  <div
+                    className="desc text-[16px] lg:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] max-w-[853px]"
+                    dangerouslySetInnerHTML={{
+                      __html: toHTML(
+                        heritageReference?.time_line_1_desc?.value,
+                      ),
+                    }}
+                  ></div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
         <section className="video-banner-with-title pb-[40px] md:pb-[60px] lg:pb-[80px] xl:pb-[100px]">
-          <h2 className="text-[#00795C] text-[30px] lg:text-[35px] xl:text-[40px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold">
+          {/* <h2 className="text-[#00795C] text-[30px] lg:text-[35px] xl:text-[40px] tracking-[-1.05984px] mb-[20px] font-bold">
             {heritageReference?.time_line_2_title?.value}
-          </h2>
-          <div className="video-wrap relative overflow-hidden pb-[35%] min-h-[300px] w-full">
-            <iframe
-              className="absolute w-full h-full inset-0 object-cover bg-cover"
-              src={heritageReference?.time_line_2_media?.value}
-              title="YouTube video player"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-            />
-          </div>
-          <div className="info-with-year mt-[20px] lg:mt-[30px] flex flex-col md:flex-row gap-[20px] md:gap-[40px] lg:gap-[60px] xl:gap-[100px] 2xl:gap-[140px] items-start">
-            <div className="text-white bg-[#00795C] px-[30px] py-[5px] tracking-[-0.97152px] leading-none text-[16px] sm:text-[20px] md:text-[24px] lg:text-[28px] xl:text-[35px] flex items-center justify-center rounded-[110px] font-medium w-fit date">
-            {heritageReference?.time_line_2_year?.value}
+          </h2> */}
+          <div className="flex flex-col lg:flex-row-reverse gap-y-[30px] gap-x-[40px] 2xl:gap-x-[80px] items-center">
+            <div className="w-full lg:w-[50%]">
+              <div className="video-wrap relative overflow-hidden pb-[100%] lg:pb-[72%] w-full">
+                <iframe
+                  className="absolute w-full h-full inset-0 object-cover bg-cover"
+                  src={heritageReference?.time_line_2_media?.value}
+                  title="YouTube video player"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                />
+              </div>
             </div>
-            <div className="desc text-[16px] lg:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] max-w-[853px]"
-              dangerouslySetInnerHTML={{
-                __html: toHTML(
-                  heritageReference
-                    ?.time_line_2_desc?.value,
-                ),
-              }}
-            >
+            <div className="w-full lg:w-[50%]">
+              <div className="info-with-year flex flex-col gap-[20px] items-start">
+                <div className="text-white bg-[#00795C] px-[30px] py-[5px] tracking-[-0.97152px] leading-none text-[16px] sm:text-[20px] md:text-[24px] lg:text-[28px] xl:text-[35px] flex items-center justify-center rounded-[110px] font-medium w-fit date">
+                  {heritageReference?.time_line_2_year?.value}
+                </div>
+                <div
+                  className="desc text-[16px] lg:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] max-w-[853px]"
+                  dangerouslySetInnerHTML={{
+                    __html: toHTML(heritageReference?.time_line_2_desc?.value),
+                  }}
+                ></div>
+              </div>
             </div>
           </div>
         </section>
         <section className="video-banner-with-title pb-[40px] md:pb-[60px] lg:pb-[80px] xl:pb-[100px]">
-          <h2 className="text-[#00795C] text-[30px] lg:text-[35px] xl:text-[40px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold">
+          <h2 className="text-[#00795C] text-[30px] lg:text-[35px] xl:text-[40px] tracking-[-1.05984px] mb-[20px] font-bold">
             {heritageReference?.time_line_3_title?.value}
           </h2>
-          <div className="video-wrap relative overflow-hidden pb-[35%] min-h-[300px] w-full">
-            <img
-              className="absolute w-full h-full inset-0 object-cover bg-cover"
-              src={heritageReference?.time_line_3_media?.value}
-              alt=""
-            />
-          </div>
-          <div className="info-with-year mt-[20px] lg:mt-[30px] flex flex-col md:flex-row gap-[20px] md:gap-[40px] lg:gap-[60px] xl:gap-[100px] 2xl:gap-[140px] items-start">
-            <div className="text-white bg-[#00795C] px-[30px] py-[5px] tracking-[-0.97152px] leading-none text-[16px] sm:text-[20px] md:text-[24px] lg:text-[28px] xl:text-[35px] flex items-center justify-center rounded-[110px] font-medium w-fit date">
-              {heritageReference?.time_line_3_year?.value}
+          <div className="flex flex-col lg:flex-row gap-y-[30px] gap-x-[40px] 2xl:gap-x-[80px] items-center">
+            <div className="w-full lg:w-[50%]">
+              <div className="video-wrap relative overflow-hidden pb-[100%] lg:pb-[72%] w-full">
+                <img
+                  className="absolute w-full h-full inset-0 object-cover bg-cover"
+                  src={heritageReference?.time_line_3_media?.value}
+                  alt=""
+                />
+              </div>
             </div>
-            <div className="desc text-[16px] lg:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] max-w-[853px]"
-              dangerouslySetInnerHTML={{
-                __html: toHTML(
-                  heritageReference
-                    ?.time_line_3_desc?.value,
-                ),
-              }}
-            >
+            <div className="w-full lg:w-[50%]">
+              <div className="info-with-year flex flex-col gap-[20px] items-start">
+                <div className="text-white bg-[#00795C] px-[30px] py-[5px] tracking-[-0.97152px] leading-none text-[16px] sm:text-[20px] md:text-[24px] lg:text-[28px] xl:text-[35px] flex items-center justify-center rounded-[110px] font-medium w-fit date">
+                  {heritageReference?.time_line_3_year?.value}
+                </div>
+                <div
+                  className="desc text-[16px] lg:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] max-w-[853px]"
+                  dangerouslySetInnerHTML={{
+                    __html: toHTML(heritageReference?.time_line_3_desc?.value),
+                  }}
+                ></div>
+              </div>
             </div>
           </div>
         </section>
@@ -175,7 +187,7 @@ export default function Heritage() {
                       key={index}
                     >
                       <div className="flex flex-col md:flex-row gap-y-[20px]">
-                        <div className="img-wrap w-full md:w-[50%]">
+                        <div className="img-wrap w-full lg:w-[50%]">
                           <div className="overflow-hidden pb-[59%] relative w-full">
                             <img
                               className="absolute inset-0 w-full h-full object-cover"
@@ -184,7 +196,7 @@ export default function Heritage() {
                             />
                           </div>
                         </div>
-                        <div className="content-wrap w-full md:w-[50%]">
+                        <div className="content-wrap w-full lg:w-[50%]">
                           <h3 className="text-[#000000] text-[30px] lg:text-[35px] xl:text-[40px] mb-[5px] font-bold leading-[1.1] title">
                             {item?.timeline_title}
                           </h3>
