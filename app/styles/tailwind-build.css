@@ -2280,8 +2280,8 @@ video {
 .\!pr-0 {
   padding-right: 0px !important;
 }
-.\!pt-\[20px\] {
-  padding-top: 20px !important;
+.\!pt-\[40px\] {
+  padding-top: 40px !important;
 }
 .pb-1 {
   padding-bottom: 0.25rem;
@@ -2345,6 +2345,9 @@ video {
 }
 .pb-\[59\%\] {
   padding-bottom: 59%;
+}
+.pb-\[60\%\] {
+  padding-bottom: 60%;
 }
 .pb-\[70px\] {
   padding-bottom: 70px;
@@ -2435,6 +2438,9 @@ video {
 }
 .pt-\[64px\] {
   padding-top: 64px;
+}
+.\!pt-\[20px\] {
+  padding-top: 20px !important;
 }
 .text-left {
   text-align: left;
@@ -3703,10 +3709,6 @@ video {
     padding-top: 25px !important;
   }
 
-  .md\:\!pt-\[40px\] {
-    padding-top: 40px !important;
-  }
-
   .md\:pb-12 {
     padding-bottom: 3rem;
   }
@@ -3719,10 +3721,6 @@ video {
     padding-bottom: 2rem;
   }
 
-  .md\:pb-\[100\%\] {
-    padding-bottom: 100%;
-  }
-
   .md\:pb-\[100px\] {
     padding-bottom: 100px;
   }
@@ -3731,12 +3729,12 @@ video {
     padding-bottom: 30px;
   }
 
-  .md\:pb-\[60\%\] {
-    padding-bottom: 60%;
-  }
-
   .md\:pb-\[60px\] {
     padding-bottom: 60px;
+  }
+
+  .md\:pb-\[72\%\] {
+    padding-bottom: 72%;
   }
 
   .md\:pl-0 {
@@ -3761,6 +3759,18 @@ video {
 
   .md\:pt-\[60px\] {
     padding-top: 60px;
+  }
+
+  .md\:\!pt-\[40px\] {
+    padding-top: 40px !important;
+  }
+
+  .md\:pb-\[100\%\] {
+    padding-bottom: 100%;
+  }
+
+  .md\:pb-\[60\%\] {
+    padding-bottom: 60%;
   }
 
   .md\:text-left {
@@ -4335,20 +4345,12 @@ video {
     padding-bottom: 2rem;
   }
 
-  .lg\:pb-\[100\%\] {
-    padding-bottom: 100%;
-  }
-
   .lg\:pb-\[140px\] {
     padding-bottom: 140px;
   }
 
   .lg\:pb-\[40px\] {
     padding-bottom: 40px;
-  }
-
-  .lg\:pb-\[50\%\] {
-    padding-bottom: 50%;
   }
 
   .lg\:pb-\[72\%\] {
@@ -4377,6 +4379,14 @@ video {
 
   .lg\:pt-\[80px\] {
     padding-top: 80px;
+  }
+
+  .lg\:pb-\[100\%\] {
+    padding-bottom: 100%;
+  }
+
+  .lg\:pb-\[50\%\] {
+    padding-bottom: 50%;
   }
 
   .lg\:text-right {
@@ -4853,10 +4863,6 @@ video {
     padding-bottom: 100px;
   }
 
-  .xl\:pb-\[40\%\] {
-    padding-bottom: 40%;
-  }
-
   .xl\:pb-\[50px\] {
     padding-bottom: 50px;
   }
@@ -4883,6 +4889,10 @@ video {
 
   .xl\:pt-\[80px\] {
     padding-top: 80px;
+  }
+
+  .xl\:pb-\[40\%\] {
+    padding-bottom: 40%;
   }
 
   .xl\:text-right {
