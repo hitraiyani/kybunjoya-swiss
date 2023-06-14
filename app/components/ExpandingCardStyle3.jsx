@@ -35,7 +35,7 @@ export function ExpandingCardStyle3({title, content, image}) {
             leaveTo="max-h-0"
           >
             <Disclosure.Panel
-              className="editor-content p-[20px] tracking-[-0.400697px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] font-normal leading-[1.4] flex flex-col-reverse lg:flex-row gap-[20px] lg:gap-[30px]"
+              className="editor-content p-[20px] tracking-[-0.400697px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] font-normal leading-[1.4] flex flex-col-reverse lg:flex-row gap-y-[20px] 2xl:gap-x-[120px] xl:gap-x-[80px] lg:gap-x-[50px]"
               static
             >
               <div className='flex-[1]' dangerouslySetInnerHTML={{__html: content}}></div>

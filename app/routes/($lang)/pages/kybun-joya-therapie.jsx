@@ -66,8 +66,8 @@ export default function kybunJoyaTherapie() {
       </div>
       <div className="about-us-section">
         <div className="container">
-          <div className="flex flex-col lg:flex-row gap-y-[20px] 2xl:gap-x-[120px] xl:gap-x-[80px] lg:gap-x-[50px]">
-            <div className="img-wrap lg:w-[50%] overflow-hidden w-full">
+          <div className="flex flex-col md:flex-row gap-y-[20px] gap-x-[30px] 2xl:gap-x-[120px] xl:gap-x-[80px] lg:gap-x-[50px]">
+            <div className="img-wrap md:w-[50%] overflow-hidden w-full">
               <div className="img-wrap pb-[100%] relative overflow-hidden">
                 <img
                   className="w-full h-full inset-0 object-cover absolute"
@@ -76,7 +76,7 @@ export default function kybunJoyaTherapie() {
                 />
               </div>
             </div>
-            <div className="content-col w-full lg:w-[50%] flex flex-col justify-center">
+            <div className="content-col w-full md:w-[50%] flex flex-col justify-center">
               <div
                 className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
                 dangerouslySetInnerHTML={{
@@ -108,8 +108,8 @@ export default function kybunJoyaTherapie() {
         </div>
       </div>
       <div className="about-sec container pt-[40px] md:pt-[60px] lg:pt-[80px] xl:pt-[100px]">
-        <div className="flex flex-col gap-y-[20px] 2xl:gap-x-[120px] xl:gap-x-[80px] lg:gap-x-[50px] lg:flex-row-reverse">
-          <div className="img-col lg:w-[50%] w-full">
+        <div className="flex flex-col gap-y-[20px] gap-x-[30px] 2xl:gap-x-[120px] xl:gap-x-[80px] lg:gap-x-[50px] md:flex-row-reverse">
+          <div className="img-col md:w-[50%] w-full">
             <div className="img-wrap pb-[100%] relative overflow-hidden">
               <img
                 className="w-full h-full inset-0 object-cover absolute"
@@ -121,7 +121,7 @@ export default function kybunJoyaTherapie() {
               />
             </div>
           </div>
-          <div className="content-col w-full lg:w-[50%] flex flex-col justify-center">
+          <div className="content-col w-full md:w-[50%] flex flex-col justify-center">
             <h2 className="mb-[15px] text-black text-[24px] md:text-[30px] lg:text-[35px] leading-[1.1] tracking-[-0.97152px] font-medium">
               {kybunJoyaTherapie.holistic_section_title.value}
             </h2>
@@ -135,8 +135,8 @@ export default function kybunJoyaTherapie() {
         </div>
       </div>
       <div className="about-sec container py-[40px] md:py-[60px] lg:py-[80px] xl:py-[100px]">
-        <div className="flex flex-col lg:flex-row gap-y-[20px] 2xl:gap-x-[120px] xl:gap-x-[80px] lg:gap-x-[50px]">
-          <div className="img-wrap lg:w-[50%] overflow-hidden w-full">
+        <div className="flex flex-col md:flex-row gap-y-[20px] gap-x-[30px] 2xl:gap-x-[120px] xl:gap-x-[80px] lg:gap-x-[50px] items-center">
+          <div className="img-wrap md:w-[50%] overflow-hidden w-full">
             <div className="img-wrap pb-[100%] md:pb-[60%] relative overflow-hidden">
               <img
                 className="w-full h-full inset-0 object-cover absolute"
@@ -147,7 +147,7 @@ export default function kybunJoyaTherapie() {
               />
             </div>
           </div>
-          <div className="content-col w-full lg:w-[50%] flex flex-col justify-center">
+          <div className="content-col w-full md:w-[50%] flex flex-col justify-center">
             <h2 className="mb-[15px] text-black text-[24px] md:text-[30px] lg:text-[35px] leading-[1.1] tracking-[-0.97152px] font-medium">
               {kybunJoyaTherapie?.about_section_title?.value}
             </h2>
