@@ -295,3 +295,8 @@ export function IconArrowBottom(props) {
     <svg {...props} xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24" > <path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="m7 10l5 5l5-5" /> </svg>
   );
 }
+export function IconArrowRight(props) {
+  return (
+    <svg {...props} width={47} height={33} viewBox="0 0 47 33" fill="none" xmlns="http://www.w3.org/2000/svg" > <path d="M16.3333 2L2 16.3333M2 16.3333L16.3333 30.6667M2 16.3333L45 16.3333" stroke="currentColor" strokeWidth={3} strokeLinecap="round" strokeLinejoin="round" /> </svg>
+  );
+}

@@ -518,7 +518,7 @@ p:last-child {
     width: 100%;
   }
 }
-
+.list-style2 li:before
 .product-brand-section .img-overlay {
   background: linear-gradient(
     180deg,
@@ -1232,6 +1232,7 @@ p:last-child {
   background-color: transparent;
   border-radius: 100%;
   background-size: 17px;
+  top: 4px;
 }
 
 .list-style3 li.list-style-green:before {
@@ -1239,6 +1240,7 @@ p:last-child {
   background-color: transparent;
   border-radius: 100%;
   background-size: 17px;
+  top: 4px;
 }
 
 @media (max-width: 1179px) {
