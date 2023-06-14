@@ -2280,8 +2280,8 @@ video {
 .\!pr-0 {
   padding-right: 0px !important;
 }
-.\!pt-\[40px\] {
-  padding-top: 40px !important;
+.\!pt-\[20px\] {
+  padding-top: 20px !important;
 }
 .pb-1 {
   padding-bottom: 0.25rem;
@@ -2435,9 +2435,6 @@ video {
 }
 .pt-\[64px\] {
   padding-top: 64px;
-}
-.\!pt-\[20px\] {
-  padding-top: 20px !important;
 }
 .text-left {
   text-align: left;
@@ -3706,6 +3703,10 @@ video {
     padding-top: 25px !important;
   }
 
+  .md\:\!pt-\[40px\] {
+    padding-top: 40px !important;
+  }
+
   .md\:pb-12 {
     padding-bottom: 3rem;
   }
@@ -3760,10 +3761,6 @@ video {
 
   .md\:pt-\[60px\] {
     padding-top: 60px;
-  }
-
-  .md\:\!pt-\[40px\] {
-    padding-top: 40px !important;
   }
 
   .md\:text-left {
@@ -4350,6 +4347,10 @@ video {
     padding-bottom: 40px;
   }
 
+  .lg\:pb-\[50\%\] {
+    padding-bottom: 50%;
+  }
+
   .lg\:pb-\[72\%\] {
     padding-bottom: 72%;
   }
@@ -4376,10 +4377,6 @@ video {
 
   .lg\:pt-\[80px\] {
     padding-top: 80px;
-  }
-
-  .lg\:pb-\[50\%\] {
-    padding-bottom: 50%;
   }
 
   .lg\:text-right {
@@ -4856,6 +4853,10 @@ video {
     padding-bottom: 100px;
   }
 
+  .xl\:pb-\[40\%\] {
+    padding-bottom: 40%;
+  }
+
   .xl\:pb-\[50px\] {
     padding-bottom: 50px;
   }
@@ -4882,10 +4883,6 @@ video {
 
   .xl\:pt-\[80px\] {
     padding-top: 80px;
-  }
-
-  .xl\:pb-\[40\%\] {
-    padding-bottom: 40%;
   }
 
   .xl\:text-right {

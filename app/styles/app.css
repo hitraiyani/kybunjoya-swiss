@@ -358,7 +358,7 @@ p:last-child {
     display: block;
     margin-bottom: 30px;
     margin-top: 10px;
-		width: 100%;
+    width: 100%;
   }
 
   .site-footer .nav-item.active .toggle-menu-icon svg {
@@ -530,12 +530,25 @@ p:last-child {
 
 .product-brand-section ul {
   margin-bottom: 15px;
-  list-style: disc;
-  padding-left: 27px;
 }
-
 .product-brand-section ul li {
   padding-bottom: 10px;
+  padding-left: 30px;
+  position: relative;
+}
+.product-brand-section ul li:before {
+  content: '';
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("data:image/svg+xml,%3Csvg width='35' height='35' viewBox='0 0 35 35' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M34.336 11.2116H23.1241V0H11.2116V11.2116H0V23.1241H11.2116V34.336H23.1241V23.1241H34.336V11.2116Z' fill='%23009470'/%3E%3C/svg%3E%0A");
+  background-color: transparent;
+  border-radius: 100%;
+  background-size: 17px;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  top: 5px;
+  position: absolute;
 }
 
 .product-brand-section ul li:last-child {
@@ -557,14 +570,14 @@ p:last-child {
   display: none;
 }
 
-
 .product-brand-pagination-div .swiper-pagination-bullet {
   width: 14px;
   height: 14px;
   margin: 0 7px;
 }
 
-.product-brand-pagination-div .swiper-pagination-bullet.swiper-pagination-bullet-active {
+.product-brand-pagination-div
+  .swiper-pagination-bullet.swiper-pagination-bullet-active {
   background: #595959;
 }
 /* End CollectionsGrid section  */
@@ -1649,10 +1662,10 @@ select {
 
 /* End blog details page */
 
-.desc *{
+.desc * {
   line-height: 1.4 !important;
 }
-.title-wrap *{
+.title-wrap * {
   word-break: break-word;
   word-wrap: break-word;
 }

@@ -645,12 +645,12 @@ export function ProductBrandSection({data}) {
                     <h4 className="text-black text-[24px] md:text-[30px] lg:text-[35px] leading-[1.1] tracking-[-0.97152px]">
                       {data?.brand_6_sub_text?.value}
                     </h4>
-                    {/* <div
+                    <div
                       className="desc text-black text-[16px] lg:text-[21px] leading-[1.3] font-[400] mt-[15px]"
                       dangerouslySetInnerHTML={{
                         __html: toHTML(data?.brand_6_sub_desc?.value),
                       }}
-                    ></div> */}
+                    ></div>
                     <div className="btn-wrap flex mt-[19px]">
                       <Link
                         to={data?.brand_6_sub_button_redirect?.value}
