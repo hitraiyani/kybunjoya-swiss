@@ -518,8 +518,7 @@ p:last-child {
     width: 100%;
   }
 }
-.list-style2 li:before
-.product-brand-section .img-overlay {
+.list-style2 li:before .product-brand-section .img-overlay {
   background: linear-gradient(
     180deg,
     rgba(118, 118, 118, 0) 0%,
@@ -1670,4 +1669,16 @@ select {
 .title-wrap * {
   word-break: break-word;
   word-wrap: break-word;
+}
+
+.rich-text-section ul {
+  list-style: disc;
+  padding-left: 20px;
+  margin: 20px 0;
+}
+.rich-text-section ul li{
+  padding-bottom: 5px;
+}
+.rich-text-section ul li:last-child{
+  padding-bottom: 0;
 }
