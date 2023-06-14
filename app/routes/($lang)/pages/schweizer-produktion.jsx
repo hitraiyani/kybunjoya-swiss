@@ -114,9 +114,6 @@ export default function schweizerSchuhpropktion() {
             <Swiper
               modules={[Navigation, Scrollbar, A11y, Autoplay, Pagination]}
               slidesPerView={1}
-              navigation={false}
-              loop="false"
-              autoplay="false"
               pagination={{clickable: true}}
               className="h-full overflow-visible flex flex-col"
             >
@@ -144,6 +141,7 @@ export default function schweizerSchuhpropktion() {
               to={
                 page?.schweizer_schuhpropktion?.reference?.book_now_link?.value
               }
+              target="_blank"
               className="inline-block rounded-[100px] bg-[#00795c] text-white
                  text-center px-[35px] py-[15px] hover:bg-black hover:text-white text-[18px] max-w-fit"
             >
@@ -197,6 +195,7 @@ export default function schweizerSchuhpropktion() {
                   page?.schweizer_schuhpropktion?.reference?.video_section_button_redirect
                     ?.value
                 }
+                target="_blank"
                 className="inline-block rounded-[100px] bg-[#00795c] text-white
                  text-center px-[35px] py-[15px] hover:bg-black hover:text-white text-[18px] max-w-fit"
               >
