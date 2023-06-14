@@ -647,7 +647,7 @@ function Footer({menu, main_menu}) {
                     </p>
                   </div>
                 </div>
-                <div className="grid grid-cols-2 gap-x-[10px] md:gap-x-[20px] lg:gap-x-[40px] xl:gap-x-[60px] 2xl:gap-x-[80px] md:block md:columns-3 footer-menu-items xl:flex-[1.5] 2xl:flex-[1]">
+                <div className="grid grid-cols-2 gap-x-[10px] md:gap-x-[20px] lg:gap-x-[40px] xl:gap-x-[50px] 2xl:gap-x-[60px] md:block md:columns-3 footer-menu-items xl:flex-[1.5] 2xl:flex-[1.5]">
                   {main_menu.items &&
                     main_menu.items.map((item, index) => {
                       return (
