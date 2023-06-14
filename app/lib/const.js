@@ -10,8 +10,8 @@ export const STORE_LOCALE = 'de_CH';
 export const AICO_STOREFINDER_URL = 'http://store-locator-kj.s3-website.eu-central-2.amazonaws.com/';
 export const COOKIEBOT_KEY = '7fc4d639-5f7d-4892-8f2d-314f2b72870c';
 export const KLAVIYO_API_URL = 'https://a.klaviyo.com/api/v2';
-export const KLAVIYO_LIST_SEGMENT = '';
-export const KLAVIYO_PRIVATE_API_KEY = '';
+export const KLAVIYO_LIST_SEGMENT = 'X7Tyuf';
+export const KLAVIYO_PRIVATE_API_KEY = 'pk_911ea93636e5544089fa38ee0769b057c1';
 
 export function getImageLoadingPriority(
   index,

@@ -26,39 +26,39 @@ export async function loader({request, context: {storefront}}) {
   function isValidEmail(email) {
     return /\S+@\S+\.\S+/.test(email);
   }
-  // if (email) {
-  //   if (!isValidEmail(email)) {
-  //     responseData.status = false;
-  //     responseData.message = 'Email ist ungültig.';
-  //   } else {
-  //       try {
-  //           const response = await fetch(`${KLAVIYO_API_URL}/list/${KLAVIYO_LIST_SEGMENT}/subscribe`, {
-  //             method: 'POST',
-  //             headers: {
-  //               'Content-Type': 'application/json',
-  //             },
-  //             body: JSON.stringify({
-  //               api_key: KLAVIYO_PRIVATE_API_KEY,
-  //               profiles: [
-  //                 {
-  //                   email: email,
-  //                 },
-  //               ],
-  //             }),
-  //           });
-  //           if (!response.ok) {
-  //               responseData.status = false;
-  //               responseData.message = 'Failed to subscribe to the newsletter.';
-  //           } else {
-  //               responseData.status = true;
-  //               responseData.message = 'Newsletter erfolgreich abonniert.';
-  //           }
-  //       } catch (error) {
-  //         responseData.status = false;
-  //         responseData.message = 'Failed to subscribe to the newsletter.';
-  //       }
-  //   }
-  // }
+  if (email) {
+    if (!isValidEmail(email)) {
+      responseData.status = false;
+      responseData.message = 'Email ist ungültig.';
+    } else {
+        try {
+            const response = await fetch(`${KLAVIYO_API_URL}/list/${KLAVIYO_LIST_SEGMENT}/subscribe`, {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({
+                api_key: KLAVIYO_PRIVATE_API_KEY,
+                profiles: [
+                  {
+                    email: email,
+                  },
+                ],
+              }),
+            });
+            if (!response.ok) {
+                responseData.status = false;
+                responseData.message = 'Das Abonnieren des Newsletters ist fehlgeschlagen.';
+            } else {
+                responseData.status = true;
+                responseData.message = 'Newsletter erfolgreich abonniert.';
+            }
+        } catch (error) {
+          responseData.status = false;
+          responseData.message = 'Das Abonnieren des Newsletters ist fehlgeschlagen.';
+        }
+    }
+  }
   
   return json({
     ...responseData,
