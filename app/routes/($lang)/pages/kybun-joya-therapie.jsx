@@ -114,13 +114,15 @@ export default function kybunJoyaTherapie() {
       <div className="about-sec container py-[40px] md:py-[60px] lg:py-[80px] xl:py-[100px]">
         <div className="flex flex-col lg:flex-row gap-[20px] lg:gap-[30px]">
           <div className="img-wrap lg:w-[50%] overflow-hidden w-full">
-            <img
-              className="w-full h-auto"
-              src={
-                kybunJoyaTherapie?.about_section_image?.reference?.image?.url
-              }
-              alt=""
-            />
+            <div className="img-wrap pb-[100%] md:pb-[60%] relative overflow-hidden">
+              <img
+                className="w-full h-full inset-0 object-cover absolute"
+                src={
+                  kybunJoyaTherapie?.about_section_image?.reference?.image?.url
+                }
+                alt=""
+              />
+            </div>
           </div>
           <div className="content-col w-full lg:w-[50%] flex flex-col justify-center">
             <h2 className="mb-[15px] text-black text-[24px] md:text-[30px] lg:text-[35px] leading-[1.1] tracking-[-0.97152px] font-medium">

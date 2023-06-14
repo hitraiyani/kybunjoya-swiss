@@ -405,7 +405,7 @@ export default function ratgeberseite() {
                     return (
                       <SwiperSlide key={index}>
                         <div className="popular-item">
-                          <div className="img-wrap overflow-hidden pb-[60%] mb-[15px] relative">
+                          <div className="img-wrap overflow-hidden pb-[100%] md:pb-[60%] mb-[15px] relative">
                             <img
                               className="absolute inset-0 w-full h-full object-cover"
                               src={
@@ -437,7 +437,7 @@ export default function ratgeberseite() {
                 return (
                   <SwiperSlide key={index}>
                     <div className="popular-item">
-                      <div className="img-wrap overflow-hidden pb-[60%] mb-[15px] relative">
+                      <div className="img-wrap overflow-hidden pb-[100%] md:pb-[60%] mb-[15px] relative">
                         <img
                           className="absolute inset-0 w-full h-full object-cover"
                           src={item.image}
