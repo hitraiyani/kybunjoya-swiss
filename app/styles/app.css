@@ -1665,10 +1665,12 @@ select {
 
 .desc * {
   line-height: 1.4 !important;
+  word-wrap: break-word;
+  word-break: break-word;
 }
 .title-wrap * {
-  word-break: break-word;
   word-wrap: break-word;
+  word-break: break-word;
 }
 
 .rich-text-section ul {
@@ -1676,9 +1678,9 @@ select {
   padding-left: 20px;
   margin: 20px 0;
 }
-.rich-text-section ul li{
+.rich-text-section ul li {
   padding-bottom: 5px;
 }
-.rich-text-section ul li:last-child{
+.rich-text-section ul li:last-child {
   padding-bottom: 0;
 }
