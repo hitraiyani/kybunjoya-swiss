@@ -63,7 +63,7 @@ export function ProductBrandSection({data}) {
                     (item, index) => {
                       return (
                         <SwiperSlide key={index}>
-                          <div className="relative block overflow-hidden pb-[100%] md:pb-[72%] w-full">
+                          <div className="relative block overflow-hidden pb-[100%] md:pb-[100%] w-full">
                             <div className="img-wrap w-full h-full absolute inset-0">
                               <Image
                                 data={item.node.image}
@@ -169,7 +169,7 @@ export function ProductBrandSection({data}) {
                     (item, index) => {
                       return (
                         <SwiperSlide key={index}>
-                          <div className="relative block overflow-hidden pb-[100%] md:pb-[72%] w-full">
+                          <div className="relative block overflow-hidden pb-[100%] md:pb-[100%] w-full">
                             <div className="img-wrap w-full h-full absolute inset-0">
                               <Image
                                 data={item.node.image}
@@ -272,7 +272,7 @@ export function ProductBrandSection({data}) {
                   className=""
                 >
                   {/* <SwiperSlide>
-                    <div className="relative block overflow-hidden pb-[100%] md:pb-[72%] w-full">
+                    <div className="relative block overflow-hidden pb-[100%] md:pb-[100%] w-full">
                       <div className="img-wrap w-full h-full absolute inset-0">
                         <img
                           className="h-full w-full absolute inset-0 transition hover:duration-500 object-cover"
@@ -286,7 +286,7 @@ export function ProductBrandSection({data}) {
                     (item, index) => {
                       return (
                         <SwiperSlide key={index}>
-                          <div className="relative block overflow-hidden pb-[100%] md:pb-[72%] w-full">
+                          <div className="relative block overflow-hidden pb-[100%] md:pb-[100%] w-full">
                             <div className="img-wrap w-full h-full absolute inset-0">
                               <Image
                                 data={item.node.image}
@@ -392,7 +392,7 @@ export function ProductBrandSection({data}) {
                     (item, index) => {
                       return (
                         <SwiperSlide key={index}>
-                          <div className="relative block overflow-hidden pb-[100%] md:pb-[72%] w-full">
+                          <div className="relative block overflow-hidden pb-[100%] md:pb-[100%] w-full">
                             <div className="img-wrap w-full h-full absolute inset-0">
                               <Image
                                 data={item.node.image}
@@ -498,7 +498,7 @@ export function ProductBrandSection({data}) {
                     (item, index) => {
                       return (
                         <SwiperSlide key={index}>
-                          <div className="relative block overflow-hidden pb-[100%] md:pb-[72%] w-full">
+                          <div className="relative block overflow-hidden pb-[100%] md:pb-[100%] w-full">
                             <div className="img-wrap w-full h-full absolute inset-0">
                               <Image
                                 data={item.node.image}
@@ -605,7 +605,7 @@ export function ProductBrandSection({data}) {
                     (item, index) => {
                       return (
                         <SwiperSlide key={index}>
-                          <div className="relative block overflow-hidden pb-[100%] md:pb-[72%] w-full">
+                          <div className="relative block overflow-hidden pb-[100%] md:pb-[100%] w-full">
                             <div className="img-wrap w-full h-full absolute inset-0">
                               <Image
                                 data={item.node.image}

@@ -80,7 +80,7 @@ export default function Heritage() {
           <div className="video-banner-with-title">
             <div className="flex flex-col lg:flex-row gap-y-[30px] gap-x-[40px] 2xl:gap-x-[80px] items-center">
               <div className="w-full lg:w-[50%]">
-                <div className="video-wrap relative overflow-hidden pb-[100%] lg:pb-[72%] w-full">
+                <div className="video-wrap relative overflow-hidden pb-[100%] lg:pb-[100%] w-full">
                   <img
                     className="absolute w-full h-full inset-0 object-cover bg-cover"
                     src={heritageReference?.time_line_1_media?.value}
@@ -143,7 +143,7 @@ export default function Heritage() {
           </h2>
           <div className="flex flex-col lg:flex-row gap-y-[30px] gap-x-[40px] 2xl:gap-x-[80px] items-center">
             <div className="w-full lg:w-[50%]">
-              <div className="video-wrap relative overflow-hidden pb-[100%] lg:pb-[72%] w-full">
+              <div className="video-wrap relative overflow-hidden pb-[100%] lg:pb-[100%] w-full">
                 <img
                   className="absolute w-full h-full inset-0 object-cover bg-cover"
                   src={heritageReference?.time_line_3_media?.value}

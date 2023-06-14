@@ -77,9 +77,9 @@ export default function unternehmen() {
             }}
           ></div>
 
-          <div className="img-wrap mb-[20px] lg:mb-[35px]">
+          <div className="img-wrap mb-[20px] lg:mb-[35px] pb-[100%] relative overflow-hidden">
             <img
-              className="max-w-full h-auto w-full"
+              className="h-full w-full object-cover inset-0 absolute"
               src={
                 unternehmenReference?.quote_section_image?.reference?.image?.url
               }

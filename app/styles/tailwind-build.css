@@ -3758,6 +3758,10 @@ video {
     padding-top: 60px;
   }
 
+  .md\:pb-\[100\%\] {
+    padding-bottom: 100%;
+  }
+
   .md\:text-left {
     text-align: left;
   }
@@ -4364,6 +4368,14 @@ video {
 
   .lg\:pt-\[80px\] {
     padding-top: 80px;
+  }
+
+  .lg\:pb-\[50\%\] {
+    padding-bottom: 50%;
+  }
+
+  .lg\:pb-\[100\%\] {
+    padding-bottom: 100%;
   }
 
   .lg\:text-right {
