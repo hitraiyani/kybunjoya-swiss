@@ -19,7 +19,7 @@ import {
   ScrollToTop,
   ArrowRight2,
   IconArrowBottom,
-  ShopifyCookie
+  ShopifyCookie,
 } from '~/components';
 import {
   useParams,
@@ -298,7 +298,9 @@ function MenuMobileNav({menu, onClose}) {
                 <Link
                   to={item.to}
                   target={item.target}
-                  className={`${item.to == '/pages/uber-uns' ? 'pointer-events-none' : ''} kybunjoya-menu-hover title text-[#00795C] text-[26px] mb-[12px] outline-none ${
+                  className={`${
+                    item.to == '/pages/uber-uns' ? 'pointer-events-none' : ''
+                  } kybunjoya-menu-hover title text-[#00795C] text-[26px] mb-[12px] outline-none ${
                     item.to == pathname ? 'is-active' : ''
                   } `}
                   data-image={item.title}
@@ -380,7 +382,7 @@ function MobileHeader({title, isHome, openCart, openMenu, isMenuOpen}) {
             onClick={openMenu}
             className="relative flex items-center justify-center menu-toogle-btn gap-[10px] text-[20px] lg:text-[24px] xl:text-[32.96px] text-[#00795C] font-normal"
           >
-            Menu{' '}
+            Menu
             {isMenuOpen ? (
               <IconClose aria-label="Close panel" />
             ) : (
@@ -635,7 +637,7 @@ function Footer({menu, main_menu}) {
                           fill="#595959"
                         />
                       </svg>
-                    </span>{' '} */}
+                    </span> */}
                       <Link
                         to={'/pages/kontakt'}
                         className="hover:underline hover:text-[#00795C] font-normal text-base text-[#595959]"
@@ -646,46 +648,46 @@ function Footer({menu, main_menu}) {
                   </div>
                 </div>
                 <div className="grid grid-cols-2 gap-x-[10px] md:gap-x-[20px] lg:gap-x-[40px] xl:gap-x-[60px] 2xl:gap-x-[80px] md:block md:columns-3 footer-menu-items xl:flex-[1.5] 2xl:flex-[1]">
-                  { main_menu.items && main_menu.items.map((item,index) => {
+                  {main_menu.items &&
+                    main_menu.items.map((item, index) => {
                       return (
                         <div key={index}>
-                            <span  className="nav-item relative flex flex-wrap md:block">
-
-                              <h2 className="mb-[20px] md:mb-[35px] lg:text-[26px] md:text-[20px] font-bold text-[#00795C]">
-                                    <Link
-                                      to={item.to}
-                                      target={item.target}
-                                      className={ `${item.to == '/pages/uber-uns' ? 'pointer-events-none' : ''} kybunjoya-menu-hover title text-[#00795C] text-[18px] md:text-[20px] lg:text-[26px] mb-[12px] outline-none`}
-                                      data-image={item.title}
-                                    >
-                                      {item.title}
-                                    </Link>
-                                  </h2>
-                                  {item.items.length > 0 && (
-                                  <>
-                                    <div
-                                      onClick={footerMenuToggle}
-                                      className="toggle-menu-icon text-[#00795C] top-[-3px] right-0 h-[30px] flex items-center md:hidden cursor-pointer absolute w-full justify-start"
-                                    >
-                                      <IconArrowBottom
-                                        className={
-                                          'w-[30px] h-[30px] transition-all duration-500 relative left-[85px]'
-                                        }
-                                      />
-                                    </div>
-                                    <FooterMainMenuSub
-                                      sub_menu_item={item.items}
-                                    />
-                                  </>
-                                )}
-                            </span>
+                          <span className="nav-item relative flex flex-wrap md:block">
+                            <h2 className="mb-[40px] lg:text-[26px] md:text-[20px] font-bold text-[#00795C]">
+                              <Link
+                                to={item.to}
+                                target={item.target}
+                                className={`${
+                                  item.to == '/pages/uber-uns'
+                                    ? 'pointer-events-none'
+                                    : ''
+                                } kybunjoya-menu-hover title text-[#00795C] text-[18px] md:text-[20px] lg:text-[26px] mb-[12px] outline-none`}
+                                data-image={item.title}
+                              >
+                                {item.title}
+                              </Link>
+                            </h2>
+                            {item.items.length > 0 && (
+                              <>
+                                <div
+                                  onClick={footerMenuToggle}
+                                  className="toggle-menu-icon text-[#00795C] top-[-3px] right-0 h-[30px] flex items-center md:hidden cursor-pointer absolute w-full justify-start"
+                                >
+                                  <IconArrowBottom
+                                    className={
+                                      'w-[30px] h-[30px] transition-all duration-500 relative left-[85px]'
+                                    }
+                                  />
+                                </div>
+                                <FooterMainMenuSub sub_menu_item={item.items} />
+                              </>
+                            )}
+                          </span>
                         </div>
-                      )
-                  })}
-                  </div>
-                <div>
-                    
+                      );
+                    })}
                 </div>
+                <div></div>
                 {/* <div className="grid grid-cols-2 gap-y-0 gap-8 lg:gap-8 lg:grid-cols-3">
                   {(mainMenuChunk || []).map((menuitem, index) => {
                     return (
@@ -743,34 +745,49 @@ function Footer({menu, main_menu}) {
                           fill="#595959"
                         />
                       </svg>
-                    </span>{' '}
+                    </span>
                     <a
                       href="#"
                       className="hover:underline hover:text-[#00795C] font-normal text-[15px] text-[#595959]"
                     >
-                      Chat{' '}
-                    </a>{' '}
+                      Chat
+                    </a>
                   </p>
                 </div> */}
                 <div className="space-x-6 sm:justify-center mb-10 flex sm:hidden">
-                    <a
-                      href="#"
-                      className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+                  <a
+                    href="https://www.linkedin.com/company/kybun-joya-retail-ag"
+                    target="_blank"
+                    className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+                  >
+                    <svg width="50" height="50" viewBox="0 0 50 50" fill="none">
+                      <rect width="50" height="50" rx="8" fill="#595959" />
+                      <path
+                        d="M17.7785 14.8876C17.7785 16.4216 16.7515 17.7427 14.886 17.7427C13.1326 17.7427 12 16.498 12 14.964C12 13.3894 13.0985 12 14.8892 12C16.68 12 17.7428 13.313 17.7785 14.8876ZM12 38V19.2215H17.7785V37.9984L12 38ZM20.6661 25.6419C20.6661 23.4108 20.593 21.5453 20.5199 19.9349H25.7101L25.9685 22.4227H26.0774C26.8086 21.2527 28.601 19.5351 31.5991 19.5351C35.2554 19.5351 38 21.9824 38 27.2506V38H32.2215V28.0875C32.2215 25.7849 31.3456 24.0283 29.3339 24.0283C27.7999 24.0283 27.0312 25.2714 26.6283 26.2951C26.482 26.6607 26.4446 27.1726 26.4446 27.6861V37.9967H20.6661V25.6386V25.6419Z"
+                        fill="#F5F5F5"
+                      />
+                    </svg>
+                  </a>
+                  <a
+                    href="https://www.youtube.com/channel/UCb5tCNjMuN4GY_h4afBGSDg"
+                    target="_blank"
+                    className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+                  >
+                    <svg
+                      width={50}
+                      height={50}
+                      viewBox="0 0 50 50"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
                     >
-                      <svg
-                        width="50"
-                        height="50"
-                        viewBox="0 0 50 50"
-                        fill="none"
-                      >
-                        <rect width="50" height="50" rx="8" fill="#595959" />
-                        <path
-                          d="M17.7785 14.8876C17.7785 16.4216 16.7515 17.7427 14.886 17.7427C13.1326 17.7427 12 16.498 12 14.964C12 13.3894 13.0985 12 14.8892 12C16.68 12 17.7428 13.313 17.7785 14.8876ZM12 38V19.2215H17.7785V37.9984L12 38ZM20.6661 25.6419C20.6661 23.4108 20.593 21.5453 20.5199 19.9349H25.7101L25.9685 22.4227H26.0774C26.8086 21.2527 28.601 19.5351 31.5991 19.5351C35.2554 19.5351 38 21.9824 38 27.2506V38H32.2215V28.0875C32.2215 25.7849 31.3456 24.0283 29.3339 24.0283C27.7999 24.0283 27.0312 25.2714 26.6283 26.2951C26.482 26.6607 26.4446 27.1726 26.4446 27.6861V37.9967H20.6661V25.6386V25.6419Z"
-                          fill="#F5F5F5"
-                        />
-                      </svg>
-                    </a>
-                  </div>
+                      <rect width={50} height={50} rx={8} fill="#595959" />
+                      <path
+                        d="M45.082 16.9012C45.082 16.9012 44.6866 14.1099 43.4689 12.8843C41.927 11.2712 40.2032 11.2633 39.4124 11.1684C33.7508 10.7572 25.2505 10.7572 25.2505 10.7572H25.2347C25.2347 10.7572 16.7344 10.7572 11.0728 11.1684C10.2821 11.2633 8.55827 11.2712 7.01635 12.8843C5.79863 14.1099 5.41118 16.9012 5.41118 16.9012C5.41118 16.9012 5 20.1827 5 23.4563V26.5243C5 29.7979 5.40327 33.0794 5.40327 33.0794C5.40327 33.0794 5.79863 35.8707 7.00845 37.0963C8.55036 38.7094 10.5746 38.6541 11.4761 38.828C14.718 39.1364 25.2426 39.2313 25.2426 39.2313C25.2426 39.2313 33.7508 39.2155 39.4124 38.8122C40.2032 38.7173 41.927 38.7094 43.4689 37.0963C44.6866 35.8707 45.082 33.0794 45.082 33.0794C45.082 33.0794 45.4852 29.8058 45.4852 26.5243V23.4563C45.4852 20.1827 45.082 16.9012 45.082 16.9012ZM21.0597 30.2486V18.8701L31.9954 24.5791L21.0597 30.2486Z"
+                        fill="#F5F5F5"
+                      />
+                    </svg>
+                  </a>
+                </div>
                 <div className="flex mb-10 !hidden">
                   <p className="font-normal text-base text-[#595959] flex gap-4 items-center">
                     <span>
@@ -779,13 +796,13 @@ function Footer({menu, main_menu}) {
                         src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Clip_path_group.png?v=1682401790"
                         alt=""
                       />
-                    </span>{' '}
+                    </span>
                     <a
                       href="#"
                       className="hover:underline hover:text-[#00795C] font-normal text-base text-[#595959]"
                     >
-                      DE{' '}
-                    </a>{' '}
+                      DE
+                    </a>
                   </p>
                 </div>
                 <div className="flex mb-12">
@@ -804,9 +821,28 @@ function Footer({menu, main_menu}) {
                 </div>
                 <div className="sm:flex sm:items-center sm:justify-between">
                   <span className="text-[15.94px] font-normal sm:text-center text-[#595959]">
-                    © kybun Joya {new Date().getFullYear()}{' '}
+                    © kybun Joya {new Date().getFullYear()}
                   </span>
                   <div className="mt-4 space-x-6 sm:justify-center sm:mt-0 hidden sm:flex">
+                    <a
+                      href="https://www.youtube.com/channel/UCb5tCNjMuN4GY_h4afBGSDg"
+                      target="_blank"
+                      className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+                    >
+                      <svg
+                        width={50}
+                        height={50}
+                        viewBox="0 0 50 50"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <rect width={50} height={50} rx={8} fill="#595959" />
+                        <path
+                          d="M45.082 16.9012C45.082 16.9012 44.6866 14.1099 43.4689 12.8843C41.927 11.2712 40.2032 11.2633 39.4124 11.1684C33.7508 10.7572 25.2505 10.7572 25.2505 10.7572H25.2347C25.2347 10.7572 16.7344 10.7572 11.0728 11.1684C10.2821 11.2633 8.55827 11.2712 7.01635 12.8843C5.79863 14.1099 5.41118 16.9012 5.41118 16.9012C5.41118 16.9012 5 20.1827 5 23.4563V26.5243C5 29.7979 5.40327 33.0794 5.40327 33.0794C5.40327 33.0794 5.79863 35.8707 7.00845 37.0963C8.55036 38.7094 10.5746 38.6541 11.4761 38.828C14.718 39.1364 25.2426 39.2313 25.2426 39.2313C25.2426 39.2313 33.7508 39.2155 39.4124 38.8122C40.2032 38.7173 41.927 38.7094 43.4689 37.0963C44.6866 35.8707 45.082 33.0794 45.082 33.0794C45.082 33.0794 45.4852 29.8058 45.4852 26.5243V23.4563C45.4852 20.1827 45.082 16.9012 45.082 16.9012ZM21.0597 30.2486V18.8701L31.9954 24.5791L21.0597 30.2486Z"
+                          fill="#F5F5F5"
+                        />
+                      </svg>
+                    </a>
                     <a
                       href="#"
                       className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
