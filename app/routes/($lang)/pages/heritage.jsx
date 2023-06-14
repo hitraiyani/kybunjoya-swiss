@@ -89,8 +89,8 @@ export default function Heritage() {
                 </div>
               </div>
               <div className="w-full lg:w-[50%]">
-                <div className="info-with-year flex flex-col gap-[20px] items-start">
-                  <div className="text-white bg-[#00795C] px-[30px] py-[5px] tracking-[-0.97152px] leading-none text-[16px] sm:text-[20px] md:text-[24px] lg:text-[28px] xl:text-[35px] flex items-center justify-center rounded-[110px] font-medium w-fit date">
+                <div className="info-with-year flex flex-col gap-[10px] items-start">
+                  <div className="text-[#00795C] text-[30px] lg:text-[35px] xl:text-[40px] tracking-[-1.05984px] flex items-center justify-center rounded-[110px] font-medium w-fit date">
                     {heritageReference?.time_line_1_year?.value}
                   </div>
                   <div
@@ -112,7 +112,7 @@ export default function Heritage() {
           </h2> */}
           <div className="flex flex-col lg:flex-row-reverse gap-y-[30px] gap-x-[40px] 2xl:gap-x-[80px] items-center">
             <div className="w-full lg:w-[50%]">
-              <div className="video-wrap relative overflow-hidden pb-[100%] lg:pb-[72%] w-full">
+              <div className="video-wrap relative overflow-hidden pb-[57%] w-full">
                 <iframe
                   className="absolute w-full h-full inset-0 object-cover bg-cover"
                   src={heritageReference?.time_line_2_media?.value}
@@ -123,8 +123,8 @@ export default function Heritage() {
               </div>
             </div>
             <div className="w-full lg:w-[50%]">
-              <div className="info-with-year flex flex-col gap-[20px] items-start">
-                <div className="text-white bg-[#00795C] px-[30px] py-[5px] tracking-[-0.97152px] leading-none text-[16px] sm:text-[20px] md:text-[24px] lg:text-[28px] xl:text-[35px] flex items-center justify-center rounded-[110px] font-medium w-fit date">
+              <div className="info-with-year flex flex-col gap-[10px] items-start">
+                <div className="text-[#00795C] text-[30px] lg:text-[35px] xl:text-[40px] tracking-[-1.05984px] flex items-center justify-center rounded-[110px] font-medium w-fit date">
                   {heritageReference?.time_line_2_year?.value}
                 </div>
                 <div
@@ -152,8 +152,8 @@ export default function Heritage() {
               </div>
             </div>
             <div className="w-full lg:w-[50%]">
-              <div className="info-with-year flex flex-col gap-[20px] items-start">
-                <div className="text-white bg-[#00795C] px-[30px] py-[5px] tracking-[-0.97152px] leading-none text-[16px] sm:text-[20px] md:text-[24px] lg:text-[28px] xl:text-[35px] flex items-center justify-center rounded-[110px] font-medium w-fit date">
+              <div className="info-with-year flex flex-col gap-[10px] items-start">
+                <div className="text-[#00795C] text-[30px] lg:text-[35px] xl:text-[40px] tracking-[-1.05984px] flex items-center justify-center rounded-[110px] font-medium w-fit date">
                   {heritageReference?.time_line_3_year?.value}
                 </div>
                 <div
