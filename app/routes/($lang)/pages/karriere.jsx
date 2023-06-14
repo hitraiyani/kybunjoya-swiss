@@ -138,6 +138,7 @@ export default function karriere() {
                             <div className="btn-wrap flex">
                               <Link
                                 href="#"
+                                target="_blank"
                                 to={item?.bewerben_link}
                                 className='md:px-[35px] px-[30px] md:py-[18px] py-[15px] bg-[#00795c] text-[16px] md:text-[18px] font-medium text-white rounded-[100px] w-fit hover:bg-black hover:!text-white text-center'
                               >
@@ -156,6 +157,7 @@ export default function karriere() {
               <a
                 rel="noopener noreferrer"
                 href={karriere?.footer_2_cta?.reference?.url}
+                target="_blank"
                 className="download-link pro-btn text-[16px] md:text-[20px] lg:text-[21px] leading-none text-black tracking-[-0.400697px] font-normal flex gap-[5px] lg:gap-[25px] justify-center w-fit text-left items-center transition-all duration-700 hover:text-[#00795c] download-link underline"
               >
                 <IconDownload
@@ -168,6 +170,7 @@ export default function karriere() {
               <a
                 rel="noopener noreferrer"
                 href={karriere?.footer_cta?.reference?.url}
+                target="_blank"
                 className="download-link pro-btn text-[16px] md:text-[20px] lg:text-[21px] leading-none text-black tracking-[-0.400697px] font-normal flex gap-[5px] lg:gap-[25px] justify-center w-fit text-left items-center transition-all duration-700 hover:text-[#00795c] download-link underline"
               >
                 <IconDownload
