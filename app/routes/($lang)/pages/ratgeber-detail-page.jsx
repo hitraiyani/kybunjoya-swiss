@@ -425,7 +425,7 @@ export default function ratgeberseite() {
                           <Link
                             to={`/products/custom-product/${product.handle}`}
                             className="inline-block rounded-[100px] bg-[#00795c] text-white
-                            text-center px-[35px] py-[15px] hover:bg-black hover:text-white text-[18px] max-w-fit"
+                            text-center px-[20px] md:px-[35px] py-[12px] md:py-[15px] hover:bg-black hover:text-white text-[14px] md:text-[18px] max-w-fit"
                           >
                             Mehr erfahren
                           </Link>

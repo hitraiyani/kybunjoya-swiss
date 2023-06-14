@@ -121,8 +121,7 @@ export default function unternehmen() {
                   to={
                     unternehmenReference?.quote_section_button_redirect?.value
                   }
-                  className="inline-block rounded-[100px] bg-[#00795c] text-white
-                 text-center px-[35px] py-[15px] hover:bg-black hover:text-white text-[18px] max-w-fit"
+                  className="inline-block rounded-[100px] bg-[#00795c] text-white text-center px-[20px] md:px-[35px] py-[12px] md:py-[15px] hover:bg-black hover:text-white text-[14px] md:text-[18px] max-w-fit"
                 >
                   {unternehmenReference?.quote_section_button_text?.value}
                 </Link>

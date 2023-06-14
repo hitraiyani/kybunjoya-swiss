@@ -113,7 +113,7 @@ export function ProductBrandSection({data}) {
                       <Link
                         to={data?.brand_1_sub_button_redirect?.value}
                         target="_blank"
-                        className="md:px-[35px] px-[30px] md:py-[18px] py-[15px] bg-[#00795c] text-[16px] md:text-[18px] font-medium text-white rounded-[100px] w-fit hover:bg-black hover:!text-white text-center"
+                        className="md:px-[35px] px-[20px] md:py-[18px] py-[12px] bg-[#00795c] text-[14px] md:text-[18px] font-medium text-white rounded-[100px] w-fit hover:bg-black hover:!text-white text-center"
                       >
                         {data?.brand_1_sub_button_text?.value}
                       </Link>
@@ -219,7 +219,7 @@ export function ProductBrandSection({data}) {
                       <Link
                         to={data?.brand_2_sub_button_redirect?.value}
                         target="_blank"
-                        className="md:px-[35px] px-[30px] md:py-[18px] py-[15px] bg-[#00795c] text-[16px] md:text-[18px] font-medium text-white rounded-[100px] w-fit hover:bg-black hover:!text-white text-center"
+                        className="md:px-[35px] px-[20px] md:py-[18px] py-[12px] bg-[#00795c] text-[14px] md:text-[18px] font-medium text-white rounded-[100px] w-fit hover:bg-black hover:!text-white text-center"
                       >
                         {data?.brand_2_sub_button_text?.value}
                       </Link>
@@ -336,7 +336,7 @@ export function ProductBrandSection({data}) {
                       <Link
                         to={data?.brand_3_sub_button_redirect?.value}
                         target="_blank"
-                        className="md:px-[35px] px-[30px] md:py-[18px] py-[15px] bg-[#00795c] text-[16px] md:text-[18px] font-medium text-white rounded-[100px] w-fit hover:bg-black hover:!text-white text-center"
+                        className="md:px-[35px] px-[20px] md:py-[18px] py-[12px] bg-[#00795c] text-[14px] md:text-[18px] font-medium text-white rounded-[100px] w-fit hover:bg-black hover:!text-white text-center"
                       >
                         {data?.brand_3_sub_button_text?.value}
                       </Link>
@@ -442,7 +442,7 @@ export function ProductBrandSection({data}) {
                       <Link
                         to={data?.brand_5_sub_button_redirect?.value}
                         target="_blank"
-                        className="md:px-[35px] px-[30px] md:py-[18px] py-[15px] bg-[#00795c] text-[16px] md:text-[18px] font-medium text-white rounded-[100px] w-fit hover:bg-black hover:!text-white text-center"
+                        className="md:px-[35px] px-[20px] md:py-[18px] py-[12px] bg-[#00795c] text-[14px] md:text-[18px] font-medium text-white rounded-[100px] w-fit hover:bg-black hover:!text-white text-center"
                       >
                         {data?.brand_5_sub_button_text?.value}
                       </Link>
@@ -548,7 +548,7 @@ export function ProductBrandSection({data}) {
                       <Link
                         to={data?.brand_4_sub_button_redirect?.value}
                         target="_blank"
-                        className="md:px-[35px] px-[30px] md:py-[18px] py-[15px] bg-[#00795c] text-[16px] md:text-[18px] font-medium text-white rounded-[100px] w-fit hover:bg-black hover:!text-white text-center"
+                        className="md:px-[35px] px-[20px] md:py-[18px] py-[12px] bg-[#00795c] text-[14px] md:text-[18px] font-medium text-white rounded-[100px] w-fit hover:bg-black hover:!text-white text-center"
                       >
                         {data?.brand_4_sub_button_text?.value}
                       </Link>
@@ -605,7 +605,7 @@ export function ProductBrandSection({data}) {
                     (item, index) => {
                       return (
                         <SwiperSlide key={index}>
-                          <div className="relative block overflow-hidden pb-[100%] md:pb-[100%] w-full">
+                          <div className="relative block overflow-hidden pb-[100%] md:pb-[65%] w-full">
                             <div className="img-wrap w-full h-full absolute inset-0">
                               <Image
                                 data={item.node.image}
@@ -655,7 +655,7 @@ export function ProductBrandSection({data}) {
                       <Link
                         to={data?.brand_6_sub_button_redirect?.value}
                         target="_blank"
-                        className="md:px-[35px] px-[30px] md:py-[18px] py-[15px] bg-[#00795c] text-[16px] md:text-[18px] font-medium text-white rounded-[100px] w-fit hover:bg-black hover:!text-white text-center"
+                        className="md:px-[35px] px-[20px] md:py-[18px] py-[12px] bg-[#00795c] text-[14px] md:text-[18px] font-medium text-white rounded-[100px] w-fit hover:bg-black hover:!text-white text-center"
                       >
                         {data?.brand_6_sub_button_text?.value}
                       </Link>

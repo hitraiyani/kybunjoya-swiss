@@ -140,7 +140,7 @@ export default function karriere() {
                                 href="#"
                                 target="_blank"
                                 to={item?.bewerben_link}
-                                className='md:px-[35px] px-[30px] md:py-[18px] py-[15px] bg-[#00795c] text-[16px] md:text-[18px] font-medium text-white rounded-[100px] w-fit hover:bg-black hover:!text-white text-center'
+                                className='md:px-[35px] px-[20px] md:py-[18px] py-[12px] bg-[#00795c] text-[14px] md:text-[18px] font-medium text-white rounded-[100px] w-fit hover:bg-black hover:!text-white text-center'
                               >
                                 {item?.bewerben}
                               </Link>

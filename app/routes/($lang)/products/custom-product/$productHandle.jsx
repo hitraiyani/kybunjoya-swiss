@@ -729,10 +729,10 @@ export default function ratgeberSeiteFersensporn() {
         <section className="about-us-sec pb-[40px] md:py-[60px] lg:py-[80px] xl:py-[100px]">
           <div className="inner-row">
             <div className="flex flex-col md:flex-row gap-y-[20px] gap-x-[40px] xl:gap-x-[60px] 2xl:gap-x-[100px] items-center">
-              <div className="col-left w-full lg:w-[55%]">
-                <div className="img-wrap">
+              <div className="col-left w-full lg:w-[50%]">
+                <div className="img-wrap relative block overflow-hidden pb-[100%] md:pb-[65%] w-full">
                   <img
-                    className="max-w-full mx-auto"
+                    className="h-full w-full absolute inset-0 transition hover:duration-500 object-cover"
                     src={
                       ratgeber_seite_fersensporn_mobile
                         ?.shopfinder_section_image?.reference?.image
@@ -742,7 +742,7 @@ export default function ratgeberSeiteFersensporn() {
                   />
                 </div>
               </div>
-              <div className="col-right w-full lg:w-[45%]">
+              <div className="col-right w-full lg:w-[50%]">
                 <h2 className="mb-[15px] text-black text-[24px] md:text-[30px] lg:text-[35px] leading-[1.1] tracking-[-0.97152px] font-medium">
                 {
                     ratgeber_seite_fersensporn_mobile
