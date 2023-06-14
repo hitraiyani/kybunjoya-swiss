@@ -280,7 +280,10 @@ export default function ratgeberSeiteFersensporn() {
                       /> */}
                       <img
                         className="absolute inset-0 w-full h-full object-cover"
-                        src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/jeremy-lapak-CVvFVQ_-oUg-unsplash_111.png?v=1685708224"
+                        src={
+                          aicoProductData
+                            ?.featuredImage?.url
+                        }
                         alt=""
                       />
                     </div>
@@ -730,26 +733,43 @@ export default function ratgeberSeiteFersensporn() {
                 <div className="img-wrap">
                   <img
                     className="max-w-full mx-auto"
-                    src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/204.01031-weather_jacket-ss23-stratosphere_pearl-w-4x5-c-g4.png_6_fa0f88b2-fe13-417e-8865-007a0a672388.png?v=1686649620"
+                    src={
+                      ratgeber_seite_fersensporn_mobile
+                        ?.shopfinder_section_image?.reference?.image
+                        ?.url
+                    }
                     alt=""
                   />
                 </div>
               </div>
               <div className="col-right w-full lg:w-[45%]">
                 <h2 className="mb-[15px] text-black text-[24px] md:text-[30px] lg:text-[35px] leading-[1.1] tracking-[-0.97152px] font-medium">
-                Filialen in Ihrer Nähe
+                {
+                    ratgeber_seite_fersensporn_mobile
+                      ?.shopfinder_section_title?.value
+                  }
                 </h2>
-                <div className='desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mb-[20px]'>
-                  <p>Über 4 Millionen begeisterte Kunden weltweit bestätigen die aussergewöhnliche Wirkung. Wo würden ihre Füsse und ihr ganzer Körper wohl lieber gehen, barfuss auf weich-elastisch-federndem Moos, oder eingepackt in flachen Schuhen auf harten Asphalt? Gönnen sie ihren Füssen nur das Allerbeste, denn sie tragen sie noch ihr ganzes Leben. </p>
+                <div className='desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mb-[20px]'
+                  dangerouslySetInnerHTML={{
+                    __html: toHTML(ratgeber_seite_fersensporn_mobile
+                      ?.shopfinder_section_desc?.value),
+                  }}
+                >
                 </div>
                 <div className="btn-wrap">
-                  <a
-                    href="#"
+                  <Link
+                    to={
+                      ratgeber_seite_fersensporn_mobile
+                        ?.shopfinder_section_button_redirect?.value
+                    }
                     className="inline-block rounded-[100px] bg-[#00795c] text-white
                     text-center px-[35px] py-[15px] hover:bg-black hover:text-white text-[18px] max-w-fit"
                   >
-                    Filiale finden
-                  </a>
+                    {
+                      ratgeber_seite_fersensporn_mobile
+                        ?.shopfinder_section_button_text?.value
+                    }
+                  </Link>
                 </div>
               </div>
             </div>
@@ -768,11 +788,9 @@ export default function ratgeberSeiteFersensporn() {
               }
             </Link> */}
             <a
-              target="_blank"
-              rel="noopener noreferrer"
               href={
                 ratgeber_seite_fersensporn_mobile
-                  ?.wie_kybun_joya_hilft_section_broschure?.reference?.url
+                  ?.back_to_topic_overview_link?.value
               }
               className="download-link pro-btn text-[16px] md:text-[20px] lg:text-[21px] leading-none text-black tracking-[-0.400697px] font-normal flex gap-[5px] lg:gap-[20px] justify-center w-fit text-left items-center transition-all duration-700 hover:text-[#00795c] download-link hover:underline mb-[15px]"
             >
@@ -781,7 +799,8 @@ export default function ratgeberSeiteFersensporn() {
                   'w-[20px] h-[20px] md:w-[25px] md:h-[25px] lg:w-[30px] lg:h-[30px]'
                 }
               />
-              Zurück zur Themenübersicht
+              {ratgeber_seite_fersensporn_mobile
+                  ?.back_to_topic_overview_text?.value}
             </a>
           </div>
         </section>
@@ -862,6 +881,12 @@ ${PRODUCT_CARD_FRAGMENT}
       tags
       descriptionHtml
       description
+      featuredImage {
+        url
+           altText
+           width
+           height
+      }
       aico_content_builders : metafield(namespace: "aico", key: "aico_content_builders") {
         value
       }
@@ -937,6 +962,9 @@ ${PRODUCT_CARD_FRAGMENT}
       shopfinder_section_title : field(key: "shopfinder_section_title") {
         value
       }
+      shopfinder_section_desc : field(key: "shopfinder_section_desc") {
+        value
+      }
       shopfinder_section_image : field(key: "shopfinder_section_image") {
         reference {
           ...Media
@@ -946,6 +974,12 @@ ${PRODUCT_CARD_FRAGMENT}
         value
       }
       shopfinder_section_button_redirect : field(key: "shopfinder_section_button_redirect") {
+        value
+      }
+      back_to_topic_overview_text : field(key: "back_to_topic_overview_text") {
+        value
+      }
+      back_to_topic_overview_link : field(key: "back_to_topic_overview_link") {
         value
       }
       footer_pop_products : field(key: "footer_pop_products") {
