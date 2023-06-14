@@ -322,8 +322,32 @@ async function getLayoutData({storefront}) {
     ? parseMenu(data?.headerMenu, customPrefixes)
     : undefined;
 
+  const tmpFooterMenu = {
+    "id": "gid://shopify/Menu/224769704257",
+    "items": [
+      {
+        "id": "gid://shopify/MenuItem/544698040641",
+        "resourceId": "gid://shopify/Page/122350698817",
+        "tags": [],
+        "title": "Datenschutzerklärung",
+        "type": "PAGE",
+        "url": "https://kybunjoya-swiss.myshopify.com/pages/datenschutzerklarung",
+        "items": []
+      },
+      {
+        "id": "gid://shopify/MenuItem/544698073409",
+        "resourceId": "gid://shopify/Page/122349617473",
+        "tags": [],
+        "title": "Impressum",
+        "type": "PAGE",
+        "url": "https://kybunjoya-swiss.myshopify.com/pages/impressum",
+        "items": []
+      }
+    ]
+  };
+  
   const footerMenu = data?.footerMenu
-    ? parseMenu(data.footerMenu, customPrefixes)
+    ? parseMenu(tmpFooterMenu, customPrefixes)
     : undefined;
 
   return {shop: data.shop, headerMenu, footerMenu};

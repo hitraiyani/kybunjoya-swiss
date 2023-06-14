@@ -20,6 +20,7 @@ import {
   ArrowRight2,
   IconArrowBottom,
   ShopifyCookie,
+  Newsletter
 } from '~/components';
 import {
   useParams,
@@ -598,55 +599,7 @@ function Footer({menu, main_menu}) {
           <div className="flex justify-between gap-4">
             <div className="w-full mx-auto">
               <div className="xl:flex md:justify-between gap-x-[15px]">
-                <div className="pr-0 mb-6 md:mb-0 xl:pr-5 flex-1">
-                  <div className="flex flex-wrap items-center ">
-                    <h3 className="text-[#00795C] w-full font-bold lg:text-[42px] text-[30px] mb-3">
-                      Updates in deine Inbox
-                    </h3>
-                    <p className="font-normal  text-[#595959] w-full text-[19px]">
-                      Bleib auf dem laufenden mit den letzten Ereignissen.
-                    </p>
-                  </div>
-                  <form className="mt-12 mb-10">
-                    <div className="max-w-[576px] max-w-sm-full relative">
-                      <input
-                        type="email"
-                        id="email"
-                        className="bg-transparent border-b-[1px] font-normal border-[#999999] text-[#000] text-base placeholder:text-[#CCCCCC] focus:ring-black-500 focus:border-black-500 block w-full p-0 focus:bordr-0 focus:outline-none focus:border-b-[1px] focus:border-[#000] dark:placeholder-gray-400  dark:focus:ring-black-500 dark:focus:border-black-500 pb-[10px] pr-[20px]"
-                        placeholder="Email"
-                        required
-                      />
-                      <button className="absolute right-[-10px] top-1/2 -translate-y-1/2 text-[#CCCCCC]">
-                        <IconArrowBottom
-                          className={'rotate-[-90deg] w-[30px] h-[30px]'}
-                        />
-                      </button>
-                    </div>
-                  </form>
-                  <div className="flex mb-11">
-                    <p className="font-normal text-base text-[#595959] flex gap-4 items-center">
-                      {/* <span>
-                      <svg
-                        width="18"
-                        height="13"
-                        viewBox="0 0 18 13"
-                        fill="none"
-                      >
-                        <path
-                          d="M0 0.390625H18V12.3906H0V0.390625ZM1 2.40263V11.3906H17V2.40263L9 8.51962L1 2.40263ZM16.677 1.39062H1.323L9 7.26062L16.677 1.39062Z"
-                          fill="#595959"
-                        />
-                      </svg>
-                    </span> */}
-                      <Link
-                        to={'/pages/kontakt'}
-                        className="hover:underline hover:text-[#00795C] font-normal text-base text-[#595959]"
-                      >
-                        Kontakt
-                      </Link>
-                    </p>
-                  </div>
-                </div>
+                <Newsletter/>
                 <div className="grid grid-cols-2 gap-x-[10px] md:gap-x-[20px] lg:gap-x-[40px] xl:gap-x-[50px] 2xl:gap-x-[60px] md:block md:columns-3 footer-menu-items xl:flex-[1.5] 2xl:flex-[1.5]">
                   {main_menu.items &&
                     main_menu.items.map((item, index) => {
