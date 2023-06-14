@@ -126,8 +126,8 @@ export default function karriere() {
                         className="py-[20px] md:py-[23px] px-[15px] md:px-[30px] xl:px-[50px] border-t-[1px] border-[#000000]"
                       >
                         <div className="vacancies-list-inner">
-                          <div className="flex justify-between items-center gap-[20px]">
-                            <div className="info flex flex-col">
+                          <div className="flex flex-col sm:flex-row flex-wrap sm:justify-between sm:items-center gap-[20px]">
+                            <div className="info flex flex-col flex-1">
                               <span className="block font-medium text-[24px] md:text-[30px] lg:text-[35px] text-black tracking-[-0.97152px] leading-none mb-[5px]">
                                 {item?.offene_stelle}
                               </span>
@@ -135,7 +135,7 @@ export default function karriere() {
                                 {item?.job_ort}
                               </span>
                             </div>
-                            <div className="btn-wrap flex">
+                            <div className="btn-wrap flex w-fit">
                               <Link
                                 href="#"
                                 target="_blank"
