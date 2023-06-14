@@ -409,7 +409,7 @@ export default function ratgeberseite() {
                             <img
                               className="absolute inset-0 w-full h-full object-cover"
                               src={
-                                product.featuredImage.url ? product.featuredImage.url : 'https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Manufaktur_1200x800px_05.jpg_1_4.png?v=1685525783'
+                                product?.featuredImage?.url ? product?.featuredImage?.url : 'https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Manufaktur_1200x800px_05.jpg_1_4.png?v=1685525783'
                               }
                               alt=""
                             />
