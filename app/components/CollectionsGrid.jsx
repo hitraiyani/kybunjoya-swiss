@@ -4,7 +4,7 @@ import { toHTML } from '~/lib/utils';
 
 export function CollectionsGrid({data}) {
   return (
-    <Section className={'collectionsGrid-sec !pt-[40px] collectionsGrid-sec-box-layout'}>
+    <Section className={'collectionsGrid-sec !pt-[20px] md:!pt-[40px] collectionsGrid-sec-box-layout'}>
       <div className="container">
         <h2 className='text-[#00795C] text-[30px] lg:text-[35px] xl:text-[40px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold hidden'>{data?.main_title?.value}</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 min-[1280px]:grid-cols-4 gap-[10px] sm:gap-[17px]">

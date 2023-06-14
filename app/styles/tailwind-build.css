@@ -2346,9 +2346,6 @@ video {
 .pb-\[59\%\] {
   padding-bottom: 59%;
 }
-.pb-\[60\%\] {
-  padding-bottom: 60%;
-}
 .pb-\[70px\] {
   padding-bottom: 70px;
 }
@@ -2438,6 +2435,9 @@ video {
 }
 .pt-\[64px\] {
   padding-top: 64px;
+}
+.\!pt-\[20px\] {
+  padding-top: 20px !important;
 }
 .text-left {
   text-align: left;
@@ -3730,6 +3730,10 @@ video {
     padding-bottom: 30px;
   }
 
+  .md\:pb-\[60\%\] {
+    padding-bottom: 60%;
+  }
+
   .md\:pb-\[60px\] {
     padding-bottom: 60px;
   }
@@ -3758,8 +3762,8 @@ video {
     padding-top: 60px;
   }
 
-  .md\:pb-\[60\%\] {
-    padding-bottom: 60%;
+  .md\:\!pt-\[40px\] {
+    padding-top: 40px !important;
   }
 
   .md\:text-left {
@@ -4374,6 +4378,10 @@ video {
     padding-top: 80px;
   }
 
+  .lg\:pb-\[50\%\] {
+    padding-bottom: 50%;
+  }
+
   .lg\:text-right {
     text-align: right;
   }
@@ -4876,6 +4884,10 @@ video {
     padding-top: 80px;
   }
 
+  .xl\:pb-\[40\%\] {
+    padding-bottom: 40%;
+  }
+
   .xl\:text-right {
     text-align: right;
   }
@@ -5027,6 +5039,10 @@ video {
   .\32xl\:py-\[50px\] {
     padding-top: 50px;
     padding-bottom: 50px;
+  }
+
+  .\32xl\:pb-\[32\%\] {
+    padding-bottom: 32%;
   }
 
   .\32xl\:text-\[100px\] {

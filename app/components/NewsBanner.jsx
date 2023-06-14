@@ -5,9 +5,9 @@ export function NewsBanner({data}) {
   return (
     <section className="heroSlider-sec mt-[21px] mb-[40px] md:mb-[60px] lg:mb-[80px]">
       <div className="container">
-        <div className="relative flex w-full image-container min-h-[320px] overflow-hidden">
+        <div className="relative flex w-full image-container pb-[100%] md:pb-[60%] lg:pb-[50%] xl:pb-[40%] 2xl:pb-[32%] overflow-hidden">
           <img
-            className="object-cover object-center w-full active"
+            className="object-cover object-center w-full h-full active absolute inset-0"
             id="defaultActive"
             src={data?.banner_image?.reference?.image?.url}
           ></img>
