@@ -145,7 +145,7 @@ export default function schweizerSchuhpropktion() {
               className="inline-block rounded-[100px] bg-[#00795c] text-white
                  text-center px-[35px] py-[15px] hover:bg-black hover:text-white text-[18px] max-w-fit"
             >
-              Kandahar entdecken
+              {page?.schweizer_schuhpropktion?.reference?.book_now_link_text?.value}
             </Link>
           </div>
         </div>
@@ -153,7 +153,7 @@ export default function schweizerSchuhpropktion() {
       {faqArr.length > 0 && (
         <div className="faq-sec container mt-10 hidden">
           <h3 className="title uppercase text-[18px] leading-[1.2] pb-[10px] border-b border-[#595959] font-normal">
-            Häufige Fragen
+            {page?.schweizer_schuhpropktion?.reference?.faq_title?.value}
           </h3>
           {faqArr.map((item) => (
             <ExpandingCard content={item.answer} title={item.question} />
@@ -279,6 +279,9 @@ ${MEDIA_FRAGMENT}
               value
             }
             video_section_button_redirect : field(key: "video_section_button_redirect") {
+              value
+            }
+            faq_title : field(key: "faq_title") {
               value
             }
             faq : field(key: "faq") {

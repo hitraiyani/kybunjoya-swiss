@@ -39,11 +39,10 @@ export async function loader({request, params, context}) {
 export default function unternehmen() {
   const {page} = useLoaderData();
   const unternehmenReference = page?.unternehmen?.reference;
-
+  
   return (
     <>
-
-      <Breadcrumb crumbs={getBreadCrumbs('unternehmen','uberuns')} />
+      <Breadcrumb crumbs={getBreadCrumbs('unternehmen', 'uberuns')} />
       <section className="banner-with-title">
         <div className="container">
           <h1 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold">
@@ -53,7 +52,7 @@ export default function unternehmen() {
             <iframe
               width={100}
               height={100}
-              src="https://www.youtube.com/embed/UBpScaVSvkM"
+              src={unternehmenReference?.head_video_url?.value}
               title="YouTube video player"
               frameBorder={0}
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -95,7 +94,14 @@ export default function unternehmen() {
           <div className="flex flex-col gap-y-[30px] lg:flex-row gap-x-[30px] 2xl:gap-x-[49px] pt-[40px] md:pt-[60px] lg:pt-[80px] xl:pt-[100px]">
             <div className="w-full lg:w-[45%]">
               <div className="img-wrap">
-                <img className='max-w-full mx-auto' src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Book-Cover_The-Joya-Way_Soft-Schatten_DE_1.png?v=1686644705" alt="" />
+                <img
+                  className="max-w-full mx-auto"
+                  src={
+                    unternehmenReference?.quote_section_sub_image?.reference
+                      ?.image?.url
+                  }
+                  alt=""
+                />
               </div>
             </div>
             <div className="w-full lg:w-[55%]">
@@ -104,8 +110,11 @@ export default function unternehmen() {
                   {unternehmenReference?.quote_section_title?.value}
                 </h4>
               </div>
-              <div className='desc desc text-black text-[16px] lg:text-[21px] leading-[1.3] font-[400] mb-[25px]'>
-                <p>Basierend auf unserer Erfahrung der letzten 12 Jahre im Jungunternehmerdasein haben wir unser neues Managementkonzept entwickelt. Mit The Joya Way versprechen wir uns Stabilität und Kontinuität im Tagesgeschäft bei gleichzeitiger, steigernder Innovationskraft.</p>
+              <div className="desc desc text-black text-[16px] lg:text-[21px] leading-[1.3] font-[400] mb-[25px]"
+                dangerouslySetInnerHTML={{
+                  __html: toHTML(unternehmenReference?.quote_section_sub_desc?.value),
+                }}
+              >
               </div>
               <div className="btn-wrap">
                 <Link
@@ -145,6 +154,9 @@ ${MEDIA_FRAGMENT}
                 ...Media
               }
             }
+            head_video_url : field(key: "head_video_url") {
+              value
+            }
             main_desc : field(key: "main_desc") {
               value
             }
@@ -159,6 +171,14 @@ ${MEDIA_FRAGMENT}
             }
             quote_section_button_redirect : field(key: "quote_section_button_redirect") {
               value
+            }
+            quote_section_sub_desc : field(key: "quote_section_sub_desc") {
+              value
+            }
+            quote_section_sub_image : field(key: "quote_section_sub_image") {
+              reference {
+                ...Media
+              }
             }
             quote_section_image : field(key: "quote_section_image") {
               reference {
