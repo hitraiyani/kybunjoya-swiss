@@ -2485,6 +2485,9 @@ video {
 .pt-\[5px\] {
   padding-top: 5px;
 }
+.pt-\[22\%\] {
+  padding-top: 22%;
+}
 .text-left {
   text-align: left;
 }
@@ -3814,6 +3817,10 @@ video {
 
   .md\:pt-\[60px\] {
     padding-top: 60px;
+  }
+
+  .md\:pb-\[50px\] {
+    padding-bottom: 50px;
   }
 
   .md\:text-center {
