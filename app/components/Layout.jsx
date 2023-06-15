@@ -695,7 +695,7 @@ function Footer({menu, main_menu}) {
                         />
                       </svg>
                     </a>
-                    <a href="#" className="text-[#898989] hover:text-[#00795C]">
+                    <a target="_blank" href="https://www.linkedin.com/company/kybunjoya" className="text-[#898989] hover:text-[#00795C]">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width={32}
