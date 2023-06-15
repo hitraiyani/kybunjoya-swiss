@@ -20,7 +20,7 @@ import {
   ArrowRight2,
   IconArrowBottom,
   ShopifyCookie,
-  Newsletter
+  Newsletter,
 } from '~/components';
 import {
   useParams,
@@ -303,7 +303,7 @@ function MenuMobileNav({menu, onClose}) {
   return (
     <div className="mega-menu-wrap">
       <div className="nav-list">
-        <ul className="columns-1 md:columns-3">
+        <ul className="columns-1 md:columns-3 md:gap-[35px]">
           {(menu?.items || []).map((item) => {
             return (
               <li key={item.id}>
@@ -603,15 +603,134 @@ function Footer({menu, main_menu}) {
         role="contentinfo"
         // className={`grid min-h-[25rem] items-start grid-flow-row w-full gap-6 py-8 px-6 md:px-8 lg:px-12 md:gap-8 lg:gap-12 grid-cols-1 md:grid-cols-2 lg:grid-cols-${itemsCount}
         //   bg-primary dark:bg-contrast dark:text-primary text-contrast overflow-hidden`}
-        className="pt-[64px] pb-[52px] bg-[#EDEDED] site-footer"
+        className="pt-[35px] pb-[58px] bg-[#EDEDED] site-footer"
       >
         <div className="container relative">
           <ScrollToTop />
           <div className="flex justify-between gap-4">
             <div className="w-full mx-auto">
-              <div className="xl:flex md:justify-between gap-x-[15px]">
-                <Newsletter/>
-                <div className="grid grid-cols-2 gap-x-[10px] md:gap-x-[20px] lg:gap-x-[40px] xl:gap-x-[50px] 2xl:gap-x-[60px] md:block md:columns-3 footer-menu-items xl:flex-[1.5] 2xl:flex-[1.5]">
+              <div className="flex flex-col-reverse md:flex-row md:justify-between gap-y-[27px] gap-x-[30px]">
+                <div className="col-left">
+                  {/* <div className="flex mb-6">
+                    <p className="font-normal text-base text-[#595959] flex gap-4 items-center">
+                      <span>
+                        <svg
+                          width="18"
+                          height="18"
+                          viewBox="0 0 18 18"
+                          fill="none"
+                        >
+                          <path
+                            d="M0.732 1.12262C0.964193 0.890493 1.23984 0.706371 1.54319 0.580774C1.84655 0.455177 2.17167 0.390564 2.5 0.390625H15.5C16.163 0.390625 16.7989 0.654017 17.2678 1.12286C17.7366 1.5917 18 2.22758 18 2.89062V10.3906C18 11.0537 17.7366 11.6896 17.2678 12.1584C16.7989 12.6272 16.163 12.8906 15.5 12.8906H8.207L3.5 17.5976V12.8906H2.5C1.83696 12.8906 1.20107 12.6272 0.732233 12.1584C0.263392 11.6896 4.34504e-08 11.0537 4.34504e-08 10.3906V2.89062C-6.11675e-05 2.5623 0.0645516 2.23717 0.190149 1.93382C0.315746 1.63046 0.499868 1.35482 0.732 1.12262ZM2.5 1.39062C2.10218 1.39062 1.72064 1.54866 1.43934 1.82996C1.15804 2.11127 1 2.4928 1 2.89062V10.3906C1 10.7884 1.15804 11.17 1.43934 11.4513C1.72064 11.7326 2.10218 11.8906 2.5 11.8906H4.5V15.1836L7.793 11.8906H15.5C15.8978 11.8906 16.2794 11.7326 16.5607 11.4513C16.842 11.17 17 10.7884 17 10.3906V2.89062C17 2.4928 16.842 2.11127 16.5607 1.82996C16.2794 1.54866 15.8978 1.39062 15.5 1.39062H2.5ZM5 7.39062V5.89062H6V7.39062H5ZM8.5 7.39062V5.89062H9.5V7.39062H8.5ZM12 7.39062V5.89062H13V7.39062H12Z"
+                            fill="#595959"
+                          />
+                        </svg>
+                      </span>
+                      <a
+                        href="#"
+                        className="hover:underline hover:text-[#00795C] font-normal text-[15px] text-[#595959]"
+                      >
+                        Chat
+                      </a>
+                    </p>
+                  </div> */}
+                  <div className='footer-logo max-w-[218px] hidden md:block'>
+                    <img className='w-full h-auto' src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/logo_2.png?v=1686818080" alt="" />
+                  </div>
+                  <div className="flex mb-[27px] xl:mb-[57px] md:mt-[36px]">
+                    <p className="text-[18px] md:text-[26px] text-[#00795C] flex gap-4 font-bold items-center hover:underline ">
+                      {/* <span>
+                      <svg
+                        width="18"
+                        height="13"
+                        viewBox="0 0 18 13"
+                        fill="none"
+                      >
+                        <path
+                          d="M0 0.390625H18V12.3906H0V0.390625ZM1 2.40263V11.3906H17V2.40263L9 8.51962L1 2.40263ZM16.677 1.39062H1.323L9 7.26062L16.677 1.39062Z"
+                          fill="#595959"
+                        />
+                      </svg>
+                    </span> */}
+                      <Link
+                        to={'/pages/kontakt'}
+                        className=""
+                      >
+                        Kontakt
+                      </Link>
+                    </p>
+                  </div>
+                  <div className="flex mb-10 !hidden">
+                    <p className="font-normal text-base text-[#595959] flex gap-4 items-center">
+                      <span>
+                        <img
+                          className=""
+                          src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Clip_path_group.png?v=1682401790"
+                          alt=""
+                        />
+                      </span>
+                      <a
+                        href="#"
+                        className="hover:underline hover:text-[#00795C] font-normal text-base text-[#595959]"
+                      >
+                        DE
+                      </a>
+                    </p>
+                  </div>
+                  <div className="flex gap-[20px] items-center">
+                    <a
+                      href="https://www.youtube.com/channel/UCb5tCNjMuN4GY_h4afBGSDg"
+                      target="_blank"
+                      className="text-[#898989] hover:text-[#00795C] relative top-[3px]"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width={32}
+                        height={32}
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          fill="currentColor"
+                          d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104l.022.26l.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105l-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006l-.087-.004l-.171-.007l-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103l.003-.052l.008-.104l.022-.26l.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007l.172-.006l.086-.003l.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z"
+                        />
+                      </svg>
+                    </a>
+                    <a href="#" className="text-[#898989] hover:text-[#00795C]">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width={32}
+                        height={32}
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          fill="currentColor"
+                          d="M6.94 5a2 2 0 1 1-4-.002a2 2 0 0 1 4 .002ZM7 8.48H3V21h4V8.48Zm6.32 0H9.34V21h3.94v-6.57c0-3.66 4.77-4 4.77 0V21H22v-7.93c0-6.17-7.06-5.94-8.72-2.91l.04-1.68Z"
+                        />
+                      </svg>
+                    </a>
+                  </div>
+                  <div className="flex flex-col-reverse md:flex-row flex-wrap gap-y-[20px] gap-x-[50px] mt-[30px]">
+                    <span className="text-[15px] leading-none font-normal text-[#595959]">
+                      © kybun Joya {new Date().getFullYear()}
+                    </span>
+                    <div className="flex">
+                      <ul className="font-normal text-[15px] leading-none text-[#595959] flex gap-[20px] lg:gap-[50px] flex-col sm:flex-row flex-wrap">
+                        {(menu?.items || []).map((item, index) => (
+                          <li key={index}>
+                            <Link
+                              to={item.to}
+                              className="hover:underline hover:text-[#00795C]"
+                            >
+                              {item.title}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <Newsletter />
+                <div className="grid grid-cols-2 gap-x-[10px] md:gap-x-[20px] lg:gap-x-[40px] xl:gap-x-[50px] 2xl:gap-x-[60px] md:block md:columns-3 footer-menu-items xl:flex-[1.5] 2xl:flex-[1.5] !hidden">
                   {main_menu.items &&
                     main_menu.items.map((item, index) => {
                       return (
@@ -651,7 +770,6 @@ function Footer({menu, main_menu}) {
                       );
                     })}
                 </div>
-                <div></div>
                 {/* <div className="grid grid-cols-2 gap-y-0 gap-8 lg:gap-8 lg:grid-cols-3">
                   {(mainMenuChunk || []).map((menuitem, index) => {
                     return (
@@ -693,139 +811,6 @@ function Footer({menu, main_menu}) {
                     );
                   })}
                 </div> */}
-              </div>
-              <div className="mt-[40px]">
-                {/* <div className="flex mb-6">
-                  <p className="font-normal text-base text-[#595959] flex gap-4 items-center">
-                    <span>
-                      <svg
-                        width="18"
-                        height="18"
-                        viewBox="0 0 18 18"
-                        fill="none"
-                      >
-                        <path
-                          d="M0.732 1.12262C0.964193 0.890493 1.23984 0.706371 1.54319 0.580774C1.84655 0.455177 2.17167 0.390564 2.5 0.390625H15.5C16.163 0.390625 16.7989 0.654017 17.2678 1.12286C17.7366 1.5917 18 2.22758 18 2.89062V10.3906C18 11.0537 17.7366 11.6896 17.2678 12.1584C16.7989 12.6272 16.163 12.8906 15.5 12.8906H8.207L3.5 17.5976V12.8906H2.5C1.83696 12.8906 1.20107 12.6272 0.732233 12.1584C0.263392 11.6896 4.34504e-08 11.0537 4.34504e-08 10.3906V2.89062C-6.11675e-05 2.5623 0.0645516 2.23717 0.190149 1.93382C0.315746 1.63046 0.499868 1.35482 0.732 1.12262ZM2.5 1.39062C2.10218 1.39062 1.72064 1.54866 1.43934 1.82996C1.15804 2.11127 1 2.4928 1 2.89062V10.3906C1 10.7884 1.15804 11.17 1.43934 11.4513C1.72064 11.7326 2.10218 11.8906 2.5 11.8906H4.5V15.1836L7.793 11.8906H15.5C15.8978 11.8906 16.2794 11.7326 16.5607 11.4513C16.842 11.17 17 10.7884 17 10.3906V2.89062C17 2.4928 16.842 2.11127 16.5607 1.82996C16.2794 1.54866 15.8978 1.39062 15.5 1.39062H2.5ZM5 7.39062V5.89062H6V7.39062H5ZM8.5 7.39062V5.89062H9.5V7.39062H8.5ZM12 7.39062V5.89062H13V7.39062H12Z"
-                          fill="#595959"
-                        />
-                      </svg>
-                    </span>
-                    <a
-                      href="#"
-                      className="hover:underline hover:text-[#00795C] font-normal text-[15px] text-[#595959]"
-                    >
-                      Chat
-                    </a>
-                  </p>
-                </div> */}
-                <div className="space-x-6 sm:justify-center mb-10 flex sm:hidden">
-                  <a
-                    href="https://www.linkedin.com/company/kybun-joya-retail-ag"
-                    target="_blank"
-                    className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
-                  >
-                    <svg width="50" height="50" viewBox="0 0 50 50" fill="none">
-                      <rect width="50" height="50" rx="8" fill="#595959" />
-                      <path
-                        d="M17.7785 14.8876C17.7785 16.4216 16.7515 17.7427 14.886 17.7427C13.1326 17.7427 12 16.498 12 14.964C12 13.3894 13.0985 12 14.8892 12C16.68 12 17.7428 13.313 17.7785 14.8876ZM12 38V19.2215H17.7785V37.9984L12 38ZM20.6661 25.6419C20.6661 23.4108 20.593 21.5453 20.5199 19.9349H25.7101L25.9685 22.4227H26.0774C26.8086 21.2527 28.601 19.5351 31.5991 19.5351C35.2554 19.5351 38 21.9824 38 27.2506V38H32.2215V28.0875C32.2215 25.7849 31.3456 24.0283 29.3339 24.0283C27.7999 24.0283 27.0312 25.2714 26.6283 26.2951C26.482 26.6607 26.4446 27.1726 26.4446 27.6861V37.9967H20.6661V25.6386V25.6419Z"
-                        fill="#F5F5F5"
-                      />
-                    </svg>
-                  </a>
-                  <a
-                    href="https://www.youtube.com/channel/UCb5tCNjMuN4GY_h4afBGSDg"
-                    target="_blank"
-                    className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
-                  >
-                    <svg
-                      width={50}
-                      height={50}
-                      viewBox="0 0 50 50"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <rect width={50} height={50} rx={8} fill="#595959" />
-                      <path
-                        d="M45.082 16.9012C45.082 16.9012 44.6866 14.1099 43.4689 12.8843C41.927 11.2712 40.2032 11.2633 39.4124 11.1684C33.7508 10.7572 25.2505 10.7572 25.2505 10.7572H25.2347C25.2347 10.7572 16.7344 10.7572 11.0728 11.1684C10.2821 11.2633 8.55827 11.2712 7.01635 12.8843C5.79863 14.1099 5.41118 16.9012 5.41118 16.9012C5.41118 16.9012 5 20.1827 5 23.4563V26.5243C5 29.7979 5.40327 33.0794 5.40327 33.0794C5.40327 33.0794 5.79863 35.8707 7.00845 37.0963C8.55036 38.7094 10.5746 38.6541 11.4761 38.828C14.718 39.1364 25.2426 39.2313 25.2426 39.2313C25.2426 39.2313 33.7508 39.2155 39.4124 38.8122C40.2032 38.7173 41.927 38.7094 43.4689 37.0963C44.6866 35.8707 45.082 33.0794 45.082 33.0794C45.082 33.0794 45.4852 29.8058 45.4852 26.5243V23.4563C45.4852 20.1827 45.082 16.9012 45.082 16.9012ZM21.0597 30.2486V18.8701L31.9954 24.5791L21.0597 30.2486Z"
-                        fill="#F5F5F5"
-                      />
-                    </svg>
-                  </a>
-                </div>
-                <div className="flex mb-10 !hidden">
-                  <p className="font-normal text-base text-[#595959] flex gap-4 items-center">
-                    <span>
-                      <img
-                        className=""
-                        src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Clip_path_group.png?v=1682401790"
-                        alt=""
-                      />
-                    </span>
-                    <a
-                      href="#"
-                      className="hover:underline hover:text-[#00795C] font-normal text-base text-[#595959]"
-                    >
-                      DE
-                    </a>
-                  </p>
-                </div>
-                <div className="flex mb-12">
-                  <ul className="font-normal text-base  text-[#595959] flex gap-3 lg:gap-9 flex-col sm:flex-row flex-wrap">
-                    {(menu?.items || []).map((item, index) => (
-                      <li key={index}>
-                        <Link
-                          to={item.to}
-                          className="hover:underline hover:text-[#00795C]"
-                        >
-                          {item.title}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="sm:flex sm:items-center sm:justify-between">
-                  <span className="text-[15.94px] font-normal sm:text-center text-[#595959]">
-                    © kybun Joya {new Date().getFullYear()}
-                  </span>
-                  <div className="mt-4 space-x-6 sm:justify-center sm:mt-0 hidden sm:flex">
-                    <a
-                      href="https://www.youtube.com/channel/UCb5tCNjMuN4GY_h4afBGSDg"
-                      target="_blank"
-                      className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
-                    >
-                      <svg
-                        width={50}
-                        height={50}
-                        viewBox="0 0 50 50"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <rect width={50} height={50} rx={8} fill="#595959" />
-                        <path
-                          d="M45.082 16.9012C45.082 16.9012 44.6866 14.1099 43.4689 12.8843C41.927 11.2712 40.2032 11.2633 39.4124 11.1684C33.7508 10.7572 25.2505 10.7572 25.2505 10.7572H25.2347C25.2347 10.7572 16.7344 10.7572 11.0728 11.1684C10.2821 11.2633 8.55827 11.2712 7.01635 12.8843C5.79863 14.1099 5.41118 16.9012 5.41118 16.9012C5.41118 16.9012 5 20.1827 5 23.4563V26.5243C5 29.7979 5.40327 33.0794 5.40327 33.0794C5.40327 33.0794 5.79863 35.8707 7.00845 37.0963C8.55036 38.7094 10.5746 38.6541 11.4761 38.828C14.718 39.1364 25.2426 39.2313 25.2426 39.2313C25.2426 39.2313 33.7508 39.2155 39.4124 38.8122C40.2032 38.7173 41.927 38.7094 43.4689 37.0963C44.6866 35.8707 45.082 33.0794 45.082 33.0794C45.082 33.0794 45.4852 29.8058 45.4852 26.5243V23.4563C45.4852 20.1827 45.082 16.9012 45.082 16.9012ZM21.0597 30.2486V18.8701L31.9954 24.5791L21.0597 30.2486Z"
-                          fill="#F5F5F5"
-                        />
-                      </svg>
-                    </a>
-                    <a
-                      href="#"
-                      className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
-                    >
-                      <svg
-                        width="50"
-                        height="50"
-                        viewBox="0 0 50 50"
-                        fill="none"
-                      >
-                        <rect width="50" height="50" rx="8" fill="#595959" />
-                        <path
-                          d="M17.7785 14.8876C17.7785 16.4216 16.7515 17.7427 14.886 17.7427C13.1326 17.7427 12 16.498 12 14.964C12 13.3894 13.0985 12 14.8892 12C16.68 12 17.7428 13.313 17.7785 14.8876ZM12 38V19.2215H17.7785V37.9984L12 38ZM20.6661 25.6419C20.6661 23.4108 20.593 21.5453 20.5199 19.9349H25.7101L25.9685 22.4227H26.0774C26.8086 21.2527 28.601 19.5351 31.5991 19.5351C35.2554 19.5351 38 21.9824 38 27.2506V38H32.2215V28.0875C32.2215 25.7849 31.3456 24.0283 29.3339 24.0283C27.7999 24.0283 27.0312 25.2714 26.6283 26.2951C26.482 26.6607 26.4446 27.1726 26.4446 27.6861V37.9967H20.6661V25.6386V25.6419Z"
-                          fill="#F5F5F5"
-                        />
-                      </svg>
-                    </a>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
