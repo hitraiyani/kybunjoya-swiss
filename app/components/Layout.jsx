@@ -335,7 +335,7 @@ function MenuMobileNav({menu, onClose}) {
 function SubMegaMenu({menu_items, onClose}) {
   const {pathname, search} = useLocation();
   return (
-    <ul className="sub-menu">
+    <ul className="sub-menu md:pl-[15px]">
       {(menu_items || []).map((item, key) => {
         return (
           <li key={key}>
@@ -563,7 +563,7 @@ function Badge({openCart, dark, count}) {
 
 function FooterMainMenuSub({sub_menu_item}) {
   return (
-    <ul className="font-normal text-base text-[#595959] sub-menu">
+    <ul className="font-normal text-base text-[#595959] sub-menu md:pl-[15px]">
       {sub_menu_item.map((subItem, index) => (
         <li className="mb-2" key={index}>
           <Link

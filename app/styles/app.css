@@ -156,23 +156,25 @@ p:last-child {
 }
 
 .mobile-menu-Drawer .nav-list > ul > li:last-child a.title {
-  color: #595959;
+  /* color: #595959; */
   margin-bottom: 20px;
 }
 
 @media (min-width: 768px) {
   .mobile-menu-Drawer .nav-list > ul > li:last-child {
-    border-left: 1px solid #dedede;
-    left: 0;
+    /* border-left: 1px solid #dedede; */
+    /* left: -30px; */
     position: relative;
-    padding-left: 20%;
+    /* padding-left: 20%; */
     min-height: 170px;
+    /* width: calc(100% + 70px); */
+    width: calc(100% + 50px);
   }
 }
 
 @media (min-width: 992px) {
   .mobile-menu-Drawer .nav-list > ul > li:last-child {
-    left: 0;
+    /* left: 0; */
   }
 }
 

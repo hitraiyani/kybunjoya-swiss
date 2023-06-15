@@ -179,7 +179,7 @@ export default function karriere() {
               <h4 className="text-[#00795C] text-[30px] lg:text-[35px] xl:text-[40px] tracking-[-1.05984px] font-bold">
                 Downloads
               </h4>
-              <a
+              {/* <a
                 rel="noopener noreferrer"
                 href={karriere?.footer_2_cta?.reference?.url}
                 target="_blank"
@@ -191,7 +191,7 @@ export default function karriere() {
                   }
                 />
                 {karriere?.footer_2_cta_label?.value}
-              </a>
+              </a> */}
               <a
                 rel="noopener noreferrer"
                 href={karriere?.footer_cta?.reference?.url}
