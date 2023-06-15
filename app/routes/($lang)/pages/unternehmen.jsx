@@ -118,6 +118,7 @@ export default function unternehmen() {
               </div>
               <div className="btn-wrap">
                 <Link
+                  target="_blank"
                   to={
                     unternehmenReference?.quote_section_button_redirect?.value
                   }
