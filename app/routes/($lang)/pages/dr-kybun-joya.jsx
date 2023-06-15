@@ -234,7 +234,7 @@ export default function ratgeberseite() {
                         ?.value,
                   }}
                 ></div>
-                <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] max-w-[870px]">
+                <div className="desc mt-[20px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] max-w-[870px]">
                   <ul className="list-style2 list-style3 flex flex-col gap-y-[10px]">
                     {headProductList?.length > 0 &&
                       headProductList.map((product, index) => {
