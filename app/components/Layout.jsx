@@ -311,7 +311,7 @@ function MenuMobileNav({menu, onClose}) {
                   to={item.to}
                   target={item.target}
                   className={`${
-                    item.to == '/pages/uber-uns' ? 'pointer-events-none' : ''
+                    item.to == '/pages/uber-uns' ? '' : ''
                   } kybunjoya-menu-hover title text-[#00795C] text-[26px] mb-[12px] outline-none ${
                     item.to == pathname ? 'is-active' : ''
                   } `}

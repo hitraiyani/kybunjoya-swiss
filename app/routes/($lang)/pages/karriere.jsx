@@ -98,15 +98,15 @@ export default function karriere() {
               // playsInline
             >
               <source
-                src="https://cdn.shopify.com/videos/c/o/v/8ed51c39992f440faa2db6c9c29d9f04.mp4"
+                src={karriere?.video_tag_mp_4_url?.value}
                 type="video/mp4"
               />
               <source
-                src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/230614_kybun_Joya_Mitarbeitervideo_Final_1.ogg?v=1686809407"
+                src={karriere?.video_tag_ogg_url?.value}
                 type="video/ogg"
               />
               <img
-                src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Screenshot_196.png?v=1686810184"
+                src={karriere?.video_tag_image_url?.value}
                 title="Your browser does not support the <video> tag"
               />
             </video>
@@ -233,6 +233,15 @@ const PAGE_QUERY = `#graphql
               value
             }
             video_url : field(key: "video_url") {
+              value
+            }
+            video_tag_mp_4_url : field(key: "video_tag_mp_4_url") {
+              value
+            }
+            video_tag_ogg_url : field(key: "video_tag_ogg_url") {
+              value
+            }
+            video_tag_image_url : field(key: "video_tag_image_url") {
               value
             }
             offene_stellen_section_title : field(key: "offene_stellen_section_title") {
