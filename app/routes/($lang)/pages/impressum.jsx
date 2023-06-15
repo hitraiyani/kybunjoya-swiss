@@ -35,7 +35,7 @@ export async function loader({request, params, context}) {
 
 export default function impressum() {
   const {page} = useLoaderData();
-  console.log("page", page);
+  
   return (
     <>
       <section className="rich-text-section pb-[40px] md:pb-[60px] lg:pb-[80px] xl:pb-[100px]">

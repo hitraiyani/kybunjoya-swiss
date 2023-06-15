@@ -45,7 +45,6 @@ export default function kybunJoyaTherapie() {
     ? JSON.parse(kybunJoyaTherapie?.faq?.value)
     : [];
 
-  console.log('kybunJoyaTherapie', kybunJoyaTherapie);
 
   return (
     <>

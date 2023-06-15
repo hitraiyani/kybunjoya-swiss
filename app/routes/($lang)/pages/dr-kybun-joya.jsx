@@ -85,6 +85,9 @@ export default function ratgeberseite() {
     },
   );
 
+  const headProductList = filteredKybunJoyaProducts?.slice(0, 5);
+  const sliderProductList = filteredKybunJoyaProducts?.slice(5, 11);
+
 
   const buttonAccordionMapping = page?.ratgeber_detail?.reference
     ?.button_accordion_mapping?.value
@@ -226,9 +229,27 @@ export default function ratgeberseite() {
                 <div
                   className="desc  mt-[20px] lg:mt-[40px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] max-w-[870px]"
                   dangerouslySetInnerHTML={{
-                    __html: page?.ratgeber_detail?.reference?.head_new_desc_with_list?.value
+                    __html:
+                      page?.ratgeber_detail?.reference?.head_new_desc_with_list
+                        ?.value,
                   }}
-                >
+                ></div>
+                <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] max-w-[870px]">
+                  <ul className="list-style2 list-style3 flex flex-col gap-y-[10px]">
+                    {headProductList?.length > 0 &&
+                      headProductList.map((product, index) => {
+                        return (
+                          <li className="list-style-green hover:underline">
+                            <Link
+                              key={index}
+                              to={`/products/custom-product/${product.handle}`}
+                            >
+                              {product.title}
+                            </Link>
+                          </li>
+                        );
+                      })}
+                  </ul>
                 </div>
               </div>
               <div className="interactive-img-wrap mx-auto block w-[320px] !hidden">
@@ -400,38 +421,39 @@ export default function ratgeberseite() {
             }}
             className=""
           >
-             {filteredKybunJoyaProducts.length > 0 && (
-                filteredKybunJoyaProducts.map((product, index) => {
-                    return (
-                      <SwiperSlide key={index}>
-                        <div className="popular-item">
-                          <div className="img-wrap overflow-hidden pb-[100%] md:pb-[60%] mb-[15px] relative">
-                            <img
-                              className="absolute inset-0 w-full h-full object-cover"
-                              src={
-                                product?.featuredImage?.url ? product?.featuredImage?.url : 'https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Manufaktur_1200x800px_05.jpg_1_4.png?v=1685525783'
-                              }
-                              alt=""
-                            />
-                          </div>
-                          {/* <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mb-[5px]">
+            {sliderProductList.length > 0 &&
+              sliderProductList.map((product, index) => {
+                return (
+                  <SwiperSlide key={index}>
+                    <div className="popular-item">
+                      <div className="img-wrap overflow-hidden pb-[100%] md:pb-[60%] mb-[15px] relative">
+                        <img
+                          className="absolute inset-0 w-full h-full object-cover"
+                          src={
+                            product?.featuredImage?.url
+                              ? product?.featuredImage?.url
+                              : ''
+                          }
+                          alt=""
+                        />
+                      </div>
+                      {/* <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mb-[5px]">
                             <p>Gesundheitswissen</p>
                           </div> */}
-                          <div className="text-black text-[24px] md:text-[30px] lg:text-[35px] leading-[1.1] tracking-[-0.97152px] font-medium mb-[15px]">
-                            <p>{product.title}</p>
-                          </div>
-                          <Link
-                            to={`/products/custom-product/${product.handle}`}
-                            className="inline-block rounded-[100px] bg-[#00795c] text-white
+                      <div className="text-black text-[24px] md:text-[30px] lg:text-[35px] leading-[1.1] tracking-[-0.97152px] font-medium mb-[15px]">
+                        <p>{product.title}</p>
+                      </div>
+                      <Link
+                        to={`/products/custom-product/${product.handle}`}
+                        className="inline-block rounded-[100px] bg-[#00795c] text-white
                             text-center px-[20px] md:px-[35px] py-[12px] md:py-[15px] hover:bg-black hover:text-white text-[14px] md:text-[18px] max-w-fit"
-                          >
-                            Mehr erfahren
-                          </Link>
-                        </div>
-                      </SwiperSlide>
-                    );
-                })
-              )}
+                      >
+                        Mehr erfahren
+                      </Link>
+                    </div>
+                  </SwiperSlide>
+                );
+              })}
             {/* {productSliderData.length > 0 &&
               productSliderData.map((item, index) => {
                 return (
@@ -462,12 +484,15 @@ export default function ratgeberseite() {
                 );
               })} */}
           </Swiper>
-          <div className="desc lg:mt-[40px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] max-w-[914px] mt-[30px] pr-[20px]"
-              dangerouslySetInnerHTML={{
-                __html: toHTML(page?.ratgeber_detail?.reference?.product_slider_sub_desc?.value)
-              }}
-            >
-          </div>
+          <div
+            className="desc lg:mt-[40px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] max-w-[914px] mt-[30px] pr-[20px]"
+            dangerouslySetInnerHTML={{
+              __html: toHTML(
+                page?.ratgeber_detail?.reference?.product_slider_sub_desc
+                  ?.value,
+              ),
+            }}
+          ></div>
         </div>
       </section>
       <section className="dr-faq-sec mx-auto my-[40px] md:my-[60px] lg:my-[80px] xl:my-[100px]">

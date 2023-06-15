@@ -85,9 +85,6 @@ export default function ratgeberseite() {
     },
   );
 
-  console.log("filteredKybunJoyaProducts", filteredKybunJoyaProducts);
-  console.log("collection?.products", collection?.products);
-
   const buttonAccordionMapping = page?.ratgeber_detail?.reference
     ?.button_accordion_mapping?.value
     ? JSON.parse(page.ratgeber_detail.reference.button_accordion_mapping.value)
