@@ -2485,6 +2485,12 @@ video {
 .pt-\[5px\] {
   padding-top: 5px;
 }
+<<<<<<< Updated upstream
+=======
+.pb-\[56\%\] {
+  padding-bottom: 56%;
+}
+>>>>>>> Stashed changes
 .text-left {
   text-align: left;
 }
@@ -3820,6 +3826,13 @@ video {
     padding-top: 60px;
   }
 
+<<<<<<< Updated upstream
+=======
+  .md\:pb-\[35\%\] {
+    padding-bottom: 35%;
+  }
+
+>>>>>>> Stashed changes
   .md\:text-center {
     text-align: center;
   }
