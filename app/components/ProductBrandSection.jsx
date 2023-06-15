@@ -654,7 +654,6 @@ export function ProductBrandSection({data}) {
                     <div className="btn-wrap flex mt-[19px]">
                       <Link
                         to={data?.brand_6_sub_button_redirect?.value}
-                        target="_blank"
                         className="md:px-[35px] px-[20px] md:py-[18px] py-[12px] bg-[#00795c] text-[14px] md:text-[18px] font-medium text-white rounded-[100px] w-fit hover:bg-black hover:!text-white text-center"
                       >
                         {data?.brand_6_sub_button_text?.value}

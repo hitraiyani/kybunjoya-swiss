@@ -2458,14 +2458,14 @@ video {
 .pt-\[12px\] {
   padding-top: 12px;
 }
-.pt-\[16\.5\%\] {
-  padding-top: 16.5%;
-}
 .pt-\[20px\] {
   padding-top: 20px;
 }
 .pt-\[21px\] {
   padding-top: 21px;
+}
+.pt-\[22\%\] {
+  padding-top: 22%;
 }
 .pt-\[25\.5\%\] {
   padding-top: 25.5%;
@@ -2484,9 +2484,6 @@ video {
 }
 .pt-\[5px\] {
   padding-top: 5px;
-}
-.pt-\[22\%\] {
-  padding-top: 22%;
 }
 .text-left {
   text-align: left;
@@ -3775,6 +3772,10 @@ video {
     padding-bottom: 30px;
   }
 
+  .md\:pb-\[50px\] {
+    padding-bottom: 50px;
+  }
+
   .md\:pb-\[60\%\] {
     padding-bottom: 60%;
   }
@@ -3817,10 +3818,6 @@ video {
 
   .md\:pt-\[60px\] {
     padding-top: 60px;
-  }
-
-  .md\:pb-\[50px\] {
-    padding-bottom: 50px;
   }
 
   .md\:text-center {
