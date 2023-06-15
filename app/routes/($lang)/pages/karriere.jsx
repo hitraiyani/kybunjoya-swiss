@@ -81,7 +81,7 @@ export default function karriere() {
       </div>
       <section className="about-sec container mt-[48px]">
         <div className="flex flex-col lg:flex-row gap-y-[20px] gap-x-[30px] xl:gap-x-[45px] items-center">
-          <div className="img-col lg:w-[70%] overflow-hidden w-full">
+          <div className="img-col lg:flex-1 overflow-hidden w-full">
             {/* <iframe
               className="w-full aspect-[4/2]"
               src={karriere?.video_url?.value}
@@ -111,7 +111,7 @@ export default function karriere() {
               />
             </video>
           </div>
-          <div className="content-col w-full lg:w-[30%] flex flex-col">
+          <div className="content-col w-full lg:w-[273px] flex flex-col">
             <div
               className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
               dangerouslySetInnerHTML={{
@@ -151,10 +151,10 @@ export default function karriere() {
                         <div className="vacancies-list-inner">
                           <div className="flex flex-col sm:flex-row flex-wrap sm:justify-between sm:items-center gap-[20px]">
                             <div className="info flex flex-col flex-1">
-                              <span className="block font-medium text-[24px] md:text-[30px] lg:text-[35px] text-black tracking-[-0.97152px] leading-none mb-[5px]">
+                              <span className="block font-medium text-[24px] lg:text-[30px] text-black tracking-[-0.97152px] leading-none mb-[10px]">
                                 {item?.offene_stelle}
                               </span>
-                              <span className="block font-normal text-[20px] md:text-[26px] lg:text-[30px] text-[#898989] tracking-[-0.97152px] leading-none">
+                              <span className="block font-normal text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-[#898989] tracking-[-0.97152px] leading-none">
                                 {item?.job_ort}
                               </span>
                             </div>

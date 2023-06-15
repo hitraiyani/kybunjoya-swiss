@@ -142,7 +142,7 @@ p:last-child {
 }
 
 .mobile-menu-Drawer .nav-list > ul > li:last-child a.title:before {
-  background-image: url("data:image/svg+xml,%3Csvg class='w-12 h-12 border rounded-full p-2 text-white border-white transition-all' xmlns='http://www.w3.org/2000/svg' width='256' height='256' viewBox='0 0 256 256'%3E%3Cpath fill='%23595959' d='m220.24 132.24l-72 72a6 6 0 0 1-8.48-8.48L201.51 134H40a6 6 0 0 1 0-12h161.51l-61.75-61.76a6 6 0 0 1 8.48-8.48l72 72a6 6 0 0 1 0 8.48Z'%3E%3C/path%3E%3C/svg%3E");
+  /* background-image: url("data:image/svg+xml,%3Csvg class='w-12 h-12 border rounded-full p-2 text-white border-white transition-all' xmlns='http://www.w3.org/2000/svg' width='256' height='256' viewBox='0 0 256 256'%3E%3Cpath fill='%23595959' d='m220.24 132.24l-72 72a6 6 0 0 1-8.48-8.48L201.51 134H40a6 6 0 0 1 0-12h161.51l-61.75-61.76a6 6 0 0 1 8.48-8.48l72 72a6 6 0 0 1 0 8.48Z'%3E%3C/path%3E%3C/svg%3E"); */
 }
 
 .mobile-menu-Drawer li a.title:hover,
