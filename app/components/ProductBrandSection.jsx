@@ -14,7 +14,7 @@ import {Swiper, SwiperSlide} from 'swiper/react';
 
 export function ProductBrandSection({data}) {
   return (
-    <section className="product-brand-section pt-[40px] md:pt-[60px] lg:pt-[80px] xl:pt-[100px]">
+    <section className="product-brand-section pt-[40px] md:pt-[50px]">
       <div className="product-brand-inner">
         <div className="product-brand-lists flex flex-col">
           <div className="product-brand-list pb-[70px] md:pb-[100px] lg:pb-[140px] container">

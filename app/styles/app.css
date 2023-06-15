@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-html {
-  padding-right: 0 !important;
-  overflow: auto !important;
+@media (min-width: 768px) {
+  html {
+    padding-right: 0 !important;
+    overflow: auto !important;
+  }
 }
-
 body {
   font-family: 'Inter', sans-serif;
   font-weight: 500;
@@ -244,8 +245,10 @@ p:last-child {
 }
 
 .heroSlider-sec .image-container > img {
-  display: none;
-  animation: fadeOut 0.5s linear;
+  /* display: none;
+  animation: fadeOut 0.5s linear; */
+  display: block;
+  animation: fadeIn 0.5s linear;
 }
 
 .heroSlider-sec .image-container > img.active {

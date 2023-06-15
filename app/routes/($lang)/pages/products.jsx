@@ -85,7 +85,7 @@ export default function products() {
         </div>
         <div className="sub-title">
           <h4
-            className="text-[#000000] text-[24px] lg:text-[30px] mb-[33px] leading-[1.2] max-w-[930px] font-bold"
+            className="text-[#000000] text-[24px] mb-[18px] leading-[1.2] max-w-[930px] font-bold"
             dangerouslySetInnerHTML={{
               __html: toHTML(
                 page?.product_misc_update?.reference?.new_hero_main_title
