@@ -432,7 +432,7 @@ export default function ratgeberseite() {
                           src={
                             product?.featuredImage?.url
                               ? product?.featuredImage?.url
-                              : ''
+                              : 'https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Manufaktur_1200x800px_05.jpg_1_4.png?v=1685525783'
                           }
                           alt=""
                         />
@@ -501,7 +501,7 @@ export default function ratgeberseite() {
             {page?.ratgeber_detail?.reference?.product_sub_list_title?.value}
           </h3>
           {sub_collections?.nodes?.map((item, index) => {
-            if (item.title != pageCollectionTitle) {
+            if (item.title != pageCollectionTitle && item?.products?.edges.length > 0) {
               return (
                 <ExpandingCardStyle2
                   key={index}
