@@ -43,7 +43,7 @@ export default function unternehmen() {
   return (
     <>
       <Breadcrumb crumbs={getBreadCrumbs('unternehmen', 'uberuns')} />
-      <div className="heroSlider-sec">
+      <div className="heroSlider-sec  mt-[-120px] lg:mt-[-190px]">
         <div className="prodcut-items">
           <div className="prodcut-item">
             <div className="relative flex w-full h-[50vh] sm:h-[60vh] md:h-[82vh] flex-co image-container min-h-[450px] overflow-hidden">
@@ -62,7 +62,7 @@ export default function unternehmen() {
                   type="video/mp4"
                 />
                 <source
-                  src="https://cdn.shopify.com/videos/c/o/v/76124b6c242146c5822914a9bfbe3788.mp4"
+                  src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/230615_kybun_Tower_Shots.ogg?v=1686835912"
                   type="video/ogg"
                 />
                 <img

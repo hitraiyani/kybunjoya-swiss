@@ -996,6 +996,9 @@ video {
 .mt-auto {
   margin-top: auto;
 }
+.mt-\[-120px\] {
+  margin-top: -120px;
+}
 .box-border {
   box-sizing: border-box;
 }
@@ -2386,6 +2389,9 @@ video {
 .pb-\[55\%\] {
   padding-bottom: 55%;
 }
+.pb-\[56\%\] {
+  padding-bottom: 56%;
+}
 .pb-\[57\%\] {
   padding-bottom: 57%;
 }
@@ -2485,12 +2491,6 @@ video {
 .pt-\[5px\] {
   padding-top: 5px;
 }
-<<<<<<< Updated upstream
-=======
-.pb-\[56\%\] {
-  padding-bottom: 56%;
-}
->>>>>>> Stashed changes
 .text-left {
   text-align: left;
 }
@@ -3325,10 +3325,6 @@ video {
     aspect-ratio: 4/5;
   }
 
-  .md\:aspect-auto {
-    aspect-ratio: auto;
-  }
-
   .md\:h-2\/4 {
     height: 50%;
   }
@@ -3778,6 +3774,10 @@ video {
     padding-bottom: 30px;
   }
 
+  .md\:pb-\[35\%\] {
+    padding-bottom: 35%;
+  }
+
   .md\:pb-\[50px\] {
     padding-bottom: 50px;
   }
@@ -3826,13 +3826,6 @@ video {
     padding-top: 60px;
   }
 
-<<<<<<< Updated upstream
-=======
-  .md\:pb-\[35\%\] {
-    padding-bottom: 35%;
-  }
-
->>>>>>> Stashed changes
   .md\:text-center {
     text-align: center;
   }
@@ -4038,6 +4031,10 @@ video {
 
   .lg\:mt-\[85px\] {
     margin-top: 85px;
+  }
+
+  .lg\:mt-\[-190px\] {
+    margin-top: -190px;
   }
 
   .lg\:block {
