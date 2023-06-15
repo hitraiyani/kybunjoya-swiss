@@ -66,9 +66,9 @@ export default function kybunJoyaTherapie() {
       </div>
       <div className="about-us-section">
         <div className="container">
-          <div className="flex flex-col md:flex-row gap-y-[20px] gap-x-[30px] 2xl:gap-x-[120px] xl:gap-x-[80px] lg:gap-x-[50px]">
-            <div className="img-wrap md:w-[50%] overflow-hidden w-full">
-              <div className="img-wrap pb-[100%] relative overflow-hidden">
+          <div className="flex flex-col gap-y-[20px] gap-x-[30px] 2xl:gap-x-[120px] xl:gap-x-[80px] lg:gap-x-[50px]">
+            <div className="img-wrap md:w-[100%] overflow-hidden w-full">
+              <div className="img-wrap min-h-[200px] pb-[50%] xl:pb-[45%] 2xl:pb-[37%]  relative overflow-hidden">
                 <img
                   className="w-full h-full inset-0 object-cover absolute"
                   src={kybunJoyaTherapie?.hero_image?.reference?.image?.url}
@@ -76,7 +76,7 @@ export default function kybunJoyaTherapie() {
                 />
               </div>
             </div>
-            <div className="content-col w-full md:w-[50%] flex flex-col justify-center">
+            <div className="content-col w-full max-w-[1040px] md:w-[100%] flex flex-col justify-center">
               <div
                 className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
                 dangerouslySetInnerHTML={{

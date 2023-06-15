@@ -78,23 +78,40 @@ export default function karriere() {
         <h1 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold">
           {karriere?.head_title?.value}
         </h1>
-        <div
-          className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] max-w-[991px]"
-          dangerouslySetInnerHTML={{
-            __html: toHTML(karriere?.head_desc_part_1?.value),
-          }}
-        ></div>
       </div>
       <section className="about-sec container mt-[48px]">
         <div className="flex flex-col lg:flex-row gap-y-[20px] gap-x-[30px] xl:gap-x-[45px] items-center">
-          <div className="img-col lg:w-[65%] overflow-hidden w-full">
-            <iframe
+          <div className="img-col lg:w-[70%] overflow-hidden w-full">
+            {/* <iframe
               className="w-full aspect-[4/2]"
               src={karriere?.video_url?.value}
               frameBorder="0"
-            ></iframe>
+            ></iframe> */}
+            <video
+              className="w-full aspect-[4/2] object-cover"
+              width="{320}"
+              height="{240}"
+              controls
+              // autoPlay
+              // loop
+              // muted
+              // playsInline
+            >
+              <source
+                src="https://cdn.shopify.com/videos/c/o/v/8ed51c39992f440faa2db6c9c29d9f04.mp4"
+                type="video/mp4"
+              />
+              <source
+                src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/230614_kybun_Joya_Mitarbeitervideo_Final_1.ogg?v=1686809407"
+                type="video/ogg"
+              />
+              <img
+                src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Screenshot_196.png?v=1686810184"
+                title="Your browser does not support the <video> tag"
+              />
+            </video>
           </div>
-          <div className="content-col w-full lg:w-[35%] flex flex-col">
+          <div className="content-col w-full lg:w-[30%] flex flex-col">
             <div
               className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4]"
               dangerouslySetInnerHTML={{
@@ -103,6 +120,12 @@ export default function karriere() {
             ></div>
           </div>
         </div>
+        <div
+          className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] max-w-[991px] mt-[40px] md:mt-[50px]"
+          dangerouslySetInnerHTML={{
+            __html: toHTML(karriere?.head_desc_part_1?.value),
+          }}
+        ></div>
       </section>
       <section className="vacancies-sec mt-[40px] lg:mt-[48px] mb-[40px] lg:mb-[60px]">
         <div className="container">
@@ -140,7 +163,7 @@ export default function karriere() {
                                 href="#"
                                 target="_blank"
                                 to={item?.bewerben_link}
-                                className='md:px-[35px] px-[20px] md:py-[18px] py-[12px] bg-[#00795c] text-[14px] md:text-[18px] font-medium text-white rounded-[100px] w-fit hover:bg-black hover:!text-white text-center'
+                                className="md:px-[35px] px-[20px] md:py-[18px] py-[12px] bg-[#00795c] text-[14px] md:text-[18px] font-medium text-white rounded-[100px] w-fit hover:bg-black hover:!text-white text-center"
                               >
                                 {item?.bewerben}
                               </Link>
@@ -153,7 +176,9 @@ export default function karriere() {
               </ul>
             </div>
             <div className="btn-wrap justify-start items-start mt-[20px] md:mt-[40px] xl:mt-[60px] flex flex-col gap-[20px] md:gap-[20px] xl:gap-[30px]">
-              <h4 className='text-[#00795C] text-[30px] lg:text-[35px] xl:text-[40px] tracking-[-1.05984px] font-bold'>Downloads</h4>
+              <h4 className="text-[#00795C] text-[30px] lg:text-[35px] xl:text-[40px] tracking-[-1.05984px] font-bold">
+                Downloads
+              </h4>
               <a
                 rel="noopener noreferrer"
                 href={karriere?.footer_2_cta?.reference?.url}
@@ -165,7 +190,7 @@ export default function karriere() {
                     'w-[20px] h-[20px] md:w-[25px] md:h-[25px] lg:w-[30px] lg:h-[30px] text-black'
                   }
                 />
-                  { karriere?.footer_2_cta_label?.value }
+                {karriere?.footer_2_cta_label?.value}
               </a>
               <a
                 rel="noopener noreferrer"

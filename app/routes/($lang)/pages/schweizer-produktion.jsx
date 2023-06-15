@@ -4,7 +4,7 @@ import {useLoaderData} from '@remix-run/react';
 import {toHTML, getBreadCrumbs} from '~/lib/utils';
 import {Navigation, Pagination, Scrollbar, A11y, Autoplay} from 'swiper';
 import {Swiper, SwiperSlide} from 'swiper/react';
-import {ExpandingCard, Link, Breadcrumb} from '~/components';
+import {ExpandingCard, Link, Breadcrumb, ArrowRight} from '~/components';
 import {MEDIA_FRAGMENT} from '~/data/fragments';
 
 const seo = ({data}) => ({
@@ -73,61 +73,78 @@ export default function schweizerSchuhpropktion() {
             alt=""
           />
         </div>
-        <div className="desc text-black text-[16px] lg:text-[21px] leading-[1.3] font-[400] mt-[40px] lg:mt-[44px] max-w-[1100px]"
+        <div
+          className="desc text-black text-[16px] lg:text-[21px] leading-[1.3] font-[400] mt-[40px] lg:mt-[44px] max-w-[1100px]"
           dangerouslySetInnerHTML={{
             __html: toHTML(
               page?.schweizer_schuhpropktion?.reference?.short_description
                 ?.value,
             ),
           }}
-        >
-        </div>
+        ></div>
       </div>
       <div className="about-sec about-sec-slider container pb-[20px] md:pb-[30px] lg:pb-[40px] xl:pb-[50px] pt-[40px] md:pt-[60px] lg:pt-[80px] xl:pt-[100px]">
-        <div className="flex flex-col-reverse lg:flex-row gap-y-[20px] gap-x-[30px] xl:gap-x-[63px] items-center ">
-          <div className="img-col lg:w-[40%] overflow-hidden w-full hidden lg:block">
-            <Swiper
-              modules={[Navigation, Scrollbar, A11y, Autoplay, Pagination]}
-              slidesPerView={1}
-              navigation={false}
-              loop="false"
-              autoplay="false"
-              pagination={{clickable: true}}
-              className="h-full overflow-visible flex flex-col"
-            >
-              {sliderImages.map((image, index) => (
-                <SwiperSlide key={index}>
-                  <img
-                    className="h-full w-full object-cover block absolute inset-0"
-                    src={image}
-                    alt=""
-                  />
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </div>
-          <div className="content-col w-full lg:w-[60%] lg:max-w-[785px] flex flex-col">
-            <h2 className="text-[#00795C] text-[30px] lg:text-[35px] xl:text-[40px] tracking-[-1.05984px] mb-[20px] font-bold">
+        <div className="flex flex-col lg:flex-row gap-y-[20px] gap-x-[30px] xl:gap-x-[63px] items-center ">
+          <div className="img-col lg:w-[40%] w-full relative">
+          <h2 className="text-[#00795C] text-[30px] lg:text-[35px] xl:text-[40px] tracking-[-1.05984px] mb-[20px] font-bold lg:hidden">
               {page?.schweizer_schuhpropktion?.reference?.main_title?.value}
             </h2>
-            <div className="img-col lg:w-[40%] overflow-hidden w-full lg:hidden mb-[20px]">
-            <Swiper
-              modules={[Navigation, Scrollbar, A11y, Autoplay, Pagination]}
-              slidesPerView={1}
-              pagination={{clickable: true}}
-              className="h-full overflow-visible flex flex-col"
-            >
-              {sliderImages.map((image, index) => (
-                <SwiperSlide key={index}>
-                  <img
-                    className="h-full object-cover block"
-                    src={image}
-                    alt=""
-                  />
-                </SwiperSlide>
-              ))}
-            </Swiper>
+            <div className="product-brand--swiper-buttons">
+              <div
+                id="swiper-button-next-about-sec-desk"
+                className="swiper-button-prev-product-gallery rounded-full w-[50px] h-[50px] xl:w-[74px] xl:h-[74px] text-white hover:text-white after:text-[30px] bg-black hover:opacity-70 flex items-center justify-center outline-[8px] xl:outline-[10px] outline-[rgba(21,_21,_21,_0.6)] absolute z-[2] top-1/2 lg:top-[calc(50%_-_20px)] -translate-y-1/2 xl:left-[-30px] lg:left-[-23px] left-[-10px] outline rotate-180"
+              >
+                <ArrowRight
+                  className={
+                    'relative left-[3px] w-[25px] h-[30px] xl:w-[40px] xl:h-[40px]'
+                  }
+                />
+              </div>
+              <div
+                id="swiper-button-prev-about-sec-desk"
+                className="swiper-button-next-product-gallery rounded-full w-[50px] h-[50px] xl:w-[74px] xl:h-[74px] text-white hover:text-white after:text-[30px] bg-black hover:opacity-70 flex items-center justify-center outline-[8px] xl:outline-[10px] outline-[rgba(21,_21,_21,_0.6)] absolute z-[2] top-1/2 lg:top-[calc(50%_-_20px)] -translate-y-1/2 xl:right-[-30px] lg:right-[-23px] right-[-10px] outline"
+              >
+                <ArrowRight
+                  className={
+                    'relative left-[3px] w-[25px] h-[30px] xl:w-[40px] xl:h-[40px]'
+                  }
+                />
+              </div>
+            </div>
+            <div className="w-full overflow-hidden">
+              <Swiper
+                modules={[Navigation, Scrollbar, A11y, Autoplay, Pagination]}
+                slidesPerView={1}
+                navigation={{
+                  prevEl: '#swiper-button-next-about-sec-desk',
+                  nextEl: '#swiper-button-prev-about-sec-desk',
+                }}
+                pagination={{
+                  el: '#about-sec-pagination-desk',
+                  clickable: true,
+                }}
+                className="h-full overflow-visible flex flex-col"
+              >
+                {sliderImages.map((image, index) => (
+                  <SwiperSlide key={index}>
+                    <img
+                      className="h-full w-full object-cover block absolute inset-0"
+                      src={image}
+                      alt=""
+                    />
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+              <div
+                id="about-sec-pagination-desk"
+                className="product-brand-pagination-div text-center mt-[10px]"
+              ></div>
+            </div>
           </div>
+          <div className="content-col w-full lg:w-[60%] lg:max-w-[785px] flex flex-col">
+            <h2 className="text-[#00795C] text-[30px] lg:text-[35px] xl:text-[40px] tracking-[-1.05984px] mb-[20px] font-bold hidden lg:block">
+              {page?.schweizer_schuhpropktion?.reference?.main_title?.value}
+            </h2>
             <div
               className="desc text-black text-[16px] lg:text-[21px] leading-[1.3] font-[400] mb-[25px]"
               dangerouslySetInnerHTML={{
@@ -144,11 +161,14 @@ export default function schweizerSchuhpropktion() {
               target="_blank"
               className="inline-block rounded-[100px] bg-[#00795c] text-white text-center px-[20px] md:px-[35px] py-[12px] md:py-[15px] hover:bg-black hover:text-white text-[14px] md:text-[18px] max-w-fit"
             >
-              {page?.schweizer_schuhpropktion?.reference?.book_now_link_text?.value}
+              {
+                page?.schweizer_schuhpropktion?.reference?.book_now_link_text
+                  ?.value
+              }
             </Link>
           </div>
         </div>
-      </div>  
+      </div>
       {faqArr.length > 0 && (
         <div className="faq-sec container mt-10 hidden">
           <h3 className="title uppercase text-[18px] leading-[1.2] pb-[10px] border-b border-[#595959] font-normal">
@@ -179,26 +199,28 @@ export default function schweizerSchuhpropktion() {
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
             ></iframe>
-            <div className="desc text-black text-[16px] lg:text-[21px] leading-[1.3] font-[400] mb-[25px]"
-               dangerouslySetInnerHTML={{
+            <div
+              className="desc text-black text-[16px] lg:text-[21px] leading-[1.3] font-[400] mb-[25px]"
+              dangerouslySetInnerHTML={{
                 __html: toHTML(
                   page?.schweizer_schuhpropktion?.reference?.video_section_desc
                     ?.value,
                 ),
               }}
-            >
-            </div>
+            ></div>
             <div className="btn-wrap">
               <Link
                 to={
-                  page?.schweizer_schuhpropktion?.reference?.video_section_button_redirect
-                    ?.value
+                  page?.schweizer_schuhpropktion?.reference
+                    ?.video_section_button_redirect?.value
                 }
                 target="_blank"
                 className="inline-block rounded-[100px] bg-[#00795c] text-white text-center px-[20px] md:px-[35px] py-[12px] md:py-[15px] hover:bg-black hover:text-white text-[14px] md:text-[18px] max-w-fit"
               >
-                {page?.schweizer_schuhpropktion?.reference?.video_section_button_text
-                    ?.value}
+                {
+                  page?.schweizer_schuhpropktion?.reference
+                    ?.video_section_button_text?.value
+                }
               </Link>
             </div>
           </div>
