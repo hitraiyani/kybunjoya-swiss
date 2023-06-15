@@ -58,15 +58,15 @@ export default function unternehmen() {
                 playsInline
               >
                 <source
-                  src="https://cdn.shopify.com/videos/c/o/v/76124b6c242146c5822914a9bfbe3788.mp4"
+                  src={unternehmenReference?.video_tag_mp_4_url?.value}
                   type="video/mp4"
                 />
                 <source
-                  src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/230615_kybun_Tower_Shots.ogg?v=1686835912"
+                  src={unternehmenReference?.video_tag_ogg_url?.value}
                   type="video/ogg"
                 />
                 <img
-                  src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Screenshot_196.png?v=1686810184"
+                  src={unternehmenReference?.video_tag_image_url?.value}
                   title="Your browser does not support the <video> tag"
                 />
               </video>
@@ -91,7 +91,7 @@ export default function unternehmen() {
               <div className="absolute inset-x-0 bottom-0 w-full img-overlay h-full md:h-2/4"></div>
               <div className="absolute slider-content bottom-[40px] lg:bottom-[58px] left-0 right-0 w-full container">
                 <h1 className="mb-[15px] text-white title text-[35px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] font-bold">
-                  Unternehmen
+                  {unternehmenReference?.head_title?.value}
                 </h1>
                 {/* <h4 className="text-white desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] tracking-[-0.400697px] font-normal leading-[1.2] flex gap-[10px] items-center">
                   <span className="w-[36px] h-[36px] overflow-hidden relative">
@@ -250,6 +250,15 @@ ${MEDIA_FRAGMENT}
               value
             }
             main_desc : field(key: "main_desc") {
+              value
+            }
+            video_tag_mp_4_url : field(key: "video_tag_mp_4_url") {
+              value
+            }
+            video_tag_ogg_url : field(key: "video_tag_ogg_url") {
+              value
+            }
+            video_tag_image_url : field(key: "video_tag_image_url") {
               value
             }
             quote_section_title : field(key: "quote_section_title") {
