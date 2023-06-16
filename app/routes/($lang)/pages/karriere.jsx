@@ -121,7 +121,7 @@ export default function karriere() {
           </div>
         </div>
         <div
-          className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] max-w-[991px] mt-[40px] md:mt-[50px]"
+          className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] max-w-[910px] mt-[40px] md:mt-[50px]"
           dangerouslySetInnerHTML={{
             __html: toHTML(karriere?.head_desc_part_1?.value),
           }}
@@ -134,7 +134,7 @@ export default function karriere() {
               {karriere?.offene_stellen_section_title?.value}
             </h4>
             <div
-              className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mb-[40px] lg:mb-[60px] max-w-[645px]"
+              className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mb-[40px] lg:mb-[60px] max-w-[712px]"
               dangerouslySetInnerHTML={{
                 __html: toHTML(karriere?.offene_stellen_section_desc?.value),
               }}

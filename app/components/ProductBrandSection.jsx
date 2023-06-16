@@ -104,7 +104,7 @@ export function ProductBrandSection({data}) {
                       {data?.brand_1_sub_text?.value}
                     </h4>
                     <div
-                      className="desc text-black text-[16px] lg:text-[21px] leading-[1.3] font-[400] mt-[15px]"
+                      className="desc text-black text-[16px] lg:text-[21px] tracking-[-0.400697px] leading-[1.3] font-[400] mt-[15px]"
                       dangerouslySetInnerHTML={{
                         __html: toHTML(data?.brand_1_sub_desc?.value),
                       }}
@@ -210,7 +210,7 @@ export function ProductBrandSection({data}) {
                       {data?.brand_2_sub_text?.value}
                     </h4>
                     <div
-                      className="desc text-black text-[16px] lg:text-[21px] leading-[1.3] font-[400] mt-[15px]"
+                      className="desc text-black text-[16px] lg:text-[21px] tracking-[-0.400697px] leading-[1.3] font-[400] mt-[15px]"
                       dangerouslySetInnerHTML={{
                         __html: toHTML(data?.brand_2_sub_desc?.value),
                       }}
@@ -327,7 +327,7 @@ export function ProductBrandSection({data}) {
                       {data?.brand_3_sub_text?.value}
                     </h4>
                     <div
-                      className="desc text-black text-[16px] lg:text-[21px] leading-[1.3] font-[400] mt-[15px]"
+                      className="desc text-black text-[16px] lg:text-[21px] tracking-[-0.400697px] leading-[1.3] font-[400] mt-[15px]"
                       dangerouslySetInnerHTML={{
                         __html: toHTML(data?.brand_3_sub_desc?.value),
                       }}
@@ -433,7 +433,7 @@ export function ProductBrandSection({data}) {
                       {data?.brand_5_sub_text?.value}
                     </h4>
                     <div
-                      className="desc text-black text-[16px] lg:text-[21px] leading-[1.3] font-[400] mt-[15px]"
+                      className="desc text-black text-[16px] lg:text-[21px] tracking-[-0.400697px] leading-[1.3] font-[400] mt-[15px]"
                       dangerouslySetInnerHTML={{
                         __html: toHTML(data?.brand_5_sub_desc?.value),
                       }}
@@ -539,7 +539,7 @@ export function ProductBrandSection({data}) {
                       {data?.brand_4_sub_text?.value}
                     </h4>
                     <div
-                      className="desc text-black text-[16px] lg:text-[21px] leading-[1.3] font-[400] mt-[15px]"
+                      className="desc text-black text-[16px] lg:text-[21px] tracking-[-0.400697px] leading-[1.3] font-[400] mt-[15px]"
                       dangerouslySetInnerHTML={{
                         __html: toHTML(data?.brand_4_sub_desc?.value),
                       }}
@@ -646,7 +646,7 @@ export function ProductBrandSection({data}) {
                       {data?.brand_6_sub_text?.value}
                     </h4>
                     <div
-                      className="desc text-black text-[16px] lg:text-[21px] leading-[1.3] font-[400] mt-[15px]"
+                      className="desc text-black text-[16px] lg:text-[21px] tracking-[-0.400697px] leading-[1.3] font-[400] mt-[15px]"
                       dangerouslySetInnerHTML={{
                         __html: toHTML(data?.brand_6_sub_desc?.value),
                       }}

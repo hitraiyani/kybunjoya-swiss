@@ -335,7 +335,7 @@ function MenuMobileNav({menu, onClose}) {
 function SubMegaMenu({menu_items, onClose}) {
   const {pathname, search} = useLocation();
   return (
-    <ul className="sub-menu md:pl-[15px]">
+    <ul className="sub-menu pl-[15px]">
       {(menu_items || []).map((item, key) => {
         return (
           <li key={key}>

@@ -89,8 +89,8 @@ export default function unternehmen() {
             })} */}
 
               <div className="absolute inset-x-0 bottom-0 w-full img-overlay h-full md:h-2/4"></div>
-              <div className="absolute slider-content bottom-[40px] lg:bottom-[58px] left-0 right-0 w-full container">
-                <h1 className="mb-[15px] text-white title text-[35px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] font-bold">
+              <div className="absolute slider-content bottom-[40px] lg:bottom-[50px] left-0 right-0 w-full container">
+                <h1 className="text-white title text-[35px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] font-bold">
                   {unternehmenReference?.head_title?.value}
                 </h1>
                 {/* <h4 className="text-white desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] tracking-[-0.400697px] font-normal leading-[1.2] flex gap-[10px] items-center">
@@ -161,7 +161,7 @@ export default function unternehmen() {
       <section className="aboutus-section mt-[40px] lg:mt-[62px] pb-[40px] md:pb-[60px] lg:pb-[80px] xl:pb-[100px] max-w-[1030px] mx-auto">
         <div className="container">
           <div
-            className="desc text-black text-[16px] lg:text-[21px] leading-[1.3] font-[400] mb-[40px] md:mb-[50px]"
+            className="desc text-black text-[16px] lg:text-[21px] leading-[1.3] font-[400] mb-[40px] md:mb-[50px] tracking-[-0.400697px]"
             dangerouslySetInnerHTML={{
               __html: toHTML(unternehmenReference?.main_desc?.value),
             }}
@@ -201,7 +201,7 @@ export default function unternehmen() {
                 </h4>
               </div>
               <div
-                className="desc desc text-black text-[16px] lg:text-[21px] leading-[1.3] font-[400] mb-[25px]"
+                className="desc desc text-black text-[16px] lg:text-[21px] leading-[1.3] font-[400] mb-[25px] tracking-[-0.400697px]"
                 dangerouslySetInnerHTML={{
                   __html: toHTML(
                     unternehmenReference?.quote_section_sub_desc?.value,

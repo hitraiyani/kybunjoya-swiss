@@ -95,7 +95,7 @@ export default function products() {
           ></h4>
         </div>
         <div
-          className="desc text-black text-[16px] lg:text-[21px] leading-[1.3] font-[400] max-w-[930px]"
+          className="desc text-black text-[16px] lg:text-[21px] tracking-[-0.400697px] leading-[1.3] font-[400] max-w-[930px]"
           dangerouslySetInnerHTML={{
             __html: toHTML(
               page?.product_misc_update?.reference?.new_hero_main_desc?.value,

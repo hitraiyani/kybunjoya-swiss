@@ -227,7 +227,7 @@ export default function ratgeberseite() {
                   }}
                 ></div>
                 <div
-                  className="desc  mt-[20px] lg:mt-[40px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] max-w-[870px]"
+                  className="desc  mt-[20px] lg:mt-[40px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] max-w-[910px]"
                   dangerouslySetInnerHTML={{
                     __html:
                       page?.ratgeber_detail?.reference?.head_new_desc_with_list
@@ -485,7 +485,7 @@ export default function ratgeberseite() {
               })} */}
           </Swiper>
           <div
-            className="desc lg:mt-[40px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] max-w-[914px] mt-[30px] pr-[20px]"
+            className="desc lg:mt-[40px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] max-w-[950px] mt-[30px] pr-[20px]"
             dangerouslySetInnerHTML={{
               __html: toHTML(
                 page?.ratgeber_detail?.reference?.product_slider_sub_desc

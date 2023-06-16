@@ -89,7 +89,7 @@ export default function Heritage() {
                 </div>
               </div>
               <div className="w-full lg:w-[50%]">
-                <div className="info-with-year flex flex-col gap-[10px] items-start">
+                <div className="info-with-year flex flex-col gap-[10px] items-start lg:max-w-[729px] lg:mx-auto">
                   <div className="text-[#00795C] text-[30px] lg:text-[35px] xl:text-[40px] tracking-[-1.05984px] flex items-center justify-center rounded-[110px] font-medium w-fit date">
                     {heritageReference?.time_line_1_year?.value}
                   </div>
@@ -123,7 +123,7 @@ export default function Heritage() {
               </div>
             </div>
             <div className="w-full lg:w-[50%]">
-              <div className="info-with-year flex flex-col gap-[10px] items-start">
+              <div className="info-with-year flex flex-col gap-[10px] items-start lg:max-w-[729px] lg:mx-auto">
                 <div className="text-[#00795C] text-[30px] lg:text-[35px] xl:text-[40px] tracking-[-1.05984px] flex items-center justify-center rounded-[110px] font-medium w-fit date">
                   {heritageReference?.time_line_2_year?.value}
                 </div>
@@ -152,7 +152,7 @@ export default function Heritage() {
               </div>
             </div>
             <div className="w-full lg:w-[50%]">
-              <div className="info-with-year flex flex-col gap-[10px] items-start">
+              <div className="info-with-year flex flex-col gap-[10px] items-start lg:max-w-[729px] lg:mx-auto">
                 <div className="text-[#00795C] text-[30px] lg:text-[35px] xl:text-[40px] tracking-[-1.05984px] flex items-center justify-center rounded-[110px] font-medium w-fit date">
                   {heritageReference?.time_line_3_year?.value}
                 </div>

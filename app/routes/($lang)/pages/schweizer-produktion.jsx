@@ -74,7 +74,7 @@ export default function schweizerSchuhpropktion() {
           />
         </div>
         <div
-          className="desc text-black text-[16px] lg:text-[21px] leading-[1.3] font-[400] mt-[40px] lg:mt-[44px] max-w-[1100px]"
+          className="desc text-black text-[16px] lg:text-[21px] tracking-[-0.400697px] leading-[1.3] font-[400] mt-[40px] lg:mt-[44px] max-w-[1100px]"
           dangerouslySetInnerHTML={{
             __html: toHTML(
               page?.schweizer_schuhpropktion?.reference?.short_description
@@ -146,7 +146,7 @@ export default function schweizerSchuhpropktion() {
               {page?.schweizer_schuhpropktion?.reference?.main_title?.value}
             </h2>
             <div
-              className="desc text-black text-[16px] lg:text-[21px] leading-[1.3] font-[400] mb-[25px]"
+              className="desc text-black text-[16px] lg:text-[21px] tracking-[-0.400697px] leading-[1.3] font-[400] mb-[25px]"
               dangerouslySetInnerHTML={{
                 __html: toHTML(
                   page?.schweizer_schuhpropktion?.reference?.long_description
@@ -200,7 +200,7 @@ export default function schweizerSchuhpropktion() {
               allowFullScreen
             ></iframe>
             <div
-              className="desc text-black text-[16px] lg:text-[21px] leading-[1.3] font-[400] mb-[25px]"
+              className="desc text-black text-[16px] lg:text-[21px] tracking-[-0.400697px] leading-[1.3] font-[400] mb-[25px]"
               dangerouslySetInnerHTML={{
                 __html: toHTML(
                   page?.schweizer_schuhpropktion?.reference?.video_section_desc
