@@ -1460,6 +1460,9 @@ video {
 .max-w-xl {
   max-width: 36rem;
 }
+.max-w-\[1168px\] {
+  max-width: 1168px;
+}
 .flex-1 {
   flex: 1 1 0%;
 }
@@ -2867,9 +2870,6 @@ video {
 }
 .duration-700 {
   transition-duration: 700ms;
-}
-.duration-100 {
-  transition-duration: 100ms;
 }
 .ease-in {
   transition-timing-function: cubic-bezier(0.4, 0, 1, 1);

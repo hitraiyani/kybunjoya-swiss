@@ -40,7 +40,7 @@ export function Newsletter() {
             Updates in deine Inbox
           </h3>
           <p className="font-normal  text-[#595959] w-full text-[19px]">
-            Bleib auf dem laufenden mit den letzten Ereignissen.
+          Bleiben Sie auf dem Laufenden mit den neuesten Ereignissen.
           </p>
         </div>
         <form className="mt-12" ref={formRef} onSubmit={handleSubscribe}>

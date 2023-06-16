@@ -126,8 +126,8 @@ export default function kontakt() {
       </section>
       <section className="form-sec my-[40px] md:my-[60px] lg:my-[80px] xl:my-[100px]">
         <div className="form-wrap container">
-          <div className="form-row flex flex-col lg:flex-row gap-[30px]">
-            <div className="col-left w-full lg:w-[40%]">
+          <div className="form-row flex flex-col lg:flex-row gap-[30px] max-w-[1168px] mx-auto">
+            <div className="col-left w-full lg:w-[40%] hidden">
               <div className="col-inner">
                 <div
                   className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] tracking-[-0.400697px] font-normal leading-[1.4]"
@@ -139,7 +139,7 @@ export default function kontakt() {
                 ></div>
               </div>
             </div>
-            <div className="col-right w-full lg:w-[60%]">
+            <div className="col-right w-full">
               <div className="col-inner">
                 <div className="title-wrap">
                   <h2 className="text-[28px] md:text-[30px] lg:text-[35px] tracking-[-0.97152px] mb-[25px] text-black font-medium">
