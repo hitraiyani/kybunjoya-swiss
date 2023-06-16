@@ -250,7 +250,7 @@ export function MenuDrawer({isOpen, onClose, menu}) {
       onClose={onClose}
       openFrom="right"
       heading="Menu"
-      className={`p-6 overflow-auto bg-white mobile-menu-Drawer ${
+      className={`p-6 overflow-auto !bg-white !bg-opacity-80 mobile-menu-Drawer ${
         isScrolled ? 'header-sticky' : ''
       }`}
     >
