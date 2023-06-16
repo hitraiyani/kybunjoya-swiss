@@ -294,7 +294,7 @@ export default function ratgeberSeiteFersensporn() {
                   </div>
                 </div>
                 <div
-                  className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] max-w-[870px] mx-auto mt-[44px]"
+                  className="desc pro-detail-desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] max-w-[870px] mx-auto mt-[44px] mb-[30px]"
                   dangerouslySetInnerHTML={{
                     __html: aicoProductData?.descriptionHtml,
                   }}

@@ -1678,6 +1678,31 @@ select {
   word-break: break-word;
 }
 
+.pro-detail-desc * {
+  line-height: 1.4 !important;
+  font-size: 16px !important;
+  letter-spacing: -0.400697px !important;
+  line-height: 1.4 !important;
+  font-weight: 400 !important;
+  color: #000 !important;
+  font-family: 'Inter', sans-serif !important;
+}
+@media (min-width: 1280px) {
+  .pro-detail-desc * {
+    font-size: 21px !important;
+  }
+}
+@media (min-width: 1024px) {
+  .pro-detail-desc * {
+    font-size: 20px !important;
+  }
+}
+@media (min-width: 768px) {
+  .pro-detail-desc * {
+    font-size: 18px !important;
+  }
+}
+
 .rich-text-section ul {
   list-style: disc;
   padding-left: 20px;
