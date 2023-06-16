@@ -280,7 +280,7 @@ export default function ratgeberSeiteFersensporn() {
                         className="absolute inset-0 w-full h-full object-cover"
                       /> */}
                         <img
-                          className="absolute inset-0 w-full h-full object-contain object-center"
+                          className="absolute inset-0 w-full h-full object-cover object-center"
                           src={aicoProductData?.featuredImage?.url}
                           alt=""
                         />
