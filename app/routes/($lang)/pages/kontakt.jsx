@@ -186,7 +186,7 @@ export default function kontakt() {
                               <option value={''}>Kontaktgrund auswählen</option>
                               <option value="Kunde">Kunde</option>
                               <option value="B2B">B2B</option>
-                              <option value="Investoren">Investoren</option>
+                              {/* <option value="Investoren">Investoren</option> */}
                             </select>
                           </div>
                         </div>
