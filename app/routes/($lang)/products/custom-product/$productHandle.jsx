@@ -9,7 +9,7 @@ import {
   IconClose,
   IconDownload,
   Breadcrumb,
-  IconArrowRight
+  IconArrowRight,
 } from '~/components';
 import {useLoaderData, useLocation} from '@remix-run/react';
 import {MEDIA_FRAGMENT, PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
@@ -264,11 +264,12 @@ export default function ratgeberSeiteFersensporn() {
               <div className="col-left w-full">
                 <div className="w-full mb-[12px]">
                   <div className="title-wrap">
-                    <h2 className="title text-[#00795C] text-[35px] lg:text-[40px] xl:text-[65px] tracking-[-1.05984px] mb-[30px] max-w-[837px]">
+                    <h2 className="title text-[#00795C] text-[35px] lg:text-[40px] xl:text-[65px] tracking-[-1.05984px] mb-[30px] max-w-[870px] mx-auto">
                       {aicoProductData?.title}
                     </h2>
-                    <div className="product-list-hero-img relative overflow-hidden pb-[55%] xl:pb-[45%] 2xl:pb-[35%] min-h-[230px]">
-                      {/* <iframe
+                    <div className="max-w-[1200px] mx-auto">
+                      <div className="product-list-hero-img relative overflow-hidden pb-[55%] xl:pb-[45%] 2xl:pb-[35%] min-h-[230px] w-full">
+                        {/* <iframe
                         width={100}
                         height={100}
                         src="https://www.youtube.com/embed/UBpScaVSvkM"
@@ -278,14 +279,12 @@ export default function ratgeberSeiteFersensporn() {
                         allowFullScreen
                         className="absolute inset-0 w-full h-full object-cover"
                       /> */}
-                      <img
-                        className="absolute inset-0 w-full h-full object-cover"
-                        src={
-                          aicoProductData
-                            ?.featuredImage?.url
-                        }
-                        alt=""
-                      />
+                        <img
+                          className="absolute inset-0 w-full h-full object-contain object-center"
+                          src={aicoProductData?.featuredImage?.url}
+                          alt=""
+                        />
+                      </div>
                     </div>
                     <h3 className="text-[24px] md:text-[28px] xl:text-[30px] text-[#00795C] font-bold leading-[1.2] mb-[20px]">
                       {dkj_name_international_de_ch}
@@ -735,8 +734,7 @@ export default function ratgeberSeiteFersensporn() {
                     className="h-full w-full absolute inset-0 transition hover:duration-500 object-cover"
                     src={
                       ratgeber_seite_fersensporn_mobile
-                        ?.shopfinder_section_image?.reference?.image
-                        ?.url
+                        ?.shopfinder_section_image?.reference?.image?.url
                     }
                     alt=""
                   />
@@ -744,18 +742,20 @@ export default function ratgeberSeiteFersensporn() {
               </div>
               <div className="col-right w-full lg:w-[50%]">
                 <h2 className="mb-[15px] text-black text-[24px] md:text-[30px] lg:text-[35px] leading-[1.1] tracking-[-0.97152px] font-medium">
-                {
-                    ratgeber_seite_fersensporn_mobile
-                      ?.shopfinder_section_title?.value
+                  {
+                    ratgeber_seite_fersensporn_mobile?.shopfinder_section_title
+                      ?.value
                   }
                 </h2>
-                <div className='desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mb-[20px]'
+                <div
+                  className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mb-[20px]"
                   dangerouslySetInnerHTML={{
-                    __html: toHTML(ratgeber_seite_fersensporn_mobile
-                      ?.shopfinder_section_desc?.value),
+                    __html: toHTML(
+                      ratgeber_seite_fersensporn_mobile?.shopfinder_section_desc
+                        ?.value,
+                    ),
                   }}
-                >
-                </div>
+                ></div>
                 <div className="btn-wrap">
                   <Link
                     to={
@@ -789,8 +789,8 @@ export default function ratgeberSeiteFersensporn() {
             </Link> */}
             <a
               href={
-                ratgeber_seite_fersensporn_mobile
-                  ?.back_to_topic_overview_link?.value
+                ratgeber_seite_fersensporn_mobile?.back_to_topic_overview_link
+                  ?.value
               }
               className="download-link pro-btn text-[16px] md:text-[20px] lg:text-[21px] leading-none text-black tracking-[-0.400697px] font-normal flex gap-[5px] lg:gap-[20px] justify-center w-fit text-left items-center transition-all duration-700 hover:text-[#00795c] download-link hover:underline mb-[15px]"
             >
@@ -799,8 +799,10 @@ export default function ratgeberSeiteFersensporn() {
                   'w-[20px] h-[20px] md:w-[25px] md:h-[25px] lg:w-[30px] lg:h-[30px]'
                 }
               />
-              {ratgeber_seite_fersensporn_mobile
-                  ?.back_to_topic_overview_text?.value}
+              {
+                ratgeber_seite_fersensporn_mobile?.back_to_topic_overview_text
+                  ?.value
+              }
             </a>
           </div>
         </section>
