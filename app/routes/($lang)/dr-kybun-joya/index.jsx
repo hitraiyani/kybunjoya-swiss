@@ -241,7 +241,7 @@ export default function ratgeberseite() {
                           <li className="list-style-green hover:underline">
                             <Link
                               key={index}
-                              to={`/products/custom-product/${product.handle}`}
+                              to={`/dr-kybun-joya/${product.handle}`}
                             >
                               {product.title}
                             </Link>
@@ -365,7 +365,7 @@ export default function ratgeberseite() {
                       return (
                         <Link
                           key={index}
-                          to={`/products/custom-product/${product.handle}`}
+                          to={`/dr-kybun-joya/${product.handle}`}
                           className="w-[calc(50%_-_10px)] lg:w-[calc(33.33%_-_20px)] xl:w-[calc(33.33%_-_26.66px)] 2xl:w-[calc(33.33%_-_52px)] p-[15px] xl:px-[20px] xl:py-[26px] flex justify-center items-center text-center bg-white text-[16px] md:text-[18px] lg:text-[20px] xl:text-[28px] 2xl:text-[36px] leading-[1.4] hover:text-white hover:bg-[#00795C] xl:min-h-[116px] font-bold text-[#00795C] transition-all duration-500 rounded-[10px] min-h-[86px]"
                         >
                           {product.title}
@@ -425,7 +425,7 @@ export default function ratgeberseite() {
                 return (
                   <SwiperSlide key={index}>
                     <div className="popular-item">
-                      <Link to={`/products/custom-product/${product.handle}`}>
+                      <Link to={`/dr-kybun-joya/${product.handle}`}>
                         <div className="img-wrap overflow-hidden pb-[100%] md:pb-[65%] mb-[15px] relative">
                           <img
                             className="absolute inset-0 w-full h-full object-cover object-center hover:scale-110 transition-all duration-500"
@@ -446,7 +446,7 @@ export default function ratgeberseite() {
                         </div>
                       </Link>
                       <Link
-                        to={`/products/custom-product/${product.handle}`}
+                        to={`/dr-kybun-joya/${product.handle}`}
                         className="inline-block rounded-[100px] bg-[#00795c] text-white
                             text-center px-[20px] md:px-[35px] py-[12px] md:py-[15px] hover:bg-black hover:text-white text-[14px] md:text-[18px] max-w-fit"
                       >

@@ -653,7 +653,7 @@ function Footer({menu, main_menu}) {
                       </svg>
                     </span> */}
                       <Link
-                        to={'/pages/kontakt'}
+                        to={'/kontakt'}
                         className=""
                       >
                         Kontakt

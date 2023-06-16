@@ -53,7 +53,7 @@ export function ExpandingCardStyle2({title, content, id, products = []}) {
                     return (
                       <li key={index}>
                         <Link
-                          to={`/products/custom-product/${item?.node?.handle}`}
+                          to={`/dr-kybun-joya/${item?.node?.handle}`}
                         >
                           {item?.node?.title}
                         </Link>
