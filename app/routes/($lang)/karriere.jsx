@@ -77,7 +77,7 @@ export default function karriere() {
       <div className="container">
         <h1 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] mb-[20px] xl:mb-[42px] font-bold">
           {karriere?.head_title?.value}
-        </h1>
+        </h1> 
       </div>
       <section className="about-sec container">
         <div className="flex flex-col lg:flex-row gap-y-[20px] gap-x-[30px] xl:gap-x-[45px] items-center">
