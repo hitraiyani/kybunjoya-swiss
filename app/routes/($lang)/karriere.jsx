@@ -74,12 +74,12 @@ export default function karriere() {
   return (
     <>
       <Breadcrumb crumbs={getBreadCrumbs('karriere', 'uberuns')} />
-      <div className="container mt-10 mb-[50px]">
-        <h1 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold">
+      <div className="container">
+        <h1 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] mb-[20px] xl:mb-[42px] font-bold">
           {karriere?.head_title?.value}
         </h1>
       </div>
-      <section className="about-sec container mt-[48px]">
+      <section className="about-sec container">
         <div className="flex flex-col lg:flex-row gap-y-[20px] gap-x-[30px] xl:gap-x-[45px] items-center">
           <div className="img-col lg:flex-1 overflow-hidden w-full">
             {/* <iframe
@@ -120,12 +120,12 @@ export default function karriere() {
             ></div>
           </div>
         </div>
-        <div
+        {/* <div
           className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] max-w-[910px] mt-[40px] md:mt-[50px]"
           dangerouslySetInnerHTML={{
             __html: toHTML(karriere?.head_desc_part_1?.value),
           }}
-        ></div>
+        ></div> */}
       </section>
       <section className="vacancies-sec mt-[40px] lg:mt-[48px] mb-[40px] lg:mb-[60px]">
         <div className="container">
