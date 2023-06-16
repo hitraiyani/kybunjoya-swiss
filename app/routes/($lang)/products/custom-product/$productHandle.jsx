@@ -268,7 +268,8 @@ export default function ratgeberSeiteFersensporn() {
                       {aicoProductData?.title}
                     </h2>
                     <div className="max-w-[1200px] mx-auto">
-                      <div className="product-list-hero-img relative overflow-hidden pb-[55%] xl:pb-[45%] 2xl:pb-[35%] min-h-[230px] w-full">
+                      {/* <div className="product-list-hero-img relative overflow-hidden pb-[55%] xl:pb-[45%] 2xl:pb-[35%] min-h-[230px] w-full"> */}
+                      <div className="product-list-hero-img relative overflow-hidden">
                         {/* <iframe
                         width={100}
                         height={100}
@@ -280,7 +281,8 @@ export default function ratgeberSeiteFersensporn() {
                         className="absolute inset-0 w-full h-full object-cover"
                       /> */}
                         <img
-                          className="absolute inset-0 w-full h-full object-contain object-center"
+                          // className="absolute inset-0 w-full h-full object-cover object-center"
+                          className="w-full h-auto object-cover object-center"
                           src={aicoProductData?.featuredImage?.url}
                           alt=""
                         />
