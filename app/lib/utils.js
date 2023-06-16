@@ -66,7 +66,7 @@ function resolveToFromType(
     COLLECTIONS: 'collections',
     FRONTPAGE: 'frontpage',
     HTTP: '',
-    PAGE: 'pages',
+    //PAGE: 'pages',
     CATALOG: 'collections/all',
     PRODUCT: 'products',
     SEARCH: 'search',

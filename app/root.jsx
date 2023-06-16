@@ -244,7 +244,7 @@ async function getLayoutData({storefront}) {
         "tags": [],
         "title": "Produkte",
         "type": "PAGE",
-        "url": "https://kybunjoya-swiss.myshopify.com/pages/products",
+        "url": "https://kybunjoya-swiss.myshopify.com/produkte",
         "items": []
       },
       {
@@ -253,7 +253,7 @@ async function getLayoutData({storefront}) {
         "tags": [],
         "title": "kybun Joya Story",
         "type": "PAGE",
-        "url": "https://kybunjoya-swiss.myshopify.com/pages/heritage",
+        "url": "https://kybunjoya-swiss.myshopify.com/story",
         "items": []
       },
       {
@@ -262,7 +262,7 @@ async function getLayoutData({storefront}) {
         "tags": [],
         "title": "Filialen",
         "type": "PAGE",
-        "url": "https://kybunjoya-swiss.myshopify.com/pages/shopfinder",
+        "url": "https://kybunjoya-swiss.myshopify.com/filialen",
         "items": []
       },
       {
@@ -271,7 +271,7 @@ async function getLayoutData({storefront}) {
         "tags": [],
         "title": "Dr. kybun Joya",
         "type": "PAGE",
-        "url": "https://kybunjoya-swiss.myshopify.com/pages/dr-kybun-joya",
+        "url": "https://kybunjoya-swiss.myshopify.com/dr-kybun-joya",
         "items": []
       },
       {
@@ -280,7 +280,7 @@ async function getLayoutData({storefront}) {
         "tags": [],
         "title": "Über uns",
         "type": "PAGE",
-        "url": "https://kybunjoya-swiss.myshopify.com/pages/unternehmen",
+        "url": "https://kybunjoya-swiss.myshopify.com/unternehmen",
         "items": [
           {
             "id": "gid://shopify/MenuItem/541162275137",
@@ -288,7 +288,7 @@ async function getLayoutData({storefront}) {
             "tags": [],
             "title": "Unternehmen",
             "type": "PAGE",
-            "url": "https://kybunjoya-swiss.myshopify.com/pages/unternehmen"
+            "url": "https://kybunjoya-swiss.myshopify.com/unternehmen"
           },
           {
             "id": "gid://shopify/MenuItem/527494021441",
@@ -296,7 +296,7 @@ async function getLayoutData({storefront}) {
             "tags": [],
             "title": "Schweizer Produktion",
             "type": "PAGE",
-            "url": "https://kybunjoya-swiss.myshopify.com/pages/schweizer-produktion"
+            "url": "https://kybunjoya-swiss.myshopify.com/schweizer-produktion"
           },
           {
             "id": "gid://shopify/MenuItem/539551793473",
@@ -304,7 +304,7 @@ async function getLayoutData({storefront}) {
             "tags": [],
             "title": "kybun Joya Therapie",
             "type": "PAGE",
-            "url": "https://kybunjoya-swiss.myshopify.com/pages/kybun-joya-therapie"
+            "url": "https://kybunjoya-swiss.myshopify.com/kybun-joya-therapie"
           },
           {
             "id": "gid://shopify/MenuItem/527493988673",
@@ -312,16 +312,20 @@ async function getLayoutData({storefront}) {
             "tags": [],
             "title": "Karriere",
             "type": "PAGE",
-            "url": "https://kybunjoya-swiss.myshopify.com/pages/karriere"
+            "url": "https://kybunjoya-swiss.myshopify.com/karriere"
           }
         ]
       }
     ]
   }
 
+  console.log("tempHeaderMenu", tempHeaderMenu);
+
   const headerMenu = data?.headerMenu
     ? parseMenu(tempHeaderMenu, customPrefixes)
     : undefined;
+
+  console.log("headerMenu",headerMenu);
 
   const tmpFooterMenu = {
     "id": "gid://shopify/Menu/224769704257",
@@ -332,7 +336,7 @@ async function getLayoutData({storefront}) {
         "tags": [],
         "title": "Datenschutzerklärung",
         "type": "PAGE",
-        "url": "https://kybunjoya-swiss.myshopify.com/pages/datenschutzerklarung",
+        "url": "https://kybunjoya-swiss.myshopify.com/datenschutzerklarung",
         "items": []
       },
       {
@@ -341,7 +345,7 @@ async function getLayoutData({storefront}) {
         "tags": [],
         "title": "Impressum",
         "type": "PAGE",
-        "url": "https://kybunjoya-swiss.myshopify.com/pages/impressum",
+        "url": "https://kybunjoya-swiss.myshopify.com/imprint",
         "items": []
       }
     ]
