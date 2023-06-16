@@ -51,6 +51,9 @@ export default function karriere() {
         event.preventDefault(); // Prevent the default link behavior
 
         const pdfUrl = link.href;
+        const segments = pdfUrl.split('/');
+        const fileName = segments[segments.length - 1];
+        console.log(fileName); // Output: file.pdf
         const xhr = new XMLHttpRequest();
         xhr.open('GET', pdfUrl, true);
         xhr.responseType = 'blob';
@@ -59,7 +62,7 @@ export default function karriere() {
             const blob = new Blob([xhr.response], {type: 'application/pdf'});
             const url = URL.createObjectURL(blob);
             const downloadLink = document.createElement('a');
-            downloadLink.setAttribute('download', '');
+            downloadLink.setAttribute('download', fileName);
             downloadLink.href = url;
             document.body.appendChild(downloadLink);
             downloadLink.click();
@@ -193,10 +196,9 @@ export default function karriere() {
                 {karriere?.footer_2_cta_label?.value}
               </a> */}
               <a
-                rel="noopener noreferrer"
                 href={karriere?.footer_cta?.reference?.url}
                 target="_blank"
-                className="download-link pro-btn text-[16px] md:text-[20px] lg:text-[21px] leading-none text-black tracking-[-0.400697px] font-normal flex gap-[5px] lg:gap-[25px] justify-center w-fit text-left items-center transition-all duration-700 hover:text-[#00795c] download-link underline"
+                className="pro-btn text-[16px] md:text-[20px] lg:text-[21px] leading-none text-black tracking-[-0.400697px] font-normal flex gap-[5px] lg:gap-[25px] justify-center w-fit text-left items-center transition-all duration-700 hover:text-[#00795c] underline"
               >
                 <IconDownload
                   className={
