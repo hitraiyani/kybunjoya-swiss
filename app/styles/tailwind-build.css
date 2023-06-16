@@ -2744,6 +2744,9 @@ video {
 .line-through {
   text-decoration-line: line-through;
 }
+.underline-offset-\[6px\] {
+  text-underline-offset: 6px;
+}
 .antialiased {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
