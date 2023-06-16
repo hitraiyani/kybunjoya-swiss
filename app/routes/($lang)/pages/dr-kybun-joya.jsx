@@ -88,7 +88,6 @@ export default function ratgeberseite() {
   const headProductList = filteredKybunJoyaProducts?.slice(0, 5);
   const sliderProductList = filteredKybunJoyaProducts?.slice(5, 11);
 
-
   const buttonAccordionMapping = page?.ratgeber_detail?.reference
     ?.button_accordion_mapping?.value
     ? JSON.parse(page.ratgeber_detail.reference.button_accordion_mapping.value)
@@ -426,23 +425,26 @@ export default function ratgeberseite() {
                 return (
                   <SwiperSlide key={index}>
                     <div className="popular-item">
-                      <div className="img-wrap overflow-hidden pb-[100%] md:pb-[60%] mb-[15px] relative">
-                        <img
-                          className="absolute inset-0 w-full h-full object-cover"
-                          src={
-                            product?.featuredImage?.url
-                              ? product?.featuredImage?.url
-                              : 'https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Manufaktur_1200x800px_05.jpg_1_4.png?v=1685525783'
-                          }
-                          alt=""
-                        />
-                      </div>
-                      {/* <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mb-[5px]">
+                      <Link to={`/products/custom-product/${product.handle}`}>
+                        <div className="img-wrap overflow-hidden pb-[100%] md:pb-[65%] mb-[15px] relative">
+                          <img
+                            className="absolute inset-0 w-full h-full object-cover object-center hover:scale-110 transition-all duration-500"
+                            src={
+                              product?.featuredImage?.url
+                                ? product?.featuredImage?.url
+                                : 'https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Manufaktur_1200x800px_05.jpg_1_4.png?v=1685525783'
+                            }
+                            alt=""
+                          />
+                        </div>
+
+                        {/* <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mb-[5px]">
                             <p>Gesundheitswissen</p>
                           </div> */}
-                      <div className="text-black text-[24px] md:text-[30px] lg:text-[35px] leading-[1.1] tracking-[-0.97152px] font-medium mb-[15px]">
-                        <p>{product.title}</p>
-                      </div>
+                        <div className="text-black text-[24px] md:text-[30px] lg:text-[35px] leading-[1.1] tracking-[-0.97152px] font-medium mb-[15px] hover:text-[#00795c]">
+                          <p>{product.title}</p>
+                        </div>
+                      </Link>
                       <Link
                         to={`/products/custom-product/${product.handle}`}
                         className="inline-block rounded-[100px] bg-[#00795c] text-white
@@ -501,7 +503,10 @@ export default function ratgeberseite() {
             {page?.ratgeber_detail?.reference?.product_sub_list_title?.value}
           </h3>
           {sub_collections?.nodes?.map((item, index) => {
-            if (item.title != pageCollectionTitle && item?.products?.edges.length > 0) {
+            if (
+              item.title != pageCollectionTitle &&
+              item?.products?.edges.length > 0
+            ) {
               return (
                 <ExpandingCardStyle2
                   key={index}
