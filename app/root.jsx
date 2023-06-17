@@ -10,6 +10,7 @@ import {
   useMatches,
 } from '@remix-run/react';
 import {ShopifySalesChannel, Seo} from '@shopify/hydrogen';
+import {SHOP_TITLE} from '~/lib/const';
 import styles from './styles/app.css';
 import favicon from '../public/favicon.svg';
 import {Layout} from './components/Layout';
@@ -31,7 +32,7 @@ import slick_css from "slick-carousel/slick/slick.css";
 import slick_themecss from "slick-carousel/slick/slick-theme.css";
 
 const seo = ({data, pathname}) => ({
-  title: data?.layout?.shop?.name,
+  title: SHOP_TITLE,
   titleTemplate: '%s',
   description: data?.layout?.shop?.description,
   media: {
