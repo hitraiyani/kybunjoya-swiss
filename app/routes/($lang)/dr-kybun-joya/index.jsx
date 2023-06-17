@@ -1,10 +1,4 @@
-import {
-  ExpandingCardStyle2,
-  Link,
-  IconClose,
-  Breadcrumb,
-  ArrowRight,
-} from '~/components';
+import {ExpandingCardStyle2, Link, IconClose, Breadcrumb} from '~/components';
 import React, {Fragment, useState, useEffect} from 'react';
 import {json} from '@shopify/remix-oxygen';
 import {useLoaderData} from '@remix-run/react';
@@ -402,94 +396,67 @@ export default function ratgeberseite() {
           <h2 className="text-[#00795C] text-[30px] lg:text-[35px] xl:text-[40px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold pr-[20px]">
             {page?.ratgeber_detail?.reference?.product_slider_title?.value}
           </h2>
-          <div className="relative w-full popular-items-slider">
-            <div className="product-brand--swiper-buttons">
-              <div
-                id="swiper-button-next-artical-slider"
-                className="swiper-button-prev-product-gallery rounded-full w-[50px] h-[50px] xl:w-[74px] xl:h-[74px] text-white hover:text-white after:text-[30px] bg-black hover:opacity-70 flex items-center justify-center outline-[8px] xl:outline-[10px] outline-[rgba(21,_21,_21,_0.6)] absolute z-[2] top-1/2 translate-y-[-180%] lg:translate-y-[-110%] xl:left-[-30px] lg:left-[-23px] left-[-10px] outline rotate-180"
-              >
-                <ArrowRight
-                  className={
-                    'relative left-[3px] w-[25px] h-[30px] xl:w-[40px] xl:h-[40px]'
-                  }
-                />
-              </div>
-              <div
-                id="swiper-button-prev-artical-slider"
-                className="swiper-button-next-product-gallery rounded-full w-[50px] h-[50px] xl:w-[74px] xl:h-[74px] text-white hover:text-white after:text-[30px] bg-black hover:opacity-70 flex items-center justify-center outline-[8px] xl:outline-[10px] outline-[rgba(21,_21,_21,_0.6)] absolute z-[2] top-1/2 translate-y-[-180%] xl:translate-y-[-110%] md:right-[30px] right-[10px] outline"
-              >
-                <ArrowRight
-                  className={
-                    'relative left-[3px] w-[25px] h-[30px] xl:w-[40px] xl:h-[40px]'
-                  }
-                />
-              </div>
-            </div>
-            <Swiper
-              modules={[Navigation, Scrollbar, A11y, Autoplay, Pagination]}
-              slidesPerView={2.5}
-              spaceBetween={20}
-              // autoplay={{
-              //   delay: 3500,
-              //   disableOnInteraction: false,
-              // }}
-              navigation={{
-                prevEl: '#swiper-button-next-artical-slider',
-                nextEl: '#swiper-button-prev-artical-slider',
-              }}
-              breakpoints={{
-                0: {
-                  slidesPerView: 1.3,
-                },
-                767: {
-                  slidesPerView: 2.1,
-                },
-                1280: {
-                  slidesPerView: 2.3,
-                },
-                1500: {
-                  slidesPerView: 2.5,
-                },
-              }}
-              className=""
-            >
-              {sliderProductList.length > 0 &&
-                sliderProductList.map((product, index) => {
-                  return (
-                    <SwiperSlide key={index}>
-                      <div className="popular-item">
-                        <Link to={`/dr-kybun-joya/${product.handle}`}>
-                          <div className="img-wrap overflow-hidden pb-[100%] md:pb-[65%] mb-[15px] relative">
-                            <img
-                              className="absolute inset-0 w-full h-full object-cover object-center hover:scale-110 transition-all duration-500"
-                              src={
-                                product?.featuredImage?.url
-                                  ? product?.featuredImage?.url
-                                  : 'https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Manufaktur_1200x800px_05.jpg_1_4.png?v=1685525783'
-                              }
-                              alt=""
-                            />
-                          </div>
+          <Swiper
+            modules={[Navigation, Scrollbar, A11y, Autoplay, Pagination]}
+            slidesPerView={2.5}
+            spaceBetween={20}
+            autoplay={{
+              delay: 3500,
+              disableOnInteraction: false,
+            }}
+            breakpoints={{
+              0: {
+                slidesPerView: 1.3,
+              },
+              767: {
+                slidesPerView: 2.1,
+              },
+              1280: {
+                slidesPerView: 2.3,
+              },
+              1500: {
+                slidesPerView: 2.5,
+              },
+            }}
+            className=""
+          >
+            {sliderProductList.length > 0 &&
+              sliderProductList.map((product, index) => {
+                return (
+                  <SwiperSlide key={index}>
+                    <div className="popular-item">
+                      <Link to={`/dr-kybun-joya/${product.handle}`}>
+                        <div className="img-wrap overflow-hidden pb-[100%] md:pb-[65%] mb-[15px] relative">
+                          <img
+                            className="absolute inset-0 w-full h-full object-cover object-center hover:scale-110 transition-all duration-500"
+                            src={
+                              product?.featuredImage?.url
+                                ? product?.featuredImage?.url
+                                : 'https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Manufaktur_1200x800px_05.jpg_1_4.png?v=1685525783'
+                            }
+                            alt=""
+                          />
+                        </div>
 
-                          {/* <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mb-[5px]">
+                        {/* <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mb-[5px]">
                             <p>Gesundheitswissen</p>
                           </div> */}
-                          <div className="text-black text-[24px] md:text-[30px] lg:text-[35px] leading-[1.1] tracking-[-0.97152px] font-medium mb-[15px] hover:text-[#00795c]">
-                            <p>{product.title}</p>
-                          </div>
-                        </Link>
-                        <Link
-                          to={`/dr-kybun-joya/${product.handle}`}
-                          className="inline-block rounded-[100px] bg-[#00795c] text-white
+                        <div className="text-black text-[24px] md:text-[30px] lg:text-[35px] leading-[1.1] tracking-[-0.97152px] font-medium mb-[15px] hover:text-[#00795c]">
+                          <p>{product.title}</p>
+                        </div>
+                      </Link>
+                      <Link
+                        to={`/dr-kybun-joya/${product.handle}`}
+                        className="inline-block rounded-[100px] bg-[#00795c] text-white
                             text-center px-[20px] md:px-[35px] py-[12px] md:py-[15px] hover:bg-black hover:text-white text-[14px] md:text-[18px] max-w-fit"
-                        >
-                          Mehr erfahren
-                        </Link>
-                      </div>
-                    </SwiperSlide>
-                  );
-                })}
-              {/* {productSliderData.length > 0 &&
+                      >
+                        Mehr erfahren
+                      </Link>
+                    </div>
+                  </SwiperSlide>
+                );
+              })}
+            {/* {productSliderData.length > 0 &&
               productSliderData.map((item, index) => {
                 return (
                   <SwiperSlide key={index}>
@@ -518,8 +485,7 @@ export default function ratgeberseite() {
                   </SwiperSlide>
                 );
               })} */}
-            </Swiper>
-          </div>
+          </Swiper>
           <div
             className="desc lg:mt-[40px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] max-w-[950px] mt-[30px] pr-[20px]"
             dangerouslySetInnerHTML={{
@@ -637,10 +603,16 @@ export default function ratgeberseite() {
         <div className="container">
           <div className="flex flex-col lg:flex-row gap-[20px]">
             <div className="col w-full lg:w-[50%]">
-              <div className="col-inner shadow-[0px_0px_0.9821px_2px_rgba(0,0,0,0.05),0px_3.9284px_7.8568px_1px_rgba(0,0,0,0.1)] h-full flex flex-col">
+              <Link
+                className="col-inner shadow-[0px_0px_0.9821px_2px_rgba(0,0,0,0.05),0px_3.9284px_7.8568px_1px_rgba(0,0,0,0.1)] h-full flex flex-col"
+                to={
+                  page?.ratgeber_detail?.reference?.footer_main_left_section_cta
+                    ?.value
+                }
+              >
                 <div className="img-wrap relative overflow-hidden pb-[38%]">
                   <img
-                    className="absolute w-full h-full inset-0 object-cover object-left-top"
+                    className="absolute w-full h-full inset-0 object-cover object-left-top hover:scale-110 transition-all duration-500"
                     src={
                       page?.ratgeber_detail?.reference
                         ?.footer_main_left_section_image?.reference?.image?.url
@@ -659,7 +631,7 @@ export default function ratgeberseite() {
                     }}
                   ></h4>
                   <div className="btn-wrap flex justify-center mt-auto">
-                    <Link
+                    <div
                       to={
                         page?.ratgeber_detail?.reference
                           ?.footer_main_left_section_cta?.value
@@ -670,16 +642,22 @@ export default function ratgeberseite() {
                         page?.ratgeber_detail?.reference
                           ?.footer_main_left_section_cta_label?.value
                       }
-                    </Link>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </Link>
             </div>
             <div className="col w-full lg:w-[50%]">
-              <div className="col-inner shadow-[0px_0px_0.9821px_2px_rgba(0,0,0,0.05),0px_3.9284px_7.8568px_1px_rgba(0,0,0,0.1)] h-full flex flex-col">
+              <Link
+                className="col-inner shadow-[0px_0px_0.9821px_2px_rgba(0,0,0,0.05),0px_3.9284px_7.8568px_1px_rgba(0,0,0,0.1)] h-full flex flex-col"
+                to={
+                  page?.ratgeber_detail?.reference
+                    ?.footer_main_right_section_cta?.value
+                }
+              >
                 <div className="img-wrap relative overflow-hidden pb-[38%]">
                   <img
-                    className="absolute w-full h-full inset-0 object-cover object-left-top"
+                    className="absolute w-full h-full inset-0 object-cover object-left-top hover:scale-110 transition-all duration-500"
                     src={
                       page?.ratgeber_detail?.reference
                         ?.footer_main_right_section_image?.reference?.image?.url
@@ -698,21 +676,15 @@ export default function ratgeberseite() {
                     }}
                   ></h4>
                   <div className="btn-wrap flex justify-center mt-auto">
-                    <Link
-                      to={
-                        page?.ratgeber_detail?.reference
-                          ?.footer_main_right_section_cta?.value
-                      }
-                      className="inline-block rounded-[100px] bg-[#00795c] text-white text-center px-[40px] lg:px-[59px] py-[20px] lg:py-[25px] hover:bg-black hover:text-white text-[16px] lg:text-[18px] max-w-fit mt-[10px] leading-none"
-                    >
+                    <div className="inline-block rounded-[100px] bg-[#00795c] text-white text-center px-[40px] lg:px-[59px] py-[20px] lg:py-[25px] hover:bg-black hover:text-white text-[16px] lg:text-[18px] max-w-fit mt-[10px] leading-none">
                       {
                         page?.ratgeber_detail?.reference
                           ?.footer_main_right_section_cta_label?.value
                       }
-                    </Link>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </Link>
             </div>
           </div>
         </div>

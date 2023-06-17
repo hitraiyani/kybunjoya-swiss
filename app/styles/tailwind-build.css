@@ -649,6 +649,9 @@ video {
 .right-\[-24px\] {
   right: -24px;
 }
+.right-\[10px\] {
+  right: 10px;
+}
 .right-\[15px\] {
   right: 15px;
 }
@@ -696,9 +699,6 @@ video {
 }
 .top-\[calc\(50\%_-_20px\)\] {
   top: calc(50% - 20px);
-}
-.right-\[10px\] {
-  right: 10px;
 }
 .z-30 {
   z-index: 30;
@@ -1510,14 +1510,6 @@ video {
 }
 .translate-x-full {
   --tw-translate-x: 100%;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-.-translate-y-\[110\%\] {
-  --tw-translate-y: -110%;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-.-translate-y-\[-180\%\] {
-  --tw-translate-y: 180%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 .translate-y-\[-180\%\] {
@@ -3255,12 +3247,12 @@ video {
     left: 5rem;
   }
 
-  .md\:right-\[40px\] {
-    right: 40px;
-  }
-
   .md\:right-\[30px\] {
     right: 30px;
+  }
+
+  .md\:right-\[40px\] {
+    right: 40px;
   }
 
   .md\:col-span-1 {
@@ -4252,11 +4244,6 @@ video {
     flex: 1 1 0%;
   }
 
-  .lg\:-translate-y-\[110\%\] {
-    --tw-translate-y: -110%;
-    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-  }
-
   .lg\:translate-y-\[-110\%\] {
     --tw-translate-y: -110%;
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -4828,11 +4815,6 @@ video {
 
   .xl\:flex-\[1\] {
     flex: 1;
-  }
-
-  .xl\:-translate-y-\[110\%\] {
-    --tw-translate-y: -110%;
-    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   }
 
   .xl\:translate-y-\[-110\%\] {
