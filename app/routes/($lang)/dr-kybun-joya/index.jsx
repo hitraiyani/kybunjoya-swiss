@@ -16,6 +16,7 @@ import {Swiper, SwiperSlide} from 'swiper/react';
 const seo = ({data}) => ({
   title: data?.page?.seo?.title,
   description: data?.page?.seo?.description,
+  url : data?.url,
 });
 
 export const handle = {
@@ -71,7 +72,7 @@ export async function loader({request, params, context}) {
   });
 
   return json(
-    {page, collection, sub_collections, pageCollectionTitle},
+    {page, collection, sub_collections, pageCollectionTitle, url: request.url},
     {
       headers: {
         // TODO cacheLong()

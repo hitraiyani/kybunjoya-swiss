@@ -26,6 +26,7 @@ import {STORE_LOCALE, AICO_API_IMAGE_PREFIX} from '~/lib/const';
 const seo = ({data}) => ({
   title: data?.page?.seo?.title,
   description: data?.page?.seo?.description,
+  url : data?.url,
 });
 
 export const handle = {
@@ -56,7 +57,7 @@ export async function loader({request, params, context}) {
   }
 
   return json(
-    {page, product, ratgeber_seite_fersensporn_mobile},
+    {page, product, ratgeber_seite_fersensporn_mobile, url: request.url},
     {
       headers: {
         // TODO cacheLong()

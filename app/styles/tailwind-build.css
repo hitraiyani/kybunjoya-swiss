@@ -649,6 +649,9 @@ video {
 .right-\[-24px\] {
   right: -24px;
 }
+.right-\[10px\] {
+  right: 10px;
+}
 .right-\[15px\] {
   right: 15px;
 }
@@ -696,9 +699,6 @@ video {
 }
 .top-\[calc\(50\%_-_20px\)\] {
   top: calc(50% - 20px);
-}
-.right-\[10px\] {
-  right: 10px;
 }
 .z-30 {
   z-index: 30;
@@ -3247,12 +3247,12 @@ video {
     left: 5rem;
   }
 
-  .md\:right-\[40px\] {
-    right: 40px;
-  }
-
   .md\:right-\[30px\] {
     right: 30px;
+  }
+
+  .md\:right-\[40px\] {
+    right: 40px;
   }
 
   .md\:col-span-1 {

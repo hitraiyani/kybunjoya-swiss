@@ -5,9 +5,24 @@ import { toHTML, getBreadCrumbs} from '~/lib/utils';
 import {Link, Breadcrumb } from '~/components';
 import { AICO_STOREFINDER_URL } from '~/lib/const';
 
+const seo = ({data}) => ({
+   title: 'Filialen',
+   url : data?.url,
+ });
+ 
+ export const handle = {
+   seo,
+ };
+
 export async function loader({ params, request, context }) {
-    return json({
-    });
+     return json(
+    {url: request.url},
+    {
+      headers: {
+        // TODO cacheLong()
+      },
+    },
+  );
 }
 
 export default function shopfinder() {

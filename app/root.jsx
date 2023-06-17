@@ -31,19 +31,23 @@ import swiper_scrollbar from 'swiper/css/scrollbar';
 import slick_css from "slick-carousel/slick/slick.css";
 import slick_themecss from "slick-carousel/slick/slick-theme.css";
 
-const seo = ({data, pathname}) => ({
-  title: SHOP_TITLE,
-  titleTemplate: '%s',
-  description: data?.layout?.shop?.description,
-  media: {
-    'url' : 'https://cdn.shopify.com/s/files/1/0742/9688/5569/files/logo.png?v=1680591892',
-    'width': 1000,
-    'height': 628
-  },
-  handle: '@shopify',
-  url : data?.url,
-});
 
+
+const seo = ({data, pathname}) => {
+   
+    return {
+      title: SHOP_TITLE,
+      titleTemplate: '%s',
+      description: data?.layout?.shop?.description,
+      media: {
+        'url' : 'https://cdn.shopify.com/s/files/1/0742/9688/5569/files/logo.png?v=1680591892',
+        'width': 1000,
+        'height': 628
+      },
+      handle: '@shopify',
+      url : data?.url,
+    }
+}
 export const handle = {
   seo,
 };
@@ -80,8 +84,7 @@ export async function loader({context, request}) {
   const [cartId, layout] = await Promise.all([
     context.session.get('cartId'),
     getLayoutData(context),
-  ]);
-  
+  ]);  
 
   return defer({
     layout,

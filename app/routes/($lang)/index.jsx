@@ -15,7 +15,16 @@ import {getHeroPlaceholder} from '~/lib/placeholders';
 import {AnalyticsPageType} from '@shopify/hydrogen';
 import {AICO_API_URL, AICO_API_TOKEN, QUICK_LINK_MENU_TITLE} from '~/lib/const';
 
-export async function loader({params, context}) {
+
+const seo = ({data}) => ({
+  url : data?.url,
+});
+
+export const handle = {
+  seo,
+};
+
+export async function loader({params,request, context}) {
   const {language, country} = context.storefront.i18n;
 
   if (
@@ -71,6 +80,7 @@ export async function loader({params, context}) {
     fourMainSection,
     pursueSection,
     newsBannerSection,
+    url: request.url,
     analytics: {
       pageType: AnalyticsPageType.home,
     },

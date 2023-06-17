@@ -8,6 +8,7 @@ import {MEDIA_FRAGMENT} from '~/data/fragments';
 const seo = ({data}) => ({
   title: data?.page?.seo?.title,
   description: data?.page?.seo?.description,
+  url : data?.url,
 });
 
 export const handle = {
@@ -27,7 +28,7 @@ export async function loader({request, params, context}) {
   }
 
   return json(
-    {page},
+    {page, url: request.url},
     {
       headers: {
         // TODO cacheLong()
