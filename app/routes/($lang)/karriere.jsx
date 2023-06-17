@@ -80,7 +80,7 @@ export default function karriere() {
       <div className="container">
         <h1 className="text-[#00795C] text-[35px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] mb-[20px] xl:mb-[42px] font-bold">
           {karriere?.head_title?.value}
-        </h1> 
+        </h1>
       </div>
       <section className="about-sec container">
         <div className="flex flex-col lg:flex-row gap-y-[20px] gap-x-[30px] xl:gap-x-[45px] items-center">
@@ -154,11 +154,18 @@ export default function karriere() {
                         <div className="vacancies-list-inner">
                           <div className="flex flex-col sm:flex-row flex-wrap sm:justify-between sm:items-center gap-[20px]">
                             <div className="info flex flex-col flex-1">
-                              <span className="block font-medium text-[24px] lg:text-[30px] text-black tracking-[-0.97152px] leading-none mb-[10px]">
+                              <span className="block font-medium text-[24px] lg:text-[30px] text-black tracking-[-0.97152px] leading-none mb-[15px]">
                                 {item?.offene_stelle}
                               </span>
-                              <span className="block font-normal text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-[#898989] tracking-[-0.97152px] leading-none">
-                                {item?.job_ort}
+                              <span className="flex items-center gap-[10px] font-normal text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-[#898989] tracking-[-0.97152px] leading-none">
+                                <span className="flag relative overflow-hidden w-[30px] h-[20px]">
+                                  <img
+                                    className="w-full h-full object-cover block"
+                                    src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/CH.svg?v=1686981659"
+                                    alt=""
+                                  />
+                                </span>
+                                <span className="flex-1">{item?.job_ort}</span>
                               </span>
                             </div>
                             <div className="btn-wrap flex w-fit">
