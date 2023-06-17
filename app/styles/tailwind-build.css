@@ -1411,8 +1411,8 @@ video {
 .max-w-\[683px\] {
   max-width: 683px;
 }
-.max-w-\[750px\] {
-  max-width: 750px;
+.max-w-\[760px\] {
+  max-width: 760px;
 }
 .max-w-\[770px\] {
   max-width: 770px;
@@ -1468,9 +1468,6 @@ video {
 }
 .max-w-xl {
   max-width: 36rem;
-}
-.max-w-\[760px\] {
-  max-width: 760px;
 }
 .flex-1 {
   flex: 1 1 0%;
@@ -1895,6 +1892,9 @@ video {
 }
 .rounded-xl {
   border-radius: 0.75rem;
+}
+.\!rounded-none {
+  border-radius: 0px !important;
 }
 .rounded-b {
   border-bottom-right-radius: 0.25rem;

@@ -182,7 +182,7 @@ export default function kontakt() {
                               onChange={(e) => {
                                 setContactReason(e.target.value);
                               }}
-                              className="placeholder-[#333333] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal w-full pb-[10px] border-b-black border-black border-b-[1px] focus:outline-none focus:shadow-none pr-[20px]"
+                              className="placeholder-[#333333] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal w-full pb-[10px] border-b-black border-black border-b-[1px] focus:outline-none focus:shadow-none !rounded-none pr-[20px]"
                             >
                               <option value={''}>Kontaktgrund auswählen</option>
                               <option value="Kunde">Kunde</option>
@@ -199,7 +199,7 @@ export default function kontakt() {
                                   type="text"
                                   name="first_name"
                                   placeholder="Vorname *"
-                                  className="placeholder-[#333333] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal w-full pb-[10px] border-b-black border-black border-b-[1px] focus:outline-none focus:shadow-none"
+                                  className="placeholder-[#333333] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal w-full pb-[10px] border-b-black border-black border-b-[1px] focus:outline-none focus:shadow-none !rounded-none"
                                 />
                               </div>
                               <div className="form-control flex-1">
@@ -207,7 +207,7 @@ export default function kontakt() {
                                   type="text"
                                   name="last_name"
                                   placeholder="Nachname *"
-                                  className="placeholder-[#333333] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal w-full pb-[10px] border-b-black border-black border-b-[1px] focus:outline-none focus:shadow-none"
+                                  className="placeholder-[#333333] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal w-full pb-[10px] border-b-black border-black border-b-[1px] focus:outline-none focus:shadow-none !rounded-none"
                                 />
                               </div>
                             </div>
@@ -217,7 +217,7 @@ export default function kontakt() {
                                   type="email"
                                   name="email"
                                   placeholder="Email Adresse *"
-                                  className="placeholder-[#333333] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal w-full pb-[10px] border-b-black border-black border-b-[1px] focus:outline-none focus:shadow-none"
+                                  className="placeholder-[#333333] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal w-full pb-[10px] border-b-black border-black border-b-[1px] focus:outline-none focus:shadow-none !rounded-none"
                                 />
                               </div>
                               {contactReason &&
@@ -228,7 +228,7 @@ export default function kontakt() {
                                       type="text"
                                       name="firm"
                                       placeholder="Firma *"
-                                      className="placeholder-[#333333] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal w-full pb-[10px] border-b-black border-black border-b-[1px] focus:outline-none focus:shadow-none"
+                                      className="placeholder-[#333333] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal w-full pb-[10px] border-b-black border-black border-b-[1px] focus:outline-none focus:shadow-none !rounded-none"
                                     />
                                   </div>
                                 )}
@@ -240,7 +240,7 @@ export default function kontakt() {
                                 </p>
                                 <select
                                   name="country"
-                                  className="placeholder-[#333333] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal w-full pb-[10px] border-b-black border-black border-b-[1px] focus:outline-none focus:shadow-none pr-[20px]"
+                                  className="placeholder-[#333333] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal w-full pb-[10px] border-b-black border-black border-b-[1px] focus:outline-none focus:shadow-none !rounded-none pr-[20px]"
                                 >
                                   <option value="CH">Schweiz</option>
                                   <option value="US">United States</option>
@@ -261,7 +261,7 @@ export default function kontakt() {
                                   id=""
                                   cols="30"
                                   rows="5"
-                                  className="placeholder-[#333333] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal w-full pb-[10px] border-b-black border-black border-b-[1px] focus:outline-none focus:shadow-none"
+                                  className="placeholder-[#333333] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal w-full pb-[10px] border-b-black border-black border-b-[1px] focus:outline-none focus:shadow-none !rounded-none"
                                 ></textarea>
                               </div>
                             </div>
