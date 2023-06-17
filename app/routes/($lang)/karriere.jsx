@@ -162,7 +162,7 @@ export default function karriere() {
                                 <span className="flag relative overflow-hidden w-[30px] h-[20px]">
                                   <img
                                     className="w-full h-full object-cover block"
-                                    src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/CH.svg?v=1686981659"
+                                    src={item?.country_flag}
                                     alt=""
                                   />
                                 </span>
