@@ -46,6 +46,7 @@ export function ResponsiveIframe({url}) {
     <div className="mt-[-50px] min-[992px]:mt-[0]">
       <iframe
         src={url}
+        allow="geolocation"
         title="Embedded Content"
         frameBorder="0"
         allowFullScreen
