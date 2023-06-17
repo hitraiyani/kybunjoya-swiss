@@ -138,7 +138,7 @@ export default function karriere() {
               {karriere?.offene_stellen_section_title?.value}
             </h4>
             <div
-              className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mb-[40px] lg:mb-[60px] max-w-[712px]"
+              className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mb-[40px] lg:mb-[60px] max-w-[760px]"
               dangerouslySetInnerHTML={{
                 __html: toHTML(karriere?.offene_stellen_section_desc?.value),
               }}
