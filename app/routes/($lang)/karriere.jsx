@@ -159,7 +159,7 @@ export default function karriere() {
                                 {item?.offene_stelle}
                               </span>
                               <span className="flex items-center gap-[10px] font-normal text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-[#898989] tracking-[-0.97152px] leading-none">
-                                <span className="flag relative overflow-hidden w-[30px] h-[20px]">
+                                <span className="flag relative overflow-hidden w-[23px] h-[15px] md:w-[30px] md:h-[20px]">
                                   <img
                                     className="w-full h-full object-cover block"
                                     src={item?.country_flag}
