@@ -27,7 +27,7 @@ export function Newsletter() {
 
   return (
     <>
-      <div className="max-w-full md:max-w-[348px] lg:max-w-[488px] 2xl:max-w-[648px]">
+      <div className="max-w-full md:max-w-[348px] lg:max-w-[488px] 2xl:max-w-[748px]">
         <div className="footer-logo max-w-[150px] mb-[40px] md:hidden">
           <img
             className="w-full h-auto"
@@ -37,10 +37,10 @@ export function Newsletter() {
         </div>
         <div className="flex flex-wrap items-center ">
           <h3 className="text-[#00795C] w-full font-bold lg:text-[42px] text-[30px] mb-3">
-            Updates in deine Inbox
+            Abonnieren Sie unseren Newsletter
           </h3>
           <p className="font-normal  text-[#595959] w-full text-[19px]">
-          Bleiben Sie auf dem Laufenden mit den neuesten Ereignissen.
+            Bleiben Sie auf dem Laufenden mit den neuesten Ereignissen.
           </p>
         </div>
         <form className="mt-12" ref={formRef} onSubmit={handleSubscribe}>
