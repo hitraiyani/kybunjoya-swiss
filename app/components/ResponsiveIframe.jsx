@@ -43,7 +43,7 @@ export function ResponsiveIframe({url}) {
   //   };
   // }, [iframeHeight]);
   return (
-    <div>
+    <div className="mt-[-50px] min-[992px]:mt-[0]">
       <iframe
         src={url}
         title="Embedded Content"
@@ -53,7 +53,7 @@ export function ResponsiveIframe({url}) {
         id="iFrame1"
         width={'100%'}
         // style={{height: iframeHeight}}
-        className='min-h-screen'
+        className='h-[calc(100vh_-_72px)]'
       />
     </div>
   );
