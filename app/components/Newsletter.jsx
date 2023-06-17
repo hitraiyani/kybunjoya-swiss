@@ -48,7 +48,7 @@ export function Newsletter() {
             <input
               type="email"
               id="email"
-              className="bg-transparent border-b-[1px] font-normal border-[#999999] text-[#000] text-base placeholder:text-[#CCCCCC] focus:ring-black-500 focus:border-black-500 block w-full p-0 focus:bordr-0 focus:outline-none focus:border-b-[1px] focus:border-[#000] dark:placeholder-gray-400  dark:focus:ring-black-500 dark:focus:border-black-500 pb-[10px] pr-[20px]"
+              className="bg-transparent border-b-[1px] font-normal border-[#999999] text-[#000] text-base placeholder:text-[#CCCCCC] focus:ring-black-500 focus:border-black-500 block w-full p-0 focus:bordr-0 focus:outline-none focus:border-b-[1px] focus:border-[#000] dark:placeholder-gray-400  dark:focus:ring-black-500 dark:focus:border-black-500 pb-[10px] pr-[20px] !rounded-none"
               placeholder="Email"
               required
             />

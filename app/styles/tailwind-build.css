@@ -1860,6 +1860,9 @@ video {
 .whitespace-pre-wrap {
   white-space: pre-wrap;
 }
+.\!rounded-none {
+  border-radius: 0px !important;
+}
 .rounded {
   border-radius: 0.25rem;
 }
@@ -1892,9 +1895,6 @@ video {
 }
 .rounded-xl {
   border-radius: 0.75rem;
-}
-.\!rounded-none {
-  border-radius: 0px !important;
 }
 .rounded-b {
   border-bottom-right-radius: 0.25rem;
