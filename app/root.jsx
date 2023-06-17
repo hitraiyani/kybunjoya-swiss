@@ -34,8 +34,13 @@ const seo = ({data, pathname}) => ({
   title: data?.layout?.shop?.name,
   titleTemplate: '%s',
   description: data?.layout?.shop?.description,
+  media: {
+    'url' : 'https://cdn.shopify.com/s/files/1/0742/9688/5569/files/logo.png?v=1680591892',
+    'width': 1000,
+    'height': 628
+  },
   handle: '@shopify',
-  url: `https://hydrogen.shop${pathname}`,
+  url : data?.url,
 });
 
 export const handle = {
@@ -70,7 +75,7 @@ export const meta = () => ({
   viewport: 'width=device-width,initial-scale=1',
 });
 
-export async function loader({context}) {
+export async function loader({context, request}) {
   const [cartId, layout] = await Promise.all([
     context.session.get('cartId'),
     getLayoutData(context),
@@ -85,6 +90,7 @@ export async function loader({context}) {
       shopifySalesChannel: ShopifySalesChannel.hydrogen,
       shopId: layout.shop.id,
     },
+    url: request.url
   });
 }
 
@@ -97,7 +103,7 @@ export default function App() {
   //useAnalytics(hasUserConsent, locale);
 
   return (
-    <html lang={locale.language}>
+    <html lang={'de'}>
       <head>
         <Seo />
         <Meta />
@@ -319,13 +325,10 @@ async function getLayoutData({storefront}) {
     ]
   }
 
-  console.log("tempHeaderMenu", tempHeaderMenu);
-
   const headerMenu = data?.headerMenu
     ? parseMenu(tempHeaderMenu, customPrefixes)
     : undefined;
 
-  console.log("headerMenu",headerMenu);
 
   const tmpFooterMenu = {
     "id": "gid://shopify/Menu/224769704257",
