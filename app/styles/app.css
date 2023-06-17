@@ -1714,3 +1714,14 @@ select {
 .rich-text-section ul li:last-child {
   padding-bottom: 0;
 }
+
+
+.popular-items-slider:before{
+  content:'';
+  background: linear-gradient(270deg, #FFFFFF 53.13%, rgba(255, 255, 255, 0) 100%);
+  position: absolute;
+  width: 120px;
+  height: calc(100% - 120px);
+  right: 0;
+  z-index: 2;
+}
