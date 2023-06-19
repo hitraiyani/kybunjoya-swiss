@@ -1149,9 +1149,6 @@ video {
 .h-\[86\.25vw\] {
   height: 86.25vw;
 }
-.h-\[calc\(100vh_-_72px\)\] {
-  height: calc(100vh - 72px);
-}
 .h-auto {
   height: auto;
 }
@@ -1471,6 +1468,9 @@ video {
 }
 .max-w-xl {
   max-width: 36rem;
+}
+.max-w-\[715px\] {
+  max-width: 715px;
 }
 .flex-1 {
   flex: 1 1 0%;
@@ -3110,6 +3110,10 @@ video {
 
   .sm\:ml-\[15px\] {
     margin-left: 15px;
+  }
+
+  .sm\:mt-\[40px\] {
+    margin-top: 40px;
   }
 
   .sm\:block {

@@ -146,8 +146,11 @@ export default function kontakt() {
                   <h2 className="text-[28px] md:text-[30px] lg:text-[35px] tracking-[-0.97152px] mb-[25px] text-black font-medium">
                     {pageReference?.kontakt_title?.value}
                   </h2>
+                  <div className='desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] max-w-[715px]'>
+                    <p>Wir geben Ihnen gerne kompetent und individuell Informationen rund um kybun Joya. Kontaktieren Sie uns, wir freuen uns von Ihnen zu hören.</p>
+                  </div>
                 </div>
-                <div className="form-wrap">
+                <div className="form-wrap mt-[30px] sm:mt-[40px] lg:mt-[60px]">
                   <div className="form-inner">
                     <Form ref={formRef} method="post">
                       {isSubmitted && (
@@ -174,9 +177,9 @@ export default function kontakt() {
                       <div className="flex flex-col gap-[30px] md:gap-[50px] lg:gap-[70px] xl:gap-[94px]">
                         <div className="form-group flex gap-[20px]">
                           <div className="form-control flex-1">
-                            <p className="note text-[15px] leading-[1.1] text-[#595959] font-normal w-full mb-[10px]">
+                            {/* <p className="note text-[15px] leading-[1.1] text-[#595959] font-normal w-full mb-[10px]">
                               Bitte wähle den Grund deiner Anfrage aus. *
-                            </p>
+                            </p> */}
                             <select
                               name="contact_reason"
                               onChange={(e) => {
@@ -184,9 +187,9 @@ export default function kontakt() {
                               }}
                               className="placeholder-[#333333] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal w-full pb-[10px] border-b-black border-black border-b-[1px] focus:outline-none focus:shadow-none !rounded-none pr-[20px]"
                             >
-                              <option value={''}>Kontaktgrund auswählen</option>
-                              <option value="Kunde">Kunde</option>
-                              <option value="B2B">B2B</option>
+                              <option value={''}>Ich bin ...</option>
+                              <option value="Kunde">Endkunde</option>
+                              <option value="B2B">Geschäftskunde</option>
                               {/* <option value="Investoren">Investoren</option> */}
                             </select>
                           </div>
@@ -198,7 +201,7 @@ export default function kontakt() {
                                 <input
                                   type="text"
                                   name="first_name"
-                                  placeholder="Vorname *"
+                                  placeholder="Vorname"
                                   className="placeholder-[#333333] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal w-full pb-[10px] border-b-black border-black border-b-[1px] focus:outline-none focus:shadow-none !rounded-none"
                                 />
                               </div>
@@ -206,7 +209,7 @@ export default function kontakt() {
                                 <input
                                   type="text"
                                   name="last_name"
-                                  placeholder="Nachname *"
+                                  placeholder="Nachname"
                                   className="placeholder-[#333333] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal w-full pb-[10px] border-b-black border-black border-b-[1px] focus:outline-none focus:shadow-none !rounded-none"
                                 />
                               </div>
@@ -216,7 +219,7 @@ export default function kontakt() {
                                 <input
                                   type="email"
                                   name="email"
-                                  placeholder="Email Adresse *"
+                                  placeholder="Email Adresse"
                                   className="placeholder-[#333333] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal w-full pb-[10px] border-b-black border-black border-b-[1px] focus:outline-none focus:shadow-none !rounded-none"
                                 />
                               </div>
@@ -227,7 +230,7 @@ export default function kontakt() {
                                     <input
                                       type="text"
                                       name="firm"
-                                      placeholder="Firma *"
+                                      placeholder="Firma"
                                       className="placeholder-[#333333] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal w-full pb-[10px] border-b-black border-black border-b-[1px] focus:outline-none focus:shadow-none !rounded-none"
                                     />
                                   </div>
@@ -236,7 +239,7 @@ export default function kontakt() {
                             <div className="form-group flex gap-[20px]">
                               <div className="form-control flex-1">
                                 <p className="note text-[15px] leading-[1.1] text-[#595959] font-normal w-full mb-[10px]">
-                                  Dein Land / Region *
+                                  Dein Land / Region
                                 </p>
                                 <select
                                   name="country"
@@ -253,7 +256,7 @@ export default function kontakt() {
                             <div className="form-group flex gap-[20px]">
                               <div className="form-control flex-1">
                                 <p className="note text-[15px] leading-[1.1] text-[#595959] font-normal w-full mb-[10px]">
-                                  Deine Nachricht *
+                                  Deine Nachricht
                                 </p>
                                 <textarea
                                   placeholder="Wie können wir dir helfen?"
