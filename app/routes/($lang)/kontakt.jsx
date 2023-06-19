@@ -147,7 +147,7 @@ export default function kontakt() {
                     {pageReference?.kontakt_title?.value}
                   </h2>
                   <div className='desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] max-w-[715px]'>
-                    <p>Wir geben Ihnen gerne kompetent und individuell Informationen rund um kybun Joya. Kontaktieren Sie uns, wir freuen uns von Ihnen zu hören.</p>
+                    <p>{pageReference?.kontakt_sub_title?.value}</p>
                   </div>
                 </div>
                 <div className="form-wrap mt-[30px] sm:mt-[40px] lg:mt-[60px]">
@@ -238,6 +238,16 @@ export default function kontakt() {
                             </div>
                             <div className="form-group flex gap-[20px]">
                               <div className="form-control flex-1">
+                                <input
+                                  type="text"
+                                  name="telephone_number"
+                                  placeholder="Telefonnummer (empfolen)"
+                                  className="placeholder-[#333333] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal w-full pb-[10px] border-b-black border-black border-b-[1px] focus:outline-none focus:shadow-none !rounded-none"
+                                />
+                              </div>
+                              </div>
+                            <div className="form-group flex gap-[20px]">
+                              <div className="form-control flex-1">
                                 <p className="note text-[15px] leading-[1.1] text-[#595959] font-normal w-full mb-[10px]">
                                   Dein Land / Region
                                 </p>
@@ -319,6 +329,9 @@ ${MEDIA_FRAGMENT}
               value
             }
             kontakt_title : field(key: "kontakt_title") {
+              value
+            }
+            kontakt_sub_title : field(key: "kontakt_sub_title") {
               value
             }
           }
