@@ -25,6 +25,7 @@ export const action = async ({request, context, params}) => {
   const first_name = formData.get('first_name');
   const last_name = formData.get('last_name');
   const email = formData.get('email');
+  const telephone_number = formData.get('telephone_number');
   const firm = formData.get('firm');
   const country = formData.get('country');
   const message = formData.get('message');
@@ -43,20 +44,59 @@ export const action = async ({request, context, params}) => {
   ) {
     return badRequest({
       formError: 'Bitte füllen Sie alle erforderlichen Felder aus.',
+      first_name : !first_name,
+      last_name : !last_name,
+      email : !email,
+      country : !country,
+      message : !message,
+      firm : contact_reason != 'Kunde' && !firm,
     });
   }
   if (contact_reason != 'Kunde') {
     if (!firm || typeof firm !== 'string') {
       return badRequest({
         formError: 'Bitte füllen Sie alle erforderlichen Felder aus.',
+        first_name : !first_name,
+        last_name : !last_name,
+        email : !email,
+        country : !country,
+        message : !message,
+        firm : contact_reason != 'Kunde' && !firm,
       });
     }
   }
 
-  let emailSend = true;
-  // if (response.status == 200) {
-  //     emailSend = true;
-  // }
+  const contactForm = {
+    first_name,
+    last_name,
+    email,
+    firm : firm ? firm : '',
+    telephone_number,
+    country,
+    message
+  }
+  if (!firm) {
+    delete contactForm.firm;
+  }
+
+  const rawResponse = await fetch(
+    'https://hook.eu1.make.com/89qqsv5wr1wx15tnflwa4rbgutuap0o9',
+    {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(contactForm),
+    },
+  );
+
+  const response = await rawResponse;
+  
+  let emailSend = false;
+  if (response.status == 200) {
+      emailSend = true;
+  } 
 
   return json({isSubmitted: true, emailSend});
 };
@@ -185,7 +225,7 @@ export default function kontakt() {
                               onChange={(e) => {
                                 setContactReason(e.target.value);
                               }}
-                              className="placeholder-[#333333] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal w-full pb-[10px] border-b-black border-black border-b-[1px] focus:outline-none focus:shadow-none !rounded-none pr-[20px]"
+                              className="placeholder-[#333333] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal w-full pb-[10px] border-b-black border-b-[1px] focus:outline-none focus:shadow-none !rounded-none pr-[20px]"
                             >
                               <option value={''}>Ich bin ...</option>
                               <option value="Kunde">Endkunde</option>
@@ -202,7 +242,7 @@ export default function kontakt() {
                                   type="text"
                                   name="first_name"
                                   placeholder="Vorname"
-                                  className="placeholder-[#333333] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal w-full pb-[10px] border-b-black border-black border-b-[1px] focus:outline-none focus:shadow-none !rounded-none"
+                                  className={`text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal w-full pb-[10px] ${actionData?.first_name ? "placeholder-red-400 border-red-400" : "placeholder-[#333333] border-b-black"} border-b-[1px] focus:outline-none focus:shadow-none !rounded-none`}
                                 />
                               </div>
                               <div className="form-control flex-1">
@@ -210,7 +250,7 @@ export default function kontakt() {
                                   type="text"
                                   name="last_name"
                                   placeholder="Nachname"
-                                  className="placeholder-[#333333] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal w-full pb-[10px] border-b-black border-black border-b-[1px] focus:outline-none focus:shadow-none !rounded-none"
+                                  className={`text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal w-full pb-[10px] ${actionData?.last_name ? "placeholder-red-400 border-red-400" : "placeholder-[#333333] border-b-black"} border-b-[1px] focus:outline-none focus:shadow-none !rounded-none`}
                                 />
                               </div>
                             </div>
@@ -220,7 +260,7 @@ export default function kontakt() {
                                   type="email"
                                   name="email"
                                   placeholder="Email Adresse"
-                                  className="placeholder-[#333333] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal w-full pb-[10px] border-b-black border-black border-b-[1px] focus:outline-none focus:shadow-none !rounded-none"
+                                  className={`text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal w-full pb-[10px] ${actionData?.email ? "placeholder-red-400 border-red-400" : "placeholder-[#333333] border-b-black"} border-b-[1px] focus:outline-none focus:shadow-none !rounded-none`}
                                 />
                               </div>
                               {contactReason &&
@@ -231,7 +271,7 @@ export default function kontakt() {
                                       type="text"
                                       name="firm"
                                       placeholder="Firma"
-                                      className="placeholder-[#333333] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal w-full pb-[10px] border-b-black border-black border-b-[1px] focus:outline-none focus:shadow-none !rounded-none"
+                                      className={`text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal w-full pb-[10px] ${actionData?.firm ? "placeholder-red-400 border-red-400" : "placeholder-[#333333] border-b-black"} border-b-[1px] focus:outline-none focus:shadow-none !rounded-none`}
                                     />
                                   </div>
                                 )}
@@ -242,7 +282,7 @@ export default function kontakt() {
                                   type="text"
                                   name="telephone_number"
                                   placeholder="Telefonnummer (empfolen)"
-                                  className="placeholder-[#333333] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal w-full pb-[10px] border-b-black border-black border-b-[1px] focus:outline-none focus:shadow-none !rounded-none"
+                                  className="placeholder-[#333333] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal w-full pb-[10px] border-b-black border-b-[1px] focus:outline-none focus:shadow-none !rounded-none"
                                 />
                               </div>
                               </div>
@@ -253,13 +293,13 @@ export default function kontakt() {
                                 </p>
                                 <select
                                   name="country"
-                                  className="placeholder-[#333333] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal w-full pb-[10px] border-b-black border-black border-b-[1px] focus:outline-none focus:shadow-none !rounded-none pr-[20px]"
+                                  className={` text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal w-full pb-[10px] ${actionData?.country ? "placeholder-red-400 border-red-400" : "placeholder-[#333333] border-b-black"} border-b-[1px] focus:outline-none focus:shadow-none !rounded-none pr-[20px]`}
                                 >
-                                  <option value="CH">Schweiz</option>
-                                  <option value="US">United States</option>
-                                  <option value="CA">Canada</option>
-                                  <option value="FR">France</option>
-                                  <option value="DE">Germany</option>
+                                  <option value="Schweiz">Schweiz</option>
+                                  <option value="United States">United States</option>
+                                  <option value="Canada">Canada</option>
+                                  <option value="France">France</option>
+                                  <option value="Germany">Germany</option>
                                 </select>
                               </div>
                             </div>
@@ -274,7 +314,7 @@ export default function kontakt() {
                                   id=""
                                   cols="30"
                                   rows="5"
-                                  className="placeholder-[#333333] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal w-full pb-[10px] border-b-black border-black border-b-[1px] focus:outline-none focus:shadow-none !rounded-none"
+                                  className={` ${actionData?.message ? "placeholder-red-400 border-red-400" : "placeholder-[#333333] border-b-black"} text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal w-full pb-[10px]  border-b-[1px] focus:outline-none focus:shadow-none !rounded-none`}
                                 ></textarea>
                               </div>
                             </div>
