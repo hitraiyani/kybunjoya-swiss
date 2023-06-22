@@ -20,8 +20,10 @@ const badRequest = (data) => json(data, {status: 400});
 export const action = async ({request, context, params}) => {
   const {session, storefront} = context;
   const formData = await request.formData();
+  
 
   const contact_reason = formData.get('contact_reason');
+  const localeIsoCode = formData.get('localeIsoCode');
   const first_name = formData.get('first_name');
   const last_name = formData.get('last_name');
   const email = formData.get('email');
@@ -73,11 +75,14 @@ export const action = async ({request, context, params}) => {
     firm : firm ? firm : '',
     telephone_number,
     country,
+    ISOCode:localeIsoCode,
     message
   }
   if (!firm) {
     delete contactForm.firm;
   }
+
+  console.log("contactForm", contactForm)
 
   const rawResponse = await fetch(
     'https://hook.eu1.make.com/89qqsv5wr1wx15tnflwa4rbgutuap0o9',
@@ -131,6 +136,15 @@ export default function kontakt() {
   const actionData = useActionData();
   const isSubmitted = actionData?.isSubmitted;
   const emailSend = actionData?.emailSend;
+
+  const [isoCode, setIsoCode] = useState("");
+
+  useEffect(() => {
+    const userLocale = navigator.language || navigator.userLanguage;
+    const code = userLocale.slice(0, 2);
+    setIsoCode(code);
+  }, []);
+
 
   let formRef = useRef();
   useEffect(() => {
@@ -214,6 +228,7 @@ export default function kontakt() {
                           <p>{actionData.formError}</p>
                         </div>
                       )}
+                      <input type="hidden" name="localeIsoCode" value={isoCode} />
                       <div className="flex flex-col gap-[30px] md:gap-[50px] lg:gap-[70px] xl:gap-[94px]">
                         <div className="form-group flex gap-[20px]">
                           <div className="form-control flex-1">
