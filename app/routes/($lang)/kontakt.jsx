@@ -4,11 +4,12 @@ import {useLoaderData, Form, useActionData} from '@remix-run/react';
 import {toHTML, getBreadCrumbs} from '~/lib/utils';
 import {MEDIA_FRAGMENT} from '~/data/fragments';
 import {Link, Breadcrumb, ArrowRight2} from '~/components';
+import wordCountry from '~/data/wordcountries.json';
 
 const seo = ({data}) => ({
   title: data?.page?.seo?.title,
   description: data?.page?.seo?.description,
-  url : data?.url,
+  url: data?.url,
 });
 
 export const handle = {
@@ -20,7 +21,6 @@ const badRequest = (data) => json(data, {status: 400});
 export const action = async ({request, context, params}) => {
   const {session, storefront} = context;
   const formData = await request.formData();
-  
 
   const contact_reason = formData.get('contact_reason');
   const localeIsoCode = formData.get('localeIsoCode');
@@ -46,24 +46,24 @@ export const action = async ({request, context, params}) => {
   ) {
     return badRequest({
       formError: 'Bitte füllen Sie alle erforderlichen Felder aus.',
-      first_name : !first_name,
-      last_name : !last_name,
-      email : !email,
-      country : !country,
-      message : !message,
-      firm : contact_reason != 'Kunde' && !firm,
+      first_name: !first_name,
+      last_name: !last_name,
+      email: !email,
+      country: !country,
+      message: !message,
+      firm: contact_reason != 'Kunde' && !firm,
     });
   }
   if (contact_reason != 'Kunde') {
     if (!firm || typeof firm !== 'string') {
       return badRequest({
         formError: 'Bitte füllen Sie alle erforderlichen Felder aus.',
-        first_name : !first_name,
-        last_name : !last_name,
-        email : !email,
-        country : !country,
-        message : !message,
-        firm : contact_reason != 'Kunde' && !firm,
+        first_name: !first_name,
+        last_name: !last_name,
+        email: !email,
+        country: !country,
+        message: !message,
+        firm: contact_reason != 'Kunde' && !firm,
       });
     }
   }
@@ -72,17 +72,17 @@ export const action = async ({request, context, params}) => {
     first_name,
     last_name,
     email,
-    firm : firm ? firm : '',
+    firm: firm ? firm : '',
     telephone_number,
     country,
-    ISOCode:localeIsoCode,
-    message
-  }
+    ISOCode: localeIsoCode,
+    message,
+  };
   if (!firm) {
     delete contactForm.firm;
   }
 
-  console.log("contactForm", contactForm)
+  console.log('contactForm', contactForm);
 
   const rawResponse = await fetch(
     'https://hook.eu1.make.com/89qqsv5wr1wx15tnflwa4rbgutuap0o9',
@@ -97,11 +97,11 @@ export const action = async ({request, context, params}) => {
   );
 
   const response = await rawResponse;
-  
+
   let emailSend = false;
   if (response.status == 200) {
-      emailSend = true;
-  } 
+    emailSend = true;
+  }
 
   return json({isSubmitted: true, emailSend});
 };
@@ -137,14 +137,13 @@ export default function kontakt() {
   const isSubmitted = actionData?.isSubmitted;
   const emailSend = actionData?.emailSend;
 
-  const [isoCode, setIsoCode] = useState("");
+  const [isoCode, setIsoCode] = useState('');
 
   useEffect(() => {
     const userLocale = navigator.language || navigator.userLanguage;
     const code = userLocale.slice(0, 2);
     setIsoCode(code);
   }, []);
-
 
   let formRef = useRef();
   useEffect(() => {
@@ -200,7 +199,7 @@ export default function kontakt() {
                   <h2 className="text-[28px] md:text-[30px] lg:text-[35px] tracking-[-0.97152px] mb-[25px] text-black font-medium">
                     {pageReference?.kontakt_title?.value}
                   </h2>
-                  <div className='desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] max-w-[715px]'>
+                  <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] max-w-[715px]">
                     <p>{pageReference?.kontakt_sub_title?.value}</p>
                   </div>
                 </div>
@@ -228,7 +227,11 @@ export default function kontakt() {
                           <p>{actionData.formError}</p>
                         </div>
                       )}
-                      <input type="hidden" name="localeIsoCode" value={isoCode} />
+                      <input
+                        type="hidden"
+                        name="localeIsoCode"
+                        value={isoCode}
+                      />
                       <div className="flex flex-col gap-[30px] md:gap-[50px] lg:gap-[70px] xl:gap-[94px]">
                         <div className="form-group flex gap-[20px]">
                           <div className="form-control flex-1">
@@ -257,7 +260,11 @@ export default function kontakt() {
                                   type="text"
                                   name="first_name"
                                   placeholder="Vorname"
-                                  className={`text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal w-full pb-[10px] ${actionData?.first_name ? "placeholder-red-400 border-red-400" : "placeholder-[#333333] border-b-black"} border-b-[1px] focus:outline-none focus:shadow-none !rounded-none`}
+                                  className={`text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal w-full pb-[10px] ${
+                                    actionData?.first_name
+                                      ? 'placeholder-red-400 border-red-400'
+                                      : 'placeholder-[#333333] border-b-black'
+                                  } border-b-[1px] focus:outline-none focus:shadow-none !rounded-none`}
                                 />
                               </div>
                               <div className="form-control flex-1">
@@ -265,7 +272,11 @@ export default function kontakt() {
                                   type="text"
                                   name="last_name"
                                   placeholder="Nachname"
-                                  className={`text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal w-full pb-[10px] ${actionData?.last_name ? "placeholder-red-400 border-red-400" : "placeholder-[#333333] border-b-black"} border-b-[1px] focus:outline-none focus:shadow-none !rounded-none`}
+                                  className={`text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal w-full pb-[10px] ${
+                                    actionData?.last_name
+                                      ? 'placeholder-red-400 border-red-400'
+                                      : 'placeholder-[#333333] border-b-black'
+                                  } border-b-[1px] focus:outline-none focus:shadow-none !rounded-none`}
                                 />
                               </div>
                             </div>
@@ -275,7 +286,11 @@ export default function kontakt() {
                                   type="email"
                                   name="email"
                                   placeholder="Email Adresse"
-                                  className={`text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal w-full pb-[10px] ${actionData?.email ? "placeholder-red-400 border-red-400" : "placeholder-[#333333] border-b-black"} border-b-[1px] focus:outline-none focus:shadow-none !rounded-none`}
+                                  className={`text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal w-full pb-[10px] ${
+                                    actionData?.email
+                                      ? 'placeholder-red-400 border-red-400'
+                                      : 'placeholder-[#333333] border-b-black'
+                                  } border-b-[1px] focus:outline-none focus:shadow-none !rounded-none`}
                                 />
                               </div>
                               {contactReason &&
@@ -286,7 +301,11 @@ export default function kontakt() {
                                       type="text"
                                       name="firm"
                                       placeholder="Firma"
-                                      className={`text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal w-full pb-[10px] ${actionData?.firm ? "placeholder-red-400 border-red-400" : "placeholder-[#333333] border-b-black"} border-b-[1px] focus:outline-none focus:shadow-none !rounded-none`}
+                                      className={`text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal w-full pb-[10px] ${
+                                        actionData?.firm
+                                          ? 'placeholder-red-400 border-red-400'
+                                          : 'placeholder-[#333333] border-b-black'
+                                      } border-b-[1px] focus:outline-none focus:shadow-none !rounded-none`}
                                     />
                                   </div>
                                 )}
@@ -300,7 +319,7 @@ export default function kontakt() {
                                   className="placeholder-[#333333] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal w-full pb-[10px] border-b-black border-b-[1px] focus:outline-none focus:shadow-none !rounded-none"
                                 />
                               </div>
-                              </div>
+                            </div>
                             <div className="form-group flex gap-[20px]">
                               <div className="form-control flex-1">
                                 <p className="note text-[15px] leading-[1.1] text-[#595959] font-normal w-full mb-[10px]">
@@ -308,13 +327,40 @@ export default function kontakt() {
                                 </p>
                                 <select
                                   name="country"
-                                  className={` text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal w-full pb-[10px] ${actionData?.country ? "placeholder-red-400 border-red-400" : "placeholder-[#333333] border-b-black"} border-b-[1px] focus:outline-none focus:shadow-none !rounded-none pr-[20px]`}
+                                  className={` text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal w-full pb-[10px] ${
+                                    actionData?.country
+                                      ? 'placeholder-red-400 border-red-400'
+                                      : 'placeholder-[#333333] border-b-black'
+                                  } border-b-[1px] focus:outline-none focus:shadow-none !rounded-none pr-[20px]`}
                                 >
-                                  <option value="Schweiz">Schweiz</option>
-                                  <option value="United States">United States</option>
-                                  <option value="Canada">Canada</option>
-                                  <option value="France">France</option>
-                                  <option value="Germany">Germany</option>
+                                  <optgroup>
+                                    {wordCountry &&
+                                      wordCountry.top_country.map(
+                                        (country, index) => (
+                                          <option value={country.lable}>
+                                            {country.lable}
+                                          </option>
+                                        ),
+                                      )}
+                                  </optgroup>
+                                  <optgroup label="-------------">
+                                    {wordCountry &&
+                                      wordCountry.other_country.map(
+                                        (country, index) => (
+                                          <option value={country.label}>
+                                            {country.label}
+                                          </option>
+                                        ),
+                                      )}
+                                    {/* <option value="Schweiz">Schweiz</option>
+                                    <option value="United States">
+                                      United States
+                                    </option>
+                                    
+                                    <option value="Canada">Canada</option>
+                                    <option value="France">France</option>
+                                    <option value="Germany">Germany</option> */}
+                                  </optgroup>
                                 </select>
                               </div>
                             </div>
@@ -329,7 +375,11 @@ export default function kontakt() {
                                   id=""
                                   cols="30"
                                   rows="5"
-                                  className={` ${actionData?.message ? "placeholder-red-400 border-red-400" : "placeholder-[#333333] border-b-black"} text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal w-full pb-[10px]  border-b-[1px] focus:outline-none focus:shadow-none !rounded-none`}
+                                  className={` ${
+                                    actionData?.message
+                                      ? 'placeholder-red-400 border-red-400'
+                                      : 'placeholder-[#333333] border-b-black'
+                                  } text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal w-full pb-[10px]  border-b-[1px] focus:outline-none focus:shadow-none !rounded-none`}
                                 ></textarea>
                               </div>
                             </div>
