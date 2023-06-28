@@ -1634,6 +1634,51 @@ select {
   -moz-appearance: none;
   appearance: none;
 }
+.contact-page-form-sec .custom-select__control {
+  border: none;
+  border-bottom: 1px solid #000 !important;
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 21px;
+  font-weight: normal;
+  cursor: pointer;
+}
+.contact-page-form-sec .custom-select__control .custom-select__value-container {
+  padding: 0;
+}
+.contact-page-form-sec .custom-select__control .custom-select__indicator svg {
+  display: none;
+}
+.contact-page-form-sec .custom-select__control .custom-select__indicator {
+  background: url("data:image/svg+xml;utf8,<svg viewBox='0 0 140 140' width='24' height='24' xmlns='http://www.w3.org/2000/svg'><g><path d='m121.3,34.6c-1.6-1.6-4.2-1.6-5.8,0l-51,51.1-51.1-51.1c-1.6-1.6-4.2-1.6-5.8,0-1.6,1.6-1.6,4.2 0,5.8l53.9,53.9c0.8,0.8 1.8,1.2 2.9,1.2 1,0 2.1-0.4 2.9-1.2l53.9-53.9c1.7-1.6 1.7-4.2 0.1-5.8z' fill='balck'/></g></svg>")
+    no-repeat;
+  background-position: right center;
+  background-size: 17px;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+}
+
+.contact-page-form-sec
+  .custom-select__control
+  .custom-select__indicator-separator {
+  display: none;
+}
+@media (max-width: 1278px) {
+  .contact-page-form-sec .custom-select__control {
+    font-size: 20px;
+  }
+}
+@media (max-width: 1023px) {
+  .contact-page-form-sec .custom-select__control {
+    font-size: 18px;
+  }
+}
+@media (max-width: 767px) {
+  .contact-page-form-sec .custom-select__control {
+    font-size: 16px;
+  }
+}
 
 /* blog details page */
 .content-wrap-sec .sliderbar-wrap ul li.links::before {
