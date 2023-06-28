@@ -9,6 +9,11 @@
       "value": "Deutschland"
     },
     {
+      "label": "Österreich",
+      "value": "Österreich"
+    },
+    
+    {
       "label": "Italien",
       "value": "Italien"
     },
@@ -61,7 +66,6 @@
     },
     {"label": "Antigua und Barbuda", "value": "Antigua und Barbuda"},
     {"label": "Australien", "value": "Australien"},
-    {"label": "Österreich", "value": "Österreich"},
     {"label": "Aserbaidschan", "value": "Aserbaidschan"},
     {"label": "Burundi", "value": "Burundi"},
     {"label": "Benin", "value": "Benin"},
