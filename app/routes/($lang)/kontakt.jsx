@@ -189,7 +189,7 @@ export default function kontakt() {
           </div>
         </div>
       </section>
-      <section className="form-sec my-[40px] md:my-[60px] lg:my-[80px] xl:my-[100px]">
+      <section className="contact-page-form-sec form-sec my-[40px] md:my-[60px] lg:my-[80px] xl:my-[100px]">
         <div className="form-wrap container">
           <div className="form-row flex flex-col lg:flex-row gap-[30px] max-w-[1168px] mx-auto">
             <div className="col-left w-full lg:w-[40%] hidden">
