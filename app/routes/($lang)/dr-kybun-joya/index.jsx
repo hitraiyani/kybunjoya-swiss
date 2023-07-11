@@ -16,7 +16,7 @@ import {Swiper, SwiperSlide} from 'swiper/react';
 const seo = ({data}) => ({
   title: data?.page?.seo?.title,
   description: data?.page?.seo?.description,
-  url : data?.url,
+  url: data?.url,
 });
 
 export const handle = {
@@ -245,7 +245,10 @@ export default function ratgeberseite() {
                     {headProductList?.length > 0 &&
                       headProductList.map((product, index) => {
                         return (
-                          <li className="list-style-green hover:underline">
+                          <li
+                            className="list-style-green hover:underline"
+                            key={index}
+                          >
                             <Link
                               key={index}
                               to={`/dr-kybun-joya/${product.handle}`}
@@ -724,72 +727,6 @@ export default function ratgeberseite() {
           </div>
         </div>
       </section>
-      {/* <section className="four-boxes-section my-[40px] md:my-[60px] lg:my-[80px] xl:my-[100px]">
-          <div className="four-boxes-inner">
-            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-[20px]">
-              <div className="item flex flex-col rounded-[10px]">
-                <div className="title-wrap bg-[#00795C] rounded-tl-[10px] rounded-tr-[10px]">
-                  <h4 className="text-white text-[24px] md:text-[28px] xl:text-[30px] font-bold leading-none p-[20px]">
-                      {page?.ratgeber_detail?.reference?.footer_section_title_1?.value}
-                  </h4>
-                </div>
-                <div className="content-info px-[20px] pt-[12px] pb-[20px] lg:pb-[40px] bg-[#EDEDED] rounded-bl-[10px] rounded-br-[10px] flex flex-col gap-[8px] h-full">
-                  <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] tracking-[-0.400697px] font-normal leading-[1.4]"
-                     dangerouslySetInnerHTML={{
-                      __html: toHTML(page?.ratgeber_detail?.reference?.footer_section_content_1?.value),
-                    }}
-                  >
-                  </div>
-                </div>
-              </div>
-              <div className="item flex flex-col rounded-[10px]">
-                <div className="title-wrap bg-[#00795C] rounded-tl-[10px] rounded-tr-[10px]">
-                  <h4 className="text-white text-[24px] md:text-[28px] xl:text-[30px] font-bold leading-none p-[20px]">
-                    {page?.ratgeber_detail?.reference?.footer_section_title_2?.value}
-                  </h4>
-                </div>
-                <div className="content-info px-[20px] pt-[12px] pb-[20px] lg:pb-[40px] bg-[#EDEDED] rounded-bl-[10px] rounded-br-[10px] flex flex-col gap-[8px] h-full">
-                  <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] tracking-[-0.400697px] font-normal leading-[1.4]"
-                    dangerouslySetInnerHTML={{
-                      __html: toHTML(page?.ratgeber_detail?.reference?.footer_section_content_2?.value),
-                    }}
-                  >
-                  </div>
-                </div>
-              </div>
-              <div className="item flex flex-col rounded-[10px]">
-                <div className="title-wrap bg-[#00795C] rounded-tl-[10px] rounded-tr-[10px]">
-                  <h4 className="text-white text-[24px] md:text-[28px] xl:text-[30px] font-bold leading-none p-[20px]">
-                    {page?.ratgeber_detail?.reference?.footer_section_title_3?.value}
-                  </h4>
-                </div>
-                <div className="content-info px-[20px] pt-[12px] pb-[20px] lg:pb-[40px] bg-[#EDEDED] rounded-bl-[10px] rounded-br-[10px] flex flex-col gap-[8px] h-full">
-                  <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] tracking-[-0.400697px] font-normal leading-[1.4]"
-                     dangerouslySetInnerHTML={{
-                      __html: toHTML(page?.ratgeber_detail?.reference?.footer_section_content_3?.value),
-                    }}
-                  >
-                  </div>
-                </div>
-              </div>
-              <div className="item flex flex-col rounded-[10px]">
-                <div className="title-wrap bg-[#00795C] rounded-tl-[10px] rounded-tr-[10px]">
-                  <h4 className="text-white text-[24px] md:text-[28px] xl:text-[30px] font-bold leading-none p-[20px]">
-                    {page?.ratgeber_detail?.reference?.footer_section_title_4?.value}
-                  </h4>
-                </div>
-                <div className="content-info px-[20px] pt-[12px] pb-[20px] lg:pb-[40px] bg-[#EDEDED] rounded-bl-[10px] rounded-br-[10px] flex flex-col gap-[8px] h-full">
-                  <div className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] tracking-[-0.400697px] font-normal leading-[1.4]"
-                     dangerouslySetInnerHTML={{
-                      __html: toHTML(page?.ratgeber_detail?.reference?.footer_section_content_4?.value),
-                    }}
-                  >
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section> */}
     </>
   );
 }
@@ -883,9 +820,7 @@ ${MEDIA_FRAGMENT}
             head_content : field(key: "head_content") {
               value
             }
-            head_new_desc : field(key: "head_new_desc") {
-              value
-            }
+            
             head_new_desc_with_list : field(key: "head_new_desc_with_list") {
               value
             }
@@ -901,42 +836,7 @@ ${MEDIA_FRAGMENT}
             button_accordion_mapping : field(key: "button_accordion_mapping") {
               value
             }
-            footer_section_title_1 : field(key: "footer_section_title_1") {
-              value
-            }
-            footer_section_content_1 : field(key: "footer_section_content_1") {
-              value
-            }
-            footer_section_redirect_1 : field(key: "footer_section_redirect_1") {
-              value
-            }
-            footer_section_title_2 : field(key: "footer_section_title_2") {
-              value
-            }
-            footer_section_content_2 : field(key: "footer_section_content_2") {
-              value
-            }
-            footer_section_redirect_2 : field(key: "footer_section_redirect_2") {
-              value
-            }
-            footer_section_title_3 : field(key: "footer_section_title_3") {
-              value
-            }
-            footer_section_content_3 : field(key: "footer_section_content_3") {
-              value
-            }
-            footer_section_redirect_3 : field(key: "footer_section_redirect_3") {
-              value
-            }
-            footer_section_title_4 : field(key: "footer_section_title_4") {
-              value
-            }
-            footer_section_content_4 : field(key: "footer_section_content_4") {
-              value
-            }
-            footer_section_redirect_4 : field(key: "footer_section_redirect_4") {
-              value
-            }
+           
             footer_main_left_section_desc : field(key: "footer_main_left_section_desc") {
               value
             }
