@@ -328,10 +328,10 @@ function MenuMobileNav({menu, onClose}) {
           })}
         </ul>
         <div className="language-switcher !hidden flex gap-[11px] mb-[30px]">
-          <button className="de-lang w-[25px] h-[25px] border-transparent rounded-full border-[2px] hover:border-[#009470] transition-all duration-500 overflow-hidden activ className='w-full h-full object-cover block'e">
+          <button className="de-lang w-[25px] h-[25px] border-transparent rounded-full border-[2px] hover:border-[#009470] transition-all duration-500 overflow-hidden active">
             <img src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/de-flag-new.svg?v=1689078588" />
           </button>
-          <button className="en-lang w-[20px] h-[20px] border-transparent rounded-full border-[2px] hover:border-[#009470] transition-all duration-50 className='w-full h-full object-cover block'0">
+          <button className="en-lang w-[25px] h-[25px] border-transparent rounded-full border-[2px] hover:border-[#009470] transition-all duration-500 overflow-hidden">
             <img src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/en-flag-new.svg?v=1689078588" />
           </button>
         </div>
