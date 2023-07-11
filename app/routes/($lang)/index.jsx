@@ -29,7 +29,7 @@ export async function loader({params,request, context}) {
 
   if (
     params.lang &&
-    params.lang.toLowerCase() !== `${language}-${country}`.toLowerCase()
+    params.lang.toLowerCase() !== `${language}`.toLowerCase()
   ) {
     // If the lang URL param is defined, yet we still are on `EN-US`
     // the the lang param must be invalid, send to the 404 page
@@ -304,9 +304,6 @@ ${MEDIA_FRAGMENT}
       cta_label : field(key: "cta_label") {
         value
       }
-      hero_video_url : field(key: "hero_video_url") {
-        value
-      }
       video_tag_mp_4_url : field(key: "video_tag_mp_4_url") {
         value
       }
@@ -319,18 +316,6 @@ ${MEDIA_FRAGMENT}
       sub_title_image : field(key: "sub_title_image") {
         reference {
           ...Media
-        }
-      }
-      menu_image_mapping : field(key: "menu_image_mapping") {
-        value
-      }
-      image : field(key: "image") {
-        references(first: 15) {
-          edges {
-            node {
-              ...Media
-            }
-          }
         }
       }
     }
