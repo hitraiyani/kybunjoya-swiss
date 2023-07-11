@@ -97,38 +97,13 @@ export default function Homepage() {
   const [root] = useMatches();
 
   const [newsSliderData, setNewsSliderData] = useState();
-  //const gruppeMenu = root?.data?.layout?.headerMenu?.items?.find((item) => item.title == QUICK_LINK_MENU_TITLE);
 
-  // const loadNewSlider = async () => {
-  //   const newsResponse = await fetch(`${AICO_API_URL}news?page[number]=1&page[size]=4&sort=-publishDate&filter[isActive]=1`, {
-  //     method: 'GET',
-  //     headers: {
-  //       'Authorization': `Bearer ${AICO_API_TOKEN}`,
-  //     }
-  //   });
-
-  //   const newsData = await newsResponse.json();
-  //   setNewsSliderData(newsData);
-  // }
-
-
-  // useEffect(() => {
-  //     loadNewSlider();
-  // },[]);
-  // TODO: skeletons vs placeholders
   const skeletons = getHeroPlaceholder([{}, {}, {}]);
 
-  // TODO: analytics
-  // useServerAnalytics({
-  //   shopify: {
-  //     pageType: ShopifyAnalyticsConstants.pageType.home,
-  //   },
-  // });
 
   return (
     <>
       <Hero hereMetaObj={heroSlider}/>
-      {/* <HeroSlider sliderMetaObject={heroSlider} /> */}
       
       {fourMainSection && (
         <Suspense>
@@ -140,10 +115,6 @@ export default function Homepage() {
           </Await>
         </Suspense>
       )}
-
-      {/* <BrandGrid /> */}
-
-      {/* {newsSliderData?.data && <NewsSlider news={newsSliderData?.data} />} */}
 
       {newsBannerSection && (
         <Suspense>
@@ -167,7 +138,6 @@ export default function Homepage() {
         </Suspense>
       )}
 
-      {/* <GruppeSection  gruppeMenu={gruppeMenu} /> */}
     </>
   );
 }
@@ -296,12 +266,6 @@ ${MEDIA_FRAGMENT}
         value
       }
       sub_title : field(key: "sub_title") {
-        value
-      }
-      cta : field(key: "cta") {
-        value
-      }
-      cta_label : field(key: "cta_label") {
         value
       }
       video_tag_mp_4_url : field(key: "video_tag_mp_4_url") {

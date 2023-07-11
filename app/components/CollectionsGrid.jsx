@@ -1,5 +1,5 @@
 import {Image} from '@shopify/hydrogen';
-import {Heading, Section, Grid, Link, ArrowRightLight} from '~/components';
+import {Heading, Section, Link, ArrowRightLight} from '~/components';
 import { toHTML } from '~/lib/utils';
 
 export function CollectionsGrid({data}) {

@@ -54,12 +54,6 @@ export function Hero({hereMetaObj}) {
                   }}
                 ></span>
               </h4>
-              <Link
-                to={`${hereMetaObj?.data?.cta?.value}`}
-                className="inline-block md:px-[60px] px-[40px] py-[20px] md:py-[25px] md:text-[18px] text-[16px] font-medium text-black transition-all bg-white btn hover:bg-black hover:text-white leading-none !hidden"
-              >
-                {hereMetaObj?.data?.cta_label?.value}
-              </Link>
             </div>
           </div>
         </div>
