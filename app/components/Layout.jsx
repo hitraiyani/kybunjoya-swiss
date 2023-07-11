@@ -327,6 +327,14 @@ function MenuMobileNav({menu, onClose}) {
             );
           })}
         </ul>
+        <div className="language-switcher !hidden flex gap-[11px] mb-[30px]">
+          <button className="de-lang w-[25px] h-[25px] border-transparent rounded-full border-[2px] hover:border-[#009470] transition-all duration-500 overflow-hidden activ className='w-full h-full object-cover block'e">
+            <img src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/de-flag-new.svg?v=1689078588" />
+          </button>
+          <button className="en-lang w-[20px] h-[20px] border-transparent rounded-full border-[2px] hover:border-[#009470] transition-all duration-50 className='w-full h-full object-cover block'0">
+            <img src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/en-flag-new.svg?v=1689078588" />
+          </button>
+        </div>
       </div>
     </div>
   );
@@ -637,7 +645,7 @@ function Footer({menu, main_menu}) {
                   <div className='footer-logo max-w-[218px] hidden md:block'>
                     <img className='w-full h-auto' src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/logo_2.png?v=1686818080" alt="" />
                   </div>
-                  <div className="flex mb-[27px] xl:mb-[57px] md:mt-[36px]">
+                  <div className="flex mb-[19px] xl:mb-[30px] md:mt-[36px]">
                     <p className="text-[18px] md:text-[26px] text-[#00795C] flex gap-4 font-bold items-center hover:underline ">
                       {/* <span>
                       <svg
@@ -660,22 +668,13 @@ function Footer({menu, main_menu}) {
                       </Link>
                     </p>
                   </div>
-                  <div className="flex mb-10 !hidden">
-                    <p className="font-normal text-base text-[#595959] flex gap-4 items-center">
-                      <span>
-                        <img
-                          className=""
-                          src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/Clip_path_group.png?v=1682401790"
-                          alt=""
-                        />
-                      </span>
-                      <a
-                        href="#"
-                        className="hover:underline hover:text-[#00795C] font-normal text-base text-[#595959]"
-                      >
-                        DE
-                      </a>
-                    </p>
+                  <div className="language-switcher !hidden flex gap-[11px] mb-[20px] md:mb-[30px]">
+                    <button className="de-lang w-[25px] h-[25px] border-transparent rounded-full border-[2px] hover:border-[#009470] transition-all duration-500 overflow-hidden active">
+                      <img className='w-full h-full object-cover block' src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/de-flag-new.svg?v=1689078588" />
+                    </button>
+                    <button className="en-lang w-[25px] h-[25px] border-transparent rounded-full border-[2px] hover:border-[#009470] transition-all duration-500 overflow-hidden">
+                      <img className='w-full h-full object-cover block' src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/en-flag-new.svg?v=1689078588" />
+                    </button>
                   </div>
                   <div className="flex gap-[20px] items-center">
                     <a

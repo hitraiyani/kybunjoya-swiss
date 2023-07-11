@@ -87,7 +87,7 @@ p:last-child {
   max-width: 950px;
   margin-top: 142px;
   margin-right: 80px;
-  max-height: 250px;
+  max-height: 270px;
   padding: 30px 50px;
 }
 
@@ -1781,5 +1781,25 @@ select {
 @media (max-width: 767px) {
   .popular-items-slider:before {
     display: none;
+  }
+}
+
+.mega-menu-wrap .language-switcher {
+  max-width: 246px;
+  margin: 0 0 0 auto;
+}
+.language-switcher button.active {
+  border-color: #009470;
+}
+@media (max-width: 992px) {
+  .mega-menu-wrap .language-switcher {
+    max-width: 28%;
+  }
+}
+@media (max-width: 767px) {
+  .mega-menu-wrap .language-switcher {
+    max-width: 100%;
+    padding-left: 11px;
+    margin-top: 10px;
   }
 }
