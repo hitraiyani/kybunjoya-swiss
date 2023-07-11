@@ -36,9 +36,9 @@ export async function loader({params,request, context}) {
     throw new Response(null, {status: 404});
   }
 
-  const {shop, hero} = await context.storefront.query(HOMEPAGE_SEO_QUERY, {
-    variables: {handle: 'freestyle'},
-  });
+  // const {shop} = await context.storefront.query(HOMEPAGE_SEO_QUERY, {
+  //   variables: {handle: 'freestyle'},
+  // });
 
   const heroSlider = await context.storefront.query(
     HOMEPAGE_HERO_SLIDER_QUERY,
@@ -75,7 +75,7 @@ export async function loader({params,request, context}) {
   // );
 
   return defer({
-    shop,
+    
     heroSlider,
     fourMainSection,
     pursueSection,
@@ -172,12 +172,8 @@ const COLLECTION_CONTENT_FRAGMENT = `#graphql
 `;
 
 const HOMEPAGE_SEO_QUERY = `#graphql
-  ${COLLECTION_CONTENT_FRAGMENT}
-  query collectionContent($handle: String, $country: CountryCode, $language: LanguageCode)
+  query collectionContent($country: CountryCode, $language: LanguageCode)
   @inContext(country: $country, language: $language) {
-    hero: collection(handle: $handle) {
-      ...CollectionContent
-    }
     shop {
       name
       description
