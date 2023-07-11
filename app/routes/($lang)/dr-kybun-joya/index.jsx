@@ -261,62 +261,7 @@ export default function ratgeberseite() {
                   </ul>
                 </div>
               </div>
-              <div className="interactive-img-wrap mx-auto block w-[320px] !hidden">
-                <div className="img-wrap w-full text-center relative">
-                  <img
-                    className="m-auto"
-                    src={
-                      page?.ratgeber_detail?.reference?.head_interactive_image
-                        ?.reference?.image?.url
-                    }
-                    alt=""
-                  />
-                  <div className="interactive-list w-full left-[-90px] top-0 h-full absolute">
-                    <div
-                      className="absolute top-0 left-[240px] kb-body-icon"
-                      id="kb-body-icon-1"
-                    >
-                      <IconClose className="transition-transform transform-gpu duration-200 w-[65px] h-[65px] text-black p-[10px] border border-[#DEDEDE] rounded-full bg-white bg-opacity-50 rotate-45 stroke-[1] hover:bg-[#009470] hover:border-[#009470]" />
-                    </div>
-                    <div
-                      className="absolute top-[300px] left-[220px] kb-body-icon"
-                      id="kb-body-icon-3"
-                    >
-                      <IconClose className="transition-transform transform-gpu duration-200 w-[65px] h-[65px] text-black p-[10px] border border-[#DEDEDE] rounded-full bg-white bg-opacity-50 rotate-45 stroke-[1] hover:bg-[#009470] hover:border-[#009470]" />
-                    </div>
-                    <div
-                      className="absolute top-[330px] left-[130px] kb-body-icon"
-                      id="kb-body-icon-5"
-                    >
-                      <IconClose className="transition-transform transform-gpu duration-200 w-[65px] h-[65px] text-black p-[10px] border border-[#DEDEDE] rounded-full bg-white bg-opacity-50 rotate-45 stroke-[1] hover:bg-[#009470] hover:border-[#009470]" />
-                    </div>
-                    <div
-                      className="absolute top-[330px] left-[281px] kb-body-icon"
-                      id="kb-body-icon-2"
-                    >
-                      <IconClose className="transition-transform transform-gpu duration-200 w-[65px] h-[65px] text-black p-[10px] border border-[#DEDEDE] rounded-full bg-white bg-opacity-50 rotate-45 stroke-[1] hover:bg-[#009470] hover:border-[#009470]" />
-                    </div>
-                    <div
-                      className="absolute top-[510px] left-[261px] kb-body-icon"
-                      id="kb-body-icon-4"
-                    >
-                      <IconClose className="transition-transform transform-gpu duration-200 w-[65px] h-[65px] text-black p-[10px] border border-[#DEDEDE] rounded-full bg-white bg-opacity-50 rotate-45 stroke-[1] hover:bg-[#009470] hover:border-[#009470]" />
-                    </div>
-                    <div
-                      className="absolute bottom-[110px] left-[180px] kb-body-icon"
-                      id="kb-body-icon-6"
-                    >
-                      <IconClose className="transition-transform transform-gpu duration-200 w-[65px] h-[65px] text-black p-[10px] border border-[#DEDEDE] rounded-full bg-white bg-opacity-50 rotate-45 stroke-[1] hover:bg-[#009470] hover:border-[#009470]" />
-                    </div>
-                    <div
-                      className="absolute bottom-[80px] left-[250px] kb-body-icon"
-                      id="kb-body-icon-7"
-                    >
-                      <IconClose className="transition-transform transform-gpu duration-200 w-[65px] h-[65px] text-black p-[10px] border border-[#DEDEDE] rounded-full bg-white bg-opacity-50 rotate-45 stroke-[1] hover:bg-[#009470] hover:border-[#009470]" />
-                    </div>
-                  </div>
-                </div>
-              </div>
+                           
               <div className="right-col tabs-wrap xl:flex-[1]">
                 <div className="search-bar hidden">
                   <form action="">
@@ -370,6 +315,7 @@ export default function ratgeberseite() {
                         ?.value
                     }
                   </h3>
+                  
                   <div className="scroll-links-wrap flex flex-wrap gap-x-[20px] lg:gap-x-[30px] xl:gap-x-[40px] 2xl:gap-x-[78px] gap-y-[20px] lg:gap-y-[30px] xl:gap-y-[40px] 2xl:gap-y-[64px] !hidden">
                     {filteredKybunJoyaProducts.map((product, index) => {
                       return (
@@ -809,11 +755,7 @@ ${MEDIA_FRAGMENT}
         reference {
           ... on Metaobject {
             handle
-            head_interactive_image : field(key: "head_interactive_image") {
-              reference {
-                ...Media
-              }
-            }
+            
             head_title : field(key: "head_title") {
               value
             }
