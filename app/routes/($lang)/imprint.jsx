@@ -15,7 +15,7 @@ export const handle = {
 export async function loader({request, params, context}) {
   const {page} = await context.storefront.query(PAGE_QUERY, {
     variables: {
-      handle: 'copy-of-impressum',
+      handle: 'imprint',
       language: context.storefront.i18n.language,
     },
   });

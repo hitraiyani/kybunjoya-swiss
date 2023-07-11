@@ -330,8 +330,10 @@ async function getLayoutData({storefront}) {
   }
 
   const headerMenu = data?.headerMenu
-    ? parseMenu(tempHeaderMenu, customPrefixes)
+    ? parseMenu(data?.headerMenu, customPrefixes)
     : undefined;
+
+  
 
 
   const tmpFooterMenu = {
@@ -359,7 +361,7 @@ async function getLayoutData({storefront}) {
   };
   
   const footerMenu = data?.footerMenu
-    ? parseMenu(tmpFooterMenu, customPrefixes)
+    ? parseMenu(data?.footerMenu, customPrefixes)
     : undefined;
 
   return {shop: data.shop, headerMenu, footerMenu};

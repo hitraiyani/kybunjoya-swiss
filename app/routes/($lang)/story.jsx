@@ -18,7 +18,7 @@ export const handle = {
 export async function loader({request, params, context}) {
   const {page} = await context.storefront.query(PAGE_QUERY, {
     variables: {
-      handle: 'heritage',
+      handle: 'story',
       language: context.storefront.i18n.language,
     },
   });
