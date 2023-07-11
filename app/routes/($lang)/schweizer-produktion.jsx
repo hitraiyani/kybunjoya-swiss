@@ -47,9 +47,7 @@ export default function schweizerSchuhpropktion() {
       (data) => data.node.image.url,
     );
 
-  const faqArr = page?.schweizer_schuhpropktion?.reference?.faq?.value
-    ? JSON.parse(page?.schweizer_schuhpropktion?.reference?.faq.value)
-    : [];
+
 
   return (
     <>
@@ -143,6 +141,7 @@ export default function schweizerSchuhpropktion() {
             </div>
           </div>
           <div className="content-col w-full lg:w-[60%] lg:max-w-[785px] flex flex-col">
+            
             <h2 className="text-[#00795C] text-[30px] lg:text-[35px] xl:text-[40px] tracking-[-1.05984px] mb-[20px] font-bold hidden lg:block">
               {page?.schweizer_schuhpropktion?.reference?.main_title?.value}
             </h2>
@@ -170,16 +169,9 @@ export default function schweizerSchuhpropktion() {
           </div>
         </div>
       </div>
-      {faqArr.length > 0 && (
-        <div className="faq-sec container mt-10 hidden">
-          <h3 className="title uppercase text-[18px] leading-[1.2] pb-[10px] border-b border-[#595959] font-normal">
-            {page?.schweizer_schuhpropktion?.reference?.faq_title?.value}
-          </h3>
-          {faqArr.map((item) => (
-            <ExpandingCard content={item.answer} title={item.question} />
-          ))}
-        </div>
-      )}
+      
+     
+
       <div className="video-sec container pt-[20px] md:pt-[30px] lg:pt-[40px] xl:pt-[50px] pb-[40px] md:pb-[60px] lg:pb-[80px] xl:pb-[100px]">
         <div className="flex flex-col lg:flex-row gap-y-[20px] gap-x-[30px] xl:gap-x-[63px] items-center">
           <div className="content-col w-full lg:w-[35%] flex flex-col">
@@ -302,12 +294,7 @@ ${MEDIA_FRAGMENT}
             video_section_button_redirect : field(key: "video_section_button_redirect") {
               value
             }
-            faq_title : field(key: "faq_title") {
-              value
-            }
-            faq : field(key: "faq") {
-              value
-            }
+         
           }
         }
       }
