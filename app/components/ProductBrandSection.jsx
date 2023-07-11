@@ -20,9 +20,6 @@ export function ProductBrandSection({data}) {
           <div className="product-brand-list pb-[70px] md:pb-[100px] lg:pb-[140px] container">
             <div className="product-brand-list-inner relative flex flex-col lg:flex-row gap-y-[10px]  gap-x-[50px] 2xl:gap-x-[80px] items-center">
               <div className="img-with-text relative w-full lg:w-[50%]">
-                {/* <Link to={`${data?.brand_1_redirect?.value}`}
-                className="relative block w-full overflow-hidden pb-[42%] min-h-[250px]"
-              > */}
                 <div className="product-brand--swiper-buttons">
                   <div
                     id="swiper-button-next-product-brand1"
@@ -77,21 +74,6 @@ export function ProductBrandSection({data}) {
                     },
                   )}
                 </Swiper>
-                {/* <div className="img-overlay absolute w-full h-2/4 inset-x-0 bottom-0"></div> */}
-                {/* <div className="title-col container absolute bottom-0 left-0 w-full py-[20px] lg:py-[30px] xl:py-[40px] 2xl:py-[50px]">
-                    <h2 className="whitespace-pre-wrap flex flex-col font-normal text-[30px] lg:text-[34px] xl:text-[45px] text-white btn gap-[20px] leading-none">
-                      <span
-                        dangerouslySetInnerHTML={{
-                          __html: data?.brand_1_text?.value,
-                        }}
-                      ></span>
-                      <ArrowRightLight
-                        className={
-                          'w-[30px] h-[30px] sm:w-[35px] sm:h-[35px] lg:w-[74px] lg:h-[74px] border rounded-full p-[5px] sm:p-2 lg:p-[12px] text-white border-white transition-all'
-                        }
-                      />
-                    </h2>
-                  </div> */}
                 <div
                   id="product-brand-pagination-div1"
                   className="product-brand-pagination-div text-center mt-[10px]"
@@ -126,9 +108,6 @@ export function ProductBrandSection({data}) {
           <div className="product-brand-list pb-[70px] md:pb-[100px] lg:pb-[140px] container">
             <div className="product-brand-list-inner relative flex flex-col lg:flex-row gap-y-[10px]  gap-x-[50px] 2xl:gap-x-[80px] items-center">
               <div className="img-with-text relative w-full lg:w-[50%]">
-                {/* <Link to={`${data?.brand_2_redirect?.value}`}
-                className="relative block w-full overflow-hidden pb-[42%] min-h-[250px]"
-              > */}
                 <div className="product-brand--swiper-buttons">
                   <div
                     id="swiper-button-next-product-brand2"
@@ -183,21 +162,6 @@ export function ProductBrandSection({data}) {
                     },
                   )}
                 </Swiper>
-                {/* <div className="img-overlay absolute w-full h-2/4 inset-x-0 bottom-0"></div> */}
-                {/* <div className="title-col container absolute bottom-0 left-0 w-full py-[20px] lg:py-[30px] xl:py-[40px] 2xl:py-[50px]">
-                    <h2 className="whitespace-pre-wrap flex flex-col font-normal text-[30px] lg:text-[34px] xl:text-[45px] text-white btn gap-[20px] leading-none">
-                      <span
-                        dangerouslySetInnerHTML={{
-                          __html: data?.brand_2_text?.value,
-                        }}
-                      ></span>
-                      <ArrowRightLight
-                        className={
-                          'w-[30px] h-[30px] sm:w-[35px] sm:h-[35px] lg:w-[74px] lg:h-[74px] border rounded-full p-[5px] sm:p-2 lg:p-[12px] text-white border-white transition-all'
-                        }
-                      />
-                    </h2>
-                  </div> */}
                 <div
                   id="product-brand-pagination-div2"
                   className="product-brand-pagination-div text-center mt-[10px]"
@@ -232,9 +196,6 @@ export function ProductBrandSection({data}) {
           <div className="product-brand-list pb-[70px] md:pb-[100px] lg:pb-[140px] container">
             <div className="product-brand-list-inner relative flex flex-col lg:flex-row gap-y-[10px]  gap-x-[50px] 2xl:gap-x-[80px] items-center">
               <div className="img-with-text relative w-full lg:w-[50%]">
-                {/* <Link to={`${data?.brand_3_redirect?.value}`}
-                className="relative block w-full overflow-hidden pb-[42%] min-h-[250px]"
-              > */}
                 <div className="product-brand--swiper-buttons">
                   <div
                     id="swiper-button-next-product-brand3"
@@ -271,17 +232,6 @@ export function ProductBrandSection({data}) {
                   }}
                   className=""
                 >
-                  {/* <SwiperSlide>
-                    <div className="relative block overflow-hidden pb-[100%] md:pb-[100%] w-full">
-                      <div className="img-wrap w-full h-full absolute inset-0">
-                        <img
-                          className="h-full w-full absolute inset-0 transition hover:duration-500 object-cover"
-                          src={data?.brand_3_image?.reference?.image?.url}
-                          alt=""
-                        />
-                      </div>
-                    </div>
-                  </SwiperSlide> */}
                   {data?.brand_3_image_slider?.references?.edges?.map(
                     (item, index) => {
                       return (
@@ -300,21 +250,6 @@ export function ProductBrandSection({data}) {
                     },
                   )}
                 </Swiper>
-                {/* <div className="img-overlay absolute w-full h-2/4 inset-x-0 bottom-0"></div> */}
-                {/* <div className="title-col container absolute bottom-0 left-0 w-full py-[20px] lg:py-[30px] xl:py-[40px] 2xl:py-[50px]">
-                    <h2 className="whitespace-pre-wrap flex flex-col font-normal text-[30px] lg:text-[34px] xl:text-[45px] text-white btn gap-[20px] leading-none">
-                      <span
-                        dangerouslySetInnerHTML={{
-                          __html: data?.brand_3_text?.value,
-                        }}
-                      ></span>
-                      <ArrowRightLight
-                        className={
-                          'w-[30px] h-[30px] sm:w-[35px] sm:h-[35px] lg:w-[74px] lg:h-[74px] border rounded-full p-[5px] sm:p-2 lg:p-[12px] text-white border-white transition-all'
-                        }
-                      />
-                    </h2>
-                  </div> */}
                 <div
                   id="product-brand-pagination-div3"
                   className="product-brand-pagination-div text-center mt-[10px]"
@@ -349,9 +284,6 @@ export function ProductBrandSection({data}) {
           <div className="product-brand-list pb-[70px] md:pb-[100px] lg:pb-[140px] container">
             <div className="product-brand-list-inner relative flex flex-col lg:flex-row gap-y-[10px]  gap-x-[50px] 2xl:gap-x-[80px] items-center">
               <div className="img-with-text relative w-full lg:w-[50%]">
-                {/* <Link to={`${data?.brand_5_redirect?.value}`}
-                className="relative block w-full overflow-hidden pb-[42%] min-h-[250px]"
-              > */}
                 <div className="product-brand--swiper-buttons">
                   <div
                     id="swiper-button-next-product-brand5"
@@ -406,21 +338,6 @@ export function ProductBrandSection({data}) {
                     },
                   )}
                 </Swiper>
-                {/* <div className="img-overlay absolute w-full h-2/4 inset-x-0 bottom-0"></div> */}
-                {/* <div className="title-col container absolute bottom-0 left-0 w-full py-[20px] lg:py-[30px] xl:py-[40px] 2xl:py-[50px]">
-                    <h2 className="whitespace-pre-wrap flex flex-col font-normal text-[30px] lg:text-[34px] xl:text-[45px] text-white btn gap-[20px] leading-none">
-                      <span
-                        dangerouslySetInnerHTML={{
-                          __html: data?.brand_5_text?.value,
-                        }}
-                      ></span>
-                      <ArrowRightLight
-                        className={
-                          'w-[30px] h-[30px] sm:w-[35px] sm:h-[35px] lg:w-[74px] lg:h-[74px] border rounded-full p-[5px] sm:p-2 lg:p-[12px] text-white border-white transition-all'
-                        }
-                      />
-                    </h2>
-                  </div> */}
                 <div
                   id="product-brand-pagination-div5"
                   className="product-brand-pagination-div text-center mt-[10px]"
@@ -455,9 +372,6 @@ export function ProductBrandSection({data}) {
           <div className="product-brand-list pb-[70px] md:pb-[100px] lg:pb-[140px] container">
             <div className="product-brand-list-inner relative flex flex-col lg:flex-row gap-y-[10px]  gap-x-[50px] 2xl:gap-x-[80px] items-center">
               <div className="img-with-text relative w-full lg:w-[50%]">
-                {/* <Link to={`${data?.brand_4_redirect?.value}`}
-                className="relative block w-full overflow-hidden pb-[42%] min-h-[250px]"
-              > */}
                 <div className="product-brand--swiper-buttons">
                   <div
                     id="swiper-button-next-product-brand4"
@@ -512,21 +426,6 @@ export function ProductBrandSection({data}) {
                     },
                   )}
                 </Swiper>
-                {/* <div className="img-overlay absolute w-full h-2/4 inset-x-0 bottom-0"></div> */}
-                {/* <div className="title-col container absolute bottom-0 left-0 w-full py-[20px] lg:py-[30px] xl:py-[40px] 2xl:py-[50px]">
-                    <h2 className="whitespace-pre-wrap flex flex-col font-normal text-[30px] lg:text-[34px] xl:text-[45px] text-white btn gap-[20px] leading-none">
-                      <span
-                        dangerouslySetInnerHTML={{
-                          __html: data?.brand_4_text?.value,
-                        }}
-                      ></span>
-                      <ArrowRightLight
-                        className={
-                          'w-[30px] h-[30px] sm:w-[35px] sm:h-[35px] lg:w-[74px] lg:h-[74px] border rounded-full p-[5px] sm:p-2 lg:p-[12px] text-white border-white transition-all'
-                        }
-                      />
-                    </h2>
-                  </div> */}
                 <div
                   id="product-brand-pagination-div4"
                   className="product-brand-pagination-div text-center mt-[10px]"
@@ -562,9 +461,6 @@ export function ProductBrandSection({data}) {
           <div className="product-brand-list pb-[70px] md:pb-[100px] lg:pb-[140px] container">
             <div className="product-brand-list-inner relative flex flex-col lg:flex-row gap-y-[10px]  gap-x-[50px] 2xl:gap-x-[80px] items-center">
               <div className="img-with-text relative w-full lg:w-[50%]">
-                {/* <Link to={`${data?.brand_6_redirect?.value}`}
-                className="relative block w-full overflow-hidden pb-[42%] min-h-[250px]"
-              > */}
                 <div className="product-brand--swiper-buttons">
                   <div
                     id="swiper-button-next-product-brand6"
@@ -619,21 +515,6 @@ export function ProductBrandSection({data}) {
                     },
                   )}
                 </Swiper>
-                {/* <div className="img-overlay absolute w-full h-2/4 inset-x-0 bottom-0"></div> */}
-                {/* <div className="title-col container absolute bottom-0 left-0 w-full py-[20px] lg:py-[30px] xl:py-[40px] 2xl:py-[50px]">
-                    <h2 className="whitespace-pre-wrap flex flex-col font-normal text-[30px] lg:text-[34px] xl:text-[45px] text-white btn gap-[20px] leading-none">
-                      <span
-                        dangerouslySetInnerHTML={{
-                          __html: data?.brand_6_text?.value,
-                        }}
-                      ></span>
-                      <ArrowRightLight
-                        className={
-                          'w-[30px] h-[30px] sm:w-[35px] sm:h-[35px] lg:w-[74px] lg:h-[74px] border rounded-full p-[5px] sm:p-2 lg:p-[12px] text-white border-white transition-all'
-                        }
-                      />
-                    </h2>
-                  </div> */}
                 <div
                   id="product-brand-pagination-div6"
                   className="product-brand-pagination-div text-center mt-[10px]"
