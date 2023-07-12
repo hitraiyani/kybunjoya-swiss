@@ -159,7 +159,6 @@ export default function kybunJoyaTherapie() {
             ></div>
             <div className="btn-wrap">
               <Link
-                href="#"
                 to={kybunJoyaTherapie?.about_section_redirect_url?.value}
                 className="inline-block rounded-[100px] bg-[#00795c] text-white text-center px-[20px] md:px-[35px] py-[12px] md:py-[15px] hover:bg-black hover:text-white text-[14px] md:text-[18px] max-w-fit"
               >
