@@ -113,6 +113,8 @@ export function Layout({children, layout, locale}) {
   );
 }
 
+
+
 function Breadcrumb() {
   const isHome = useIsHomePath();
 
