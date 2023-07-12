@@ -192,18 +192,7 @@ export default function kontakt() {
       <section className="contact-page-form-sec form-sec my-[40px] md:my-[60px] lg:my-[80px] xl:my-[100px]">
         <div className="form-wrap container">
           <div className="form-row flex flex-col lg:flex-row gap-[30px] max-w-[1168px] mx-auto">
-            <div className="col-left w-full lg:w-[40%] hidden">
-              <div className="col-inner">
-                <div
-                  className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] tracking-[-0.400697px] font-normal leading-[1.4]"
-                  dangerouslySetInnerHTML={{
-                    __html: toHTML(
-                      pageReference?.left_side_kontakt_text?.value,
-                    ),
-                  }}
-                ></div>
-              </div>
-            </div>
+          
             <div className="col-right w-full">
               <div className="col-inner">
                 <div className="title-wrap">
@@ -432,9 +421,6 @@ ${MEDIA_FRAGMENT}
               reference {
                 ...Media
               }
-            }
-            left_side_kontakt_text : field(key: "left_side_kontakt_text") {
-              value
             }
             kontakt_title : field(key: "kontakt_title") {
               value
