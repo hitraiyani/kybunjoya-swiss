@@ -14,6 +14,7 @@ import {MEDIA_FRAGMENT, PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
 import {getHeroPlaceholder} from '~/lib/placeholders';
 import {AnalyticsPageType} from '@shopify/hydrogen';
 import {AICO_API_URL, AICO_API_TOKEN, QUICK_LINK_MENU_TITLE} from '~/lib/const';
+import { translate } from '../../lib/utils';
 
 
 const seo = ({data}) => ({
@@ -77,6 +78,7 @@ export async function loader({params,request, context}) {
   return defer({
     
     heroSlider,
+    language,
     fourMainSection,
     pursueSection,
     newsBannerSection,
@@ -92,7 +94,8 @@ export default function Homepage() {
     heroSlider,
     fourMainSection,
     pursueSection,
-    newsBannerSection
+    newsBannerSection,
+    language 
   } = useLoaderData();
   const [root] = useMatches();
 
@@ -104,6 +107,7 @@ export default function Homepage() {
   return (
     <>
       <Hero hereMetaObj={heroSlider}/>
+       {/* {translate('test', language)} */}
       
       {fourMainSection && (
         <Suspense>

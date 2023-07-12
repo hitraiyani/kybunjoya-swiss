@@ -107,7 +107,7 @@ export default function App() {
   //useAnalytics(hasUserConsent, locale);
 
   return (
-    <html lang={'de'}>
+    <html lang={locale.language}>
       <head>
         <Seo />
         <Meta />

@@ -22,6 +22,7 @@ import {
   ShopifyCookie,
   Newsletter,
 } from '~/components';
+
 import {
   useParams,
   Form,
@@ -36,6 +37,8 @@ import {useIsHydrated} from '~/hooks/useIsHydrated';
 import {useCartFetchers} from '~/hooks/useCartFetchers';
 import {COOKIEBOT_KEY} from '~/lib/const';
 import {Helmet} from 'react-helmet';
+import {concatAST} from 'graphql';
+import Cookies from 'js-cookie';
 
 export function Layout({children, layout, locale}) {
   const isHome = useIsHomePath();
@@ -91,6 +94,7 @@ export function Layout({children, layout, locale}) {
       <Header
         title={layout?.shop.name ?? 'Hydrogen'}
         menu={layout?.headerMenu}
+        locale={locale}
       />
       <main
         role="main"
@@ -99,7 +103,11 @@ export function Layout({children, layout, locale}) {
       >
         {children}
       </main>
-      <Footer menu={layout?.footerMenu} main_menu={layout?.headerMenu} />
+      <Footer
+        menu={layout?.footerMenu}
+        main_menu={layout?.headerMenu}
+        locale={locale}
+      />
     </>
   );
 }
@@ -170,7 +178,7 @@ function Breadcrumb() {
   );
 }
 
-function Header({title, menu}) {
+function Header({title, menu, locale}) {
   const isHome = useIsHomePath();
 
   const {
@@ -195,15 +203,21 @@ function Header({title, menu}) {
 
   return (
     <>
-      <CartDrawer isOpen={isCartOpen} onClose={closeCart} />
+      <CartDrawer isOpen={isCartOpen} onClose={closeCart} locale={locale} />
       {menu && (
-        <MenuDrawer isOpen={isMenuOpen} onClose={closeMenu} menu={menu} />
+        <MenuDrawer
+          isOpen={isMenuOpen}
+          onClose={closeMenu}
+          menu={menu}
+          locale={locale}
+        />
       )}
       <DesktopHeader
         isHome={isHome}
         title={title}
         menu={menu}
         openCart={openCart}
+        locale={locale}
       />
       <MobileHeader
         isHome={isHome}
@@ -211,6 +225,7 @@ function Header({title, menu}) {
         openCart={openCart}
         openMenu={openMenu}
         isMenuOpen={isMenuOpen}
+        locale={locale}
       />
     </>
   );
@@ -232,7 +247,7 @@ function CartDrawer({isOpen, onClose}) {
   );
 }
 
-export function MenuDrawer({isOpen, onClose, menu}) {
+export function MenuDrawer({isOpen, onClose, menu, locale}) {
   const [isScrolled, setisScrolled] = useState(false);
 
   useEffect(() => {
@@ -253,15 +268,16 @@ export function MenuDrawer({isOpen, onClose, menu}) {
       className={`p-6 overflow-auto !bg-white !bg-opacity-80 mobile-menu-Drawer ${
         isScrolled ? 'header-sticky' : ''
       }`}
+      locale={locale}
     >
       <div className="grid">
-        <MenuMobileNav menu={menu} onClose={onClose} />
+        <MenuMobileNav menu={menu} onClose={onClose} locale={locale} />
       </div>
     </Drawer>
   );
 }
 
-function MenuMobileNav({menu, onClose}) {
+function MenuMobileNav({menu, onClose, locale}) {
   const {pathname, search} = useLocation();
   useEffect(() => {
     const links = document.querySelectorAll('.kybunjoya-menu-hover');
@@ -328,11 +344,29 @@ function MenuMobileNav({menu, onClose}) {
           })}
         </ul>
         <div className="language-switcher !hidden flex gap-[11px] mb-[30px]">
-          <button className="de-lang w-[25px] h-[25px] border-transparent rounded-full border-[2px] hover:border-[#009470] transition-all duration-500 overflow-hidden active">
-            <img className='w-full h-full object-cover block' src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/de-flag-new.svg?v=1689078588" />
+          <button
+            onClick={handleLanguageChange}
+            data-lang="de"
+            className={`de-lang w-[25px] h-[25px] border-transparent rounded-full border-[2px] hover:border-[#009470] transition-all duration-500 overflow-hidden ${
+              locale?.language == 'DE' ? 'active' : ''
+            }`}
+          >
+            <img
+              className="w-full h-full object-cover block"
+              src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/de-flag-new.svg?v=1689078588"
+            />
           </button>
-          <button className="en-lang w-[25px] h-[25px] border-transparent rounded-full border-[2px] hover:border-[#009470] transition-all duration-500 overflow-hidden">
-            <img className='w-full h-full object-cover block' src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/en-flag-new.svg?v=1689078588" />
+          <button
+            onClick={handleLanguageChange}
+            data-lang="en"
+            className={`en-lang w-[25px] h-[25px] border-transparent rounded-full border-[2px] hover:border-[#009470] transition-all duration-500 overflow-hidden ${
+              locale?.language == 'EN' ? 'active' : ''
+            } `}
+          >
+            <img
+              className="w-full h-full object-cover block"
+              src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/en-flag-new.svg?v=1689078588"
+            />
           </button>
         </div>
       </div>
@@ -347,6 +381,7 @@ function SubMegaMenu({menu_items, onClose}) {
       {(menu_items || []).map((item, key) => {
         return (
           <li key={key}>
+            
             <Link
               to={item.to}
               target={item.target}
@@ -448,7 +483,7 @@ function MobileHeader({title, isHome, openCart, openMenu, isMenuOpen}) {
   );
 }
 
-function DesktopHeader({isHome, menu, openCart, title}) {
+function DesktopHeader({isHome, menu, openCart, title, locale}) {
   const params = useParams();
   const {y} = useWindowScroll();
   return (
@@ -587,7 +622,7 @@ function FooterMainMenuSub({sub_menu_item}) {
   );
 }
 
-function Footer({menu, main_menu}) {
+function Footer({menu, main_menu, locale}) {
   const chunkSize = 2;
   const mainMenuChunk = [];
   for (let i = 0; i < main_menu?.items?.length; i += chunkSize) {
@@ -642,8 +677,12 @@ function Footer({menu, main_menu}) {
                       </a>
                     </p>
                   </div> */}
-                  <div className='footer-logo max-w-[218px] hidden md:block'>
-                    <img className='w-full h-auto' src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/logo_2.png?v=1686818080" alt="" />
+                  <div className="footer-logo max-w-[218px] hidden md:block">
+                    <img
+                      className="w-full h-auto"
+                      src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/logo_2.png?v=1686818080"
+                      alt=""
+                    />
                   </div>
                   <div className="flex mb-[19px] xl:mb-[30px] md:mt-[36px]">
                     <p className="text-[18px] md:text-[26px] text-[#00795C] flex gap-4 font-bold items-center hover:underline ">
@@ -660,20 +699,35 @@ function Footer({menu, main_menu}) {
                         />
                       </svg>
                     </span> */}
-                      <Link
-                        to={'/kontakt'}
-                        className=""
-                      >
+                      <Link to={'/kontakt'} className="">
                         Kontakt
                       </Link>
                     </p>
                   </div>
-                  <div className="language-switcher !hidden flex gap-[11px] mb-[20px] md:mb-[30px]">
-                    <button className="de-lang w-[25px] h-[25px] border-transparent rounded-full border-[2px] hover:border-[#009470] transition-all duration-500 overflow-hidden active">
-                      <img className='w-full h-full object-cover block' src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/de-flag-new.svg?v=1689078588" />
+                  <div className="language-switcher !hidden  flex gap-[11px] mb-[20px] md:mb-[30px]">
+                    <button
+                      onClick={handleLanguageChange}
+                      data-lang="de"
+                      className={`de-lang w-[25px] h-[25px] border-transparent rounded-full border-[2px] hover:border-[#009470] transition-all duration-500 overflow-hidden  ${
+                        locale?.language == 'DE' ? 'active' : ''
+                      }`}
+                    >
+                      <img
+                        className="w-full h-full object-cover block"
+                        src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/de-flag-new.svg?v=1689078588"
+                      />
                     </button>
-                    <button className="en-lang w-[25px] h-[25px] border-transparent rounded-full border-[2px] hover:border-[#009470] transition-all duration-500 overflow-hidden">
-                      <img className='w-full h-full object-cover block' src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/en-flag-new.svg?v=1689078588" />
+                    <button
+                      onClick={handleLanguageChange}
+                      data-lang="en"
+                      className={`en-lang w-[25px] h-[25px] border-transparent rounded-full border-[2px] hover:border-[#009470] transition-all duration-500 overflow-hidden  ${
+                        locale?.language == 'EN' ? 'active' : ''
+                      }`}
+                    >
+                      <img
+                        className="w-full h-full object-cover block"
+                        src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/en-flag-new.svg?v=1689078588"
+                      />
                     </button>
                   </div>
                   <div className="flex gap-[20px] items-center">
@@ -694,7 +748,11 @@ function Footer({menu, main_menu}) {
                         />
                       </svg>
                     </a>
-                    <a target="_blank" href="https://www.linkedin.com/company/kybunjoya" className="text-[#898989] hover:text-[#00795C]">
+                    <a
+                      target="_blank"
+                      href="https://www.linkedin.com/company/kybunjoya"
+                      className="text-[#898989] hover:text-[#00795C]"
+                    >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width={32}
@@ -826,6 +884,32 @@ function Footer({menu, main_menu}) {
     </>
   );
 }
+const handleLanguageChange = (e) => {
+  e.stopPropagation();
+  let selectedLang = e.currentTarget.getAttribute('data-lang');
+  if (selectedLang) {
+    Cookies.set('language', selectedLang, {expires: 30});
+    setTimeout(() => {
+      var selectedLanguage = selectedLang;
+      const currentUrl = window.location.href;
+      let newUrl = currentUrl;
+      const firstPathPart = location.pathname
+        .substring(1)
+        .split('/')[0]
+        .toLowerCase();
+      if (firstPathPart == 'en' && selectedLanguage != 'en') {
+        newUrl = currentUrl.replace('/en', '');
+      }
+      if (firstPathPart != 'en' && selectedLanguage == 'en') {
+        newUrl =
+          location.origin +
+          '/en/' +
+          (location.pathname + location.search).substr(1);
+      }
+      window.location.href = newUrl;
+    }, 200);
+  }
+};
 
 const FooterLink = ({item}) => {
   if (item.to.startsWith('http')) {

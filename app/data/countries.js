@@ -228,3 +228,16 @@ export const countries = {
     currency: 'EUR',
   },
 };
+
+export const languageSwitchOption = {
+  default: {
+    language: 'DE',
+    country: 'CH',
+    currency: 'CHF',
+  },
+  '/en': {
+    language: 'EN',
+    country: 'US',
+    currency: 'CHF',
+  }
+};

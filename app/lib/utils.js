@@ -2,8 +2,18 @@ import {useLocation, useMatches} from '@remix-run/react';
 
 // @ts-expect-error types not available
 import typographicBase from 'typographic-base';
-import {countries} from '~/data/countries';
+import {countries, languageSwitchOption} from '~/data/countries';
 import { STORE_LOCALE} from '~/lib/const';
+
+import deJson from '~/data/de.json';
+import enJson from '~/data/en.json';
+
+
+export const translate = (key, language) => {
+  const translations = language?.toLowerCase() === 'en' ? enJson : deJson;
+  return translations[key] || key;
+};
+;
 
 export function missingClass(string, prefix) {
   if (!string) {
@@ -245,6 +255,33 @@ export function getLocaleFromRequest(request) {
         pathPrefix: '',
       };
 }
+
+
+export function getLocaleFromRequestNew(request) {
+
+  const cookieValue = request.headers.get('Cookie');
+  const languageCookie = cookieValue ? cookieValue.split(';').find(cookie => cookie.trim().startsWith('language=')) : null;
+  const language = languageCookie ? languageCookie.split('=')[1] : null;
+
+
+  const url = new URL(request.url);
+  const firstPathPart =
+    '/' + url.pathname.substring(1).split('/')[0].toLowerCase();
+
+  const languageSwitchKey = (language && language == 'en')  ? '/en' : firstPathPart;
+
+  return languageSwitchOption[languageSwitchKey]
+    ? {
+        ...languageSwitchOption[languageSwitchKey],
+        pathPrefix: languageSwitchKey,
+      }
+    : {
+        ...languageSwitchOption['default'],
+        pathPrefix: '',
+      };
+}
+
+
 
 export function usePrefixPathWithLocale(path) {
   const [root] = useMatches();
