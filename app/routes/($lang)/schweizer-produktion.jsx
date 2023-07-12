@@ -10,7 +10,7 @@ import {MEDIA_FRAGMENT} from '~/data/fragments';
 const seo = ({data}) => ({
   title: data?.page?.seo?.title,
   description: data?.page?.seo?.description,
-  url : data?.url,
+  url: data?.url,
 });
 
 export const handle = {
@@ -46,8 +46,6 @@ export default function schweizerSchuhpropktion() {
     page?.schweizer_schuhpropktion?.reference?.slider_images?.references?.edges.map(
       (data) => data.node.image.url,
     );
-
-
 
   return (
     <>
@@ -85,7 +83,7 @@ export default function schweizerSchuhpropktion() {
       <div className="about-sec about-sec-slider container pb-[20px] md:pb-[30px] lg:pb-[40px] xl:pb-[50px] pt-[40px] md:pt-[60px] lg:pt-[80px] xl:pt-[100px]">
         <div className="flex flex-col lg:flex-row gap-y-[20px] gap-x-[30px] xl:gap-x-[63px] items-center ">
           <div className="img-col lg:w-[40%] w-full relative">
-          <h2 className="text-[#00795C] text-[30px] lg:text-[35px] xl:text-[40px] tracking-[-1.05984px] mb-[20px] font-bold lg:hidden">
+            <h2 className="text-[#00795C] text-[30px] lg:text-[35px] xl:text-[40px] tracking-[-1.05984px] mb-[20px] font-bold lg:hidden">
               {page?.schweizer_schuhpropktion?.reference?.main_title?.value}
             </h2>
             <div className="product-brand--swiper-buttons">
@@ -141,7 +139,6 @@ export default function schweizerSchuhpropktion() {
             </div>
           </div>
           <div className="content-col w-full lg:w-[60%] lg:max-w-[785px] flex flex-col">
-            
             <h2 className="text-[#00795C] text-[30px] lg:text-[35px] xl:text-[40px] tracking-[-1.05984px] mb-[20px] font-bold hidden lg:block">
               {page?.schweizer_schuhpropktion?.reference?.main_title?.value}
             </h2>
@@ -169,8 +166,6 @@ export default function schweizerSchuhpropktion() {
           </div>
         </div>
       </div>
-      
-     
 
       <div className="video-sec container pt-[20px] md:pt-[30px] lg:pt-[40px] xl:pt-[50px] pb-[40px] md:pb-[60px] lg:pb-[80px] xl:pb-[100px]">
         <div className="flex flex-col lg:flex-row gap-y-[20px] gap-x-[30px] xl:gap-x-[63px] items-center">
@@ -247,12 +242,12 @@ ${MEDIA_FRAGMENT}
       schweizer_schuhpropktion : metafield(namespace: "custom", key: "schweizer_schuhpropktion") {
         reference {
           ... on Metaobject {
-            hero_image : field(key: "hero_image") {
+            hero_image: field(key: "hero_image") {
               reference {
                 ...Media
               }
             }
-            slider_images : field(key: "slider_images") {
+            slider_images: field(key: "slider_images") {
               references(first: 5) {
                   edges {
                       node {
@@ -261,37 +256,37 @@ ${MEDIA_FRAGMENT}
                   }
               }
             }
-            main_title : field(key: "main_title") {
+            main_title: field(key: "main_title") {
               value
             }
-            long_description : field(key: "long_description") {
+            long_description: field(key: "long_description") {
               value
             }
-            short_description : field(key: "short_description") {
+            short_description: field(key: "short_description") {
               value
             }
-            book_now_link : field(key: "book_now_link") {
+            book_now_link: field(key: "book_now_link") {
               value
             }
-            book_now_link_text : field(key: "book_now_link_text") {
+            book_now_link_text: field(key: "book_now_link_text") {
               value
             }
-            head_title : field(key: "head_title") {
+            head_title: field(key: "head_title") {
               value
             }
-            video_section_title : field(key: "video_section_title") {
+            video_section_title: field(key: "video_section_title") {
               value
             }
-            video_section_url : field(key: "video_section_url") {
+            video_section_url: field(key: "video_section_url") {
               value
             }
-            video_section_desc : field(key: "video_section_desc") {
+            video_section_desc: field(key: "video_section_desc") {
               value
             }
-            video_section_button_text : field(key: "video_section_button_text") {
+            video_section_button_text: field(key: "video_section_button_text") {
               value
             }
-            video_section_button_redirect : field(key: "video_section_button_redirect") {
+            video_section_button_redirect: field(key: "video_section_button_redirect") {
               value
             }
          
