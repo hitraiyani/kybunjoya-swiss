@@ -54,13 +54,14 @@ export function CollectionsGrid({data}) {
                     }
                   />
                 </Heading>
-                <div className="content-img relative overflow-hidden w-auto max-w-full flex-1 hidden"> 
+                
+                {/* <div className="content-img relative overflow-hidden w-auto max-w-full flex-1 hidden"> 
                   <Image
                     data={data?.section_4_mask_image?.reference.image}
                     className="h-full w-full object-cover object-top"
                     alt=""
                   />
-                </div>
+                </div> */}
               </div>
             </Link>
           </div>

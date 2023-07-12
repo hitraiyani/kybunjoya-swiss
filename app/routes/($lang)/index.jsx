@@ -352,11 +352,7 @@ ${MEDIA_FRAGMENT}
           ...Media
         }
       }
-      section_4_mask_image : field(key: "section_4_mask_image") {
-        reference {
-          ...Media
-        }
-      }
+     
       section_4_text : field(key: "section_4_text") {
         value
       }
