@@ -432,37 +432,7 @@ export default function ratgeberseite() {
               );
             }
           })}
-
-          {/* {buttonAccordionMapping?.map((item, index) => {
-            console.log("item",item);
-            if (!item.accordion_title) return <></>;
-            return (
-              <ExpandingCardStyle2
-                key={index}
-                id={`link${index + 1}`}
-                content={item.accordion_content}
-                title={item.accordion_title}
-              />
-            );
-          })} */}
-          <div className="info-bottom mt-[20px] md:mt-[40px] lg:mt-[60px] xl:mt-[80px] hidden">
-            <div className="title-wrap">
-              <h3 className="text-center tracking-[-0.97152px] text-[28px] md:text-[30px] lg:text-[2 leading-[1.1] font-medium">
-                {page?.ratgeber_detail?.reference?.cta_text?.value}
-              </h3>
-            </div>
-            <div className="link-wrap flex justify-center mt-[20px] lg:mt-[40px]">
-              <Link
-                className="block rounded-[100px] bg-black text-white
-            text-center px-[60px] py-[20px] md:py-[25px] hover:bg-[#00795c] hover:text-white text-[16px] md:text-[18px] max-w-fit font-normal leading-none"
-                to={
-                  page?.ratgeber_detail?.reference?.cta_button_redirect?.value
-                }
-              >
-                {page?.ratgeber_detail?.reference?.cta_button_text?.value}
-              </Link>
-            </div>
-          </div>
+          
         </div>
       </section>
       <section className="search-bar-section mb-[40px] md:mb-[60px] lg:mb-[80px] xl:mb-[100px]">
@@ -693,15 +663,8 @@ ${MEDIA_FRAGMENT}
             head_new_desc_with_list : field(key: "head_new_desc_with_list") {
               value
             }
-            cta_text : field(key: "cta_text") {
-              value
-            }
-            cta_button_text : field(key: "cta_button_text") {
-              value
-            }
-            cta_button_redirect : field(key: "cta_button_redirect") {
-              value
-            }
+         
+          
             button_accordion_mapping : field(key: "button_accordion_mapping") {
               value
             }
