@@ -225,14 +225,6 @@ export default function ratgeberseite() {
                   </div>
                 </div>
                 <div
-                  className="desc mt-[20px] mx-auto lg:mt-[30px] xl:mt-[52px] text-[28px] md:text-[30px] lg:text-[35px] 2xl:text-[40px] tracking-[-0.97152px]  text-left xl:text-right text-black leading-[1.2] hidden"
-                  dangerouslySetInnerHTML={{
-                    __html: toHTML(
-                      page?.ratgeber_detail?.reference?.head_content?.value,
-                    ),
-                  }}
-                ></div>
-                <div
                   className="desc  mt-[20px] lg:mt-[40px] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] max-w-[910px]"
                   dangerouslySetInnerHTML={{
                     __html:
@@ -307,41 +299,7 @@ export default function ratgeberseite() {
                     </div>
                   </form>
                 </div>
-                {/* <div className="mt-[40px] lg:mt-[60px] xl:mt-[80px] border-t-[1px] border-black pt-[30px] lg:pt-[40px] xl:pt-[60px]"> */}
-                <div className="mt-[33px] border-black">
-                  <h3 className="text-[#00795C] text-[30px] lg:text-[35px] xl:text-[40px] tracking-[-1.05984px] mb-[30px] font-bold hidden">
-                    {
-                      page?.ratgeber_detail?.reference?.product_list_title
-                        ?.value
-                    }
-                  </h3>
-                  
-                  <div className="scroll-links-wrap flex flex-wrap gap-x-[20px] lg:gap-x-[30px] xl:gap-x-[40px] 2xl:gap-x-[78px] gap-y-[20px] lg:gap-y-[30px] xl:gap-y-[40px] 2xl:gap-y-[64px] !hidden">
-                    {filteredKybunJoyaProducts.map((product, index) => {
-                      return (
-                        <Link
-                          key={index}
-                          to={`/dr-kybun-joya/${product.handle}`}
-                          className="w-[calc(50%_-_10px)] lg:w-[calc(33.33%_-_20px)] xl:w-[calc(33.33%_-_26.66px)] 2xl:w-[calc(33.33%_-_52px)] p-[15px] xl:px-[20px] xl:py-[26px] flex justify-center items-center text-center bg-white text-[16px] md:text-[18px] lg:text-[20px] xl:text-[28px] 2xl:text-[36px] leading-[1.4] hover:text-white hover:bg-[#00795C] xl:min-h-[116px] font-bold text-[#00795C] transition-all duration-500 rounded-[10px] min-h-[86px]"
-                        >
-                          {product.title}
-                        </Link>
-                      );
-                    })}
-                    {/* {buttonAccordionMapping?.map((item, index) => {
-                    return (
-                      <a
-                        key={index}
-                        href={`#link${index + 1}`}
-                        hreflink={item.hreflink}
-                        className="p-[15px] xl:px-[20px] xl:py-[26px] flex justify-center items-center text-center bg-white text-[16px] md:text-[18px] lg:text-[20px] xl:text-[20px] 2xl:text-[21px] leading-[1.4] hover:text-white hover:bg-[#00795C] xl:min-h-[116px] font-bold text-[#00795C] transition-all duration-500 my-achor-link"
-                      >
-                        {item.button_name}
-                      </a>
-                    );
-                  })} */}
-                  </div>
-                </div>
+                
               </div>
             </div>
           </div>
@@ -439,35 +397,7 @@ export default function ratgeberseite() {
                     </SwiperSlide>
                   );
                 })}
-              {/* {productSliderData.length > 0 &&
-              productSliderData.map((item, index) => {
-                return (
-                  <SwiperSlide key={index}>
-                    <div className="popular-item">
-                      <div className="img-wrap overflow-hidden pb-[100%] md:pb-[60%] mb-[15px] relative">
-                        <img
-                          className="absolute inset-0 w-full h-full object-cover"
-                          src={item.image}
-                          alt=""
-                        />
-                      </div>
-                      <div className='desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mb-[5px]'>
-                        <p>Gesundheitswissen</p>
-                      </div>
-                      <div className="text-black text-[24px] md:text-[30px] lg:text-[35px] leading-[1.1] tracking-[-0.97152px] font-medium mb-[15px]">
-                        <p>{item.title}</p>
-                      </div>
-                      <Link
-                        to={item.redirect_button_link}
-                        className="inline-block rounded-[100px] bg-[#00795c] text-white
-                          text-center px-[35px] py-[15px] hover:bg-black hover:text-white text-[18px] max-w-fit"
-                      >
-                        {item.redirect_button_text}
-                      </Link>
-                    </div>
-                  </SwiperSlide>
-                );
-              })} */}
+             
             </Swiper>
           </div>
           <div
@@ -759,9 +689,6 @@ ${MEDIA_FRAGMENT}
             head_title : field(key: "head_title") {
               value
             }
-            head_content : field(key: "head_content") {
-              value
-            }
             
             head_new_desc_with_list : field(key: "head_new_desc_with_list") {
               value
@@ -812,9 +739,7 @@ ${MEDIA_FRAGMENT}
                 ...Media
               }
             }
-            product_list_title : field(key: "product_list_title") {
-              value
-            }
+           
             product_slider_title : field(key: "product_slider_title") {
               value
             }
