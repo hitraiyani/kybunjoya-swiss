@@ -1447,6 +1447,9 @@ video {
 .max-w-xl {
   max-width: 36rem;
 }
+.max-w-\[642px\] {
+  max-width: 642px;
+}
 .flex-1 {
   flex: 1 1 0%;
 }
@@ -4668,6 +4671,10 @@ video {
 
   .xl\:mt-\[87px\] {
     margin-top: 87px;
+  }
+
+  .xl\:mt-\[28px\] {
+    margin-top: 28px;
   }
 
   .xl\:\!block {
