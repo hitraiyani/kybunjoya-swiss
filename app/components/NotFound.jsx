@@ -26,7 +26,7 @@ export function NotFound({type = 'page'}) {
             src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/jeremy-lapak-CVvFVQ_-oUg-unsplash_111.png?v=1685708224"
           ></img>
           <div className="absolute inset-x-0 bottom-0 w-full img-overlay h-full md:h-[80%]"></div>
-          <div className="absolute slider-content bottom-[15px] md:bottom-[33px] left-0 right-0 w-full px-[15px] md:px-[33px] lg:px-[46px] max-w-[642px]">
+          <div className="absolute slider-content bottom-[15px] md:bottom-[33px] left-0 right-0 w-full px-[15px] md:px-[33px] lg:px-[46px] max-w-[702px]">
             <h2 className="text-white title text-[35px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] font-bold">
             Seite nicht gefunden
             </h2>
