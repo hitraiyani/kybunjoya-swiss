@@ -19,13 +19,13 @@ export function NotFound({type = 'page'}) {
       <FeaturedSection /> */}
       <section className="heroSlider-sec mt-[21px] mb-[40px] md:mb-[60px] lg:mb-[80px]">
       <div className="container">
-        <div className="relative flex w-full image-container pb-[100%] md:pb-[60%] lg:pb-[50%] xl:pb-[40%] 2xl:pb-[32%] overflow-hidden">
+        <div className="relative flex w-full image-container pb-[100%] md:pb-[65%] lg:pb-[55%] xl:pb-[45%] 2xl:pb-[38.5%] overflow-hidden">
           <img
             className="object-cover object-center w-full h-full active absolute inset-0"
             id="defaultActive"
             src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/jeremy-lapak-CVvFVQ_-oUg-unsplash_111.png?v=1685708224"
           ></img>
-          <div className="absolute inset-x-0 bottom-0 w-full img-overlay h-full md:h-2/4"></div>
+          <div className="absolute inset-x-0 bottom-0 w-full img-overlay h-full md:h-[80%]"></div>
           <div className="absolute slider-content bottom-[15px] md:bottom-[33px] left-0 right-0 w-full px-[15px] md:px-[33px] lg:px-[46px] max-w-[642px]">
             <h2 className="text-white title text-[35px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] font-bold">
             Seite nicht gefunden
