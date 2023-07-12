@@ -95,16 +95,6 @@ export default function ratgeberseite() {
   const headProductList = filteredKybunJoyaProducts?.slice(0, 5);
   const sliderProductList = filteredKybunJoyaProducts?.slice(5, 11);
 
-  const buttonAccordionMapping = page?.ratgeber_detail?.reference
-    ?.button_accordion_mapping?.value
-    ? JSON.parse(page.ratgeber_detail.reference.button_accordion_mapping.value)
-    : [];
-
-  const productSliderData = page?.ratgeber_detail?.reference
-    ?.product_slider_data?.value
-    ? JSON.parse(page?.ratgeber_detail?.reference?.product_slider_data?.value)
-    : [];
-
   useEffect(() => {
     document.querySelectorAll('.my-achor-link').forEach(function (link) {
       link.addEventListener('mouseover', function (e) {
@@ -655,20 +645,12 @@ ${MEDIA_FRAGMENT}
         reference {
           ... on Metaobject {
             handle
-            
             head_title : field(key: "head_title") {
               value
             }
-            
             head_new_desc_with_list : field(key: "head_new_desc_with_list") {
               value
             }
-         
-          
-            button_accordion_mapping : field(key: "button_accordion_mapping") {
-              value
-            }
-           
             footer_main_left_section_desc : field(key: "footer_main_left_section_desc") {
               value
             }
@@ -707,9 +689,6 @@ ${MEDIA_FRAGMENT}
               value
             }
             product_slider_sub_desc : field(key: "product_slider_sub_desc") {
-              value
-            }
-            product_slider_data : field(key: "product_slider_data") {
               value
             }
             product_sub_list_title : field(key: "product_sub_list_title") {

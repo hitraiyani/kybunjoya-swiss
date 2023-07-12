@@ -857,7 +857,7 @@ const roots = {
   produkte: {title: 'Produkte', to: '/pages/products'},
   ratgeber: {title: 'Dr. kybun Joya', to: '/pages/ratgeber'},
   beratung: {title: 'Beratung', to: '/pages/ratgeberseite'},
-  heritage: {title: 'kybun Joya Story', to: '/pages/aboutus'},
+  story: {title: 'kybun Joya Story', to: '/pages/story'},
   kontakt: {title: 'Kontakt', to: '/pages/kontakt'},
   shopfinder: {title: 'Filialen', to: '/pages/shopfinder'},
   blog: {title: 'Blog', to: '/pages/blog'},
