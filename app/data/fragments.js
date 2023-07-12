@@ -43,6 +43,18 @@ export const PRODUCT_CARD_FRAGMENT = `#graphql
     publishedAt
     handle
     description
+    title_de_ch: metafield(namespace: "custom_fields", key: "title_de_ch") {
+      value
+    }
+    title_en: metafield(namespace: "custom_fields", key: "title_en") {
+      value
+    }
+    description_de_ch: metafield(namespace: "custom_fields", key: "description_de_ch") {
+      value
+    }
+    description_en: metafield(namespace: "custom_fields", key: "description_en") {
+      value
+     }
     featuredImage {
       url
          altText

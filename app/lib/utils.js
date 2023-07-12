@@ -875,3 +875,9 @@ export function getBreadCrumbs(
 
   return initial;
 }
+
+export const productTranslate = (product, key, language) => {
+  const translation = language?.toLowerCase() === 'en' ? (product[key+'_en']["value"]) ? product[key+'_en']["value"] : product?.[key] :  (product[key+'_de_ch']["value"]) ? product[key+'_de_ch']["value"] : product?.[key];
+  return translation;
+  
+};

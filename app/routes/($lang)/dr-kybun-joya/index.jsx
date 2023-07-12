@@ -9,7 +9,7 @@ import React, {Fragment, useState, useEffect} from 'react';
 import {json} from '@shopify/remix-oxygen';
 import {useLoaderData} from '@remix-run/react';
 import {MEDIA_FRAGMENT, PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
-import {toHTML, getBreadCrumbs} from '~/lib/utils';
+import {toHTML, getBreadCrumbs, productTranslate} from '~/lib/utils';
 import {Navigation, Pagination, Scrollbar, A11y, Autoplay} from 'swiper';
 import {Swiper, SwiperSlide} from 'swiper/react';
 
@@ -72,7 +72,7 @@ export async function loader({request, params, context}) {
   });
 
   return json(
-    {page, collection, sub_collections, pageCollectionTitle, url: request.url},
+    {page, collection, sub_collections, pageCollectionTitle, url: request.url, locale : context.storefront.i18n.language},
     {
       headers: {
         // TODO cacheLong()
@@ -81,7 +81,7 @@ export async function loader({request, params, context}) {
   );
 }
 export default function ratgeberseite() {
-  const {page, collection, sub_collections, pageCollectionTitle} =
+  const {page, collection, sub_collections, pageCollectionTitle, locale} =
     useLoaderData();
 
   const [searchQuery, setSearchQuery] = useState('');
@@ -235,7 +235,7 @@ export default function ratgeberseite() {
                               key={index}
                               to={`/dr-kybun-joya/${product.handle}`}
                             >
-                              {product.title}
+                              { productTranslate(product, 'title', locale) }
                             </Link>
                           </li>
                         );
@@ -373,7 +373,7 @@ export default function ratgeberseite() {
                             <p>Gesundheitswissen</p>
                           </div> */}
                           <div className="text-black text-[24px] md:text-[30px] lg:text-[35px] leading-[1.1] tracking-[-0.97152px] font-medium mb-[15px] hover:text-[#00795c]">
-                            <p>{product.title}</p>
+                            <p>{ productTranslate(product, 'title', locale) }</p>
                           </div>
                         </Link>
                         <Link
