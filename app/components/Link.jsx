@@ -27,7 +27,7 @@ export function Link(props) {
   let toWithLocale = to;
 
   if (typeof to === 'string') {
-    toWithLocale = selectedLocale ? to : to;
+    toWithLocale = selectedLocale ? `${selectedLocale.pathPrefix}${to}` : to;
   }
 
   if (typeof className === 'function') {

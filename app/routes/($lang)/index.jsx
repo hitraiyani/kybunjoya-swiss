@@ -98,6 +98,7 @@ export default function Homepage() {
     language 
   } = useLoaderData();
   const [root] = useMatches();
+  // console.log(language);
 
   const [newsSliderData, setNewsSliderData] = useState();
 
@@ -107,7 +108,7 @@ export default function Homepage() {
   return (
     <>
       <Hero hereMetaObj={heroSlider}/>
-       {/* {translate('test', language)} */}
+      {/* {translate('test', language)} */}
       
       {fourMainSection && (
         <Suspense>
@@ -311,56 +312,56 @@ const HOMEPAGE_FOUR_MAIN_SECTION_QUERY = `#graphql
 ${MEDIA_FRAGMENT}
   query homeStyleGuide($metaObjectId: ID!, $country: CountryCode, $language: LanguageCode)
   @inContext(country: $country, language: $language) {
-    data : metaobject(id : $metaObjectId) {
+    data: metaobject(id: $metaObjectId) {
       handle
       id
       type
-      main_title : field(key: "main_title") {
+      main_title: field(key: "main_title") {
         value
       }
-      section_1_text : field(key: "section_1_text") {
+      section_1_text: field(key: "section_1_text") {
         value
       }
-      section_1_image : field(key: "section_1_image") {
+      section_1_image: field(key: "section_1_image") {
         reference {
           ...Media
         }
       }
-      section_1_button_redirect : field(key: "section_1_button_redirect") {
+      section_1_button_redirect: field(key: "section_1_button_redirect") {
         value
       }
-      section_2_image : field(key: "section_2_image") {
+      section_2_image: field(key: "section_2_image") {
         reference {
           ...Media
         }
       }
-      section_2_text : field(key: "section_2_text") {
+      section_2_text: field(key: "section_2_text") {
         value
       }
-      section_2_button_redirect : field(key: "section_2_button_redirect") {
+      section_2_button_redirect: field(key: "section_2_button_redirect") {
         value
       }
-      section_3_image : field(key: "section_3_image") {
+      section_3_image: field(key: "section_3_image") {
         reference {
           ...Media
         }
       }
-      section_3_text : field(key: "section_3_text") {
+      section_3_text: field(key: "section_3_text") {
         value
       }
-      section_3_button_redirect : field(key: "section_3_button_redirect") {
+      section_3_button_redirect: field(key: "section_3_button_redirect") {
         value
       }
-      section_4_image : field(key: "section_4_image") {
+      section_4_image: field(key: "section_4_image") {
         reference {
           ...Media
         }
       }
      
-      section_4_text : field(key: "section_4_text") {
+      section_4_text: field(key: "section_4_text") {
         value
       }
-      section_4_button_redirect : field(key: "section_4_button_redirect") {
+      section_4_button_redirect: field(key: "section_4_button_redirect") {
         value
       }
     }
