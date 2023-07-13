@@ -86,14 +86,16 @@ export default function ratgeberseite() {
 
   const [searchQuery, setSearchQuery] = useState('');
 
-  const filteredKybunJoyaProducts = collection?.products?.nodes.filter(
+  const filteredKybunJoyaProducts = collection?.products?.nodes;
+
+  const headProductList = filteredKybunJoyaProducts?.slice(0, 5);
+  const sliderProductList = filteredKybunJoyaProducts?.slice(5, 11);
+  const filteredSubCollections = sub_collections?.nodes?.filter(
     (product) => {
       return product.title.toLowerCase().includes(searchQuery.toLowerCase());
     },
   );
-
-  const headProductList = filteredKybunJoyaProducts?.slice(0, 5);
-  const sliderProductList = filteredKybunJoyaProducts?.slice(5, 11);
+  
 
   useEffect(() => {
     document.querySelectorAll('.my-achor-link').forEach(function (link) {
@@ -406,7 +408,7 @@ export default function ratgeberseite() {
           <h3 className="text-[#00795C] text-[30px] lg:text-[35px] xl:text-[40px] tracking-[-1.05984px] mb-[30px] font-bold">
             {page?.ratgeber_detail?.reference?.product_sub_list_title?.value}
           </h3>
-          {sub_collections?.nodes?.map((item, index) => {
+          {filteredSubCollections?.map((item, index) => {
             if (
               item.title != pageCollectionTitle &&
               item?.products?.edges.length > 0
@@ -462,7 +464,7 @@ export default function ratgeberseite() {
                 </button>
                 <input
                   type="search"
-                  placeholder="Suchen"
+                  placeholder={page?.ratgeber_detail?.reference?.search_box_label?.value}
                   name="q"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
@@ -692,6 +694,9 @@ ${MEDIA_FRAGMENT}
               value
             }
             product_sub_list_title: field(key: "product_sub_list_title") {
+              value
+            }
+            search_box_label: field(key: "search_box_label") {
               value
             }
             page_collection: field(key: "page_collection") {

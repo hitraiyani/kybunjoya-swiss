@@ -19,6 +19,7 @@ import {
   getAicoMetaByKeyName,
   getYoutubeId,
   getBreadCrumbs,
+  productTranslate
 } from '~/lib/utils';
 import {flattenConnection} from '@shopify/hydrogen';
 import {STORE_LOCALE, AICO_API_IMAGE_PREFIX} from '~/lib/const';
@@ -50,7 +51,7 @@ export async function loader({request, params, context}) {
   }
 
   return json(
-    {product, dr_kybun_joya_article, url: request.url},
+    {product, dr_kybun_joya_article, url: request.url, locale : context.storefront.i18n.language},
     {
       headers: {
         // TODO cacheLong()
@@ -60,16 +61,16 @@ export async function loader({request, params, context}) {
 }
 
 export default function ratgeberSeiteFersensporn() {
-  const { product, dr_kybun_joya_article} = useLoaderData();
+  const { locale, product, dr_kybun_joya_article} = useLoaderData();
 
   const aicoProductData = product;
 
   const aicoDrKybunJoyaProductTags = [];
   let drKybunJoyaTagHeading = '';
   aicoProductData?.tags?.forEach((item) => {
-    if (item.includes('attribute_de_kybun')) {
+    if (item.includes(`attribute_${locale?.toLocaleLowerCase()}_kybun`)) {
       if (!drKybunJoyaTagHeading) {
-        drKybunJoyaTagHeading = item.split('_').at(-2);
+        //drKybunJoyaTagHeading = item.split('_').at(-2);
       }
       aicoDrKybunJoyaProductTags.push(item.split('_').at(-1));
     }
@@ -77,9 +78,9 @@ export default function ratgeberSeiteFersensporn() {
   const aicoProductTagsUrsachen = [];
   let ursachenTagHeading = '';
   aicoProductData?.tags?.forEach((item) => {
-    if (item.includes('attribute_de_Ursachen')) {
+    if (item.includes(`attribute_${locale?.toLocaleLowerCase()}_Ursachen`)) {
       if (!ursachenTagHeading) {
-        ursachenTagHeading = item.split('_').at(-2);
+        //ursachenTagHeading = item.split('_').at(-2);
       }
       aicoProductTagsUrsachen.push(item.split('_').at(-1));
     }
@@ -109,45 +110,67 @@ export default function ratgeberSeiteFersensporn() {
   //   }
   // }
 
-  const dkj_videourl_de_ch = getAicoMetaByKeyName(
-    aicoProductData?.aico_custom_fields_de_ch?.value,
-    'dkj_videourl_de_ch',
-  );
+  // const dkj_videourl_de_ch = getAicoMetaByKeyName(
+  //   aicoProductData?.aico_custom_fields_de_ch?.value,
+  //   'dkj_videourl_de_ch',
+  // );
+  // const videoId = getYoutubeId(dkj_videourl_de_ch);
 
-  const dkj_name_international_de_ch = getAicoMetaByKeyName(
-    aicoProductData?.aico_custom_fields_de_ch?.value,
-    'dkj_name_international_de_ch',
-  );
+  let dkj_name_international = '';
+  let rtgb_textursachen = '';
+  let rtgb_textkybunjoyatherapie = '';
+  if (locale.toLocaleLowerCase() == 'en') {
+    dkj_name_international = getAicoMetaByKeyName(
+      aicoProductData?.aico_custom_fields_en?.value,
+      'dkj_name_international_en',
+    );
 
-  const videoId = getYoutubeId(dkj_videourl_de_ch);
+    rtgb_textursachen = getAicoMetaByKeyName(
+      aicoProductData?.aico_custom_fields_en?.value,
+      'rtgb_textursachen_en',
+    );
 
-  const dkj_videotitel_de_ch = getAicoMetaByKeyName(
-    aicoProductData?.aico_custom_fields_de_ch?.value,
-    'dkj_videotitel_de_ch',
-  );
+    rtgb_textkybunjoyatherapie = getAicoMetaByKeyName(
+      aicoProductData?.aico_custom_fields_en?.value,
+      'rtgb_textkybunjoyatherapie_en',
+    );
 
-  const dkj_videobeschreibung_de_ch = getAicoMetaByKeyName(
-    aicoProductData?.aico_custom_fields_de_ch?.value,
-    'dkj_videobeschreibung_de_ch',
-  );
+  } else {
+      dkj_name_international = getAicoMetaByKeyName(
+        aicoProductData?.aico_custom_fields_de_ch?.value,
+        'dkj_name_international_de_ch',
+      );
+    
+      rtgb_textursachen = getAicoMetaByKeyName(
+        aicoProductData?.aico_custom_fields_de_ch?.value,
+        'rtgb_textursachen_de_ch',
+      );
+    
+      rtgb_textkybunjoyatherapie = getAicoMetaByKeyName(
+        aicoProductData?.aico_custom_fields_de_ch?.value,
+        'rtgb_textkybunjoyatherapie_de_ch',
+      );
+  }
 
-  const rtgb_textursachen_de_ch = getAicoMetaByKeyName(
-    aicoProductData?.aico_custom_fields_de_ch?.value,
-    'rtgb_textursachen_de_ch',
-  );
 
-  const rtgb_textkybunjoyatherapie_de_ch = getAicoMetaByKeyName(
-    aicoProductData?.aico_custom_fields_de_ch?.value,
-    'rtgb_textkybunjoyatherapie_de_ch',
-  );
+  // const dkj_videotitel_de_ch = getAicoMetaByKeyName(
+  //   aicoProductData?.aico_custom_fields_de_ch?.value,
+  //   'dkj_videotitel_de_ch',
+  // );
 
-  const rtgb_textnachbutton_de_ch = getAicoMetaByKeyName(
-    aicoProductData?.aico_custom_fields_de_ch?.value,
-    'rtgb_textnachbutton_de_ch',
-  );
+  // const dkj_videobeschreibung_de_ch = getAicoMetaByKeyName(
+  //   aicoProductData?.aico_custom_fields_de_ch?.value,
+  //   'dkj_videobeschreibung_de_ch',
+  // );
+
+ 
+
+  // const rtgb_textnachbutton_de_ch = getAicoMetaByKeyName(
+  //   aicoProductData?.aico_custom_fields_de_ch?.value,
+  //   'rtgb_textnachbutton_de_ch',
+  // );
 
   const [downloadLinks, setDownloadLinks] = useState([]);
-  const [menuLinks, setMenuLinks] = useState([]);
 
   useEffect(() => {
     if (aicoProductData?.documents?.value) {
@@ -160,9 +183,6 @@ export default function ratgeberSeiteFersensporn() {
       });
       setDownloadLinks(downListArr);
     }
-
-    const links = document.querySelectorAll('.scroll-link');
-    setMenuLinks(Array.from(links));
 
     // const downloadLinks = document.querySelectorAll('.download-link');
     // downloadLinks.forEach((link) => {
@@ -190,60 +210,6 @@ export default function ratgeberSeiteFersensporn() {
     // });
   }, []);
 
-  const scrollToSection = (targetId, headerHeight) => {
-    const targetSection = document.getElementById(targetId);
-    const targetPosition = targetSection.offsetTop - headerHeight;
-    const currentPosition = window.pageYOffset;
-    const distance = targetPosition - currentPosition;
-    const duration = 500; // adjust this value to change the duration of the animation
-    let start = null;
-
-    function step(timestamp) {
-      if (!start) start = timestamp;
-      const progress = timestamp - start;
-      window.scrollTo(
-        0,
-        easeInOutQuad(progress, currentPosition, distance, duration),
-      );
-      if (progress < duration) window.requestAnimationFrame(step);
-    }
-
-    function easeInOutQuad(t, b, c, d) {
-      t /= d / 2;
-      if (t < 1) return (c / 2) * t * t + b;
-      t--;
-      return (-c / 2) * (t * (t - 2) - 1) + b;
-    }
-
-    window.requestAnimationFrame(step);
-  };
-
-  useEffect(() => {
-    menuLinks.forEach((link) => {
-      link.addEventListener('click', (event) => {
-        event.preventDefault();
-        const targetId = link.dataset.target;
-        const headerHeight = 90;
-        scrollToSection(targetId, headerHeight);
-      });
-    });
-
-    return () => {
-      menuLinks.forEach((link) => {
-        link.removeEventListener('click', (event) => {
-          event.preventDefault();
-          const targetId = link.dataset.target;
-          scrollToSection(targetId);
-        });
-      });
-    };
-  }, [menuLinks]);
-
-  const [isActive, setActive] = useState('false');
-  const ToggleClass = () => {
-    setActive(!isActive);
-  };
-
   const {pathname} = useLocation();
   const breadCrumbsData = getBreadCrumbs(null, 'ratgeberdetailpage');
   breadCrumbsData.push({title: aicoProductData?.title, to: pathname});
@@ -259,7 +225,7 @@ export default function ratgeberSeiteFersensporn() {
                 <div className="w-full mb-[12px]">
                   <div className="title-wrap">
                     <h2 className="title text-[#00795C] text-[35px] lg:text-[40px] xl:text-[65px] tracking-[-1.05984px] mb-[30px] max-w-[870px] mx-auto">
-                      {aicoProductData?.title}
+                      { productTranslate(aicoProductData,'title', locale) }
                     </h2>
                     <div className="max-w-[1200px] mx-auto">
                       <div className="product-list-hero-img relative overflow-hidden pb-[55%] xl:pb-[45%] 2xl:pb-[35%] min-h-[230px] w-full">
@@ -270,15 +236,17 @@ export default function ratgeberSeiteFersensporn() {
                         />
                       </div>
                     </div>
-                    <h3 className="text-[24px] md:text-[28px] xl:text-[30px] text-[#00795C] font-bold leading-[1.2] mb-[20px]">
-                      {dkj_name_international_de_ch}
-                    </h3>
+                    {dkj_name_international && (
+                      <h3 className="text-[24px] md:text-[28px] xl:text-[30px] text-[#00795C] font-bold leading-[1.2] mb-[20px]">
+                        {dkj_name_international}
+                      </h3>
+                    )}
                   </div>
                 </div>
                 <div
                   className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] max-w-[870px] mx-auto mt-[44px]"
                   dangerouslySetInnerHTML={{
-                    __html: aicoProductData?.descriptionHtml,
+                    __html: productTranslate(aicoProductData,'description', locale),
                   }}
                 ></div>
               </div>
@@ -293,10 +261,10 @@ export default function ratgeberSeiteFersensporn() {
                   {aicoProductTagsUrsachen.length > 0 && (
                     <>
                       <h2 className="text-black text-[24px] md:text-[30px] lg:text-[35px] leading-[1.1] tracking-[-0.97152px] mb-[20px] font-medium">
-                        {ursachenTagHeading}
+                        {dr_kybun_joya_article?.causes_title?.value}
                       </h2>
-                      {rtgb_textursachen_de_ch && (
-                        <p>{rtgb_textursachen_de_ch}</p>
+                      {rtgb_textursachen && (
+                        <p>{rtgb_textursachen}</p>
                       )}
                       <ul className="list-style2 list-style3">
                         {aicoProductTagsUrsachen.map((item, index) => {
@@ -312,10 +280,10 @@ export default function ratgeberSeiteFersensporn() {
                   {aicoDrKybunJoyaProductTags.length > 0 && (
                     <>
                       <h2 className="text-black text-[24px] md:text-[30px] lg:text-[35px] leading-[1.1] tracking-[-0.97152px] mb-[20px] font-medium">
-                        {drKybunJoyaTagHeading}
+                        {dr_kybun_joya_article?.kybun_joya_therapy_title?.value}
                       </h2>
-                      {rtgb_textkybunjoyatherapie_de_ch && (
-                        <p>{rtgb_textkybunjoyatherapie_de_ch}</p>
+                      {rtgb_textkybunjoyatherapie && (
+                        <p>{rtgb_textkybunjoyatherapie}</p>
                       )}
                       <ul className="list-style2 list-style3">
                         {aicoDrKybunJoyaProductTags.map((item, index) => {
@@ -439,6 +407,18 @@ ${MEDIA_FRAGMENT}
       tags
       descriptionHtml
       description
+      title_de_ch: metafield(namespace: "custom_fields", key: "title_de_ch") {
+        value
+      }
+      title_en: metafield(namespace: "custom_fields", key: "title_en") {
+        value
+      }
+      description_de_ch: metafield(namespace: "custom_fields", key: "description_de_ch") {
+        value
+      }
+      description_en: metafield(namespace: "custom_fields", key: "description_en") {
+        value
+       }
       featuredImage {
         url
            altText
@@ -451,7 +431,13 @@ ${MEDIA_FRAGMENT}
       aico_custom_fields_de_ch : metafield(namespace: "aico", key: "aico_custom_fields_de_ch") {
         value
       }
+      aico_custom_fields_en : metafield(namespace: "aico", key: "aico_custom_fields_en") {
+        value
+      }
       description_de_ch : metafield(namespace: "custom_fields", key: "description_de_ch") {
+        value
+      }
+      description_en : metafield(namespace: "custom_fields", key: "description_en") {
         value
       }
       testimonials_data : metafield(namespace: "custom_fields", key: "testimonials_data") {
@@ -486,6 +472,12 @@ ${MEDIA_FRAGMENT}
         value
       }
       back_to_topic_overview_link: field(key: "back_to_topic_overview_link") {
+        value
+      }
+      causes_title : field(key: "causes_title") {
+        value
+      }
+      kybun_joya_therapy_title : field(key: "kybun_joya_therapy_title") {
         value
       }
     }
