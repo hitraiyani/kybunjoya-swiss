@@ -210,6 +210,23 @@ const LAYOUT_QUERY = `#graphql
         }
       }
     }
+    footerSectionData : metaobject(id : "gid://shopify/Metaobject/7616528705") {
+      handle
+      id
+      type
+      contact_page_title : field(key: "contact_page_title") {
+        value
+      }
+      contact_page_redirect : field(key: "contact_page_redirect") {
+        value
+      }
+      newsletter_subscriber_title : field(key: "newsletter_subscriber_title") {
+        value
+      }
+      newsletter_subscriber_subtitle : field(key: "newsletter_subscriber_subtitle") {
+        value
+      }
+    }
   }
   fragment MenuItem on MenuItem {
     id
@@ -364,7 +381,7 @@ async function getLayoutData({storefront}) {
     ? parseMenu(data?.footerMenu, customPrefixes)
     : undefined;
 
-  return {shop: data.shop, headerMenu, footerMenu};
+  return {shop: data.shop, headerMenu, footerMenu, footerSectionData : data.footerSectionData};
 }
 
 const CART_QUERY = `#graphql

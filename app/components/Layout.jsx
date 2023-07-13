@@ -107,10 +107,13 @@ export function Layout({children, layout, locale}) {
         menu={layout?.footerMenu}
         main_menu={layout?.headerMenu}
         locale={locale}
+        footerSectionData={layout?.footerSectionData}
       />
     </>
   );
 }
+
+
 
 function Breadcrumb() {
   const isHome = useIsHomePath();
@@ -622,7 +625,7 @@ function FooterMainMenuSub({sub_menu_item}) {
   );
 }
 
-function Footer({menu, main_menu, locale}) {
+function Footer({menu, main_menu, locale, footerSectionData}) {
   const chunkSize = 2;
   const mainMenuChunk = [];
   for (let i = 0; i < main_menu?.items?.length; i += chunkSize) {
@@ -699,8 +702,11 @@ function Footer({menu, main_menu, locale}) {
                         />
                       </svg>
                     </span> */}
-                      <Link to={'/kontakt'} className="">
-                        Kontakt
+                      <Link
+                        to={footerSectionData?.contact_page_redirect?.value}
+                        className=""
+                      >
+                        {footerSectionData?.contact_page_title?.value}
                       </Link>
                     </p>
                   </div>
@@ -786,7 +792,7 @@ function Footer({menu, main_menu, locale}) {
                     </div>
                   </div>
                 </div>
-                <Newsletter />
+                <Newsletter footerSectionData={footerSectionData}/>
                 <div className="grid grid-cols-2 gap-x-[10px] md:gap-x-[20px] lg:gap-x-[40px] xl:gap-x-[50px] 2xl:gap-x-[60px] md:block md:columns-3 footer-menu-items xl:flex-[1.5] 2xl:flex-[1.5] !hidden">
                   {main_menu.items &&
                     main_menu.items.map((item, index) => {

@@ -857,7 +857,7 @@ const roots = {
   produkte: {title: 'Produkte', to: '/pages/products'},
   ratgeber: {title: 'Dr. kybun Joya', to: '/pages/ratgeber'},
   beratung: {title: 'Beratung', to: '/pages/ratgeberseite'},
-  story: {title: 'kybun Joya Story', to: '/pages/story'},
+  heritage: {title: 'kybun Joya Story', to: '/pages/story'},
   kontakt: {title: 'Kontakt', to: '/pages/kontakt'},
   shopfinder: {title: 'Filialen', to: '/pages/shopfinder'},
   blog: {title: 'Blog', to: '/pages/blog'},
@@ -875,3 +875,9 @@ export function getBreadCrumbs(
 
   return initial;
 }
+
+export const productTranslate = (product, key, language) => {
+  const translation = language?.toLowerCase() === 'en' ? (product[key+'_en']["value"]) ? product[key+'_en']["value"] : product?.[key] :  (product[key+'_de_ch']["value"]) ? product[key+'_de_ch']["value"] : product?.[key];
+  return translation;
+  
+};

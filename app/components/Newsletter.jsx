@@ -2,7 +2,7 @@ import React, {useRef, useEffect, useState} from 'react';
 import {useFetcher, useLoaderData} from '@remix-run/react';
 import {IconArrowBottom, Link} from '~/components';
 
-export function Newsletter() {
+export function Newsletter({footerSectionData}) {
   const {load, data} = useFetcher();
   const [isLoading, setIsLoading] = useState(false);
   let formRef = useRef();
@@ -37,10 +37,10 @@ export function Newsletter() {
         </div>
         <div className="flex flex-wrap items-center ">
           <h3 className="text-[#00795C] w-full font-bold lg:text-[42px] text-[30px] mb-3">
-            Abonnieren Sie unseren Newsletter
+            {footerSectionData.newsletter_subscriber_title.value}
           </h3>
           <p className="font-normal  text-[#595959] w-full text-[19px]">
-            Bleiben Sie auf dem Laufenden mit den neuesten Ereignissen.
+            {footerSectionData.newsletter_subscriber_subtitle.value}
           </p>
         </div>
         <form className="mt-12" ref={formRef} onSubmit={handleSubscribe}>
