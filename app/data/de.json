@@ -1,3 +1,19 @@
 {
-  "register":"Anmelden"
+  "downloads":"Downloads",
+  "lern_more":"Mehr erfahren",
+  "your_message":"Deine Nachricht",
+  "your_message_placehoder":"Wie können wir dir helfen?",
+  "your_country" : " Dein Land / Region",
+  "phone_placeholder":"Telefonnummer (empfolen)",
+  "email":"Email Adresse",
+  "last_name":"Nachname",
+  "first_name":"Vorname",
+  "i_am":"Ich bin",
+  "end_customer":"Endkunde",
+  "bussiness_customer":"Geschäftskunde",
+  "send_message":"Nachricht gesendet.",
+  "error_message":"Etwas ist schief gelaufen, bitte versuchen Sie es später noch einmal.",
+  "company":"Firma",
+  "send":"Abschicken",
+  "Schweiz" : "Schweiz"
 }

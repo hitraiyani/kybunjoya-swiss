@@ -1,10 +1,11 @@
 import React, {useState, useEffect, useRef} from 'react';
 import {json} from '@shopify/remix-oxygen';
 import {useLoaderData, Form, useActionData} from '@remix-run/react';
-import {toHTML, getBreadCrumbs} from '~/lib/utils';
+import {toHTML, getBreadCrumbs, translate} from '~/lib/utils';
 import {MEDIA_FRAGMENT} from '~/data/fragments';
 import {Link, Breadcrumb, ArrowRight2} from '~/components';
 import wordCountry from '~/data/wordcountries.json';
+import wordCountry_en from '~/data/wordcountries_en.json';
 import Select from 'react-select'
 
 const seo = ({data}) => ({
@@ -106,6 +107,8 @@ export const action = async ({request, context, params}) => {
 };
 
 export async function loader({request, params, context}) {
+  const {language, country} = context.storefront.i18n;
+
   const {page} = await context.storefront.query(PAGE_QUERY, {
     variables: {
       handle: 'kontakt',
@@ -118,7 +121,7 @@ export async function loader({request, params, context}) {
   }
 
   return json(
-    {page, url: request.url},
+    {page, url: request.url,language},
     {
       headers: {
         // TODO cacheLong()
@@ -134,10 +137,14 @@ const formatGroupLabel = ({ label }) => {
 
 
 export default function kontakt() {
-  const [selectedOption, setSelectedOption] = useState({label: 'Schweiz', value: 'Schweiz'});
+  const {page,language} = useLoaderData();
 
-  const {page} = useLoaderData();
+  const Schweiz = translate("Schweiz",language);
+  const [selectedOption, setSelectedOption] = useState({label: Schweiz , value: 'Schweiz'});
+  
   const pageReference = page?.kontakt?.reference;
+
+  const wordCountry_trans = language?.toLowerCase() === 'en' ? wordCountry_en : wordCountry;
 
   const [contactReason, setContactReason] = useState('');
   const actionData = useActionData();
@@ -211,13 +218,12 @@ export default function kontakt() {
                           {emailSend ? (
                             <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-[20px]">
                               <h2 className="text-green-700">
-                                Nachricht gesendet.
+                                {translate("send_message",language)}
                               </h2>
                             </div>
                           ) : (
                             <h2 className="text-4xl mb-2 text-red-600">
-                              Etwas ist schief gelaufen, bitte versuchen Sie es
-                              später noch einmal.
+                              {translate("error_message",language)}
                             </h2>
                           )}
                         </>
@@ -250,9 +256,9 @@ export default function kontakt() {
                               }}
                               className="placeholder-[#333333] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal w-full pb-[10px] border-b-black border-b-[1px] focus:outline-none focus:shadow-none !rounded-none pr-[20px]"
                             >
-                              <option value={''}>Ich bin ...</option>
-                              <option value="Kunde">Endkunde</option>
-                              <option value="B2B">Geschäftskunde</option>
+                              <option value={''}>{translate("i_am",language)} ...</option>
+                              <option value="Kunde">{translate('end_customer',language)}</option>
+                              <option value="B2B">{translate("bussiness_customer",language)}</option>
                               {/* <option value="Investoren">Investoren</option> */}
                             </select>
                           </div>
@@ -264,7 +270,7 @@ export default function kontakt() {
                                 <input
                                   type="text"
                                   name="first_name"
-                                  placeholder="Vorname"
+                                  placeholder={translate("first_name",language)}
                                   className={`text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal w-full pb-[10px] ${
                                     actionData?.first_name
                                       ? 'placeholder-red-400 border-red-400'
@@ -276,7 +282,7 @@ export default function kontakt() {
                                 <input
                                   type="text"
                                   name="last_name"
-                                  placeholder="Nachname"
+                                  placeholder={translate("last_name",language)}
                                   className={`text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal w-full pb-[10px] ${
                                     actionData?.last_name
                                       ? 'placeholder-red-400 border-red-400'
@@ -290,7 +296,7 @@ export default function kontakt() {
                                 <input
                                   type="email"
                                   name="email"
-                                  placeholder="Email Adresse"
+                                  placeholder={translate("email",language)}
                                   className={`text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal w-full pb-[10px] ${
                                     actionData?.email
                                       ? 'placeholder-red-400 border-red-400'
@@ -305,7 +311,7 @@ export default function kontakt() {
                                     <input
                                       type="text"
                                       name="firm"
-                                      placeholder="Firma"
+                                      placeholder={translate("company",language)}
                                       className={`text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal w-full pb-[10px] ${
                                         actionData?.firm
                                           ? 'placeholder-red-400 border-red-400'
@@ -320,7 +326,7 @@ export default function kontakt() {
                                 <input
                                   type="text"
                                   name="telephone_number"
-                                  placeholder="Telefonnummer (empfolen)"
+                                  placeholder={translate("phone_placeholder",language)}
                                   className="placeholder-[#333333] text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal w-full pb-[10px] border-b-black border-b-[1px] focus:outline-none focus:shadow-none !rounded-none"
                                 />
                               </div>
@@ -328,19 +334,19 @@ export default function kontakt() {
                             <div className="form-group flex gap-[20px]">
                               <div className="form-control flex-1">
                                 <p className="note text-[15px] leading-[1.1] text-[#595959] font-normal w-full mb-[10px]">
-                                  Dein Land / Region
+                                  {translate("your_country",language)}
                                 </p>
 
 
                                 <Select
                                     options={[
                                       {
-                                      options: wordCountry.top_country,
+                                      options: wordCountry_trans.top_country,
                                       label: null,
                                       className: 'top-featured',
                                       },
                                       {
-                                        options: wordCountry.other_country,
+                                        options: wordCountry_trans.other_country,
                                         label: '1',
                                         className: 'top-featured',
                                       },
@@ -359,10 +365,10 @@ export default function kontakt() {
                             <div className="form-group flex gap-[20px]">
                               <div className="form-control flex-1">
                                 <p className="note text-[15px] leading-[1.1] text-[#595959] font-normal w-full mb-[10px]">
-                                  Deine Nachricht
+                                   {translate('your_message',language)}
                                 </p>
                                 <textarea
-                                  placeholder="Wie können wir dir helfen?"
+                                  placeholder= {translate('your_message_placehoder',language)}
                                   name="message"
                                   id=""
                                   cols="30"
@@ -385,7 +391,7 @@ export default function kontakt() {
                               type="submit"
                               className="inline-block rounded-[100px] bg-black text-white text-center px-[35px] lg:px-[60px] py-[15px] lg:py-[25px] hover:bg-[#00795c] hover:text-white text-[18px] max-w-fit font-medium"
                             >
-                              Abschicken
+                              {translate("send",language)}
                             </button>
                           </div>
                         </div>

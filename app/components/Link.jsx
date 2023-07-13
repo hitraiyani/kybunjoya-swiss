@@ -26,6 +26,9 @@ export function Link(props) {
 
   let toWithLocale = to;
 
+  if (to.startsWith('http') ) {
+    return <RemixLink to={toWithLocale} className={className} {...resOfProps} />;
+  }
   if (typeof to === 'string') {
     toWithLocale = selectedLocale ? `${selectedLocale.pathPrefix}${to}` : to;
   }

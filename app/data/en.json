@@ -1,3 +1,20 @@
 {
-  "register":"Register"
+  "downloads":"Downloads",
+  "lern_more":"Learn more",
+  "your_message":"Your message",
+  "your_message_placehoder":"How can we help you?",
+  "your_country" : "Your country/region",
+  "phone_placeholder":"Phone number (recommended)",
+  "email":"E-mail address",
+  "last_name":"Last name",
+  "first_name":"First name",
+  "i_am":"I am",
+  "end_customer":"End customer",
+  "bussiness_customer":"Business customer",
+  "send_message":"Sent message.",
+  "error_message":"Something went wrong, please try later again.",
+  "company":"Company",
+  "send":"Send",
+  "Schweiz" : "Switzerland"
+
 }

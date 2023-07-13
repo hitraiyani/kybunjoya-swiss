@@ -9,7 +9,7 @@ import React, {Fragment, useState, useEffect} from 'react';
 import {json} from '@shopify/remix-oxygen';
 import {useLoaderData} from '@remix-run/react';
 import {MEDIA_FRAGMENT, PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
-import {toHTML, getBreadCrumbs, productTranslate} from '~/lib/utils';
+import {toHTML, getBreadCrumbs, productTranslate, translate} from '~/lib/utils';
 import {Navigation, Pagination, Scrollbar, A11y, Autoplay} from 'swiper';
 import {Swiper, SwiperSlide} from 'swiper/react';
 
@@ -381,7 +381,7 @@ export default function ratgeberseite() {
                           className="inline-block rounded-[100px] bg-[#00795c] text-white
                             text-center px-[20px] md:px-[35px] py-[12px] md:py-[15px] hover:bg-black hover:text-white text-[14px] md:text-[18px] max-w-fit"
                         >
-                          Mehr erfahren
+                          {translate("lern_more",locale)}
                         </Link>
                       </div>
                     </SwiperSlide>

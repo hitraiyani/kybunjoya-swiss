@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import {ArrowRight2, IconDownload, Breadcrumb, Link} from '~/components';
 import {json} from '@shopify/remix-oxygen';
 import {useLoaderData} from '@remix-run/react';
-import {toHTML, getBreadCrumbs} from '~/lib/utils';
+import {toHTML, getBreadCrumbs, translate} from '~/lib/utils';
 import {MEDIA_FRAGMENT} from '~/data/fragments';
 
 const seo = ({data}) => ({
@@ -16,6 +16,7 @@ export const handle = {
 };
 
 export async function loader({request, params, context}) {
+  const {language, country} = context.storefront.i18n;
   const {page} = await context.storefront.query(PAGE_QUERY, {
     variables: {
       handle: 'karriere',
@@ -28,7 +29,7 @@ export async function loader({request, params, context}) {
   }
 
   return json(
-    {page, url: request.url},
+    {page, url: request.url,language},
     {
       headers: {
         // TODO cacheLong()
@@ -38,7 +39,7 @@ export async function loader({request, params, context}) {
 }
 
 export default function karriere() {
-  const {page} = useLoaderData();
+  const {page,language} = useLoaderData();
 
   const karriere = page?.karriere?.reference;
   const offeneStellData = karriere?.offene_stelle_data?.value
@@ -177,7 +178,7 @@ export default function karriere() {
             </div>
             <div className="btn-wrap justify-start items-start mt-[20px] md:mt-[40px] xl:mt-[60px] flex flex-col gap-[20px] md:gap-[20px] xl:gap-[30px]">
               <h4 className="text-[#00795C] text-[30px] lg:text-[35px] xl:text-[40px] tracking-[-1.05984px] font-bold">
-                Downloads
+                {translate('downloads',language)}
               </h4>
 
               <a
