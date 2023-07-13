@@ -259,26 +259,26 @@ const HOMEPAGE_HERO_SLIDER_QUERY = `#graphql
 ${MEDIA_FRAGMENT}
   query homeStyleGuide($metaObjectId: ID!, $country: CountryCode, $language: LanguageCode)
   @inContext(country: $country, language: $language) {
-    data : metaobject(id : $metaObjectId) {
+    data: metaobject(id : $metaObjectId) {
       handle
       id
       type
-      title : field(key: "title") {
+      title: field(key: "title") {
         value
       }
-      sub_title : field(key: "sub_title") {
+      sub_title: field(key: "sub_title") {
         value
       }
-      video_tag_mp_4_url : field(key: "video_tag_mp_4_url") {
+      video_tag_mp_4_url: field(key: "video_tag_mp_4_url") {
         value
       }
-      video_tag_ogg_url : field(key: "video_tag_ogg_url") {
+      video_tag_ogg_url: field(key: "video_tag_ogg_url") {
         value
       }
-      video_tag_image_url : field(key: "video_tag_image_url") {
+      video_tag_image_url: field(key: "video_tag_image_url") {
         value
       }
-      sub_title_image : field(key: "sub_title_image") {
+      sub_title_image: field(key: "sub_title_image") {
         reference {
           ...Media
         }
@@ -291,11 +291,11 @@ const HOMEPAGE_BRAND_ICONS_QUERY = `#graphql
 ${MEDIA_FRAGMENT}
   query homeStyleGuide($metaObjectId: ID!, $country: CountryCode, $language: LanguageCode)
   @inContext(country: $country, language: $language) {
-    data : metaobject(id : $metaObjectId) {
+    data: metaobject(id : $metaObjectId) {
       handle
       id
       type
-      images : field(key: "images") {
+      images: field(key: "images") {
         references(first: 15) {
           edges {
             node {
@@ -373,55 +373,55 @@ const HOMEPAGE_PURSUE_SECTION_SECTION_QUERY = `#graphql
 ${MEDIA_FRAGMENT}
   query homeStyleGuide($metaObjectId: ID!, $country: CountryCode, $language: LanguageCode)
   @inContext(country: $country, language: $language) {
-    data : metaobject(id : $metaObjectId) {
+    data: metaobject(id: $metaObjectId) {
       handle
       id
       type
-      main_title : field(key: "main_title") {
+      main_title: field(key: "main_title") {
         value
       }
-      section_1_text : field(key: "section_1_text") {
+      section_1_text: field(key: "section_1_text") {
         value
       }
-      section_1_image : field(key: "section_1_image") {
+      section_1_image: field(key: "section_1_image") {
         reference {
           ...Media
         }
       }
-      section_1_button_text : field(key: "section_1_button_text") {
+      section_1_button_text: field(key: "section_1_button_text") {
         value
       }
-      section_2_image : field(key: "section_2_image") {
+      section_2_image: field(key: "section_2_image") {
         reference {
           ...Media
         }
       }
-      section_2_text : field(key: "section_2_text") {
+      section_2_text: field(key: "section_2_text") {
         value
       }
-      section_2_button_text : field(key: "section_2_button_text") {
+      section_2_button_text: field(key: "section_2_button_text") {
         value
       }
-      section_3_image : field(key: "section_3_image") {
+      section_3_image: field(key: "section_3_image") {
         reference {
           ...Media
         }
       }
-      section_3_text : field(key: "section_3_text") {
+      section_3_text: field(key: "section_3_text") {
         value
       }
-      section_3_button_text : field(key: "section_3_button_text") {
+      section_3_button_text: field(key: "section_3_button_text") {
         value
       }
-      section_4_image : field(key: "section_4_image") {
+      section_4_image: field(key: "section_4_image") {
         reference {
           ...Media
         }
       }
-      section_4_text : field(key: "section_4_text") {
+      section_4_text: field(key: "section_4_text") {
         value
       }
-      section_4_button_text : field(key: "section_4_button_text") {
+      section_4_button_text: field(key: "section_4_button_text") {
         value
       }
     }
@@ -432,17 +432,17 @@ const HOMEPAGE_NEWS_BANNER_QUERY = `#graphql
 ${MEDIA_FRAGMENT}
   query homeStyleGuide($metaObjectId: ID!, $country: CountryCode, $language: LanguageCode)
   @inContext(country: $country, language: $language) {
-    data : metaobject(id : $metaObjectId) {
+    data: metaobject(id: $metaObjectId) {
       handle
       id
       type
-      title : field(key: "title") {
+      title: field(key: "title") {
         value
       }
-      sub_title : field(key: "sub_title") {
+      sub_title: field(key: "sub_title") {
         value
       }
-      banner_image : field(key: "banner_image") {
+      banner_image: field(key: "banner_image") {
         reference {
           ...Media
         }

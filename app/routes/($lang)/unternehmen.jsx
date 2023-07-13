@@ -159,45 +159,45 @@ ${MEDIA_FRAGMENT}
       id
       title
       body
-      unternehmen : metafield(namespace: "custom", key: "unternehmen") {
+      unternehmen: metafield(namespace: "custom", key: "unternehmen") {
         reference {
           ... on Metaobject {
-            head_title : field(key: "head_title") {
+            head_title: field(key: "head_title") {
               value
             }
-            main_desc : field(key: "main_desc") {
+            main_desc: field(key: "main_desc") {
               value
             }
-            video_tag_mp_4_url : field(key: "video_tag_mp_4_url") {
+            video_tag_mp_4_url: field(key: "video_tag_mp_4_url") {
               value
             }
-            video_tag_ogg_url : field(key: "video_tag_ogg_url") {
+            video_tag_ogg_url: field(key: "video_tag_ogg_url") {
               value
             }
-            video_tag_image_url : field(key: "video_tag_image_url") {
+            video_tag_image_url: field(key: "video_tag_image_url") {
               value
             }
-            quote_section_title : field(key: "quote_section_title") {
+            quote_section_title: field(key: "quote_section_title") {
               value
             }
-            quote_section_desc : field(key: "quote_section_desc") {
+            quote_section_desc: field(key: "quote_section_desc") {
               value
             }
-            quote_section_button_text : field(key: "quote_section_button_text") {
+            quote_section_button_text: field(key: "quote_section_button_text") {
               value
             }
-            quote_section_button_redirect : field(key: "quote_section_button_redirect") {
+            quote_section_button_redirect: field(key: "quote_section_button_redirect") {
               value
             }
-            quote_section_sub_desc : field(key: "quote_section_sub_desc") {
+            quote_section_sub_desc: field(key: "quote_section_sub_desc") {
               value
             }
-            quote_section_sub_image : field(key: "quote_section_sub_image") {
+            quote_section_sub_image: field(key: "quote_section_sub_image") {
               reference {
                 ...Media
               }
             }
-            quote_section_image : field(key: "quote_section_image") {
+            quote_section_image: field(key: "quote_section_image") {
               reference {
                 ...Media
               }

@@ -661,19 +661,19 @@ const BRAND_PAGE_HERO_SECTION_QUERY = `#graphql
 ${MEDIA_FRAGMENT}
   query homeStyleGuide($metaObjectId: ID!, $country: CountryCode, $language: LanguageCode)
   @inContext(country: $country, language: $language) {
-    data : metaobject(id : $metaObjectId) {
+    data: metaobject(id : $metaObjectId) {
       handle
       id
       type
-      head_title : field(key: "head_title") {
+      head_title: field(key: "head_title") {
         value
       }
-      head_image : field(key: "head_image") {
+      head_image: field(key: "head_image") {
         reference {
           ...Media
         }
       }
-      slider_images : field(key: "slider_images") {
+      slider_images: field(key: "slider_images") {
         references(first: 15) {
           edges {
             node {
@@ -682,10 +682,10 @@ ${MEDIA_FRAGMENT}
           }
         }
       }
-      slider_overlay_content_1 : field(key: "slider_overlay_content_1") {
+      slider_overlay_content_1: field(key: "slider_overlay_content_1") {
         value
       }
-      slider_overlay_content_2 : field(key: "slider_overlay_content_2") {
+      slider_overlay_content_2: field(key: "slider_overlay_content_2") {
         value
       }
       banner_image : field(key: "banner_image") {
@@ -693,15 +693,15 @@ ${MEDIA_FRAGMENT}
           ...Media
         }
       }
-      interective_image : field(key: "interective_image") {
+      interective_image: field(key: "interective_image") {
         reference {
           ...Media
         }
       }
-      kybun_online_shop_url : field(key: "kybun_online_shop_url") {
+      kybun_online_shop_url: field(key: "kybun_online_shop_url") {
         value
       }
-      storefinder_url : field(key: "storefinder_url") {
+      storefinder_url: field(key: "storefinder_url") {
         value
       }
     }

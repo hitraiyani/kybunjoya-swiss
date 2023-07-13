@@ -166,44 +166,44 @@ const PAGE_QUERY = `#graphql
       id
       title
       body
-      about_us : metafield(namespace: "custom", key: "about_us") {
+      about_us: metafield(namespace: "custom", key: "about_us") {
         reference {
           ... on Metaobject {
             handle
-            time_line_1_title : field(key: "time_line_1_title") {
+            time_line_1_title: field(key: "time_line_1_title") {
               value
             }
-            time_line_1_year : field(key: "time_line_1_year") {
+            time_line_1_year: field(key: "time_line_1_year") {
               value
             }
-            time_line_1_desc : field(key: "time_line_1_desc") {
+            time_line_1_desc: field(key: "time_line_1_desc") {
               value
             }
-            time_line_1_media : field(key: "time_line_1_media") {
+            time_line_1_media: field(key: "time_line_1_media") {
               value
             }
-            time_line_2_title : field(key: "time_line_2_title") {
+            time_line_2_title: field(key: "time_line_2_title") {
               value
             }
-            time_line_2_year : field(key: "time_line_2_year") {
+            time_line_2_year: field(key: "time_line_2_year") {
               value
             }
-            time_line_2_desc : field(key: "time_line_2_desc") {
+            time_line_2_desc: field(key: "time_line_2_desc") {
               value
             }
-            time_line_2_media : field(key: "time_line_2_media") {
+            time_line_2_media: field(key: "time_line_2_media") {
               value
             }
-            time_line_3_title : field(key: "time_line_3_title") {
+            time_line_3_title: field(key: "time_line_3_title") {
               value
             }
-            time_line_3_year : field(key: "time_line_3_year") {
+            time_line_3_year: field(key: "time_line_3_year") {
               value
             }
-            time_line_3_desc : field(key: "time_line_3_desc") {
+            time_line_3_desc: field(key: "time_line_3_desc") {
               value
             }
-            time_line_3_media : field(key: "time_line_3_media") {
+            time_line_3_media: field(key: "time_line_3_media") {
               value
             }
           }

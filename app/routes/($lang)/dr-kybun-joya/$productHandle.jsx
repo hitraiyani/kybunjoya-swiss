@@ -464,28 +464,28 @@ ${MEDIA_FRAGMENT}
         value
       }
     }
-    dr_kybun_joya_article : metaobject(id :"gid://shopify/Metaobject/7606731073") {
-      shopfinder_section_title : field(key: "shopfinder_section_title") {
+    dr_kybun_joya_article: metaobject(id :"gid://shopify/Metaobject/7606731073") {
+      shopfinder_section_title: field(key: "shopfinder_section_title") {
         value
       }
-      shopfinder_section_desc : field(key: "shopfinder_section_desc") {
+      shopfinder_section_desc: field(key: "shopfinder_section_desc") {
         value
       }
-      shopfinder_section_image : field(key: "shopfinder_section_image") {
+      shopfinder_section_image: field(key: "shopfinder_section_image") {
         reference {
           ...Media
         }
       }
-      shopfinder_section_button_text : field(key: "shopfinder_section_button_text") {
+      shopfinder_section_button_text: field(key: "shopfinder_section_button_text") {
         value
       }
-      shopfinder_section_button_redirect : field(key: "shopfinder_section_button_redirect") {
+      shopfinder_section_button_redirect: field(key: "shopfinder_section_button_redirect") {
         value
       }
-      back_to_topic_overview_text : field(key: "back_to_topic_overview_text") {
+      back_to_topic_overview_text: field(key: "back_to_topic_overview_text") {
         value
       }
-      back_to_topic_overview_link : field(key: "back_to_topic_overview_link") {
+      back_to_topic_overview_link: field(key: "back_to_topic_overview_link") {
         value
       }
     }

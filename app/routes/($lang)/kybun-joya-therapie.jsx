@@ -180,49 +180,49 @@ ${MEDIA_FRAGMENT}
       id
       title
       body
-      kybun_joya_therapie : metafield(namespace: "custom", key: "kybun_joya_therapie") {
+      kybun_joya_therapie: metafield(namespace: "custom", key: "kybun_joya_therapie") {
         reference {
           ... on Metaobject {
-            head_title : field(key: "head_title") {
+            head_title: field(key: "head_title") {
               value
             }
-            head_desc : field(key: "head_desc") {
+            head_desc: field(key: "head_desc") {
               value
             }
-            faq : field(key: "faq") {
+            faq: field(key: "faq") {
               value
             }
-            holistic_section_title : field(key: "holistic_section_title") {
+            holistic_section_title: field(key: "holistic_section_title") {
               value
             }
-            holistic_section_desc : field(key: "holistic_section_desc") {
+            holistic_section_desc: field(key: "holistic_section_desc") {
               value
             }
-            holistic_section_image : field(key: "holistic_section_image") {
+            holistic_section_image: field(key: "holistic_section_image") {
               reference {
                 ...Media
               }
             }
-            hero_image : field(key: "hero_image") {
+            hero_image: field(key: "hero_image") {
               reference {
                 ...Media
               }
             }
-            about_section_image : field(key: "about_section_image") {
+            about_section_image: field(key: "about_section_image") {
               reference {
                 ...Media
               }
             }
-            about_section_desc : field(key: "about_section_desc") {
+            about_section_desc: field(key: "about_section_desc") {
               value
             }
-            about_section_title : field(key: "about_section_title") {
+            about_section_title: field(key: "about_section_title") {
               value
             }
-            about_section_redirect_text : field(key: "about_section_redirect_text") {
+            about_section_redirect_text: field(key: "about_section_redirect_text") {
               value
             }
-            about_section_redirect_url : field(key: "about_section_redirect_url") {
+            about_section_redirect_url: field(key: "about_section_redirect_url") {
               value
             }
           }
