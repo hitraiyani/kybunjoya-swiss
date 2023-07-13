@@ -36,7 +36,7 @@ import slick_themecss from "slick-carousel/slick/slick-theme.css";
 const seo = ({data, pathname}) => {
    
     return {
-      title: SHOP_TITLE,
+      title: data?.layout?.footerSectionData?.main_seo_title?.value?? SHOP_TITLE,
       titleTemplate: '%s',
       description: data?.layout?.shop?.description,
       media: {
@@ -214,6 +214,9 @@ const LAYOUT_QUERY = `#graphql
       handle
       id
       type
+      main_seo_title : field(key: "main_seo_title") {
+        value
+      }
       contact_page_title : field(key: "contact_page_title") {
         value
       }
