@@ -207,39 +207,39 @@ const PAGE_QUERY = `#graphql
       id
       title
       body
-      karriere : metafield(namespace: "custom", key: "karriere") {
+      karriere: metafield(namespace: "custom", key: "karriere") {
         reference {
           ... on Metaobject {
-            head_title : field(key: "head_title") {
+            head_title: field(key: "head_title") {
               value
             }
             
-            head_desc_part_2 : field(key: "head_desc_part_2") {
+            head_desc_part_2: field(key: "head_desc_part_2") {
               value
             }
             
-            video_tag_mp_4_url : field(key: "video_tag_mp_4_url") {
+            video_tag_mp_4_url: field(key: "video_tag_mp_4_url") {
               value
             }
-            video_tag_ogg_url : field(key: "video_tag_ogg_url") {
+            video_tag_ogg_url: field(key: "video_tag_ogg_url") {
               value
             }
-            video_tag_image_url : field(key: "video_tag_image_url") {
+            video_tag_image_url: field(key: "video_tag_image_url") {
               value
             }
-            offene_stellen_section_title : field(key: "offene_stellen_section_title") {
+            offene_stellen_section_title: field(key: "offene_stellen_section_title") {
               value
             }
-            offene_stellen_section_desc : field(key: "offene_stellen_section_desc") {
+            offene_stellen_section_desc: field(key: "offene_stellen_section_desc") {
               value
             }
-            offene_stelle_data : field(key: "offene_stelle_data") {
+            offene_stelle_data: field(key: "offene_stelle_data") {
               value
             }
-            footer_cta_label : field(key: "footer_cta_label") {
+            footer_cta_label: field(key: "footer_cta_label") {
               value
             }
-            footer_cta : field(key: "footer_cta") {
+            footer_cta: field(key: "footer_cta") {
               reference {
                 ... on GenericFile {
                     id

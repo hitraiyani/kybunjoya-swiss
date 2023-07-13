@@ -641,60 +641,60 @@ ${MEDIA_FRAGMENT}
       id
       title
       body
-      ratgeber_detail : metafield(namespace: "custom", key: "ratgeber_detail") {
+      ratgeber_detail: metafield(namespace: "custom", key: "ratgeber_detail") {
         reference {
           ... on Metaobject {
             handle
-            head_title : field(key: "head_title") {
+            head_title: field(key: "head_title") {
               value
             }
-            head_new_desc_with_list : field(key: "head_new_desc_with_list") {
+            head_new_desc_with_list: field(key: "head_new_desc_with_list") {
               value
             }
-            footer_main_left_section_desc : field(key: "footer_main_left_section_desc") {
+            footer_main_left_section_desc: field(key: "footer_main_left_section_desc") {
               value
             }
-            footer_main_left_section_image : field(key: "footer_main_left_section_image") {
+            footer_main_left_section_image: field(key: "footer_main_left_section_image") {
               reference {
                 ...Media
               }
             }
-            footer_main_left_section_cta : field(key: "footer_main_left_section_cta") {
+            footer_main_left_section_cta: field(key: "footer_main_left_section_cta") {
               value
             }
-            footer_main_left_section_cta_label : field(key: "footer_main_left_section_cta_label") {
+            footer_main_left_section_cta_label: field(key: "footer_main_left_section_cta_label") {
               value
             }
-            footer_main_right_section_desc : field(key: "footer_main_right_section_desc") {
+            footer_main_right_section_desc: field(key: "footer_main_right_section_desc") {
               value
             }
-            footer_main_right_section_image : field(key: "footer_main_right_section_image") {
+            footer_main_right_section_image: field(key: "footer_main_right_section_image") {
               reference {
                 ...Media
               }
             }
-            footer_main_right_section_cta : field(key: "footer_main_right_section_cta") {
+            footer_main_right_section_cta: field(key: "footer_main_right_section_cta") {
               value
             }
-            footer_main_right_section_cta_label : field(key: "footer_main_right_section_cta_label") {
+            footer_main_right_section_cta_label: field(key: "footer_main_right_section_cta_label") {
               value
             }
-            hero_image : field(key: "hero_image") {
+            hero_image: field(key: "hero_image") {
               reference {
                 ...Media
               }
             }
            
-            product_slider_title : field(key: "product_slider_title") {
+            product_slider_title: field(key: "product_slider_title") {
               value
             }
-            product_slider_sub_desc : field(key: "product_slider_sub_desc") {
+            product_slider_sub_desc: field(key: "product_slider_sub_desc") {
               value
             }
-            product_sub_list_title : field(key: "product_sub_list_title") {
+            product_sub_list_title: field(key: "product_sub_list_title") {
               value
             }
-            page_collection : field(key: "page_collection") {
+            page_collection: field(key: "page_collection") {
               reference {
                 ... on Collection {
                   title

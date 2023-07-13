@@ -410,22 +410,22 @@ ${MEDIA_FRAGMENT}
       id
       title
       body
-      kontakt : metafield(namespace: "custom", key: "kontakt") {
+      kontakt: metafield(namespace: "custom", key: "kontakt") {
         reference {
           ... on Metaobject {
             handle
-            hero_title : field(key: "hero_title") {
+            hero_title: field(key: "hero_title") {
               value
             }
-            hero_image : field(key: "hero_image") {
+            hero_image: field(key: "hero_image") {
               reference {
                 ...Media
               }
             }
-            kontakt_title : field(key: "kontakt_title") {
+            kontakt_title: field(key: "kontakt_title") {
               value
             }
-            kontakt_sub_title : field(key: "kontakt_sub_title") {
+            kontakt_sub_title: field(key: "kontakt_sub_title") {
               value
             }
           }

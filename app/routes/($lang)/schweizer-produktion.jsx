@@ -239,7 +239,7 @@ ${MEDIA_FRAGMENT}
       id
       title
       body
-      schweizer_schuhpropktion : metafield(namespace: "custom", key: "schweizer_schuhpropktion") {
+      schweizer_schuhpropktion: metafield(namespace: "custom", key: "schweizer_schuhpropktion") {
         reference {
           ... on Metaobject {
             hero_image: field(key: "hero_image") {
