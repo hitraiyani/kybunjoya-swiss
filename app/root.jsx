@@ -147,7 +147,7 @@ export function CatchBoundary() {
           key={`${locale.language}-${locale.country}`}
         >
           {isNotFound ? (
-            <NotFound type={caught.data?.pageType} />
+            <NotFound type={caught.data?.pageType} locale={locale} />
           ) : (
             <GenericError
               error={{message: `${caught.status} ${caught.data}`}}
