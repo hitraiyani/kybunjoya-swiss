@@ -19,7 +19,7 @@ import {
   getAicoMetaByKeyName,
   getYoutubeId,
   getBreadCrumbs,
-  productTranslate
+  productTranslate,
 } from '~/lib/utils';
 import {flattenConnection} from '@shopify/hydrogen';
 import {STORE_LOCALE, AICO_API_IMAGE_PREFIX} from '~/lib/const';
@@ -27,7 +27,7 @@ import {STORE_LOCALE, AICO_API_IMAGE_PREFIX} from '~/lib/const';
 const seo = ({data}) => ({
   title: data?.page?.seo?.title,
   description: data?.page?.seo?.description,
-  url : data?.url,
+  url: data?.url,
 });
 
 export const handle = {
@@ -37,21 +37,27 @@ export const handle = {
 export async function loader({request, params, context}) {
   const {productHandle} = params;
 
-  const {product, dr_kybun_joya_article} =
-    await context.storefront.query(PRODUCT_QUERY, {
+  const {product, dr_kybun_joya_article} = await context.storefront.query(
+    PRODUCT_QUERY,
+    {
       variables: {
         handle: productHandle,
         country: context.storefront.i18n.country,
         language: context.storefront.i18n.language,
       },
-    });
-
+    },
+  );
   if (!product) {
     throw new Response(null, {status: 404});
   }
 
   return json(
-    {product, dr_kybun_joya_article, url: request.url, locale : context.storefront.i18n.language},
+    {
+      product,
+      dr_kybun_joya_article,
+      url: request.url,
+      locale: context.storefront.i18n.language,
+    },
     {
       headers: {
         // TODO cacheLong()
@@ -61,7 +67,7 @@ export async function loader({request, params, context}) {
 }
 
 export default function ratgeberSeiteFersensporn() {
-  const { locale, product, dr_kybun_joya_article} = useLoaderData();
+  const {locale, product, dr_kybun_joya_article} = useLoaderData();
 
   const aicoProductData = product;
 
@@ -134,24 +140,22 @@ export default function ratgeberSeiteFersensporn() {
       aicoProductData?.aico_custom_fields_en?.value,
       'rtgb_textkybunjoyatherapie_en',
     );
-
   } else {
-      dkj_name_international = getAicoMetaByKeyName(
-        aicoProductData?.aico_custom_fields_de_ch?.value,
-        'dkj_name_international_de_ch',
-      );
-    
-      rtgb_textursachen = getAicoMetaByKeyName(
-        aicoProductData?.aico_custom_fields_de_ch?.value,
-        'rtgb_textursachen_de_ch',
-      );
-    
-      rtgb_textkybunjoyatherapie = getAicoMetaByKeyName(
-        aicoProductData?.aico_custom_fields_de_ch?.value,
-        'rtgb_textkybunjoyatherapie_de_ch',
-      );
-  }
+    dkj_name_international = getAicoMetaByKeyName(
+      aicoProductData?.aico_custom_fields_de_ch?.value,
+      'dkj_name_international_de_ch',
+    );
 
+    rtgb_textursachen = getAicoMetaByKeyName(
+      aicoProductData?.aico_custom_fields_de_ch?.value,
+      'rtgb_textursachen_de_ch',
+    );
+
+    rtgb_textkybunjoyatherapie = getAicoMetaByKeyName(
+      aicoProductData?.aico_custom_fields_de_ch?.value,
+      'rtgb_textkybunjoyatherapie_de_ch',
+    );
+  }
 
   // const dkj_videotitel_de_ch = getAicoMetaByKeyName(
   //   aicoProductData?.aico_custom_fields_de_ch?.value,
@@ -162,8 +166,6 @@ export default function ratgeberSeiteFersensporn() {
   //   aicoProductData?.aico_custom_fields_de_ch?.value,
   //   'dkj_videobeschreibung_de_ch',
   // );
-
- 
 
   // const rtgb_textnachbutton_de_ch = getAicoMetaByKeyName(
   //   aicoProductData?.aico_custom_fields_de_ch?.value,
@@ -225,7 +227,7 @@ export default function ratgeberSeiteFersensporn() {
                 <div className="w-full mb-[12px]">
                   <div className="title-wrap">
                     <h2 className="title text-[#00795C] text-[35px] lg:text-[40px] xl:text-[65px] tracking-[-1.05984px] mb-[30px] max-w-[870px] mx-auto">
-                      { productTranslate(aicoProductData,'title', locale) }
+                      {productTranslate(aicoProductData, 'title', locale)}
                     </h2>
                     <div className="max-w-[1200px] mx-auto">
                       <div className="product-list-hero-img relative overflow-hidden pb-[55%] xl:pb-[45%] 2xl:pb-[35%] min-h-[230px] w-full">
@@ -246,7 +248,11 @@ export default function ratgeberSeiteFersensporn() {
                 <div
                   className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] max-w-[870px] mx-auto mt-[44px]"
                   dangerouslySetInnerHTML={{
-                    __html: productTranslate(aicoProductData,'description', locale),
+                    __html: productTranslate(
+                      aicoProductData,
+                      'description',
+                      locale,
+                    ),
                   }}
                 ></div>
               </div>
@@ -263,9 +269,7 @@ export default function ratgeberSeiteFersensporn() {
                       <h2 className="text-black text-[24px] md:text-[30px] lg:text-[35px] leading-[1.1] tracking-[-0.97152px] mb-[20px] font-medium">
                         {dr_kybun_joya_article?.causes_title?.value}
                       </h2>
-                      {rtgb_textursachen && (
-                        <p>{rtgb_textursachen}</p>
-                      )}
+                      {rtgb_textursachen && <p>{rtgb_textursachen}</p>}
                       <ul className="list-style2 list-style3">
                         {aicoProductTagsUrsachen.map((item, index) => {
                           return (
@@ -320,7 +324,7 @@ export default function ratgeberSeiteFersensporn() {
             </div>
           </div>
         </section>
-        
+
         <section className="about-us-sec pb-[40px] md:py-[60px] lg:py-[80px] xl:py-[100px]">
           <div className="inner-row">
             <div className="flex flex-col md:flex-row gap-y-[20px] gap-x-[40px] xl:gap-x-[60px] 2xl:gap-x-[100px] items-center">
@@ -329,8 +333,8 @@ export default function ratgeberSeiteFersensporn() {
                   <img
                     className="h-full w-full absolute inset-0 transition hover:duration-500 object-cover"
                     src={
-                      dr_kybun_joya_article
-                        ?.shopfinder_section_image?.reference?.image?.url
+                      dr_kybun_joya_article?.shopfinder_section_image?.reference
+                        ?.image?.url
                     }
                     alt=""
                   />
@@ -338,32 +342,28 @@ export default function ratgeberSeiteFersensporn() {
               </div>
               <div className="col-right w-full lg:w-[50%]">
                 <h2 className="mb-[15px] text-black text-[24px] md:text-[30px] lg:text-[35px] leading-[1.1] tracking-[-0.97152px] font-medium">
-                  {
-                    dr_kybun_joya_article?.shopfinder_section_title
-                      ?.value
-                  }
+                  {dr_kybun_joya_article?.shopfinder_section_title?.value}
                 </h2>
                 <div
                   className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mb-[20px]"
                   dangerouslySetInnerHTML={{
                     __html: toHTML(
-                      dr_kybun_joya_article?.shopfinder_section_desc
-                        ?.value,
+                      dr_kybun_joya_article?.shopfinder_section_desc?.value,
                     ),
                   }}
                 ></div>
                 <div className="btn-wrap">
                   <Link
                     to={
-                      dr_kybun_joya_article
-                        ?.shopfinder_section_button_redirect?.value
+                      dr_kybun_joya_article?.shopfinder_section_button_redirect
+                        ?.value
                     }
                     className="inline-block rounded-[100px] bg-[#00795c] text-white
                     text-center px-[35px] py-[15px] hover:bg-black hover:text-white text-[18px] max-w-fit"
                   >
                     {
-                      dr_kybun_joya_article
-                        ?.shopfinder_section_button_text?.value
+                      dr_kybun_joya_article?.shopfinder_section_button_text
+                        ?.value
                     }
                   </Link>
                 </div>
@@ -372,10 +372,7 @@ export default function ratgeberSeiteFersensporn() {
           </div>
           <div className="btn-wrap mt-[40px] md:mt-[60px] lg:mt-[80px] flex gap-[20px] justify-center flex-col items-center">
             <Link
-              to={
-                dr_kybun_joya_article?.back_to_topic_overview_link
-                  ?.value
-              }
+              to={dr_kybun_joya_article?.back_to_topic_overview_link?.value}
               className="download-link pro-btn text-[16px] md:text-[20px] lg:text-[21px] leading-none text-black tracking-[-0.400697px] font-normal flex gap-[5px] lg:gap-[20px] justify-center w-fit text-left items-center transition-all duration-700 hover:text-[#00795c] download-link hover:underline mb-[15px]"
             >
               <IconArrowRight
@@ -383,10 +380,7 @@ export default function ratgeberSeiteFersensporn() {
                   'w-[20px] h-[20px] md:w-[25px] md:h-[25px] lg:w-[30px] lg:h-[30px]'
                 }
               />
-              {
-                dr_kybun_joya_article?.back_to_topic_overview_text
-                  ?.value
-              }
+              {dr_kybun_joya_article?.back_to_topic_overview_text?.value}
             </Link>
           </div>
         </section>
@@ -421,36 +415,36 @@ ${MEDIA_FRAGMENT}
        }
       featuredImage {
         url
-           altText
-           width
-           height
+        altText
+        width
+        height
       }
-      aico_content_builders : metafield(namespace: "aico", key: "aico_content_builders") {
+      aico_content_builders: metafield(namespace: "aico", key: "aico_content_builders") {
         value
       }
-      aico_custom_fields_de_ch : metafield(namespace: "aico", key: "aico_custom_fields_de_ch") {
+      aico_custom_fields_de_ch: metafield(namespace: "aico", key: "aico_custom_fields_de_ch") {
         value
       }
-      aico_custom_fields_en : metafield(namespace: "aico", key: "aico_custom_fields_en") {
+      aico_custom_fields_en: metafield(namespace: "aico", key: "aico_custom_fields_en") {
         value
       }
-      description_de_ch : metafield(namespace: "custom_fields", key: "description_de_ch") {
+      description_de_ch: metafield(namespace: "custom_fields", key: "description_de_ch") {
         value
       }
-      description_en : metafield(namespace: "custom_fields", key: "description_en") {
+      description_en: metafield(namespace: "custom_fields", key: "description_en") {
         value
       }
-      testimonials_data : metafield(namespace: "custom_fields", key: "testimonials_data") {
+      testimonials_data: metafield(namespace: "custom_fields", key: "testimonials_data") {
         value
       }
-      knowledgebases_data : metafield(namespace: "custom_fields", key: "knowledgebases_data") {
+      knowledgebases_data: metafield(namespace: "custom_fields", key: "knowledgebases_data") {
         value
       }
-      documents : metafield(namespace: "custom_fields", key: "documents") {
+      documents: metafield(namespace: "custom_fields", key: "documents") {
         value
       }
     }
-    dr_kybun_joya_article: metaobject(id :"gid://shopify/Metaobject/7606731073") {
+    dr_kybun_joya_article: metaobject(id: "gid://shopify/Metaobject/7606731073") {
       shopfinder_section_title: field(key: "shopfinder_section_title") {
         value
       }
@@ -474,14 +468,12 @@ ${MEDIA_FRAGMENT}
       back_to_topic_overview_link: field(key: "back_to_topic_overview_link") {
         value
       }
-      causes_title : field(key: "causes_title") {
+      causes_title: field(key: "causes_title") {
         value
       }
-      kybun_joya_therapy_title : field(key: "kybun_joya_therapy_title") {
+      kybun_joya_therapy_title: field(key: "kybun_joya_therapy_title") {
         value
       }
     }
   }
 `;
-
-
