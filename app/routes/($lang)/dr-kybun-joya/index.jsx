@@ -72,7 +72,14 @@ export async function loader({request, params, context}) {
   });
 
   return json(
-    {page, collection, sub_collections, pageCollectionTitle, url: request.url, locale : context.storefront.i18n.language},
+    {
+      page,
+      collection,
+      sub_collections,
+      pageCollectionTitle,
+      url: request.url,
+      locale: context.storefront.i18n.language,
+    },
     {
       headers: {
         // TODO cacheLong()
@@ -90,12 +97,9 @@ export default function ratgeberseite() {
 
   const headProductList = filteredKybunJoyaProducts?.slice(0, 5);
   const sliderProductList = filteredKybunJoyaProducts?.slice(5, 11);
-  const filteredSubCollections = sub_collections?.nodes?.filter(
-    (product) => {
-      return product.title.toLowerCase().includes(searchQuery.toLowerCase());
-    },
-  );
-  
+  const filteredSubCollections = sub_collections?.nodes?.filter((product) => {
+    return product.title.toLowerCase().includes(searchQuery.toLowerCase());
+  });
 
   useEffect(() => {
     document.querySelectorAll('.my-achor-link').forEach(function (link) {
@@ -237,7 +241,8 @@ export default function ratgeberseite() {
                               key={index}
                               to={`/dr-kybun-joya/${product.handle}`}
                             >
-                              { productTranslate(product, 'title', locale) }
+                              {/* {productTranslate(product, 'title', locale)} */}
+                              {product.title}
                             </Link>
                           </li>
                         );
@@ -245,7 +250,7 @@ export default function ratgeberseite() {
                   </ul>
                 </div>
               </div>
-                           
+
               <div className="right-col tabs-wrap xl:flex-[1]">
                 <div className="search-bar hidden">
                   <form action="">
@@ -291,7 +296,6 @@ export default function ratgeberseite() {
                     </div>
                   </form>
                 </div>
-                
               </div>
             </div>
           </div>
@@ -375,7 +379,8 @@ export default function ratgeberseite() {
                             <p>Gesundheitswissen</p>
                           </div> */}
                           <div className="text-black text-[24px] md:text-[30px] lg:text-[35px] leading-[1.1] tracking-[-0.97152px] font-medium mb-[15px] hover:text-[#00795c]">
-                            <p>{ productTranslate(product, 'title', locale) }</p>
+                            {/* <p>{productTranslate(product, 'title', locale)}</p> */}
+                            <p>{product.title}</p>
                           </div>
                         </Link>
                         <Link
@@ -383,13 +388,12 @@ export default function ratgeberseite() {
                           className="inline-block rounded-[100px] bg-[#00795c] text-white
                             text-center px-[20px] md:px-[35px] py-[12px] md:py-[15px] hover:bg-black hover:text-white text-[14px] md:text-[18px] max-w-fit"
                         >
-                          {translate("lern_more",locale)}
+                          {translate('lern_more', locale)}
                         </Link>
                       </div>
                     </SwiperSlide>
                   );
                 })}
-             
             </Swiper>
           </div>
           <div
@@ -424,7 +428,6 @@ export default function ratgeberseite() {
               );
             }
           })}
-          
         </div>
       </section>
       <section className="search-bar-section mb-[40px] md:mb-[60px] lg:mb-[80px] xl:mb-[100px]">
@@ -464,7 +467,9 @@ export default function ratgeberseite() {
                 </button>
                 <input
                   type="search"
-                  placeholder={page?.ratgeber_detail?.reference?.search_box_label?.value}
+                  placeholder={
+                    page?.ratgeber_detail?.reference?.search_box_label?.value
+                  }
                   name="q"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}

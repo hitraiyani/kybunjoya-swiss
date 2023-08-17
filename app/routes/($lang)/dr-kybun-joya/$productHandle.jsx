@@ -227,7 +227,8 @@ export default function ratgeberSeiteFersensporn() {
                 <div className="w-full mb-[12px]">
                   <div className="title-wrap">
                     <h2 className="title text-[#00795C] text-[35px] lg:text-[40px] xl:text-[65px] tracking-[-1.05984px] mb-[30px] max-w-[870px] mx-auto">
-                      {productTranslate(aicoProductData, 'title', locale)}
+                      {/* {productTranslate(aicoProductData, 'title', locale)} */}
+                      {aicoProductData?.title}
                     </h2>
                     <div className="max-w-[1200px] mx-auto">
                       <div className="product-list-hero-img relative overflow-hidden pb-[55%] xl:pb-[45%] 2xl:pb-[35%] min-h-[230px] w-full">
@@ -246,7 +247,7 @@ export default function ratgeberSeiteFersensporn() {
                   </div>
                 </div>
                 <div
-                  className="desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] max-w-[870px] mx-auto mt-[44px]"
+                  className="1 desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] max-w-[870px] mx-auto mt-[44px]"
                   dangerouslySetInnerHTML={{
                     __html: productTranslate(
                       aicoProductData,
