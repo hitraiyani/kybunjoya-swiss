@@ -346,7 +346,7 @@ function MenuMobileNav({menu, onClose, locale}) {
             );
           })}
         </ul>
-        <div className="language-switcher !hidden flex gap-[11px] mb-[30px]">
+        <div className="language-switcher flex gap-[11px] mb-[30px]">
           <button
             onClick={handleLanguageChange}
             data-lang="de"
@@ -710,7 +710,7 @@ function Footer({menu, main_menu, locale, footerSectionData}) {
                       </Link>
                     </p>
                   </div>
-                  <div className="language-switcher !hidden  flex gap-[11px] mb-[20px] md:mb-[30px]">
+                  <div className="language-switcher   flex gap-[11px] mb-[20px] md:mb-[30px]">
                     <button
                       onClick={handleLanguageChange}
                       data-lang="de"
