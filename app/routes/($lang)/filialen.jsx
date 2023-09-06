@@ -39,8 +39,10 @@ export default function shopfinder() {
   return (
     <>
       <Breadcrumb crumbs={getBreadCrumbs(null, 'shopfinder')} />
-      {/* <ResponsiveIframe url={`${AICO_STOREFINDER_URL}?language_code=${locale?.toLocaleLowerCase()}`} /> */}
-      <ResponsiveIframe url={`${AICO_STOREFINDER_URL}`} />
+      <ResponsiveIframe
+        url={`${AICO_STOREFINDER_URL}?language_code=${locale?.toLocaleLowerCase()}`}
+      />
+      {/* <ResponsiveIframe url={`${AICO_STOREFINDER_URL}`} /> */}
     </>
   );
 }
