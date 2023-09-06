@@ -4550,6 +4550,10 @@ video {
 }
 @media (min-width: 1200px) {
 
+  .min-\[1200px\]\:h-\[1450px\] {
+    height: 1450px;
+  }
+
   .min-\[1200px\]\:h-\[1330px\] {
     height: 1330px;
   }
@@ -5082,6 +5086,10 @@ video {
   }
 }
 @media (min-width: 1400px) {
+
+  .min-\[1400px\]\:h-\[1300px\] {
+    height: 1300px;
+  }
 
   .min-\[1400px\]\:h-\[1130px\] {
     height: 1130px;
