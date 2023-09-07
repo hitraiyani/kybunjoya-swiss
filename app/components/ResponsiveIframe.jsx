@@ -45,7 +45,7 @@ export function ResponsiveIframe({url}) {
   // }, [iframeHeight]);
   return (
     <div className="mt-[-50px] min-[992px]:mt-[0]">
-      {/* <iframe
+      <iframe
         src={url}
         allow="geolocation"
         title="Embedded Content"
@@ -55,9 +55,9 @@ export function ResponsiveIframe({url}) {
         id="iFrame1"
         width={'100%'}
         // style={{height: iframeHeight}}
-        className=" max-[991px]:h-[calc(100vh_-_72px)] min-[992px]:h-[1290px] min-[1200px]:h-[1330px] min-[1400px]:h-[1130px]"
-      /> */}
-      <IframeResizer
+        className=" max-[991px]:h-[calc(100vh_-_72px)] min-[992px]:h-[1390px] min-[1200px]:h-[1430px] min-[1400px]:h-[1230px]"
+      />
+      {/* <IframeResizer
         src={url}
         allow="geolocation"
         title="Embedded Content"
@@ -67,7 +67,7 @@ export function ResponsiveIframe({url}) {
         inPageLinks
         log
         style={{width: '1px', minWidth: '100%'}}
-      />
+      /> */}
     </div>
   );
 }
