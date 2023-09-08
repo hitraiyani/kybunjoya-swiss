@@ -1,4 +1,4 @@
-import {useIsHomePath} from '~/lib/utils';
+import {translate, useIsHomePath} from '~/lib/utils';
 import {
   Drawer,
   useDrawer,
@@ -112,8 +112,6 @@ export function Layout({children, layout, locale}) {
     </>
   );
 }
-
-
 
 function Breadcrumb() {
   const isHome = useIsHomePath();
@@ -229,6 +227,7 @@ function Header({title, menu, locale}) {
         openMenu={openMenu}
         isMenuOpen={isMenuOpen}
         locale={locale}
+        menu={menu}
       />
     </>
   );
@@ -384,7 +383,6 @@ function SubMegaMenu({menu_items, onClose}) {
       {(menu_items || []).map((item, key) => {
         return (
           <li key={key}>
-            
             <Link
               to={item.to}
               target={item.target}
@@ -402,10 +400,18 @@ function SubMegaMenu({menu_items, onClose}) {
   );
 }
 
-function MobileHeader({title, isHome, openCart, openMenu, isMenuOpen}) {
+function MobileHeader({
+  title,
+  isHome,
+  openCart,
+  openMenu,
+  isMenuOpen,
+  menu,
+  locale,
+}) {
   // useHeaderStyleFix(containerStyle, setContainerStyle, isHome);
   const [isScrolled, setisScrolled] = useState(false);
-
+  console.log(menu, 'menu');
   useEffect(() => {
     window.addEventListener('scroll', () => {
       if (window.scrollY > 50) {
@@ -440,7 +446,7 @@ function MobileHeader({title, isHome, openCart, openMenu, isMenuOpen}) {
             onClick={openMenu}
             className="relative flex items-center justify-center menu-toogle-btn gap-[10px] text-[20px] lg:text-[24px] xl:text-[32.96px] text-[#00795C] font-normal"
           >
-            Menu
+            {menu?.title || translate('Menü', locale?.language)}
             {isMenuOpen ? (
               <IconClose aria-label="Close panel" />
             ) : (
@@ -792,7 +798,7 @@ function Footer({menu, main_menu, locale, footerSectionData}) {
                     </div>
                   </div>
                 </div>
-                <Newsletter footerSectionData={footerSectionData}/>
+                <Newsletter footerSectionData={footerSectionData} />
                 <div className="grid grid-cols-2 gap-x-[10px] md:gap-x-[20px] lg:gap-x-[40px] xl:gap-x-[50px] 2xl:gap-x-[60px] md:block md:columns-3 footer-menu-items xl:flex-[1.5] 2xl:flex-[1.5] !hidden">
                   {main_menu.items &&
                     main_menu.items.map((item, index) => {

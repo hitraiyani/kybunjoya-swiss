@@ -28,30 +28,26 @@ import swiper_pagination from 'swiper/css/pagination';
 import swiper_scrollbar from 'swiper/css/scrollbar';
 
 // Import css files
-import slick_css from "slick-carousel/slick/slick.css";
-import slick_themecss from "slick-carousel/slick/slick-theme.css";
-
-
+import slick_css from 'slick-carousel/slick/slick.css';
+import slick_themecss from 'slick-carousel/slick/slick-theme.css';
 
 const seo = ({data, pathname}) => {
-   
-    return {
-      title: data?.layout?.footerSectionData?.main_seo_title?.value?? SHOP_TITLE,
-      titleTemplate: '%s',
-      description: data?.layout?.shop?.description,
-      media: {
-        'url' : 'https://cdn.shopify.com/s/files/1/0742/9688/5569/files/logo.png?v=1680591892',
-        'width': 1000,
-        'height': 628
-      },
-      handle: '@shopify',
-      url : data?.url,
-    }
-}
+  return {
+    title: data?.layout?.footerSectionData?.main_seo_title?.value ?? SHOP_TITLE,
+    titleTemplate: '%s',
+    description: data?.layout?.shop?.description,
+    media: {
+      url: 'https://cdn.shopify.com/s/files/1/0742/9688/5569/files/logo.png?v=1680591892',
+      width: 1000,
+      height: 628,
+    },
+    handle: '@shopify',
+    url: data?.url,
+  };
+};
 export const handle = {
   seo,
 };
-
 
 export const links = () => {
   return [
@@ -84,7 +80,7 @@ export async function loader({context, request}) {
   const [cartId, layout] = await Promise.all([
     context.session.get('cartId'),
     getLayoutData(context),
-  ]);  
+  ]);
 
   return defer({
     layout,
@@ -94,10 +90,9 @@ export async function loader({context, request}) {
       shopifySalesChannel: ShopifySalesChannel.hydrogen,
       shopId: layout.shop.id,
     },
-    url: request.url
+    url: request.url,
   });
 }
-
 
 export default function App() {
   const data = useLoaderData();
@@ -194,6 +189,7 @@ const LAYOUT_QUERY = `#graphql
     }
     headerMenu: menu(handle: $headerMenuHandle) {
       id
+      title
       items {
         ...MenuItem
         items {
@@ -203,6 +199,7 @@ const LAYOUT_QUERY = `#graphql
     }
     footerMenu: menu(handle: $footerMenuHandle) {
       id
+      title
       items {
         ...MenuItem
         items {
@@ -264,127 +261,129 @@ async function getLayoutData({storefront}) {
           - /collections/all -> /products
       */
   const customPrefixes = {BLOG: '', CATALOG: 'products'};
-  
+
   const tempHeaderMenu = {
-    "id": "gid://shopify/Menu/224769671489",
-    "items": [
+    id: 'gid://shopify/Menu/224769671489',
+    items: [
       {
-        "id": "gid://shopify/MenuItem/526716698945",
-        "resourceId": "gid://shopify/Page/116347437377",
-        "tags": [],
-        "title": "Produkte",
-        "type": "PAGE",
-        "url": "https://kybunjoya-swiss.myshopify.com/produkte",
-        "items": []
+        id: 'gid://shopify/MenuItem/526716698945',
+        resourceId: 'gid://shopify/Page/116347437377',
+        tags: [],
+        title: 'Produkte',
+        type: 'PAGE',
+        url: 'https://kybunjoya-swiss.myshopify.com/produkte',
+        items: [],
       },
       {
-        "id": "gid://shopify/MenuItem/526733771073",
-        "resourceId": "gid://shopify/Page/120569528641",
-        "tags": [],
-        "title": "kybun Joya Story",
-        "type": "PAGE",
-        "url": "https://kybunjoya-swiss.myshopify.com/story",
-        "items": []
+        id: 'gid://shopify/MenuItem/526733771073',
+        resourceId: 'gid://shopify/Page/120569528641',
+        tags: [],
+        title: 'kybun Joya Story',
+        type: 'PAGE',
+        url: 'https://kybunjoya-swiss.myshopify.com/story',
+        items: [],
       },
       {
-        "id": "gid://shopify/MenuItem/544376455489",
-        "resourceId": "gid://shopify/Page/119344857409",
-        "tags": [],
-        "title": "Filialen",
-        "type": "PAGE",
-        "url": "https://kybunjoya-swiss.myshopify.com/filialen",
-        "items": []
+        id: 'gid://shopify/MenuItem/544376455489',
+        resourceId: 'gid://shopify/Page/119344857409',
+        tags: [],
+        title: 'Filialen',
+        type: 'PAGE',
+        url: 'https://kybunjoya-swiss.myshopify.com/filialen',
+        items: [],
       },
       {
-        "id": "gid://shopify/MenuItem/526716731713",
-        "resourceId": "gid://shopify/Page/122281722177",
-        "tags": [],
-        "title": "Dr. kybun Joya",
-        "type": "PAGE",
-        "url": "https://kybunjoya-swiss.myshopify.com/dr-kybun-joya",
-        "items": []
+        id: 'gid://shopify/MenuItem/526716731713',
+        resourceId: 'gid://shopify/Page/122281722177',
+        tags: [],
+        title: 'Dr. kybun Joya',
+        type: 'PAGE',
+        url: 'https://kybunjoya-swiss.myshopify.com/dr-kybun-joya',
+        items: [],
       },
       {
-        "id": "gid://shopify/MenuItem/527493955905",
-        "resourceId": "gid://shopify/Page/120567333185",
-        "tags": [],
-        "title": "Über uns",
-        "type": "PAGE",
-        "url": "https://kybunjoya-swiss.myshopify.com/unternehmen",
-        "items": [
+        id: 'gid://shopify/MenuItem/527493955905',
+        resourceId: 'gid://shopify/Page/120567333185',
+        tags: [],
+        title: 'Über uns',
+        type: 'PAGE',
+        url: 'https://kybunjoya-swiss.myshopify.com/unternehmen',
+        items: [
           {
-            "id": "gid://shopify/MenuItem/541162275137",
-            "resourceId": "gid://shopify/Page/121076089153",
-            "tags": [],
-            "title": "Unternehmen",
-            "type": "PAGE",
-            "url": "https://kybunjoya-swiss.myshopify.com/unternehmen"
+            id: 'gid://shopify/MenuItem/541162275137',
+            resourceId: 'gid://shopify/Page/121076089153',
+            tags: [],
+            title: 'Unternehmen',
+            type: 'PAGE',
+            url: 'https://kybunjoya-swiss.myshopify.com/unternehmen',
           },
           {
-            "id": "gid://shopify/MenuItem/527494021441",
-            "resourceId": "gid://shopify/Page/122282312001",
-            "tags": [],
-            "title": "Schweizer Produktion",
-            "type": "PAGE",
-            "url": "https://kybunjoya-swiss.myshopify.com/schweizer-produktion"
+            id: 'gid://shopify/MenuItem/527494021441',
+            resourceId: 'gid://shopify/Page/122282312001',
+            tags: [],
+            title: 'Schweizer Produktion',
+            type: 'PAGE',
+            url: 'https://kybunjoya-swiss.myshopify.com/schweizer-produktion',
           },
           {
-            "id": "gid://shopify/MenuItem/539551793473",
-            "resourceId": "gid://shopify/Page/120583618881",
-            "tags": [],
-            "title": "kybun Joya Therapie",
-            "type": "PAGE",
-            "url": "https://kybunjoya-swiss.myshopify.com/kybun-joya-therapie"
+            id: 'gid://shopify/MenuItem/539551793473',
+            resourceId: 'gid://shopify/Page/120583618881',
+            tags: [],
+            title: 'kybun Joya Therapie',
+            type: 'PAGE',
+            url: 'https://kybunjoya-swiss.myshopify.com/kybun-joya-therapie',
           },
           {
-            "id": "gid://shopify/MenuItem/527493988673",
-            "resourceId": "gid://shopify/Page/120591647041",
-            "tags": [],
-            "title": "Karriere",
-            "type": "PAGE",
-            "url": "https://kybunjoya-swiss.myshopify.com/karriere"
-          }
-        ]
-      }
-    ]
-  }
+            id: 'gid://shopify/MenuItem/527493988673',
+            resourceId: 'gid://shopify/Page/120591647041',
+            tags: [],
+            title: 'Karriere',
+            type: 'PAGE',
+            url: 'https://kybunjoya-swiss.myshopify.com/karriere',
+          },
+        ],
+      },
+    ],
+  };
 
   const headerMenu = data?.headerMenu
     ? parseMenu(data?.headerMenu, customPrefixes)
     : undefined;
 
-  
-
-
   const tmpFooterMenu = {
-    "id": "gid://shopify/Menu/224769704257",
-    "items": [
+    id: 'gid://shopify/Menu/224769704257',
+    items: [
       {
-        "id": "gid://shopify/MenuItem/544698040641",
-        "resourceId": "gid://shopify/Page/122350698817",
-        "tags": [],
-        "title": "Datenschutzerklärung",
-        "type": "PAGE",
-        "url": "https://kybunjoya-swiss.myshopify.com/datenschutzerklarung",
-        "items": []
+        id: 'gid://shopify/MenuItem/544698040641',
+        resourceId: 'gid://shopify/Page/122350698817',
+        tags: [],
+        title: 'Datenschutzerklärung',
+        type: 'PAGE',
+        url: 'https://kybunjoya-swiss.myshopify.com/datenschutzerklarung',
+        items: [],
       },
       {
-        "id": "gid://shopify/MenuItem/544698073409",
-        "resourceId": "gid://shopify/Page/122349617473",
-        "tags": [],
-        "title": "Impressum",
-        "type": "PAGE",
-        "url": "https://kybunjoya-swiss.myshopify.com/imprint",
-        "items": []
-      }
-    ]
+        id: 'gid://shopify/MenuItem/544698073409',
+        resourceId: 'gid://shopify/Page/122349617473',
+        tags: [],
+        title: 'Impressum',
+        type: 'PAGE',
+        url: 'https://kybunjoya-swiss.myshopify.com/imprint',
+        items: [],
+      },
+    ],
   };
-  
+
   const footerMenu = data?.footerMenu
     ? parseMenu(data?.footerMenu, customPrefixes)
     : undefined;
 
-  return {shop: data.shop, headerMenu, footerMenu, footerSectionData : data.footerSectionData};
+  return {
+    shop: data.shop,
+    headerMenu,
+    footerMenu,
+    footerSectionData: data.footerSectionData,
+  };
 }
 
 const CART_QUERY = `#graphql
