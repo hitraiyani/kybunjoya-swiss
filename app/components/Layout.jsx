@@ -411,7 +411,6 @@ function MobileHeader({
 }) {
   // useHeaderStyleFix(containerStyle, setContainerStyle, isHome);
   const [isScrolled, setisScrolled] = useState(false);
-  console.log(menu, 'menu');
   useEffect(() => {
     window.addEventListener('scroll', () => {
       if (window.scrollY > 50) {

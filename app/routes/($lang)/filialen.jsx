@@ -1,5 +1,5 @@
 import {json} from '@shopify/remix-oxygen';
-import {useLoaderData} from '@remix-run/react';
+import {useLoaderData, useMatches} from '@remix-run/react';
 import {ResponsiveIframe} from '~/components';
 import {toHTML, getBreadCrumbs} from '~/lib/utils';
 import {Link, Breadcrumb} from '~/components';
@@ -35,12 +35,18 @@ export async function loader({params, request, context}) {
 
 export default function shopfinder() {
   const {locale} = useLoaderData();
+  const [root] = useMatches();
+  const {data} = root;
+  const {layout} = data;
+  const {iFrameDomain} = layout;
 
   return (
     <>
       <Breadcrumb crumbs={getBreadCrumbs(null, 'shopfinder')} />
       <ResponsiveIframe
-        url={`${AICO_STOREFINDER_URL}?language_code=${locale?.toLocaleLowerCase()}`}
+        url={`${
+          iFrameDomain?.value || 'https://kybunjoya.aico.swiss'
+        }/storage/kj-storelocator-static/?language_code=${locale?.toLocaleLowerCase()}`}
       />
       {/* <ResponsiveIframe url={`${AICO_STOREFINDER_URL}`} /> */}
     </>

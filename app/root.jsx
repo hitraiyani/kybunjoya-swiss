@@ -30,6 +30,7 @@ import swiper_scrollbar from 'swiper/css/scrollbar';
 // Import css files
 import slick_css from 'slick-carousel/slick/slick.css';
 import slick_themecss from 'slick-carousel/slick/slick-theme.css';
+import {useEffectOnce} from 'react-use';
 
 const seo = ({data, pathname}) => {
   return {
@@ -98,9 +99,7 @@ export default function App() {
   const data = useLoaderData();
   const locale = data.selectedLocale ?? DEFAULT_LOCALE;
   const hasUserConsent = true;
-
   //useAnalytics(hasUserConsent, locale);
-
   return (
     <html lang={locale.language}>
       <head>
@@ -207,6 +206,11 @@ const LAYOUT_QUERY = `#graphql
         }
       }
     }
+    iFrameDomain: metaobject(id : "gid://shopify/Metaobject/16999547201") {
+      domain: field(key: "domain_for_iframe"){
+        value
+      }
+    } 
     footerSectionData : metaobject(id : "gid://shopify/Metaobject/7616528705") {
       handle
       id
@@ -383,6 +387,7 @@ async function getLayoutData({storefront}) {
     headerMenu,
     footerMenu,
     footerSectionData: data.footerSectionData,
+    iFrameDomain: data?.iFrameDomain?.domain,
   };
 }
 
