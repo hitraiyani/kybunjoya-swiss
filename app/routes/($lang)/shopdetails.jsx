@@ -41,7 +41,7 @@ export default function shopfinder() {
     <>
       <Breadcrumb crumbs={getBreadCrumbs(null, 'shopfinder')} />
       <ResponsiveIframe
-        url={`https://kjmvp.aico.swiss/storage/kj-storelocator-static/shop-details.html?shop_id=${shop_id}`}
+        url={`https://kybunjoya.aico.swiss/storage/kj-storelocator-static/shop-details.html?shop_id=${shop_id}`}
       />
     </>
   );
