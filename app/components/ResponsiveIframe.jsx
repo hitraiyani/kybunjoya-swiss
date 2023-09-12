@@ -1,5 +1,6 @@
 import React, {useEffect, useRef, useState} from 'react';
 import IframeResizer from 'iframe-resizer-react';
+import {useEffectOnce} from 'react-use';
 
 export function ResponsiveIframe({url}) {
   // const iFrameRef = useRef(null);
@@ -43,6 +44,34 @@ export function ResponsiveIframe({url}) {
   //     observer.disconnect();
   //   };
   // }, [iframeHeight]);
+  useEffectOnce(() => {
+    window.addEventListener(
+      'message',
+      function (event) {
+        if (
+          event.origin === 'https://kybunjoya.aico.swiss' &&
+          event.data.contactModalOpened
+        ) {
+          document
+            .getElementById('iFrame1')
+            .parentElement.classList.add('relative');
+          document.getElementById('iFrame1').parentElement.style.zIndex = 51;
+        } else if (
+          event.origin === 'https://kybunjoya.aico.swiss' &&
+          event.data.contactModalClosed
+        ) {
+          document
+            .getElementById('iFrame1')
+            .parentElement.classList.remove('relative');
+          document.getElementById('iFrame1').parentElement.style.zIndex =
+            'auto';
+        } else {
+          console.log('Origin not allowed!');
+        }
+      },
+      false,
+    );
+  });
   return (
     <div className="mt-[-50px] min-[992px]:mt-[0]">
       <iframe
