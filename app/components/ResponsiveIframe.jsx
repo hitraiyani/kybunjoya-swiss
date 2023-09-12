@@ -54,7 +54,7 @@ export function ResponsiveIframe({url}) {
         ) {
           document
             .getElementById('iFrame1')
-            .parentElement.classList.add('position-relative');
+            .parentElement.classList.add('relative');
           document.getElementById('iFrame1').parentElement.style.zIndex = 51;
         } else if (
           event.origin === 'https://kybunjoya.aico.swiss' &&
@@ -62,7 +62,7 @@ export function ResponsiveIframe({url}) {
         ) {
           document
             .getElementById('iFrame1')
-            .parentElement.classList.remove('position-relative');
+            .parentElement.classList.remove('relative');
           document.getElementById('iFrame1').parentElement.style.zIndex =
             'auto';
         } else {
