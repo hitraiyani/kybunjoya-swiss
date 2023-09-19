@@ -44,7 +44,7 @@ export function ResponsiveIframe({url}) {
   //     observer.disconnect();
   //   };
   // }, [iframeHeight]);
-  useEffectOnce(() => {
+  useEffect(() => {
     // window.addEventListener(
     //   'message',
     //   function (event) {
@@ -73,27 +73,20 @@ export function ResponsiveIframe({url}) {
     // );
     // window.onload = () => {
     if (screen.width > 1240) {
-      window.addEventListener(
-        'message',
-        function (event) {
-          console.log('event!');
-          if (
-            event.origin === 'https://kybunjoya.aico.swiss' &&
-            event.data.iframeHeightUpdated
-          ) {
-            document.getElementById('iFrame1').style.height =
-              event.data.height + 'px';
-            console.log('Origin allowed!');
-          } else {
-            console.log('Origin not allowed!');
+      window.addEventListener('message', (event) => {
+        if (event.origin === 'https://kybunjoya.aico.swiss') {
+          const data = event.data;
+          if (data.action === 'iframeheight') {
+            document.getElementById('iFrame1').height = data.bodyHeight;
           }
-        },
-        false,
-      );
-      console.log('page is fully loaded', screen.width);
+        } else {
+          console.log('origin not allowed');
+        }
+      });
+      console.log('page is fully loaded', screen.width > 1240);
     }
     // };
-  });
+  }, []);
   return (
     <div className="mt-[-50px] min-[992px]:mt-[0]">
       <iframe
