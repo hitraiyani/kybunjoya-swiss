@@ -1803,6 +1803,6 @@ select {
     margin-top: 10px;
   }
 }
-.nav-list > .columns-1 :nth-child(2) > a{
+.mega-menu-wrap div.nav-list ul.columns-1 li:nth-child(2) > a.kybunjoya-menu-hover{
   margin-bottom: 20px;
 }
