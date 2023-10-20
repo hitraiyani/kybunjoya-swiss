@@ -5251,3 +5251,7 @@ video {
     justify-content: flex-end;
   }
 }
+/* Temporal Fix */
+.nav-list > .columns-1 :nth-child(2) > a{
+  margin-bottom: 20px;
+}
