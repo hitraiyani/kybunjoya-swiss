@@ -220,115 +220,119 @@ export default function ratgeberSeiteFersensporn() {
     <>
       <Breadcrumb crumbs={breadCrumbsData} />
       <div className="container">
-        <section className="rich-text-sec" id="section_1">
-          <div className="rich-text-inner">
-            <div className="flex flex-col gap-y-[30px] lg:gap-x-[50px] xl:gap-x-[60px]">
-              <div className="col-left w-full">
-                <div className="w-full mb-[12px]">
-                  <div className="title-wrap">
-                    <h2 className="title text-[#00795C] text-[35px] lg:text-[40px] xl:text-[65px] tracking-[-1.05984px] mb-[30px] max-w-[870px] mx-auto">
-                      {/* {productTranslate(aicoProductData, 'title', locale)} */}
-                      {aicoProductData?.title}
-                    </h2>
-                    <div className="max-w-[1200px] mx-auto">
-                      <div className="product-list-hero-img relative overflow-hidden pb-[55%] xl:pb-[45%] 2xl:pb-[35%] min-h-[230px] w-full">
-                        <img
-                          className="absolute inset-0 w-full h-full object-cover object-center"
-                          src={aicoProductData?.featuredImage?.url}
-                          alt=""
-                        />
+        <section className="rich-text-sec flex flex-col md:flex-row gap-y-[20px] gap-x-[40px] xl:gap-x-[60px] 2xl:gap-x-[100px] items-center" id="section_1">
+          <div className="w-2/3">
+            <div className="rich-text-inner">
+              <div className="flex flex-col gap-y-[30px] lg:gap-x-[50px] xl:gap-x-[60px]">
+                <div className="col-left w-full">
+                  <div className="w-full mb-[12px]">
+                    <div className="title-wrap">
+                      <h2 className="title text-[#00795C] text-[35px] lg:text-[40px] xl:text-[65px] tracking-[-1.05984px] mb-[30px] max-w-[870px] mx-auto">
+                        {/* {productTranslate(aicoProductData, 'title', locale)} */}
+                        {aicoProductData?.title}
+                      </h2>
+                      <div className="max-w-[1200px] mx-auto">
+                        <div className="product-list-hero-img relative overflow-hidden pb-[55%] xl:pb-[45%] 2xl:pb-[35%] min-h-[230px] w-full">
+                          <img
+                            className="absolute inset-0 w-full h-full object-cover object-center"
+                            src={aicoProductData?.featuredImage?.url}
+                            alt=""
+                          />
+                        </div>
                       </div>
+                      {dkj_name_international && (
+                        <h3 className="text-[24px] md:text-[28px] xl:text-[30px] text-[#00795C] font-bold leading-[1.2] mb-[20px]">
+                          {dkj_name_international}
+                        </h3>
+                      )}
                     </div>
-                    {dkj_name_international && (
-                      <h3 className="text-[24px] md:text-[28px] xl:text-[30px] text-[#00795C] font-bold leading-[1.2] mb-[20px]">
-                        {dkj_name_international}
-                      </h3>
+                  </div>
+                  {/* <div
+                    className="1 desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] max-w-[870px] mx-auto mt-[44px]"
+                    dangerouslySetInnerHTML={{
+                      __html: productTranslate(
+                        aicoProductData,
+                        'description',
+                        locale,
+                      ),
+                    }}
+                  ></div> */}
+                  <div
+                    className="1 desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] max-w-[870px] mx-auto mt-[44px]"
+                    dangerouslySetInnerHTML={{
+                      __html: aicoProductData?.description,
+                    }}
+                  ></div>
+                </div>
+              </div>
+            </div>
+            <div className="rich-text-inner">
+              <div className="flex flex-col gap-y-[30px] lg:gap-x-[50px] xl:gap-x-[60px]">
+                <div className="col-left w-full max-w-[870px] mx-auto">
+                  <div className="desc text-[16px] md:text-[16px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mb-[32px]">
+                    {aicoProductTagsUrsachen.length > 0 && (
+                      <>
+                        <h2 className="text-black text-[24px] md:text-[30px] lg:text-[35px] leading-[1.1] tracking-[-0.97152px] mb-[20px] font-medium">
+                          {dr_kybun_joya_article?.causes_title?.value}
+                        </h2>
+                        {rtgb_textursachen && <p>{rtgb_textursachen}</p>}
+                        <ul className="list-style2 list-style3">
+                          {aicoProductTagsUrsachen.map((item, index) => {
+                            return (
+                              <li className="list-style-red" key={index}>
+                                {item}
+                              </li>
+                            );
+                          })}
+                        </ul>
+                      </>
+                    )}
+                    {aicoDrKybunJoyaProductTags.length > 0 && (
+                      <>
+                        <h2 className="text-black text-[24px] md:text-[30px] lg:text-[35px] leading-[1.1] tracking-[-0.97152px] mb-[20px] font-medium">
+                          {dr_kybun_joya_article?.kybun_joya_therapy_title?.value}
+                        </h2>
+                        {rtgb_textkybunjoyatherapie && (
+                          <p>{rtgb_textkybunjoyatherapie}</p>
+                        )}
+                        <ul className="list-style2 list-style3">
+                          {aicoDrKybunJoyaProductTags.map((item, index) => {
+                            return (
+                              <li className="list-style-green" key={index}>
+                                {item}
+                              </li>
+                            );
+                          })}
+                        </ul>
+                      </>
                     )}
                   </div>
+                  {downloadLinks.length > 0 && (
+                    <>
+                      {downloadLinks.map((item, index) => {
+                        return (
+                          <div className="btn-wrap mt-[20px]" key={index}>
+                            <a
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              href={item.href}
+                              className="download-link pro-btn text-[16px] md:text-[20px] lg:text-[21px] leading-none text-black tracking-[-0.400697px] font-normal flex gap-[5px] lg:gap-[25px] justify-center w-fit text-left items-center transition-all duration-700 hover:text-[#00795c] download-link underline"
+                            >
+                              <IconDownload className={'w-[20px] h-[20px]'} />
+                              {item.title}
+                            </a>
+                          </div>
+                        );
+                      })}
+                    </>
+                  )}
                 </div>
-                {/* <div
-                  className="1 desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] max-w-[870px] mx-auto mt-[44px]"
-                  dangerouslySetInnerHTML={{
-                    __html: productTranslate(
-                      aicoProductData,
-                      'description',
-                      locale,
-                    ),
-                  }}
-                ></div> */}
-                <div
-                  className="1 desc text-[16px] md:text-[18px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] max-w-[870px] mx-auto mt-[44px]"
-                  dangerouslySetInnerHTML={{
-                    __html: aicoProductData?.description,
-                  }}
-                ></div>
               </div>
             </div>
           </div>
-        </section>
-        <section className="rich-text-sec">
-          <div className="rich-text-inner">
-            <div className="flex flex-col gap-y-[30px] lg:gap-x-[50px] xl:gap-x-[60px]">
-              <div className="col-left w-full max-w-[870px] mx-auto">
-                <div className="desc text-[16px] md:text-[16px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mb-[32px]">
-                  {aicoProductTagsUrsachen.length > 0 && (
-                    <>
-                      <h2 className="text-black text-[24px] md:text-[30px] lg:text-[35px] leading-[1.1] tracking-[-0.97152px] mb-[20px] font-medium">
-                        {dr_kybun_joya_article?.causes_title?.value}
-                      </h2>
-                      {rtgb_textursachen && <p>{rtgb_textursachen}</p>}
-                      <ul className="list-style2 list-style3">
-                        {aicoProductTagsUrsachen.map((item, index) => {
-                          return (
-                            <li className="list-style-red" key={index}>
-                              {item}
-                            </li>
-                          );
-                        })}
-                      </ul>
-                    </>
-                  )}
-                  {aicoDrKybunJoyaProductTags.length > 0 && (
-                    <>
-                      <h2 className="text-black text-[24px] md:text-[30px] lg:text-[35px] leading-[1.1] tracking-[-0.97152px] mb-[20px] font-medium">
-                        {dr_kybun_joya_article?.kybun_joya_therapy_title?.value}
-                      </h2>
-                      {rtgb_textkybunjoyatherapie && (
-                        <p>{rtgb_textkybunjoyatherapie}</p>
-                      )}
-                      <ul className="list-style2 list-style3">
-                        {aicoDrKybunJoyaProductTags.map((item, index) => {
-                          return (
-                            <li className="list-style-green" key={index}>
-                              {item}
-                            </li>
-                          );
-                        })}
-                      </ul>
-                    </>
-                  )}
-                </div>
-                {downloadLinks.length > 0 && (
-                  <>
-                    {downloadLinks.map((item, index) => {
-                      return (
-                        <div className="btn-wrap mt-[20px]" key={index}>
-                          <a
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            href={item.href}
-                            className="download-link pro-btn text-[16px] md:text-[20px] lg:text-[21px] leading-none text-black tracking-[-0.400697px] font-normal flex gap-[5px] lg:gap-[25px] justify-center w-fit text-left items-center transition-all duration-700 hover:text-[#00795c] download-link underline"
-                          >
-                            <IconDownload className={'w-[20px] h-[20px]'} />
-                            {item.title}
-                          </a>
-                        </div>
-                      );
-                    })}
-                  </>
-                )}
-              </div>
-            </div>
+          <div className='w-1/3 h-full'>
+            <script async type="text/javascript" src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=Xpi5VF"></script>
+            <div class="klaviyo-form-U3hASt"></div>
           </div>
         </section>
 
