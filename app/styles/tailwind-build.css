@@ -1210,17 +1210,11 @@ video {
 .\!w-auto {
   width: auto !important;
 }
-.w-1\/3 {
-  width: 33.333333%;
-}
 .w-10 {
   width: 2.5rem;
 }
 .w-12 {
   width: 3rem;
-}
-.w-2\/3 {
-  width: 66.666667%;
 }
 .w-24 {
   width: 6rem;
@@ -4139,6 +4133,14 @@ video {
     height: 100%;
   }
 
+  .lg\:w-1\/3 {
+    width: 33.333333%;
+  }
+
+  .lg\:w-2\/3 {
+    width: 66.666667%;
+  }
+
   .lg\:w-2\/5 {
     width: 40%;
   }
@@ -5017,6 +5019,10 @@ video {
 
   .xl\:text-\[16px\] {
     font-size: 16px;
+  }
+
+  .xl\:text-\[19px\] {
+    font-size: 19px;
   }
 
   .xl\:text-\[20px\] {
