@@ -186,16 +186,21 @@ export default function ratgeberSeiteFersensporn() {
       });
       setDownloadLinks(downListArr);
     }
-    console.log("here");
-    document.addEventListener("klaviyoForms", function(e) {
-      if (e.detail.type == 'submit') {
-        var _learnq = window._learnq || [];
-        var url_visit = window.location.pathname;
-          _learnq.push(['identify', {
-            'dr_kybun_formular':"hola"
-          }]);
-      }
-    });
+    setTimeout(() => {
+      document.addEventListener("klaviyoForms", function(e) {
+        console.log("hello")
+        if (e.detail.type == 'submit') {
+          var _learnq = window._learnq || [];
+          var url_visit = window.location.pathname;
+            _learnq.push(['identify', {
+              'dr_kybun_formular':'hola',
+            }]);
+        }
+      });
+      console.log("script loaded")
+    }, 3000);
+
+
     // const downloadLinks = document.querySelectorAll('.download-link');
     // downloadLinks.forEach((link) => {
     //   link.addEventListener('click', (event) => {
@@ -410,7 +415,6 @@ export default function ratgeberSeiteFersensporn() {
           </div>
         </section>
       </div>
-      <script async type="text/javascript" src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=Xpi5VF"></script>
     </>
   );
 }
