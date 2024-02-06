@@ -187,8 +187,17 @@ export default function ratgeberSeiteFersensporn() {
       setDownloadLinks(downListArr);
     }
     setTimeout(() => {
+      var klaviyoElements = document.querySelectorAll('.klaviyo-form');
+      klaviyoElements.forEach(function (element) {
+        element.addEventListener('click', function () {
+        // Your click event logic here
+          var _learnq = window._learnq || [];
+          _learnq.push(['identify', {
+            'dr_kybun_formular':'hola',
+          }]);
+        });
+      });
       document.addEventListener("klaviyoForms", function(e) {
-        console.log("hello")
         if (e.detail.type == 'submit') {
           var _learnq = window._learnq || [];
           var url_visit = window.location.pathname;
