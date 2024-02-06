@@ -186,33 +186,20 @@ export default function ratgeberSeiteFersensporn() {
       });
       setDownloadLinks(downListArr);
     }
-    setTimeout(() => {
+    var klaviyoElements = document.querySelectorAll('.klaviyo-form');
+    function add_klaviyo() {
+      var _learnq = window._learnq || [];
+      _learnq.push(['identify', {
+        'dr_kybun_formular':'chao',
+      }]);
       var klaviyoElements = document.querySelectorAll('.klaviyo-form');
-      function add_klaviyo() {
-        var _learnq = window._learnq || [];
-        _learnq.push(['identify', {
-          'dr_kybun_formular':'hola',
-        }]);
-        console.log("hello")
-        var klaviyoElements = document.querySelectorAll('.klaviyo-form');
-        klaviyoElements.forEach(function (element) {
-          element.removeEventListener('click', add_klaviyo);
-        });
-      }
       klaviyoElements.forEach(function (element) {
-        element.addEventListener('click', add_klaviyo);
+        element.removeEventListener('click', add_klaviyo);
       });
-      document.addEventListener("klaviyoForms", function(e) {
-        if (e.detail.type == 'submit') {
-          var _learnq = window._learnq || [];
-          var url_visit = window.location.pathname;
-            _learnq.push(['identify', {
-              'dr_kybun_formular':'hola',
-            }]);
-        }
-      });
-      console.log("script loaded")
-    }, 3000);
+    }
+    klaviyoElements.forEach(function (element) {
+      element.addEventListener('click', add_klaviyo);
+    });
 
 
     // const downloadLinks = document.querySelectorAll('.download-link');
