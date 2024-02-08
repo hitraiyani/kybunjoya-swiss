@@ -123,16 +123,8 @@ export default function ratgeberSeiteFersensporn() {
   let rtgb_textkybunjoyatherapie = '';
   let klaviyo_formular = '';
   let klaviyo_formular_img = '';
-  console.log(aicoProductData);
-  klaviyo_formular = getAicoMetaByKeyName(
-    aicoProductData?.aico_custom_fields_en?.value,
-    'drkybunjoya-klformid',
-  );
-  klaviyo_formular_img = getAicoMetaByKeyName(
-    aicoProductData?.aico_custom_fields_en?.value,
-    'drkybunjoya-bookletfront',
-  );
-  console.log(klaviyo_formular_img)
+  klaviyo_formular = "klaviyo-form-"+aicoProductData?.drkybunjoya_klformid?.value
+  klaviyo_formular_img = aicoProductData?.drkybunjoya_bookletfront?.value
   if (locale.toLocaleLowerCase() == 'en') {
     dkj_name_international = getAicoMetaByKeyName(
       aicoProductData?.aico_custom_fields_en?.value,
@@ -458,7 +450,10 @@ ${MEDIA_FRAGMENT}
         width
         height
       }
-      metafield(namespace: "aico", key: "drkybunjoya_klformid"){
+      drkybunjoya_klformid: metafield(namespace: "aico", key: "drkybunjoya_klformid"){
+        value
+      }
+      drkybunjoya_bookletfront: metafield(namespace: "aico", key: "drkybunjoya_bookletfront"){
         value
       }
       aico_content_builders: metafield(namespace: "aico", key: "aico_content_builders") {
