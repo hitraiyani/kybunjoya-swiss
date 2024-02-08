@@ -23,7 +23,6 @@ import {
 } from '~/lib/utils';
 import {flattenConnection} from '@shopify/hydrogen';
 import {STORE_LOCALE, AICO_API_IMAGE_PREFIX} from '~/lib/const';
-// import { klaviyo_dr_kybun } from './klaviyo';
 
 const seo = ({data}) => ({
   title: data?.page?.seo?.title,
@@ -36,7 +35,6 @@ export const handle = {
 };
 export async function loader({request, params, context}) {
   const {productHandle} = params;
-
   const {product, dr_kybun_joya_article} = await context.storefront.query(
     PRODUCT_QUERY,
     {
@@ -67,11 +65,8 @@ export async function loader({request, params, context}) {
 }
 
 export default function ratgeberSeiteFersensporn() {
-  // klaviyo_dr_kybun();
   const {locale, product, dr_kybun_joya_article} = useLoaderData();
-
   const aicoProductData = product;
-
   const aicoDrKybunJoyaProductTags = [];
   let drKybunJoyaTagHeading = '';
   aicoProductData?.tags?.forEach((item) => {
@@ -126,6 +121,18 @@ export default function ratgeberSeiteFersensporn() {
   let dkj_name_international = '';
   let rtgb_textursachen = '';
   let rtgb_textkybunjoyatherapie = '';
+  let klaviyo_formular = '';
+  let klaviyo_formular_img = '';
+  console.log(aicoProductData);
+  klaviyo_formular = getAicoMetaByKeyName(
+    aicoProductData?.aico_custom_fields_en?.value,
+    'drkybunjoya-klformid',
+  );
+  klaviyo_formular_img = getAicoMetaByKeyName(
+    aicoProductData?.aico_custom_fields_en?.value,
+    'drkybunjoya-bookletfront',
+  );
+  console.log(klaviyo_formular_img)
   if (locale.toLocaleLowerCase() == 'en') {
     dkj_name_international = getAicoMetaByKeyName(
       aicoProductData?.aico_custom_fields_en?.value,
@@ -285,6 +292,7 @@ export default function ratgeberSeiteFersensporn() {
               <div className="flex flex-col gap-y-[30px] lg:gap-x-[50px] xl:gap-x-[60px]">
                 <div className="col-left w-full max-w-[870px] mx-auto">
                   <div className="desc text-[16px] md:text-[16px] lg:text-[20px] xl:text-[21px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mb-[32px]">
+
                     {aicoProductTagsUrsachen.length > 0 && (
                       <>
                         <h2 className="text-black text-[24px] md:text-[30px] lg:text-[35px] leading-[1.1] tracking-[-0.97152px] mb-[20px] font-medium">
@@ -348,10 +356,10 @@ export default function ratgeberSeiteFersensporn() {
           <div className='w-full lg:w-1/3 h-full'>
             <div>
               <h2 className='text-black text-[24px] md:text-[30px] lg:text-[35px] leading-[1.1] tracking-[-0.97152px] mb-[20px] font-medium'>Therapiebroschüre</h2>
-              <div className='mb-[20px]'><img src="https://cdn.shopify.com/s/files/1/0742/9688/5569/files/112731KJ912N_front.png?v=1706781647"/></div>
+              <div className='mb-[20px]'><img src={klaviyo_formular_img}/></div>
               <p className='text-[14px] md:text-[16px] lg:text-[18px] xl:text-[19px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mb-[10px]'>Die Therapiebroschüre beschreibt die Krankheit, zeigt deren Ursachen sowie Symptome auf und erklärt, wie unsere Philosophie und Produkte helfen können.</p>
               <p className='text-[14px] md:text-[16px] lg:text-[18px] xl:text-[19px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mb-[10px]'>Mit integrierten Übungen soll die Wirkung unserer Produkte verstärkt und die Schmerzen gelindert werden.</p>
-              <div className="klaviyo-form-U3hASt"></div>
+              <div className={klaviyo_formular}></div>
             </div>
           </div>
         </section>
@@ -449,6 +457,9 @@ ${MEDIA_FRAGMENT}
         altText
         width
         height
+      }
+      metafield(namespace: "aico", key: "drkybunjoya_klformid"){
+        value
       }
       aico_content_builders: metafield(namespace: "aico", key: "aico_content_builders") {
         value
