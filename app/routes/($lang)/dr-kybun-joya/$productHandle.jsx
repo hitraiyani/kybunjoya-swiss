@@ -118,19 +118,15 @@ export default function ratgeberSeiteFersensporn() {
   // );
   // const videoId = getYoutubeId(dkj_videourl_de_ch);
 
-  let dkj_name_international = '';
-  let rtgb_textursachen = '';
-  let rtgb_textkybunjoyatherapie = '';
-  let klaviyo_formular = '';
-  let klaviyo_formular_img = '';
-  klaviyo_formular = "klaviyo-form-"+aicoProductData?.drkybunjoya_klformid?.value
+  let dkj_name_international, rtgb_textursachen, rtgb_textkybunjoyatherapie, klaviyo_formular, klaviyo_formular_img;
   klaviyo_formular_img = aicoProductData?.drkybunjoya_bookletfront?.value
   if (locale.toLocaleLowerCase() == 'en') {
+    klaviyo_formular = "klaviyo-form-"+aicoProductData?.drkybunjoya_klformid_EN?.value;
+
     dkj_name_international = getAicoMetaByKeyName(
       aicoProductData?.aico_custom_fields_en?.value,
       'dkj_name_international_en',
     );
-
     rtgb_textursachen = getAicoMetaByKeyName(
       aicoProductData?.aico_custom_fields_en?.value,
       'rtgb_textursachen_en',
@@ -141,6 +137,8 @@ export default function ratgeberSeiteFersensporn() {
       'rtgb_textkybunjoyatherapie_en',
     );
   } else {
+    klaviyo_formular = "klaviyo-form-"+aicoProductData?.drkybunjoya_klformid_DE?.value;
+
     dkj_name_international = getAicoMetaByKeyName(
       aicoProductData?.aico_custom_fields_de_ch?.value,
       'dkj_name_international_de_ch',
@@ -235,7 +233,7 @@ export default function ratgeberSeiteFersensporn() {
       <Breadcrumb crumbs={breadCrumbsData} />
       <div className="container">
         <section className="rich-text-sec flex flex-col md:flex-row gap-y-[20px] gap-x-[40px] xl:gap-x-[60px] 2xl:gap-x-[100px] items-center" id="section_1">
-          <div className="w-full lg:w-2/3 h-full">
+          <div className={`w-full ${klaviyo_formular!="klaviyo-form-undefined" ? 'lg:w-2/3' : 'lg:w-full'} h-full`}>
             <div className="rich-text-inner">
               <div className="flex flex-col gap-y-[30px] lg:gap-x-[50px] xl:gap-x-[60px]">
                 <div className="col-left w-full">
@@ -345,6 +343,7 @@ export default function ratgeberSeiteFersensporn() {
               </div>
             </div>
           </div>
+          {klaviyo_formular!="klaviyo-form-undefined" ?
           <div className='w-full lg:w-1/3 h-full'>
             <div>
               <h2 className='text-black text-[24px] md:text-[30px] lg:text-[35px] leading-[1.1] tracking-[-0.97152px] mb-[20px] font-medium'>Therapiebroschüre</h2>
@@ -354,6 +353,7 @@ export default function ratgeberSeiteFersensporn() {
               <div className={klaviyo_formular}></div>
             </div>
           </div>
+          : null}
         </section>
 
         <section className="about-us-sec pb-[40px] md:py-[60px] lg:py-[80px] xl:py-[100px]">
@@ -450,7 +450,10 @@ ${MEDIA_FRAGMENT}
         width
         height
       }
-      drkybunjoya_klformid: metafield(namespace: "aico", key: "drkybunjoya_klformid"){
+      drkybunjoya_klformid_DE: metafield(namespace: "aico", key: "drkybunjoya_klformid"){
+        value
+      }
+      drkybunjoya_klformid_EN: metafield(namespace: "aico", key: "drkybunjoya_klformidEN"){
         value
       }
       drkybunjoya_bookletfront: metafield(namespace: "aico", key: "drkybunjoya_bookletfront"){
