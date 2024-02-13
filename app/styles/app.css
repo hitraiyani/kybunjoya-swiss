@@ -106,6 +106,19 @@ p:last-child {
   counter-increment: brick-counter;
 }
 
+html[lang|="de"] span[id*="klaviyo_ariaid_"] {
+  visibility: hidden;
+  position: relative;
+}
+ 
+html[lang|="de"] span[id*="klaviyo_ariaid_"]:after {
+  visibility: visible;
+  position: absolute;
+  top: 20%;
+  left: 5%;
+  content: "Bitte ausfühlen";
+}
+
 .mobile-menu-Drawer li .sub-menu a {
   margin-bottom: 12px;
   font-weight: 400;
