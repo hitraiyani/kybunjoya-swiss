@@ -116,7 +116,7 @@ html[lang|="de"] span[id*="klaviyo_ariaid_"]:after {
   position: absolute;
   top: 20%;
   left: 5%;
-  content: "Bitte ausfühlen";
+  content: "Bitte aufüllen";
 }
 
 .mobile-menu-Drawer li .sub-menu a {
