@@ -118,10 +118,11 @@ export default function ratgeberSeiteFersensporn() {
   // );
   // const videoId = getYoutubeId(dkj_videourl_de_ch);
 
-  let dkj_name_international, rtgb_textursachen, rtgb_textkybunjoyatherapie, klaviyo_formular, klaviyo_formular_img;
+  let dkj_name_international, rtgb_textursachen, rtgb_textkybunjoyatherapie, klaviyo_formular, klaviyo_formular_img, title_formular;
   let text_formular = []
   klaviyo_formular_img = aicoProductData?.drkybunjoya_bookletfront?.value
   if (locale.toLocaleLowerCase() == 'en') {
+    title_formular ="Therapy brochure"
     text_formular[0]="The therapy brochure describes the condition, explains its causes and symptoms and outlines how our philosophy and products can help."
     text_formular[1]="Integrated exercises are designed to enhance the effect of our products and to alleviate the pain."
     klaviyo_formular = "klaviyo-form-"+aicoProductData?.drkybunjoya_klformid_EN?.value;
@@ -140,6 +141,7 @@ export default function ratgeberSeiteFersensporn() {
       'rtgb_textkybunjoyatherapie_en',
     );
   } else {
+    title_formular ="Therapiebroschüre"
     text_formular[0] = "Die Therapiebroschüre beschreibt die Krankheit, zeigt deren Ursachen sowie Symptome auf und erklärt, wie unsere Philosophie und Produkte helfen können."
     text_formular[1] = "Mit integrierten Übungen soll die Wirkung unserer Produkte verstärkt und die Schmerzen gelindert werden."
     klaviyo_formular = "klaviyo-form-"+aicoProductData?.drkybunjoya_klformid_DE?.value;
@@ -351,7 +353,7 @@ export default function ratgeberSeiteFersensporn() {
           {klaviyo_formular!="klaviyo-form-undefined" ?
           <div className='w-full lg:w-1/3 h-full'>
             <div>
-              <h2 className='text-black text-[24px] md:text-[30px] lg:text-[35px] leading-[1.1] tracking-[-0.97152px] mb-[20px] font-medium'>Therapiebroschüre</h2>
+              <h2 className='text-black text-[24px] md:text-[30px] lg:text-[35px] leading-[1.1] tracking-[-0.97152px] mb-[20px] font-medium'>{title_formular}</h2>
               <div className='mb-[20px]'><img src={klaviyo_formular_img}/></div>
               <p className='text-[14px] md:text-[16px] lg:text-[18px] xl:text-[19px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mb-[10px]'>{text_formular[0]}</p>
               <p className='text-[14px] md:text-[16px] lg:text-[18px] xl:text-[19px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mb-[10px]'>{text_formular[1]}</p>
