@@ -144,6 +144,7 @@ export default function ratgeberSeiteFersensporn() {
     title_formular ="Therapiebroschüre"
     text_formular[0] = "Die Therapiebroschüre beschreibt die Krankheit, zeigt deren Ursachen sowie Symptome auf und erklärt, wie unsere Philosophie und Produkte helfen können."
     text_formular[1] = "Mit integrierten Übungen soll die Wirkung unserer Produkte verstärkt und die Schmerzen gelindert werden."
+
     klaviyo_formular = "klaviyo-form-"+aicoProductData?.drkybunjoya_klformid_DE?.value;
 
     dkj_name_international = getAicoMetaByKeyName(
@@ -363,7 +364,7 @@ export default function ratgeberSeiteFersensporn() {
           : null}
         </section>
 
-        <section className="about-us-sec pb-[40px] md:py-[60px] lg:py-[80px] xl:py-[100px]">
+        <section className="about-us-sec pb-[40px] mt-20 md:py-[60px] lg:py-[80px] xl:py-[100px]">
           <div className="inner-row">
             <div className="flex flex-col md:flex-row gap-y-[20px] gap-x-[40px] xl:gap-x-[60px] 2xl:gap-x-[100px] items-center">
               <div className="col-left w-full lg:w-[50%]">
