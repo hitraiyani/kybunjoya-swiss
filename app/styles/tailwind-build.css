@@ -900,6 +900,9 @@ video {
 .mt-2 {
   margin-top: 0.5rem;
 }
+.mt-20 {
+  margin-top: 5rem;
+}
 .mt-3 {
   margin-top: 0.75rem;
 }
@@ -1001,15 +1004,6 @@ video {
 }
 .mt-auto {
   margin-top: auto;
-}
-.mt-0 {
-  margin-top: 0px;
-}
-.mt-\[-10px\] {
-  margin-top: -10px;
-}
-.mt-20 {
-  margin-top: 5rem;
 }
 .box-border {
   box-sizing: border-box;
@@ -2589,12 +2583,6 @@ video {
   font-size: 0.75rem;
   line-height: 1rem;
 }
-.text-\[10px\] {
-  font-size: 10px;
-}
-.text-\[9px\] {
-  font-size: 9px;
-}
 .font-\[400\] {
   font-weight: 400;
 }
@@ -3930,14 +3918,6 @@ video {
     font-size: 50px;
   }
 
-  .md\:text-\[12px\] {
-    font-size: 12px;
-  }
-
-  .md\:text-\[9px\] {
-    font-size: 9px;
-  }
-
   .md\:opacity-0 {
     opacity: 0;
   }
@@ -4578,10 +4558,6 @@ video {
   .lg\:text-\[75px\] {
     font-size: 75px;
   }
-
-  .lg\:text-\[9px\] {
-    font-size: 9px;
-  }
 }
 @media (min-width: 1200px) {
 
@@ -5110,14 +5086,6 @@ video {
 
   .xl\:text-\[95px\] {
     font-size: 95px;
-  }
-
-  .xl\:text-\[15px\] {
-    font-size: 15px;
-  }
-
-  .xl\:text-\[10px\] {
-    font-size: 10px;
   }
 
   .xl\:outline-\[10px\] {

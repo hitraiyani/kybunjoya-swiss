@@ -125,8 +125,8 @@ export default function ratgeberSeiteFersensporn() {
     title_formular ="Therapy brochure"
     text_formular[0]="The therapy brochure describes the condition, explains its causes and symptoms and outlines how our philosophy and products can help."
     text_formular[1]="Integrated exercises are designed to enhance the effect of our products and to alleviate the pain."
-    klaviyo_formular = "klaviyo-form-"+aicoProductData?.drkybunjoya_klformid_EN?.value;
-
+    //klaviyo_formular = "klaviyo-form-"+aicoProductData?.drkybunjoya_klformid_EN?.value;
+    klaviyo_formular = "klaviyo-form-undefined"
     dkj_name_international = getAicoMetaByKeyName(
       aicoProductData?.aico_custom_fields_en?.value,
       'dkj_name_international_en',
