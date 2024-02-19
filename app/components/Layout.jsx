@@ -109,7 +109,7 @@ export function Layout({children, layout, locale}) {
         locale={locale}
         footerSectionData={layout?.footerSectionData}
       />
-       <script type="text/javascript" src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=Xpi5VF"></script>
+       <script type="text/javascript" src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=Xpi5VF" defer></script>
     </>
   );
 }
