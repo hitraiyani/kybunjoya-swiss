@@ -23,6 +23,7 @@ import {
 } from '~/lib/utils';
 import {flattenConnection} from '@shopify/hydrogen';
 import {STORE_LOCALE, AICO_API_IMAGE_PREFIX} from '~/lib/const';
+import {useLoadScript} from '@shopify/hydrogen';
 
 const seo = ({data}) => ({
   title: data?.page?.seo?.title,
@@ -179,8 +180,11 @@ export default function ratgeberSeiteFersensporn() {
   // );
 
   const [downloadLinks, setDownloadLinks] = useState([]);
+  const klaviyo_script_status = useLoadScript('https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=Xpi5VF');
 
   useEffect(() => {
+
+
     if (aicoProductData?.documents?.value) {
       var container = document.createElement('div');
       container.innerHTML = aicoProductData.documents.value;
@@ -205,8 +209,10 @@ export default function ratgeberSeiteFersensporn() {
     klaviyoElements.forEach(function (element) {
       element.addEventListener('click', add_klaviyo);
     });
-
-
+    if (klaviyo_script_status === 'done') {
+      window._klOnsite = window._klOnsite || [];
+      window._klOnsite.push(['openForm', klaviyo_formular]);
+    }
     // const downloadLinks = document.querySelectorAll('.download-link');
     // downloadLinks.forEach((link) => {
     //   link.addEventListener('click', (event) => {
@@ -231,7 +237,7 @@ export default function ratgeberSeiteFersensporn() {
     //     xhr.send();
     //   });
     // });
-  }, []);
+  }, [klaviyo_script_status]);
 
   const {pathname} = useLocation();
   const breadCrumbsData = getBreadCrumbs(null, 'ratgeberdetailpage');

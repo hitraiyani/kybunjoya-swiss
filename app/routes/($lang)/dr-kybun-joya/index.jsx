@@ -570,7 +570,6 @@ export default function ratgeberseite() {
           </div>
         </div>
       </section>
-      <script type="text/javascript" src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=Xpi5VF"></script>
     </>
   );
 }
