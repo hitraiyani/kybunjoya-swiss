@@ -23,7 +23,7 @@ import {
 } from '~/lib/utils';
 import {flattenConnection} from '@shopify/hydrogen';
 import {STORE_LOCALE, AICO_API_IMAGE_PREFIX} from '~/lib/const';
-import {useLoadScript} from '@shopify/hydrogen';
+import {useLoadScript} from '@shopify/hydrogen-react';
 
 const seo = ({data}) => ({
   title: data?.page?.seo?.title,
