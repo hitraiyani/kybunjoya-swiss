@@ -183,8 +183,6 @@ export default function ratgeberSeiteFersensporn() {
   const klaviyo_script_status = useLoadScript('https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=Xpi5VF');
 
   useEffect(() => {
-
-
     if (aicoProductData?.documents?.value) {
       var container = document.createElement('div');
       container.innerHTML = aicoProductData.documents.value;
@@ -357,7 +355,7 @@ export default function ratgeberSeiteFersensporn() {
               </div>
             </div>
           </div>
-          {klaviyo_formular!="klaviyo-form-undefined" ?
+          {klaviyo_formular!="klaviyo-form-undefined" && klaviyo_script_status === 'done' ?
           <div className='w-full lg:w-1/3 h-full'>
             <div>
               <h2 className='text-black text-[24px] md:text-[30px] lg:text-[35px] leading-[1.1] tracking-[-0.97152px] mb-[20px] font-medium'>{title_formular}</h2>
