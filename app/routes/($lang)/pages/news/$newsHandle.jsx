@@ -37,9 +37,7 @@ export async function loader({params, context}) {
       },
     },
   );
-
   const news = await newsResponse.json();
-
   if (!news?.data) {
     throw new Response(null, {status: 404});
   }
@@ -182,7 +180,7 @@ export default function Article() {
               </span>
             </div>
             {newsObj.image && (
-              <div className='new--main-img img-wrap relative overflow-hidden rounded-md pb-[30%] mt-[20px] min-h-[350px]'>
+              <div className='new--main-img img-wrap relative overflow-hidden rounded-md pb-[50%] mt-[20px] min-h-[350px]'>
                 <Image
                   data={{
                     url: newsObj.image,
