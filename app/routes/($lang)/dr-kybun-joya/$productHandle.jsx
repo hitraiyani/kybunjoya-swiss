@@ -117,12 +117,14 @@ export default function ratgeberSeiteFersensporn() {
   //   aicoProductData?.aico_custom_fields_de_ch?.value,
   //   'dkj_videourl_de_ch',
   // );
-  // const videoId = getYoutubeId(dkj_videourl_de_ch);
 
-  let dkj_name_international, rtgb_textursachen, rtgb_textkybunjoyatherapie, klaviyo_formular, klaviyo_formular_img, title_formular;
+  let dkj_name_international, rtgb_textursachen, rtgb_textkybunjoyatherapie, klaviyo_formular, klaviyo_formular_img, title_formular, video_link;
   let text_formular = []
   klaviyo_formular_img = aicoProductData?.drkybunjoya_bookletfront?.value
   if (locale.toLocaleLowerCase() == 'en') {
+    if (aicoProductData?.dkj_videourl_en?.value) {
+      video_link = "https://www.youtube.com/embed/"+getYoutubeId(aicoProductData?.dkj_videourl_en?.value)+"?rel=0";
+    }
     title_formular ="Therapy brochure"
     text_formular[0]="The therapy brochure describes the condition, explains its causes and symptoms and outlines how our philosophy and products can help."
     text_formular[1]="Integrated exercises are designed to enhance the effect of our products and to alleviate the pain."
@@ -142,6 +144,9 @@ export default function ratgeberSeiteFersensporn() {
       'rtgb_textkybunjoyatherapie_en',
     );
   } else {
+    if (aicoProductData?.dkj_videourl_de_ch?.value) {
+      video_link = "https://www.youtube.com/embed/"+getYoutubeId(aicoProductData?.dkj_videourl_de_ch?.value)+"?rel=0";
+    }
     title_formular ="Therapiebroschüre"
     text_formular[0] = "Die Therapiebroschüre beschreibt die Krankheit, zeigt deren Ursachen sowie Symptome auf und erklärt, wie unsere Philosophie und Produkte helfen können."
     text_formular[1] = "Mit integrierten Übungen soll die Wirkung unserer Produkte verstärkt und die Schmerzen gelindert werden."
@@ -257,13 +262,20 @@ export default function ratgeberSeiteFersensporn() {
                         {aicoProductData?.title}
                       </h2>
                       <div className="max-w-[1200px] mx-auto">
-                        <div className="product-list-hero-img relative overflow-hidden pb-[55%] xl:pb-[45%] 2xl:pb-[35%] min-h-[230px] w-full">
-                          <img
-                            className="absolute inset-0 w-full h-full object-cover object-center"
-                            src={aicoProductData?.featuredImage?.url}
-                            alt=""
-                          />
-                        </div>
+                        {!video_link && (
+                          <div className="product-list-hero-img relative overflow-hidden pb-[55%] xl:pb-[45%] 2xl:pb-[35%] min-h-[230px] w-full">
+                            <img
+                                className="absolute inset-0 w-full h-full object-cover object-center"
+                                src={aicoProductData?.featuredImage?.url}
+                                alt=""
+                              />
+                          </div>
+                          )}
+                          {video_link && (
+                            <div className="product-list-hero-img relative overflow-hidden pb-[55%] xl:pb-[45%] 2xl:pb-[35%] min-h-[230px] w-full aspect-video">
+                              <iframe className='absolute inset-0 w-full h-full object-cover object-center aspect-video' src={video_link} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                            </div>
+                          )}
                       </div>
                       {dkj_name_international && (
                         <h3 className="text-[24px] md:text-[28px] xl:text-[30px] text-[#00795C] font-bold leading-[1.2] mb-[20px]">
@@ -470,6 +482,12 @@ ${MEDIA_FRAGMENT}
         value
       }
       drkybunjoya_bookletfront: metafield(namespace: "aico", key: "drkybunjoya_bookletfront"){
+        value
+      }
+      dkj_videourl_de_ch: metafield(namespace: "aico", key: "dkj_videourl_de_ch"){
+        value
+      }
+      dkj_videourl_en: metafield(namespace: "aico", key: "dkj_videourl_en"){
         value
       }
       aico_content_builders: metafield(namespace: "aico", key: "aico_content_builders") {
