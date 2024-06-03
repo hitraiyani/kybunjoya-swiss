@@ -78,11 +78,11 @@ export default function Article() {
         <div className="title-wrap mt-[85px] lg:mt-[85px]"></div>
       </div>
       <div className="container mx-auto mb-[24px]">
-        <h1>AICO News Test</h1>
+        <h1>News</h1>
         <aico-news-list aico-url="
         https://kybunjoya.aico.swiss/api/v1/"
         highlight-top-articles="true"
-        aico-bearer-token="2JoIqPu1xfHhCPrVIdJa0LwuK7rnqtoPUGlyLkeG16d78cb3" page-size="4" news-brand-ids="6" next-button-text="Nächste Seite" previous-button-text="Vorherige Seite" locale="de_CH"></aico-news-list>
+        aico-bearer-token="2JoIqPu1xfHhCPrVIdJa0LwuK7rnqtoPUGlyLkeG16d78cb3" page-size="8" news-brand-ids="6" next-button-text="Nächste Seite" previous-button-text="Vorherige Seite" locale="de_CH"></aico-news-list>
 
       </div>
     </>
