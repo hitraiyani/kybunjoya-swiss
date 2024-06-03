@@ -33,7 +33,7 @@ export const links = () => {
     },
     {
       rel: 'stylesheet',
-      href: 'https://cdn.jsdelivr.net/npm/@aiconomy/aico-components@0.0.142/dist/aico-components/aico-components.css',
+      href: 'https://cdn.jsdelivr.net/npm/@aiconomy/aico-components@0.0.154/dist/aico-components/aico-components.css',
     },
   ];
 };
@@ -51,12 +51,12 @@ export default function Article() {
     scriptJquery.onload = () => {
       setScriptsLoaded((prevState) => ({...prevState, jqueryLoaded: true}));
       aicoCompESM.src =
-        'https://cdn.jsdelivr.net/npm/@aiconomy/aico-components@0.0.142/dist/aico-components/aico-components.esm.js';
+        'https://cdn.jsdelivr.net/npm/@aiconomy/aico-components@0.0.154/dist/aico-components/aico-components.esm.js';
       aicoCompESM.async = true;
       aicoCompESM.type = "module";
       document.body.appendChild(aicoCompESM);
       aicoComp.src =
-      'https://cdn.jsdelivr.net/npm/@aiconomy/aico-components@0.0.142/dist/esm/aico-components.js';
+      'https://cdn.jsdelivr.net/npm/@aiconomy/aico-components@0.0.154/dist/esm/aico-components.js';
       aicoComp.async = true;
       aicoComp.type = "nomodule";
       document.body.appendChild(aicoComp);
@@ -81,6 +81,7 @@ export default function Article() {
         <h1>AICO News Test</h1>
         <aico-news-list aico-url="
         https://kybunjoya.aico.swiss/api/v1/"
+        highlight-top-articles="true"
         aico-bearer-token="2JoIqPu1xfHhCPrVIdJa0LwuK7rnqtoPUGlyLkeG16d78cb3" page-size="4" news-brand-ids="6" next-button-text="Nächste Seite" previous-button-text="Vorherige Seite" locale="de_CH"></aico-news-list>
 
       </div>

@@ -82,7 +82,7 @@ export const links = () => {
     },
     {
       rel: 'stylesheet',
-      href: 'https://cdn.jsdelivr.net/npm/@aiconomy/aico-components@0.0.142/dist/aico-components/aico-components.css',
+      href: 'https://cdn.jsdelivr.net/npm/@aiconomy/aico-components@0.0.154/dist/aico-components/aico-components.css',
     },
   ];
 };
@@ -115,12 +115,12 @@ export default function Article() {
     scriptJquery.onload = () => {
       setScriptsLoaded((prevState) => ({...prevState, jqueryLoaded: true}));
       aicoCompESM.src =
-        'https://cdn.jsdelivr.net/npm/@aiconomy/aico-components@0.0.142/dist/aico-components/aico-components.esm.js';
+        'https://cdn.jsdelivr.net/npm/@aiconomy/aico-components@0.0.154/dist/aico-components/aico-components.esm.js';
       aicoCompESM.async = true;
       aicoCompESM.type = "module";
       document.body.appendChild(aicoCompESM);
       aicoComp.src =
-      'https://cdn.jsdelivr.net/npm/@aiconomy/aico-components@0.0.142/dist/esm/aico-components.js';
+      'https://cdn.jsdelivr.net/npm/@aiconomy/aico-components@0.0.154/dist/esm/aico-components.js';
       aicoComp.async = true;
       aicoComp.type = "nomodule";
       document.body.appendChild(aicoComp);
@@ -142,7 +142,7 @@ export default function Article() {
       </div>
       <div className="container mx-auto mb-[24px]">
         <div id="news-details-container">
-        <aico-fetch-article-detail aico-url="https://kybunjoya.aico.swiss/api/v1/" aico-bearer-token="2JoIqPu1xfHhCPrVIdJa0LwuK7rnqtoPUGlyLkeG16d78cb3" article-url-handle={newsObj.handle} locale={newsObj.lang}></aico-fetch-article-detail>
+        <aico-fetch-article-detail hide-date-and-author="true" aico-url="https://kybunjoya.aico.swiss/api/v1/" aico-bearer-token="2JoIqPu1xfHhCPrVIdJa0LwuK7rnqtoPUGlyLkeG16d78cb3" article-url-handle={newsObj.handle} locale={newsObj.lang}></aico-fetch-article-detail>
         </div>
       </div>
     </>

@@ -250,7 +250,7 @@ export default function ratgeberSeiteFersensporn() {
       <Breadcrumb crumbs={breadCrumbsData} />
       <div className="container">
       <div>{klaviyo_script_status === 'done'}</div>
-        <section className="rich-text-sec flex flex-col md:flex-row gap-y-[20px] gap-x-[40px] xl:gap-x-[60px] 2xl:gap-x-[100px] items-center" id="section_1">
+        <section className="rich-text-sec flex flex-col md:flex-row gap-y-[20px] gap-x-[40px] xl:gap-x-[60px] 2xl:gap-x-[100px]" id="section_1">
           <div className={`w-full ${klaviyo_formular!="klaviyo-form-undefined" ? 'lg:w-2/3' : 'lg:w-full'} h-full`}>
             <div className="rich-text-inner">
               <div className="flex flex-col gap-y-[30px] lg:gap-x-[50px] xl:gap-x-[60px]">
