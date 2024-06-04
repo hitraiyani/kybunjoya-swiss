@@ -371,8 +371,8 @@ export default function ratgeberSeiteFersensporn() {
           {klaviyo_formular!="klaviyo-form-undefined" && klaviyo_script_status === 'done' ?
           <div className='w-full lg:w-1/3 h-full'>
             <div>
-              <h2 className='text-black text-[24px] md:text-[30px] lg:text-[35px] leading-[1.1] tracking-[-0.97152px] mb-[20px] font-medium'>{title_formular}</h2>
               <div className='mb-[20px]'><img src={klaviyo_formular_img}/></div>
+              <h2 className='text-black text-[24px] md:text-[30px] lg:text-[35px] leading-[1.1] tracking-[-0.97152px] mb-[20px] font-medium'>{title_formular}</h2>
               <p className='text-[14px] md:text-[16px] lg:text-[18px] xl:text-[19px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mb-[10px]'>{text_formular[0]}</p>
               <p className='text-[14px] md:text-[16px] lg:text-[18px] xl:text-[19px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mb-[10px]'>{text_formular[1]}</p>
               <div className={klaviyo_formular}></div>
