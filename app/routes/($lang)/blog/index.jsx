@@ -38,17 +38,8 @@ export const links = () => {
   ];
 };
 
-export default function Article() {
+export default function Article({context}) {
   const [scriptsLoaded, setScriptsLoaded] = useState(false);
-  const {
-    language 
-  } = useLoaderData();
-  let lang_localize;
-  if( language == "DE"){
-    lang_localize = "de_CH"
-  } else if( language == "EN") {
-    lang_localize = "en"
-  }
   useEffect(() => {
     // Load jQuery script
     const scriptJquery = document.createElement('script');
@@ -86,7 +77,7 @@ export default function Article() {
         <h1>News</h1>
         <aico-news-list aico-url="
         https://kybunjoya.aico.swiss/api/v1/"
-        aico-bearer-token="2JoIqPu1xfHhCPrVIdJa0LwuK7rnqtoPUGlyLkeG16d78cb3" page-size="8" news-brand-ids="7" next-button-text="" news-channels="B2C" previous-button-text="" locale={lang_localize}></aico-news-list>
+        aico-bearer-token="2JoIqPu1xfHhCPrVIdJa0LwuK7rnqtoPUGlyLkeG16d78cb3" page-size="8" news-brand-ids="7" next-button-text="" news-channels="B2C" previous-button-text="" locale="en"></aico-news-list>
       </div>
     </>
   );
