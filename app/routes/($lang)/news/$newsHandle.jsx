@@ -42,7 +42,11 @@ export async function loader({params, context}) {
   }
   const newsObj = news?.data[0]?.attributes;
   newsObj.handle = params.newsHandle;
-  newsObj.lang = `${language}`.toLowerCase()+`_${country}`;
+  if (language == "DE"){
+    newsObj.lang = `${language}`.toLowerCase()+`_CH`;
+  } else if (language == "EN"){
+    newsObj.lang = `${language}`;
+  }
 
   newsObj.formattedpublishDate = new Intl.DateTimeFormat(
     `${language}-${country}`,
@@ -90,7 +94,6 @@ export const links = () => {
 export default function Article() {
   const {newsObj} = useLoaderData();
   const [scriptsLoaded, setScriptsLoaded] = useState(false);
-
   const newsContent = newsDescription(newsObj?.contentBuilder);
   var catName = '';
   if (newsObj.newsCategory != null) {
