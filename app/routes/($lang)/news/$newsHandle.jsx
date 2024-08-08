@@ -45,7 +45,7 @@ export async function loader({params, context}) {
   if (language == "DE"){
     newsObj.lang = `${language}`.toLowerCase()+`_CH`;
   } else if (language == "EN"){
-    newsObj.lang = `${language}`;
+    newsObj.lang = `${language}`.toLowerCase();
   }
 
   newsObj.formattedpublishDate = new Intl.DateTimeFormat(
