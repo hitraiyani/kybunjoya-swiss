@@ -115,7 +115,6 @@ export default function Homepage() {
     lang_localize = "en"
   }
   const [root] = useMatches();
-  console.log(lang_localize);
 
   const [newsSliderData, setNewsSliderData] = useState();
 
