@@ -40,7 +40,7 @@ export const links = () => {
     },
     {
       rel: 'stylesheet',
-      href: 'https://cdn.jsdelivr.net/npm/@aiconomy/aico-components@0.0.168/dist/aico-components/aico-components.css',
+      href: 'https://cdn.jsdelivr.net/npm/@aiconomy/aico-components@0.0.174/dist/aico-components/aico-components.css',
     },
   ];
 };
@@ -108,8 +108,14 @@ export default function Homepage() {
     pursueSection,
     language 
   } = useLoaderData();
+  let lang_localize;
+  if( language == "DE"){
+    lang_localize = "de_CH"
+  } else if( language == "EN") {
+    lang_localize = "en"
+  }
   const [root] = useMatches();
-  // console.log(language);
+  console.log(lang_localize);
 
   const [newsSliderData, setNewsSliderData] = useState();
 
@@ -124,12 +130,12 @@ export default function Homepage() {
     scriptJquery.onload = () => {
       setScriptsLoaded((prevState) => ({...prevState, jqueryLoaded: true}));
       aicoCompESM.src =
-        'https://cdn.jsdelivr.net/npm/@aiconomy/aico-components@0.0.168/dist/aico-components/aico-components.esm.js';
+        'https://cdn.jsdelivr.net/npm/@aiconomy/aico-components@0.0.174/dist/aico-components/aico-components.esm.js';
       aicoCompESM.async = true;
       aicoCompESM.type = "module";
       document.body.appendChild(aicoCompESM);
       aicoComp.src =
-      'https://cdn.jsdelivr.net/npm/@aiconomy/aico-components@0.0.168/dist/esm/aico-components.js';
+      'https://cdn.jsdelivr.net/npm/@aiconomy/aico-components@0.0.174/dist/esm/aico-components.js';
       aicoComp.async = true;
       aicoComp.type = "nomodule";
       document.body.appendChild(aicoComp);
@@ -157,8 +163,8 @@ export default function Homepage() {
           </Await>
         </Suspense>
       )}
-      <div class="container front_page-news pt-[40px]">
-        <aico-news-list aico-url="https://kybunjoya.aico.swiss/api/v1/" aico-bearer-token="2JoIqPu1xfHhCPrVIdJa0LwuK7rnqtoPUGlyLkeG16d78cb3" page-size="3" news-brand-ids="7" news-channels="B2C"></aico-news-list>
+      <div className="container front_page-news pt-[40px]">
+        <aico-news-list aico-url="https://kybunjoya.aico.swiss/api/v1/" lang_localize={lang_localize} aico-bearer-token="2JoIqPu1xfHhCPrVIdJa0LwuK7rnqtoPUGlyLkeG16d78cb3" page-size="3" news-brand-ids="7" news-channels="B2C"></aico-news-list>
       </div>
 
       {pursueSection && (

@@ -1863,3 +1863,7 @@ select {
   font-size: 41px;
   color: rgb(0,121,92)
 }
+
+.sc-aico-article-detail img.sc-aico-article-detail {
+  border-radius: 0 !important;
+}
