@@ -76,7 +76,6 @@ export async function loader({request, params, context}) {
 export default function ratgeberseite() {
   const {page, collection, sub_collections, pageCollectionTitle} =
     useLoaderData();
-
   const [searchQuery, setSearchQuery] = useState('');
 
   const filteredKybunJoyaProducts = collection?.products?.nodes.filter(

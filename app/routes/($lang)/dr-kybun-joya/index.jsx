@@ -45,7 +45,6 @@ export async function loader({request, params, context}) {
       language: context.storefront.i18n.language,
     },
   });
-
   const collectionHandle = 'all-products';
 
   const searchParams = new URL(request.url).searchParams;
@@ -96,11 +95,10 @@ export default function ratgeberseite() {
   const filteredKybunJoyaProducts = collection?.products?.nodes;
 
   const headProductList = filteredKybunJoyaProducts?.slice(0, 5);
-  const sliderProductList = filteredKybunJoyaProducts?.slice(5, 11);
+  const sliderProductList = filteredKybunJoyaProducts?.slice(5, 12);
   const filteredSubCollections = sub_collections?.nodes?.filter((product) => {
     return product.title.toLowerCase().includes(searchQuery.toLowerCase());
   });
-
   useEffect(() => {
     document.querySelectorAll('.my-achor-link').forEach(function (link) {
       link.addEventListener('mouseover', function (e) {

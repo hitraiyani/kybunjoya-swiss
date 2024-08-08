@@ -13,9 +13,16 @@ import {
 import {MEDIA_FRAGMENT, PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
 import {getHeroPlaceholder} from '~/lib/placeholders';
 import {AnalyticsPageType} from '@shopify/hydrogen';
-import {AICO_API_URL, AICO_API_TOKEN, QUICK_LINK_MENU_TITLE} from '~/lib/const';
+import {AICO_API_URL, AICO_API_TOKEN, QUICK_LINK_MENU_TITLE, STORE_LOCALE, ATTR_LOADING_EAGER,} from '~/lib/const';
 import { translate } from '../../lib/utils';
 
+import {json} from '@shopify/remix-oxygen';
+import {Image} from '@shopify/hydrogen';
+import invariant from 'tiny-invariant';
+import {PageHeader, Section} from '~/components';
+
+import {newsDescription} from '~/lib/utils';
+import styles from '~/styles/news.css';
 
 const seo = ({data}) => ({
   url : data?.url,
@@ -24,7 +31,19 @@ const seo = ({data}) => ({
 export const handle = {
   seo,
 };
-
+export const links = () => {
+  return [
+    {rel: 'stylesheet', href: styles},
+    {
+      rel: 'stylesheet',
+      href: 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css',
+    },
+    {
+      rel: 'stylesheet',
+      href: 'https://cdn.jsdelivr.net/npm/@aiconomy/aico-components@0.0.168/dist/aico-components/aico-components.css',
+    },
+  ];
+};
 export async function loader({params,request, context}) {
   const {language, country} = context.storefront.i18n;
 
@@ -61,13 +80,6 @@ export async function loader({params,request, context}) {
       variables: {metaObjectId: 'gid://shopify/Metaobject/2353365313'},
     },
   );
-
-  const newsBannerSection = context.storefront.query(
-    HOMEPAGE_NEWS_BANNER_QUERY,
-    {
-      variables: {metaObjectId: 'gid://shopify/Metaobject/2362212673'},
-    },
-  );
   // const brandIcons = context.storefront.query(
   //   HOMEPAGE_BRAND_ICONS_QUERY,
   //   {
@@ -81,7 +93,6 @@ export async function loader({params,request, context}) {
     language,
     fourMainSection,
     pursueSection,
-    newsBannerSection,
     url: request.url,
     analytics: {
       pageType: AnalyticsPageType.home,
@@ -90,11 +101,11 @@ export async function loader({params,request, context}) {
 }
 
 export default function Homepage() {
+  const [scriptsLoaded, setScriptsLoaded] = useState(false);
   const {
     heroSlider,
     fourMainSection,
     pursueSection,
-    newsBannerSection,
     language 
   } = useLoaderData();
   const [root] = useMatches();
@@ -103,7 +114,33 @@ export default function Homepage() {
   const [newsSliderData, setNewsSliderData] = useState();
 
   const skeletons = getHeroPlaceholder([{}, {}, {}]);
+  useEffect(() => {
+    // Load jQuery script
+    const scriptJquery = document.createElement('script');
+    const aicoCompESM = document.createElement('script');
+    const aicoComp = document.createElement('script');
+    scriptJquery.src = 'https://code.jquery.com/jquery-3.7.1.min.js';
+    scriptJquery.async = true;
+    scriptJquery.onload = () => {
+      setScriptsLoaded((prevState) => ({...prevState, jqueryLoaded: true}));
+      aicoCompESM.src =
+        'https://cdn.jsdelivr.net/npm/@aiconomy/aico-components@0.0.168/dist/aico-components/aico-components.esm.js';
+      aicoCompESM.async = true;
+      aicoCompESM.type = "module";
+      document.body.appendChild(aicoCompESM);
+      aicoComp.src =
+      'https://cdn.jsdelivr.net/npm/@aiconomy/aico-components@0.0.168/dist/esm/aico-components.js';
+      aicoComp.async = true;
+      aicoComp.type = "nomodule";
+      document.body.appendChild(aicoComp);
+    };
+    document.body.appendChild(scriptJquery);
+    addNewsListener();
+    return () => {
+      // Clean up the script tags when the component unmounts
+    };
 
+  }, []);
 
   return (
     <>
@@ -120,18 +157,10 @@ export default function Homepage() {
           </Await>
         </Suspense>
       )}
+      <div class="container front_page-news pt-[40px]">
+        <aico-news-list aico-url="https://kybunjoya.aico.swiss/api/v1/" aico-bearer-token="2JoIqPu1xfHhCPrVIdJa0LwuK7rnqtoPUGlyLkeG16d78cb3" page-size="3" news-brand-ids="7" news-channels="B2C"></aico-news-list>
+      </div>
 
-      {newsBannerSection && (
-        <Suspense>
-          <Await resolve={newsBannerSection}>
-            {({data}) => {
-              if (!data) return <></>;
-              return <NewsBanner data={data} />;
-            }}
-          </Await>
-        </Suspense>
-      )}
-      
       {pursueSection && (
         <Suspense>
           <Await resolve={pursueSection}>
@@ -450,3 +479,12 @@ ${MEDIA_FRAGMENT}
     }
   }
 `;
+
+function addNewsListener() {
+  const newsList = document.querySelector('aico-news-list');
+  newsList.addEventListener('articleClick', event => {
+     //navigateToArticle(event.detail);
+   event.preventDefault();
+   window.location = "https://kybunjoya.swiss/news/"+event.detail.attributes.urlHandle;
+ });
+}
