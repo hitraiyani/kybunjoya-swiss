@@ -1867,3 +1867,11 @@ select {
 .sc-aico-article-detail img.sc-aico-article-detail {
   border-radius: 0 !important;
 }
+
+@media (min-width: 1280px) {
+  img.sc-aico-article-detail {
+    width:60%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
