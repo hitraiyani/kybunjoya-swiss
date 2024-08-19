@@ -140,7 +140,7 @@ export default function Article() {
       <div className="container mx-auto">
         <div className="title-wrap mt-[85px] lg:mt-[85px]"></div>
       </div>
-      <div className="container mx-auto mb-[24px]">
+      <div className="container mx-auto mb-[40px] md:mb-[60px] lg:mb-[80px] xl:mb-[100px]">
         <div id="news-details-container">
         <aico-fetch-article-detail hide-date-and-author="true" aico-url="https://kybunjoya.aico.swiss/api/v1/" aico-bearer-token="2JoIqPu1xfHhCPrVIdJa0LwuK7rnqtoPUGlyLkeG16d78cb3" article-url-handle={newsObj.handle} locale={newsObj.lang}></aico-fetch-article-detail>
         </div>

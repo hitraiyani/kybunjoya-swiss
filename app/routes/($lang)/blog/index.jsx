@@ -73,8 +73,8 @@ export default function Article({context}) {
       <div className="container mx-auto">
         <div className="title-wrap mt-[85px] lg:mt-[85px]"></div>
       </div>
-      <div className="container mx-auto mb-[24px]">
-        <h1>News</h1>
+      <div className="container blog-page-articles-container mx-auto mb-[40px] md:mb-[60px] lg:mb-[80px] xl:mb-[100px]">
+        <h1 className="title-blog-page text-[#00795C] text-[35px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold">News</h1>
         <aico-news-list aico-url="
         https://kybunjoya.aico.swiss/api/v1/"
         aico-bearer-token="2JoIqPu1xfHhCPrVIdJa0LwuK7rnqtoPUGlyLkeG16d78cb3" page-size="8" news-brand-ids="7" next-button-text="" news-channels="B2C" previous-button-text="" locale="en"></aico-news-list>
