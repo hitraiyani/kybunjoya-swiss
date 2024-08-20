@@ -327,7 +327,6 @@ function MenuMobileNav({menu, onClose, locale}) {
               <li key={item.id}>
                 <Link
                   to={item.to}
-                  target={item.target}
                   className={`${
                     item.to == '/pages/uber-uns' ? '' : ''
                   } kybunjoya-menu-hover title text-[#00795C] text-[26px] mb-[12px] outline-none ${
@@ -986,3 +985,5 @@ function FooterMenu({menu}) {
     </>
   );
 }
+
+
