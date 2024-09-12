@@ -1,4 +1,5 @@
 import {json} from '@shopify/remix-oxygen';
+import {defer} from '@shopify/remix-oxygen';
 import {useLoaderData} from '@remix-run/react';
 import {Image} from '@shopify/hydrogen';
 import {useEffect, useState} from 'react';
@@ -23,7 +24,22 @@ import styles from '~/styles/news.css';
 //   seo,
 // };
 
+export async function loader({params, context}) {
+  const {language, country} = context.storefront.i18n;
 
+  if (
+    params.lang &&
+    params.lang.toLowerCase() !== `${language}`.toLowerCase()
+  ) {
+    // If the lang URL param is defined, yet we still are on `EN-US`
+    // the the lang param must be invalid, send to the 404 page
+    throw new Response(null, {status: 404});
+  }
+
+  return defer({
+    language
+  });
+}
 export const links = () => {
   return [
     {rel: 'stylesheet', href: styles},
@@ -40,6 +56,16 @@ export const links = () => {
 
 export default function Article({context}) {
   const [scriptsLoaded, setScriptsLoaded] = useState(false);
+  const {
+    language 
+  } = useLoaderData();
+  let lang_localize;
+  if( language == "DE"){
+    lang_localize = "de_CH"
+
+  } else if( language == "EN") {
+    lang_localize = "en"
+  }
   useEffect(() => {
     // Load jQuery script
     const scriptJquery = document.createElement('script');
@@ -77,7 +103,7 @@ export default function Article({context}) {
         <h1 className="title-blog-page text-[#00795C] text-[35px] lg:text-[40px] xl:text-[50px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold">News</h1>
         <aico-news-list aico-url="
         https://kybunjoya.aico.swiss/api/v1/"
-        aico-bearer-token="2JoIqPu1xfHhCPrVIdJa0LwuK7rnqtoPUGlyLkeG16d78cb3" page-size="8" news-brand-ids="7" next-button-text="" news-channels="B2C" previous-button-text="" locale="en"></aico-news-list>
+        aico-bearer-token="2JoIqPu1xfHhCPrVIdJa0LwuK7rnqtoPUGlyLkeG16d78cb3" page-size="8" news-brand-ids="7" next-button-text="" news-channels="B2C" previous-button-text="" locale={lang_localize}></aico-news-list>
       </div>
     </>
   );

@@ -45,7 +45,6 @@ export async function loader({params, context}) {
   if (language == "DE"){
     newsObj.lang = `${language}`.toLowerCase()+`_CH`;
   } else if (language == "EN"){
-    console.log(language);
     newsObj.lang = `${language}`.toLowerCase();
   }
 

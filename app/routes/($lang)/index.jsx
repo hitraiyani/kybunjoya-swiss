@@ -166,7 +166,7 @@ export default function Homepage() {
       <Section className={'collectionsGrid-sec collectionsGrid-sec-box-layout collectionsGrid-sec-box-layout2 pt-6'}>
         <div className="container front_page-news">
           <h1 className='text-[#00795C] text-[30px] lg:text-[35px] xl:text-[40px] tracking-[-1.05984px] mb-[30px] xl:mb-[42px] font-bold'>News</h1>
-          <aico-news-list aico-url="https://kybunjoya.aico.swiss/api/v1/" lang_localize={lang_localize} aico-bearer-token="2JoIqPu1xfHhCPrVIdJa0LwuK7rnqtoPUGlyLkeG16d78cb3" page-size="3" news-brand-ids="7" news-channels="B2C"></aico-news-list>
+          <aico-news-list aico-url="https://kybunjoya.aico.swiss/api/v1/" locale={lang_localize} aico-bearer-token="2JoIqPu1xfHhCPrVIdJa0LwuK7rnqtoPUGlyLkeG16d78cb3" page-size="3" news-brand-ids="7" news-channels="B2C"></aico-news-list>
         </div>
       </Section>
       {pursueSection && (
