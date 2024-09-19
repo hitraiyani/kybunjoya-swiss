@@ -120,11 +120,11 @@ export default function ratgeberSeiteFersensporn() {
 
   let dkj_name_international, rtgb_textursachen, rtgb_textkybunjoyatherapie, klaviyo_formular, klaviyo_formular_img, title_formular, video_link;
   let text_formular = []
-  klaviyo_formular_img = aicoProductData?.drkybunjoya_bookletfront?.value
   if (locale.toLocaleLowerCase() == 'en') {
     if (aicoProductData?.dkj_videourl_en?.value) {
       video_link = "https://www.youtube.com/embed/"+getYoutubeId(aicoProductData?.dkj_videourl_en?.value)+"?rel=0";
     }
+    klaviyo_formular_img = aicoProductData?.drkybunjoya_bookletfront_EN?.value
     title_formular ="Therapy brochure"
     text_formular[0]="The therapy brochure describes the condition, explains its causes and symptoms and outlines how our philosophy and products can help."
     text_formular[1]="Integrated exercises are designed to enhance the effect of our products and to alleviate the pain."
@@ -146,6 +146,7 @@ export default function ratgeberSeiteFersensporn() {
     if (aicoProductData?.dkj_videourl_de_ch?.value) {
       video_link = "https://www.youtube.com/embed/"+getYoutubeId(aicoProductData?.dkj_videourl_de_ch?.value)+"?rel=0";
     }
+    klaviyo_formular_img = aicoProductData?.drkybunjoya_bookletfront?.value
     title_formular ="Therapiebroschüre"
     text_formular[0] = "Die Therapiebroschüre beschreibt die Krankheit, zeigt deren Ursachen sowie Symptome auf und erklärt, wie unsere Philosophie und Produkte helfen können."
     text_formular[1] = "Mit integrierten Übungen soll die Wirkung unserer Produkte verstärkt und die Schmerzen gelindert werden."
@@ -481,6 +482,9 @@ ${MEDIA_FRAGMENT}
         value
       }
       drkybunjoya_bookletfront: metafield(namespace: "aico", key: "drkybunjoya_bookletfront"){
+        value
+      }
+      drkybunjoya_bookletfront_EN: metafield(namespace: "aico", key: "drkybunjoya_bookletfront_EN"){
         value
       }
       dkj_videourl_de_ch: metafield(namespace: "aico", key: "dkj_videourl_de_ch"){
