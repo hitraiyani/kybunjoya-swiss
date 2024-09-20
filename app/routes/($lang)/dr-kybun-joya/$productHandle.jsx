@@ -185,7 +185,6 @@ export default function ratgeberSeiteFersensporn() {
   // );
 
   const [downloadLinks, setDownloadLinks] = useState([]);
-  const klaviyo_script_status = useLoadScript('https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=Xpi5VF');
 
   useEffect(() => {
     if (aicoProductData?.documents?.value) {
@@ -199,23 +198,28 @@ export default function ratgeberSeiteFersensporn() {
       setDownloadLinks(downListArr);
     }
     var klaviyoElements = document.querySelectorAll('.klaviyo-form');
+    console.log("Part 1");
     function add_klaviyo() {
       var _learnq = window._learnq || [];
       _learnq.push(['identify', {
         'dr_kybun_formular':'chao',
       }]);
+      console.log("Part 2");
       var klaviyoElements = document.querySelectorAll('.klaviyo-form');
       klaviyoElements.forEach(function (element) {
         element.removeEventListener('click', add_klaviyo);
       });
+      console.log("Part 3");
     }
     klaviyoElements.forEach(function (element) {
       element.addEventListener('click', add_klaviyo);
     });
-    if (klaviyo_script_status === 'done') {
+    console.log("Part 4");
+      console.log(window._klOnsite)
+      console.log(klaviyo_formular)
       window._klOnsite = window._klOnsite || [];
       window._klOnsite.push(['openForm', klaviyo_formular]);
-    }
+    console.log("Part 5");
     // const downloadLinks = document.querySelectorAll('.download-link');
     // downloadLinks.forEach((link) => {
     //   link.addEventListener('click', (event) => {
@@ -240,7 +244,7 @@ export default function ratgeberSeiteFersensporn() {
     //     xhr.send();
     //   });
     // });
-  }, [klaviyo_script_status]);
+  }, []);
 
   const {pathname} = useLocation();
   const breadCrumbsData = getBreadCrumbs(null, 'ratgeberdetailpage');
@@ -249,7 +253,6 @@ export default function ratgeberSeiteFersensporn() {
     <>
       <Breadcrumb crumbs={breadCrumbsData} />
       <div className="container">
-      <div>{klaviyo_script_status === 'done'}</div>
         <section className="rich-text-sec flex flex-col md:flex-row gap-y-[20px] gap-x-[40px] xl:gap-x-[60px] 2xl:gap-x-[100px]" id="section_1">
           <div className={`w-full ${klaviyo_formular!="klaviyo-form-undefined" ? 'lg:w-2/3' : 'lg:w-full'} h-full`}>
             <div className="rich-text-inner">
@@ -368,7 +371,6 @@ export default function ratgeberSeiteFersensporn() {
               </div>
             </div>
           </div>
-          {klaviyo_formular!="klaviyo-form-undefined" && klaviyo_script_status === 'done' ?
           <div className='w-full lg:w-1/3 h-full'>
             <div>
               <div className='mb-[20px]'><img src={klaviyo_formular_img}/></div>
@@ -378,7 +380,6 @@ export default function ratgeberSeiteFersensporn() {
               <div className={klaviyo_formular}></div>
             </div>
           </div>
-          : null}
         </section>
 
         <section className="about-us-sec pb-[40px] mt-20 md:py-[60px] lg:py-[80px] xl:py-[100px]">

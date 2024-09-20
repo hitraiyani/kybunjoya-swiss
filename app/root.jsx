@@ -9,6 +9,7 @@ import {
   useLoaderData,
   useMatches,
 } from '@remix-run/react';
+import {Script} from '@shopify/hydrogen';
 import {ShopifySalesChannel, Seo} from '@shopify/hydrogen';
 import {SHOP_TITLE} from '~/lib/const';
 import styles from './styles/app.css';
@@ -115,6 +116,7 @@ export default function App() {
         >
           <Outlet />
         </Layout>
+        <Script async type="text/javascript" src="//static.klaviyo.com/onsite/js/klaviyo.js?company_id=Xpi5VF" />
         <ScrollRestoration />
         <Scripts />
       </body>
@@ -169,6 +171,7 @@ export function ErrorBoundary({error}) {
         <Layout layout={root?.data?.layout}>
           <GenericError error={error} />
         </Layout>
+        
         <Scripts />
       </body>
     </html>
