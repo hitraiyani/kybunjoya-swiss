@@ -41,5 +41,6 @@ export {ShopifyCookie} from './ShopifyCookie';
 export {PursueSection} from './PursueSection';
 export {NewsBanner} from './NewsBanner';
 export {Newsletter} from './Newsletter';
+export {Klaviyo_form} from './klaviyo_form';
 // Sue me
 export * from './Icon';

@@ -10,6 +10,7 @@ import {
   IconDownload,
   Breadcrumb,
   IconArrowRight,
+  Klaviyo_form
 } from '~/components';
 import {useLoaderData, useLocation} from '@remix-run/react';
 import {MEDIA_FRAGMENT, PRODUCT_CARD_FRAGMENT} from '~/data/fragments';
@@ -214,12 +215,6 @@ export default function ratgeberSeiteFersensporn() {
     klaviyoElements.forEach(function (element) {
       element.addEventListener('click', add_klaviyo);
     });
-    console.log("Part 4");
-      console.log(window._klOnsite)
-      console.log(klaviyo_formular)
-      window._klOnsite = window._klOnsite || [];
-      window._klOnsite.push(['openForm', klaviyo_formular]);
-    console.log("Part 5");
     // const downloadLinks = document.querySelectorAll('.download-link');
     // downloadLinks.forEach((link) => {
     //   link.addEventListener('click', (event) => {
@@ -371,15 +366,18 @@ export default function ratgeberSeiteFersensporn() {
               </div>
             </div>
           </div>
-          <div className='w-full lg:w-1/3 h-full'>
-            <div>
-              <div className='mb-[20px]'><img src={klaviyo_formular_img}/></div>
-              <h2 className='text-black text-[24px] md:text-[30px] lg:text-[35px] leading-[1.1] tracking-[-0.97152px] mb-[20px] font-medium'>{title_formular}</h2>
-              <p className='text-[14px] md:text-[16px] lg:text-[18px] xl:text-[19px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mb-[10px]'>{text_formular[0]}</p>
-              <p className='text-[14px] md:text-[16px] lg:text-[18px] xl:text-[19px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mb-[10px]'>{text_formular[1]}</p>
-              <div className={klaviyo_formular}></div>
+          {klaviyo_formular!="klaviyo-form-undefined" ?
+            <div className='w-full lg:w-1/3 h-full'>
+                <div>
+                  <div className='mb-[20px]'><img src={klaviyo_formular_img}/></div>
+                  <h2 className='text-black text-[24px] md:text-[30px] lg:text-[35px] leading-[1.1] tracking-[-0.97152px] mb-[20px] font-medium'>{title_formular}</h2>
+                  <p className='text-[14px] md:text-[16px] lg:text-[18px] xl:text-[19px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mb-[10px]'>{text_formular[0]}</p>
+                  <p className='text-[14px] md:text-[16px] lg:text-[18px] xl:text-[19px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mb-[10px]'>{text_formular[1]}</p>
+                  <Klaviyo_form klaviyo_formular={klaviyo_formular} />
+                </div>
             </div>
-          </div>
+          : null}
+          
         </section>
 
         <section className="about-us-sec pb-[40px] mt-20 md:py-[60px] lg:py-[80px] xl:py-[100px]">
