@@ -199,7 +199,6 @@ export default function ratgeberSeiteFersensporn() {
       setDownloadLinks(downListArr);
     }
     var klaviyoElements = document.querySelectorAll('.klaviyo-form');
-    console.log("Part 1");
     function add_klaviyo() {
       var _learnq = window._learnq || [];
       _learnq.push(['identify', {
