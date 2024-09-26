@@ -40,7 +40,7 @@ export const links = () => {
     },
     {
       rel: 'stylesheet',
-      href: 'https://cdn.jsdelivr.net/npm/@aiconomy/aico-components@0.0.179/dist/aico-components/aico-components.css',
+      href: 'https://cdn.jsdelivr.net/npm/@aiconomy/aico-components@0.0.181/dist/aico-components/aico-components.css',
     },
   ];
 };
@@ -130,12 +130,12 @@ export default function Homepage() {
     scriptJquery.onload = () => {
       setScriptsLoaded((prevState) => ({...prevState, jqueryLoaded: true}));
       aicoCompESM.src =
-        'https://cdn.jsdelivr.net/npm/@aiconomy/aico-components@0.0.179/dist/aico-components/aico-components.esm.js';
+        'https://cdn.jsdelivr.net/npm/@aiconomy/aico-components@0.0.181/dist/aico-components/aico-components.esm.js';
       aicoCompESM.async = true;
       aicoCompESM.type = "module";
       document.body.appendChild(aicoCompESM);
       aicoComp.src =
-      'https://cdn.jsdelivr.net/npm/@aiconomy/aico-components@0.0.179/dist/esm/aico-components.js';
+      'https://cdn.jsdelivr.net/npm/@aiconomy/aico-components@0.0.181/dist/esm/aico-components.js';
       aicoComp.async = true;
       aicoComp.type = "nomodule";
       document.body.appendChild(aicoComp);
