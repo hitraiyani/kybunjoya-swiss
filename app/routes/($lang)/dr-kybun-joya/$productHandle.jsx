@@ -119,7 +119,7 @@ export default function ratgeberSeiteFersensporn() {
   //   'dkj_videourl_de_ch',
   // );
 
-  let dkj_name_international, rtgb_textursachen, rtgb_textkybunjoyatherapie, klaviyo_formular, klaviyo_formular_img, title_formular, video_link;
+  let dkj_name_international, rtgb_textursachen, rtgb_textkybunjoyatherapie, klaviyo_listID, klaviyo_formular_img, title_formular, video_link;
   let text_formular = []
   if (locale.toLocaleLowerCase() == 'en') {
     if (aicoProductData?.dkj_videourl_en?.value) {
@@ -129,7 +129,7 @@ export default function ratgeberSeiteFersensporn() {
     title_formular ="Therapy brochure"
     text_formular[0]="The therapy brochure describes the condition, explains its causes and symptoms and outlines how our philosophy and products can help."
     text_formular[1]="Integrated exercises are designed to enhance the effect of our products and to alleviate the pain."
-    klaviyo_formular = "klaviyo-form-"+aicoProductData?.drkybunjoya_klformid_EN?.value;
+    klaviyo_listID = aicoProductData?.drkybunjoya_kllistid?.value;
     dkj_name_international = getAicoMetaByKeyName(
       aicoProductData?.aico_custom_fields_en?.value,
       'dkj_name_international_en',
@@ -152,7 +152,7 @@ export default function ratgeberSeiteFersensporn() {
     text_formular[0] = "Die Therapiebroschüre beschreibt die Krankheit, zeigt deren Ursachen sowie Symptome auf und erklärt, wie unsere Philosophie und Produkte helfen können."
     text_formular[1] = "Mit integrierten Übungen soll die Wirkung unserer Produkte verstärkt und die Schmerzen gelindert werden."
 
-    klaviyo_formular = "klaviyo-form-"+aicoProductData?.drkybunjoya_klformid_DE?.value;
+    klaviyo_listID = aicoProductData?.drkybunjoya_kllistid?.value;
 
     dkj_name_international = getAicoMetaByKeyName(
       aicoProductData?.aico_custom_fields_de_ch?.value,
@@ -248,7 +248,7 @@ export default function ratgeberSeiteFersensporn() {
       <Breadcrumb crumbs={breadCrumbsData} />
       <div className="container">
         <section className="rich-text-sec flex flex-col md:flex-row gap-y-[20px] gap-x-[40px] xl:gap-x-[60px] 2xl:gap-x-[100px]" id="section_1">
-          <div className={`w-full ${klaviyo_formular!="klaviyo-form-undefined" ? 'lg:w-2/3' : 'lg:w-full'} h-full`}>
+          <div className={`w-full ${klaviyo_listID!="klaviyo-form-undefined" ? 'lg:w-2/3' : 'lg:w-full'} h-full`}>
             <div className="rich-text-inner">
               <div className="flex flex-col gap-y-[30px] lg:gap-x-[50px] xl:gap-x-[60px]">
                 <div className="col-left w-full">
@@ -365,14 +365,14 @@ export default function ratgeberSeiteFersensporn() {
               </div>
             </div>
           </div>
-          {klaviyo_formular!="klaviyo-form-undefined" ?
+          {klaviyo_listID!="klaviyo-form-undefined" ?
             <div className='w-full lg:w-1/3 h-full'>
                 <div>
                   <div className='mb-[20px]'><img src={klaviyo_formular_img}/></div>
                   <h2 className='text-black text-[24px] md:text-[30px] lg:text-[35px] leading-[1.1] tracking-[-0.97152px] mb-[20px] font-medium'>{title_formular}</h2>
                   <p className='text-[14px] md:text-[16px] lg:text-[18px] xl:text-[19px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mb-[10px]'>{text_formular[0]}</p>
                   <p className='text-[14px] md:text-[16px] lg:text-[18px] xl:text-[19px] text-black tracking-[-0.400697px] font-normal leading-[1.4] mb-[10px]'>{text_formular[1]}</p>
-                  <Klaviyo_form klaviyo_formular={klaviyo_formular} />
+                  <Klaviyo_form klaviyo_listID={klaviyo_listID} set_language={locale?.toLocaleLowerCase()}/>
                 </div>
             </div>
           : null}
@@ -473,10 +473,7 @@ ${MEDIA_FRAGMENT}
         width
         height
       }
-      drkybunjoya_klformid_DE: metafield(namespace: "aico", key: "drkybunjoya_klformid"){
-        value
-      }
-      drkybunjoya_klformid_EN: metafield(namespace: "aico", key: "drkybunjoya_klformidEN"){
+      drkybunjoya_kllistid: metafield(namespace: "aico", key: "drkybunjoya_kllist"){
         value
       }
       drkybunjoya_bookletfront: metafield(namespace: "aico", key: "drkybunjoya_bookletfront"){
