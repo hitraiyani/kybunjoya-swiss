@@ -9,7 +9,7 @@ export function Klaviyo_form({klaviyo_listID,set_language}) {
     lastName: '',
     language: ''
   });
-  let loading_button_text, successful_header_text, successful_message, unsuccessful_header_text, unsuccessful_message,form_email,form_name,form_last_name,form_language,form_german_option,form_english_option,form_submit_text,form_small_text
+  let loading_button_text, successful_header_text, successful_message, required_message,form_email,form_name,form_last_name,form_language,form_german_option,form_english_option,form_submit_text,form_small_text
   if (spoke_language == "en") {
     form_email = "Email"
     form_name = "Name"
@@ -22,6 +22,7 @@ export function Klaviyo_form({klaviyo_listID,set_language}) {
     loading_button_text= "Processing..."
     successful_header_text = "Thank you for your interest in the kybun Joya therapy brochure."
     successful_message = "We will send you the link to download the therapy brochure to your e-mail address."
+    required_message = {name:"Please enter your name", lastname: "Please enter your last name", email: "Please enter your email",language:"Please select your language"}
   } else {
     form_email = "E-mail"
     form_name = "Vorname"
@@ -34,6 +35,7 @@ export function Klaviyo_form({klaviyo_listID,set_language}) {
     loading_button_text= "Bearbeitung..."
     successful_header_text = "Vielen Dank für Ihr Interesse an der kybun Joya Therapiebroschüre."
     successful_message = "Wir senden Ihnen den Link zum Download der Therapiebroschüre per E-Mail zu."
+    required_message = {name:"Bitte Ihren Namen eingeben", lastname: "Bitte Ihren Nachnamen eingeben", email: "Bitte geben Sie Ihre E-Mail ein",language:"Bitte wählen Sie eine Sprache"}
   }
   const [isLoading, showLoading] = useState(true);
   const [submited, showEndMessage] = useState(true);
@@ -68,6 +70,17 @@ export function Klaviyo_form({klaviyo_listID,set_language}) {
     })
       .catch(err => console.error(err));
   };
+  const handleInvalid = (event, message) => {
+    event.target.setCustomValidity(message);
+  };
+
+  const handleInput = (event) => {
+    event.target.setCustomValidity(''); // Clear the custom message when typing
+  };
+  useEffect(() => {
+
+
+  }, []);
   return (
     <>
       <form id='dr_kybunjoya_form' onSubmit={handleSubmit} className='relative transition-all ease-in'>
@@ -91,6 +104,8 @@ export function Klaviyo_form({klaviyo_listID,set_language}) {
             value={formData.email}
             onChange={handleChange}
             required
+            onInvalid={(e) => handleInvalid(e, required_message.email)}
+            onInput={handleInput}
           />
         </div>
 
@@ -103,6 +118,8 @@ export function Klaviyo_form({klaviyo_listID,set_language}) {
             value={formData.firstName}
             onChange={handleChange}
             required
+            onInvalid={(e) => handleInvalid(e, required_message.name)}
+            onInput={handleInput}
           />
         </div>
 
@@ -115,11 +132,14 @@ export function Klaviyo_form({klaviyo_listID,set_language}) {
             value={formData.lastName}
             onChange={handleChange}
             required
+            onInvalid={(e) => handleInvalid(e, required_message.lastname)}
+            onInput={handleInput}
           />
         </div>
 
         <div>
-          <select name="language" value={formData.language} onChange={handleChange} className='w-full border mb-5 h-14 rounded text-xl pl-4 select-greenKybunJoya dr_kybunjoya_input'>
+          <select name="language" value={formData.language} onChange={handleChange} className='w-full border mb-5 h-14 rounded text-xl pl-4 select-greenKybunJoya dr_kybunjoya_input' required onInvalid={(e) => handleInvalid(e, required_message.language)}
+            onInput={handleInput}>
             <option value="" disabled selected hidden>
               {form_language}
             </option>
